@@ -17,6 +17,13 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     /// </summary>
     internal class DepartmentRepository : AbsctractDALMongo<Department>, IDepartmentRepository
     {
+        #region Field
+        /// <summary>
+        /// 模型类型
+        /// </summary>
+        private readonly string modelType = "Energy.Department";
+        #endregion //Field
+
         #region Constructor
         /// <summary>
         /// 部门数据访问类
@@ -61,13 +68,27 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 { "name", entity.Name },
                 { "shortName", entity.ShortName },
                 { "foundYear", entity.FoundYear },
-                { "parentId", entity.ParentId },
                 { "remark", entity.Remark },
                 { "status", entity.Status }
             };
 
+            if (entity.ParentId != null)
+                doc.Add("parentId", entity.ParentId);
+
             return doc;
         }
         #endregion //Function
+
+        #region Method
+        /// <summary>
+        /// 添加部门
+        /// </summary>
+        /// <param name="entity">部门对象</param>
+        public override void Create(Department entity)
+        {
+            entity.ModelType = this.modelType;
+            base.Create(entity);
+        }
+        #endregion //Method
     }
 }
