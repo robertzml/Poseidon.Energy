@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.luParentId = new DevExpress.XtraEditors.TreeListLookUpEdit();
-            this.bsDepartment = new System.Windows.Forms.BindingSource();
+            this.bsDepartment = new System.Windows.Forms.BindingSource(this.components);
             this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.spFoundYear = new DevExpress.XtraEditors.SpinEdit();
@@ -164,7 +165,7 @@
             this.spFoundYear.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spFoundYear.Properties.IsFloatValue = false;
-            this.spFoundYear.Properties.Mask.EditMask = "N00";
+            this.spFoundYear.Properties.Mask.EditMask = "d";
             this.spFoundYear.Properties.MaxValue = new decimal(new int[] {
             2500,
             0,

@@ -45,6 +45,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             Department entity = new Department();
             entity.Id = doc["_id"].ToString();
             entity.Name = doc["name"].ToString();
+            entity.ModelType = doc["modelType"].ToString();
             entity.ShortName = doc["shortName"].ToString();
             entity.FoundYear = doc["foundYear"].ToInt32();
             entity.Remark = doc["remark"].ToString();
@@ -66,6 +67,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             BsonDocument doc = new BsonDocument
             {
                 { "name", entity.Name },
+                { "modelType", entity.ModelType },
                 { "shortName", entity.ShortName },
                 { "foundYear", entity.FoundYear },
                 { "remark", entity.Remark },
@@ -87,6 +89,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         public override void Create(Department entity)
         {
             entity.ModelType = this.modelType;
+            entity.Status = 0;
             base.Create(entity);
         }
         #endregion //Method

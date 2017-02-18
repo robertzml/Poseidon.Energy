@@ -32,10 +32,14 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.depGrid = new Poseidon.Energy.ClientDx.DepartmentGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -45,6 +49,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupControl2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl3, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -61,7 +66,7 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(194, 194);
             this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "groupControl1";
+            this.groupControl1.Text = "分组";
             // 
             // groupControl2
             // 
@@ -71,7 +76,7 @@
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(578, 194);
             this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "groupControl2";
+            this.groupControl2.Text = "操作";
             // 
             // btnAdd
             // 
@@ -82,6 +87,26 @@
             this.btnAdd.Text = "添加部门";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.depGrid);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(203, 203);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(578, 277);
+            this.groupControl3.TabIndex = 2;
+            this.groupControl3.Text = "部门列表";
+            // 
+            // depGrid
+            // 
+            this.depGrid.DataSource = null;
+            this.depGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.depGrid.Location = new System.Drawing.Point(2, 21);
+            this.depGrid.Name = "depGrid";
+            this.depGrid.ShowLineNumber = false;
+            this.depGrid.Size = new System.Drawing.Size(574, 254);
+            this.depGrid.TabIndex = 0;
+            // 
             // FrmDepartmentOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -90,10 +115,13 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmDepartmentOverview";
             this.Text = "部门总览";
+            this.Load += new System.EventHandler(this.FrmDepartmentOverview_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -104,5 +132,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DepartmentGrid depGrid;
     }
 }

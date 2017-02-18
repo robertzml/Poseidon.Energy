@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\DepartmentGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\DepartmentGrid.Designer.cs">
+      <DependentUpon>DepartmentGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FrmDepartmentAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
   <ItemGroup>
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Department.datasource" />
     <None Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Control\DepartmentGrid.resx">
+      <DependentUpon>DepartmentGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmDepartmentAdd.resx">
       <DependentUpon>FrmDepartmentAdd.cs</DependentUpon>
     </EmbeddedResource>
