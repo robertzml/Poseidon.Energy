@@ -75,6 +75,18 @@
     <Compile Include="Control\DepartmentGrid.Designer.cs">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Population\FrmPopulationAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Population\FrmPopulationAdd.Designer.cs">
+      <DependentUpon>FrmPopulationAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Population\FrmPopulation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Population\FrmPopulation.Designer.cs">
+      <DependentUpon>FrmPopulation.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FrmDepartmentAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +106,12 @@
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Control\DepartmentGrid.resx">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Population\FrmPopulation.resx">
+      <DependentUpon>FrmPopulation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Population\FrmPopulationAdd.resx">
+      <DependentUpon>FrmPopulationAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrmDepartmentAdd.resx">
       <DependentUpon>FrmDepartmentAdd.cs</DependentUpon>

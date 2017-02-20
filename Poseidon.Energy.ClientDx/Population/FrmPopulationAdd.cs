@@ -17,27 +17,22 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Winform.Base;
 
     /// <summary>
-    /// 部门添加窗体
+    /// 添加人数统计
     /// </summary>
-    public partial class FrmDepartmentAdd : BaseSingleForm
+    public partial class FrmPopulationAdd : BaseSingleForm
     {
         #region Constructor
-        public FrmDepartmentAdd()
+        public FrmPopulationAdd()
         {
             InitializeComponent();
         }
         #endregion //Constructor
 
         #region Function
-        /// <summary>
-        /// 设置实体
-        /// </summary>
-        /// <param name="entity"></param>
-        private void SetEntity(Department entity)
+        private void SetEntity(Population entity)
         {
-            entity.Name = this.txtName.Text;
-            entity.ShortName = this.txtShortName.Text;
-            entity.FoundYear = Convert.ToInt32(this.spFoundYear.Value);
+            entity.Year = Convert.ToInt32(this.spYear.Value);
+            entity.BelongTime = this.txtBelongTime.Text;
             entity.Remark = this.txtRemark.Text;
         }
 
@@ -49,9 +44,9 @@ namespace Poseidon.Energy.ClientDx
         {
             string errorMessage = "";
 
-            if (string.IsNullOrEmpty(this.txtName.Text.Trim()))
+            if (string.IsNullOrEmpty(this.txtBelongTime.Text.Trim()))
             {
-                errorMessage = "名称不能为空";
+                errorMessage = "归属时间不能为空";
                 return new Tuple<bool, string>(false, errorMessage);
             }
 
@@ -74,12 +69,12 @@ namespace Poseidon.Energy.ClientDx
                 return;
             }
 
-            Department entity = new Department();
+            Population entity = new Population();
             SetEntity(entity);
 
             try
             {
-                BusinessFactory<DepartmentBusiness>.Instance.Create(entity);
+                BusinessFactory<PopulationBusiness>.Instance.Create(entity);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

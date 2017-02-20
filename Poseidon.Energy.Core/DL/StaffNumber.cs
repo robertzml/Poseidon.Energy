@@ -3,33 +3,62 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Poseidon.Energy.Core.DL
 {
     using Poseidon.Base.Framework;
 
     /// <summary>
-    /// 人数统计业务类
+    /// 人数统计类
     /// </summary>
-    public class StaffNumber : BaseEntity
+    public class StaffNumber : BusinessEntity
     {
         /// <summary>
-        /// 年份
+        /// 汇总ID
         /// </summary>
-        [Display(Name = "年份")]
-        public int Year { get; set; }
-
-        /// <summary>
-        /// 归属时间
-        /// </summary>
-        [Display(Name = "归属时间")]
-        public string BelongTime { get; set; }
+        [Display(Name = "汇总ID")]
+        public string PopulationId { get; set; }
 
         /// <summary>
         /// 部门ID
         /// </summary>
         [Display(Name = "部门ID")]
         public string DepartmentId { get; set; }
+
+        /// <summary>
+        /// 人事代理人数
+        /// </summary>
+        [Display(Name = "人事代理人数")]
+        public int PersonnelAgency { get; set; }
+
+        /// <summary>
+        /// 本科生人数
+        /// </summary>
+        [Display(Name = "本科生人数")]
+        public int Undergraduate { get; set; }
+
+        /// <summary>
+        /// 硕士生人数
+        /// </summary>
+        [Display(Name = "硕士生人数")]
+        public int Master { get; set; }
+
+        /// <summary>
+        /// 专业硕士生人数
+        /// </summary>
+        [Display(Name = "专业硕士生人数")]
+        public int ProfessionalMaster { get; set; }
+
+        /// <summary>
+        /// 博士生人数
+        /// </summary>
+        [Display(Name = "博士生人数")]
+        public int Doctor { get; set; }
+
+        /// <summary>
+        /// 留学生人数
+        /// </summary>
+        [Display(Name = "留学生人数")]
+        public int AbroadStudent { get; set; }
     }
 }

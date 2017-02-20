@@ -68,10 +68,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\DepartmentBusiness.cs" />
+    <Compile Include="BL\PopulationBusiness.cs" />
     <Compile Include="DAL\Mongo\DepartmentRepository.cs" />
+    <Compile Include="DAL\Mongo\PopulationRepository.cs" />
     <Compile Include="DL\Department.cs" />
     <Compile Include="DL\StaffNumber.cs" />
+    <Compile Include="DL\Population.cs" />
     <Compile Include="IDAL\IDepartmentRepository.cs" />
+    <Compile Include="IDAL\IPopulationRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
