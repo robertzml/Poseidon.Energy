@@ -13,12 +13,6 @@ namespace Poseidon.Energy.Core.DL
     public class Department : Organization
     {
         /// <summary>
-        /// 模型类型
-        /// </summary>
-        [Display(Name = "模型类型")]
-        public string ModelType { get; set; }
-
-        /// <summary>
         /// 简称
         /// </summary>
         [Display(Name = "简称")]

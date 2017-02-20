@@ -52,6 +52,9 @@
     <Reference Include="Poseidon.Winform.Base">
       <HintPath>..\..\Assembly\Poseidon.Winform.Base.dll</HintPath>
     </Reference>
+    <Reference Include="Poseidon.Winform.Core">
+      <HintPath>..\..\Assembly\Poseidon.Winform.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />

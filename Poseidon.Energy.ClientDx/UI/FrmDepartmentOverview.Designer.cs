@@ -34,8 +34,10 @@
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.depGrid = new Poseidon.Energy.ClientDx.DepartmentGrid();
+            this.groupsTree1 = new Poseidon.Winform.Core.GroupsTree();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -61,6 +63,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.groupsTree1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
@@ -103,9 +106,21 @@
             this.depGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.depGrid.Location = new System.Drawing.Point(2, 21);
             this.depGrid.Name = "depGrid";
-            this.depGrid.ShowLineNumber = false;
+            this.depGrid.ShowFooter = false;
+            this.depGrid.ShowLineNumber = true;
             this.depGrid.Size = new System.Drawing.Size(574, 254);
             this.depGrid.TabIndex = 0;
+            // 
+            // groupsTree1
+            // 
+            this.groupsTree1.DataSource = null;
+            this.groupsTree1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupsTree1.Location = new System.Drawing.Point(2, 21);
+            this.groupsTree1.Name = "groupsTree1";
+            this.groupsTree1.ShowCode = false;
+            this.groupsTree1.ShowRemark = false;
+            this.groupsTree1.Size = new System.Drawing.Size(190, 171);
+            this.groupsTree1.TabIndex = 0;
             // 
             // FrmDepartmentOverview
             // 
@@ -118,6 +133,7 @@
             this.Load += new System.EventHandler(this.FrmDepartmentOverview_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
@@ -134,5 +150,6 @@
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DepartmentGrid depGrid;
+        private Winform.Core.GroupsTree groupsTree1;
     }
 }

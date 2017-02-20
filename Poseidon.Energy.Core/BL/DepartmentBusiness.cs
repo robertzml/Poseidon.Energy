@@ -21,7 +21,7 @@ namespace Poseidon.Energy.Core.BL
         /// </summary>
         public DepartmentBusiness()
         {
-            this.dal = RepositoryFactory<IDepartmentRepository>.Instance;
+            this.baseDal = RepositoryFactory<IDepartmentRepository>.Instance;
         }
         #endregion //Constructor
     }

@@ -156,7 +156,7 @@
             // spFoundYear
             // 
             this.spFoundYear.EditValue = new decimal(new int[] {
-            1950,
+            2001,
             0,
             0,
             0});

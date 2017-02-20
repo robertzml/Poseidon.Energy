@@ -36,6 +36,11 @@ namespace Poseidon.Energy.ClientDx
             LoadDepartment();
         }
 
+        public void LoadGroups()
+        {
+
+        }
+
         /// <summary>
         /// 载入部门
         /// </summary>
