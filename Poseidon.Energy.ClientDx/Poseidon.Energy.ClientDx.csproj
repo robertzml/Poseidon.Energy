@@ -75,6 +75,12 @@
     <Compile Include="Control\DepartmentGrid.Designer.cs">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Department\FrmDepartmentEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Department\FrmDepartmentEdit.Designer.cs">
+      <DependentUpon>FrmDepartmentEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Population\FrmPopulationAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,16 +93,16 @@
     <Compile Include="Population\FrmPopulation.Designer.cs">
       <DependentUpon>FrmPopulation.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FrmDepartmentAdd.cs">
+    <Compile Include="Department\FrmDepartmentAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FrmDepartmentAdd.Designer.cs">
+    <Compile Include="Department\FrmDepartmentAdd.Designer.cs">
       <DependentUpon>FrmDepartmentAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FrmDepartmentOverview.cs">
+    <Compile Include="Department\FrmDepartmentOverview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FrmDepartmentOverview.Designer.cs">
+    <Compile Include="Department\FrmDepartmentOverview.Designer.cs">
       <DependentUpon>FrmDepartmentOverview.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,16 +113,19 @@
     <EmbeddedResource Include="Control\DepartmentGrid.resx">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Department\FrmDepartmentEdit.resx">
+      <DependentUpon>FrmDepartmentEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Population\FrmPopulation.resx">
       <DependentUpon>FrmPopulation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Population\FrmPopulationAdd.resx">
       <DependentUpon>FrmPopulationAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FrmDepartmentAdd.resx">
+    <EmbeddedResource Include="Department\FrmDepartmentAdd.resx">
       <DependentUpon>FrmDepartmentAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FrmDepartmentOverview.resx">
+    <EmbeddedResource Include="Department\FrmDepartmentOverview.resx">
       <DependentUpon>FrmDepartmentOverview.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
