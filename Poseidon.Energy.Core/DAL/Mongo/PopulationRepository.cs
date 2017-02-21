@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Poseidon.Energy.Core.DAL.Mongo
 {
@@ -18,12 +17,12 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     internal class PopulationRepository : AbsctractDALMongo<Population>, IPopulationRepository
     {
         #region Field
-       
+
         #endregion //Field
 
         #region Constructor
         /// <summary>
-        /// 部门数据访问类
+        /// 人数统计数据访问类
         /// </summary>
         public PopulationRepository()
         {
@@ -67,5 +66,17 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             return doc;
         }
         #endregion //Function
+
+        #region Method
+        /// <summary>
+        /// 添加人数统计
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        public override void Create(Population entity)
+        {
+            entity.Status = 0;
+            base.Create(entity);
+        }
+        #endregion //Method
     }
 }
