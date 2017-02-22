@@ -29,11 +29,12 @@ namespace Poseidon.Energy.ClientDx
 
         #region Function
         /// <summary>
-        /// 初始化控件
+        /// 初始化窗体
         /// </summary>
-        protected override void InitControls()
+        protected override void InitForm()
         {
             LoadDepartment();
+            base.InitForm();
         }
 
         public void LoadGroups()
@@ -71,6 +72,21 @@ namespace Poseidon.Energy.ClientDx
         {
             ChildFormManage.ShowDialogForm(typeof(FrmDepartmentAdd));
 
+            LoadDepartment();
+        }
+
+        /// <summary>
+        /// 编辑部门
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            var select = this.depGrid.GetCurrentSelect();
+            if (select == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmDepartmentEdit), new object[] { select.Id });
             LoadDepartment();
         }
         #endregion //Event

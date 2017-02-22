@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.luParentId = new DevExpress.XtraEditors.TreeListLookUpEdit();
+            this.tluParentId = new DevExpress.XtraEditors.TreeListLookUpEdit();
             this.bsDepartment = new System.Windows.Forms.BindingSource(this.components);
             this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
@@ -44,6 +44,10 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.colShortName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colRemark = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colStatus = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -52,7 +56,7 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.luParentId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tluParentId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDepartment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
@@ -101,7 +105,7 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.luParentId);
+            this.layoutControl1.Controls.Add(this.tluParentId);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.spFoundYear);
             this.layoutControl1.Controls.Add(this.txtShortName);
@@ -114,20 +118,21 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // luParentId
+            // tluParentId
             // 
-            this.luParentId.Location = new System.Drawing.Point(63, 84);
-            this.luParentId.Name = "luParentId";
-            this.luParentId.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.luParentId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.tluParentId.Location = new System.Drawing.Point(63, 84);
+            this.tluParentId.Name = "tluParentId";
+            this.tluParentId.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.tluParentId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luParentId.Properties.DataSource = this.bsDepartment;
-            this.luParentId.Properties.DisplayMember = "Name";
-            this.luParentId.Properties.TreeList = this.treeListLookUpEdit1TreeList;
-            this.luParentId.Properties.ValueMember = "Id";
-            this.luParentId.Size = new System.Drawing.Size(315, 20);
-            this.luParentId.StyleController = this.layoutControl1;
-            this.luParentId.TabIndex = 3;
+            this.tluParentId.Properties.DataSource = this.bsDepartment;
+            this.tluParentId.Properties.DisplayMember = "Name";
+            this.tluParentId.Properties.NullText = "请选择部门";
+            this.tluParentId.Properties.TreeList = this.treeListLookUpEdit1TreeList;
+            this.tluParentId.Properties.ValueMember = "Id";
+            this.tluParentId.Size = new System.Drawing.Size(315, 20);
+            this.tluParentId.StyleController = this.layoutControl1;
+            this.tluParentId.TabIndex = 3;
             // 
             // bsDepartment
             // 
@@ -135,6 +140,11 @@
             // 
             // treeListLookUpEdit1TreeList
             // 
+            this.treeListLookUpEdit1TreeList.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.colName,
+            this.colShortName,
+            this.colRemark,
+            this.colStatus});
             this.treeListLookUpEdit1TreeList.DataSource = this.bsDepartment;
             this.treeListLookUpEdit1TreeList.KeyFieldName = "Id";
             this.treeListLookUpEdit1TreeList.Location = new System.Drawing.Point(0, 0);
@@ -249,12 +259,43 @@
             // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.luParentId;
+            this.layoutControlItem5.Control = this.tluParentId;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(370, 24);
             this.layoutControlItem5.Text = "上级部门";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // colShortName
+            // 
+            this.colShortName.Caption = "简称";
+            this.colShortName.FieldName = "ShortName";
+            this.colShortName.Name = "colShortName";
+            this.colShortName.Visible = true;
+            this.colShortName.VisibleIndex = 0;
+            this.colShortName.Width = 64;
+            // 
+            // colName
+            // 
+            this.colName.Caption = "名称";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Width = 64;
+            // 
+            // colRemark
+            // 
+            this.colRemark.Caption = "备注";
+            this.colRemark.FieldName = "Remark";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.Visible = true;
+            this.colRemark.VisibleIndex = 1;
+            this.colRemark.Width = 64;
+            // 
+            // colStatus
+            // 
+            this.colStatus.FieldName = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.Width = 64;
             // 
             // FrmDepartmentAdd
             // 
@@ -262,7 +303,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 332);
             this.Name = "FrmDepartmentAdd";
-            this.Text = "部门添加";
+            this.Text = "添加部门";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
@@ -271,7 +312,7 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.luParentId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tluParentId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDepartment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
@@ -292,7 +333,7 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.TreeListLookUpEdit luParentId;
+        private DevExpress.XtraEditors.TreeListLookUpEdit tluParentId;
         private System.Windows.Forms.BindingSource bsDepartment;
         private DevExpress.XtraTreeList.TreeList treeListLookUpEdit1TreeList;
         private DevExpress.XtraEditors.MemoEdit txtRemark;
@@ -305,5 +346,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colName;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colShortName;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colRemark;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colStatus;
     }
 }

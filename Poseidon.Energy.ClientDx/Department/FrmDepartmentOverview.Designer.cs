@@ -30,11 +30,12 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.groupsTree1 = new Poseidon.Winform.Core.GroupsTree();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.depGrid = new Poseidon.Energy.ClientDx.DepartmentGrid();
-            this.groupsTree1 = new Poseidon.Winform.Core.GroupsTree();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -71,8 +72,20 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "分组";
             // 
+            // groupsTree1
+            // 
+            this.groupsTree1.DataSource = null;
+            this.groupsTree1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupsTree1.Location = new System.Drawing.Point(2, 21);
+            this.groupsTree1.Name = "groupsTree1";
+            this.groupsTree1.ShowCode = false;
+            this.groupsTree1.ShowRemark = false;
+            this.groupsTree1.Size = new System.Drawing.Size(190, 171);
+            this.groupsTree1.TabIndex = 0;
+            // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.btnEdit);
             this.groupControl2.Controls.Add(this.btnAdd);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(203, 3);
@@ -111,16 +124,14 @@
             this.depGrid.Size = new System.Drawing.Size(574, 254);
             this.depGrid.TabIndex = 0;
             // 
-            // groupsTree1
+            // btnEdit
             // 
-            this.groupsTree1.DataSource = null;
-            this.groupsTree1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupsTree1.Location = new System.Drawing.Point(2, 21);
-            this.groupsTree1.Name = "groupsTree1";
-            this.groupsTree1.ShowCode = false;
-            this.groupsTree1.ShowRemark = false;
-            this.groupsTree1.Size = new System.Drawing.Size(190, 171);
-            this.groupsTree1.TabIndex = 0;
+            this.btnEdit.Location = new System.Drawing.Point(155, 54);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "编辑部门";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // FrmDepartmentOverview
             // 
@@ -151,5 +162,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DepartmentGrid depGrid;
         private Winform.Core.GroupsTree groupsTree1;
+        private DevExpress.XtraEditors.SimpleButton btnEdit;
     }
 }

@@ -29,6 +29,14 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Constructor
 
         #region Function
+        protected override void InitForm()
+        {
+            var departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
+            this.bsDepartment.DataSource = departments;
+
+            base.InitForm();
+        }
+
         /// <summary>
         /// 设置实体
         /// </summary>
@@ -39,6 +47,11 @@ namespace Poseidon.Energy.ClientDx
             entity.ShortName = this.txtShortName.Text;
             entity.FoundYear = Convert.ToInt32(this.spFoundYear.Value);
             entity.Remark = this.txtRemark.Text;
+
+            if (this.tluParentId.EditValue != null)
+                entity.ParentId = this.tluParentId.EditValue.ToString();
+            else
+                entity.ParentId = null;
         }
 
         /// <summary>
