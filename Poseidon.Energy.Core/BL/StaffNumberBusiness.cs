@@ -46,7 +46,10 @@ namespace Poseidon.Energy.Core.BL
             {
                 if (item.Establishment + item.PersonnelAgency + item.PostDoctor + item.InlandShort + item.LaborDispatch +
                     item.ForeignShort + item.ForeignLong + item.Undergraduate + item.Master + item.ProfessionalMaster + item.Doctor + item.AbroadStudent == 0)
-                    continue;
+                {
+                    if (item.Id != null)
+                        this.baseDal.Delete(item);
+                }
                 else
                     this.baseDal.Upsert(item);
             }

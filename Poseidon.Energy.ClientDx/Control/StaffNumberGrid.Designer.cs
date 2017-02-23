@@ -84,6 +84,7 @@
             this.dgvEntity.OptionsCustomization.AllowFilter = false;
             this.dgvEntity.OptionsCustomization.AllowGroup = false;
             this.dgvEntity.OptionsFilter.AllowFilterEditor = false;
+            this.dgvEntity.OptionsMenu.EnableGroupPanelMenu = false;
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowFooter = true;
@@ -112,6 +113,8 @@
             this.colPersonnelAgency.Caption = "人事代理";
             this.colPersonnelAgency.FieldName = "PersonnelAgency";
             this.colPersonnelAgency.Name = "colPersonnelAgency";
+            this.colPersonnelAgency.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PersonnelAgency", "合计={0:0.##}")});
             this.colPersonnelAgency.Visible = true;
             this.colPersonnelAgency.VisibleIndex = 2;
             // 
@@ -198,11 +201,13 @@
             // 
             this.colStatus.FieldName = "Status";
             this.colStatus.Name = "colStatus";
+            this.colStatus.OptionsColumn.AllowEdit = false;
             // 
             // colId
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
+            this.colId.OptionsColumn.AllowEdit = false;
             // 
             // colTotal
             // 
@@ -210,6 +215,8 @@
             this.colTotal.FieldName = "colTotal";
             this.colTotal.Name = "colTotal";
             this.colTotal.OptionsColumn.AllowEdit = false;
+            this.colTotal.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colTotal", "合计={0:0.##}")});
             this.colTotal.UnboundExpression = "[Undergraduate] + [PostDoctor] + [Doctor] + [InlandShort] + [LaborDispatch] + [Ab" +
     "roadStudent] + [PersonnelAgency] + [Master] + [ForeignShort] + [ForeignLong] + [" +
     "Establishment] + [ProfessionalMaster]";

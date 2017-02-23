@@ -11,6 +11,8 @@ using System.Windows.Forms;
 namespace Poseidon.Energy.ClientDx
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Core.BL;
+    using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
@@ -33,13 +35,18 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         protected override void InitForm()
         {
+            LoadGroups();
             LoadDepartment();
             base.InitForm();
         }
 
+        /// <summary>
+        /// 载入分组
+        /// </summary>
         public void LoadGroups()
-        {
-
+        {            
+            var groups = BusinessFactory<GroupBusiness>.Instance.FindByModelType(Core.Utility.ModelTypeCode.Department).ToList() ;
+            this.gtDepartment.DataSource = groups;
         }
 
         /// <summary>

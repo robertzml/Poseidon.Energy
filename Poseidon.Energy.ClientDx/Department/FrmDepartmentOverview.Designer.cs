@@ -30,12 +30,12 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.groupsTree1 = new Poseidon.Winform.Core.GroupsTree();
+            this.gtDepartment = new Poseidon.Winform.Core.GroupsTree();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.depGrid = new Poseidon.Energy.ClientDx.DepartmentGrid();
-            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -64,7 +64,7 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.groupsTree1);
+            this.groupControl1.Controls.Add(this.gtDepartment);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
@@ -72,16 +72,16 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "分组";
             // 
-            // groupsTree1
+            // gtDepartment
             // 
-            this.groupsTree1.DataSource = null;
-            this.groupsTree1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupsTree1.Location = new System.Drawing.Point(2, 21);
-            this.groupsTree1.Name = "groupsTree1";
-            this.groupsTree1.ShowCode = false;
-            this.groupsTree1.ShowRemark = false;
-            this.groupsTree1.Size = new System.Drawing.Size(190, 171);
-            this.groupsTree1.TabIndex = 0;
+            this.gtDepartment.DataSource = null;
+            this.gtDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gtDepartment.Location = new System.Drawing.Point(2, 21);
+            this.gtDepartment.Name = "gtDepartment";
+            this.gtDepartment.ShowCode = false;
+            this.gtDepartment.ShowRemark = false;
+            this.gtDepartment.Size = new System.Drawing.Size(190, 171);
+            this.gtDepartment.TabIndex = 0;
             // 
             // groupControl2
             // 
@@ -93,6 +93,15 @@
             this.groupControl2.Size = new System.Drawing.Size(578, 194);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "操作";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(155, 54);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "编辑部门";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -117,21 +126,13 @@
             // 
             this.depGrid.DataSource = null;
             this.depGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.depGrid.Editable = false;
             this.depGrid.Location = new System.Drawing.Point(2, 21);
             this.depGrid.Name = "depGrid";
             this.depGrid.ShowFooter = false;
             this.depGrid.ShowLineNumber = true;
             this.depGrid.Size = new System.Drawing.Size(574, 254);
             this.depGrid.TabIndex = 0;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(155, 54);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "编辑部门";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // FrmDepartmentOverview
             // 
@@ -161,7 +162,7 @@
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DepartmentGrid depGrid;
-        private Winform.Core.GroupsTree groupsTree1;
+        private Winform.Core.GroupsTree gtDepartment;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
     }
 }

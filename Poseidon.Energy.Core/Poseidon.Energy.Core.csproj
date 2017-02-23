@@ -80,6 +80,7 @@
     <Compile Include="IDAL\IPopulationRepository.cs" />
     <Compile Include="IDAL\IStaffNumberRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\ModelTypeCode.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

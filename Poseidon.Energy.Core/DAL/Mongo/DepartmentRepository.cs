@@ -21,7 +21,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// <summary>
         /// 模型类型
         /// </summary>
-        private readonly string modelType = "Energy.Department";
+        private readonly string modelType = Utility.ModelTypeCode.Department;
         #endregion //Field
 
         #region Constructor
