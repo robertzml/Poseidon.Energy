@@ -44,6 +44,7 @@
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -76,6 +77,7 @@
             this.colDoctor,
             this.colAbroadStudent,
             this.colRemark,
+            this.colTotal,
             this.colStatus});
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
@@ -85,12 +87,14 @@
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowFooter = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
+            this.dgvEntity.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.dgvEntity_CustomColumnDisplayText);
             // 
             // colDepartmentId
             // 
             this.colDepartmentId.Caption = "部门名称";
             this.colDepartmentId.FieldName = "DepartmentId";
             this.colDepartmentId.Name = "colDepartmentId";
+            this.colDepartmentId.OptionsColumn.AllowEdit = false;
             this.colDepartmentId.Visible = true;
             this.colDepartmentId.VisibleIndex = 0;
             // 
@@ -199,6 +203,19 @@
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             // 
+            // colTotal
+            // 
+            this.colTotal.Caption = "合计";
+            this.colTotal.FieldName = "colTotal";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.OptionsColumn.AllowEdit = false;
+            this.colTotal.UnboundExpression = "[Undergraduate] + [PostDoctor] + [Doctor] + [InlandShort] + [LaborDispatch] + [Ab" +
+    "roadStudent] + [PersonnelAgency] + [Master] + [ForeignShort] + [ForeignLong] + [" +
+    "Establishment] + [ProfessionalMaster]";
+            this.colTotal.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.colTotal.Visible = true;
+            this.colTotal.VisibleIndex = 14;
+            // 
             // StaffNumberGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -231,5 +248,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colAbroadStudent;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotal;
     }
 }

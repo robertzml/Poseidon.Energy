@@ -35,6 +35,22 @@ namespace Poseidon.Energy.Core.BL
         {
             return this.baseDal.FindListByField("populationId", populationId);
         }
+
+        /// <summary>
+        /// 更新人数记录
+        /// </summary>
+        /// <param name="data">人数记录</param>
+        public void Update(List<StaffNumber> data)
+        {
+            foreach (var item in data)
+            {
+                if (item.Establishment + item.PersonnelAgency + item.PostDoctor + item.InlandShort + item.LaborDispatch +
+                    item.ForeignShort + item.ForeignLong + item.Undergraduate + item.Master + item.ProfessionalMaster + item.Doctor + item.AbroadStudent == 0)
+                    continue;
+                else
+                    this.baseDal.Upsert(item);
+            }
+        }
         #endregion //Method
     }
 }

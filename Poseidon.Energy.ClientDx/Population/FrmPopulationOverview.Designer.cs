@@ -32,7 +32,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.btnAddNumber = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEditNumber = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.luBelongTime = new DevExpress.XtraEditors.LookUpEdit();
             this.bsPopulation = new System.Windows.Forms.BindingSource(this.components);
@@ -87,7 +87,7 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.btnAddNumber);
+            this.layoutControl1.Controls.Add(this.btnEditNumber);
             this.layoutControl1.Controls.Add(this.btnAdd);
             this.layoutControl1.Controls.Add(this.luBelongTime);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -98,15 +98,15 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // btnAddNumber
+            // btnEditNumber
             // 
-            this.btnAddNumber.Location = new System.Drawing.Point(409, 74);
-            this.btnAddNumber.Name = "btnAddNumber";
-            this.btnAddNumber.Size = new System.Drawing.Size(397, 22);
-            this.btnAddNumber.StyleController = this.layoutControl1;
-            this.btnAddNumber.TabIndex = 5;
-            this.btnAddNumber.Text = "添加记录";
-            this.btnAddNumber.Click += new System.EventHandler(this.btnAddNumber_Click);
+            this.btnEditNumber.Location = new System.Drawing.Point(409, 74);
+            this.btnEditNumber.Name = "btnEditNumber";
+            this.btnEditNumber.Size = new System.Drawing.Size(397, 22);
+            this.btnEditNumber.StyleController = this.layoutControl1;
+            this.btnEditNumber.TabIndex = 5;
+            this.btnEditNumber.Text = "编辑记录";
+            this.btnEditNumber.Click += new System.EventHandler(this.btnEditNumber_Click);
             // 
             // btnAdd
             // 
@@ -125,11 +125,12 @@
             this.luBelongTime.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.luBelongTime.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Year", "年份", 48, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Year", "年份", 48, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Near),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("BelongTime", "归属时间", 78, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Remark", "备注", 51, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
             this.luBelongTime.Properties.DataSource = this.bsPopulation;
             this.luBelongTime.Properties.DisplayMember = "BelongTime";
+            this.luBelongTime.Properties.NullText = "请选择";
             this.luBelongTime.Properties.ValueMember = "Id";
             this.luBelongTime.Size = new System.Drawing.Size(724, 20);
             this.luBelongTime.StyleController = this.layoutControl1;
@@ -183,7 +184,7 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.btnAddNumber;
+            this.layoutControlItem3.Control = this.btnEditNumber;
             this.layoutControlItem3.Location = new System.Drawing.Point(402, 67);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(401, 34);
@@ -248,7 +249,7 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
-        private DevExpress.XtraEditors.SimpleButton btnAddNumber;
+        private DevExpress.XtraEditors.SimpleButton btnEditNumber;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.GroupControl groupControl2;

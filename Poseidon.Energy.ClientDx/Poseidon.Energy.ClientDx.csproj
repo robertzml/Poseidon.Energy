@@ -81,11 +81,11 @@
     <Compile Include="Department\FrmDepartmentEdit.Designer.cs">
       <DependentUpon>FrmDepartmentEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Population\FrmStaffNumberAdd.cs">
+    <Compile Include="Population\FrmStaffNumberEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Population\FrmStaffNumberAdd.Designer.cs">
-      <DependentUpon>FrmStaffNumberAdd.cs</DependentUpon>
+    <Compile Include="Population\FrmStaffNumberEdit.Designer.cs">
+      <DependentUpon>FrmStaffNumberEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Population\FrmPopulationAdd.cs">
       <SubType>Form</SubType>
@@ -120,8 +120,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Population\FrmStaffNumberAdd.resx">
-      <DependentUpon>FrmStaffNumberAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Population\FrmStaffNumberEdit.resx">
+      <DependentUpon>FrmStaffNumberEdit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Department.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Population.datasource" />

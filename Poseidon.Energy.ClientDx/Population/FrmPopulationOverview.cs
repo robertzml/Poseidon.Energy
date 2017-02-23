@@ -30,10 +30,18 @@ namespace Poseidon.Energy.ClientDx
         #region Function
         protected override void InitForm()
         {
-            var data = BusinessFactory<PopulationBusiness>.Instance.FindAll().ToList();
-            this.bsPopulation.DataSource = data;
+            LoadPopulations();
 
             base.InitForm();
+        }
+
+        /// <summary>
+        /// 载入人口统计
+        /// </summary>
+        private void LoadPopulations()
+        {
+            var data = BusinessFactory<PopulationBusiness>.Instance.FindAll().ToList();
+            this.bsPopulation.DataSource = data;
         }
 
         private void LoadStaffNumber(string populationId)
@@ -61,22 +69,21 @@ namespace Poseidon.Energy.ClientDx
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ChildFormManage.ShowDialogForm(typeof(FrmPopulationAdd));
+            LoadPopulations();
         }
 
         /// <summary>
-        /// 添加记录
+        /// 编辑记录
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnAddNumber_Click(object sender, EventArgs e)
+        private void btnEditNumber_Click(object sender, EventArgs e)
         {
             if (this.luBelongTime.EditValue == null)
                 return;
 
-
+            ChildFormManage.ShowDialogForm(typeof(FrmStaffNumberEdit), new object[] { this.luBelongTime.EditValue.ToString() });
         }
         #endregion //Event
-
-
     }
 }
