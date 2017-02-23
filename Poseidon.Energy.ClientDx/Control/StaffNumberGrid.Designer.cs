@@ -60,7 +60,6 @@
             // 
             // dgvEntity
             // 
-            this.dgvEntity.ActiveFilterEnabled = false;
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colDepartmentId,
@@ -82,6 +81,8 @@
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.Editable = false;
+            this.dgvEntity.OptionsCustomization.AllowFilter = false;
+            this.dgvEntity.OptionsCustomization.AllowGroup = false;
             this.dgvEntity.OptionsFilter.AllowFilterEditor = false;
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;

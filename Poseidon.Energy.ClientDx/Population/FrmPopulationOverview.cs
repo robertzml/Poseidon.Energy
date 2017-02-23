@@ -44,9 +44,14 @@ namespace Poseidon.Energy.ClientDx
             this.bsPopulation.DataSource = data;
         }
 
+        /// <summary>
+        /// 载入人数记录
+        /// </summary>
+        /// <param name="populationId">统计ID</param>
         private void LoadStaffNumber(string populationId)
         {
-
+            var data = BusinessFactory<StaffNumberBusiness>.Instance.FindByPopulationId(populationId).ToList(); ;
+            this.snGrid.DataSource = data;
         }
         #endregion //Function
 
@@ -58,7 +63,10 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void luBelongTime_EditValueChanged(object sender, EventArgs e)
         {
-
+            if (this.luBelongTime.EditValue == null)
+                this.snGrid.Clear();
+            else
+                LoadStaffNumber(this.luBelongTime.EditValue.ToString());
         }
 
         /// <summary>
