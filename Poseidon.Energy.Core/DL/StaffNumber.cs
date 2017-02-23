@@ -9,7 +9,7 @@ namespace Poseidon.Energy.Core.DL
     using Poseidon.Base.Framework;
 
     /// <summary>
-    /// 人数类
+    /// 人数记录类
     /// </summary>
     public class StaffNumber : BusinessEntity
     {

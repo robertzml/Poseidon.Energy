@@ -24,5 +24,17 @@ namespace Poseidon.Energy.Core.BL
             this.baseDal = RepositoryFactory<IStaffNumberRepository>.Instance;
         }
         #endregion //Constructor
+
+        #region Method
+        /// <summary>
+        /// 根据人数统计查找记录
+        /// </summary>
+        /// <param name="populationId">人数统计ID</param>
+        /// <returns></returns>
+        public IEnumerable<StaffNumber> FindByPopulationId(string populationId)
+        {
+            return this.baseDal.FindListByField("populationId", populationId);
+        }
+        #endregion //Method
     }
 }

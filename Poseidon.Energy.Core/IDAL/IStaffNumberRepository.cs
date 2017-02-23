@@ -9,7 +9,7 @@ namespace Poseidon.Energy.Core.IDAL
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 人数数据访问接口
+    /// 人数记录数据访问接口
     /// </summary>
     internal interface IStaffNumberRepository : IBaseDAL<StaffNumber>
     {

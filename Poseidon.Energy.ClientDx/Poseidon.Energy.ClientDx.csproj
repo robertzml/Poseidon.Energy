@@ -81,17 +81,23 @@
     <Compile Include="Department\FrmDepartmentEdit.Designer.cs">
       <DependentUpon>FrmDepartmentEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Population\FrmStaffNumberAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Population\FrmStaffNumberAdd.Designer.cs">
+      <DependentUpon>FrmStaffNumberAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Population\FrmPopulationAdd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Population\FrmPopulationAdd.Designer.cs">
       <DependentUpon>FrmPopulationAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Population\FrmPopulation.cs">
+    <Compile Include="Population\FrmPopulationOverview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Population\FrmPopulation.Designer.cs">
-      <DependentUpon>FrmPopulation.cs</DependentUpon>
+    <Compile Include="Population\FrmPopulationOverview.Designer.cs">
+      <DependentUpon>FrmPopulationOverview.cs</DependentUpon>
     </Compile>
     <Compile Include="Department\FrmDepartmentAdd.cs">
       <SubType>Form</SubType>
@@ -106,18 +112,32 @@
       <DependentUpon>FrmDepartmentOverview.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Control\StaffNumberGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\StaffNumberGrid.Designer.cs">
+      <DependentUpon>StaffNumberGrid.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Population\FrmStaffNumberAdd.resx">
+      <DependentUpon>FrmStaffNumberAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Department.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Population.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.StaffNumber.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Control\DepartmentGrid.resx">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\StaffNumberGrid.resx">
+      <DependentUpon>StaffNumberGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Department\FrmDepartmentEdit.resx">
       <DependentUpon>FrmDepartmentEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Population\FrmPopulation.resx">
-      <DependentUpon>FrmPopulation.cs</DependentUpon>
+    <EmbeddedResource Include="Population\FrmPopulationOverview.resx">
+      <DependentUpon>FrmPopulationOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Population\FrmPopulationAdd.resx">
       <DependentUpon>FrmPopulationAdd.cs</DependentUpon>

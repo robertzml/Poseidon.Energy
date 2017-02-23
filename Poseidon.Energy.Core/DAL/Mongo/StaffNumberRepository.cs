@@ -12,7 +12,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     using Poseidon.Energy.Core.IDAL;
 
     /// <summary>
-    /// 人数数据访问类
+    /// 人数记录数据访问类
     /// </summary>
     internal class StaffNumberRepository : AbsctractDALMongo<StaffNumber>, IStaffNumberRepository
     {
