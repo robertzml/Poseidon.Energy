@@ -56,10 +56,11 @@
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 483);
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 504);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl1
@@ -68,7 +69,8 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(194, 194);
+            this.tableLayoutPanel1.SetRowSpan(this.groupControl1, 2);
+            this.groupControl1.Size = new System.Drawing.Size(194, 316);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "分组";
             // 
@@ -80,8 +82,9 @@
             this.gtDepartment.Name = "gtDepartment";
             this.gtDepartment.ShowCode = false;
             this.gtDepartment.ShowRemark = false;
-            this.gtDepartment.Size = new System.Drawing.Size(190, 171);
+            this.gtDepartment.Size = new System.Drawing.Size(190, 293);
             this.gtDepartment.TabIndex = 0;
+            this.gtDepartment.GroupSelected += new System.Action<object, System.EventArgs>(this.gtDepartment_GroupSelected);
             // 
             // groupControl2
             // 
@@ -90,7 +93,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(203, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(578, 194);
+            this.groupControl2.Size = new System.Drawing.Size(678, 134);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "操作";
             // 
@@ -116,9 +119,10 @@
             // 
             this.groupControl3.Controls.Add(this.depGrid);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(203, 203);
+            this.groupControl3.Location = new System.Drawing.Point(203, 143);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(578, 277);
+            this.tableLayoutPanel1.SetRowSpan(this.groupControl3, 2);
+            this.groupControl3.Size = new System.Drawing.Size(678, 358);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "部门列表";
             // 
@@ -131,14 +135,14 @@
             this.depGrid.Name = "depGrid";
             this.depGrid.ShowFooter = false;
             this.depGrid.ShowLineNumber = true;
-            this.depGrid.Size = new System.Drawing.Size(574, 254);
+            this.depGrid.Size = new System.Drawing.Size(674, 335);
             this.depGrid.TabIndex = 0;
             // 
             // FrmDepartmentOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 483);
+            this.ClientSize = new System.Drawing.Size(884, 504);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmDepartmentOverview";
             this.Text = "部门总览";

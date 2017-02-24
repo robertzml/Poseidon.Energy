@@ -22,6 +22,13 @@ namespace Poseidon.Energy.ClientDx
     /// </summary>
     public partial class FrmDepartmentOverview : BaseMdiForm
     {
+        #region Field
+        /// <summary>
+        /// 关联部门列表
+        /// </summary>
+        private List<Department> bindDepartments;
+        #endregion //Field
+
         #region Constructor
         public FrmDepartmentOverview()
         {
@@ -43,19 +50,35 @@ namespace Poseidon.Energy.ClientDx
         /// <summary>
         /// 载入分组
         /// </summary>
-        public void LoadGroups()
-        {            
-            var groups = BusinessFactory<GroupBusiness>.Instance.FindByModelType(Core.Utility.ModelTypeCode.Department).ToList() ;
+        private void LoadGroups()
+        {
+            var groups = BusinessFactory<GroupBusiness>.Instance.FindByModelType(Core.Utility.ModelTypeCode.Department).ToList();
+
             this.gtDepartment.DataSource = groups;
         }
 
         /// <summary>
         /// 载入部门
         /// </summary>
-        protected void LoadDepartment()
+        private void LoadDepartment()
         {
-            var data = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
-            this.depGrid.DataSource = data;
+            this.bindDepartments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
+            this.depGrid.DataSource = this.bindDepartments;
+        }
+
+        /// <summary>
+        /// 筛选部门
+        /// </summary>
+        /// <param name="ids">相关ID</param>
+        private void FilterDepartment(List<string> ids)
+        {
+            if (ids.Count == 0)
+                this.depGrid.Clear();
+            else
+            {
+                var data = this.bindDepartments.Where(r => ids.Contains(r.Id)).ToList();
+                this.depGrid.DataSource = data;
+            }
         }
         #endregion //Function
 
@@ -95,6 +118,20 @@ namespace Poseidon.Energy.ClientDx
 
             ChildFormManage.ShowDialogForm(typeof(FrmDepartmentEdit), new object[] { select.Id });
             LoadDepartment();
+        }
+
+        /// <summary>
+        /// 选择分组
+        /// </summary>
+        /// <param name="arg1"></param>
+        /// <param name="arg2"></param>
+        private void gtDepartment_GroupSelected(object arg1, EventArgs arg2)
+        {
+            var select = this.gtDepartment.GetCurrentSelect();
+            if (select == null)
+                return;
+
+            FilterDepartment(select.Organizations);
         }
         #endregion //Event
     }
