@@ -50,6 +50,8 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             entity.ProfessionalMaster = doc["professionalMaster"].ToInt32();
             entity.Doctor = doc["doctor"].ToInt32();
             entity.AbroadStudent = doc["abroadStudent"].ToInt32();
+            entity.CreateTime = doc["createTime"].ToLocalTime();
+            entity.UpdateTime = doc["updateTime"].ToLocalTime();
             entity.Remark = doc["remark"].ToString();
             entity.Status = doc["status"].ToInt32();
 
@@ -79,6 +81,8 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 { "professionalMaster", entity.ProfessionalMaster },
                 { "doctor", entity.Doctor },
                 { "abroadStudent", entity.AbroadStudent },
+                { "createTime", entity.CreateTime },
+                { "updateTime", entity.UpdateTime },
                 { "remark", entity.Remark },
                 { "status", entity.Status }
             };
@@ -94,8 +98,21 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// <param name="entity">实体对象</param>
         public override void Create(StaffNumber entity)
         {
+            entity.CreateTime = DateTime.Now;
+            entity.UpdateTime = entity.CreateTime;
             entity.Status = 0;
             base.Create(entity);
+        }
+
+        /// <summary>
+        /// 编辑人数记录
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <returns></returns>
+        public override bool Update(StaffNumber entity)
+        {
+            entity.UpdateTime = DateTime.Now;
+            return base.Update(entity);
         }
         #endregion //Method
     }

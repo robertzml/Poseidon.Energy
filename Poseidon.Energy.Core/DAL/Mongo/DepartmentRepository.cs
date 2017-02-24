@@ -11,7 +11,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     using Poseidon.Data;
     using Poseidon.Energy.Core.DL;
     using Poseidon.Energy.Core.IDAL;
-    
+
     /// <summary>
     /// 部门数据访问类
     /// </summary>
@@ -95,3 +95,4 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         #endregion //Method
     }
 }
+

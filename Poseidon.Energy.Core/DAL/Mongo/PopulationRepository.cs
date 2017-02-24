@@ -42,6 +42,8 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             entity.Id = doc["_id"].ToString();
             entity.Year = doc["year"].ToInt32();
             entity.BelongTime = doc["belongTime"].ToString();
+            entity.CreateTime = doc["createTime"].ToLocalTime();
+            entity.UpdateTime = doc["updateTime"].ToLocalTime();
             entity.Remark = doc["remark"].ToString();
             entity.Status = doc["status"].ToInt32();
 
@@ -59,6 +61,8 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             {
                 { "year", entity.Year },
                 { "belongTime", entity.BelongTime },
+                { "createTime", entity.CreateTime },
+                { "updateTime", entity.UpdateTime },
                 { "remark", entity.Remark },
                 { "status", entity.Status }
             };
@@ -74,8 +78,21 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// <param name="entity">实体对象</param>
         public override void Create(Population entity)
         {
+            entity.CreateTime = DateTime.Now;
+            entity.UpdateTime = entity.CreateTime;
             entity.Status = 0;
             base.Create(entity);
+        }
+
+        /// <summary>
+        /// 编辑人数统计
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <returns></returns>
+        public override bool Update(Population entity)
+        {
+            entity.UpdateTime = DateTime.Now;
+            return base.Update(entity);
         }
         #endregion //Method
     }
