@@ -81,6 +81,18 @@
     <Compile Include="Department\FrmDepartmentEdit.Designer.cs">
       <DependentUpon>FrmDepartmentEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Index\FrmTargetAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Index\FrmTargetAdd.Designer.cs">
+      <DependentUpon>FrmTargetAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Index\FrmIndexOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Index\FrmIndexOverview.Designer.cs">
+      <DependentUpon>FrmIndexOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Population\FrmStaffNumberEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +132,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Index\FrmIndexOverview.resx">
+      <DependentUpon>FrmIndexOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Index\FrmTargetAdd.resx">
+      <DependentUpon>FrmTargetAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Population\FrmStaffNumberEdit.resx">
       <DependentUpon>FrmStaffNumberEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +173,7 @@
       <Name>Poseidon.Energy.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
