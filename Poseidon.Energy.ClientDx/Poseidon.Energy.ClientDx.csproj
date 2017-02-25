@@ -81,6 +81,18 @@
     <Compile Include="Department\FrmDepartmentEdit.Designer.cs">
       <DependentUpon>FrmDepartmentEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fund\FrmFundAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fund\FrmFundAdd.Designer.cs">
+      <DependentUpon>FrmFundAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fund\FrmFundOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fund\FrmFundOverview.Designer.cs">
+      <DependentUpon>FrmFundOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Index\FrmTargetAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +144,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Fund\FrmFundAdd.resx">
+      <DependentUpon>FrmFundAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fund\FrmFundOverview.resx">
+      <DependentUpon>FrmFundOverview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Index\FrmIndexOverview.resx">
       <DependentUpon>FrmIndexOverview.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +160,7 @@
       <DependentUpon>FrmStaffNumberEdit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Department.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Fund.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Population.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.StaffNumber.datasource" />
     <None Include="Properties\licenses.licx" />
