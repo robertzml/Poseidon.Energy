@@ -12,7 +12,7 @@ namespace Poseidon.Energy.Core.DL
     /// <summary>
     /// 部门用能指标类
     /// </summary>
-    public class DepartmentIndex : BusinessEntity
+    public class DepartmentTarget : BusinessEntity
     {
         #region Proprety
         /// <summary>
@@ -27,7 +27,7 @@ namespace Poseidon.Energy.Core.DL
         [Display(Name = "部门ID")]
         public string DepartmentId { get; set; }
 
-        public List<StaffIndex> StaffIndex { get; set; }
+        public List<StaffTarget> StaffIndex { get; set; }
 
         public List<Allowance> Allowance { get; set; }
         #endregion //Property
@@ -36,7 +36,7 @@ namespace Poseidon.Energy.Core.DL
     /// <summary>
     /// 人数指标
     /// </summary>
-    public class StaffIndex
+    public class StaffTarget
     {
 
     }

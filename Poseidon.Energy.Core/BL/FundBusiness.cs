@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Poseidon.Energy.Core.BL
 {
@@ -11,17 +10,17 @@ namespace Poseidon.Energy.Core.BL
     using Poseidon.Energy.Core.IDAL;
 
     /// <summary>
-    /// 人数统计业务类
+    /// 经费统计业务类
     /// </summary>
-    public class PopulationBusiness : AbsctractBusiness<Population>
+    public class FundBusiness : AbsctractBusiness<Fund>
     {
         #region Constructor
         /// <summary>
         /// 人数统计业务类
         /// </summary>
-        public PopulationBusiness()
+        public FundBusiness()
         {
-            this.baseDal = RepositoryFactory<IPopulationRepository>.Instance;
+            this.baseDal = RepositoryFactory<IFundRepository>.Instance;
         }
         #endregion //Constructor
     }
