@@ -11,7 +11,7 @@ namespace Poseidon.Energy.Core.IDAL
     /// <summary>
     /// 人数记录数据访问接口
     /// </summary>
-    internal interface IStaffNumberRepository : IBaseDAL<StaffNumber>
+    internal interface IPopulationRecordRepository : IBaseDAL<PopulationRecord>
     {
     }
 }

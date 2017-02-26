@@ -13,15 +13,15 @@ namespace Poseidon.Energy.Core.BL
     /// <summary>
     /// 人数记录业务类
     /// </summary>
-    public class StaffNumberBusiness : AbsctractBusiness<StaffNumber>
+    public class PopulationRecordBusiness : AbsctractBusiness<PopulationRecord>
     {
         #region Constructor
         /// <summary>
         /// 人数记录业务类
         /// </summary>
-        public StaffNumberBusiness()
+        public PopulationRecordBusiness()
         {
-            this.baseDal = RepositoryFactory<IStaffNumberRepository>.Instance;
+            this.baseDal = RepositoryFactory<IPopulationRecordRepository>.Instance;
         }
         #endregion //Constructor
 
@@ -31,7 +31,7 @@ namespace Poseidon.Energy.Core.BL
         /// </summary>
         /// <param name="populationId">人数统计ID</param>
         /// <returns></returns>
-        public IEnumerable<StaffNumber> FindByPopulationId(string populationId)
+        public IEnumerable<PopulationRecord> FindByPopulationId(string populationId)
         {
             return this.baseDal.FindListByField("populationId", populationId);
         }
@@ -40,7 +40,7 @@ namespace Poseidon.Energy.Core.BL
         /// 更新人数记录
         /// </summary>
         /// <param name="data">人数记录</param>
-        public void Update(List<StaffNumber> data)
+        public void Update(List<PopulationRecord> data)
         {
             foreach (var item in data)
             {
@@ -51,7 +51,12 @@ namespace Poseidon.Energy.Core.BL
                         this.baseDal.Delete(item);
                 }
                 else
-                    this.baseDal.Upsert(item);
+                {
+                    if (item.Id == null)
+                        this.baseDal.Create(item);
+                    else
+                        this.baseDal.Update(item);
+                }
             }
         }
         #endregion //Method

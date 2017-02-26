@@ -52,7 +52,10 @@ namespace Poseidon.Energy.Core.BL
                 }
                 else
                 {
-                    this.baseDal.Upsert(item);
+                    if (item.Id == null)
+                        this.baseDal.Create(item);
+                    else
+                        this.baseDal.Update(item);
                 }
             }
         }

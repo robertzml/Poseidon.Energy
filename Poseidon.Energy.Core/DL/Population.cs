@@ -9,7 +9,7 @@ namespace Poseidon.Energy.Core.DL
     using Poseidon.Base.Framework;
 
     /// <summary>
-    /// 人数统计汇总类
+    /// 人数统计类
     /// </summary>
     public class Population : BusinessEntity
     {

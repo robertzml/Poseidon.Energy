@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Energy.ClientDx
 {
-    partial class StaffNumberGrid
+    partial class PopulationRecordGrid
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -52,11 +52,11 @@
             // 
             // bsEntity
             // 
-            this.bsEntity.DataSource = typeof(Poseidon.Energy.Core.DL.StaffNumber);
+            this.bsEntity.DataSource = typeof(Poseidon.Energy.Core.DL.PopulationRecord);
             // 
             // dgcEntity
             // 
-            this.dgcEntity.Size = new System.Drawing.Size(710, 427);
+            this.dgcEntity.Size = new System.Drawing.Size(847, 378);
             // 
             // dgvEntity
             // 
@@ -83,7 +83,6 @@
             this.dgvEntity.OptionsBehavior.Editable = false;
             this.dgvEntity.OptionsCustomization.AllowFilter = false;
             this.dgvEntity.OptionsCustomization.AllowGroup = false;
-            this.dgvEntity.OptionsFilter.AllowFilterEditor = false;
             this.dgvEntity.OptionsMenu.EnableGroupPanelMenu = false;
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
@@ -93,10 +92,8 @@
             // 
             // colDepartmentId
             // 
-            this.colDepartmentId.Caption = "部门名称";
             this.colDepartmentId.FieldName = "DepartmentId";
             this.colDepartmentId.Name = "colDepartmentId";
-            this.colDepartmentId.OptionsColumn.AllowEdit = false;
             this.colDepartmentId.Visible = true;
             this.colDepartmentId.VisibleIndex = 0;
             // 
@@ -105,6 +102,8 @@
             this.colEstablishment.Caption = "在职在编";
             this.colEstablishment.FieldName = "Establishment";
             this.colEstablishment.Name = "colEstablishment";
+            this.colEstablishment.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Establishment", "合计={0:0.##}")});
             this.colEstablishment.Visible = true;
             this.colEstablishment.VisibleIndex = 1;
             // 
@@ -136,6 +135,7 @@
             // 
             // colLaborDispatch
             // 
+            this.colLaborDispatch.Caption = "劳务(人才)派遣";
             this.colLaborDispatch.FieldName = "LaborDispatch";
             this.colLaborDispatch.Name = "colLaborDispatch";
             this.colLaborDispatch.Visible = true;
@@ -143,6 +143,7 @@
             // 
             // colForeignShort
             // 
+            this.colForeignShort.Caption = "外籍短期聘用";
             this.colForeignShort.FieldName = "ForeignShort";
             this.colForeignShort.Name = "colForeignShort";
             this.colForeignShort.Visible = true;
@@ -150,6 +151,7 @@
             // 
             // colForeignLong
             // 
+            this.colForeignLong.Caption = "外籍长期聘用";
             this.colForeignLong.FieldName = "ForeignLong";
             this.colForeignLong.Name = "colForeignLong";
             this.colForeignLong.Visible = true;
@@ -157,6 +159,7 @@
             // 
             // colUndergraduate
             // 
+            this.colUndergraduate.Caption = "本科生";
             this.colUndergraduate.FieldName = "Undergraduate";
             this.colUndergraduate.Name = "colUndergraduate";
             this.colUndergraduate.Visible = true;
@@ -164,6 +167,7 @@
             // 
             // colMaster
             // 
+            this.colMaster.Caption = "硕士生";
             this.colMaster.FieldName = "Master";
             this.colMaster.Name = "colMaster";
             this.colMaster.Visible = true;
@@ -171,6 +175,7 @@
             // 
             // colProfessionalMaster
             // 
+            this.colProfessionalMaster.Caption = "专业硕士生";
             this.colProfessionalMaster.FieldName = "ProfessionalMaster";
             this.colProfessionalMaster.Name = "colProfessionalMaster";
             this.colProfessionalMaster.Visible = true;
@@ -178,6 +183,7 @@
             // 
             // colDoctor
             // 
+            this.colDoctor.Caption = "博士生";
             this.colDoctor.FieldName = "Doctor";
             this.colDoctor.Name = "colDoctor";
             this.colDoctor.Visible = true;
@@ -185,6 +191,7 @@
             // 
             // colAbroadStudent
             // 
+            this.colAbroadStudent.Caption = "留学生";
             this.colAbroadStudent.FieldName = "AbroadStudent";
             this.colAbroadStudent.Name = "colAbroadStudent";
             this.colAbroadStudent.Visible = true;
@@ -192,6 +199,7 @@
             // 
             // colRemark
             // 
+            this.colRemark.Caption = "备注";
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
@@ -224,13 +232,14 @@
             this.colTotal.Visible = true;
             this.colTotal.VisibleIndex = 14;
             // 
-            // StaffNumberGrid
+            // PopulationRecordGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "StaffNumberGrid";
+            this.Name = "PopulationRecordGrid";
             this.ShowFooter = true;
-            this.Size = new System.Drawing.Size(710, 427);
+            this.ShowLineNumber = true;
+            this.Size = new System.Drawing.Size(847, 378);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
@@ -239,8 +248,6 @@
         }
 
         #endregion
-
-        private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colDepartmentId;
         private DevExpress.XtraGrid.Columns.GridColumn colEstablishment;
         private DevExpress.XtraGrid.Columns.GridColumn colPersonnelAgency;
@@ -256,6 +263,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colAbroadStudent;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colTotal;
     }
 }

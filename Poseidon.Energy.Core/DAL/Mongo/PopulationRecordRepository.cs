@@ -14,15 +14,15 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     /// <summary>
     /// 人数记录数据访问类
     /// </summary>
-    internal class StaffNumberRepository : AbsctractDALMongo<StaffNumber>, IStaffNumberRepository
+    internal class PopulationRecordRepository : AbsctractDALMongo<PopulationRecord>, IPopulationRecordRepository
     {
         #region Constructor
         /// <summary>
-        /// 人数数据访问类
+        /// 人数记录数据访问类
         /// </summary>
-        public StaffNumberRepository()
+        public PopulationRecordRepository()
         {
-            this.collectionName = "energy_staffNumber";
+            this.collectionName = "energy_populationRecord";
         }
         #endregion //Constructor
 
@@ -32,9 +32,9 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="doc">Bson文档</param>
         /// <returns></returns>
-        protected override StaffNumber DocToEntity(BsonDocument doc)
+        protected override PopulationRecord DocToEntity(BsonDocument doc)
         {
-            StaffNumber entity = new StaffNumber();
+            PopulationRecord entity = new PopulationRecord();
             entity.Id = doc["_id"].ToString();
             entity.PopulationId = doc["populationId"].ToString();
             entity.DepartmentId = doc["departmentId"].ToString();
@@ -63,7 +63,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <returns></returns>
-        protected override BsonDocument EntityToDoc(StaffNumber entity)
+        protected override BsonDocument EntityToDoc(PopulationRecord entity)
         {
             BsonDocument doc = new BsonDocument
             {
@@ -96,7 +96,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// 添加人数记录
         /// </summary>
         /// <param name="entity">实体对象</param>
-        public override void Create(StaffNumber entity)
+        public override void Create(PopulationRecord entity)
         {
             entity.CreateTime = DateTime.Now;
             entity.UpdateTime = entity.CreateTime;
@@ -109,7 +109,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <returns></returns>
-        public override bool Update(StaffNumber entity)
+        public override bool Update(PopulationRecord entity)
         {
             entity.UpdateTime = DateTime.Now;
             return base.Update(entity);

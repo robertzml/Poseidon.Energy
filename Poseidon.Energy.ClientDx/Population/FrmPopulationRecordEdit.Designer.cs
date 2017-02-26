@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Energy.ClientDx
 {
-    partial class FrmStaffNumberEdit
+    partial class FrmPopulationRecordEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.snGrid = new Poseidon.Energy.ClientDx.StaffNumberGrid();
             this.txtBelongTime = new DevExpress.XtraEditors.TextEdit();
             this.txtYear = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.prGrid = new Poseidon.Energy.ClientDx.PopulationRecordGrid();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
@@ -69,13 +69,13 @@
             this.plFill.Appearance.BackColor = System.Drawing.Color.White;
             this.plFill.Appearance.Options.UseBackColor = true;
             this.plFill.Controls.Add(this.groupControl1);
-            this.plFill.Size = new System.Drawing.Size(1008, 502);
+            this.plFill.Size = new System.Drawing.Size(1008, 501);
             // 
             // plBottom
             // 
             this.plBottom.Appearance.BackColor = System.Drawing.Color.White;
             this.plBottom.Appearance.Options.UseBackColor = true;
-            this.plBottom.Location = new System.Drawing.Point(0, 502);
+            this.plBottom.Location = new System.Drawing.Point(0, 501);
             this.plBottom.Size = new System.Drawing.Size(1008, 60);
             // 
             // groupControl1
@@ -84,33 +84,22 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1008, 502);
+            this.groupControl1.Size = new System.Drawing.Size(1008, 501);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "人数记录数据";
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.snGrid);
+            this.layoutControl1.Controls.Add(this.prGrid);
             this.layoutControl1.Controls.Add(this.txtBelongTime);
             this.layoutControl1.Controls.Add(this.txtYear);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1004, 479);
+            this.layoutControl1.Size = new System.Drawing.Size(1004, 478);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // snGrid
-            // 
-            this.snGrid.DataSource = null;
-            this.snGrid.Editable = true;
-            this.snGrid.Location = new System.Drawing.Point(12, 79);
-            this.snGrid.Name = "snGrid";
-            this.snGrid.ShowFooter = true;
-            this.snGrid.ShowLineNumber = false;
-            this.snGrid.Size = new System.Drawing.Size(980, 388);
-            this.snGrid.TabIndex = 6;
             // 
             // txtBelongTime
             // 
@@ -143,7 +132,7 @@
             this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1004, 479);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1004, 478);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlGroup2
@@ -162,7 +151,7 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(479, 24);
-            this.layoutControlItem1.Text = "年份";
+            this.layoutControlItem1.Text = "年度";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem2
@@ -174,22 +163,33 @@
             this.layoutControlItem2.Text = "归属时间";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
             // 
+            // prGrid
+            // 
+            this.prGrid.DataSource = null;
+            this.prGrid.Editable = true;
+            this.prGrid.Location = new System.Drawing.Point(12, 79);
+            this.prGrid.Name = "prGrid";
+            this.prGrid.ShowFooter = true;
+            this.prGrid.ShowLineNumber = true;
+            this.prGrid.Size = new System.Drawing.Size(980, 387);
+            this.prGrid.TabIndex = 6;
+            // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.snGrid;
+            this.layoutControlItem3.Control = this.prGrid;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 67);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(984, 392);
+            this.layoutControlItem3.Size = new System.Drawing.Size(984, 391);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
-            // FrmStaffNumberEdit
+            // FrmPopulationRecordEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 562);
-            this.Name = "FrmStaffNumberEdit";
-            this.Text = "添加人数记录";
+            this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.Name = "FrmPopulationRecordEdit";
+            this.Text = "编辑人数记录";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
@@ -213,13 +213,13 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private StaffNumberGrid snGrid;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraEditors.TextEdit txtBelongTime;
         private DevExpress.XtraEditors.TextEdit txtYear;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private PopulationRecordGrid prGrid;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
     }
 }

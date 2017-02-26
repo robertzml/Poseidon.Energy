@@ -11,12 +11,12 @@ namespace Poseidon.Energy.Core.DL
     /// <summary>
     /// 人数记录类
     /// </summary>
-    public class StaffNumber : BusinessEntity
+    public class PopulationRecord : BusinessEntity
     {
         /// <summary>
-        /// 汇总ID
+        /// 人数统计ID
         /// </summary>
-        [Display(Name = "汇总ID")]
+        [Display(Name = "人数统计ID")]
         public string PopulationId { get; set; }
 
         /// <summary>

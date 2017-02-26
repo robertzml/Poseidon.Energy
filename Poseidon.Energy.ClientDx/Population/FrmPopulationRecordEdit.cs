@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Poseidon.Energy.ClientDx
@@ -15,9 +17,9 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Winform.Base;
 
     /// <summary>
-    /// 编辑人数记录
+    /// 编辑人数记录窗体
     /// </summary>
-    public partial class FrmStaffNumberEdit : BaseSingleForm
+    public partial class FrmPopulationRecordEdit : BaseSingleForm
     {
         #region Field
         /// <summary>
@@ -27,7 +29,7 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Field
 
         #region Constructor
-        public FrmStaffNumberEdit(string populationId)
+        public FrmPopulationRecordEdit(string populationId)
         {
             InitializeComponent();
 
@@ -50,8 +52,8 @@ namespace Poseidon.Energy.ClientDx
             this.txtYear.Text = this.currentEntity.Year.ToString();
             this.txtBelongTime.Text = this.currentEntity.BelongTime.ToString();
 
-            var data = LoadStaffNumbers();
-            this.snGrid.DataSource = data;
+            var data = LoadPopulationRecords();
+            this.prGrid.DataSource = data;
 
             base.InitForm();
         }
@@ -63,30 +65,30 @@ namespace Poseidon.Energy.ClientDx
         /// <remarks>
         /// 同时插入未统计部门
         /// </remarks>
-        private List<StaffNumber> LoadStaffNumbers()
+        private List<PopulationRecord> LoadPopulationRecords()
         {
-            var numbers = BusinessFactory<StaffNumberBusiness>.Instance.FindByPopulationId(currentEntity.Id);
+            var records = BusinessFactory<PopulationRecordBusiness>.Instance.FindByPopulationId(currentEntity.Id);
             var departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll();
 
-            List<StaffNumber> data = new List<StaffNumber>();
-            data.AddRange(numbers);
+            List<PopulationRecord> data = new List<PopulationRecord>();
+            data.AddRange(records);
 
             foreach (var item in departments)
             {
-                if (!numbers.Any(r => r.DepartmentId == item.Id))
+                if (!records.Any(r => r.DepartmentId == item.Id))
                 {
-                    StaffNumber sn = new StaffNumber();
-                    sn.PopulationId = this.currentEntity.Id;
-                    sn.DepartmentId = item.Id;
+                    PopulationRecord pr = new PopulationRecord();
+                    pr.PopulationId = this.currentEntity.Id;
+                    pr.DepartmentId = item.Id;
 
-                    data.Add(sn);
+                    data.Add(pr);
                 }
             }
 
             return data;
         }
 
-        private void SetEntity(List<StaffNumber> entity)
+        private void SetEntity(List<PopulationRecord> entity)
         {
             foreach (var item in entity)
             {
@@ -104,14 +106,14 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            this.snGrid.CloseEditor();
+            this.prGrid.CloseEditor();
 
-            var data = this.snGrid.DataSource;
+            var data = this.prGrid.DataSource;
             SetEntity(data);
 
             try
             {
-                BusinessFactory<StaffNumberBusiness>.Instance.Update(data);
+                BusinessFactory<PopulationRecordBusiness>.Instance.Update(data);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

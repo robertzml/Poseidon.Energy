@@ -87,6 +87,12 @@
     <Compile Include="Control\FundRecordGrid.Designer.cs">
       <DependentUpon>FundRecordGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Population\FrmPopulationRecordEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Population\FrmPopulationRecordEdit.Designer.cs">
+      <DependentUpon>FrmPopulationRecordEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fund\FrmFundRecordEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,11 +129,11 @@
     <Compile Include="Index\FrmIndexOverview.Designer.cs">
       <DependentUpon>FrmIndexOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Population\FrmStaffNumberEdit.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Control\PopulationRecordGrid.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Population\FrmStaffNumberEdit.Designer.cs">
-      <DependentUpon>FrmStaffNumberEdit.cs</DependentUpon>
+    <Compile Include="Control\PopulationRecordGrid.Designer.cs">
+      <DependentUpon>PopulationRecordGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Population\FrmPopulationAdd.cs">
       <SubType>Form</SubType>
@@ -154,16 +160,13 @@
       <DependentUpon>FrmDepartmentOverview.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Control\StaffNumberGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\StaffNumberGrid.Designer.cs">
-      <DependentUpon>StaffNumberGrid.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Control\FundRecordGrid.resx">
       <DependentUpon>FundRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\PopulationRecordGrid.resx">
+      <DependentUpon>PopulationRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fund\FrmFundAdd.resx">
       <DependentUpon>FrmFundAdd.cs</DependentUpon>
@@ -183,20 +186,18 @@
     <EmbeddedResource Include="Index\FrmTargetAdd.resx">
       <DependentUpon>FrmTargetAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Population\FrmStaffNumberEdit.resx">
-      <DependentUpon>FrmStaffNumberEdit.cs</DependentUpon>
+    <EmbeddedResource Include="Population\FrmPopulationRecordEdit.resx">
+      <DependentUpon>FrmPopulationRecordEdit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Department.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Fund.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.FundRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Population.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.PopulationRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.StaffNumber.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Control\DepartmentGrid.resx">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\StaffNumberGrid.resx">
-      <DependentUpon>StaffNumberGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Department\FrmDepartmentEdit.resx">
       <DependentUpon>FrmDepartmentEdit.cs</DependentUpon>

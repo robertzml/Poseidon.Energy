@@ -42,7 +42,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.snGrid = new Poseidon.Energy.ClientDx.StaffNumberGrid();
+            this.prGrid = new Poseidon.Energy.ClientDx.PopulationRecordGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -193,7 +193,7 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.snGrid);
+            this.groupControl2.Controls.Add(this.prGrid);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 143);
             this.groupControl2.Name = "groupControl2";
@@ -201,17 +201,17 @@
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "人数记录";
             // 
-            // snGrid
+            // prGrid
             // 
-            this.snGrid.DataSource = null;
-            this.snGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.snGrid.Editable = false;
-            this.snGrid.Location = new System.Drawing.Point(2, 21);
-            this.snGrid.Name = "snGrid";
-            this.snGrid.ShowFooter = true;
-            this.snGrid.ShowLineNumber = true;
-            this.snGrid.Size = new System.Drawing.Size(922, 374);
-            this.snGrid.TabIndex = 0;
+            this.prGrid.DataSource = null;
+            this.prGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.prGrid.Editable = false;
+            this.prGrid.Location = new System.Drawing.Point(2, 21);
+            this.prGrid.Name = "prGrid";
+            this.prGrid.ShowFooter = true;
+            this.prGrid.ShowLineNumber = true;
+            this.prGrid.Size = new System.Drawing.Size(922, 374);
+            this.prGrid.TabIndex = 0;
             // 
             // FrmPopulationOverview
             // 
@@ -253,7 +253,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private StaffNumberGrid snGrid;
         private System.Windows.Forms.BindingSource bsPopulation;
+        private PopulationRecordGrid prGrid;
     }
 }

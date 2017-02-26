@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Poseidon.Energy.ClientDx
@@ -16,10 +18,10 @@ namespace Poseidon.Energy.ClientDx
     /// <summary>
     /// 人数记录表格控件
     /// </summary>
-    public partial class StaffNumberGrid : WinEntityGrid<StaffNumber>
+    public partial class PopulationRecordGrid : WinEntityGrid<PopulationRecord>
     {
         #region Constructor
-        public StaffNumberGrid()
+        public PopulationRecordGrid()
         {
             InitializeComponent();
         }
@@ -39,7 +41,6 @@ namespace Poseidon.Energy.ClientDx
 
             if (e.Column.FieldName == "DepartmentId")
             {
-                //var sn = this.bsEntity[rowIndex] as StaffNumber;
                 var department = BusinessFactory<DepartmentBusiness>.Instance.FindById(e.Value.ToString());
                 e.DisplayText = department.Name;
             }

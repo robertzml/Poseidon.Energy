@@ -50,8 +50,8 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="populationId">统计ID</param>
         private void LoadStaffNumber(string populationId)
         {
-            var data = BusinessFactory<StaffNumberBusiness>.Instance.FindByPopulationId(populationId).ToList(); ;
-            this.snGrid.DataSource = data;
+            var data = BusinessFactory<PopulationRecordBusiness>.Instance.FindByPopulationId(populationId).ToList(); ;
+            this.prGrid.DataSource = data;
         }
         #endregion //Function
 
@@ -64,7 +64,7 @@ namespace Poseidon.Energy.ClientDx
         private void luBelongTime_EditValueChanged(object sender, EventArgs e)
         {
             if (this.luBelongTime.EditValue == null)
-                this.snGrid.Clear();
+                this.prGrid.Clear();
             else
                 LoadStaffNumber(this.luBelongTime.EditValue.ToString());
         }
@@ -90,7 +90,7 @@ namespace Poseidon.Energy.ClientDx
             if (this.luBelongTime.EditValue == null)
                 return;
 
-            ChildFormManage.ShowDialogForm(typeof(FrmStaffNumberEdit), new object[] { this.luBelongTime.EditValue.ToString() });
+            ChildFormManage.ShowDialogForm(typeof(FrmPopulationRecordEdit), new object[] { this.luBelongTime.EditValue.ToString() });
         }
         #endregion //Event
     }
