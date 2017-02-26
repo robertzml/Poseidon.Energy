@@ -81,6 +81,12 @@
     <Compile Include="Department\FrmDepartmentEdit.Designer.cs">
       <DependentUpon>FrmDepartmentEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fund\FrmFundEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fund\FrmFundEdit.Designer.cs">
+      <DependentUpon>FrmFundEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fund\FrmFundAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Fund\FrmFundAdd.resx">
       <DependentUpon>FrmFundAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fund\FrmFundEdit.resx">
+      <DependentUpon>FrmFundEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fund\FrmFundOverview.resx">
       <DependentUpon>FrmFundOverview.cs</DependentUpon>

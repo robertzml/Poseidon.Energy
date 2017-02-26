@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Poseidon.Energy.Core.DAL.Mongo
 {
@@ -14,17 +15,17 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     using Poseidon.Energy.Core.IDAL;
 
     /// <summary>
-    /// 经费统计数据访问类
+    /// 经费记录数据访问类
     /// </summary>
-    internal class FundRepository : AbsctractDALMongo<Fund>, IFundRepository
+    public class FundRecordRepository : AbsctractDALMongo<FundRecord>, IFundRecordRepository
     {
         #region Constructor
         /// <summary>
-        /// 经费统计数据访问类
+        /// 经费记录数据访问类
         /// </summary>
-        public FundRepository()
+        public FundRecordRepository()
         {
-            this.collectionName = "energy_fund";
+            this.collectionName = "energy_fundRecord";
         }
         #endregion //Constructor
 
@@ -34,11 +35,14 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="doc">Bson文档</param>
         /// <returns></returns>
-        protected override Fund DocToEntity(BsonDocument doc)
+        protected override FundRecord DocToEntity(BsonDocument doc)
         {
-            Fund entity = new Fund();
+            FundRecord entity = new FundRecord();
             entity.Id = doc["_id"].ToString();
-            entity.Year = doc["year"].ToInt32();
+            entity.FundId = doc["fundId"].ToString();
+            entity.DepartmentId = doc["departmentId"].ToString();
+            entity.HorizontalResearch = doc["horizontalResearch"].ToDecimal();
+            entity.VerticalResearch = doc["verticalResearch"].ToDecimal();
             entity.CreateTime = doc["createTime"].ToLocalTime();
             entity.UpdateTime = doc["updateTime"].ToLocalTime();
             entity.Remark = doc["remark"].ToString();
@@ -52,11 +56,14 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <returns></returns>
-        protected override BsonDocument EntityToDoc(Fund entity)
+        protected override BsonDocument EntityToDoc(FundRecord entity)
         {
             BsonDocument doc = new BsonDocument
             {
-                { "year", entity.Year },
+                { "fundId", entity.FundId },
+                { "departmentId", entity.DepartmentId },
+                { "horizontalResearch", entity.HorizontalResearch },
+                { "verticalResearch", entity.VerticalResearch },
                 { "createTime", entity.CreateTime },
                 { "updateTime", entity.UpdateTime },
                 { "remark", entity.Remark },
@@ -65,40 +72,15 @@ namespace Poseidon.Energy.Core.DAL.Mongo
 
             return doc;
         }
-
-        /// <summary>
-        /// 检查重复项
-        /// </summary>
-        /// <param name="entity">实体对象</param>
-        /// <returns></returns>
-        private bool CheckDuplicate(Fund entity)
-        {
-            var builder = Builders<BsonDocument>.Filter;
-            FilterDefinition<BsonDocument> filter;
-
-            if (entity.Id == null)
-                filter = builder.Eq("year", entity.Year);
-            else
-                filter = builder.Eq("year", entity.Year) & builder.Ne("_id", new ObjectId(entity.Id));
-
-            long count = Count(filter);
-            if (count > 0)
-                return false;
-            else
-                return true;
-        }
         #endregion //Function
 
         #region Method
         /// <summary>
-        /// 添加经费统计
+        /// 添加经费记录
         /// </summary>
         /// <param name="entity">实体对象</param>
-        public override void Create(Fund entity)
+        public override void Create(FundRecord entity)
         {
-            if (!CheckDuplicate(entity))
-                throw new PoseidonException("年度已存在");
-
             entity.CreateTime = DateTime.Now;
             entity.UpdateTime = entity.CreateTime;
             entity.Status = 0;
@@ -106,15 +88,12 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         }
 
         /// <summary>
-        /// 编辑经费统计
+        /// 编辑经费记录
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <returns></returns>
-        public override bool Update(Fund entity)
+        public override bool Update(FundRecord entity)
         {
-            if (!CheckDuplicate(entity))
-                throw new PoseidonException("年度已存在");
-
             entity.UpdateTime = DateTime.Now;
             return base.Update(entity);
         }
