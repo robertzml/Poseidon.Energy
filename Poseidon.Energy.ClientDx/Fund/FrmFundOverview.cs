@@ -51,6 +51,16 @@ namespace Poseidon.Energy.ClientDx
             var funds = BusinessFactory<FundBusiness>.Instance.FindAll().ToList();
             this.bsFund.DataSource = funds;
         }
+
+        /// <summary>
+        /// 载入经费记录
+        /// </summary>
+        /// <param name="fundId">统计ID</param>
+        private void LoadFundRecord(string fundId)
+        {
+            var records = BusinessFactory<FundRecordBusiness>.Instance.FindByFundId(fundId).ToList();
+            this.frGrid.DataSource = records;
+        }
         #endregion //Function
 
         #region Event
@@ -66,6 +76,8 @@ namespace Poseidon.Energy.ClientDx
             this.txtRemark.Text = currentFund.Remark;
             this.txtCreateTime.Text = currentFund.CreateTime.ToDateTimeString();
             this.txtUpdateTime.Text = currentFund.UpdateTime.ToDateTimeString();
+
+            LoadFundRecord(this.currentFund.Id);
         }
 
         /// <summary>
@@ -118,7 +130,19 @@ namespace Poseidon.Energy.ClientDx
                 }
             }
         }
-        #endregion //Event
 
+        /// <summary>
+        /// 编辑记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEditRecord_Click(object sender, EventArgs e)
+        {
+            if (this.currentFund == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmFundRecordEdit), new object[] { this.currentFund.Id });
+        }
+        #endregion //Event
     }
 }

@@ -24,5 +24,38 @@ namespace Poseidon.Energy.Core.BL
             this.baseDal = RepositoryFactory<IFundRecordRepository>.Instance;
         }
         #endregion //Constructor
+
+        #region Method
+        /// <summary>
+        /// 根据经费统计查找记录
+        /// </summary>
+        /// <param name="fundId">经费统计ID</param>
+        /// <returns></returns>
+        public IEnumerable<FundRecord> FindByFundId(string fundId)
+        {
+            return this.baseDal.FindListByField("fundId", fundId);
+        }
+
+        /// <summary>
+        /// 更新经费记录
+        /// </summary>
+        /// <param name="data">经费记录</param>
+        /// <returns></returns>
+        public void Update(List<FundRecord> data)
+        {
+            foreach (var item in data)
+            {
+                if (item.HorizontalResearch + item.VerticalResearch == 0)
+                {
+                    if (item.Id != null)
+                        this.baseDal.Delete(item);
+                }
+                else
+                {
+                    this.baseDal.Upsert(item);
+                }
+            }
+        }
+        #endregion //Method
     }
 }

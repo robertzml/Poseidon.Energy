@@ -81,6 +81,18 @@
     <Compile Include="Department\FrmDepartmentEdit.Designer.cs">
       <DependentUpon>FrmDepartmentEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\FundRecordGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\FundRecordGrid.Designer.cs">
+      <DependentUpon>FundRecordGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fund\FrmFundRecordEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fund\FrmFundRecordEdit.Designer.cs">
+      <DependentUpon>FrmFundRecordEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fund\FrmFundEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +162,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Control\FundRecordGrid.resx">
+      <DependentUpon>FundRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fund\FrmFundAdd.resx">
       <DependentUpon>FrmFundAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fund\FrmFundOverview.resx">
       <DependentUpon>FrmFundOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fund\FrmFundRecordEdit.resx">
+      <DependentUpon>FrmFundRecordEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Index\FrmIndexOverview.resx">
       <DependentUpon>FrmIndexOverview.cs</DependentUpon>
@@ -170,6 +188,7 @@
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Department.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Fund.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.FundRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Population.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.StaffNumber.datasource" />
     <None Include="Properties\licenses.licx" />

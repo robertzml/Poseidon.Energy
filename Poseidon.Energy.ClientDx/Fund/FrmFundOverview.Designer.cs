@@ -52,6 +52,9 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.lbFund = new DevExpress.XtraEditors.ListBoxControl();
             this.bsFund = new System.Windows.Forms.BindingSource(this.components);
+            this.frGrid = new Poseidon.Energy.ClientDx.FundRecordGrid();
+            this.btnEditRecord = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -71,10 +74,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbFund)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFund)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -91,7 +96,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(808, 479);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(882, 519);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl1
@@ -100,12 +105,13 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(203, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(602, 154);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "选中记录";
+            this.groupControl1.Size = new System.Drawing.Size(676, 154);
+            this.groupControl1.TabIndex = 1;
+            this.groupControl1.Text = "选中统计";
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnEditRecord);
             this.layoutControl1.Controls.Add(this.btnDelete);
             this.layoutControl1.Controls.Add(this.btnEdit);
             this.layoutControl1.Controls.Add(this.btnAdd);
@@ -117,15 +123,15 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(598, 131);
+            this.layoutControl1.Size = new System.Drawing.Size(672, 131);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(327, 86);
+            this.btnDelete.Location = new System.Drawing.Point(337, 86);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(252, 22);
+            this.btnDelete.Size = new System.Drawing.Size(155, 22);
             this.btnDelete.StyleController = this.layoutControl1;
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "删除统计";
@@ -133,9 +139,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(166, 86);
+            this.btnEdit.Location = new System.Drawing.Point(177, 86);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(157, 22);
+            this.btnEdit.Size = new System.Drawing.Size(156, 22);
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 8;
             this.btnEdit.Text = "编辑统计";
@@ -145,7 +151,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(19, 86);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(143, 22);
+            this.btnAdd.Size = new System.Drawing.Size(154, 22);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "添加统计";
@@ -153,9 +159,9 @@
             // 
             // txtUpdateTime
             // 
-            this.txtUpdateTime.Location = new System.Drawing.Point(352, 31);
+            this.txtUpdateTime.Location = new System.Drawing.Point(389, 31);
             this.txtUpdateTime.Name = "txtUpdateTime";
-            this.txtUpdateTime.Size = new System.Drawing.Size(239, 20);
+            this.txtUpdateTime.Size = new System.Drawing.Size(276, 20);
             this.txtUpdateTime.StyleController = this.layoutControl1;
             this.txtUpdateTime.TabIndex = 7;
             // 
@@ -163,15 +169,15 @@
             // 
             this.txtCreateTime.Location = new System.Drawing.Point(58, 31);
             this.txtCreateTime.Name = "txtCreateTime";
-            this.txtCreateTime.Size = new System.Drawing.Size(239, 20);
+            this.txtCreateTime.Size = new System.Drawing.Size(276, 20);
             this.txtCreateTime.StyleController = this.layoutControl1;
             this.txtCreateTime.TabIndex = 6;
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(352, 7);
+            this.txtRemark.Location = new System.Drawing.Point(389, 7);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(239, 20);
+            this.txtRemark.Size = new System.Drawing.Size(276, 20);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 5;
             // 
@@ -179,7 +185,7 @@
             // 
             this.txtYear.Location = new System.Drawing.Point(58, 7);
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(239, 20);
+            this.txtYear.Size = new System.Drawing.Size(276, 20);
             this.txtYear.StyleController = this.layoutControl1;
             this.txtYear.TabIndex = 4;
             // 
@@ -196,7 +202,7 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(598, 131);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(672, 131);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -204,16 +210,16 @@
             this.layoutControlItem1.Control = this.txtYear;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(294, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(331, 24);
             this.layoutControlItem1.Text = "年度";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtRemark;
-            this.layoutControlItem2.Location = new System.Drawing.Point(294, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(331, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(294, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(331, 24);
             this.layoutControlItem2.Text = "备注";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -222,16 +228,16 @@
             this.layoutControlItem3.Control = this.txtCreateTime;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(294, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(331, 24);
             this.layoutControlItem3.Text = "创建时间";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtUpdateTime;
-            this.layoutControlItem4.Location = new System.Drawing.Point(294, 24);
+            this.layoutControlItem4.Location = new System.Drawing.Point(331, 24);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(294, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(331, 24);
             this.layoutControlItem4.Text = "更新时间";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -240,10 +246,11 @@
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem5,
             this.layoutControlItem6,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.layoutControlItem8});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 48);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(588, 73);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(662, 73);
             this.layoutControlGroup2.Text = "操作";
             // 
             // layoutControlItem5
@@ -251,36 +258,37 @@
             this.layoutControlItem5.Control = this.btnAdd;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(147, 30);
+            this.layoutControlItem5.Size = new System.Drawing.Size(158, 30);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btnEdit;
-            this.layoutControlItem6.Location = new System.Drawing.Point(147, 0);
+            this.layoutControlItem6.Location = new System.Drawing.Point(158, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(161, 30);
+            this.layoutControlItem6.Size = new System.Drawing.Size(160, 30);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnDelete;
-            this.layoutControlItem7.Location = new System.Drawing.Point(308, 0);
+            this.layoutControlItem7.Location = new System.Drawing.Point(318, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(256, 30);
+            this.layoutControlItem7.Size = new System.Drawing.Size(159, 30);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.frGrid);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(203, 163);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(602, 313);
-            this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(676, 353);
+            this.groupControl2.TabIndex = 2;
+            this.groupControl2.Text = "经费记录";
             // 
             // groupControl3
             // 
@@ -289,9 +297,9 @@
             this.groupControl3.Location = new System.Drawing.Point(3, 3);
             this.groupControl3.Name = "groupControl3";
             this.tableLayoutPanel1.SetRowSpan(this.groupControl3, 2);
-            this.groupControl3.Size = new System.Drawing.Size(194, 473);
-            this.groupControl3.TabIndex = 2;
-            this.groupControl3.Text = "统计记录";
+            this.groupControl3.Size = new System.Drawing.Size(194, 513);
+            this.groupControl3.TabIndex = 0;
+            this.groupControl3.Text = "统计列表";
             // 
             // lbFund
             // 
@@ -300,7 +308,7 @@
             this.lbFund.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbFund.Location = new System.Drawing.Point(2, 21);
             this.lbFund.Name = "lbFund";
-            this.lbFund.Size = new System.Drawing.Size(190, 450);
+            this.lbFund.Size = new System.Drawing.Size(190, 490);
             this.lbFund.SortOrder = System.Windows.Forms.SortOrder.Descending;
             this.lbFund.TabIndex = 0;
             this.lbFund.ValueMember = "Id";
@@ -310,11 +318,42 @@
             // 
             this.bsFund.DataSource = typeof(Poseidon.Energy.Core.DL.Fund);
             // 
+            // frGrid
+            // 
+            this.frGrid.DataSource = null;
+            this.frGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frGrid.Editable = false;
+            this.frGrid.Location = new System.Drawing.Point(2, 21);
+            this.frGrid.Name = "frGrid";
+            this.frGrid.ShowFooter = true;
+            this.frGrid.ShowLineNumber = true;
+            this.frGrid.Size = new System.Drawing.Size(672, 330);
+            this.frGrid.TabIndex = 0;
+            // 
+            // btnEditRecord
+            // 
+            this.btnEditRecord.Location = new System.Drawing.Point(496, 86);
+            this.btnEditRecord.Name = "btnEditRecord";
+            this.btnEditRecord.Size = new System.Drawing.Size(157, 22);
+            this.btnEditRecord.StyleController = this.layoutControl1;
+            this.btnEditRecord.TabIndex = 10;
+            this.btnEditRecord.Text = "编辑记录";
+            this.btnEditRecord.Click += new System.EventHandler(this.btnEditRecord_Click);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.btnEditRecord;
+            this.layoutControlItem8.Location = new System.Drawing.Point(477, 0);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(161, 30);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem8.TextVisible = false;
+            // 
             // FrmFundOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 479);
+            this.ClientSize = new System.Drawing.Size(882, 519);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmFundOverview";
             this.Text = "经费统计总览";
@@ -337,10 +376,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lbFund)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFund)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,5 +411,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraEditors.SimpleButton btnEditRecord;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private FundRecordGrid frGrid;
     }
 }
