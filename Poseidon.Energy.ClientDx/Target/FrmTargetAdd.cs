@@ -34,6 +34,9 @@ namespace Poseidon.Energy.ClientDx
             var popu = BusinessFactory<PopulationBusiness>.Instance.FindAll().ToList();
             this.bsPopulation.DataSource = popu;
 
+            var funds = BusinessFactory<FundBusiness>.Instance.FindAll().ToList();
+            this.bsFund.DataSource = funds;
+
             base.InitForm();
         }
 
@@ -50,6 +53,11 @@ namespace Poseidon.Energy.ClientDx
                 errorMessage = "请选择关联人数统计";
                 return new Tuple<bool, string>(false, errorMessage);
             }
+            if (this.luFund.EditValue == null)
+            {
+                errorMessage = "请选择关联经费统计";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
 
             return new Tuple<bool, string>(true, "");
         }
@@ -62,6 +70,7 @@ namespace Poseidon.Energy.ClientDx
         {
             entity.Year = Convert.ToInt32(this.spYear.Value);
             entity.PopulationId = this.luPopulation.EditValue.ToString();
+            entity.FundId = this.luFund.EditValue.ToString();
             entity.Remark = this.txtRemark.Text;
         }
         #endregion //Function

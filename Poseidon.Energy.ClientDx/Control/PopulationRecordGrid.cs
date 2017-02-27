@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Poseidon.Energy.ClientDx
@@ -20,6 +18,13 @@ namespace Poseidon.Energy.ClientDx
     /// </summary>
     public partial class PopulationRecordGrid : WinEntityGrid<PopulationRecord>
     {
+        #region Field
+        /// <summary>
+        /// 关联部门数据
+        /// </summary>
+        private List<Department> departments;
+        #endregion //Field
+
         #region Constructor
         public PopulationRecordGrid()
         {
@@ -28,6 +33,17 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Constructor
 
         #region Event
+        /// <summary>
+        /// 控件载入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PopulationRecordGrid_Load(object sender, EventArgs e)
+        {
+            if (!this.DesignMode)
+                this.departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
+        }
+
         /// <summary>
         /// 格式化数据显示
         /// </summary>
@@ -41,7 +57,7 @@ namespace Poseidon.Energy.ClientDx
 
             if (e.Column.FieldName == "DepartmentId")
             {
-                var department = BusinessFactory<DepartmentBusiness>.Instance.FindById(e.Value.ToString());
+                var department = this.departments.Find(r => r.Id == e.Value.ToString());
                 e.DisplayText = department.Name;
             }
         }

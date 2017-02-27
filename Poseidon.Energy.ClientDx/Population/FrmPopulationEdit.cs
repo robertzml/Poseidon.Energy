@@ -15,18 +15,50 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Winform.Base;
 
     /// <summary>
-    /// 添加人数统计窗体
+    /// 编辑人数统计窗体
     /// </summary>
-    public partial class FrmPopulationAdd : BaseSingleForm
+    public partial class FrmPopulationEdit : BaseSingleForm
     {
+        #region Field
+        /// <summary>
+        /// 关联统计
+        /// </summary>
+        private Population currentPopulation;
+        #endregion //Field
+
         #region Constructor
-        public FrmPopulationAdd()
+        public FrmPopulationEdit(string id)
         {
             InitializeComponent();
+
+            InitData(id);
         }
         #endregion //Constructor
 
         #region Function
+        /// <summary>
+        /// 初始化数据
+        /// </summary>
+        /// <param name="id"></param>
+        private void InitData(string id)
+        {
+            this.currentPopulation = BusinessFactory<PopulationBusiness>.Instance.FindById(id);
+        }
+
+        protected override void InitForm()
+        {
+            this.txtName.Text = this.currentPopulation.Name;
+            this.spYear.Value = this.currentPopulation.Year;
+            this.txtBelongTime.Text = this.currentPopulation.BelongTime;
+            this.txtRemark.Text = this.currentPopulation.Remark;
+
+            base.InitForm();
+        }
+
+        /// <summary>
+        /// 设置实体
+        /// </summary>
+        /// <param name="entity"></param>
         private void SetEntity(Population entity)
         {
             entity.Name = this.txtName.Text;
@@ -73,15 +105,21 @@ namespace Poseidon.Energy.ClientDx
                 return;
             }
 
-            Population entity = new Population();
-            SetEntity(entity);
+            SetEntity(this.currentPopulation);
 
             try
             {
-                BusinessFactory<PopulationBusiness>.Instance.Create(entity);
+                bool result = BusinessFactory<PopulationBusiness>.Instance.Update(this.currentPopulation);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowInfo("保存失败");
+                }
             }
             catch (PoseidonException pe)
             {

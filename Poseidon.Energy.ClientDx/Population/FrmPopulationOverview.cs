@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Poseidon.Energy.ClientDx
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Base.System;
+    using Poseidon.Common;
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
@@ -20,6 +20,13 @@ namespace Poseidon.Energy.ClientDx
     /// </summary>
     public partial class FrmPopulationOverview : BaseMdiForm
     {
+        #region Field
+        /// <summary>
+        /// 当前关联统计
+        /// </summary>
+        private Population currentPopulation;
+        #endregion //Field
+
         #region Constructor
         public FrmPopulationOverview()
         {
@@ -48,7 +55,7 @@ namespace Poseidon.Energy.ClientDx
         /// 载入人数记录
         /// </summary>
         /// <param name="populationId">统计ID</param>
-        private void LoadStaffNumber(string populationId)
+        private void LoadPopulationRecords(string populationId)
         {
             var data = BusinessFactory<PopulationRecordBusiness>.Instance.FindByPopulationId(populationId).ToList(); ;
             this.prGrid.DataSource = data;
@@ -57,16 +64,21 @@ namespace Poseidon.Energy.ClientDx
 
         #region Event
         /// <summary>
-        /// 归属时间选择
+        /// 选择统计
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void luBelongTime_EditValueChanged(object sender, EventArgs e)
+        private void lbPopulation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.luBelongTime.EditValue == null)
-                this.prGrid.Clear();
-            else
-                LoadStaffNumber(this.luBelongTime.EditValue.ToString());
+            this.currentPopulation = this.lbPopulation.SelectedItem as Population;
+            this.txtName.Text = currentPopulation.Name;
+            this.txtYear.Text = currentPopulation.Year.ToString();
+            this.txtBelongTime.Text = currentPopulation.BelongTime;
+            this.txtRemark.Text = currentPopulation.Remark;
+            this.txtCreateTime.Text = currentPopulation.CreateTime.ToDateTimeString();
+            this.txtUpdateTime.Text = currentPopulation.UpdateTime.ToDateTimeString();
+
+            LoadPopulationRecords(this.currentPopulation.Id);
         }
 
         /// <summary>
@@ -81,16 +93,56 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
+        /// 编辑统计
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (this.currentPopulation == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmPopulationEdit), new object[] { this.currentPopulation.Id });
+            LoadPopulations();
+        }
+
+        /// <summary>
+        /// 删除统计
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.currentPopulation == null)
+                return;
+
+            if (MessageUtil.ConfirmYesNo("是否确认删除选中人数统计") == DialogResult.Yes)
+            {
+                try
+                {
+                    BusinessFactory<PopulationBusiness>.Instance.Delete(this.currentPopulation);
+                    LoadPopulations();
+
+                    MessageUtil.ShowInfo("删除成功");
+                }
+                catch (PoseidonException pe)
+                {
+                    MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+                }
+            }
+        }
+
+        /// <summary>
         /// 编辑记录
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnEditNumber_Click(object sender, EventArgs e)
         {
-            if (this.luBelongTime.EditValue == null)
+            if (this.currentPopulation == null)
                 return;
 
-            ChildFormManage.ShowDialogForm(typeof(FrmPopulationRecordEdit), new object[] { this.luBelongTime.EditValue.ToString() });
+            ChildFormManage.ShowDialogForm(typeof(FrmPopulationRecordEdit), new object[] { this.currentPopulation.Id });
         }
         #endregion //Event
     }

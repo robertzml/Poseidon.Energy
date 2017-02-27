@@ -40,6 +40,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         {
             Population entity = new Population();
             entity.Id = doc["_id"].ToString();
+            entity.Name = doc["name"].ToString();
             entity.Year = doc["year"].ToInt32();
             entity.BelongTime = doc["belongTime"].ToString();
             entity.CreateTime = doc["createTime"].ToLocalTime();
@@ -59,6 +60,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         {
             BsonDocument doc = new BsonDocument
             {
+                { "name", entity.Name },
                 { "year", entity.Year },
                 { "belongTime", entity.BelongTime },
                 { "createTime", entity.CreateTime },

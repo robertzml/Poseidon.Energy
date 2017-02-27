@@ -38,7 +38,7 @@ namespace Poseidon.Energy.ClientDx
         #region Function
         protected override void InitForm()
         {
-            LoadFund();
+            LoadFunds();
 
             base.InitForm();
         }
@@ -46,7 +46,7 @@ namespace Poseidon.Energy.ClientDx
         /// <summary>
         /// 载入经费统计
         /// </summary>
-        private void LoadFund()
+        private void LoadFunds()
         {
             var funds = BusinessFactory<FundBusiness>.Instance.FindAll().ToList();
             this.bsFund.DataSource = funds;
@@ -56,7 +56,7 @@ namespace Poseidon.Energy.ClientDx
         /// 载入经费记录
         /// </summary>
         /// <param name="fundId">统计ID</param>
-        private void LoadFundRecord(string fundId)
+        private void LoadFundRecords(string fundId)
         {
             var records = BusinessFactory<FundRecordBusiness>.Instance.FindByFundId(fundId).ToList();
             this.frGrid.DataSource = records;
@@ -72,12 +72,13 @@ namespace Poseidon.Energy.ClientDx
         private void lbFund_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.currentFund = this.lbFund.SelectedItem as Fund;
+            this.txtName.Text = currentFund.Name;
             this.txtYear.Text = currentFund.Year.ToString();
             this.txtRemark.Text = currentFund.Remark;
             this.txtCreateTime.Text = currentFund.CreateTime.ToDateTimeString();
             this.txtUpdateTime.Text = currentFund.UpdateTime.ToDateTimeString();
 
-            LoadFundRecord(this.currentFund.Id);
+            LoadFundRecords(this.currentFund.Id);
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace Poseidon.Energy.ClientDx
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ChildFormManage.ShowDialogForm(typeof(FrmFundAdd));
-            LoadFund();
+            LoadFunds();
         }
 
         /// <summary>
@@ -102,7 +103,7 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmFundEdit), new object[] { this.currentFund.Id });
-            LoadFund();
+            LoadFunds();
         }
 
         /// <summary>
@@ -120,7 +121,7 @@ namespace Poseidon.Energy.ClientDx
                 try
                 {
                     BusinessFactory<FundBusiness>.Instance.Delete(this.currentFund);
-                    LoadFund();
+                    LoadFunds();
 
                     MessageUtil.ShowInfo("删除成功");
                 }

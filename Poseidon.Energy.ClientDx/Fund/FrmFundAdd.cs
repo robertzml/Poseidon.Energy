@@ -29,8 +29,26 @@ namespace Poseidon.Energy.ClientDx
         #region Function
         private void SetEntity(Fund entity)
         {
+            entity.Name = this.txtName.Text;
             entity.Year = Convert.ToInt32(this.spYear.Value);
             entity.Remark = this.txtRemark.Text;
+        }
+
+        /// <summary>
+        /// 输入检查
+        /// </summary>
+        /// <returns></returns>
+        private Tuple<bool, string> CheckInput()
+        {
+            string errorMessage = "";
+
+            if (string.IsNullOrEmpty(this.txtName.Text.Trim()))
+            {
+                errorMessage = "名称不能为空";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
+
+            return new Tuple<bool, string>(true, "");
         }
         #endregion //Function
 
@@ -42,6 +60,13 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            var input = CheckInput();
+            if (!input.Item1)
+            {
+                MessageUtil.ShowError(input.Item2);
+                return;
+            }
+
             Fund entity = new Fund();
             SetEntity(entity);
 

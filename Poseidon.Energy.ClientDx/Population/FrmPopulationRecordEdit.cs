@@ -49,8 +49,10 @@ namespace Poseidon.Energy.ClientDx
 
         protected override void InitForm()
         {
+            this.txtName.Text = this.currentEntity.Name;
             this.txtYear.Text = this.currentEntity.Year.ToString();
-            this.txtBelongTime.Text = this.currentEntity.BelongTime.ToString();
+            this.txtBelongTime.Text = this.currentEntity.BelongTime;
+            this.txtRemark.Text = this.currentEntity.Remark;
 
             var data = LoadPopulationRecords();
             this.prGrid.DataSource = data;

@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.luFund = new DevExpress.XtraEditors.LookUpEdit();
+            this.bsFund = new System.Windows.Forms.BindingSource(this.components);
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.luPopulation = new DevExpress.XtraEditors.LookUpEdit();
             this.bsPopulation = new System.Windows.Forms.BindingSource(this.components);
@@ -39,7 +41,6 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.luFund = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
@@ -49,6 +50,8 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.luFund.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luPopulation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).BeginInit();
@@ -57,17 +60,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luFund.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(367, 15);
+            this.btnCancel.Location = new System.Drawing.Point(302, 15);
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(258, 15);
+            this.btnConfirm.Location = new System.Drawing.Point(193, 15);
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // plFill
@@ -75,14 +77,14 @@
             this.plFill.Appearance.BackColor = System.Drawing.Color.White;
             this.plFill.Appearance.Options.UseBackColor = true;
             this.plFill.Controls.Add(this.groupControl1);
-            this.plFill.Size = new System.Drawing.Size(461, 241);
+            this.plFill.Size = new System.Drawing.Size(396, 241);
             // 
             // plBottom
             // 
             this.plBottom.Appearance.BackColor = System.Drawing.Color.White;
             this.plBottom.Appearance.Options.UseBackColor = true;
             this.plBottom.Location = new System.Drawing.Point(0, 241);
-            this.plBottom.Size = new System.Drawing.Size(461, 60);
+            this.plBottom.Size = new System.Drawing.Size(396, 60);
             // 
             // groupControl1
             // 
@@ -90,7 +92,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(461, 241);
+            this.groupControl1.Size = new System.Drawing.Size(396, 241);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "计划指标信息";
             // 
@@ -104,15 +106,37 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(457, 218);
+            this.layoutControl1.Size = new System.Drawing.Size(392, 218);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // luFund
+            // 
+            this.luFund.Location = new System.Drawing.Point(87, 60);
+            this.luFund.Name = "luFund";
+            this.luFund.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.luFund.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 21, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "名称", 54, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Year", "年度", 35, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far)});
+            this.luFund.Properties.DataSource = this.bsFund;
+            this.luFund.Properties.DisplayMember = "Name";
+            this.luFund.Properties.NullText = "请选择";
+            this.luFund.Properties.ValueMember = "Id";
+            this.luFund.Size = new System.Drawing.Size(293, 20);
+            this.luFund.StyleController = this.layoutControl1;
+            this.luFund.TabIndex = 7;
+            // 
+            // bsFund
+            // 
+            this.bsFund.DataSource = typeof(Poseidon.Energy.Core.DL.Fund);
             // 
             // txtRemark
             // 
             this.txtRemark.Location = new System.Drawing.Point(87, 84);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(358, 122);
+            this.txtRemark.Size = new System.Drawing.Size(293, 122);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 6;
             // 
@@ -124,14 +148,14 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.luPopulation.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 21, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Year", "年度", 48, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("BelongTime", "归属周期", 78, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Remark", "备注", 51, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "名称", 54, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Year", "年度", 35, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("BelongTime", "归属时间", 78, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
             this.luPopulation.Properties.DataSource = this.bsPopulation;
-            this.luPopulation.Properties.DisplayMember = "BelongTime";
+            this.luPopulation.Properties.DisplayMember = "Name";
             this.luPopulation.Properties.NullText = "请选择";
             this.luPopulation.Properties.ValueMember = "Id";
-            this.luPopulation.Size = new System.Drawing.Size(358, 20);
+            this.luPopulation.Size = new System.Drawing.Size(293, 20);
             this.luPopulation.StyleController = this.layoutControl1;
             this.luPopulation.TabIndex = 5;
             // 
@@ -162,7 +186,7 @@
             0,
             0,
             0});
-            this.spYear.Size = new System.Drawing.Size(358, 20);
+            this.spYear.Size = new System.Drawing.Size(293, 20);
             this.spYear.StyleController = this.layoutControl1;
             this.spYear.TabIndex = 4;
             // 
@@ -177,7 +201,7 @@
             this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(457, 218);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(392, 218);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -185,7 +209,7 @@
             this.layoutControlItem1.Control = this.spYear;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(437, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(372, 24);
             this.layoutControlItem1.Text = "年度";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -194,7 +218,7 @@
             this.layoutControlItem2.Control = this.luPopulation;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(437, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(372, 24);
             this.layoutControlItem2.Text = "关联人数统计";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -203,26 +227,16 @@
             this.layoutControlItem3.Control = this.txtRemark;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(437, 126);
+            this.layoutControlItem3.Size = new System.Drawing.Size(372, 126);
             this.layoutControlItem3.Text = "备注";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(72, 14);
-            // 
-            // luFund
-            // 
-            this.luFund.Location = new System.Drawing.Point(87, 60);
-            this.luFund.Name = "luFund";
-            this.luFund.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luFund.Size = new System.Drawing.Size(358, 20);
-            this.luFund.StyleController = this.layoutControl1;
-            this.luFund.TabIndex = 7;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.luFund;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(437, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(372, 24);
             this.layoutControlItem4.Text = "关联经费统计";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -230,7 +244,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 301);
+            this.ClientSize = new System.Drawing.Size(396, 301);
             this.Name = "FrmTargetAdd";
             this.Text = "添加计划指标";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
@@ -241,6 +255,8 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.luFund.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luPopulation.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).EndInit();
@@ -249,7 +265,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luFund.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
@@ -269,5 +284,6 @@
         private System.Windows.Forms.BindingSource bsPopulation;
         private DevExpress.XtraEditors.LookUpEdit luFund;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private System.Windows.Forms.BindingSource bsFund;
     }
 }

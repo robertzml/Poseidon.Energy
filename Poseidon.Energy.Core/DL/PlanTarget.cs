@@ -28,6 +28,12 @@ namespace Poseidon.Energy.Core.DL
         /// </summary>
         [Display(Name = "关联人数统计ID")]
         public string PopulationId { get; set; }
+
+        /// <summary>
+        /// 关联经费统计ID
+        /// </summary>
+        [Display(Name = "关联经费统计ID")]
+        public string FundId { get; set; }
         #endregion //Property
     }
 }

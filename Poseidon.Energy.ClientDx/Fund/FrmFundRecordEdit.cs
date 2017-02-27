@@ -48,6 +48,7 @@ namespace Poseidon.Energy.ClientDx
 
         protected override void InitForm()
         {
+            this.txtName.Text = this.currentFund.Name;
             this.txtYear.Text = this.currentFund.Year.ToString();
             this.txtRemark.Text = this.currentFund.Remark;
 

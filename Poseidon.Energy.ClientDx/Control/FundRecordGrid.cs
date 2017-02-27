@@ -40,7 +40,8 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void FundRecordGrid_Load(object sender, EventArgs e)
         {
-            this.departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
+            if (!this.DesignMode)
+                this.departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
         }
 
         /// <summary>
