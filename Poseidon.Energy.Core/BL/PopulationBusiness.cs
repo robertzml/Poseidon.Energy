@@ -24,5 +24,21 @@ namespace Poseidon.Energy.Core.BL
             this.baseDal = RepositoryFactory<IPopulationRepository>.Instance;
         }
         #endregion //Constructor
+
+        #region Method
+        /// <summary>
+        /// 删除人数统计
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <returns></returns>
+        public override bool Delete(Population entity)
+        {
+            // delete the records
+            var repo = RepositoryFactory<IPopulationRecordRepository>.Instance;
+            repo.DeleteMany<string>("populationId", entity.Id);
+
+            return base.Delete(entity);
+        }
+        #endregion //Method
     }
 }
