@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Poseidon.Energy.Core.DL
 {
@@ -27,8 +26,16 @@ namespace Poseidon.Energy.Core.DL
         [Display(Name = "部门ID")]
         public string DepartmentId { get; set; }
 
+        /// <summary>
+        /// 人数指标
+        /// </summary>
+        [Display(Name = "人数指标")]
         public List<StaffTarget> StaffIndex { get; set; }
 
+        /// <summary>
+        /// 补贴
+        /// </summary>
+        [Display(Name = "补贴")]
         public List<Allowance> Allowance { get; set; }
         #endregion //Property
     }
@@ -38,7 +45,11 @@ namespace Poseidon.Energy.Core.DL
     /// </summary>
     public class StaffTarget
     {
-
+        /// <summary>
+        /// 名称
+        /// </summary>
+        [Display(Name = "名称")]
+        public string Name { get; set; }
     }
 
     /// <summary>
@@ -46,6 +57,10 @@ namespace Poseidon.Energy.Core.DL
     /// </summary>
     public class Allowance
     {
-
+        /// <summary>
+        /// 名称
+        /// </summary>
+        [Display(Name = "名称")]
+        public string Name { get; set; }
     }
 }

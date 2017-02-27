@@ -87,6 +87,12 @@
     <Compile Include="Control\FundRecordGrid.Designer.cs">
       <DependentUpon>FundRecordGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Target\FrmTargetOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Target\FrmTargetOverview.Designer.cs">
+      <DependentUpon>FrmTargetOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Population\FrmPopulationRecordEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,17 +123,11 @@
     <Compile Include="Fund\FrmFundOverview.Designer.cs">
       <DependentUpon>FrmFundOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Index\FrmTargetAdd.cs">
+    <Compile Include="Target\FrmTargetAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Index\FrmTargetAdd.Designer.cs">
+    <Compile Include="Target\FrmTargetAdd.Designer.cs">
       <DependentUpon>FrmTargetAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Index\FrmIndexOverview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Index\FrmIndexOverview.Designer.cs">
-      <DependentUpon>FrmIndexOverview.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\PopulationRecordGrid.cs">
       <SubType>UserControl</SubType>
@@ -180,14 +180,14 @@
     <EmbeddedResource Include="Fund\FrmFundRecordEdit.resx">
       <DependentUpon>FrmFundRecordEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Index\FrmIndexOverview.resx">
-      <DependentUpon>FrmIndexOverview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Index\FrmTargetAdd.resx">
+    <EmbeddedResource Include="Target\FrmTargetAdd.resx">
       <DependentUpon>FrmTargetAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Population\FrmPopulationRecordEdit.resx">
       <DependentUpon>FrmPopulationRecordEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Target\FrmTargetOverview.resx">
+      <DependentUpon>FrmTargetOverview.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Department.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Fund.datasource" />
