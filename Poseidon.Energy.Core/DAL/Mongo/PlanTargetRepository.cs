@@ -37,6 +37,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         {
             PlanTarget entity = new PlanTarget();
             entity.Id = doc["_id"].ToString();
+            entity.Name = doc["name"].ToString();
             entity.Year = doc["year"].ToInt32();
             entity.PopulationId = doc["populationId"].ToString();
             entity.FundId = doc["fundId"].ToString();
@@ -57,6 +58,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         {
             BsonDocument doc = new BsonDocument
             {
+                { "name", entity.Name },
                 { "year", entity.Year },
                 { "populationId", entity.PopulationId },
                 { "fundId", entity.FundId },

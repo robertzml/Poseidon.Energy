@@ -18,6 +18,12 @@ namespace Poseidon.Energy.Core.DL
     {
         #region Property
         /// <summary>
+        /// 名称
+        /// </summary>
+        [Display(Name = "名称")]
+        public string Name { get; set; }
+
+        /// <summary>
         /// 年度
         /// </summary>
         [Display(Name = "年度")]

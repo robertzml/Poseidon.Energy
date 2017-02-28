@@ -48,6 +48,11 @@ namespace Poseidon.Energy.ClientDx
         {
             string errorMessage = "";
 
+            if (string.IsNullOrEmpty(this.txtName.Text.Trim()))
+            {
+                errorMessage = "名称不能为空";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
             if (this.luPopulation.EditValue == null)
             {
                 errorMessage = "请选择关联人数统计";
@@ -68,6 +73,7 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="entity"></param>
         private void SetEntity(PlanTarget entity)
         {
+            entity.Name = this.txtName.Text;
             entity.Year = Convert.ToInt32(this.spYear.Value);
             entity.PopulationId = this.luPopulation.EditValue.ToString();
             entity.FundId = this.luFund.EditValue.ToString();

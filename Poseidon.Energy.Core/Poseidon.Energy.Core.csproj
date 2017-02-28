@@ -90,6 +90,7 @@
     <Compile Include="DL\PopulationRecord.cs" />
     <Compile Include="DL\Population.cs" />
     <Compile Include="DL\ExpenseAccount.cs" />
+    <Compile Include="DL\StaffTarget.cs" />
     <Compile Include="IDAL\IDepartmentRepository.cs" />
     <Compile Include="IDAL\IFundRecordRepository.cs" />
     <Compile Include="IDAL\IFundRepository.cs" />

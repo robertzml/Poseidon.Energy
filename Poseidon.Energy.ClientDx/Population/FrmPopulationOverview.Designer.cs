@@ -33,61 +33,61 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnEditNumber = new DevExpress.XtraEditors.SimpleButton();
-            this.bsPopulation = new System.Windows.Forms.BindingSource(this.components);
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.txtUpdateTime = new DevExpress.XtraEditors.TextEdit();
+            this.txtCreateTime = new DevExpress.XtraEditors.TextEdit();
+            this.txtRemark = new DevExpress.XtraEditors.TextEdit();
+            this.txtBelongTime = new DevExpress.XtraEditors.TextEdit();
+            this.txtYear = new DevExpress.XtraEditors.TextEdit();
+            this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.prGrid = new Poseidon.Energy.ClientDx.PopulationRecordGrid();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.lbPopulation = new DevExpress.XtraEditors.ListBoxControl();
-            this.txtName = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtYear = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtBelongTime = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtRemark = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtCreateTime = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtUpdateTime = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bsPopulation = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUpdateTime.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreateTime.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBelongTime.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYear.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbPopulation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtYear.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBelongTime.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCreateTime.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUpdateTime.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -148,9 +148,83 @@
             this.btnEditNumber.Text = "编辑记录";
             this.btnEditNumber.Click += new System.EventHandler(this.btnEditNumber_Click);
             // 
-            // bsPopulation
+            // btnDelete
             // 
-            this.bsPopulation.DataSource = typeof(Poseidon.Energy.Core.DL.Population);
+            this.btnDelete.Location = new System.Drawing.Point(364, 110);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(167, 22);
+            this.btnDelete.StyleController = this.layoutControl1;
+            this.btnDelete.TabIndex = 12;
+            this.btnDelete.Text = "删除统计";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(189, 110);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(171, 22);
+            this.btnEdit.StyleController = this.layoutControl1;
+            this.btnEdit.TabIndex = 11;
+            this.btnEdit.Text = "编辑统计";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(19, 110);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(166, 22);
+            this.btnAdd.StyleController = this.layoutControl1;
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Text = "添加统计";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtUpdateTime
+            // 
+            this.txtUpdateTime.Location = new System.Drawing.Point(414, 55);
+            this.txtUpdateTime.Name = "txtUpdateTime";
+            this.txtUpdateTime.Size = new System.Drawing.Size(301, 20);
+            this.txtUpdateTime.StyleController = this.layoutControl1;
+            this.txtUpdateTime.TabIndex = 9;
+            // 
+            // txtCreateTime
+            // 
+            this.txtCreateTime.Location = new System.Drawing.Point(58, 55);
+            this.txtCreateTime.Name = "txtCreateTime";
+            this.txtCreateTime.Size = new System.Drawing.Size(301, 20);
+            this.txtCreateTime.StyleController = this.layoutControl1;
+            this.txtCreateTime.TabIndex = 8;
+            // 
+            // txtRemark
+            // 
+            this.txtRemark.Location = new System.Drawing.Point(414, 31);
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(301, 20);
+            this.txtRemark.StyleController = this.layoutControl1;
+            this.txtRemark.TabIndex = 7;
+            // 
+            // txtBelongTime
+            // 
+            this.txtBelongTime.Location = new System.Drawing.Point(58, 31);
+            this.txtBelongTime.Name = "txtBelongTime";
+            this.txtBelongTime.Size = new System.Drawing.Size(301, 20);
+            this.txtBelongTime.StyleController = this.layoutControl1;
+            this.txtBelongTime.TabIndex = 6;
+            // 
+            // txtYear
+            // 
+            this.txtYear.Location = new System.Drawing.Point(414, 7);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(301, 20);
+            this.txtYear.StyleController = this.layoutControl1;
+            this.txtYear.TabIndex = 5;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(58, 7);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(301, 20);
+            this.txtName.StyleController = this.layoutControl1;
+            this.txtName.TabIndex = 4;
             // 
             // layoutControlGroup1
             // 
@@ -169,6 +243,108 @@
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlGroup1.Size = new System.Drawing.Size(722, 151);
             this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.txtName;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(356, 24);
+            this.layoutControlItem1.Text = "名称";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.txtYear;
+            this.layoutControlItem2.Location = new System.Drawing.Point(356, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(356, 24);
+            this.layoutControlItem2.Text = "年度";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.txtBelongTime;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(356, 24);
+            this.layoutControlItem3.Text = "归属时间";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.txtRemark;
+            this.layoutControlItem4.Location = new System.Drawing.Point(356, 24);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(356, 24);
+            this.layoutControlItem4.Text = "备注";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.txtCreateTime;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(356, 24);
+            this.layoutControlItem5.Text = "创建时间";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.txtUpdateTime;
+            this.layoutControlItem6.Location = new System.Drawing.Point(356, 48);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(356, 24);
+            this.layoutControlItem6.Text = "更新时间";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem7,
+            this.layoutControlItem8,
+            this.layoutControlItem9,
+            this.layoutControlItem10});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(712, 69);
+            this.layoutControlGroup2.Text = "操作";
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.btnAdd;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(170, 26);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.btnEdit;
+            this.layoutControlItem8.Location = new System.Drawing.Point(170, 0);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(175, 26);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem8.TextVisible = false;
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.btnDelete;
+            this.layoutControlItem9.Location = new System.Drawing.Point(345, 0);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(171, 26);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem9.TextVisible = false;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.btnEditNumber;
+            this.layoutControlItem10.Location = new System.Drawing.Point(516, 0);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(172, 26);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem10.TextVisible = false;
             // 
             // groupControl2
             // 
@@ -215,185 +391,9 @@
             this.lbPopulation.ValueMember = "Id";
             this.lbPopulation.SelectedIndexChanged += new System.EventHandler(this.lbPopulation_SelectedIndexChanged);
             // 
-            // txtName
+            // bsPopulation
             // 
-            this.txtName.Location = new System.Drawing.Point(58, 7);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(301, 20);
-            this.txtName.StyleController = this.layoutControl1;
-            this.txtName.TabIndex = 4;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.txtName;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(356, 24);
-            this.layoutControlItem1.Text = "名称";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // txtYear
-            // 
-            this.txtYear.Location = new System.Drawing.Point(414, 7);
-            this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(301, 20);
-            this.txtYear.StyleController = this.layoutControl1;
-            this.txtYear.TabIndex = 5;
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.txtYear;
-            this.layoutControlItem2.Location = new System.Drawing.Point(356, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(356, 24);
-            this.layoutControlItem2.Text = "年度";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // txtBelongTime
-            // 
-            this.txtBelongTime.Location = new System.Drawing.Point(58, 31);
-            this.txtBelongTime.Name = "txtBelongTime";
-            this.txtBelongTime.Size = new System.Drawing.Size(301, 20);
-            this.txtBelongTime.StyleController = this.layoutControl1;
-            this.txtBelongTime.TabIndex = 6;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.txtBelongTime;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(356, 24);
-            this.layoutControlItem3.Text = "归属时间";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // txtRemark
-            // 
-            this.txtRemark.Location = new System.Drawing.Point(414, 31);
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(301, 20);
-            this.txtRemark.StyleController = this.layoutControl1;
-            this.txtRemark.TabIndex = 7;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.txtRemark;
-            this.layoutControlItem4.Location = new System.Drawing.Point(356, 24);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(356, 24);
-            this.layoutControlItem4.Text = "备注";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // txtCreateTime
-            // 
-            this.txtCreateTime.Location = new System.Drawing.Point(58, 55);
-            this.txtCreateTime.Name = "txtCreateTime";
-            this.txtCreateTime.Size = new System.Drawing.Size(301, 20);
-            this.txtCreateTime.StyleController = this.layoutControl1;
-            this.txtCreateTime.TabIndex = 8;
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.txtCreateTime;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(356, 24);
-            this.layoutControlItem5.Text = "创建时间";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // txtUpdateTime
-            // 
-            this.txtUpdateTime.Location = new System.Drawing.Point(414, 55);
-            this.txtUpdateTime.Name = "txtUpdateTime";
-            this.txtUpdateTime.Size = new System.Drawing.Size(301, 20);
-            this.txtUpdateTime.StyleController = this.layoutControl1;
-            this.txtUpdateTime.TabIndex = 9;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.txtUpdateTime;
-            this.layoutControlItem6.Location = new System.Drawing.Point(356, 48);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(356, 24);
-            this.layoutControlItem6.Text = "更新时间";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(19, 110);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(166, 22);
-            this.btnAdd.StyleController = this.layoutControl1;
-            this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = "添加统计";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.btnAdd;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(170, 26);
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem7.TextVisible = false;
-            // 
-            // layoutControlGroup2
-            // 
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem7,
-            this.layoutControlItem8,
-            this.layoutControlItem9,
-            this.layoutControlItem10});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(712, 69);
-            this.layoutControlGroup2.Text = "操作";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(189, 110);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(171, 22);
-            this.btnEdit.StyleController = this.layoutControl1;
-            this.btnEdit.TabIndex = 11;
-            this.btnEdit.Text = "编辑统计";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.btnEdit;
-            this.layoutControlItem8.Location = new System.Drawing.Point(170, 0);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(175, 26);
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem8.TextVisible = false;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(364, 110);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(167, 22);
-            this.btnDelete.StyleController = this.layoutControl1;
-            this.btnDelete.TabIndex = 12;
-            this.btnDelete.Text = "删除统计";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.btnDelete;
-            this.layoutControlItem9.Location = new System.Drawing.Point(345, 0);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(171, 26);
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem9.TextVisible = false;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.btnEditNumber;
-            this.layoutControlItem10.Location = new System.Drawing.Point(516, 0);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(172, 26);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
+            this.bsPopulation.DataSource = typeof(Poseidon.Energy.Core.DL.Population);
             // 
             // FrmPopulationOverview
             // 
@@ -408,30 +408,30 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUpdateTime.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreateTime.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBelongTime.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYear.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lbPopulation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtYear.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBelongTime.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCreateTime.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUpdateTime.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).EndInit();
             this.ResumeLayout(false);
 
         }
