@@ -18,7 +18,7 @@ namespace Poseidon.Energy.Core.DL
         /// 计划指标ID
         /// </summary>
         [Display(Name = "计划指标ID")]
-        public string PlanIndexId { get; set; }
+        public string PlanTargetId { get; set; }
 
         /// <summary>
         /// 部门ID

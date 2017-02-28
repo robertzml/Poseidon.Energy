@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\DepartmentBusiness.cs" />
+    <Compile Include="BL\DepartmentTargetBusiness.cs" />
     <Compile Include="BL\FundBusiness.cs" />
     <Compile Include="BL\FundRecordBusiness.cs" />
     <Compile Include="BL\PlanTargetBusiness.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="BL\PopulationRecordBusiness.cs" />
     <Compile Include="BL\ExpenseAccountBusiness.cs" />
     <Compile Include="DAL\Mongo\DepartmentRepository.cs" />
+    <Compile Include="DAL\Mongo\DepartmentTargetRepository.cs" />
     <Compile Include="DAL\Mongo\FundRecordRepository.cs" />
     <Compile Include="DAL\Mongo\FundRepository.cs" />
     <Compile Include="DAL\Mongo\PlanTargetRepository.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="DL\ExpenseAccount.cs" />
     <Compile Include="DL\StaffTarget.cs" />
     <Compile Include="IDAL\IDepartmentRepository.cs" />
+    <Compile Include="IDAL\IDepartmentTargetRepository.cs" />
     <Compile Include="IDAL\IFundRecordRepository.cs" />
     <Compile Include="IDAL\IFundRepository.cs" />
     <Compile Include="IDAL\IPlanTargetRepository.cs" />

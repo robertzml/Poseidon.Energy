@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.colPlanIndexId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPlanTargetId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepartmentId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalKilowatt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalAmount = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -53,7 +53,7 @@
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colPlanIndexId,
+            this.colPlanTargetId,
             this.colDepartmentId,
             this.colTotalKilowatt,
             this.colTotalAmount,
@@ -69,12 +69,12 @@
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
             // 
-            // colPlanIndexId
+            // colPlanTargetId
             // 
-            this.colPlanIndexId.FieldName = "PlanIndexId";
-            this.colPlanIndexId.Name = "colPlanIndexId";
-            this.colPlanIndexId.Visible = true;
-            this.colPlanIndexId.VisibleIndex = 1;
+            this.colPlanTargetId.FieldName = "PlanTargetId";
+            this.colPlanTargetId.Name = "colPlanTargetId";
+            this.colPlanTargetId.Visible = true;
+            this.colPlanTargetId.VisibleIndex = 1;
             // 
             // colDepartmentId
             // 
@@ -147,7 +147,7 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn colPlanIndexId;
+        private DevExpress.XtraGrid.Columns.GridColumn colPlanTargetId;
         private DevExpress.XtraGrid.Columns.GridColumn colDepartmentId;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalKilowatt;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalAmount;

@@ -99,11 +99,17 @@
     <Compile Include="Control\StaffTargetGrid.Designer.cs">
       <DependentUpon>StaffTargetGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Target\FrmTargetDepartment.cs">
+    <Compile Include="Target\FrmTargetSelectDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Target\FrmTargetDepartment.Designer.cs">
-      <DependentUpon>FrmTargetDepartment.cs</DependentUpon>
+    <Compile Include="Target\FrmTargetSelectDepartment.Designer.cs">
+      <DependentUpon>FrmTargetSelectDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Target\FrmTargetMake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Target\FrmTargetMake.Designer.cs">
+      <DependentUpon>FrmTargetMake.cs</DependentUpon>
     </Compile>
     <Compile Include="Population\FrmPopulationEdit.cs">
       <SubType>Form</SubType>
@@ -219,11 +225,14 @@
     <EmbeddedResource Include="Population\FrmPopulationRecordEdit.resx">
       <DependentUpon>FrmPopulationRecordEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Target\FrmTargetDepartment.resx">
-      <DependentUpon>FrmTargetDepartment.cs</DependentUpon>
+    <EmbeddedResource Include="Target\FrmTargetMake.resx">
+      <DependentUpon>FrmTargetMake.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Target\FrmTargetOverview.resx">
       <DependentUpon>FrmTargetOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Target\FrmTargetSelectDepartment.resx">
+      <DependentUpon>FrmTargetSelectDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Department.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.DepartmentTarget.datasource" />
