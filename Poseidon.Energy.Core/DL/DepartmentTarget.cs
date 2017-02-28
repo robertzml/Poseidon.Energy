@@ -30,7 +30,7 @@ namespace Poseidon.Energy.Core.DL
         /// 人数指标
         /// </summary>
         [Display(Name = "人数指标")]
-        public List<StaffTarget> StaffIndex { get; set; }
+        public List<StaffTarget> StaffTarget { get; set; }
 
         /// <summary>
         /// 补贴

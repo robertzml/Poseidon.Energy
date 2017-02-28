@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnUncheckAll = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCheckAll = new DevExpress.XtraEditors.SimpleButton();
             this.clbDepartment = new DevExpress.XtraEditors.CheckedListBoxControl();
             this.bsDepartment = new System.Windows.Forms.BindingSource(this.components);
-            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnCheckAll = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnUncheckAll = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
@@ -45,10 +45,10 @@
             this.plBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clbDepartment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsDepartment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clbDepartment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDepartment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -62,6 +62,7 @@
             // btnConfirm
             // 
             this.btnConfirm.Location = new System.Drawing.Point(124, 15);
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // plFill
             // 
@@ -87,6 +88,39 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "部门列表";
             // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.btnUncheckAll);
+            this.layoutControl1.Controls.Add(this.btnCheckAll);
+            this.layoutControl1.Controls.Add(this.clbDepartment);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(2, 21);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(323, 293);
+            this.layoutControl1.TabIndex = 0;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnUncheckAll
+            // 
+            this.btnUncheckAll.Location = new System.Drawing.Point(163, 259);
+            this.btnUncheckAll.Name = "btnUncheckAll";
+            this.btnUncheckAll.Size = new System.Drawing.Size(148, 22);
+            this.btnUncheckAll.StyleController = this.layoutControl1;
+            this.btnUncheckAll.TabIndex = 5;
+            this.btnUncheckAll.Text = "反选";
+            this.btnUncheckAll.Click += new System.EventHandler(this.btnUncheckAll_Click);
+            // 
+            // btnCheckAll
+            // 
+            this.btnCheckAll.Location = new System.Drawing.Point(12, 259);
+            this.btnCheckAll.Name = "btnCheckAll";
+            this.btnCheckAll.Size = new System.Drawing.Size(147, 22);
+            this.btnCheckAll.StyleController = this.layoutControl1;
+            this.btnCheckAll.TabIndex = 4;
+            this.btnCheckAll.Text = "全选";
+            this.btnCheckAll.Click += new System.EventHandler(this.btnCheckAll_Click);
+            // 
             // clbDepartment
             // 
             this.clbDepartment.DataSource = this.bsDepartment;
@@ -102,19 +136,6 @@
             // bsDepartment
             // 
             this.bsDepartment.DataSource = typeof(Poseidon.Energy.Core.DL.Department);
-            // 
-            // layoutControl1
-            // 
-            this.layoutControl1.Controls.Add(this.btnUncheckAll);
-            this.layoutControl1.Controls.Add(this.btnCheckAll);
-            this.layoutControl1.Controls.Add(this.clbDepartment);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(2, 21);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(323, 293);
-            this.layoutControl1.TabIndex = 0;
-            this.layoutControl1.Text = "layoutControl1";
             // 
             // layoutControlGroup1
             // 
@@ -138,16 +159,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // btnCheckAll
-            // 
-            this.btnCheckAll.Location = new System.Drawing.Point(12, 259);
-            this.btnCheckAll.Name = "btnCheckAll";
-            this.btnCheckAll.Size = new System.Drawing.Size(147, 22);
-            this.btnCheckAll.StyleController = this.layoutControl1;
-            this.btnCheckAll.TabIndex = 4;
-            this.btnCheckAll.Text = "全选";
-            this.btnCheckAll.Click += new System.EventHandler(this.btnCheckAll_Click);
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnCheckAll;
@@ -156,16 +167,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(151, 26);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
-            // 
-            // btnUncheckAll
-            // 
-            this.btnUncheckAll.Location = new System.Drawing.Point(163, 259);
-            this.btnUncheckAll.Name = "btnUncheckAll";
-            this.btnUncheckAll.Size = new System.Drawing.Size(148, 22);
-            this.btnUncheckAll.StyleController = this.layoutControl1;
-            this.btnUncheckAll.TabIndex = 5;
-            this.btnUncheckAll.Text = "反选";
-            this.btnUncheckAll.Click += new System.EventHandler(this.btnUncheckAll_Click);
             // 
             // layoutControlItem3
             // 
@@ -189,10 +190,10 @@
             this.plBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.clbDepartment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsDepartment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.clbDepartment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDepartment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();

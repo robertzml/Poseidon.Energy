@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Poseidon.Energy.ClientDx
 {
+    using DevExpress.XtraEditors.Controls;
     using Poseidon.Base.Framework;
     using Poseidon.Core.BL;
     using Poseidon.Core.DL;
@@ -49,12 +50,38 @@ namespace Poseidon.Energy.ClientDx
             var departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
             this.bsDepartment.DataSource = departments;
 
+            SetSelectDepartment();
+
             base.InitForm();
         }
 
+        /// <summary>
+        /// 设置选中部门
+        /// </summary>
         private void SetSelectDepartment()
         {
+            var depTarget = BusinessFactory<DepartmentTargetBusiness>.Instance.FindByPlanTarget(this.currentEntity.Id);
 
+            foreach (CheckedListBoxItem item in this.clbDepartment.Items)
+            {
+                if (depTarget.Any(r => r.DepartmentId == item.Value.ToString()))
+                    item.CheckState = CheckState.Checked;
+            }
+        }
+
+        /// <summary>
+        /// 保存选中部门
+        /// </summary>
+        private void SaveSelectDepartment()
+        {
+            List<string> ids = new List<string>();
+
+            foreach(Department item in this.clbDepartment.CheckedItems)
+            {
+                ids.Add(item.Id);
+            }
+
+            BusinessFactory<DepartmentTargetBusiness>.Instance.Create(this.currentEntity.Id, ids);
         }
         #endregion //Function
 
@@ -68,7 +95,7 @@ namespace Poseidon.Energy.ClientDx
         {
             this.clbDepartment.CheckAll();
         }
-        
+
         /// <summary>
         /// 反选
         /// </summary>
@@ -77,6 +104,16 @@ namespace Poseidon.Energy.ClientDx
         private void btnUncheckAll_Click(object sender, EventArgs e)
         {
             this.clbDepartment.UnCheckAll();
+        }
+
+        /// <summary>
+        /// 保存
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            SaveSelectDepartment();
         }
         #endregion //Event
     }

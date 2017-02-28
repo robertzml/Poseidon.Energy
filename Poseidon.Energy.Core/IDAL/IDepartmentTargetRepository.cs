@@ -13,5 +13,20 @@ namespace Poseidon.Energy.Core.IDAL
     /// </summary>
     internal interface IDepartmentTargetRepository : IBaseDAL<DepartmentTarget>
     {
+        /// <summary>
+        /// 查找部门指标
+        /// </summary>
+        /// <param name="planTargetId">指标计划ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <returns></returns>
+        DepartmentTarget FindOne(string planTargetId, string departmentId);
+
+        /// <summary>
+        /// 检查部门指标是否存在
+        /// </summary>
+        /// <param name="planTargetId">指标计划ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <returns></returns>
+        bool Exist(string planTargetId, string departmentId);
     }
 }
