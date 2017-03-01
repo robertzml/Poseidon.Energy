@@ -51,16 +51,16 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             if (doc.Contains("staffTarget"))
             {
                 BsonArray array = doc["staffTarget"].AsBsonArray;
-                foreach (var item in array)
+                foreach (BsonDocument item in array)
                 {
                     StaffTarget st = new StaffTarget();
-                    st.Name = doc["name"].ToString();
-                    st.Code = doc["code"].ToString();
-                    st.Count = doc["count"].ToInt32();
-                    st.MonthKilowatt = doc["monthKilowatt"].ToDecimal();
-                    st.MonthCount = doc["monthCount"].ToInt32();
-                    st.YearKilowatt = doc["yearKilowatt"].ToDecimal();
-                    st.YearAmount = doc["yearAmount"].ToDecimal();
+                    st.Name = item["name"].ToString();
+                    st.Code = item["code"].ToString();
+                    st.Count = item["count"].ToInt32();
+                    st.MonthKilowatt = item["monthKilowatt"].ToDecimal();
+                    st.MonthCount = item["monthCount"].ToInt32();
+                    st.YearKilowatt = item["yearKilowatt"].ToDecimal();
+                    st.YearAmount = item["yearAmount"].ToDecimal();
 
                     entity.StaffTarget.Add(st);
                 }

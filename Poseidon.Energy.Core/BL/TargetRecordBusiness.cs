@@ -46,7 +46,7 @@ namespace Poseidon.Energy.Core.BL
             StaffTarget st = new StaffTarget();
             st.Name = "在编";
             st.Code = "establishment";
-            st.Count = popRecord.Establishment;
+            st.Count = 10;
 
             data.Add(st);
 
