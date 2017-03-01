@@ -9,16 +9,16 @@ namespace Poseidon.Energy.Core.DL
     using Poseidon.Base.Framework;
 
     /// <summary>
-    /// 部门用能指标类
+    /// 指标记录类
     /// </summary>
-    public class DepartmentTarget : BusinessEntity
+    public class TargetRecord : BusinessEntity
     {
         #region Proprety
         /// <summary>
         /// 计划指标ID
         /// </summary>
         [Display(Name = "计划指标ID")]
-        public string PlanTargetId { get; set; }
+        public string TargetId { get; set; }
 
         /// <summary>
         /// 部门ID
@@ -51,8 +51,6 @@ namespace Poseidon.Energy.Core.DL
         public decimal TotalAmount { get; set; }
         #endregion //Property
     }
-
-    
 
     /// <summary>
     /// 补贴

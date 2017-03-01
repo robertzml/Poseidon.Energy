@@ -31,31 +31,29 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.departmentTargetGrid1 = new Poseidon.Energy.ClientDx.DepartmentTargetGrid();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnSelectDepartment = new DevExpress.XtraEditors.SimpleButton();
             this.luTarget = new DevExpress.XtraEditors.LookUpEdit();
+            this.bsTarget = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.staffTargetGrid1 = new Poseidon.Energy.ClientDx.StaffTargetGrid();
-            this.bsTarget = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.luTarget.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTarget)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsTarget)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -78,25 +76,12 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.departmentTargetGrid1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 203);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(194, 144);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "部门列表";
-            // 
-            // departmentTargetGrid1
-            // 
-            this.departmentTargetGrid1.DataSource = null;
-            this.departmentTargetGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.departmentTargetGrid1.Editable = false;
-            this.departmentTargetGrid1.Location = new System.Drawing.Point(2, 21);
-            this.departmentTargetGrid1.Name = "departmentTargetGrid1";
-            this.departmentTargetGrid1.ShowFooter = false;
-            this.departmentTargetGrid1.ShowLineNumber = false;
-            this.departmentTargetGrid1.Size = new System.Drawing.Size(190, 121);
-            this.departmentTargetGrid1.TabIndex = 0;
             // 
             // groupControl2
             // 
@@ -150,6 +135,10 @@
             this.luTarget.TabIndex = 4;
             this.luTarget.EditValueChanged += new System.EventHandler(this.luPlanTarget_EditValueChanged);
             // 
+            // bsTarget
+            // 
+            this.bsTarget.DataSource = typeof(Poseidon.Energy.Core.DL.Target);
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -202,10 +191,6 @@
             this.staffTargetGrid1.Size = new System.Drawing.Size(595, 121);
             this.staffTargetGrid1.TabIndex = 0;
             // 
-            // bsTarget
-            // 
-            this.bsTarget.DataSource = typeof(Poseidon.Energy.Core.DL.Target);
-            // 
             // FrmTargetMake
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -216,18 +201,17 @@
             this.Text = "部门指标制定";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.luTarget.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTarget)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bsTarget)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -237,7 +221,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DepartmentTargetGrid departmentTargetGrid1;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private StaffTargetGrid staffTargetGrid1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;

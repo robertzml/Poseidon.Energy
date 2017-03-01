@@ -14,14 +14,14 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
-
+    
     /// <summary>
-    /// 部门指标计划表格控件
+    /// 指标记录表格控件
     /// </summary>
-    public partial class DepartmentTargetGrid : WinEntityGrid<DepartmentTarget>
+    public partial class TargetRecordGrid : WinEntityGrid<TargetRecord>
     {
         #region Constructor
-        public DepartmentTargetGrid()
+        public TargetRecordGrid()
         {
             InitializeComponent();
         }

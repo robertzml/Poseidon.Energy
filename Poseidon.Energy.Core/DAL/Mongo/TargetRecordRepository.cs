@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Poseidon.Energy.Core.DAL.Mongo
 {
@@ -13,17 +14,17 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     using Poseidon.Energy.Core.IDAL;
 
     /// <summary>
-    /// 部门指标数据访问类
+    /// 指标记录数据访问类
     /// </summary>
-    internal class DepartmentTargetRepository : AbsctractDALMongo<DepartmentTarget>, IDepartmentTargetRepository
+    internal class TargetRecordRepository : AbsctractDALMongo<TargetRecord>, ITargetRecordRepository
     {
         #region Constructor
         /// <summary>
-        /// 部门指标数据访问类
+        /// 指标记录数据访问类
         /// </summary>
-        public DepartmentTargetRepository()
+        public TargetRecordRepository()
         {
-            this.collectionName = "energy_departmentTarget";
+            this.collectionName = "energy_targetRecord";
         }
         #endregion //Constructor
 
@@ -33,11 +34,11 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="doc">Bson文档</param>
         /// <returns></returns>
-        protected override DepartmentTarget DocToEntity(BsonDocument doc)
+        protected override TargetRecord DocToEntity(BsonDocument doc)
         {
-            DepartmentTarget entity = new DepartmentTarget();
+            TargetRecord entity = new TargetRecord();
             entity.Id = doc["_id"].ToString();
-            entity.PlanTargetId = doc["planTargetId"].ToString();
+            entity.TargetId = doc["targetId"].ToString();
             entity.DepartmentId = doc["departmentId"].ToString();
             entity.TotalKilowatt = doc["totalKilowatt"].ToDecimal();
             entity.TotalAmount = doc["totalAmount"].ToDecimal();
@@ -72,11 +73,11 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <returns></returns>
-        protected override BsonDocument EntityToDoc(DepartmentTarget entity)
+        protected override BsonDocument EntityToDoc(TargetRecord entity)
         {
             BsonDocument doc = new BsonDocument
             {
-                { "planTargetId", entity.PlanTargetId },
+                { "targetId", entity.TargetId },
                 { "departmentId", entity.DepartmentId },
                 { "totalKilowatt", entity.TotalKilowatt },
                 { "totalAmount", entity.TotalAmount },
@@ -112,39 +113,39 @@ namespace Poseidon.Energy.Core.DAL.Mongo
 
         #region Method
         /// <summary>
-        /// 查找部门指标
+        /// 查找指标记录
         /// </summary>
-        /// <param name="planTargetId">指标计划ID</param>
+        /// <param name="targetId">指标计划ID</param>
         /// <param name="departmentId">部门ID</param>
         /// <returns></returns>
-        public DepartmentTarget FindOne(string planTargetId, string departmentId)
+        public TargetRecord FindOne(string targetId, string departmentId)
         {
             var builder = Builders<BsonDocument>.Filter;
-            var filter = builder.Eq("planTargetId", planTargetId) & builder.Eq("departmentId", departmentId);
+            var filter = builder.Eq("targetId", targetId) & builder.Eq("departmentId", departmentId);
 
-            return this.FindOne(filter);            
+            return this.FindOne(filter);
         }
 
         /// <summary>
-        /// 检查部门指标是否存在
+        /// 检查指标记录是否存在
         /// </summary>
-        /// <param name="planTargetId">指标计划ID</param>
+        /// <param name="targetId">指标计划ID</param>
         /// <param name="departmentId">部门ID</param>
         /// <returns></returns>
-        public bool Exist(string planTargetId, string departmentId)
+        public bool Exist(string targetId, string departmentId)
         {
             var builder = Builders<BsonDocument>.Filter;
-            var filter = builder.Eq("planTargetId", planTargetId) & builder.Eq("departmentId", departmentId);
+            var filter = builder.Eq("targetId", targetId) & builder.Eq("departmentId", departmentId);
 
             long count = this.Count(filter);
             return count != 0;
         }
 
         /// <summary>
-        /// 添加部门指标
+        /// 添加指标记录
         /// </summary>
         /// <param name="entity">实体对象</param>
-        public override void Create(DepartmentTarget entity)
+        public override void Create(TargetRecord entity)
         {
             entity.CreateTime = DateTime.Now;
             entity.UpdateTime = entity.CreateTime;

@@ -75,12 +75,6 @@
     <Compile Include="Control\DepartmentGrid.Designer.cs">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\DepartmentTargetGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\DepartmentTargetGrid.Designer.cs">
-      <DependentUpon>DepartmentTargetGrid.cs</DependentUpon>
-    </Compile>
     <Compile Include="Department\FrmDepartmentEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +92,12 @@
     </Compile>
     <Compile Include="Control\StaffTargetGrid.Designer.cs">
       <DependentUpon>StaffTargetGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TargetRecordGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\TargetRecordGrid.Designer.cs">
+      <DependentUpon>TargetRecordGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Target\FrmTargetSelectDepartment.cs">
       <SubType>Form</SubType>
@@ -192,9 +192,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Control\DepartmentTargetGrid.resx">
-      <DependentUpon>DepartmentTargetGrid.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Control\FundRecordGrid.resx">
       <DependentUpon>FundRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\StaffTargetGrid.resx">
       <DependentUpon>StaffTargetGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\TargetRecordGrid.resx">
+      <DependentUpon>TargetRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fund\FrmFundAdd.resx">
       <DependentUpon>FrmFundAdd.cs</DependentUpon>
@@ -235,14 +235,13 @@
       <DependentUpon>FrmTargetSelectDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Department.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.DepartmentTarget.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Fund.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.FundRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Population.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.PopulationRecord.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.StaffNumber.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.StaffTarget.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Target.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.TargetRecord.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Control\DepartmentGrid.resx">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>

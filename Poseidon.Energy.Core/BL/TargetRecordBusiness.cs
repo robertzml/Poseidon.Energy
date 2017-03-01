@@ -11,49 +11,49 @@ namespace Poseidon.Energy.Core.BL
     using Poseidon.Energy.Core.IDAL;
 
     /// <summary>
-    /// 部门指标业务类
+    /// 指标记录业务类
     /// </summary>
-    public class DepartmentTargetBusiness : AbsctractBusiness<DepartmentTarget>
+    public class TargetRecordBusiness : AbsctractBusiness<TargetRecord>
     {
         #region Constructor
         /// <summary>
         /// 部门指标业务类
         /// </summary>
-        public DepartmentTargetBusiness()
+        public TargetRecordBusiness()
         {
-            this.baseDal = RepositoryFactory<IDepartmentTargetRepository>.Instance;
+            this.baseDal = RepositoryFactory<ITargetRecordRepository>.Instance;
         }
         #endregion //Constructor
 
         #region Method
         /// <summary>
-        /// 查找指标计划包含部门
+        /// 查找指标记录
         /// </summary>
-        /// <param name="planTargetId">指标计划ID</param>
+        /// <param name="targetId">指标计划ID</param>
         /// <returns></returns>
-        public IEnumerable<DepartmentTarget> FindByPlanTarget(string planTargetId)
+        public IEnumerable<TargetRecord> FindByTarget(string targetId)
         {
-            return this.baseDal.FindListByField("planTargetId", planTargetId);
+            return this.baseDal.FindListByField("targetId", targetId);
         }
 
         /// <summary>
-        /// 添加一组部门指标
+        /// 添加一组指标记录
         /// </summary>
-        /// <param name="planTargetId">指标计划ID</param>
+        /// <param name="targetId">指标计划ID</param>
         /// <param name="ids">部门ID列表</param>
-        public void Create(string planTargetId, List<string> ids)
+        public void Create(string targetId, List<string> ids)
         {
-            var dal = this.baseDal as IDepartmentTargetRepository;
+            var dal = this.baseDal as ITargetRecordRepository;
 
             foreach (var item in ids)
             {
-                bool exist = dal.Exist(planTargetId, item);
+                bool exist = dal.Exist(targetId, item);
                 if (exist)
                     continue;
 
-                DepartmentTarget dt = new DepartmentTarget();
+                TargetRecord dt = new TargetRecord();
                 dt.DepartmentId = item;
-                dt.PlanTargetId = planTargetId;
+                dt.TargetId = targetId;
                 dt.TotalKilowatt = 0;
                 dt.TotalAmount = 0;
                 dt.Remark = "";

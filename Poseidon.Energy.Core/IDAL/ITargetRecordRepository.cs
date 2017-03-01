@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Poseidon.Energy.Core.IDAL
 {
@@ -9,24 +10,24 @@ namespace Poseidon.Energy.Core.IDAL
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 部门指标数据访问接口
+    /// 指标记录数据访问接口
     /// </summary>
-    internal interface IDepartmentTargetRepository : IBaseDAL<DepartmentTarget>
+    internal interface ITargetRecordRepository : IBaseDAL<TargetRecord>
     {
         /// <summary>
-        /// 查找部门指标
+        /// 查找指标记录
         /// </summary>
-        /// <param name="planTargetId">指标计划ID</param>
+        /// <param name="targetId">指标计划ID</param>
         /// <param name="departmentId">部门ID</param>
         /// <returns></returns>
-        DepartmentTarget FindOne(string planTargetId, string departmentId);
+        TargetRecord FindOne(string targetId, string departmentId);
 
         /// <summary>
-        /// 检查部门指标是否存在
+        /// 检查指标记录是否存在
         /// </summary>
-        /// <param name="planTargetId">指标计划ID</param>
+        /// <param name="targetId">指标计划ID</param>
         /// <param name="departmentId">部门ID</param>
         /// <returns></returns>
-        bool Exist(string planTargetId, string departmentId);
+        bool Exist(string targetId, string departmentId);
     }
 }

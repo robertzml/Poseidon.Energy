@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Energy.ClientDx
 {
-    partial class DepartmentTargetGrid
+    partial class TargetRecordGrid
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.colPlanTargetId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTargetId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepartmentId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalKilowatt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalAmount = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,16 +44,12 @@
             // 
             // bsEntity
             // 
-            this.bsEntity.DataSource = typeof(Poseidon.Energy.Core.DL.DepartmentTarget);
-            // 
-            // dgcEntity
-            // 
-            this.dgcEntity.Size = new System.Drawing.Size(664, 332);
+            this.bsEntity.DataSource = typeof(Poseidon.Energy.Core.DL.TargetRecord);
             // 
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colPlanTargetId,
+            this.colTargetId,
             this.colDepartmentId,
             this.colTotalKilowatt,
             this.colTotalAmount,
@@ -69,12 +65,12 @@
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
             // 
-            // colPlanTargetId
+            // colTargetId
             // 
-            this.colPlanTargetId.FieldName = "PlanTargetId";
-            this.colPlanTargetId.Name = "colPlanTargetId";
-            this.colPlanTargetId.Visible = true;
-            this.colPlanTargetId.VisibleIndex = 1;
+            this.colTargetId.FieldName = "TargetId";
+            this.colTargetId.Name = "colTargetId";
+            this.colTargetId.Visible = true;
+            this.colTargetId.VisibleIndex = 1;
             // 
             // colDepartmentId
             // 
@@ -132,12 +128,11 @@
             this.colId.Visible = true;
             this.colId.VisibleIndex = 0;
             // 
-            // DepartmentTargetGrid
+            // TargetRecordGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "DepartmentTargetGrid";
-            this.Size = new System.Drawing.Size(664, 332);
+            this.Name = "TargetRecordGrid";
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
@@ -147,7 +142,7 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn colPlanTargetId;
+        private DevExpress.XtraGrid.Columns.GridColumn colTargetId;
         private DevExpress.XtraGrid.Columns.GridColumn colDepartmentId;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalKilowatt;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalAmount;

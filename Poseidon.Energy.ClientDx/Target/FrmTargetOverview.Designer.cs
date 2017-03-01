@@ -58,8 +58,8 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.lbTarget = new DevExpress.XtraEditors.ListBoxControl();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.bsTarget = new System.Windows.Forms.BindingSource(this.components);
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -88,8 +88,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbTarget)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTarget)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -387,6 +387,10 @@
             this.lbTarget.ValueMember = "Id";
             this.lbTarget.SelectedIndexChanged += new System.EventHandler(this.lbPlanTarget_SelectedIndexChanged);
             // 
+            // bsTarget
+            // 
+            this.bsTarget.DataSource = typeof(Poseidon.Energy.Core.DL.Target);
+            // 
             // groupControl3
             // 
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -395,10 +399,6 @@
             this.groupControl3.Size = new System.Drawing.Size(628, 302);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "groupControl3";
-            // 
-            // bsTarget
-            // 
-            this.bsTarget.DataSource = typeof(Poseidon.Energy.Core.DL.Target);
             // 
             // FrmTargetOverview
             // 
@@ -436,8 +436,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lbTarget)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTarget)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.ResumeLayout(false);
 
         }

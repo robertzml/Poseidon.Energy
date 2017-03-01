@@ -68,24 +68,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\DepartmentBusiness.cs" />
-    <Compile Include="BL\DepartmentTargetBusiness.cs" />
     <Compile Include="BL\FundBusiness.cs" />
     <Compile Include="BL\FundRecordBusiness.cs" />
     <Compile Include="BL\PopulationBusiness.cs" />
     <Compile Include="BL\PopulationRecordBusiness.cs" />
     <Compile Include="BL\ExpenseAccountBusiness.cs" />
     <Compile Include="BL\TargetBusiness.cs" />
+    <Compile Include="BL\TargetRecordBusiness.cs" />
     <Compile Include="DAL\Mongo\DepartmentRepository.cs" />
-    <Compile Include="DAL\Mongo\DepartmentTargetRepository.cs" />
     <Compile Include="DAL\Mongo\FundRecordRepository.cs" />
     <Compile Include="DAL\Mongo\FundRepository.cs" />
     <Compile Include="DAL\Mongo\PopulationRecordRepository.cs" />
     <Compile Include="DAL\Mongo\PopulationRepository.cs" />
     <Compile Include="DAL\Mongo\ExpenseAccountRepository.cs" />
+    <Compile Include="DAL\Mongo\TargetRecordRepository.cs" />
     <Compile Include="DAL\Mongo\TargetRepository.cs" />
     <Compile Include="DL\Ammeter.cs" />
     <Compile Include="DL\Department.cs" />
-    <Compile Include="DL\DepartmentTarget.cs" />
     <Compile Include="DL\FundRecord.cs" />
     <Compile Include="DL\Fund.cs" />
     <Compile Include="DL\PopulationRecord.cs" />
@@ -93,13 +92,14 @@
     <Compile Include="DL\ExpenseAccount.cs" />
     <Compile Include="DL\StaffTarget.cs" />
     <Compile Include="DL\Target.cs" />
+    <Compile Include="DL\TargetRecord.cs" />
     <Compile Include="IDAL\IDepartmentRepository.cs" />
-    <Compile Include="IDAL\IDepartmentTargetRepository.cs" />
     <Compile Include="IDAL\IFundRecordRepository.cs" />
     <Compile Include="IDAL\IFundRepository.cs" />
     <Compile Include="IDAL\IPopulationRecordRepository.cs" />
     <Compile Include="IDAL\IPopulationRepository.cs" />
     <Compile Include="IDAL\IExpenseAccountRepository.cs" />
+    <Compile Include="IDAL\ITargetRecordRepository.cs" />
     <Compile Include="IDAL\ITargetRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\ModelTypeCode.cs" />

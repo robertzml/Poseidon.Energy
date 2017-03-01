@@ -12,8 +12,7 @@ namespace Poseidon.Energy.ClientDx
 {
     using DevExpress.XtraEditors.Controls;
     using Poseidon.Base.Framework;
-    using Poseidon.Core.BL;
-    using Poseidon.Core.DL;
+    using Poseidon.Base.System;
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
@@ -60,7 +59,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void SetSelectDepartment()
         {
-            var depTarget = BusinessFactory<DepartmentTargetBusiness>.Instance.FindByPlanTarget(this.currentEntity.Id);
+            var depTarget = BusinessFactory<TargetRecordBusiness>.Instance.FindByTarget(this.currentEntity.Id);
 
             foreach (CheckedListBoxItem item in this.clbDepartment.Items)
             {
@@ -76,12 +75,12 @@ namespace Poseidon.Energy.ClientDx
         {
             List<string> ids = new List<string>();
 
-            foreach(Department item in this.clbDepartment.CheckedItems)
+            foreach (Department item in this.clbDepartment.CheckedItems)
             {
                 ids.Add(item.Id);
             }
 
-            BusinessFactory<DepartmentTargetBusiness>.Instance.Create(this.currentEntity.Id, ids);
+            BusinessFactory<TargetRecordBusiness>.Instance.Create(this.currentEntity.Id, ids);
         }
         #endregion //Function
 
@@ -113,7 +112,17 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            SaveSelectDepartment();
+            try
+            {
+                SaveSelectDepartment();
+
+                MessageUtil.ShowInfo("保存成功");
+                this.Close();
+            }
+            catch (PoseidonException pe)
+            {
+                MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+            }
         }
         #endregion //Event
     }
