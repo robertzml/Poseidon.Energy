@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Poseidon.Energy.Core.DAL.Mongo
 {
@@ -15,15 +14,15 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     /// <summary>
     /// 计划指标数据访问类
     /// </summary>
-    internal class PlanTargetRepository : AbsctractDALMongo<PlanTarget>, IPlanTargetRepository
+    internal class TargetRepository : AbsctractDALMongo<Target>, ITargetRepository
     {
         #region Constructor
         /// <summary>
         /// 计划指标数据访问类
         /// </summary>
-        public PlanTargetRepository()
+        public TargetRepository()
         {
-            this.collectionName = "energy_planTarget";
+            this.collectionName = "energy_target";
         }
         #endregion //Constructor
 
@@ -33,9 +32,9 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="doc">Bson文档</param>
         /// <returns></returns>
-        protected override PlanTarget DocToEntity(BsonDocument doc)
+        protected override Target DocToEntity(BsonDocument doc)
         {
-            PlanTarget entity = new PlanTarget();
+            Target entity = new Target();
             entity.Id = doc["_id"].ToString();
             entity.Name = doc["name"].ToString();
             entity.Year = doc["year"].ToInt32();
@@ -54,7 +53,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <returns></returns>
-        protected override BsonDocument EntityToDoc(PlanTarget entity)
+        protected override BsonDocument EntityToDoc(Target entity)
         {
             BsonDocument doc = new BsonDocument
             {
@@ -77,7 +76,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// 添加计划指标
         /// </summary>
         /// <param name="entity">实体对象</param>
-        public override void Create(PlanTarget entity)
+        public override void Create(Target entity)
         {
             entity.CreateTime = DateTime.Now;
             entity.UpdateTime = entity.CreateTime;

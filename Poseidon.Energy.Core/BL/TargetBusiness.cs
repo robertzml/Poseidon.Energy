@@ -13,15 +13,15 @@ namespace Poseidon.Energy.Core.BL
     /// <summary>
     /// 计划指标业务类
     /// </summary>
-    public class PlanTargetBusiness : AbsctractBusiness<PlanTarget>
+    public class TargetBusiness : AbsctractBusiness<Target>
     {
         #region Constructor
         /// <summary>
         /// 计划指标业务类
         /// </summary>
-        public PlanTargetBusiness()
+        public TargetBusiness()
         {
-            this.baseDal = RepositoryFactory<IPlanTargetRepository>.Instance;
+            this.baseDal = RepositoryFactory<ITargetRepository>.Instance;
         }
         #endregion //Constructor
     }

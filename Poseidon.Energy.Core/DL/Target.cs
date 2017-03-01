@@ -14,7 +14,7 @@ namespace Poseidon.Energy.Core.DL
     /// <remarks>
     /// 能源指标总类
     /// </remarks>
-    public class PlanTarget : BusinessEntity
+    public class Target : BusinessEntity
     {
         #region Property
         /// <summary>

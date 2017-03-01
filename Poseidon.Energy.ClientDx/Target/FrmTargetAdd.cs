@@ -71,7 +71,7 @@ namespace Poseidon.Energy.ClientDx
         /// 设置实体
         /// </summary>
         /// <param name="entity"></param>
-        private void SetEntity(PlanTarget entity)
+        private void SetEntity(Target entity)
         {
             entity.Name = this.txtName.Text;
             entity.Year = Convert.ToInt32(this.spYear.Value);
@@ -96,12 +96,12 @@ namespace Poseidon.Energy.ClientDx
                 return;
             }
 
-            PlanTarget entity = new PlanTarget();
+            Target entity = new Target();
             SetEntity(entity);
 
             try
             {
-                BusinessFactory<PlanTargetBusiness>.Instance.Create(entity);
+                BusinessFactory<TargetBusiness>.Instance.Create(entity);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

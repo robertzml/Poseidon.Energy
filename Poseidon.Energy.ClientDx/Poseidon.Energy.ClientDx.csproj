@@ -238,11 +238,11 @@
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.DepartmentTarget.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Fund.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.FundRecord.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.PlanTarget.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Population.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.PopulationRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.StaffNumber.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.StaffTarget.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Target.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Control\DepartmentGrid.resx">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>

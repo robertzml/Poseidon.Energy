@@ -26,7 +26,7 @@ namespace Poseidon.Energy.ClientDx
         /// <summary>
         /// 当前指标计划
         /// </summary>
-        private PlanTarget currentPlanTarget;
+        private Target currentTarget;
         #endregion //Field
 
         #region Contructor
@@ -39,8 +39,8 @@ namespace Poseidon.Energy.ClientDx
         #region Function
         protected override void InitForm()
         {
-            var data = BusinessFactory<PlanTargetBusiness>.Instance.FindAll().ToList();
-            this.bsPlanTarget.DataSource = data;
+            var data = BusinessFactory<TargetBusiness>.Instance.FindAll().ToList();
+            this.bsTarget.DataSource = data;
 
             base.InitForm();
         }
@@ -54,7 +54,7 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void luPlanTarget_EditValueChanged(object sender, EventArgs e)
         {
-            this.currentPlanTarget = this.luPlanTarget.EditValue as PlanTarget;
+            this.currentTarget = this.luTarget.EditValue as Target;
         }
 
         /// <summary>
@@ -64,12 +64,11 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnSelectDepartment_Click(object sender, EventArgs e)
         {
-            if (this.currentPlanTarget == null)
+            if (this.currentTarget == null)
                 return;
 
-            ChildFormManage.ShowDialogForm(typeof(FrmTargetSelectDepartment), new object[] { this.currentPlanTarget.Id });
+            ChildFormManage.ShowDialogForm(typeof(FrmTargetSelectDepartment), new object[] { this.currentTarget.Id });
         }
         #endregion //Event
-
     }
 }

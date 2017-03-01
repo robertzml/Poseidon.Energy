@@ -24,7 +24,7 @@ namespace Poseidon.Energy.ClientDx
         /// <summary>
         /// 当前关联指标计划
         /// </summary>
-        private PlanTarget currentPlanTarget;
+        private Target currentTarget;
         #endregion //Field
 
         #region Constructor
@@ -37,15 +37,15 @@ namespace Poseidon.Energy.ClientDx
         #region Function
         protected override void InitForm()
         {
-            LoadPlanTargets();
+            LoadTargets();
 
             base.InitForm();
         }
 
-        private void LoadPlanTargets()
+        private void LoadTargets()
         {
-            var data = BusinessFactory<PlanTargetBusiness>.Instance.FindAll().ToList();
-            this.bsPlanTarget.DataSource = data;
+            var data = BusinessFactory<TargetBusiness>.Instance.FindAll().ToList();
+            this.bsTarget.DataSource = data;
         }
         #endregion //Function
 
@@ -57,14 +57,14 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void lbPlanTarget_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.currentPlanTarget = this.lbPlanTarget.SelectedItem as PlanTarget;
+            this.currentTarget = this.lbTarget.SelectedItem as Target;
 
-            this.txtName.Text = currentPlanTarget.Name;
-            this.txtYear.Text = currentPlanTarget.Year.ToString();
-            this.txtPopulation.Text = currentPlanTarget.PopulationId;
-            this.txtFund.Text = currentPlanTarget.FundId;
-            this.txtCreateTime.Text = currentPlanTarget.CreateTime.ToDateTimeString();
-            this.txtUpdateTime.Text = currentPlanTarget.UpdateTime.ToDateTimeString();
+            this.txtName.Text = currentTarget.Name;
+            this.txtYear.Text = currentTarget.Year.ToString();
+            this.txtPopulation.Text = currentTarget.PopulationId;
+            this.txtFund.Text = currentTarget.FundId;
+            this.txtCreateTime.Text = currentTarget.CreateTime.ToDateTimeString();
+            this.txtUpdateTime.Text = currentTarget.UpdateTime.ToDateTimeString();
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Poseidon.Energy.ClientDx
         {
             ChildFormManage.ShowDialogForm(typeof(FrmTargetAdd));
 
-            LoadPlanTargets();
+            LoadTargets();
         }
 
 
@@ -87,10 +87,9 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnSet_Click(object sender, EventArgs e)
         {
-            if (this.currentPlanTarget == null)
+            if (this.currentTarget == null)
                 return;
         }
         #endregion //Event
-
     }
 }

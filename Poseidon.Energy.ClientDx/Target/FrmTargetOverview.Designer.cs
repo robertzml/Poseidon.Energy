@@ -57,9 +57,9 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.lbPlanTarget = new DevExpress.XtraEditors.ListBoxControl();
-            this.bsPlanTarget = new System.Windows.Forms.BindingSource(this.components);
+            this.lbTarget = new DevExpress.XtraEditors.ListBoxControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.bsTarget = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -87,9 +87,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lbPlanTarget)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPlanTarget)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbTarget)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTarget)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -366,7 +366,7 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.lbPlanTarget);
+            this.groupControl2.Controls.Add(this.lbTarget);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(3, 3);
             this.groupControl2.Name = "groupControl2";
@@ -375,21 +375,17 @@
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "年度指标列表";
             // 
-            // lbPlanTarget
+            // lbTarget
             // 
-            this.lbPlanTarget.DataSource = this.bsPlanTarget;
-            this.lbPlanTarget.DisplayMember = "Year";
-            this.lbPlanTarget.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbPlanTarget.Location = new System.Drawing.Point(2, 21);
-            this.lbPlanTarget.Name = "lbPlanTarget";
-            this.lbPlanTarget.Size = new System.Drawing.Size(190, 489);
-            this.lbPlanTarget.TabIndex = 0;
-            this.lbPlanTarget.ValueMember = "Id";
-            this.lbPlanTarget.SelectedIndexChanged += new System.EventHandler(this.lbPlanTarget_SelectedIndexChanged);
-            // 
-            // bsPlanTarget
-            // 
-            this.bsPlanTarget.DataSource = typeof(Poseidon.Energy.Core.DL.PlanTarget);
+            this.lbTarget.DataSource = this.bsTarget;
+            this.lbTarget.DisplayMember = "Name";
+            this.lbTarget.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTarget.Location = new System.Drawing.Point(2, 21);
+            this.lbTarget.Name = "lbTarget";
+            this.lbTarget.Size = new System.Drawing.Size(190, 489);
+            this.lbTarget.TabIndex = 0;
+            this.lbTarget.ValueMember = "Id";
+            this.lbTarget.SelectedIndexChanged += new System.EventHandler(this.lbPlanTarget_SelectedIndexChanged);
             // 
             // groupControl3
             // 
@@ -399,6 +395,10 @@
             this.groupControl3.Size = new System.Drawing.Size(628, 302);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "groupControl3";
+            // 
+            // bsTarget
+            // 
+            this.bsTarget.DataSource = typeof(Poseidon.Energy.Core.DL.Target);
             // 
             // FrmTargetOverview
             // 
@@ -435,9 +435,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lbPlanTarget)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPlanTarget)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbTarget)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTarget)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -449,8 +449,7 @@
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton btnSet;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.ListBoxControl lbPlanTarget;
-        private System.Windows.Forms.BindingSource bsPlanTarget;
+        private DevExpress.XtraEditors.ListBoxControl lbTarget;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.TextEdit txtYear;
@@ -475,5 +474,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private System.Windows.Forms.BindingSource bsTarget;
     }
 }

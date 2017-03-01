@@ -27,22 +27,22 @@ namespace Poseidon.Energy.ClientDx
         /// <summary>
         /// 关联指标计划
         /// </summary>
-        private PlanTarget currentEntity;
+        private Target currentEntity;
         #endregion //Field
 
         #region Constructor
-        public FrmTargetSelectDepartment(string planTargetId)
+        public FrmTargetSelectDepartment(string targetId)
         {
             InitializeComponent();
 
-            InitData(planTargetId);
+            InitData(targetId);
         }
         #endregion //Constructor
 
         #region Function
         private void InitData(string id)
         {
-            this.currentEntity = BusinessFactory<PlanTargetBusiness>.Instance.FindById(id);
+            this.currentEntity = BusinessFactory<TargetBusiness>.Instance.FindById(id);
         }
 
         protected override void InitForm()

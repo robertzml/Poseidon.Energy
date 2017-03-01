@@ -35,13 +35,13 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnSelectDepartment = new DevExpress.XtraEditors.SimpleButton();
-            this.luPlanTarget = new DevExpress.XtraEditors.LookUpEdit();
-            this.bsPlanTarget = new System.Windows.Forms.BindingSource(this.components);
+            this.luTarget = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.staffTargetGrid1 = new Poseidon.Energy.ClientDx.StaffTargetGrid();
+            this.bsTarget = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -49,13 +49,13 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.luPlanTarget.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPlanTarget)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.luTarget.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTarget)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -112,7 +112,7 @@
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.btnSelectDepartment);
-            this.layoutControl1.Controls.Add(this.luPlanTarget);
+            this.layoutControl1.Controls.Add(this.luTarget);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
@@ -131,28 +131,24 @@
             this.btnSelectDepartment.Text = "部门选择";
             this.btnSelectDepartment.Click += new System.EventHandler(this.btnSelectDepartment_Click);
             // 
-            // luPlanTarget
+            // luTarget
             // 
-            this.luPlanTarget.Location = new System.Drawing.Point(63, 12);
-            this.luPlanTarget.Name = "luPlanTarget";
-            this.luPlanTarget.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.luTarget.Location = new System.Drawing.Point(63, 12);
+            this.luTarget.Name = "luTarget";
+            this.luTarget.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luPlanTarget.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            this.luTarget.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 21, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "Name", 54, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Year", "Year", 35, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Remark", "Remark", 51, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.luPlanTarget.Properties.DataSource = this.bsPlanTarget;
-            this.luPlanTarget.Properties.DisplayMember = "Name";
-            this.luPlanTarget.Properties.NullText = "请选择";
-            this.luPlanTarget.Size = new System.Drawing.Size(720, 20);
-            this.luPlanTarget.StyleController = this.layoutControl1;
-            this.luPlanTarget.TabIndex = 4;
-            this.luPlanTarget.EditValueChanged += new System.EventHandler(this.luPlanTarget_EditValueChanged);
-            // 
-            // bsPlanTarget
-            // 
-            this.bsPlanTarget.DataSource = typeof(Poseidon.Energy.Core.DL.PlanTarget);
+            this.luTarget.Properties.DataSource = this.bsTarget;
+            this.luTarget.Properties.DisplayMember = "Name";
+            this.luTarget.Properties.NullText = "请选择";
+            this.luTarget.Size = new System.Drawing.Size(720, 20);
+            this.luTarget.StyleController = this.layoutControl1;
+            this.luTarget.TabIndex = 4;
+            this.luTarget.EditValueChanged += new System.EventHandler(this.luPlanTarget_EditValueChanged);
             // 
             // layoutControlGroup1
             // 
@@ -168,7 +164,7 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.luPlanTarget;
+            this.layoutControlItem1.Control = this.luTarget;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(775, 24);
@@ -206,6 +202,10 @@
             this.staffTargetGrid1.Size = new System.Drawing.Size(595, 121);
             this.staffTargetGrid1.TabIndex = 0;
             // 
+            // bsTarget
+            // 
+            this.bsTarget.DataSource = typeof(Poseidon.Energy.Core.DL.Target);
+            // 
             // FrmTargetMake
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -221,13 +221,13 @@
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.luPlanTarget.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPlanTarget)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.luTarget.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bsTarget)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -241,11 +241,11 @@
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private StaffTargetGrid staffTargetGrid1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.LookUpEdit luPlanTarget;
+        private DevExpress.XtraEditors.LookUpEdit luTarget;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.SimpleButton btnSelectDepartment;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private System.Windows.Forms.BindingSource bsPlanTarget;
+        private System.Windows.Forms.BindingSource bsTarget;
     }
 }
