@@ -153,6 +153,20 @@ namespace Poseidon.Energy.Core.DAL.Mongo
 
             base.Create(entity);
         }
+
+        /// <summary>
+        /// 删除未选择部门指标记录
+        /// </summary>
+        /// <param name="targetId">计划指标ID</param>
+        /// <param name="departmentIds">已选择部门ID</param>
+        /// <returns></returns>
+        public bool DeleteNotIn(string targetId, List<string> departmentIds)
+        {
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("targetId", targetId) & builder.Nin("departmentId", departmentIds);
+
+            return base.DeleteMany(filter);
+        }
         #endregion //Method
     }
 }

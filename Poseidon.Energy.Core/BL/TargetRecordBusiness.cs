@@ -41,24 +41,31 @@ namespace Poseidon.Energy.Core.BL
         /// </summary>
         /// <param name="targetId">指标计划ID</param>
         /// <param name="ids">部门ID列表</param>
-        public void Create(string targetId, List<string> ids)
+        /// <remarks>
+        /// 增加新记录，删除未选择部门记录
+        /// </remarks>
+        public void Set(string targetId, List<string> ids)
         {
             var dal = this.baseDal as ITargetRecordRepository;
 
+            var records = dal.FindListByField("targetId", targetId);
+            dal.DeleteNotIn(targetId, ids);
+
             foreach (var item in ids)
             {
-                bool exist = dal.Exist(targetId, item);
-                if (exist)
+                if (records.Any(r => r.DepartmentId == item))
                     continue;
+                else
+                {
+                    TargetRecord dt = new TargetRecord();
+                    dt.DepartmentId = item;
+                    dt.TargetId = targetId;
+                    dt.TotalKilowatt = 0;
+                    dt.TotalAmount = 0;
+                    dt.Remark = "";
 
-                TargetRecord dt = new TargetRecord();
-                dt.DepartmentId = item;
-                dt.TargetId = targetId;
-                dt.TotalKilowatt = 0;
-                dt.TotalAmount = 0;
-                dt.Remark = "";
-
-                dal.Create(dt);
+                    dal.Create(dt);
+                }
             }
         }
         #endregion //Method

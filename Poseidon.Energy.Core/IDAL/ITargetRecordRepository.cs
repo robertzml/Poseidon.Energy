@@ -29,5 +29,13 @@ namespace Poseidon.Energy.Core.IDAL
         /// <param name="departmentId">部门ID</param>
         /// <returns></returns>
         bool Exist(string targetId, string departmentId);
+
+        /// <summary>
+        /// 删除未选择部门指标记录
+        /// </summary>
+        /// <param name="targetId">计划指标ID</param>
+        /// <param name="departmentIds">已选择部门ID</param>
+        /// <returns></returns>
+        bool DeleteNotIn(string targetId, List<string> departmentIds);
     }
 }

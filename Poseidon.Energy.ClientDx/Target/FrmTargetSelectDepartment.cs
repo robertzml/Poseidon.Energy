@@ -47,7 +47,7 @@ namespace Poseidon.Energy.ClientDx
         protected override void InitForm()
         {
             var departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
-            this.bsDepartment.DataSource = departments;
+            this.bsDepartment.DataSource = departments;    
 
             SetSelectDepartment();
 
@@ -59,12 +59,13 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void SetSelectDepartment()
         {
-            var depTarget = BusinessFactory<TargetRecordBusiness>.Instance.FindByTarget(this.currentEntity.Id);
+            var records = BusinessFactory<TargetRecordBusiness>.Instance.FindByTarget(this.currentEntity.Id);
 
-            foreach (CheckedListBoxItem item in this.clbDepartment.Items)
+            for (int i = 0; i < this.bsDepartment.Count; i++)
             {
-                if (depTarget.Any(r => r.DepartmentId == item.Value.ToString()))
-                    item.CheckState = CheckState.Checked;
+                var department = this.bsDepartment[i] as Department;
+                if (records.Any(r => r.DepartmentId == department.Id))
+                    this.clbDepartment.SetItemChecked(i, true);
             }
         }
 
@@ -80,7 +81,7 @@ namespace Poseidon.Energy.ClientDx
                 ids.Add(item.Id);
             }
 
-            BusinessFactory<TargetRecordBusiness>.Instance.Create(this.currentEntity.Id, ids);
+            BusinessFactory<TargetRecordBusiness>.Instance.Set(this.currentEntity.Id, ids);
         }
         #endregion //Function
 
