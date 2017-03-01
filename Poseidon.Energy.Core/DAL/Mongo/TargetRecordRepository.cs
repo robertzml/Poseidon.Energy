@@ -55,6 +55,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 {
                     StaffTarget st = new StaffTarget();
                     st.Name = doc["name"].ToString();
+                    st.Code = doc["code"].ToString();
                     st.Count = doc["count"].ToInt32();
                     st.MonthKilowatt = doc["monthKilowatt"].ToDecimal();
                     st.MonthCount = doc["monthCount"].ToInt32();
@@ -95,6 +96,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                     BsonDocument stdoc = new BsonDocument
                     {
                         { "name", item.Name },
+                        { "code", item.Code },
                         { "count", item.Count },
                         { "monthKilowatt", item.MonthKilowatt },
                         { "monthCount", item.MonthCount },

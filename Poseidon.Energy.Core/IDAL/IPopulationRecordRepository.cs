@@ -13,5 +13,12 @@ namespace Poseidon.Energy.Core.IDAL
     /// </summary>
     internal interface IPopulationRecordRepository : IBaseDAL<PopulationRecord>
     {
+        /// <summary>
+        /// 查找人数记录
+        /// </summary>
+        /// <param name="populationId">统计ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <returns></returns>
+        PopulationRecord FindOne(string populationId, string departmentId);
     }
 }

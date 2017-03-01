@@ -6,6 +6,7 @@ using System.Text;
 namespace Poseidon.Energy.Core.DAL.Mongo
 {
     using MongoDB.Bson;
+    using MongoDB.Driver;
     using Poseidon.Base.Framework;
     using Poseidon.Data;
     using Poseidon.Energy.Core.DL;
@@ -92,6 +93,20 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         #endregion //Function
 
         #region Method
+        /// <summary>
+        /// 查找人数记录
+        /// </summary>
+        /// <param name="populationId">统计ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <returns></returns>
+        public PopulationRecord FindOne(string populationId, string departmentId)
+        {
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("populationId", populationId) & builder.Eq("departmentId", departmentId);
+
+            return this.FindOne(filter);
+        }
+
         /// <summary>
         /// 添加人数记录
         /// </summary>

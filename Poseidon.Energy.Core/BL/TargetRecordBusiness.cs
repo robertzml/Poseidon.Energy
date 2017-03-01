@@ -36,6 +36,23 @@ namespace Poseidon.Energy.Core.BL
             return this.baseDal.FindListByField("targetId", targetId);
         }
 
+        public List<StaffTarget> ImportPopulation(string populationId, string departmentId)
+        {
+            var dal = RepositoryFactory<IPopulationRecordRepository>.Instance;
+            var popRecord = dal.FindOne(populationId, departmentId);
+
+            List<StaffTarget> data = new List<StaffTarget>();
+
+            StaffTarget st = new StaffTarget();
+            st.Name = "在编";
+            st.Code = "establishment";
+            st.Count = popRecord.Establishment;
+
+            data.Add(st);
+
+            return data;
+        }
+
         /// <summary>
         /// 添加一组指标记录
         /// </summary>

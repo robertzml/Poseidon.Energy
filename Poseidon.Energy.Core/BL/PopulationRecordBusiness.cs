@@ -37,6 +37,18 @@ namespace Poseidon.Energy.Core.BL
         }
 
         /// <summary>
+        /// 按统计、部门查找记录
+        /// </summary>
+        /// <param name="populationId">统计ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <returns></returns>
+        public PopulationRecord FindByDepartment(string populationId, string departmentId)
+        {
+            var dal = this.baseDal as IPopulationRecordRepository;
+            return dal.FindOne(populationId, departmentId);
+        }
+
+        /// <summary>
         /// 更新人数记录
         /// </summary>
         /// <param name="data">人数记录</param>

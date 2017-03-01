@@ -20,6 +20,12 @@ namespace Poseidon.Energy.Core.DL
         public string Name { get; set; }
 
         /// <summary>
+        /// 代码
+        /// </summary>
+        [Display(Name = "代码")]
+        public string Code { get; set; }
+
+        /// <summary>
         /// 人数
         /// </summary>
         [Display(Name = "人数")]
