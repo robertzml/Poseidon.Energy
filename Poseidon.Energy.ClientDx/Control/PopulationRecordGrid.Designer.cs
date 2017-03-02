@@ -32,6 +32,13 @@
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUndergraduate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEstablishment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPersonnelAgency = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDoctor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProfessionalMaster = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaster = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAbroadStudent = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -50,6 +57,13 @@
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colDepartmentId,
+            this.colEstablishment,
+            this.colPersonnelAgency,
+            this.colUndergraduate,
+            this.colMaster,
+            this.colProfessionalMaster,
+            this.colDoctor,
+            this.colAbroadStudent,
             this.colRemark,
             this.colStatus});
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -63,6 +77,7 @@
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowFooter = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
+            this.dgvEntity.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.dgvEntity_CustomUnboundColumnData);
             this.dgvEntity.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.dgvEntity_CustomColumnDisplayText);
             // 
             // colDepartmentId
@@ -78,7 +93,7 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 1;
+            this.colRemark.VisibleIndex = 8;
             // 
             // colStatus
             // 
@@ -91,6 +106,69 @@
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             this.colId.OptionsColumn.AllowEdit = false;
+            // 
+            // colUndergraduate
+            // 
+            this.colUndergraduate.Caption = "本科生";
+            this.colUndergraduate.FieldName = "colUndergraduate";
+            this.colUndergraduate.Name = "colUndergraduate";
+            this.colUndergraduate.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.colUndergraduate.Visible = true;
+            this.colUndergraduate.VisibleIndex = 3;
+            // 
+            // colEstablishment
+            // 
+            this.colEstablishment.Caption = "在职在编";
+            this.colEstablishment.FieldName = "colEstablishment";
+            this.colEstablishment.Name = "colEstablishment";
+            this.colEstablishment.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.colEstablishment.Visible = true;
+            this.colEstablishment.VisibleIndex = 1;
+            // 
+            // colPersonnelAgency
+            // 
+            this.colPersonnelAgency.Caption = "人事代理";
+            this.colPersonnelAgency.FieldName = "colPersonnelAgency";
+            this.colPersonnelAgency.Name = "colPersonnelAgency";
+            this.colPersonnelAgency.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.colPersonnelAgency.Visible = true;
+            this.colPersonnelAgency.VisibleIndex = 2;
+            // 
+            // colDoctor
+            // 
+            this.colDoctor.Caption = "博士生";
+            this.colDoctor.FieldName = "colDoctor";
+            this.colDoctor.Name = "colDoctor";
+            this.colDoctor.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.colDoctor.Visible = true;
+            this.colDoctor.VisibleIndex = 6;
+            // 
+            // colProfessionalMaster
+            // 
+            this.colProfessionalMaster.Caption = "专业硕士生";
+            this.colProfessionalMaster.FieldName = "colProfessionalMaster";
+            this.colProfessionalMaster.Name = "colProfessionalMaster";
+            this.colProfessionalMaster.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.colProfessionalMaster.Visible = true;
+            this.colProfessionalMaster.VisibleIndex = 5;
+            // 
+            // colMaster
+            // 
+            this.colMaster.Caption = "硕士生";
+            this.colMaster.FieldName = "colMaster";
+            this.colMaster.Name = "colMaster";
+            this.colMaster.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.colMaster.Visible = true;
+            this.colMaster.VisibleIndex = 4;
+            // 
+            // colAbroadStudent
+            // 
+            this.colAbroadStudent.Caption = "留学生";
+            this.colAbroadStudent.FieldName = "colAbroadStudent";
+            this.colAbroadStudent.Name = "colAbroadStudent";
+            this.colAbroadStudent.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.colAbroadStudent.Visible = true;
+            this.colAbroadStudent.VisibleIndex = 7;
             // 
             // PopulationRecordGrid
             // 
@@ -114,5 +192,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDepartmentId;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
+        private DevExpress.XtraGrid.Columns.GridColumn colPersonnelAgency;
+        private DevExpress.XtraGrid.Columns.GridColumn colEstablishment;
+        private DevExpress.XtraGrid.Columns.GridColumn colUndergraduate;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaster;
+        private DevExpress.XtraGrid.Columns.GridColumn colProfessionalMaster;
+        private DevExpress.XtraGrid.Columns.GridColumn colDoctor;
+        private DevExpress.XtraGrid.Columns.GridColumn colAbroadStudent;
     }
 }

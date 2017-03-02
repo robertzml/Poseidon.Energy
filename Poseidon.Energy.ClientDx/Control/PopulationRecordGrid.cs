@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace Poseidon.Energy.ClientDx
 {
+    using DevExpress.XtraGrid.Columns;
     using Poseidon.Base.Framework;
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
@@ -60,6 +61,22 @@ namespace Poseidon.Energy.ClientDx
                 var department = this.departments.Find(r => r.Id == e.Value.ToString());
                 e.DisplayText = department.Name;
             }
+        }
+        
+        /// <summary>
+        /// 自定义数据显示
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvEntity_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            int rowIndex = e.ListSourceRowIndex;
+            if (rowIndex < 0 || rowIndex >= this.bsEntity.Count)
+                return;
+
+            var record = this.bsEntity[rowIndex] as PopulationRecord;
+
+            
         }
         #endregion //Event
     }
