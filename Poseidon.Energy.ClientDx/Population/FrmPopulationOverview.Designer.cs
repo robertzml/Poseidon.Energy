@@ -182,6 +182,9 @@
             // 
             this.txtUpdateTime.Location = new System.Drawing.Point(414, 55);
             this.txtUpdateTime.Name = "txtUpdateTime";
+            this.txtUpdateTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtUpdateTime.Properties.Appearance.Options.UseBackColor = true;
+            this.txtUpdateTime.Properties.ReadOnly = true;
             this.txtUpdateTime.Size = new System.Drawing.Size(301, 20);
             this.txtUpdateTime.StyleController = this.layoutControl1;
             this.txtUpdateTime.TabIndex = 9;
@@ -190,6 +193,9 @@
             // 
             this.txtCreateTime.Location = new System.Drawing.Point(58, 55);
             this.txtCreateTime.Name = "txtCreateTime";
+            this.txtCreateTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtCreateTime.Properties.Appearance.Options.UseBackColor = true;
+            this.txtCreateTime.Properties.ReadOnly = true;
             this.txtCreateTime.Size = new System.Drawing.Size(301, 20);
             this.txtCreateTime.StyleController = this.layoutControl1;
             this.txtCreateTime.TabIndex = 8;
@@ -198,6 +204,9 @@
             // 
             this.txtRemark.Location = new System.Drawing.Point(414, 31);
             this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtRemark.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRemark.Properties.ReadOnly = true;
             this.txtRemark.Size = new System.Drawing.Size(301, 20);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 7;
@@ -206,6 +215,9 @@
             // 
             this.txtBelongTime.Location = new System.Drawing.Point(58, 31);
             this.txtBelongTime.Name = "txtBelongTime";
+            this.txtBelongTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtBelongTime.Properties.Appearance.Options.UseBackColor = true;
+            this.txtBelongTime.Properties.ReadOnly = true;
             this.txtBelongTime.Size = new System.Drawing.Size(301, 20);
             this.txtBelongTime.StyleController = this.layoutControl1;
             this.txtBelongTime.TabIndex = 6;
@@ -214,6 +226,9 @@
             // 
             this.txtYear.Location = new System.Drawing.Point(414, 7);
             this.txtYear.Name = "txtYear";
+            this.txtYear.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtYear.Properties.Appearance.Options.UseBackColor = true;
+            this.txtYear.Properties.ReadOnly = true;
             this.txtYear.Size = new System.Drawing.Size(301, 20);
             this.txtYear.StyleController = this.layoutControl1;
             this.txtYear.TabIndex = 5;
@@ -222,6 +237,9 @@
             // 
             this.txtName.Location = new System.Drawing.Point(58, 7);
             this.txtName.Name = "txtName";
+            this.txtName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtName.Properties.Appearance.Options.UseBackColor = true;
+            this.txtName.Properties.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(301, 20);
             this.txtName.StyleController = this.layoutControl1;
             this.txtName.TabIndex = 4;

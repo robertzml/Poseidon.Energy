@@ -82,6 +82,7 @@ namespace Poseidon.Energy.ClientDx
                     PopulationRecord pr = new PopulationRecord();
                     pr.PopulationId = this.currentEntity.Id;
                     pr.DepartmentId = item.Id;
+                    pr.Details = new List<PopulationDetail>();
 
                     data.Add(pr);
                 }
@@ -94,7 +95,8 @@ namespace Poseidon.Energy.ClientDx
         {
             foreach (var item in entity)
             {
-                item.PopulationId = this.currentEntity.Id;
+                item.Details.RemoveAll(r => r.Number <= 0);
+                //item.PopulationId = this.currentEntity.Id;
                 item.Remark = item.Remark == null ? "" : item.Remark;
             }
         }
@@ -112,7 +114,7 @@ namespace Poseidon.Energy.ClientDx
 
             var data = this.prGrid.DataSource;
             SetEntity(data);
-
+                     
             try
             {
                 BusinessFactory<PopulationRecordBusiness>.Instance.Update(data);

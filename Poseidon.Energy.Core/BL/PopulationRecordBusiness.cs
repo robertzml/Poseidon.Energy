@@ -54,22 +54,21 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="data">人数记录</param>
         public void Update(List<PopulationRecord> data)
         {
-            //foreach (var item in data)
-            //{
-            //    if (item.Establishment + item.PersonnelAgency + item.PostDoctor + item.InlandShort + item.LaborDispatch +
-            //        item.ForeignShort + item.ForeignLong + item.Undergraduate + item.Master + item.ProfessionalMaster + item.Doctor + item.AbroadStudent == 0)
-            //    {
-            //        if (item.Id != null)
-            //            this.baseDal.Delete(item);
-            //    }
-            //    else
-            //    {
-            //        if (item.Id == null)
-            //            this.baseDal.Create(item);
-            //        else
-            //            this.baseDal.Update(item);
-            //    }
-            //}
+            foreach (var item in data)
+            {
+                if (item.Details.Sum(r => r.Number) == 0)
+                {
+                    if (item.Id != null)
+                        this.baseDal.Delete(item);
+                }
+                else
+                {
+                    if (item.Id == null)
+                        this.baseDal.Create(item);
+                    else
+                        this.baseDal.Update(item);
+                }
+            }
         }
         #endregion //Method
     }

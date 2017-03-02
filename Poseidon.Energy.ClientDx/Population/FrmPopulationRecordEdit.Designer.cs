@@ -30,6 +30,8 @@
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtRemark = new DevExpress.XtraEditors.TextEdit();
+            this.txtBelongTime = new DevExpress.XtraEditors.TextEdit();
             this.prGrid = new Poseidon.Energy.ClientDx.PopulationRecordGrid();
             this.txtYear = new DevExpress.XtraEditors.TextEdit();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
@@ -37,11 +39,9 @@
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtBelongTime = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtRemark = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -50,17 +50,17 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBelongTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtYear.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBelongTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -110,6 +110,28 @@
             this.layoutControl1.Size = new System.Drawing.Size(1004, 478);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtRemark
+            // 
+            this.txtRemark.Location = new System.Drawing.Point(555, 67);
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtRemark.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRemark.Properties.ReadOnly = true;
+            this.txtRemark.Size = new System.Drawing.Size(425, 20);
+            this.txtRemark.StyleController = this.layoutControl1;
+            this.txtRemark.TabIndex = 8;
+            // 
+            // txtBelongTime
+            // 
+            this.txtBelongTime.Location = new System.Drawing.Point(75, 67);
+            this.txtBelongTime.Name = "txtBelongTime";
+            this.txtBelongTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtBelongTime.Properties.Appearance.Options.UseBackColor = true;
+            this.txtBelongTime.Properties.ReadOnly = true;
+            this.txtBelongTime.Size = new System.Drawing.Size(425, 20);
+            this.txtBelongTime.StyleController = this.layoutControl1;
+            this.txtBelongTime.TabIndex = 7;
             // 
             // prGrid
             // 
@@ -186,26 +208,6 @@
             this.layoutControlItem2.Text = "年度";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.prGrid;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 91);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(984, 367);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // txtBelongTime
-            // 
-            this.txtBelongTime.Location = new System.Drawing.Point(75, 67);
-            this.txtBelongTime.Name = "txtBelongTime";
-            this.txtBelongTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtBelongTime.Properties.Appearance.Options.UseBackColor = true;
-            this.txtBelongTime.Properties.ReadOnly = true;
-            this.txtBelongTime.Size = new System.Drawing.Size(425, 20);
-            this.txtBelongTime.StyleController = this.layoutControl1;
-            this.txtBelongTime.TabIndex = 7;
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtBelongTime;
@@ -215,17 +217,6 @@
             this.layoutControlItem4.Text = "归属时间";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // txtRemark
-            // 
-            this.txtRemark.Location = new System.Drawing.Point(555, 67);
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtRemark.Properties.Appearance.Options.UseBackColor = true;
-            this.txtRemark.Properties.ReadOnly = true;
-            this.txtRemark.Size = new System.Drawing.Size(425, 20);
-            this.txtRemark.StyleController = this.layoutControl1;
-            this.txtRemark.TabIndex = 8;
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtRemark;
@@ -234,6 +225,15 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(480, 24);
             this.layoutControlItem5.Text = "备注";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.prGrid;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 91);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(984, 367);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
             // 
             // FrmPopulationRecordEdit
             // 
@@ -250,17 +250,17 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBelongTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtYear.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBelongTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
         }

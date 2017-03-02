@@ -62,7 +62,7 @@ namespace Poseidon.Energy.ClientDx
                 e.DisplayText = department.Name;
             }
         }
-        
+
         /// <summary>
         /// 自定义数据显示
         /// </summary>
@@ -76,7 +76,149 @@ namespace Poseidon.Energy.ClientDx
 
             var record = this.bsEntity[rowIndex] as PopulationRecord;
 
-            
+            switch (e.Column.FieldName)
+            {
+                case "colEstablishment":
+                    {
+                        var detail = record.Details.Find(r => r.Code == "Establishment");
+                        if (detail == null)
+                        {
+                            detail = new PopulationDetail
+                            {
+                                Name = "在职在编",
+                                Code = "Establishment",
+                                Number = 0
+                            };
+                            record.Details.Add(detail);
+                        }
+
+                        if (e.IsGetData)
+                            e.Value = detail.Number;
+                        if (e.IsSetData)
+                            detail.Number = Convert.ToInt32(e.Value);
+                    }
+                    break;
+                case "colPersonnelAgency":
+                    {
+                        var detail = record.Details.Find(r => r.Code == "PersonnelAgency");
+                        if (detail == null)
+                        {
+                            detail = new PopulationDetail
+                            {
+                                Name = "人事代理",
+                                Code = "PersonnelAgency",
+                                Number = 0
+                            };
+                            record.Details.Add(detail);
+                        }
+
+                        if (e.IsGetData)
+                            e.Value = detail.Number;
+                        if (e.IsSetData)
+                            detail.Number = Convert.ToInt32(e.Value);
+                    }
+                    break;
+                case "colUndergraduate":
+                    {
+                        var detail = record.Details.Find(r => r.Code == "Undergraduate");
+                        if (detail == null)
+                        {
+                            detail = new PopulationDetail
+                            {
+                                Name = "本科生",
+                                Code = "Undergraduate",
+                                Number = 0
+                            };
+                            record.Details.Add(detail);
+                        }
+
+                        if (e.IsGetData)
+                            e.Value = detail.Number;
+                        if (e.IsSetData)
+                            detail.Number = Convert.ToInt32(e.Value);
+                    }
+                    break;
+                case "colMaster":
+                    {
+                        var detail = record.Details.Find(r => r.Code == "Master");
+                        if (detail == null)
+                        {
+                            detail = new PopulationDetail
+                            {
+                                Name = "硕士生",
+                                Code = "Master",
+                                Number = 0
+                            };
+                            record.Details.Add(detail);
+                        }
+
+                        if (e.IsGetData)
+                            e.Value = detail.Number;
+                        if (e.IsSetData)
+                            detail.Number = Convert.ToInt32(e.Value);
+                    }
+                    break;
+                case "colProfessionalMaster":
+                    {
+                        var detail = record.Details.Find(r => r.Code == "ProfessionalMaster");
+                        if (detail == null)
+                        {
+                            detail = new PopulationDetail
+                            {
+                                Name = "专业硕士生",
+                                Code = "ProfessionalMaster",
+                                Number = 0
+                            };
+                            record.Details.Add(detail);
+                        }
+
+                        if (e.IsGetData)
+                            e.Value = detail.Number;
+                        if (e.IsSetData)
+                            detail.Number = Convert.ToInt32(e.Value);
+                    }
+                    break;
+                case "colDoctor":
+                    {
+                        var detail = record.Details.Find(r => r.Code == "Doctor");
+                        if (detail == null)
+                        {
+                            detail = new PopulationDetail
+                            {
+                                Name = "博士生",
+                                Code = "Doctor",
+                                Number = 0
+                            };
+                            record.Details.Add(detail);
+                        }
+
+                        if (e.IsGetData)
+                            e.Value = detail.Number;
+                        if (e.IsSetData)
+                            detail.Number = Convert.ToInt32(e.Value);
+                    }
+                    break;
+                case "colAbroadStudent":
+                    {
+                        var detail = record.Details.Find(r => r.Code == "AbroadStudent");
+                        if (detail == null)
+                        {
+                            detail = new PopulationDetail
+                            {
+                                Name = "留学生",
+                                Code = "AbroadStudent",
+                                Number = 0
+                            };
+                            record.Details.Add(detail);
+                        }
+
+                        if (e.IsGetData)
+                            e.Value = detail.Number;
+                        if (e.IsSetData)
+                            detail.Number = Convert.ToInt32(e.Value);
+                    }
+                    break;
+            }
         }
         #endregion //Event
     }

@@ -143,6 +143,7 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmPopulationRecordEdit), new object[] { this.currentPopulation.Id });
+            LoadPopulations();
         }
         #endregion //Event
     }

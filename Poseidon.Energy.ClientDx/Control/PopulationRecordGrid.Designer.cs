@@ -112,6 +112,8 @@
             this.colUndergraduate.Caption = "本科生";
             this.colUndergraduate.FieldName = "colUndergraduate";
             this.colUndergraduate.Name = "colUndergraduate";
+            this.colUndergraduate.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colUndergraduate", "合计={0:0.##}")});
             this.colUndergraduate.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.colUndergraduate.Visible = true;
             this.colUndergraduate.VisibleIndex = 3;
@@ -121,6 +123,8 @@
             this.colEstablishment.Caption = "在职在编";
             this.colEstablishment.FieldName = "colEstablishment";
             this.colEstablishment.Name = "colEstablishment";
+            this.colEstablishment.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colEstablishment", "合计={0:0.##}")});
             this.colEstablishment.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.colEstablishment.Visible = true;
             this.colEstablishment.VisibleIndex = 1;
@@ -130,6 +134,8 @@
             this.colPersonnelAgency.Caption = "人事代理";
             this.colPersonnelAgency.FieldName = "colPersonnelAgency";
             this.colPersonnelAgency.Name = "colPersonnelAgency";
+            this.colPersonnelAgency.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colPersonnelAgency", "合计={0:0.##}")});
             this.colPersonnelAgency.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.colPersonnelAgency.Visible = true;
             this.colPersonnelAgency.VisibleIndex = 2;
