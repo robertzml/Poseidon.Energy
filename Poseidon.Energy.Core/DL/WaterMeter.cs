@@ -6,17 +6,13 @@ using System.Text;
 
 namespace Poseidon.Energy.Core.DL
 {
+    using Poseidon.Base.Framework;
+
     /// <summary>
     /// 表具类
     /// </summary>
-    public class Ammeter
+    public class WaterMeter : ObjectEntity
     {
-        /// <summary>
-        /// 表名
-        /// </summary>
-        [Display(Name = "表名")]
-        public string Name { get; set; }
-
         /// <summary>
         /// 客户编号
         /// </summary>

@@ -14,9 +14,9 @@ namespace Poseidon.Energy.Core.DL
     public class ExpenseAccount : ObjectEntity
     {
         /// <summary>
-        /// 包含表具
+        /// 包含水表
         /// </summary>
-        [Display(Name = "包含表具")]
-        public List<Ammeter> Ammeters { get; set; }
+        [Display(Name = "包含水表")]
+        public List<WaterMeter> WaterMeters { get; set; }
     }
 }
