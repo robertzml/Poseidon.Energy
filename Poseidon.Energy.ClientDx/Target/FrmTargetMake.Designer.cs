@@ -56,6 +56,7 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -82,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -92,6 +94,7 @@
             this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupControl3, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl4, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -379,6 +382,15 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
+            // groupControl4
+            // 
+            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl4.Location = new System.Drawing.Point(470, 356);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(462, 207);
+            this.groupControl4.TabIndex = 3;
+            this.groupControl4.Text = "补贴指标";
+            // 
             // FrmTargetMake
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -413,6 +425,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -446,5 +459,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraEditors.SimpleButton btnSaveStaff;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraEditors.GroupControl groupControl4;
     }
 }

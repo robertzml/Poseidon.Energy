@@ -13,6 +13,7 @@ namespace Poseidon.Energy.Core.DL
     /// </summary>
     public class StaffTarget : BaseEntity
     {
+        #region Property
         /// <summary>
         /// 名称
         /// </summary>
@@ -66,5 +67,6 @@ namespace Poseidon.Energy.Core.DL
         /// </summary>
         [Display(Name = "备注")]
         public string Remark { get; set; }
+        #endregion //Property
     }
 }

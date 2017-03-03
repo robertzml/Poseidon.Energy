@@ -69,6 +69,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\AllowanceGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\AllowanceGrid.Designer.cs">
+      <DependentUpon>AllowanceGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\DepartmentGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -216,6 +222,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Control\AllowanceGrid.resx">
+      <DependentUpon>AllowanceGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\ExpenseAccountTree.resx">
       <DependentUpon>ExpenseAccountTree.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,6 +279,7 @@
     <EmbeddedResource Include="Target\FrmTargetSelectDepartment.resx">
       <DependentUpon>FrmTargetSelectDepartment.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Allowance.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Department.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.ExpenseAccount.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Fund.datasource" />
