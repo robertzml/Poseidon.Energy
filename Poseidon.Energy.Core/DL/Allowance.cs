@@ -6,13 +6,12 @@ using System.Text;
 
 namespace Poseidon.Energy.Core.DL
 {
-    using Poseidon.Base.Framework;
-
     /// <summary>
-    /// 人员指标类
+    /// 补贴
     /// </summary>
-    public class StaffTarget : BaseEntity
+    public class Allowance
     {
+        #region Property
         /// <summary>
         /// 名称
         /// </summary>
@@ -20,16 +19,10 @@ namespace Poseidon.Energy.Core.DL
         public string Name { get; set; }
 
         /// <summary>
-        /// 代码
+        /// 参数
         /// </summary>
-        [Display(Name = "代码")]
-        public string Code { get; set; }
-
-        /// <summary>
-        /// 人数
-        /// </summary>
-        [Display(Name = "人数")]
-        public int Number { get; set; }
+        [Display(Name = "参数")]
+        public decimal Parameter { get; set; }
 
         /// <summary>
         /// 月度数
@@ -44,12 +37,6 @@ namespace Poseidon.Energy.Core.DL
         public int MonthCount { get; set; }
 
         /// <summary>
-        /// 单价
-        /// </summary>
-        [Display(Name = "单价")]
-        public decimal UnitPrice { get; set; }
-
-        /// <summary>
         /// 年指标度数
         /// </summary>
         [Display(Name = "年指标度数")]
@@ -60,11 +47,6 @@ namespace Poseidon.Energy.Core.DL
         /// </summary>
         [Display(Name = "年指标金额")]
         public decimal YearAmount { get; set; }
-
-        /// <summary>
-        /// 备注
-        /// </summary>
-        [Display(Name = "备注")]
-        public string Remark { get; set; }
+        #endregion //Property
     }
 }

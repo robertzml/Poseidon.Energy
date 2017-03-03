@@ -27,6 +27,18 @@ namespace Poseidon.Energy.Core.DL
         public string DepartmentId { get; set; }
 
         /// <summary>
+        /// 类型, 1:电指标  2:水指标
+        /// </summary>
+        [Display(Name = "类型")]
+        public int Type { get; set; }
+
+        /// <summary>
+        /// 经费本
+        /// </summary>
+        [Display(Name = "经费本")]
+        public string Finance { get; set; }
+
+        /// <summary>
         /// 人数指标
         /// </summary>
         [Display(Name = "人数指标")]
@@ -42,7 +54,7 @@ namespace Poseidon.Energy.Core.DL
         /// 总用电量
         /// </summary>
         [Display(Name = "总用电量")]
-        public decimal TotalKilowatt { get; set; }
+        public decimal TotalQuantum { get; set; }
 
         /// <summary>
         /// 总金额
@@ -50,47 +62,5 @@ namespace Poseidon.Energy.Core.DL
         [Display(Name = "总金额")]
         public decimal TotalAmount { get; set; }
         #endregion //Property
-    }
-
-    /// <summary>
-    /// 补贴
-    /// </summary>
-    public class Allowance
-    {
-        /// <summary>
-        /// 名称
-        /// </summary>
-        [Display(Name = "名称")]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// 参数
-        /// </summary>
-        [Display(Name = "参数")]
-        public decimal Parameter { get; set; }
-
-        /// <summary>
-        /// 月度数
-        /// </summary>
-        [Display(Name = "月度数")]
-        public decimal MonthKilowatt { get; set; }
-
-        /// <summary>
-        /// 月数
-        /// </summary>
-        [Display(Name = "月数")]
-        public int MonthCount { get; set; }
-
-        /// <summary>
-        /// 年指标度数
-        /// </summary>
-        [Display(Name = "年指标度数")]
-        public decimal YearKilowatt { get; set; }
-
-        /// <summary>
-        /// 年指标金额
-        /// </summary>
-        [Display(Name = "年指标金额")]
-        public decimal YearAmount { get; set; }
     }
 }

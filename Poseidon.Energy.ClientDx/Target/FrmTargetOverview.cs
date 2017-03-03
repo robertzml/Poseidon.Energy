@@ -42,6 +42,9 @@ namespace Poseidon.Energy.ClientDx
             base.InitForm();
         }
 
+        /// <summary>
+        /// 载入指标计划
+        /// </summary>
         private void LoadTargets()
         {
             var data = BusinessFactory<TargetBusiness>.Instance.FindAll().ToList();
@@ -61,8 +64,8 @@ namespace Poseidon.Energy.ClientDx
 
             this.txtName.Text = currentTarget.Name;
             this.txtYear.Text = currentTarget.Year.ToString();
-            this.txtPopulation.Text = currentTarget.PopulationId;
-            this.txtFund.Text = currentTarget.FundId;
+            this.txtPopulation.Text = BusinessFactory<PopulationBusiness>.Instance.FindById(currentTarget.PopulationId).Name;
+            this.txtFund.Text = BusinessFactory<FundBusiness>.Instance.FindById(currentTarget.FundId).Name;
             this.txtCreateTime.Text = currentTarget.CreateTime.ToDateTimeString();
             this.txtUpdateTime.Text = currentTarget.UpdateTime.ToDateTimeString();
         }
@@ -78,7 +81,6 @@ namespace Poseidon.Energy.ClientDx
 
             LoadTargets();
         }
-
 
         /// <summary>
         /// 指标设置

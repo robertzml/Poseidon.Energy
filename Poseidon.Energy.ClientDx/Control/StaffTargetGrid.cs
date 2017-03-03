@@ -25,5 +25,23 @@ namespace Poseidon.Energy.ClientDx
             InitializeComponent();
         }
         #endregion //Constructor
+
+        #region Method       
+        /// <summary>
+        /// 计算总量
+        /// </summary>
+        public void UpdateTotal()
+        {
+            for (int i = 0; i < this.bsEntity.Count; i++)
+            {
+                var st = bsEntity[i] as StaffTarget;
+
+                st.YearKilowatt = st.Number * st.MonthKilowatt * st.MonthCount;
+                st.YearAmount = st.YearKilowatt * st.UnitPrice;
+            }
+
+            this.bsEntity.ResetBindings(false);
+        }
+        #endregion //Method
     }
 }

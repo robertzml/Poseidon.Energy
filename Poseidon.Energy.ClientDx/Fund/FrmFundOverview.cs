@@ -143,6 +143,7 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmFundRecordEdit), new object[] { this.currentFund.Id });
+            LoadFunds();
         }
         #endregion //Event
     }

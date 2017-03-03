@@ -11,6 +11,7 @@ using System.Windows.Forms;
 namespace Poseidon.Energy.ClientDx
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Base.System;
     using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Winform.Base;
@@ -53,6 +54,41 @@ namespace Poseidon.Energy.ClientDx
             var records = BusinessFactory<TargetRecordBusiness>.Instance.FindByTarget(this.currentTarget.Id).ToList();
             this.trGrid.DataSource = records;
         }
+
+        /// <summary>
+        /// 导入选中部门人数记录
+        /// </summary>
+        /// <param name="populationId">人数统计ID</param>
+        /// <param name="departmentId">部门ID</param>
+        private void LoadStaffRecord(string populationId, string departmentId)
+        {
+            var staff = BusinessFactory<TargetRecordBusiness>.Instance.ImportPopulation(populationId, departmentId);
+
+            foreach (var item in staff)
+            {
+                if (this.stGrid.DataSource.Any(r => r.Code == item.Code))
+                {
+                    var s = stGrid.DataSource.Find(r => r.Code == item.Code);
+                    s.Number = item.Number;
+                }
+                else
+                    this.stGrid.DataSource.Add(item);
+            }
+
+            this.stGrid.UpdateBindingData();
+        }
+
+        /// <summary>
+        /// 设置实体对象
+        /// </summary>
+        /// <param name="entity"></param>
+        private void SetRecordEntity(TargetRecord entity)
+        {
+            foreach (var item in entity.StaffTarget)
+            {
+                item.Remark = item.Remark == null ? "" : item.Remark;
+            }
+        }
         #endregion //Function
 
         #region Event
@@ -68,8 +104,6 @@ namespace Poseidon.Energy.ClientDx
 
             this.currentTarget = this.luTarget.EditValue as Target;
             LoadRecords();
-
-            
         }
 
         /// <summary>
@@ -84,7 +118,7 @@ namespace Poseidon.Energy.ClientDx
 
             ChildFormManage.ShowDialogForm(typeof(FrmTargetSelectDepartment), new object[] { this.currentTarget.Id });
         }
-        
+
         /// <summary>
         /// 指标记录选择
         /// </summary>
@@ -98,7 +132,7 @@ namespace Poseidon.Energy.ClientDx
 
             this.stGrid.DataSource = select.StaffTarget;
         }
-        
+
         /// <summary>
         /// 导入人数记录
         /// </summary>
@@ -110,8 +144,50 @@ namespace Poseidon.Energy.ClientDx
             if (select == null)
                 return;
 
-            var staff = BusinessFactory<TargetRecordBusiness>.Instance.ImportPopulation(this.currentTarget.PopulationId, select.DepartmentId);
-            this.stGrid.DataSource = staff;
+            LoadStaffRecord(this.currentTarget.PopulationId, select.DepartmentId);
+        }
+
+        /// <summary>
+        /// 计算人数指标
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCalcStaff_Click(object sender, EventArgs e)
+        {
+            this.stGrid.CloseEditor();
+            this.stGrid.UpdateTotal();
+        }
+
+        /// <summary>
+        /// 保存人数指标
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSaveStaff_Click(object sender, EventArgs e)
+        {
+            var select = this.trGrid.GetCurrentSelect();
+            if (select == null)
+                return;
+
+            SetRecordEntity(select);
+
+            try
+            {
+                var result = BusinessFactory<TargetRecordBusiness>.Instance.Update(select);
+
+                if (result)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                }
+                else
+                {
+                    MessageUtil.ShowInfo("保存失败");
+                }
+            }
+            catch (PoseidonException pe)
+            {
+                MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+            }
         }
         #endregion //Event
     }

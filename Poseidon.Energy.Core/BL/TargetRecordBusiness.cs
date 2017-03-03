@@ -36,19 +36,27 @@ namespace Poseidon.Energy.Core.BL
             return this.baseDal.FindListByField("targetId", targetId);
         }
 
+        /// <summary>
+        /// 导入人数记录
+        /// </summary>
+        /// <param name="populationId">人数统计ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <returns></returns>
         public List<StaffTarget> ImportPopulation(string populationId, string departmentId)
         {
             var dal = RepositoryFactory<IPopulationRecordRepository>.Instance;
             var popRecord = dal.FindOne(populationId, departmentId);
 
             List<StaffTarget> data = new List<StaffTarget>();
+            foreach (var item in popRecord.Details)
+            {
+                StaffTarget st = new StaffTarget();
+                st.Name = item.Name;
+                st.Code = item.Code;
+                st.Number = item.Number;
 
-            StaffTarget st = new StaffTarget();
-            st.Name = "在编";
-            st.Code = "establishment";
-            st.Count = 10;
-
-            data.Add(st);
+                data.Add(st);
+            }
 
             return data;
         }
@@ -59,31 +67,48 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="targetId">指标计划ID</param>
         /// <param name="ids">部门ID列表</param>
         /// <remarks>
-        /// 增加新记录，删除未选择部门记录
+        /// 增加新记录，删除未选择部门记录，增加记录为电指标
         /// </remarks>
-        public void Set(string targetId, List<string> ids)
+        public void CreateMany(string targetId, List<string> departmentIds)
         {
             var dal = this.baseDal as ITargetRecordRepository;
 
             var records = dal.FindListByField("targetId", targetId);
-            dal.DeleteNotIn(targetId, ids);
+            dal.DeleteNotIn(targetId, departmentIds);
 
-            foreach (var item in ids)
+            foreach (var item in departmentIds)
             {
                 if (records.Any(r => r.DepartmentId == item))
                     continue;
                 else
                 {
                     TargetRecord dt = new TargetRecord();
-                    dt.DepartmentId = item;
                     dt.TargetId = targetId;
-                    dt.TotalKilowatt = 0;
+                    dt.DepartmentId = item;
+                    dt.Type = 1;
+                    dt.Finance = "";
+                    dt.TotalQuantum = 0;
                     dt.TotalAmount = 0;
                     dt.Remark = "";
 
                     dal.Create(dt);
                 }
             }
+        }
+
+        /// <summary>
+        /// 更新记录
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <returns></returns>
+        public override bool Update(TargetRecord entity)
+        {
+            var dal = this.baseDal as ITargetRecordRepository;
+
+            entity.TotalQuantum = entity.StaffTarget.Sum(r => r.YearKilowatt);
+            entity.TotalAmount = entity.StaffTarget.Sum(r => r.YearAmount);
+
+            return dal.Update(entity);
         }
         #endregion //Method
     }

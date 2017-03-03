@@ -83,6 +83,7 @@
     <Compile Include="DAL\Mongo\ExpenseAccountRepository.cs" />
     <Compile Include="DAL\Mongo\TargetRecordRepository.cs" />
     <Compile Include="DAL\Mongo\TargetRepository.cs" />
+    <Compile Include="DL\Allowance.cs" />
     <Compile Include="DL\WaterMeter.cs" />
     <Compile Include="DL\Department.cs" />
     <Compile Include="DL\FundRecord.cs" />

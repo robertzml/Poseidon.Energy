@@ -40,7 +40,9 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             entity.Id = doc["_id"].ToString();
             entity.TargetId = doc["targetId"].ToString();
             entity.DepartmentId = doc["departmentId"].ToString();
-            entity.TotalKilowatt = doc["totalKilowatt"].ToDecimal();
+            entity.Type = doc["type"].ToInt32();
+            entity.Finance = doc["finance"].ToString();
+            entity.TotalQuantum = doc["totalQuantum"].ToDecimal();
             entity.TotalAmount = doc["totalAmount"].ToDecimal();
             entity.CreateTime = doc["createTime"].ToLocalTime();
             entity.UpdateTime = doc["updateTime"].ToLocalTime();
@@ -56,11 +58,13 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                     StaffTarget st = new StaffTarget();
                     st.Name = item["name"].ToString();
                     st.Code = item["code"].ToString();
-                    st.Count = item["count"].ToInt32();
+                    st.Number = item["number"].ToInt32();
                     st.MonthKilowatt = item["monthKilowatt"].ToDecimal();
                     st.MonthCount = item["monthCount"].ToInt32();
+                    st.UnitPrice = item["unitPrice"].ToDecimal();
                     st.YearKilowatt = item["yearKilowatt"].ToDecimal();
                     st.YearAmount = item["yearAmount"].ToDecimal();
+                    st.Remark = item["remark"].ToString();
 
                     entity.StaffTarget.Add(st);
                 }
@@ -80,7 +84,9 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             {
                 { "targetId", entity.TargetId },
                 { "departmentId", entity.DepartmentId },
-                { "totalKilowatt", entity.TotalKilowatt },
+                { "type", entity.Type },
+                { "finance", entity.Finance },
+                { "totalQuantum", entity.TotalQuantum },
                 { "totalAmount", entity.TotalAmount },
                 { "createTime", entity.CreateTime },
                 { "updateTime", entity.UpdateTime },
@@ -97,11 +103,13 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                     {
                         { "name", item.Name },
                         { "code", item.Code },
-                        { "count", item.Count },
+                        { "number", item.Number },
                         { "monthKilowatt", item.MonthKilowatt },
                         { "monthCount", item.MonthCount },
+                        { "unitPrice", item.UnitPrice },
                         { "yearKilowatt", item.YearKilowatt },
-                        { "yearAmount", item.YearAmount }
+                        { "yearAmount", item.YearAmount },
+                        { "remark", item.Remark }
                     };
                     array.Add(stdoc);
                 }
@@ -154,6 +162,17 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             entity.Status = 0;
 
             base.Create(entity);
+        }
+
+        /// <summary>
+        /// 编辑指标记录
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <returns></returns>
+        public override bool Update(TargetRecord entity)
+        {
+            entity.UpdateTime = DateTime.Now;
+            return base.Update(entity);
         }
 
         /// <summary>

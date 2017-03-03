@@ -30,7 +30,9 @@
         {
             this.colTargetId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepartmentId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotalKilowatt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFinance = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalQuantum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCreateTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUpdateTime = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,7 +54,9 @@
             this.colId,
             this.colTargetId,
             this.colDepartmentId,
-            this.colTotalKilowatt,
+            this.colType,
+            this.colFinance,
+            this.colTotalQuantum,
             this.colTotalAmount,
             this.colCreateTime,
             this.colUpdateTime,
@@ -75,53 +79,66 @@
             // 
             // colDepartmentId
             // 
-            this.colDepartmentId.Caption = "部门名称";
             this.colDepartmentId.FieldName = "DepartmentId";
             this.colDepartmentId.Name = "colDepartmentId";
             this.colDepartmentId.Visible = true;
             this.colDepartmentId.VisibleIndex = 2;
             // 
-            // colTotalKilowatt
+            // colType
             // 
-            this.colTotalKilowatt.FieldName = "TotalKilowatt";
-            this.colTotalKilowatt.Name = "colTotalKilowatt";
-            this.colTotalKilowatt.Visible = true;
-            this.colTotalKilowatt.VisibleIndex = 3;
+            this.colType.FieldName = "Type";
+            this.colType.Name = "colType";
+            this.colType.Visible = true;
+            this.colType.VisibleIndex = 3;
+            // 
+            // colFinance
+            // 
+            this.colFinance.FieldName = "Finance";
+            this.colFinance.Name = "colFinance";
+            this.colFinance.Visible = true;
+            this.colFinance.VisibleIndex = 4;
+            // 
+            // colTotalQuantum
+            // 
+            this.colTotalQuantum.FieldName = "TotalQuantum";
+            this.colTotalQuantum.Name = "colTotalQuantum";
+            this.colTotalQuantum.Visible = true;
+            this.colTotalQuantum.VisibleIndex = 5;
             // 
             // colTotalAmount
             // 
             this.colTotalAmount.FieldName = "TotalAmount";
             this.colTotalAmount.Name = "colTotalAmount";
             this.colTotalAmount.Visible = true;
-            this.colTotalAmount.VisibleIndex = 4;
+            this.colTotalAmount.VisibleIndex = 6;
             // 
             // colCreateTime
             // 
             this.colCreateTime.FieldName = "CreateTime";
             this.colCreateTime.Name = "colCreateTime";
             this.colCreateTime.Visible = true;
-            this.colCreateTime.VisibleIndex = 5;
+            this.colCreateTime.VisibleIndex = 7;
             // 
             // colUpdateTime
             // 
             this.colUpdateTime.FieldName = "UpdateTime";
             this.colUpdateTime.Name = "colUpdateTime";
             this.colUpdateTime.Visible = true;
-            this.colUpdateTime.VisibleIndex = 6;
+            this.colUpdateTime.VisibleIndex = 8;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 7;
+            this.colRemark.VisibleIndex = 9;
             // 
             // colStatus
             // 
             this.colStatus.FieldName = "Status";
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 8;
+            this.colStatus.VisibleIndex = 10;
             // 
             // colId
             // 
@@ -145,14 +162,16 @@
 
         #endregion
 
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colTargetId;
         private DevExpress.XtraGrid.Columns.GridColumn colDepartmentId;
-        private DevExpress.XtraGrid.Columns.GridColumn colTotalKilowatt;
+        private DevExpress.XtraGrid.Columns.GridColumn colType;
+        private DevExpress.XtraGrid.Columns.GridColumn colFinance;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalQuantum;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colCreateTime;
         private DevExpress.XtraGrid.Columns.GridColumn colUpdateTime;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
-        private DevExpress.XtraGrid.Columns.GridColumn colId;
     }
 }

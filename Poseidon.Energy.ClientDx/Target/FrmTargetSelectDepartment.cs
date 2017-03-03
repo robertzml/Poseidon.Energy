@@ -81,7 +81,7 @@ namespace Poseidon.Energy.ClientDx
                 ids.Add(item.Id);
             }
 
-            BusinessFactory<TargetRecordBusiness>.Instance.Set(this.currentEntity.Id, ids);
+            BusinessFactory<TargetRecordBusiness>.Instance.CreateMany(this.currentEntity.Id, ids);
         }
         #endregion //Function
 

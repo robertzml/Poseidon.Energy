@@ -65,8 +65,14 @@ namespace Poseidon.Energy.ClientDx
                 var department = this.departments.Find(r => r.Id == e.Value.ToString());
                 e.DisplayText = department.Name;
             }
+            if (e.Column.FieldName == "Type")
+            {
+                if ((int)e.Value == 1)
+                    e.DisplayText = "电指标";
+                else if ((int)e.Value == 2)
+                    e.DisplayText = "水指标";
+            }
         }
         #endregion //Event
-
     }
 }
