@@ -21,7 +21,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// <summary>
         /// 模型类型
         /// </summary>
-        private readonly string modelType = Utility.ModelTypeCode.Department;
+        private readonly string modelType = Utility.ModelTypeCode.ExpenseAccount;
         #endregion //Field
 
         #region Constructor
@@ -114,5 +114,18 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             return doc;
         }
         #endregion //Function
+
+        #region Method
+        /// <summary>
+        /// 添加支出账户
+        /// </summary>
+        /// <param name="entity">支出账户对象</param>
+        public override void Create(ExpenseAccount entity)
+        {
+            entity.ModelType = this.modelType;
+            entity.Status = 0;
+            base.Create(entity);
+        }
+        #endregion //Method
     }
 }

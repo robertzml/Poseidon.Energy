@@ -31,10 +31,12 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.expenseAccountTree1 = new Poseidon.Energy.ClientDx.ExpenseAccountTree();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -59,6 +61,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.expenseAccountTree1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
@@ -76,6 +79,15 @@
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "基本信息";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(63, 70);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "添加账户";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // groupControl3
             // 
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -85,14 +97,13 @@
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "表具信息";
             // 
-            // btnAdd
+            // expenseAccountTree1
             // 
-            this.btnAdd.Location = new System.Drawing.Point(63, 70);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "添加账户";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.expenseAccountTree1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.expenseAccountTree1.Location = new System.Drawing.Point(2, 21);
+            this.expenseAccountTree1.Name = "expenseAccountTree1";
+            this.expenseAccountTree1.Size = new System.Drawing.Size(190, 171);
+            this.expenseAccountTree1.TabIndex = 0;
             // 
             // FrmExpenseAccount
             // 
@@ -104,6 +115,7 @@
             this.Text = "支出账户管理";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
@@ -118,5 +130,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.GroupControl groupControl3;
+        private ExpenseAccountTree expenseAccountTree1;
     }
 }

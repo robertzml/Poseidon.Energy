@@ -92,7 +92,15 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             entity.Status = 0;
             base.Create(entity);
         }
+
+        /// <summary>
+        /// 查找所有对象
+        /// </summary>
+        /// <returns></returns>
+        public override IEnumerable<Department> FindAll()
+        {
+            return base.FindListByField<string>("modelType", this.modelType);
+        }
         #endregion //Method
     }
 }
-

@@ -36,7 +36,7 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            ChildFormManage.ShowDialogForm(typeof(FrmExpenseAccountAdd));
         }
         #endregion //Event
     }

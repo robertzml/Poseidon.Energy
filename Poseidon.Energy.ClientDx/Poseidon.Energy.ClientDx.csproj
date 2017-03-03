@@ -99,6 +99,12 @@
     <Compile Include="Control\TargetRecordGrid.Designer.cs">
       <DependentUpon>TargetRecordGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\ExpenseAccountTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ExpenseAccountTree.Designer.cs">
+      <DependentUpon>ExpenseAccountTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Expense\FrmExpenseOverview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Control\ExpenseAccountTree.resx">
+      <DependentUpon>ExpenseAccountTree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\FundRecordGrid.resx">
       <DependentUpon>FundRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +271,7 @@
       <DependentUpon>FrmTargetSelectDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Department.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.ExpenseAccount.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Fund.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.FundRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Population.datasource" />
