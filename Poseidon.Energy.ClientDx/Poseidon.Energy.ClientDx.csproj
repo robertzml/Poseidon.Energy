@@ -105,6 +105,18 @@
     <Compile Include="Expense\FrmExpenseOverview.Designer.cs">
       <DependentUpon>FrmExpenseOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Expense\FrmExpenseAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expense\FrmExpenseAccount.Designer.cs">
+      <DependentUpon>FrmExpenseAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\FrmExpenseAccountAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expense\FrmExpenseAccountAdd.Designer.cs">
+      <DependentUpon>FrmExpenseAccountAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Target\FrmTargetSelectDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +221,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\TargetRecordGrid.resx">
       <DependentUpon>TargetRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expense\FrmExpenseAccount.resx">
+      <DependentUpon>FrmExpenseAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expense\FrmExpenseAccountAdd.resx">
+      <DependentUpon>FrmExpenseAccountAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Expense\FrmExpenseOverview.resx">
       <DependentUpon>FrmExpenseOverview.cs</DependentUpon>

@@ -17,13 +17,20 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     /// </summary>
     internal class ExpenseAccountRepository : AbsctractDALMongo<ExpenseAccount>, IExpenseAccountRepository
     {
+        #region Field
+        /// <summary>
+        /// 模型类型
+        /// </summary>
+        private readonly string modelType = Utility.ModelTypeCode.Department;
+        #endregion //Field
+
         #region Constructor
         /// <summary>
         /// 支出账户数据访问类
         /// </summary>
         public ExpenseAccountRepository()
         {
-            this.collectionName = "energy_expenseAccount";
+            this.collectionName = "core_organization";
         }
         #endregion //Constructor
 
@@ -38,11 +45,30 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             ExpenseAccount entity = new ExpenseAccount();
             entity.Id = doc["_id"].ToString();
             entity.Name = doc["name"].ToString();
+            entity.ModelType = doc["modelType"].ToString();
             entity.Remark = doc["remark"].ToString();
             entity.Status = doc["status"].ToInt32();
 
-            entity.WaterMeters = new List<WaterMeter>();
+            if (doc.Contains("parentId"))
+                entity.ParentId = doc["parentId"].ToString();
 
+            entity.WaterMeters = new List<WaterMeter>();
+            if (doc.Contains("waterMeters"))
+            {
+                BsonArray array = doc["waterMeters"].AsBsonArray;
+                foreach (BsonDocument item in array)
+                {
+                    WaterMeter meter = new WaterMeter();
+                    meter.Name = item["name"].ToString();
+                    meter.Number = item["number"].ToString();
+                    meter.AccountName = item["accountName"].ToString();
+                    meter.Address = item["address"].ToString();
+                    meter.Remark = item["remark"].ToString();
+                    meter.Status = item["status"].ToInt32();
+
+                    entity.WaterMeters.Add(meter);
+                }
+            }
 
             return entity;
         }
@@ -54,7 +80,38 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// <returns></returns>
         protected override BsonDocument EntityToDoc(ExpenseAccount entity)
         {
-            throw new NotImplementedException();
+            BsonDocument doc = new BsonDocument
+            {
+                { "name", entity.Name },
+                { "modelType", entity.ModelType },
+                { "remark", entity.Remark },
+                { "status", entity.Status }
+            };
+
+            if (entity.ParentId != null)
+                doc.Add("parentId", entity.ParentId);
+
+            if (entity.WaterMeters != null && entity.WaterMeters.Count > 0)
+            {
+                BsonArray array = new BsonArray();
+                foreach (var item in entity.WaterMeters)
+                {
+                    BsonDocument sub = new BsonDocument
+                    {
+                        { "name", item.Name },
+                        { "number", item.Number },
+                        { "accountName", item.AccountName },
+                        { "address", item.Address },
+                        { "remark", item.Remark },
+                        { "status", item.Status }
+                    };
+                    array.Add(sub);
+                }
+
+                doc.Add("waterMeters", array);
+            }
+
+            return doc;
         }
         #endregion //Function
     }

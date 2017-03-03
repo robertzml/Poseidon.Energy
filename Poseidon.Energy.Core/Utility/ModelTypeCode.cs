@@ -16,6 +16,11 @@ namespace Poseidon.Energy.Core.Utility
         /// 部门模型
         /// </summary>
         public static readonly string Department = "Energy.Department";
+
+        /// <summary>
+        /// 支出账户模型
+        /// </summary>
+        public static readonly string ExpenseAccount = "Energy.ExpenseAccount";
         #endregion //Field
     }
 }
