@@ -76,6 +76,20 @@ namespace Poseidon.Energy.Core.DAL.Mongo
 
         #region Method
         /// <summary>
+        /// 查找经费记录
+        /// </summary>
+        /// <param name="fundId">统计ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <returns></returns>
+        public FundRecord FindOne(string fundId, string departmentId)
+        {
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("fundId", fundId) & builder.Eq("departmentId", departmentId);
+
+            return this.FindOne(filter);
+        }
+
+        /// <summary>
         /// 添加经费记录
         /// </summary>
         /// <param name="entity">实体对象</param>

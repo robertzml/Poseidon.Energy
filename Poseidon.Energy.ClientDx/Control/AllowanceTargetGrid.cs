@@ -15,12 +15,10 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
 
-    /// <summary>
-    /// 补贴指标表格控件
-    /// </summary>
-    public partial class AllowanceGrid : WinEntityGrid<Allowance>
+
+    public partial class AllowanceTargetGrid : WinEntityGrid<AllowanceTarget>
     {
-        public AllowanceGrid()
+        public AllowanceTargetGrid()
         {
             InitializeComponent();
         }

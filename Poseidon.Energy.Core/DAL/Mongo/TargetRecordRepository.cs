@@ -70,6 +70,27 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 }
             }
 
+            entity.AllowanceTarget = new List<AllowanceTarget>();
+            if (doc.Contains("allowanceTarget"))
+            {
+                BsonArray array = doc["allowanceTarget"].AsBsonArray;
+                foreach(BsonDocument item in array)
+                {
+                    AllowanceTarget at = new AllowanceTarget();
+                    at.Name = item["name"].ToString();
+                    at.Code = item["code"].ToString();
+                    at.Factor = item["factor"].ToDecimal();
+                    at.MonthKilowatt = item["monthKilowatt"].ToDecimal();
+                    at.MonthCount = item["monthCount"].ToInt32();
+                    at.UnitPrice = item["unitPrice"].ToDecimal();
+                    at.YearKilowatt = item["yearKilowatt"].ToDecimal();
+                    at.YearAmount = item["yearAmount"].ToDecimal();
+                    at.Remark = item["remark"].ToString();
+
+                    entity.AllowanceTarget.Add(at);
+                }
+            }
+
             return entity;
         }
 
@@ -115,6 +136,29 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 }
 
                 doc.Add("staffTarget", array);
+            }
+
+            if (entity.AllowanceTarget != null && entity.AllowanceTarget.Count > 0)
+            {
+                BsonArray array = new BsonArray();
+                foreach (var item in entity.AllowanceTarget)
+                {
+                    BsonDocument atdoc = new BsonDocument
+                    {
+                        { "name", item.Name },
+                        { "code", item.Code },
+                        { "factor", item.Factor },
+                        { "monthKilowatt", item.MonthKilowatt },
+                        { "monthCount", item.MonthCount },
+                        { "unitPrice", item.UnitPrice },
+                        { "yearKilowatt", item.YearKilowatt },
+                        { "yearAmount", item.YearAmount },
+                        { "remark", item.Remark }
+                    };
+                    array.Add(atdoc);
+                }
+
+                doc.Add("allowanceTarget", array);
             }
 
             return doc;

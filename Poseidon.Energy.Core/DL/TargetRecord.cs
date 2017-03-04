@@ -48,7 +48,7 @@ namespace Poseidon.Energy.Core.DL
         /// 补贴
         /// </summary>
         [Display(Name = "补贴")]
-        public List<Allowance> Allowance { get; set; }
+        public List<AllowanceTarget> AllowanceTarget { get; set; }
 
         /// <summary>
         /// 总用电量

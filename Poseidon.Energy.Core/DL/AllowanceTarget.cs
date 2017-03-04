@@ -9,9 +9,9 @@ namespace Poseidon.Energy.Core.DL
     using Poseidon.Base.Framework;
 
     /// <summary>
-    /// 补贴
+    /// 补贴指标
     /// </summary>
-    public class Allowance : BaseEntity
+    public class AllowanceTarget : BaseEntity
     {
         #region Property
         /// <summary>
@@ -27,10 +27,10 @@ namespace Poseidon.Energy.Core.DL
         public string Code { get; set; }
 
         /// <summary>
-        /// 参数
+        /// 系数
         /// </summary>
-        [Display(Name = "参数")]
-        public decimal Parameter { get; set; }
+        [Display(Name = "系数")]
+        public decimal Factor { get; set; }
 
         /// <summary>
         /// 月度数
@@ -61,6 +61,12 @@ namespace Poseidon.Energy.Core.DL
         /// </summary>
         [Display(Name = "年指标金额")]
         public decimal YearAmount { get; set; }
+
+        /// <summary>
+        /// 备注
+        /// </summary>
+        [Display(Name = "备注")]
+        public string Remark { get; set; }
         #endregion //Property
     }
 }

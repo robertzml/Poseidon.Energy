@@ -86,6 +86,29 @@ namespace Poseidon.Energy.ClientDx
                 item.Remark = item.Remark == null ? "" : item.Remark;
             }
         }
+
+        /// <summary>
+        /// 导入选中部门经费记录
+        /// </summary>
+        /// <param name="fundId">经费统计ID</param>
+        /// <param name="departmentId">部门ID</param>
+        private void LoadFundRecord(string fundId, string departmentId)
+        {
+            var fund = BusinessFactory<TargetRecordBusiness>.Instance.ImportFund(fundId, departmentId);
+
+            foreach (var item in fund)
+            {
+                if (this.atGrid.DataSource.Any(r => r.Code == item.Code))
+                {
+                    var s = atGrid.DataSource.Find(r => r.Code == item.Code);
+                    s.Factor = item.Factor;
+                }
+                else
+                    this.atGrid.DataSource.Add(item);
+            }
+
+            this.atGrid.UpdateBindingData();
+        }
         #endregion //Function
 
         #region Event
@@ -128,6 +151,7 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             this.stGrid.DataSource = select.StaffTarget;
+            this.atGrid.DataSource = select.AllowanceTarget;
         }
 
         /// <summary>
@@ -185,6 +209,20 @@ namespace Poseidon.Energy.ClientDx
             {
                 MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
             }
+        }
+
+        /// <summary>
+        /// 导入经费记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnImportFund_Click(object sender, EventArgs e)
+        {
+            var select = this.trGrid.GetCurrentSelect();
+            if (select == null)
+                return;
+
+            LoadFundRecord(this.currentTarget.FundId, select.DepartmentId);
         }
         #endregion //Event
     }

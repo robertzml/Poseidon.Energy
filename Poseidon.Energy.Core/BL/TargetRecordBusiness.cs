@@ -62,6 +62,42 @@ namespace Poseidon.Energy.Core.BL
         }
 
         /// <summary>
+        /// 导入经费记录
+        /// </summary>
+        /// <param name="fundId">经费统计ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <returns></returns>
+        public List<AllowanceTarget> ImportFund(string fundId, string departmentId)
+        {
+            var dal = RepositoryFactory<IFundRecordRepository>.Instance;
+            var fundRecord = dal.FindOne(fundId, departmentId);
+
+            List<AllowanceTarget> data = new List<AllowanceTarget>();
+            if (fundRecord.HorizontalResearch > 0)
+            {
+                AllowanceTarget at = new AllowanceTarget();
+                at.Name = "横向科研";
+                at.Code = "HorizontalResearch";
+                at.Factor = fundRecord.HorizontalResearch;
+                at.YearAmount = at.Factor * 0.0005m;
+
+                data.Add(at);
+            }
+            if (fundRecord.VerticalResearch > 0)
+            {
+                AllowanceTarget at = new AllowanceTarget();
+                at.Name = "纵向科研";
+                at.Code = "VerticalResearch";
+                at.Factor = fundRecord.VerticalResearch;
+                at.YearAmount = at.Factor * 0.0025m;
+
+                data.Add(at);
+            }
+
+            return data;
+        }
+
+        /// <summary>
         /// 添加一组指标记录
         /// </summary>
         /// <param name="targetId">指标计划ID</param>

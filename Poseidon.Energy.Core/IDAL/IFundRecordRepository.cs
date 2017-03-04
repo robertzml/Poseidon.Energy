@@ -13,5 +13,12 @@ namespace Poseidon.Energy.Core.IDAL
     /// </summary>
     internal interface IFundRecordRepository : IBaseDAL<FundRecord>
     {
+        /// <summary>
+        /// 查找经费记录
+        /// </summary>
+        /// <param name="fundId">统计ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <returns></returns>
+        FundRecord FindOne(string fundId, string departmentId);
     }
 }
