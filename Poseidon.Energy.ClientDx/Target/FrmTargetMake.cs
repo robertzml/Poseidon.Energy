@@ -85,6 +85,10 @@ namespace Poseidon.Energy.ClientDx
             {
                 item.Remark = item.Remark == null ? "" : item.Remark;
             }
+            foreach (var item in entity.AllowanceTarget)
+            {
+                item.Remark = item.Remark == null ? "" : item.Remark;
+            }
         }
 
         /// <summary>
@@ -137,6 +141,20 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmTargetSelectDepartment), new object[] { this.currentTarget.Id });
+        }
+
+        /// <summary>
+        /// 添加指标记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAddRecord_Click(object sender, EventArgs e)
+        {
+            if (this.currentTarget == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmTargetRecordAdd), new object[] { this.currentTarget.Id });
+            LoadRecords();
         }
 
         /// <summary>
@@ -223,6 +241,65 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             LoadFundRecord(this.currentTarget.FundId, select.DepartmentId);
+        }
+
+        /// <summary>
+        /// 增加补贴
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAddAllowance_Click(object sender, EventArgs e)
+        {
+            FrmAllowanceAdd form = new FrmAllowanceAdd();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                var allowance = form.AllowanceTarget;
+                this.atGrid.DataSource.Add(allowance);
+                this.atGrid.UpdateBindingData();
+            }
+        }
+
+        /// <summary>
+        /// 计算补贴指标
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCalcAllowance_Click(object sender, EventArgs e)
+        {
+            this.atGrid.CloseEditor();
+            this.atGrid.UpdateTotal();
+        }
+
+        /// <summary>
+        /// 保存补贴指标
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSaveAllowance_Click(object sender, EventArgs e)
+        {
+            var select = this.trGrid.GetCurrentSelect();
+            if (select == null)
+                return;
+
+            SetRecordEntity(select);
+
+            try
+            {
+                var result = BusinessFactory<TargetRecordBusiness>.Instance.Update(select);
+
+                if (result)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                }
+                else
+                {
+                    MessageUtil.ShowInfo("保存失败");
+                }
+            }
+            catch (PoseidonException pe)
+            {
+                MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+            }
         }
         #endregion //Event
     }

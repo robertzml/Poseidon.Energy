@@ -129,6 +129,18 @@
     <Compile Include="Expense\FrmExpenseAccountAdd.Designer.cs">
       <DependentUpon>FrmExpenseAccountAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Target\FrmTargetRecordAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Target\FrmTargetRecordAdd.Designer.cs">
+      <DependentUpon>FrmTargetRecordAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Target\FrmAllowanceAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Target\FrmAllowanceAdd.Designer.cs">
+      <DependentUpon>FrmAllowanceAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Target\FrmTargetSelectDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +276,9 @@
     <EmbeddedResource Include="Population\FrmPopulationEdit.resx">
       <DependentUpon>FrmPopulationEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Target\FrmAllowanceAdd.resx">
+      <DependentUpon>FrmAllowanceAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Target\FrmTargetAdd.resx">
       <DependentUpon>FrmTargetAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Target\FrmTargetOverview.resx">
       <DependentUpon>FrmTargetOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Target\FrmTargetRecordAdd.resx">
+      <DependentUpon>FrmTargetRecordAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Target\FrmTargetSelectDepartment.resx">
       <DependentUpon>FrmTargetSelectDepartment.cs</DependentUpon>

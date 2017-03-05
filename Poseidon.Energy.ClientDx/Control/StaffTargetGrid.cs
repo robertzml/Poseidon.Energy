@@ -36,8 +36,8 @@ namespace Poseidon.Energy.ClientDx
             {
                 var st = bsEntity[i] as StaffTarget;
 
-                st.YearKilowatt = st.Number * st.MonthKilowatt * st.MonthCount;
-                st.YearAmount = st.YearKilowatt * st.UnitPrice;
+                st.YearKilowatt = Math.Round(st.Number * st.MonthKilowatt * st.MonthCount, 0);
+                st.YearAmount = Math.Round(st.YearKilowatt * st.UnitPrice, 0);
             }
 
             this.bsEntity.ResetBindings(false);

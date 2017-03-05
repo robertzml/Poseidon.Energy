@@ -103,6 +103,7 @@
     <Compile Include="IDAL\ITargetRecordRepository.cs" />
     <Compile Include="IDAL\ITargetRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\EnergyConstant.cs" />
     <Compile Include="Utility\ModelTypeCode.cs" />
   </ItemGroup>
   <ItemGroup />

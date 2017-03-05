@@ -67,6 +67,10 @@
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.Editable = false;
+            this.dgvEntity.OptionsCustomization.AllowFilter = false;
+            this.dgvEntity.OptionsCustomization.AllowGroup = false;
+            this.dgvEntity.OptionsCustomization.AllowQuickHideColumns = false;
+            this.dgvEntity.OptionsCustomization.AllowSort = false;
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
@@ -75,6 +79,7 @@
             // 
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
+            this.colName.OptionsColumn.AllowEdit = false;
             this.colName.Visible = true;
             this.colName.VisibleIndex = 0;
             // 
@@ -111,19 +116,23 @@
             this.colUnitPrice.FieldName = "UnitPrice";
             this.colUnitPrice.Name = "colUnitPrice";
             this.colUnitPrice.Visible = true;
-            this.colUnitPrice.VisibleIndex = 5;
+            this.colUnitPrice.VisibleIndex = 6;
             // 
             // colYearKilowatt
             // 
             this.colYearKilowatt.FieldName = "YearKilowatt";
             this.colYearKilowatt.Name = "colYearKilowatt";
+            this.colYearKilowatt.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "YearKilowatt", "合计={0:0.##}")});
             this.colYearKilowatt.Visible = true;
-            this.colYearKilowatt.VisibleIndex = 6;
+            this.colYearKilowatt.VisibleIndex = 5;
             // 
             // colYearAmount
             // 
             this.colYearAmount.FieldName = "YearAmount";
             this.colYearAmount.Name = "colYearAmount";
+            this.colYearAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "YearAmount", "合计={0:0.##}")});
             this.colYearAmount.Visible = true;
             this.colYearAmount.VisibleIndex = 7;
             // 

@@ -9,6 +9,7 @@ namespace Poseidon.Energy.Core.BL
     using Poseidon.Base.Framework;
     using Poseidon.Energy.Core.DL;
     using Poseidon.Energy.Core.IDAL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 指标记录业务类
@@ -77,9 +78,11 @@ namespace Poseidon.Energy.Core.BL
             {
                 AllowanceTarget at = new AllowanceTarget();
                 at.Name = "横向科研";
-                at.Code = "HorizontalResearch";
+                at.Code = EnergyConstant.HorizontalResearchCode;
                 at.Factor = fundRecord.HorizontalResearch;
-                at.YearAmount = at.Factor * 0.0005m;
+                at.MonthCount = 1;
+                at.MonthKilowatt = 1;
+                at.YearAmount = Math.Round(at.Factor * 0.0005m, 0);
 
                 data.Add(at);
             }
@@ -87,9 +90,11 @@ namespace Poseidon.Energy.Core.BL
             {
                 AllowanceTarget at = new AllowanceTarget();
                 at.Name = "纵向科研";
-                at.Code = "VerticalResearch";
+                at.Code = EnergyConstant.VerticalResearchCode;
                 at.Factor = fundRecord.VerticalResearch;
-                at.YearAmount = at.Factor * 0.0025m;
+                at.MonthCount = 1;
+                at.MonthKilowatt = 1;
+                at.YearAmount = Math.Round(at.Factor * 0.0025m, 0);
 
                 data.Add(at);
             }
@@ -141,8 +146,8 @@ namespace Poseidon.Energy.Core.BL
         {
             var dal = this.baseDal as ITargetRecordRepository;
 
-            entity.TotalQuantum = entity.StaffTarget.Sum(r => r.YearKilowatt);
-            entity.TotalAmount = entity.StaffTarget.Sum(r => r.YearAmount);
+            entity.TotalQuantum = entity.StaffTarget.Sum(r => r.YearKilowatt) + entity.AllowanceTarget.Sum(r => r.YearKilowatt);
+            entity.TotalAmount = entity.StaffTarget.Sum(r => r.YearAmount) + entity.AllowanceTarget.Sum(r => r.YearAmount);
 
             return dal.Update(entity);
         }
