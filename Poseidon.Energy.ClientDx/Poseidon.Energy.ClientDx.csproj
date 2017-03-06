@@ -136,6 +136,12 @@
     <Compile Include="Expense\FrmExpenseWaterMeterSet.Designer.cs">
       <DependentUpon>FrmExpenseWaterMeterSet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Expense\FrmExpenseWaterAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expense\FrmExpenseWaterAdd.Designer.cs">
+      <DependentUpon>FrmExpenseWaterAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -250,6 +256,12 @@
     <Compile Include="Control\WaterMeterGrid.Designer.cs">
       <DependentUpon>WaterMeterGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\WaterExpenseRecordGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\WaterExpenseRecordGrid.Designer.cs">
+      <DependentUpon>WaterExpenseRecordGrid.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Control\AllowanceTargetGrid.resx">
@@ -270,6 +282,9 @@
     <EmbeddedResource Include="Control\TargetRecordGrid.resx">
       <DependentUpon>TargetRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\WaterExpenseRecordGrid.resx">
+      <DependentUpon>WaterExpenseRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\WaterMeterGrid.resx">
       <DependentUpon>WaterMeterGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Expense\FrmExpenseOverview.resx">
       <DependentUpon>FrmExpenseOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expense\FrmExpenseWaterAdd.resx">
+      <DependentUpon>FrmExpenseWaterAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Expense\FrmExpenseWaterMeterSet.resx">
       <DependentUpon>FrmExpenseWaterMeterSet.cs</DependentUpon>
@@ -335,6 +353,7 @@
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.StaffTarget.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Target.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.TargetRecord.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.WaterExpenseRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.WaterMeter.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Control\DepartmentGrid.resx">

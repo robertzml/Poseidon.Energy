@@ -30,10 +30,10 @@
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.waterGrid = new Poseidon.Energy.ClientDx.WaterMeterGrid();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.waterGrid = new Poseidon.Energy.ClientDx.WaterMeterGrid();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
@@ -94,6 +94,21 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // waterGrid
+            // 
+            this.waterGrid.AllowFilter = false;
+            this.waterGrid.AllowGroup = false;
+            this.waterGrid.AllowSort = false;
+            this.waterGrid.DataSource = null;
+            this.waterGrid.Editable = true;
+            this.waterGrid.Location = new System.Drawing.Point(12, 36);
+            this.waterGrid.Name = "waterGrid";
+            this.waterGrid.ShowAddMenu = false;
+            this.waterGrid.ShowFooter = false;
+            this.waterGrid.ShowLineNumber = true;
+            this.waterGrid.Size = new System.Drawing.Size(567, 265);
+            this.waterGrid.TabIndex = 5;
+            // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(63, 12);
@@ -125,18 +140,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(571, 24);
             this.layoutControlItem1.Text = "账户名称";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // waterGrid
-            // 
-            this.waterGrid.DataSource = null;
-            this.waterGrid.Editable = true;
-            this.waterGrid.Location = new System.Drawing.Point(12, 36);
-            this.waterGrid.Name = "waterGrid";
-            this.waterGrid.ShowAddMenu = false;
-            this.waterGrid.ShowFooter = false;
-            this.waterGrid.ShowLineNumber = true;
-            this.waterGrid.Size = new System.Drawing.Size(567, 265);
-            this.waterGrid.TabIndex = 5;
             // 
             // layoutControlItem2
             // 
