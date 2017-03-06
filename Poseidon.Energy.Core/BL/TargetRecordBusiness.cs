@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Poseidon.Energy.Core.BL
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Base.System;
     using Poseidon.Energy.Core.DL;
     using Poseidon.Energy.Core.IDAL;
     using Poseidon.Energy.Core.Utility;
@@ -103,14 +104,37 @@ namespace Poseidon.Energy.Core.BL
         }
 
         /// <summary>
+        /// 添加指标记录
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <param name="user">操作用户</param>
+        public void Create(TargetRecord entity, LoginUser user)
+        {
+            entity.CreateBy = new UpdateStamp
+            {
+                UserId = user.Id,
+                Name = user.Name,
+                Time = DateTime.Now
+            };
+            entity.UpdateBy = new UpdateStamp
+            {
+                UserId = user.Id,
+                Name = user.Name,
+                Time = DateTime.Now
+            };
+            base.Create(entity);
+        }
+
+        /// <summary>
         /// 添加一组指标记录
         /// </summary>
         /// <param name="targetId">指标计划ID</param>
         /// <param name="ids">部门ID列表</param>
+        /// <param name="user">操作用户</param>
         /// <remarks>
         /// 增加新记录，删除未选择部门记录，增加记录为电指标
         /// </remarks>
-        public void CreateMany(string targetId, List<string> departmentIds)
+        public void CreateMany(string targetId, List<string> departmentIds, LoginUser user)
         {
             var dal = this.baseDal as ITargetRecordRepository;
 
@@ -131,6 +155,18 @@ namespace Poseidon.Energy.Core.BL
                     dt.TotalQuantum = 0;
                     dt.TotalAmount = 0;
                     dt.Remark = "";
+                    dt.CreateBy = new UpdateStamp
+                    {
+                        UserId = user.Id,
+                        Name = user.Name,
+                        Time = DateTime.Now
+                    };
+                    dt.UpdateBy = new UpdateStamp
+                    {
+                        UserId = user.Id,
+                        Name = user.Name,
+                        Time = DateTime.Now
+                    };
 
                     dal.Create(dt);
                 }
@@ -141,13 +177,20 @@ namespace Poseidon.Energy.Core.BL
         /// 更新记录
         /// </summary>
         /// <param name="entity">实体对象</param>
+        /// <param name="user">操作用户</param>
         /// <returns></returns>
-        public override bool Update(TargetRecord entity)
+        public bool Update(TargetRecord entity, LoginUser user)
         {
             var dal = this.baseDal as ITargetRecordRepository;
 
             entity.TotalQuantum = entity.StaffTarget.Sum(r => r.YearKilowatt) + entity.AllowanceTarget.Sum(r => r.YearKilowatt);
             entity.TotalAmount = entity.StaffTarget.Sum(r => r.YearAmount) + entity.AllowanceTarget.Sum(r => r.YearAmount);
+            entity.UpdateBy = new UpdateStamp
+            {
+                UserId = user.Id,
+                Name = user.Name,
+                Time = DateTime.Now
+            };
 
             return dal.Update(entity);
         }

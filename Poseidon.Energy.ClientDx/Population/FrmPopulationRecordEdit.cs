@@ -114,10 +114,10 @@ namespace Poseidon.Energy.ClientDx
 
             var data = this.prGrid.DataSource;
             SetEntity(data);
-                     
+
             try
             {
-                BusinessFactory<PopulationRecordBusiness>.Instance.Update(data);
+                BusinessFactory<PopulationRecordBusiness>.Instance.Update(data, this.currentUser);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

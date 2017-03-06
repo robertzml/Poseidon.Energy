@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Poseidon.Energy.Core.BL
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Base.System;
     using Poseidon.Energy.Core.DL;
     using Poseidon.Energy.Core.IDAL;
 
@@ -40,8 +41,9 @@ namespace Poseidon.Energy.Core.BL
         /// 更新经费记录
         /// </summary>
         /// <param name="data">经费记录</param>
+        /// <param name="user">操作用户</param>
         /// <returns></returns>
-        public void Update(List<FundRecord> data)
+        public void Update(List<FundRecord> data, LoginUser user)
         {
             foreach (var item in data)
             {
@@ -53,9 +55,31 @@ namespace Poseidon.Energy.Core.BL
                 else
                 {
                     if (item.Id == null)
+                    {
+                        item.CreateBy = new UpdateStamp
+                        {
+                            UserId = user.Id,
+                            Name = user.Name,
+                            Time = DateTime.Now
+                        };
+                        item.UpdateBy = new UpdateStamp
+                        {
+                            UserId = user.Id,
+                            Name = user.Name,
+                            Time = DateTime.Now
+                        };
                         this.baseDal.Create(item);
+                    }
                     else
+                    {
+                        item.UpdateBy = new UpdateStamp
+                        {
+                            UserId = user.Id,
+                            Name = user.Name,
+                            Time = DateTime.Now
+                        };
                         this.baseDal.Update(item);
+                    }
                 }
             }
         }

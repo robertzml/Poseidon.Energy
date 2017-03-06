@@ -6,6 +6,10 @@ using System.Windows.Forms;
 
 namespace Poseidon.Energy.Test
 {
+    using Poseidon.Base.Framework;
+    using Poseidon.Common;
+    using Poseidon.Core.BL;
+
     static class Program
     {
         /// <summary>
@@ -16,6 +20,11 @@ namespace Poseidon.Energy.Test
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            var user = BusinessFactory<UserBusiness>.Instance.FindByUserName("admin");
+            GlobalAction.CurrentUser = GlobalAction.ConvertToLoginUser(user);
+            Cache.Instance.Add("CurrentUser", GlobalAction.CurrentUser); //缓存用户信息
+
             Application.Run(new MainForm());
         }
     }

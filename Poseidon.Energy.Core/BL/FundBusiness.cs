@@ -6,6 +6,7 @@ using System.Text;
 namespace Poseidon.Energy.Core.BL
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Base.System;
     using Poseidon.Energy.Core.DL;
     using Poseidon.Energy.Core.IDAL;
 
@@ -25,6 +26,46 @@ namespace Poseidon.Energy.Core.BL
         #endregion //Constructor
 
         #region Method
+        /// <summary>
+        /// 添加经费统计
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <param name="user">操作用户</param>
+        public void Create(Fund entity, LoginUser user)
+        {
+            entity.CreateBy = new UpdateStamp
+            {
+                UserId = user.Id,
+                Name = user.Name,
+                Time = DateTime.Now
+            };
+            entity.UpdateBy = new UpdateStamp
+            {
+                UserId = user.Id,
+                Name = user.Name,
+                Time = DateTime.Now
+            };
+
+            this.baseDal.Create(entity);
+        }
+
+        /// <summary>
+        /// 编辑经费统计
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <param name="user">操作用户</param>
+        /// <returns></returns>
+        public bool Update(Fund entity, LoginUser user)
+        {
+            entity.UpdateBy = new UpdateStamp
+            {
+                UserId = user.Id,
+                Name = user.Name,
+                Time = DateTime.Now
+            };
+            return base.Update(entity);
+        }
+
         /// <summary>
         /// 删除经费统计
         /// </summary>

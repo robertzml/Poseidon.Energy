@@ -39,8 +39,23 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             entity.Id = doc["_id"].ToString();
             entity.PopulationId = doc["populationId"].ToString();
             entity.DepartmentId = doc["departmentId"].ToString();
-            entity.CreateTime = doc["createTime"].ToLocalTime();
-            entity.UpdateTime = doc["updateTime"].ToLocalTime();
+
+            var createBy = doc["createBy"].ToBsonDocument();
+            entity.CreateBy = new UpdateStamp
+            {
+                UserId = createBy["userId"].ToString(),
+                Name = createBy["name"].ToString(),
+                Time = createBy["time"].ToLocalTime()
+            };
+
+            var updateBy = doc["updateBy"].ToBsonDocument();
+            entity.UpdateBy = new UpdateStamp
+            {
+                UserId = updateBy["userId"].ToString(),
+                Name = updateBy["name"].ToString(),
+                Time = updateBy["time"].ToLocalTime()
+            };
+
             entity.Remark = doc["remark"].ToString();
             entity.Status = doc["status"].ToInt32();
 
@@ -73,8 +88,16 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             {
                 { "populationId", entity.PopulationId },
                 { "departmentId", entity.DepartmentId },
-                { "createTime", entity.CreateTime },
-                { "updateTime", entity.UpdateTime },
+                { "createBy", new BsonDocument {
+                    { "userId", entity.CreateBy.UserId },
+                    { "name", entity.CreateBy.Name },
+                    { "time", entity.CreateBy.Time }
+                }},
+                { "updateBy", new BsonDocument {
+                    { "userId", entity.UpdateBy.UserId },
+                    { "name", entity.UpdateBy.Name },
+                    { "time", entity.UpdateBy.Time }
+                }},
                 { "remark", entity.Remark },
                 { "status", entity.Status }
             };
@@ -121,8 +144,6 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// <param name="entity">实体对象</param>
         public override void Create(PopulationRecord entity)
         {
-            entity.CreateTime = DateTime.Now;
-            entity.UpdateTime = entity.CreateTime;
             entity.Status = 0;
             base.Create(entity);
         }
@@ -134,7 +155,6 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// <returns></returns>
         public override bool Update(PopulationRecord entity)
         {
-            entity.UpdateTime = DateTime.Now;
             return base.Update(entity);
         }
         #endregion //Method

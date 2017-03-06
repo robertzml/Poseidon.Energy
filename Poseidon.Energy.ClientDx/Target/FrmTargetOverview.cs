@@ -66,8 +66,8 @@ namespace Poseidon.Energy.ClientDx
             this.txtYear.Text = currentTarget.Year.ToString();
             this.txtPopulation.Text = BusinessFactory<PopulationBusiness>.Instance.FindById(currentTarget.PopulationId).Name;
             this.txtFund.Text = BusinessFactory<FundBusiness>.Instance.FindById(currentTarget.FundId).Name;
-            this.txtCreateTime.Text = currentTarget.CreateTime.ToDateTimeString();
-            this.txtUpdateTime.Text = currentTarget.UpdateTime.ToDateTimeString();
+            this.txtCreateTime.Text = currentTarget.CreateBy.Time.ToDateTimeString();
+            this.txtUpdateTime.Text = currentTarget.UpdateBy.Time.ToDateTimeString();
         }
 
         /// <summary>

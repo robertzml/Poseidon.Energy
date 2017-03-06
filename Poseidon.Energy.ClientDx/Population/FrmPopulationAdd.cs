@@ -78,7 +78,7 @@ namespace Poseidon.Energy.ClientDx
 
             try
             {
-                BusinessFactory<PopulationBusiness>.Instance.Create(entity);
+                BusinessFactory<PopulationBusiness>.Instance.Create(entity, this.currentUser);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

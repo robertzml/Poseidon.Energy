@@ -104,7 +104,7 @@ namespace Poseidon.Energy.ClientDx
 
             try
             {
-                bool result = BusinessFactory<FundBusiness>.Instance.Update(this.currentFund);
+                bool result = BusinessFactory<FundBusiness>.Instance.Update(this.currentFund, this.currentUser);
 
                 if (result)
                 {

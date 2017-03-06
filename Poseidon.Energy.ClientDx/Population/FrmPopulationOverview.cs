@@ -75,8 +75,8 @@ namespace Poseidon.Energy.ClientDx
             this.txtYear.Text = currentPopulation.Year.ToString();
             this.txtBelongTime.Text = currentPopulation.BelongTime;
             this.txtRemark.Text = currentPopulation.Remark;
-            this.txtCreateTime.Text = currentPopulation.CreateTime.ToDateTimeString();
-            this.txtUpdateTime.Text = currentPopulation.UpdateTime.ToDateTimeString();
+            this.txtCreateTime.Text = currentPopulation.CreateBy.Time.ToDateTimeString();
+            this.txtUpdateTime.Text = currentPopulation.UpdateBy.Time.ToDateTimeString();
 
             LoadPopulationRecords(this.currentPopulation.Id);
         }

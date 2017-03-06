@@ -110,7 +110,7 @@ namespace Poseidon.Energy.ClientDx
 
             try
             {
-                BusinessFactory<FundRecordBusiness>.Instance.Update(data);
+                BusinessFactory<FundRecordBusiness>.Instance.Update(data, this.currentUser);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

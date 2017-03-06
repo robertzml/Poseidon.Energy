@@ -212,7 +212,7 @@ namespace Poseidon.Energy.ClientDx
 
             try
             {
-                var result = BusinessFactory<TargetRecordBusiness>.Instance.Update(select);
+                var result = BusinessFactory<TargetRecordBusiness>.Instance.Update(select, this.currentUser);
 
                 if (result)
                 {
@@ -285,7 +285,7 @@ namespace Poseidon.Energy.ClientDx
 
             try
             {
-                var result = BusinessFactory<TargetRecordBusiness>.Instance.Update(select);
+                var result = BusinessFactory<TargetRecordBusiness>.Instance.Update(select, this.currentUser);
 
                 if (result)
                 {

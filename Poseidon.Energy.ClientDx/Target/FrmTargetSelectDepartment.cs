@@ -47,7 +47,7 @@ namespace Poseidon.Energy.ClientDx
         protected override void InitForm()
         {
             var departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
-            this.bsDepartment.DataSource = departments;    
+            this.bsDepartment.DataSource = departments;
 
             SetSelectDepartment();
 
@@ -81,7 +81,7 @@ namespace Poseidon.Energy.ClientDx
                 ids.Add(item.Id);
             }
 
-            BusinessFactory<TargetRecordBusiness>.Instance.CreateMany(this.currentEntity.Id, ids);
+            BusinessFactory<TargetRecordBusiness>.Instance.CreateMany(this.currentEntity.Id, ids, this.currentUser);
         }
         #endregion //Function
 
