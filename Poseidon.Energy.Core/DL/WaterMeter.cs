@@ -13,6 +13,7 @@ namespace Poseidon.Energy.Core.DL
     /// </summary>
     public class WaterMeter : ObjectEntity
     {
+        #region Property
         /// <summary>
         /// 客户编号
         /// </summary>
@@ -30,5 +31,6 @@ namespace Poseidon.Energy.Core.DL
         /// </summary>
         [Display(Name = "地址")]
         public string Address { get; set; }
+        #endregion //Property
     }
 }

@@ -117,6 +117,15 @@ namespace Poseidon.Energy.Core.DAL.Mongo
 
         #region Method
         /// <summary>
+        /// 查找所有对象
+        /// </summary>
+        /// <returns></returns>
+        public override IEnumerable<ExpenseAccount> FindAll()
+        {
+            return base.FindListByField("modelType", this.modelType);
+        }
+
+        /// <summary>
         /// 添加支出账户
         /// </summary>
         /// <param name="entity">支出账户对象</param>

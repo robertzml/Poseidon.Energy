@@ -21,6 +21,13 @@ namespace Poseidon.Energy.ClientDx
     /// </summary>
     public partial class FrmExpenseAccount : BaseMdiForm
     {
+        #region Field
+        /// <summary>
+        /// 当前选择账户
+        /// </summary>
+        private ExpenseAccount currentAccount;
+        #endregion //Field
+
         #region Constructor
         public FrmExpenseAccount()
         {
@@ -30,6 +37,23 @@ namespace Poseidon.Energy.ClientDx
 
         #region Event
         /// <summary>
+        /// 账户选择事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void accountTree_AccountSelected(object sender, EventArgs e)
+        {
+            string id = this.accountTree.GetCurrentSelectAccountId();
+            if (id == null)
+                this.currentAccount = null;
+            else
+            {
+                this.currentAccount = BusinessFactory<ExpenseAccountBusiness>.Instance.FindById(id);
+                this.txtName.Text = this.currentAccount.Name;
+            }
+        }
+
+        /// <summary>
         /// 添加账户
         /// </summary>
         /// <param name="sender"></param>
@@ -37,6 +61,20 @@ namespace Poseidon.Energy.ClientDx
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ChildFormManage.ShowDialogForm(typeof(FrmExpenseAccountAdd));
+        }
+
+
+        /// <summary>
+        /// 设置水表
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSetWater_Click(object sender, EventArgs e)
+        {
+            if (this.currentAccount == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmExpenseWaterMeterSet), new object[] { this.currentAccount.Id });
         }
         #endregion //Event
     }

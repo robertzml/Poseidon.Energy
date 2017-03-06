@@ -83,6 +83,15 @@ namespace Poseidon.Energy.Core.DAL.Mongo
 
         #region Method
         /// <summary>
+        /// 查找所有对象
+        /// </summary>
+        /// <returns></returns>
+        public override IEnumerable<Department> FindAll()
+        {
+            return base.FindListByField<string>("modelType", this.modelType);
+        }
+
+        /// <summary>
         /// 添加部门
         /// </summary>
         /// <param name="entity">部门对象</param>
@@ -91,15 +100,6 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             entity.ModelType = this.modelType;
             entity.Status = 0;
             base.Create(entity);
-        }
-
-        /// <summary>
-        /// 查找所有对象
-        /// </summary>
-        /// <returns></returns>
-        public override IEnumerable<Department> FindAll()
-        {
-            return base.FindListByField<string>("modelType", this.modelType);
         }
         #endregion //Method
     }

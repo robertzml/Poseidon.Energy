@@ -14,10 +14,12 @@ namespace Poseidon.Energy.Core.DL
     /// </summary>
     public class ExpenseAccount : Organization
     {
+        #region Property
         /// <summary>
         /// 包含水表
         /// </summary>
         [Display(Name = "包含水表")]
         public List<WaterMeter> WaterMeters { get; set; }
+        #endregion //Property
     }
 }
