@@ -20,7 +20,7 @@ namespace Poseidon.Energy.ClientDx
     /// <summary>
     /// 水费支出单据管理控件
     /// </summary>
-    public partial class WaterExpenseControl : DevExpress.XtraEditors.XtraUserControl
+    public partial class WaterExpenseReceipt : DevExpress.XtraEditors.XtraUserControl
     {
         #region Field
         /// <summary>
@@ -30,7 +30,7 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Field
 
         #region Constructor
-        public WaterExpenseControl()
+        public WaterExpenseReceipt()
         {
             InitializeComponent();
         }

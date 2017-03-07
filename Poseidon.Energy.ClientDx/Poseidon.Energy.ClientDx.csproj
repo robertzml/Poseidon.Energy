@@ -292,11 +292,11 @@
     <Compile Include="Control\WaterExpenseChart.Designer.cs">
       <DependentUpon>WaterExpenseChart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\WaterExpenseControl.cs">
+    <Compile Include="Control\WaterExpenseReceipt.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\WaterExpenseControl.Designer.cs">
-      <DependentUpon>WaterExpenseControl.cs</DependentUpon>
+    <Compile Include="Control\WaterExpenseReceipt.Designer.cs">
+      <DependentUpon>WaterExpenseReceipt.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -321,8 +321,8 @@
     <EmbeddedResource Include="Control\WaterExpenseChart.resx">
       <DependentUpon>WaterExpenseChart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\WaterExpenseControl.resx">
-      <DependentUpon>WaterExpenseControl.cs</DependentUpon>
+    <EmbeddedResource Include="Control\WaterExpenseReceipt.resx">
+      <DependentUpon>WaterExpenseReceipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\WaterExpenseRecordGrid.resx">
       <DependentUpon>WaterExpenseRecordGrid.cs</DependentUpon>

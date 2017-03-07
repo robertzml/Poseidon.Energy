@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Energy.ClientDx
 {
-    partial class WaterExpenseControl
+    partial class WaterExpenseReceipt
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -35,12 +35,14 @@
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.txtRemark = new DevExpress.XtraEditors.TextEdit();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.waterExpRecGrid = new Poseidon.Energy.ClientDx.WaterExpenseRecordGrid();
             this.txtTotalAmount = new DevExpress.XtraEditors.TextEdit();
             this.txtTotalQuantity = new DevExpress.XtraEditors.TextEdit();
             this.txtFeeType = new DevExpress.XtraEditors.TextEdit();
             this.txtTicketDate = new DevExpress.XtraEditors.TextEdit();
             this.txtBelongDate = new DevExpress.XtraEditors.TextEdit();
             this.lbWaterReceipt = new DevExpress.XtraEditors.ListBoxControl();
+            this.bsWaterExpense = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -48,13 +50,11 @@
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.waterExpRecGrid = new Poseidon.Energy.ClientDx.WaterExpenseRecordGrid();
-            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bsWaterExpense = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
@@ -66,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTicketDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBelongDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbWaterReceipt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsWaterExpense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
@@ -73,12 +74,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsWaterExpense)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -152,6 +152,22 @@
             this.btnDelete.Text = "删除单据";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // waterExpRecGrid
+            // 
+            this.waterExpRecGrid.AllowFilter = false;
+            this.waterExpRecGrid.AllowGroup = false;
+            this.waterExpRecGrid.AllowSort = true;
+            this.waterExpRecGrid.DataSource = null;
+            this.waterExpRecGrid.Editable = false;
+            this.waterExpRecGrid.Location = new System.Drawing.Point(164, 86);
+            this.waterExpRecGrid.Name = "waterExpRecGrid";
+            this.waterExpRecGrid.ShowAddMenu = false;
+            this.waterExpRecGrid.ShowFooter = true;
+            this.waterExpRecGrid.ShowLineNumber = true;
+            this.waterExpRecGrid.ShowNavigator = false;
+            this.waterExpRecGrid.Size = new System.Drawing.Size(716, 375);
+            this.waterExpRecGrid.TabIndex = 10;
+            // 
             // txtTotalAmount
             // 
             this.txtTotalAmount.Location = new System.Drawing.Point(448, 36);
@@ -218,6 +234,10 @@
             this.lbWaterReceipt.TabIndex = 4;
             this.lbWaterReceipt.ValueMember = "Id";
             this.lbWaterReceipt.SelectedIndexChanged += new System.EventHandler(this.lbWaterReceipt_SelectedIndexChanged);
+            // 
+            // bsWaterExpense
+            // 
+            this.bsWaterExpense.DataSource = typeof(Poseidon.Energy.Core.DL.WaterExpense);
             // 
             // layoutControlGroup4
             // 
@@ -294,6 +314,15 @@
             this.layoutControlItem14.Text = "金额(元)";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(58, 14);
             // 
+            // layoutControlItem15
+            // 
+            this.layoutControlItem15.Control = this.waterExpRecGrid;
+            this.layoutControlItem15.Location = new System.Drawing.Point(152, 74);
+            this.layoutControlItem15.Name = "layoutControlItem15";
+            this.layoutControlItem15.Size = new System.Drawing.Size(720, 379);
+            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem15.TextVisible = false;
+            // 
             // layoutControlItem19
             // 
             this.layoutControlItem19.Control = this.btnDelete;
@@ -330,35 +359,6 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // waterExpRecGrid
-            // 
-            this.waterExpRecGrid.AllowFilter = false;
-            this.waterExpRecGrid.AllowGroup = false;
-            this.waterExpRecGrid.AllowSort = true;
-            this.waterExpRecGrid.DataSource = null;
-            this.waterExpRecGrid.Editable = false;
-            this.waterExpRecGrid.Location = new System.Drawing.Point(164, 86);
-            this.waterExpRecGrid.Name = "waterExpRecGrid";
-            this.waterExpRecGrid.ShowAddMenu = false;
-            this.waterExpRecGrid.ShowFooter = true;
-            this.waterExpRecGrid.ShowLineNumber = true;
-            this.waterExpRecGrid.ShowNavigator = false;
-            this.waterExpRecGrid.Size = new System.Drawing.Size(716, 375);
-            this.waterExpRecGrid.TabIndex = 10;
-            // 
-            // layoutControlItem15
-            // 
-            this.layoutControlItem15.Control = this.waterExpRecGrid;
-            this.layoutControlItem15.Location = new System.Drawing.Point(152, 74);
-            this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(720, 379);
-            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem15.TextVisible = false;
-            // 
-            // bsWaterExpense
-            // 
-            this.bsWaterExpense.DataSource = typeof(Poseidon.Energy.Core.DL.WaterExpense);
-            // 
             // WaterExpenseControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -378,6 +378,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTicketDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBelongDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbWaterReceipt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsWaterExpense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
@@ -385,12 +386,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsWaterExpense)).EndInit();
             this.ResumeLayout(false);
 
         }

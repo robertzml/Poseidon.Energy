@@ -78,9 +78,9 @@
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bsWaterExpense = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageWaterReceipt = new DevExpress.XtraTab.XtraTabPage();
-            this.waterExpenseReceipt = new Poseidon.Energy.ClientDx.WaterExpenseControl();
+            this.waterExpenseReceipt = new Poseidon.Energy.ClientDx.WaterExpenseReceipt();
+            this.bsWaterExpense = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -131,8 +131,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsWaterExpense)).BeginInit();
             this.tabPageWaterReceipt.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsWaterExpense)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -670,10 +670,6 @@
             this.layoutControlItem24.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem24.TextVisible = false;
             // 
-            // bsWaterExpense
-            // 
-            this.bsWaterExpense.DataSource = typeof(Poseidon.Energy.Core.DL.WaterExpense);
-            // 
             // tabPageWaterReceipt
             // 
             this.tabPageWaterReceipt.Controls.Add(this.waterExpenseReceipt);
@@ -688,6 +684,10 @@
             this.waterExpenseReceipt.Name = "waterExpenseReceipt";
             this.waterExpenseReceipt.Size = new System.Drawing.Size(689, 252);
             this.waterExpenseReceipt.TabIndex = 0;
+            // 
+            // bsWaterExpense
+            // 
+            this.bsWaterExpense.DataSource = typeof(Poseidon.Energy.Core.DL.WaterExpense);
             // 
             // FrmExpenseOverview
             // 
@@ -747,8 +747,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsWaterExpense)).EndInit();
             this.tabPageWaterReceipt.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bsWaterExpense)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -806,6 +806,6 @@
         private DevExpress.XtraEditors.TextEdit txtRemark;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem26;
         private DevExpress.XtraTab.XtraTabPage tabPageWaterReceipt;
-        private WaterExpenseControl waterExpenseReceipt;
+        private WaterExpenseReceipt waterExpenseReceipt;
     }
 }
