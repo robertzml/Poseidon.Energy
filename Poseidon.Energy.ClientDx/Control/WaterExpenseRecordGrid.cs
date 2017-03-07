@@ -16,6 +16,13 @@ namespace Poseidon.Energy.ClientDx
     /// </summary>
     public partial class WaterExpenseRecordGrid : WinEntityGrid<WaterExpenseRecord>
     {
+        #region Field
+        /// <summary>
+        /// 是否显示导航
+        /// </summary>
+        private bool showNavigator;
+        #endregion //Field
+
         #region Constructor
         public WaterExpenseRecordGrid()
         {
@@ -25,21 +32,32 @@ namespace Poseidon.Energy.ClientDx
 
         #region Event
         /// <summary>
-        /// 格式化数据显示
+        /// 控件载入
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgvEntity_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        private void WaterExpenseRecordGrid_Load(object sender, EventArgs e)
         {
-            int rowIndex = e.ListSourceRowIndex;
-            if (rowIndex < 0 || rowIndex >= this.bsEntity.Count)
-                return;
-
-            var list = this.bsEntity.DataSource as List<WaterExpenseRecord>;
-
-
-
+            this.dataNavigator1.Visible = this.showNavigator;
         }
         #endregion //Event
+
+        #region Property
+        /// <summary>
+        /// 是否显示导航条
+        /// </summary>
+        [Category("界面"), Description("是否显示导航条"), Browsable(true)]
+        public bool ShowNavigator
+        {
+            get
+            {
+                return this.showNavigator;
+            }
+            set
+            {
+                this.showNavigator = value;
+            }
+        }
+        #endregion //Property
     }
 }

@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.colMeterId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dataNavigator1 = new DevExpress.XtraEditors.DataNavigator();
+            this.colMeterNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMeterName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFeeType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrevious = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -47,10 +48,14 @@
             // 
             this.bsEntity.DataSource = typeof(Poseidon.Energy.Core.DL.WaterExpenseRecord);
             // 
+            // dgcEntity
+            // 
+            this.dgcEntity.Size = new System.Drawing.Size(568, 354);
+            // 
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMeterId,
+            this.colMeterNumber,
             this.colMeterName,
             this.colFeeType,
             this.colPrevious,
@@ -67,15 +72,25 @@
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
-            this.dgvEntity.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.dgvEntity_CustomColumnDisplayText);
             // 
-            // colMeterId
+            // dataNavigator1
             // 
-            this.colMeterId.FieldName = "MeterId";
-            this.colMeterId.Name = "colMeterId";
-            this.colMeterId.OptionsColumn.AllowEdit = false;
-            this.colMeterId.Visible = true;
-            this.colMeterId.VisibleIndex = 0;
+            this.dataNavigator1.DataSource = this.bsEntity;
+            this.dataNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataNavigator1.Location = new System.Drawing.Point(0, 354);
+            this.dataNavigator1.Name = "dataNavigator1";
+            this.dataNavigator1.Size = new System.Drawing.Size(568, 24);
+            this.dataNavigator1.TabIndex = 1;
+            this.dataNavigator1.Text = "dataNavigator1";
+            this.dataNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
+            this.dataNavigator1.TextStringFormat = "记录 {0} of {1}";
+            // 
+            // colMeterNumber
+            // 
+            this.colMeterNumber.FieldName = "MeterNumber";
+            this.colMeterNumber.Name = "colMeterNumber";
+            this.colMeterNumber.Visible = true;
+            this.colMeterNumber.VisibleIndex = 0;
             // 
             // colMeterName
             // 
@@ -148,7 +163,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dataNavigator1);
             this.Name = "WaterExpenseRecordGrid";
+            this.Load += new System.EventHandler(this.WaterExpenseRecordGrid_Load);
+            this.Controls.SetChildIndex(this.dataNavigator1, 0);
+            this.Controls.SetChildIndex(this.dgcEntity, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
@@ -157,16 +176,16 @@
         }
 
         #endregion
-
-        private DevExpress.XtraGrid.Columns.GridColumn colMeterId;
+        private DevExpress.XtraEditors.DataNavigator dataNavigator1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMeterNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colMeterName;
         private DevExpress.XtraGrid.Columns.GridColumn colFeeType;
         private DevExpress.XtraGrid.Columns.GridColumn colPrevious;
         private DevExpress.XtraGrid.Columns.GridColumn colCurrent;
-        private DevExpress.XtraGrid.Columns.GridColumn colCalQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn colUnitPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
+        private DevExpress.XtraGrid.Columns.GridColumn colCalQuantity;
     }
 }

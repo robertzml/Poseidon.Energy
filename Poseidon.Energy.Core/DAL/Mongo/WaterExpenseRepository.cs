@@ -51,7 +51,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 foreach (BsonDocument item in array)
                 {
                     WaterExpenseRecord record = new WaterExpenseRecord();
-                    record.MeterId = doc["meterId"].ToString();
+                    record.MeterNumber = doc["meterNumber"].ToString();
                     record.MeterName = doc["meterName"].ToString();
                     record.FeeType = doc["feeType"].ToInt32();
                     record.Previous = doc["previous"].ToDecimal();
@@ -123,7 +123,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 {
                     BsonDocument record = new BsonDocument
                     {
-                        { "meterId", item.MeterId == null ? "" : item.MeterId },
+                        { "meterNumber", item.MeterNumber == null ? "" : item.MeterNumber },
                         { "meterName", item.MeterName },
                         { "feeType", item.FeeType },
                         { "previous", item.Previous },

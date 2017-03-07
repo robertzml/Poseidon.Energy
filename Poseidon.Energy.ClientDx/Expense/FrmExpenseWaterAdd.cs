@@ -45,10 +45,61 @@ namespace Poseidon.Energy.ClientDx
         protected override void InitForm()
         {
             this.txtAccountName.Text = this.currentAccount.Name;
+            this.dpTicketDate.DateTime = DateTime.Now;
 
+            SetRecords();
 
             base.InitForm();
         }
+
+        /// <summary>
+        /// 设置关联水表
+        /// </summary>
+        private void SetRecords()
+        {
+            List<WaterExpenseRecord> records = new List<WaterExpenseRecord>();
+
+            foreach (var item in this.currentAccount.WaterMeters)
+            {
+                WaterExpenseRecord record = new WaterExpenseRecord();
+                record.MeterNumber = item.Number;
+                record.MeterName = item.Name;
+
+                records.Add(record);
+            }
+
+            this.expenseGrid.DataSource = records;
+        }
+
+        private void SetEntity(WaterExpense entity)
+        {
+            entity.AccountId = this.currentAccount.Id;
+            entity.BelongDate = this.dpBelongDate.DateTime.Date;
+            entity.TicketDate = this.dpTicketDate.DateTime.Date;
+            entity.FeeType = Convert.ToInt32(this.spFeeType.Value);
+
+        }
         #endregion //Field
+
+        #region Event
+        /// <summary>
+        /// 求和
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSum_Click(object sender, EventArgs e)
+        {
+            decimal totalQuantity = 0;
+            decimal totalAmount = 0;
+            foreach(var item in this.expenseGrid.DataSource)
+            {
+                totalQuantity += item.Quantity;
+                totalAmount += item.Amount;
+            }
+
+            this.spTotalQuantity.Value = totalQuantity;
+            this.spTotalAmount.Value = totalAmount;
+        }
+        #endregion //Event
     }
 }

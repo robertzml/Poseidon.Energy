@@ -65,10 +65,10 @@ namespace Poseidon.Energy.Core.DL
     {
         #region Property
         /// <summary>
-        /// 水表ID
+        /// 水表编号
         /// </summary>
-        [Display(Name = "水表ID")]
-        public string MeterId { get; set; }
+        [Display(Name = "水表编号")]
+        public string MeterNumber { get; set; }
 
         /// <summary>
         /// 水表名称
