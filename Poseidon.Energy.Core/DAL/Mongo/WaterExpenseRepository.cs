@@ -23,7 +23,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         public WaterExpenseRepository()
         {
-            this.collectionName = "expense_water";
+            this.collectionName = "energy_waterExpense";
         }
         #endregion //Constructor
 
@@ -51,15 +51,15 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 foreach (BsonDocument item in array)
                 {
                     WaterExpenseRecord record = new WaterExpenseRecord();
-                    record.MeterNumber = doc["meterNumber"].ToString();
-                    record.MeterName = doc["meterName"].ToString();
-                    record.FeeType = doc["feeType"].ToInt32();
-                    record.Previous = doc["previous"].ToDecimal();
-                    record.Current = doc["current"].ToDecimal();
-                    record.Quantity = doc["quantity"].ToDecimal();
-                    record.UnitPrice = doc["unitPrice"].ToDecimal();
-                    record.Amount = doc["amount"].ToDecimal();
-                    record.Remark = doc["remark"].ToString();
+                    record.MeterNumber = item["meterNumber"].ToString();
+                    record.MeterName = item["meterName"].ToString();
+                    record.FeeType = item["feeType"].ToInt32();
+                    record.Previous = item["previous"].ToDecimal();
+                    record.Current = item["current"].ToDecimal();
+                    record.Quantity = item["quantity"].ToDecimal();
+                    record.UnitPrice = item["unitPrice"].ToDecimal();
+                    record.Amount = item["amount"].ToDecimal();
+                    record.Remark = item["remark"].ToString();
 
                     entity.Records.Add(record);
                 }
@@ -123,7 +123,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 {
                     BsonDocument record = new BsonDocument
                     {
-                        { "meterNumber", item.MeterNumber == null ? "" : item.MeterNumber },
+                        { "meterNumber", item.MeterNumber },
                         { "meterName", item.MeterName },
                         { "feeType", item.FeeType },
                         { "previous", item.Previous },

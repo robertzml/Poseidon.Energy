@@ -96,8 +96,7 @@ namespace Poseidon.Energy.ClientDx
             foreach (var item in entity)
             {
                 item.Details.RemoveAll(r => r.Number <= 0);
-                //item.PopulationId = this.currentEntity.Id;
-                item.Remark = item.Remark == null ? "" : item.Remark;
+                item.Remark = item.Remark ?? "";
             }
         }
         #endregion //Function

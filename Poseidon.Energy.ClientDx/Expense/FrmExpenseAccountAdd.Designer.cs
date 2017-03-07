@@ -33,13 +33,15 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.tluParent = new DevExpress.XtraEditors.TreeListLookUpEdit();
+            this.bsAccount = new System.Windows.Forms.BindingSource(this.components);
             this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bsAccount = new System.Windows.Forms.BindingSource(this.components);
+            this.txtShortName = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -50,13 +52,15 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tluParent.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtShortName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -94,6 +98,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.txtShortName);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.tluParent);
             this.layoutControl1.Controls.Add(this.txtName);
@@ -107,15 +112,15 @@
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(51, 60);
+            this.txtRemark.Location = new System.Drawing.Point(51, 84);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(267, 125);
+            this.txtRemark.Size = new System.Drawing.Size(267, 101);
             this.txtRemark.StyleController = this.layoutControl1;
-            this.txtRemark.TabIndex = 6;
+            this.txtRemark.TabIndex = 3;
             // 
             // tluParent
             // 
-            this.tluParent.Location = new System.Drawing.Point(51, 36);
+            this.tluParent.Location = new System.Drawing.Point(51, 60);
             this.tluParent.Name = "tluParent";
             this.tluParent.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.tluParent.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -127,7 +132,11 @@
             this.tluParent.Properties.ValueMember = "Id";
             this.tluParent.Size = new System.Drawing.Size(267, 20);
             this.tluParent.StyleController = this.layoutControl1;
-            this.tluParent.TabIndex = 5;
+            this.tluParent.TabIndex = 2;
+            // 
+            // bsAccount
+            // 
+            this.bsAccount.DataSource = typeof(Poseidon.Energy.Core.DL.ExpenseAccount);
             // 
             // treeListLookUpEdit1TreeList
             // 
@@ -147,7 +156,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(267, 20);
             this.txtName.StyleController = this.layoutControl1;
-            this.txtName.TabIndex = 4;
+            this.txtName.TabIndex = 0;
             // 
             // layoutControlGroup1
             // 
@@ -156,7 +165,8 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(330, 197);
@@ -174,7 +184,7 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.tluParent;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(310, 24);
             this.layoutControlItem2.Text = "父账户";
@@ -183,15 +193,28 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtRemark;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(310, 129);
+            this.layoutControlItem3.Size = new System.Drawing.Size(310, 105);
             this.layoutControlItem3.Text = "备注";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(36, 14);
             // 
-            // bsAccount
+            // txtShortName
             // 
-            this.bsAccount.DataSource = typeof(Poseidon.Energy.Core.DL.ExpenseAccount);
+            this.txtShortName.Location = new System.Drawing.Point(51, 36);
+            this.txtShortName.Name = "txtShortName";
+            this.txtShortName.Size = new System.Drawing.Size(267, 20);
+            this.txtShortName.StyleController = this.layoutControl1;
+            this.txtShortName.TabIndex = 1;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.txtShortName;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(310, 24);
+            this.layoutControlItem4.Text = "简称";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(36, 14);
             // 
             // FrmExpenseAccountAdd
             // 
@@ -210,13 +233,15 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tluParent.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtShortName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -234,5 +259,7 @@
         private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private System.Windows.Forms.BindingSource bsAccount;
+        private DevExpress.XtraEditors.TextEdit txtShortName;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

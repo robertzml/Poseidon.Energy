@@ -89,8 +89,7 @@ namespace Poseidon.Energy.ClientDx
         {
             foreach (var item in entity)
             {
-                item.FundId = this.currentFund.Id;
-                item.Remark = item.Remark == null ? "" : item.Remark;
+                item.Remark = item.Remark ?? "";
             }
         }
         #endregion //Function

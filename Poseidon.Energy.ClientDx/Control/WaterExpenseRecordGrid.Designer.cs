@@ -124,6 +124,8 @@
             // 
             this.colQuantity.FieldName = "Quantity";
             this.colQuantity.Name = "colQuantity";
+            this.colQuantity.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantity", "合计={0:0.##}")});
             this.colQuantity.Visible = true;
             this.colQuantity.VisibleIndex = 6;
             // 
@@ -138,6 +140,8 @@
             // 
             this.colAmount.FieldName = "Amount";
             this.colAmount.Name = "colAmount";
+            this.colAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "合计={0:0.##}")});
             this.colAmount.Visible = true;
             this.colAmount.VisibleIndex = 8;
             // 

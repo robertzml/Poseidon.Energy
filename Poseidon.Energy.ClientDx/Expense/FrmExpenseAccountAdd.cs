@@ -43,6 +43,7 @@ namespace Poseidon.Energy.ClientDx
         private void SetEntity(ExpenseAccount entity)
         {
             entity.Name = this.txtName.Text;
+            entity.ShortName = this.txtShortName.Text;
             entity.Remark = this.txtRemark.Text;
 
             if (this.tluParent.EditValue != null)

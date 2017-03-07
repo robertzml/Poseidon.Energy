@@ -29,6 +29,16 @@ namespace Poseidon.Energy.Core.BL
 
         #region Method
         /// <summary>
+        /// 按账户查询支出
+        /// </summary>
+        /// <param name="accountId">账户ID</param>
+        /// <returns></returns>
+        public IEnumerable<WaterExpense> FindByAccount(string accountId)
+        {
+            return this.baseDal.FindListByField("accountId", accountId);
+        }
+
+        /// <summary>
         /// 添加水费支出
         /// </summary>
         /// <param name="entity">实体对象</param>
