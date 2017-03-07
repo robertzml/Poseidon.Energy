@@ -58,6 +58,8 @@ namespace Poseidon.Energy.ClientDx
                 entity.EnergyType.Add(2);
             if (chkType3.Checked)
                 entity.EnergyType.Add(3);
+            if (chkType4.Checked)
+                entity.EnergyType.Add(4);
         }
 
         /// <summary>

@@ -61,6 +61,8 @@ namespace Poseidon.Energy.ClientDx
                 this.chkType2.Checked = true;
             if (this.currentAccount.EnergyType.Contains(3))
                 this.chkType3.Checked = true;
+            if (this.currentAccount.EnergyType.Contains(4))
+                this.chkType4.Checked = true;
 
             base.InitForm();
         }

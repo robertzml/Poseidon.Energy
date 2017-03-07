@@ -39,6 +39,21 @@ namespace Poseidon.Energy.Core.BL
         }
 
         /// <summary>
+        /// 按账户查询年度支出
+        /// </summary>
+        /// <param name="accountId">账户ID</param>
+        /// <param name="year">年份</param>
+        /// <returns></returns>
+        public IEnumerable<WaterExpense> FindYearByAccount(string accountId, int year)
+        {
+            var data= this.baseDal.FindListByField("accountId", accountId);
+            var start = new DateTime(year, 1, 1);
+            var end = new DateTime(year, 12, 31);
+
+            return data.Where(r => r.BelongDate >= start && r.BelongDate <= end).OrderBy(r => r.BelongDate);
+        }
+
+        /// <summary>
         /// 添加水费支出
         /// </summary>
         /// <param name="entity">实体对象</param>

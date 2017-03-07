@@ -37,6 +37,7 @@
             this.txtShortName = new DevExpress.XtraEditors.TextEdit();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.tluParent = new DevExpress.XtraEditors.TreeListLookUpEdit();
+            this.bsAccount = new System.Windows.Forms.BindingSource(this.components);
             this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -47,7 +48,8 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bsAccount = new System.Windows.Forms.BindingSource(this.components);
+            this.chkType4 = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -62,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtShortName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tluParent.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -72,7 +75,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkType4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -110,6 +114,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.chkType4);
             this.layoutControl1.Controls.Add(this.chkType3);
             this.layoutControl1.Controls.Add(this.chkType2);
             this.layoutControl1.Controls.Add(this.chkType1);
@@ -127,19 +132,19 @@
             // 
             // chkType3
             // 
-            this.chkType3.Location = new System.Drawing.Point(217, 84);
+            this.chkType3.Location = new System.Drawing.Point(165, 84);
             this.chkType3.Name = "chkType3";
             this.chkType3.Properties.Caption = "天然气";
-            this.chkType3.Size = new System.Drawing.Size(100, 19);
+            this.chkType3.Size = new System.Drawing.Size(81, 19);
             this.chkType3.StyleController = this.layoutControl1;
             this.chkType3.TabIndex = 6;
             // 
             // chkType2
             // 
-            this.chkType2.Location = new System.Drawing.Point(115, 84);
+            this.chkType2.Location = new System.Drawing.Point(91, 84);
             this.chkType2.Name = "chkType2";
             this.chkType2.Properties.Caption = "水";
-            this.chkType2.Size = new System.Drawing.Size(98, 19);
+            this.chkType2.Size = new System.Drawing.Size(70, 19);
             this.chkType2.StyleController = this.layoutControl1;
             this.chkType2.TabIndex = 5;
             // 
@@ -148,7 +153,7 @@
             this.chkType1.Location = new System.Drawing.Point(12, 84);
             this.chkType1.Name = "chkType1";
             this.chkType1.Properties.Caption = "电";
-            this.chkType1.Size = new System.Drawing.Size(99, 19);
+            this.chkType1.Size = new System.Drawing.Size(75, 19);
             this.chkType1.StyleController = this.layoutControl1;
             this.chkType1.TabIndex = 4;
             // 
@@ -184,6 +189,10 @@
             this.tluParent.StyleController = this.layoutControl1;
             this.tluParent.TabIndex = 2;
             // 
+            // bsAccount
+            // 
+            this.bsAccount.DataSource = typeof(Poseidon.Energy.Core.DL.ExpenseAccount);
+            // 
             // treeListLookUpEdit1TreeList
             // 
             this.treeListLookUpEdit1TreeList.DataSource = this.bsAccount;
@@ -215,7 +224,8 @@
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.layoutControlItem8});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(329, 212);
@@ -262,31 +272,45 @@
             this.layoutControlItem5.Control = this.chkType1;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(103, 23);
+            this.layoutControlItem5.Size = new System.Drawing.Size(79, 23);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.chkType2;
-            this.layoutControlItem6.Location = new System.Drawing.Point(103, 72);
+            this.layoutControlItem6.Location = new System.Drawing.Point(79, 72);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(102, 23);
+            this.layoutControlItem6.Size = new System.Drawing.Size(74, 23);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.chkType3;
-            this.layoutControlItem7.Location = new System.Drawing.Point(205, 72);
+            this.layoutControlItem7.Location = new System.Drawing.Point(153, 72);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(104, 23);
+            this.layoutControlItem7.Size = new System.Drawing.Size(85, 23);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // bsAccount
+            // chkType4
             // 
-            this.bsAccount.DataSource = typeof(Poseidon.Energy.Core.DL.ExpenseAccount);
+            this.chkType4.Location = new System.Drawing.Point(250, 84);
+            this.chkType4.Name = "chkType4";
+            this.chkType4.Properties.Caption = "热水";
+            this.chkType4.Size = new System.Drawing.Size(67, 19);
+            this.chkType4.StyleController = this.layoutControl1;
+            this.chkType4.TabIndex = 7;
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.chkType4;
+            this.layoutControlItem8.Location = new System.Drawing.Point(238, 72);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(71, 23);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem8.TextVisible = false;
             // 
             // FrmExpenseAccountEdit
             // 
@@ -309,6 +333,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtShortName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tluParent.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -319,7 +344,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkType4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -345,5 +371,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private System.Windows.Forms.BindingSource bsAccount;
+        private DevExpress.XtraEditors.CheckEdit chkType4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
     }
 }

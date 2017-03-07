@@ -48,6 +48,8 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.chkType4 = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -73,6 +75,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkType4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -110,6 +114,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.chkType4);
             this.layoutControl1.Controls.Add(this.chkType3);
             this.layoutControl1.Controls.Add(this.chkType2);
             this.layoutControl1.Controls.Add(this.chkType1);
@@ -127,19 +132,19 @@
             // 
             // chkType3
             // 
-            this.chkType3.Location = new System.Drawing.Point(217, 84);
+            this.chkType3.Location = new System.Drawing.Point(167, 84);
             this.chkType3.Name = "chkType3";
             this.chkType3.Properties.Caption = "天然气";
-            this.chkType3.Size = new System.Drawing.Size(101, 19);
+            this.chkType3.Size = new System.Drawing.Size(80, 19);
             this.chkType3.StyleController = this.layoutControl1;
             this.chkType3.TabIndex = 6;
             // 
             // chkType2
             // 
-            this.chkType2.Location = new System.Drawing.Point(115, 84);
+            this.chkType2.Location = new System.Drawing.Point(87, 84);
             this.chkType2.Name = "chkType2";
             this.chkType2.Properties.Caption = "水";
-            this.chkType2.Size = new System.Drawing.Size(98, 19);
+            this.chkType2.Size = new System.Drawing.Size(76, 19);
             this.chkType2.StyleController = this.layoutControl1;
             this.chkType2.TabIndex = 5;
             // 
@@ -148,7 +153,7 @@
             this.chkType1.Location = new System.Drawing.Point(12, 84);
             this.chkType1.Name = "chkType1";
             this.chkType1.Properties.Caption = "电";
-            this.chkType1.Size = new System.Drawing.Size(99, 19);
+            this.chkType1.Size = new System.Drawing.Size(71, 19);
             this.chkType1.StyleController = this.layoutControl1;
             this.chkType1.TabIndex = 4;
             // 
@@ -219,7 +224,8 @@
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.layoutControlItem8});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(330, 197);
@@ -266,27 +272,45 @@
             this.layoutControlItem5.Control = this.chkType1;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(103, 23);
+            this.layoutControlItem5.Size = new System.Drawing.Size(75, 23);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.chkType2;
-            this.layoutControlItem6.Location = new System.Drawing.Point(103, 72);
+            this.layoutControlItem6.Location = new System.Drawing.Point(75, 72);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(102, 23);
+            this.layoutControlItem6.Size = new System.Drawing.Size(80, 23);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.chkType3;
-            this.layoutControlItem7.Location = new System.Drawing.Point(205, 72);
+            this.layoutControlItem7.Location = new System.Drawing.Point(155, 72);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(105, 23);
+            this.layoutControlItem7.Size = new System.Drawing.Size(84, 23);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
+            // 
+            // chkType4
+            // 
+            this.chkType4.Location = new System.Drawing.Point(251, 84);
+            this.chkType4.Name = "chkType4";
+            this.chkType4.Properties.Caption = "热水";
+            this.chkType4.Size = new System.Drawing.Size(67, 19);
+            this.chkType4.StyleController = this.layoutControl1;
+            this.chkType4.TabIndex = 7;
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.chkType4;
+            this.layoutControlItem8.Location = new System.Drawing.Point(239, 72);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(71, 23);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem8.TextVisible = false;
             // 
             // FrmExpenseAccountAdd
             // 
@@ -320,6 +344,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkType4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -345,5 +371,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraEditors.CheckEdit chkType4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
     }
 }
