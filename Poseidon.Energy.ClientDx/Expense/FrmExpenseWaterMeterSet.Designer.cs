@@ -106,6 +106,7 @@
             this.waterGrid.ShowAddMenu = false;
             this.waterGrid.ShowFooter = false;
             this.waterGrid.ShowLineNumber = true;
+            this.waterGrid.ShowNavigator = true;
             this.waterGrid.Size = new System.Drawing.Size(567, 265);
             this.waterGrid.TabIndex = 5;
             // 

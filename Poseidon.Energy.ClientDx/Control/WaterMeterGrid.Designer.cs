@@ -59,6 +59,7 @@
             this.colAddress,
             this.colRemark,
             this.colStatus});
+            this.dgvEntity.IndicatorWidth = 40;
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.Editable = false;
@@ -133,6 +134,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataNavigator1);
             this.Name = "WaterMeterGrid";
+            this.Load += new System.EventHandler(this.WaterMeterGrid_Load);
             this.Controls.SetChildIndex(this.dataNavigator1, 0);
             this.Controls.SetChildIndex(this.dgcEntity, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();

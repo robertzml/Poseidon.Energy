@@ -63,6 +63,18 @@ namespace Poseidon.Energy.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmExpenseAccountAdd));
         }
 
+        /// <summary>
+        /// 编辑账户
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (this.currentAccount == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmExpenseAccountEdit), new object[] { this.currentAccount.Id });
+        }
 
         /// <summary>
         /// 设置水表

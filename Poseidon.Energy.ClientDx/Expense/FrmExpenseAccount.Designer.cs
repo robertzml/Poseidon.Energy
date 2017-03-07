@@ -30,7 +30,6 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.accountTree = new Poseidon.Energy.ClientDx.ExpenseAccountTree();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnSetWater = new DevExpress.XtraEditors.SimpleButton();
@@ -46,6 +45,7 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.accountTree = new Poseidon.Energy.ClientDx.ExpenseAccountTree();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -91,15 +91,6 @@
             this.groupControl1.Size = new System.Drawing.Size(194, 499);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "账户列表";
-            // 
-            // accountTree
-            // 
-            this.accountTree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.accountTree.Location = new System.Drawing.Point(2, 21);
-            this.accountTree.Name = "accountTree";
-            this.accountTree.Size = new System.Drawing.Size(190, 476);
-            this.accountTree.TabIndex = 0;
-            this.accountTree.AccountSelected += new System.EventHandler(this.accountTree_AccountSelected);
             // 
             // groupControl2
             // 
@@ -153,6 +144,7 @@
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "编辑账户";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -249,6 +241,15 @@
             this.groupControl3.Size = new System.Drawing.Size(628, 299);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "表具信息";
+            // 
+            // accountTree
+            // 
+            this.accountTree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accountTree.Location = new System.Drawing.Point(2, 21);
+            this.accountTree.Name = "accountTree";
+            this.accountTree.Size = new System.Drawing.Size(190, 476);
+            this.accountTree.TabIndex = 0;
+            this.accountTree.AccountSelected += new System.EventHandler(this.accountTree_AccountSelected);
             // 
             // FrmExpenseAccount
             // 

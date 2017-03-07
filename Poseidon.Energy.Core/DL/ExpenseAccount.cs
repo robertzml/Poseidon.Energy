@@ -22,6 +22,12 @@ namespace Poseidon.Energy.Core.DL
         public string ShortName { get; set; }
 
         /// <summary>
+        /// 能源类型
+        /// </summary>
+        [Display(Name = "能源类型")]
+        public List<int> EnergyType { get; set; }
+
+        /// <summary>
         /// 包含水表
         /// </summary>
         [Display(Name = "包含水表")]

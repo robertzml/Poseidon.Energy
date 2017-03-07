@@ -53,6 +53,16 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             if (doc.Contains("parentId"))
                 entity.ParentId = doc["parentId"].ToString();
 
+            entity.EnergyType = new List<int>();
+            if (doc.Contains("energyType"))
+            {
+                BsonArray array = doc["energyType"].AsBsonArray;
+                foreach (var item in array)
+                {
+                    entity.EnergyType.Add(item.ToInt32());
+                }
+            }
+
             entity.WaterMeters = new List<WaterMeter>();
             if (doc.Contains("waterMeters"))
             {
@@ -92,6 +102,17 @@ namespace Poseidon.Energy.Core.DAL.Mongo
 
             if (entity.ParentId != null)
                 doc.Add("parentId", entity.ParentId);
+
+            if (entity.EnergyType != null && entity.EnergyType.Count > 0)
+            {
+                BsonArray array = new BsonArray();
+                foreach (var item in entity.EnergyType)
+                {
+                    array.Add(item);
+                }
+
+                doc.Add("energyType", array);
+            }
 
             if (entity.WaterMeters != null && entity.WaterMeters.Count > 0)
             {

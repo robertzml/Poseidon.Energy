@@ -142,6 +142,12 @@
     <Compile Include="Expense\FrmExpenseWaterAdd.Designer.cs">
       <DependentUpon>FrmExpenseWaterAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Expense\FrmExpenseAccountEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expense\FrmExpenseAccountEdit.Designer.cs">
+      <DependentUpon>FrmExpenseAccountEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -293,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Expense\FrmExpenseAccountAdd.resx">
       <DependentUpon>FrmExpenseAccountAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expense\FrmExpenseAccountEdit.resx">
+      <DependentUpon>FrmExpenseAccountEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Expense\FrmExpenseOverview.resx">
       <DependentUpon>FrmExpenseOverview.cs</DependentUpon>

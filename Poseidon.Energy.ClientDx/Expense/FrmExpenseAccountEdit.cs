@@ -16,22 +16,51 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 添加支出账户窗体
+    /// 编辑支出账户
     /// </summary>
-    public partial class FrmExpenseAccountAdd : BaseSingleForm
+    public partial class FrmExpenseAccountEdit : BaseSingleForm
     {
+        #region Field
+        /// <summary>
+        /// 当前关联账户
+        /// </summary>
+        private ExpenseAccount currentAccount;
+        #endregion //Field
+
         #region Constructor
-        public FrmExpenseAccountAdd()
+        public FrmExpenseAccountEdit(string id)
         {
             InitializeComponent();
+
+            InitData(id);
         }
         #endregion //Constructor
 
         #region Function
+        /// <summary>
+        /// 初始化数据
+        /// </summary>
+        /// <param name="id"></param>
+        private void InitData(string id)
+        {
+            this.currentAccount = BusinessFactory<ExpenseAccountBusiness>.Instance.FindById(id);
+        }
+
         protected override void InitForm()
         {
-            var accounts = BusinessFactory<ExpenseAccountBusiness>.Instance.FindAll().ToList();
-            this.bsAccount.DataSource = accounts;
+            this.bsAccount.DataSource = BusinessFactory<ExpenseAccountBusiness>.Instance.FindAll().ToList();
+
+            this.txtName.Text = this.currentAccount.Name;
+            this.txtShortName.Text = this.currentAccount.ShortName;
+            this.tluParent.EditValue = this.currentAccount.ParentId;
+            this.txtRemark.Text = this.currentAccount.Remark;
+
+            if (this.currentAccount.EnergyType.Contains(1))
+                this.chkType1.Checked = true;
+            if (this.currentAccount.EnergyType.Contains(2))
+                this.chkType2.Checked = true;
+            if (this.currentAccount.EnergyType.Contains(3))
+                this.chkType3.Checked = true;
 
             base.InitForm();
         }
@@ -93,12 +122,11 @@ namespace Poseidon.Energy.ClientDx
                 return;
             }
 
-            ExpenseAccount entity = new ExpenseAccount();
-            SetEntity(entity);
+            SetEntity(this.currentAccount);
 
             try
             {
-                BusinessFactory<ExpenseAccountBusiness>.Instance.Create(entity);
+                BusinessFactory<ExpenseAccountBusiness>.Instance.Update(this.currentAccount);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();
