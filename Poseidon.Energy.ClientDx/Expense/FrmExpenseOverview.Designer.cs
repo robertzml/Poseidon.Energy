@@ -61,11 +61,27 @@
             this.tabFee = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageSummary = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
-            this.waterYearGrid1 = new Poseidon.Energy.ClientDx.WaterYearExpenseGrid();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.tabPageWaterExpense = new DevExpress.XtraTab.XtraTabPage();
+            this.layoutControl5 = new DevExpress.XtraLayout.LayoutControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.cmbWaterExpenseYear = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.waterYearGrid3 = new Poseidon.Energy.ClientDx.WaterYearExpenseGrid();
+            this.waterYearGrid2 = new Poseidon.Energy.ClientDx.WaterYearExpenseGrid();
+            this.waterYearGrid1 = new Poseidon.Energy.ClientDx.WaterYearExpenseGrid();
+            this.layoutControlGroup6 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabPageWaterRecord = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.btnDeleteWaterExpense = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEditWaterExpense = new DevExpress.XtraEditors.SimpleButton();
             this.waterExpRecGrid = new Poseidon.Energy.ClientDx.WaterExpenseRecordGrid();
             this.txtWaterTotalAmount = new DevExpress.XtraEditors.TextEdit();
             this.txtWaterTotalQuantity = new DevExpress.XtraEditors.TextEdit();
@@ -82,8 +98,10 @@
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.waterYearGrid2 = new Poseidon.Energy.ClientDx.WaterYearExpenseGrid();
-            this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -120,12 +138,22 @@
             this.tabFee.SuspendLayout();
             this.tabPageSummary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
-            this.layoutControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
+            this.tabPageWaterExpense.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).BeginInit();
+            this.layoutControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbWaterExpenseYear.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
             this.tabPageWaterRecord.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWaterTotalAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWaterTotalQuantity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWaterFeeType.Properties)).BeginInit();
@@ -141,7 +169,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -464,6 +495,7 @@
             this.tabFee.TabIndex = 0;
             this.tabFee.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageSummary,
+            this.tabPageWaterExpense,
             this.tabPageWaterRecord});
             // 
             // tabPageSummary
@@ -475,8 +507,6 @@
             // 
             // layoutControl4
             // 
-            this.layoutControl4.Controls.Add(this.waterYearGrid2);
-            this.layoutControl4.Controls.Add(this.waterYearGrid1);
             this.layoutControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl4.Location = new System.Drawing.Point(0, 0);
             this.layoutControl4.Name = "layoutControl4";
@@ -485,6 +515,105 @@
             this.layoutControl4.TabIndex = 0;
             this.layoutControl4.Text = "layoutControl4";
             // 
+            // layoutControlGroup5
+            // 
+            this.layoutControlGroup5.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup5.GroupBordersVisible = false;
+            this.layoutControlGroup5.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup5.Name = "layoutControlGroup5";
+            this.layoutControlGroup5.Size = new System.Drawing.Size(689, 252);
+            this.layoutControlGroup5.TextVisible = false;
+            // 
+            // tabPageWaterExpense
+            // 
+            this.tabPageWaterExpense.Controls.Add(this.layoutControl5);
+            this.tabPageWaterExpense.Name = "tabPageWaterExpense";
+            this.tabPageWaterExpense.PageVisible = false;
+            this.tabPageWaterExpense.Size = new System.Drawing.Size(689, 252);
+            this.tabPageWaterExpense.Text = "水费支出";
+            // 
+            // layoutControl5
+            // 
+            this.layoutControl5.Controls.Add(this.labelControl2);
+            this.layoutControl5.Controls.Add(this.labelControl1);
+            this.layoutControl5.Controls.Add(this.cmbWaterExpenseYear);
+            this.layoutControl5.Controls.Add(this.waterYearGrid3);
+            this.layoutControl5.Controls.Add(this.waterYearGrid2);
+            this.layoutControl5.Controls.Add(this.waterYearGrid1);
+            this.layoutControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl5.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl5.Name = "layoutControl5";
+            this.layoutControl5.Root = this.layoutControlGroup6;
+            this.layoutControl5.Size = new System.Drawing.Size(689, 252);
+            this.layoutControl5.TabIndex = 0;
+            this.layoutControl5.Text = "layoutControl5";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl2.Location = new System.Drawing.Point(231, 12);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(206, 12);
+            this.labelControl2.StyleController = this.layoutControl5;
+            this.labelControl2.TabIndex = 9;
+            this.labelControl2.Text = "去年";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
+            this.labelControl1.Location = new System.Drawing.Point(12, 12);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(215, 12);
+            this.labelControl1.StyleController = this.layoutControl5;
+            this.labelControl1.TabIndex = 8;
+            this.labelControl1.Text = "今年";
+            // 
+            // cmbWaterExpenseYear
+            // 
+            this.cmbWaterExpenseYear.Location = new System.Drawing.Point(468, 12);
+            this.cmbWaterExpenseYear.Name = "cmbWaterExpenseYear";
+            this.cmbWaterExpenseYear.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbWaterExpenseYear.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmbWaterExpenseYear.Size = new System.Drawing.Size(209, 20);
+            this.cmbWaterExpenseYear.StyleController = this.layoutControl5;
+            this.cmbWaterExpenseYear.TabIndex = 7;
+            this.cmbWaterExpenseYear.SelectedIndexChanged += new System.EventHandler(this.cmbWaterExpenseYear_SelectedIndexChanged);
+            // 
+            // waterYearGrid3
+            // 
+            this.waterYearGrid3.AllowFilter = false;
+            this.waterYearGrid3.AllowGroup = false;
+            this.waterYearGrid3.AllowSort = true;
+            this.waterYearGrid3.DataSource = null;
+            this.waterYearGrid3.Editable = false;
+            this.waterYearGrid3.Location = new System.Drawing.Point(441, 36);
+            this.waterYearGrid3.Name = "waterYearGrid3";
+            this.waterYearGrid3.ShowAddMenu = false;
+            this.waterYearGrid3.ShowFooter = true;
+            this.waterYearGrid3.ShowLineNumber = false;
+            this.waterYearGrid3.Size = new System.Drawing.Size(236, 204);
+            this.waterYearGrid3.TabIndex = 6;
+            // 
+            // waterYearGrid2
+            // 
+            this.waterYearGrid2.AllowFilter = false;
+            this.waterYearGrid2.AllowGroup = false;
+            this.waterYearGrid2.AllowSort = true;
+            this.waterYearGrid2.DataSource = null;
+            this.waterYearGrid2.Editable = false;
+            this.waterYearGrid2.Location = new System.Drawing.Point(231, 36);
+            this.waterYearGrid2.Name = "waterYearGrid2";
+            this.waterYearGrid2.ShowAddMenu = false;
+            this.waterYearGrid2.ShowFooter = true;
+            this.waterYearGrid2.ShowLineNumber = false;
+            this.waterYearGrid2.Size = new System.Drawing.Size(206, 204);
+            this.waterYearGrid2.TabIndex = 5;
+            // 
             // waterYearGrid1
             // 
             this.waterYearGrid1.AllowFilter = false;
@@ -492,34 +621,83 @@
             this.waterYearGrid1.AllowSort = true;
             this.waterYearGrid1.DataSource = null;
             this.waterYearGrid1.Editable = false;
-            this.waterYearGrid1.Location = new System.Drawing.Point(12, 12);
+            this.waterYearGrid1.Location = new System.Drawing.Point(12, 36);
             this.waterYearGrid1.Name = "waterYearGrid1";
             this.waterYearGrid1.ShowAddMenu = false;
             this.waterYearGrid1.ShowFooter = true;
             this.waterYearGrid1.ShowLineNumber = false;
-            this.waterYearGrid1.Size = new System.Drawing.Size(330, 228);
+            this.waterYearGrid1.Size = new System.Drawing.Size(215, 204);
             this.waterYearGrid1.TabIndex = 4;
             // 
-            // layoutControlGroup5
+            // layoutControlGroup6
             // 
-            this.layoutControlGroup5.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup5.GroupBordersVisible = false;
-            this.layoutControlGroup5.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroup6.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup6.GroupBordersVisible = false;
+            this.layoutControlGroup6.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem16,
-            this.layoutControlItem17});
-            this.layoutControlGroup5.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup5.Name = "layoutControlGroup5";
-            this.layoutControlGroup5.Size = new System.Drawing.Size(689, 252);
-            this.layoutControlGroup5.TextVisible = false;
+            this.layoutControlItem17,
+            this.layoutControlItem21,
+            this.layoutControlItem22,
+            this.layoutControlItem23,
+            this.layoutControlItem24});
+            this.layoutControlGroup6.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup6.Name = "layoutControlGroup6";
+            this.layoutControlGroup6.Size = new System.Drawing.Size(689, 252);
+            this.layoutControlGroup6.TextVisible = false;
             // 
             // layoutControlItem16
             // 
             this.layoutControlItem16.Control = this.waterYearGrid1;
-            this.layoutControlItem16.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem16.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(334, 232);
+            this.layoutControlItem16.Size = new System.Drawing.Size(219, 208);
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
+            // 
+            // layoutControlItem17
+            // 
+            this.layoutControlItem17.Control = this.waterYearGrid2;
+            this.layoutControlItem17.Location = new System.Drawing.Point(219, 24);
+            this.layoutControlItem17.Name = "layoutControlItem17";
+            this.layoutControlItem17.Size = new System.Drawing.Size(210, 208);
+            this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem17.TextVisible = false;
+            // 
+            // layoutControlItem21
+            // 
+            this.layoutControlItem21.Control = this.waterYearGrid3;
+            this.layoutControlItem21.Location = new System.Drawing.Point(429, 24);
+            this.layoutControlItem21.Name = "layoutControlItem21";
+            this.layoutControlItem21.Size = new System.Drawing.Size(240, 208);
+            this.layoutControlItem21.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem21.TextVisible = false;
+            // 
+            // layoutControlItem22
+            // 
+            this.layoutControlItem22.Control = this.cmbWaterExpenseYear;
+            this.layoutControlItem22.Location = new System.Drawing.Point(429, 0);
+            this.layoutControlItem22.Name = "layoutControlItem22";
+            this.layoutControlItem22.Size = new System.Drawing.Size(240, 24);
+            this.layoutControlItem22.Text = "选择";
+            this.layoutControlItem22.TextSize = new System.Drawing.Size(24, 14);
+            // 
+            // layoutControlItem23
+            // 
+            this.layoutControlItem23.Control = this.labelControl1;
+            this.layoutControlItem23.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem23.Name = "layoutControlItem23";
+            this.layoutControlItem23.Size = new System.Drawing.Size(219, 24);
+            this.layoutControlItem23.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem23.TextVisible = false;
+            // 
+            // layoutControlItem24
+            // 
+            this.layoutControlItem24.Control = this.labelControl2;
+            this.layoutControlItem24.Location = new System.Drawing.Point(219, 0);
+            this.layoutControlItem24.Name = "layoutControlItem24";
+            this.layoutControlItem24.Size = new System.Drawing.Size(210, 24);
+            this.layoutControlItem24.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem24.TextVisible = false;
             // 
             // tabPageWaterRecord
             // 
@@ -531,6 +709,9 @@
             // 
             // layoutControl3
             // 
+            this.layoutControl3.Controls.Add(this.textEdit1);
+            this.layoutControl3.Controls.Add(this.btnDeleteWaterExpense);
+            this.layoutControl3.Controls.Add(this.btnEditWaterExpense);
             this.layoutControl3.Controls.Add(this.waterExpRecGrid);
             this.layoutControl3.Controls.Add(this.txtWaterTotalAmount);
             this.layoutControl3.Controls.Add(this.txtWaterTotalQuantity);
@@ -546,6 +727,34 @@
             this.layoutControl3.TabIndex = 0;
             this.layoutControl3.Text = "layoutControl3";
             // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(561, 36);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(116, 20);
+            this.textEdit1.StyleController = this.layoutControl3;
+            this.textEdit1.TabIndex = 13;
+            // 
+            // btnDeleteWaterExpense
+            // 
+            this.btnDeleteWaterExpense.Location = new System.Drawing.Point(319, 60);
+            this.btnDeleteWaterExpense.Name = "btnDeleteWaterExpense";
+            this.btnDeleteWaterExpense.Size = new System.Drawing.Size(177, 22);
+            this.btnDeleteWaterExpense.StyleController = this.layoutControl3;
+            this.btnDeleteWaterExpense.TabIndex = 12;
+            this.btnDeleteWaterExpense.Text = "删除记录";
+            this.btnDeleteWaterExpense.Click += new System.EventHandler(this.btnDeleteWaterExpense_Click);
+            // 
+            // btnEditWaterExpense
+            // 
+            this.btnEditWaterExpense.Location = new System.Drawing.Point(137, 60);
+            this.btnEditWaterExpense.Name = "btnEditWaterExpense";
+            this.btnEditWaterExpense.Size = new System.Drawing.Size(178, 22);
+            this.btnEditWaterExpense.StyleController = this.layoutControl3;
+            this.btnEditWaterExpense.TabIndex = 11;
+            this.btnEditWaterExpense.Text = "编辑记录";
+            this.btnEditWaterExpense.Click += new System.EventHandler(this.btnEditWaterExpense_Click);
+            // 
             // waterExpRecGrid
             // 
             this.waterExpRecGrid.AllowFilter = false;
@@ -553,13 +762,13 @@
             this.waterExpRecGrid.AllowSort = true;
             this.waterExpRecGrid.DataSource = null;
             this.waterExpRecGrid.Editable = false;
-            this.waterExpRecGrid.Location = new System.Drawing.Point(137, 60);
+            this.waterExpRecGrid.Location = new System.Drawing.Point(137, 86);
             this.waterExpRecGrid.Name = "waterExpRecGrid";
             this.waterExpRecGrid.ShowAddMenu = false;
             this.waterExpRecGrid.ShowFooter = true;
             this.waterExpRecGrid.ShowLineNumber = true;
             this.waterExpRecGrid.ShowNavigator = false;
-            this.waterExpRecGrid.Size = new System.Drawing.Size(540, 180);
+            this.waterExpRecGrid.Size = new System.Drawing.Size(540, 154);
             this.waterExpRecGrid.TabIndex = 10;
             // 
             // txtWaterTotalAmount
@@ -644,7 +853,11 @@
             this.layoutControlItem12,
             this.layoutControlItem13,
             this.layoutControlItem14,
-            this.layoutControlItem15});
+            this.layoutControlItem15,
+            this.layoutControlItem18,
+            this.layoutControlItem19,
+            this.layoutControlItem20,
+            this.emptySpaceItem1});
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.Size = new System.Drawing.Size(689, 252);
@@ -682,7 +895,7 @@
             this.layoutControlItem12.Control = this.txtWaterFeeType;
             this.layoutControlItem12.Location = new System.Drawing.Point(488, 0);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(181, 48);
+            this.layoutControlItem12.Size = new System.Drawing.Size(181, 24);
             this.layoutControlItem12.Text = "费用类型";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(58, 14);
             // 
@@ -707,35 +920,46 @@
             // layoutControlItem15
             // 
             this.layoutControlItem15.Control = this.waterExpRecGrid;
-            this.layoutControlItem15.Location = new System.Drawing.Point(125, 48);
+            this.layoutControlItem15.Location = new System.Drawing.Point(125, 74);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(544, 184);
+            this.layoutControlItem15.Size = new System.Drawing.Size(544, 158);
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
             // 
-            // waterYearGrid2
+            // layoutControlItem18
             // 
-            this.waterYearGrid2.AllowFilter = false;
-            this.waterYearGrid2.AllowGroup = false;
-            this.waterYearGrid2.AllowSort = true;
-            this.waterYearGrid2.DataSource = null;
-            this.waterYearGrid2.Editable = false;
-            this.waterYearGrid2.Location = new System.Drawing.Point(346, 12);
-            this.waterYearGrid2.Name = "waterYearGrid2";
-            this.waterYearGrid2.ShowAddMenu = false;
-            this.waterYearGrid2.ShowFooter = true;
-            this.waterYearGrid2.ShowLineNumber = false;
-            this.waterYearGrid2.Size = new System.Drawing.Size(331, 228);
-            this.waterYearGrid2.TabIndex = 5;
+            this.layoutControlItem18.Control = this.btnEditWaterExpense;
+            this.layoutControlItem18.Location = new System.Drawing.Point(125, 48);
+            this.layoutControlItem18.Name = "layoutControlItem18";
+            this.layoutControlItem18.Size = new System.Drawing.Size(182, 26);
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem18.TextVisible = false;
             // 
-            // layoutControlItem17
+            // layoutControlItem19
             // 
-            this.layoutControlItem17.Control = this.waterYearGrid2;
-            this.layoutControlItem17.Location = new System.Drawing.Point(334, 0);
-            this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(335, 232);
-            this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem17.TextVisible = false;
+            this.layoutControlItem19.Control = this.btnDeleteWaterExpense;
+            this.layoutControlItem19.Location = new System.Drawing.Point(307, 48);
+            this.layoutControlItem19.Name = "layoutControlItem19";
+            this.layoutControlItem19.Size = new System.Drawing.Size(181, 26);
+            this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem19.TextVisible = false;
+            // 
+            // layoutControlItem20
+            // 
+            this.layoutControlItem20.Control = this.textEdit1;
+            this.layoutControlItem20.Location = new System.Drawing.Point(488, 24);
+            this.layoutControlItem20.Name = "layoutControlItem20";
+            this.layoutControlItem20.Size = new System.Drawing.Size(181, 24);
+            this.layoutControlItem20.Text = "备注";
+            this.layoutControlItem20.TextSize = new System.Drawing.Size(58, 14);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(488, 48);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(181, 26);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // FrmExpenseOverview
             // 
@@ -781,12 +1005,22 @@
             this.tabFee.ResumeLayout(false);
             this.tabPageSummary.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
-            this.layoutControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
+            this.tabPageWaterExpense.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).EndInit();
+            this.layoutControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmbWaterExpenseYear.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
             this.tabPageWaterRecord.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWaterTotalAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWaterTotalQuantity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWaterFeeType.Properties)).EndInit();
@@ -802,7 +1036,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -860,9 +1097,27 @@
         private System.Windows.Forms.BindingSource bsWaterExpense;
         private DevExpress.XtraLayout.LayoutControl layoutControl4;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup5;
-        private WaterYearExpenseGrid waterYearGrid1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
+        private DevExpress.XtraEditors.SimpleButton btnEditWaterExpense;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.SimpleButton btnDeleteWaterExpense;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem20;
+        private DevExpress.XtraTab.XtraTabPage tabPageWaterExpense;
+        private DevExpress.XtraLayout.LayoutControl layoutControl5;
+        private WaterYearExpenseGrid waterYearGrid3;
         private WaterYearExpenseGrid waterYearGrid2;
+        private WaterYearExpenseGrid waterYearGrid1;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup6;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbWaterExpenseYear;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem23;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem24;
     }
 }

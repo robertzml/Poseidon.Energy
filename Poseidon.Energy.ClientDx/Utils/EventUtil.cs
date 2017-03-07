@@ -21,7 +21,10 @@ namespace Poseidon.Energy.ClientDx
         public static void lbMonth_DrawItem(object sender, DevExpress.XtraEditors.ListBoxDrawItemEventArgs e)
         {
             var lb = sender as ListBoxControl;
-            var date = Convert.ToDateTime(lb.GetItemText(e.Index));
+
+            DateTime date;
+            if (!DateTime.TryParse(lb.GetItemText(e.Index), out date))
+                return;
 
             string s = date.ToString("yyyy年MM月");
             e.Appearance.DrawBackground(e.Cache, e.Bounds);

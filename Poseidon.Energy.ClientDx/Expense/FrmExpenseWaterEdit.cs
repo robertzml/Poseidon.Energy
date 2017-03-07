@@ -16,38 +16,49 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 添加水费支出窗体
+    /// 编辑水费支出窗体
     /// </summary>
-    public partial class FrmExpenseWaterAdd : BaseSingleForm
+    public partial class FrmExpenseWaterEdit : BaseSingleForm
     {
         #region Field
         /// <summary>
-        /// 当前关联支出账户
+        /// 当前关联支出
+        /// </summary>
+        private WaterExpense currentExpense;
+
+        /// <summary>
+        /// 当前关联账户
         /// </summary>
         private ExpenseAccount currentAccount;
         #endregion //Field
 
         #region Constructor
-        public FrmExpenseWaterAdd(string accountId)
+        public FrmExpenseWaterEdit(string id, string accountId)
         {
             InitializeComponent();
-
-            InitData(accountId);
+            InitData(id, accountId);
         }
         #endregion //Constructor
 
-        #region Field
-        private void InitData(string id)
+        #region Function
+        private void InitData(string id, string accountId)
         {
-            this.currentAccount = BusinessFactory<ExpenseAccountBusiness>.Instance.FindById(id);
+            this.currentExpense = BusinessFactory<WaterExpenseBusiness>.Instance.FindById(id);
+            this.currentAccount = BusinessFactory<ExpenseAccountBusiness>.Instance.FindById(accountId);
         }
 
         protected override void InitForm()
         {
             this.txtAccountName.Text = this.currentAccount.Name;
-            this.dpTicketDate.DateTime = DateTime.Now;
 
-            SetRecords();
+            this.spFeeType.Value = this.currentExpense.FeeType;
+            this.dpBelongDate.DateTime = this.currentExpense.BelongDate;
+            this.dpTicketDate.DateTime = this.currentExpense.TicketDate;
+            this.spTotalQuantity.Value = this.currentExpense.TotalQuantity;
+            this.spTotalAmount.Value = this.currentExpense.TotalAmount;
+            this.txtRemark.Text = this.currentExpense.Remark;
+
+            this.expenseGrid.DataSource = this.currentExpense.Records;
 
             var last = BusinessFactory<WaterExpenseBusiness>.Instance.FindLast(this.currentAccount.Id);
             if (last != null)
@@ -57,25 +68,6 @@ namespace Poseidon.Energy.ClientDx
             }
 
             base.InitForm();
-        }
-
-        /// <summary>
-        /// 设置关联水表
-        /// </summary>
-        private void SetRecords()
-        {
-            List<WaterExpenseRecord> records = new List<WaterExpenseRecord>();
-
-            foreach (var item in this.currentAccount.WaterMeters)
-            {
-                WaterExpenseRecord record = new WaterExpenseRecord();
-                record.MeterNumber = item.Number;
-                record.MeterName = item.Name;
-
-                records.Add(record);
-            }
-
-            this.expenseGrid.DataSource = records;
         }
 
         /// <summary>
@@ -126,7 +118,7 @@ namespace Poseidon.Energy.ClientDx
 
             return new Tuple<bool, string>(true, "");
         }
-        #endregion //Field
+        #endregion //Function
 
         #region Event
         /// <summary>
@@ -164,12 +156,11 @@ namespace Poseidon.Energy.ClientDx
                 return;
             }
 
-            WaterExpense entity = new WaterExpense();
-            SetEntity(entity);
+            SetEntity(this.currentExpense);
 
             try
             {
-                BusinessFactory<WaterExpenseBusiness>.Instance.Create(entity, this.currentUser);
+                BusinessFactory<WaterExpenseBusiness>.Instance.Update(this.currentExpense, this.currentUser);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();
