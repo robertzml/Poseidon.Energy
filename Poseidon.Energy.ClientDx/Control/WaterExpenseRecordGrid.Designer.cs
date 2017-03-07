@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             this.colMeterId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMeterName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFeeType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrevious = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCurrent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCalQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -47,11 +51,15 @@
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMeterId,
+            this.colMeterName,
+            this.colFeeType,
             this.colPrevious,
             this.colCurrent,
+            this.colCalQuantity,
             this.colQuantity,
             this.colUnitPrice,
-            this.colAmount});
+            this.colAmount,
+            this.colRemark});
             this.dgvEntity.IndicatorWidth = 40;
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
@@ -59,48 +67,82 @@
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
+            this.dgvEntity.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.dgvEntity_CustomColumnDisplayText);
             // 
             // colMeterId
             // 
             this.colMeterId.FieldName = "MeterId";
             this.colMeterId.Name = "colMeterId";
+            this.colMeterId.OptionsColumn.AllowEdit = false;
             this.colMeterId.Visible = true;
             this.colMeterId.VisibleIndex = 0;
+            // 
+            // colMeterName
+            // 
+            this.colMeterName.FieldName = "MeterName";
+            this.colMeterName.Name = "colMeterName";
+            this.colMeterName.Visible = true;
+            this.colMeterName.VisibleIndex = 1;
+            // 
+            // colFeeType
+            // 
+            this.colFeeType.FieldName = "FeeType";
+            this.colFeeType.Name = "colFeeType";
+            this.colFeeType.Visible = true;
+            this.colFeeType.VisibleIndex = 2;
             // 
             // colPrevious
             // 
             this.colPrevious.FieldName = "Previous";
             this.colPrevious.Name = "colPrevious";
             this.colPrevious.Visible = true;
-            this.colPrevious.VisibleIndex = 1;
+            this.colPrevious.VisibleIndex = 3;
             // 
             // colCurrent
             // 
             this.colCurrent.FieldName = "Current";
             this.colCurrent.Name = "colCurrent";
             this.colCurrent.Visible = true;
-            this.colCurrent.VisibleIndex = 2;
+            this.colCurrent.VisibleIndex = 4;
             // 
             // colQuantity
             // 
             this.colQuantity.FieldName = "Quantity";
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.Visible = true;
-            this.colQuantity.VisibleIndex = 3;
+            this.colQuantity.VisibleIndex = 6;
             // 
             // colUnitPrice
             // 
             this.colUnitPrice.FieldName = "UnitPrice";
             this.colUnitPrice.Name = "colUnitPrice";
             this.colUnitPrice.Visible = true;
-            this.colUnitPrice.VisibleIndex = 4;
+            this.colUnitPrice.VisibleIndex = 7;
             // 
             // colAmount
             // 
             this.colAmount.FieldName = "Amount";
             this.colAmount.Name = "colAmount";
             this.colAmount.Visible = true;
-            this.colAmount.VisibleIndex = 5;
+            this.colAmount.VisibleIndex = 8;
+            // 
+            // colRemark
+            // 
+            this.colRemark.FieldName = "Remark";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.Visible = true;
+            this.colRemark.VisibleIndex = 9;
+            // 
+            // colCalQuantity
+            // 
+            this.colCalQuantity.Caption = "计算用量";
+            this.colCalQuantity.FieldName = "colCalQuantity";
+            this.colCalQuantity.Name = "colCalQuantity";
+            this.colCalQuantity.OptionsColumn.AllowEdit = false;
+            this.colCalQuantity.UnboundExpression = "[Current] - [Previous]";
+            this.colCalQuantity.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.colCalQuantity.Visible = true;
+            this.colCalQuantity.VisibleIndex = 5;
             // 
             // WaterExpenseRecordGrid
             // 
@@ -117,10 +159,14 @@
         #endregion
 
         private DevExpress.XtraGrid.Columns.GridColumn colMeterId;
+        private DevExpress.XtraGrid.Columns.GridColumn colMeterName;
+        private DevExpress.XtraGrid.Columns.GridColumn colFeeType;
         private DevExpress.XtraGrid.Columns.GridColumn colPrevious;
         private DevExpress.XtraGrid.Columns.GridColumn colCurrent;
+        private DevExpress.XtraGrid.Columns.GridColumn colCalQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn colUnitPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn colRemark;
     }
 }

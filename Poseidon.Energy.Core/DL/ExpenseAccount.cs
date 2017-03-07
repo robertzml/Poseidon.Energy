@@ -16,6 +16,12 @@ namespace Poseidon.Energy.Core.DL
     {
         #region Property
         /// <summary>
+        /// 简称
+        /// </summary>
+        [Display(Name = "简称")]
+        public string ShortName { get; set; }
+
+        /// <summary>
         /// 包含水表
         /// </summary>
         [Display(Name = "包含水表")]

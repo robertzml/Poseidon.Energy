@@ -15,9 +15,21 @@ namespace Poseidon.Energy.Core.DL
     {
         #region Property
         /// <summary>
-        /// 归属月份
+        /// 账户ID
         /// </summary>
-        [Display(Name = "归属月份")]
+        [Display(Name = "账户ID")]
+        public string AccountId { get; set; }
+
+        /// <summary>
+        /// 费用类型
+        /// </summary>
+        [Display(Name = "费用类型")]
+        public int FeeType { get; set; }
+
+        /// <summary>
+        /// 归属日期
+        /// </summary>
+        [Display(Name = "归属日期")]
         public DateTime BelongDate { get; set; }
 
         /// <summary>
@@ -57,6 +69,18 @@ namespace Poseidon.Energy.Core.DL
         /// </summary>
         [Display(Name = "水表ID")]
         public string MeterId { get; set; }
+
+        /// <summary>
+        /// 水表名称
+        /// </summary>
+        [Display(Name = "水表名称")]
+        public string MeterName { get; set; }
+
+        /// <summary>
+        /// 费用类型
+        /// </summary>
+        [Display(Name = "费用类型")]
+        public int FeeType { get; set; }
 
         /// <summary>
         /// 上期数

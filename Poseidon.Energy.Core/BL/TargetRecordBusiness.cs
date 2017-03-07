@@ -19,7 +19,7 @@ namespace Poseidon.Energy.Core.BL
     {
         #region Constructor
         /// <summary>
-        /// 部门指标业务类
+        /// 指标记录业务类
         /// </summary>
         public TargetRecordBusiness()
         {

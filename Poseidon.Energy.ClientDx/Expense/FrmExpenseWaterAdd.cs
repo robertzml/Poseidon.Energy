@@ -41,6 +41,14 @@ namespace Poseidon.Energy.ClientDx
         {
             this.currentAccount = BusinessFactory<ExpenseAccountBusiness>.Instance.FindById(id);
         }
+
+        protected override void InitForm()
+        {
+            this.txtAccountName.Text = this.currentAccount.Name;
+
+
+            base.InitForm();
+        }
         #endregion //Field
     }
 }

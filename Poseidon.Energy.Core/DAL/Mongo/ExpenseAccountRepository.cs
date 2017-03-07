@@ -45,6 +45,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             ExpenseAccount entity = new ExpenseAccount();
             entity.Id = doc["_id"].ToString();
             entity.Name = doc["name"].ToString();
+            entity.ShortName = doc["shortName"].ToString();
             entity.ModelType = doc["modelType"].ToString();
             entity.Remark = doc["remark"].ToString();
             entity.Status = doc["status"].ToInt32();
@@ -83,6 +84,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             BsonDocument doc = new BsonDocument
             {
                 { "name", entity.Name },
+                { "shortName", entity.ShortName },
                 { "modelType", entity.ModelType },
                 { "remark", entity.Remark },
                 { "status", entity.Status }

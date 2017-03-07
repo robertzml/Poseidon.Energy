@@ -16,9 +16,30 @@ namespace Poseidon.Energy.ClientDx
     /// </summary>
     public partial class WaterExpenseRecordGrid : WinEntityGrid<WaterExpenseRecord>
     {
+        #region Constructor
         public WaterExpenseRecordGrid()
         {
             InitializeComponent();
         }
+        #endregion //Constructor
+
+        #region Event
+        /// <summary>
+        /// 格式化数据显示
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvEntity_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        {
+            int rowIndex = e.ListSourceRowIndex;
+            if (rowIndex < 0 || rowIndex >= this.bsEntity.Count)
+                return;
+
+            var list = this.bsEntity.DataSource as List<WaterExpenseRecord>;
+
+
+
+        }
+        #endregion //Event
     }
 }

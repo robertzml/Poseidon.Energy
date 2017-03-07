@@ -75,6 +75,7 @@
     <Compile Include="BL\ExpenseAccountBusiness.cs" />
     <Compile Include="BL\TargetBusiness.cs" />
     <Compile Include="BL\TargetRecordBusiness.cs" />
+    <Compile Include="BL\WaterExpenseBusiness.cs" />
     <Compile Include="DAL\Mongo\DepartmentRepository.cs" />
     <Compile Include="DAL\Mongo\FundRecordRepository.cs" />
     <Compile Include="DAL\Mongo\FundRepository.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="DAL\Mongo\ExpenseAccountRepository.cs" />
     <Compile Include="DAL\Mongo\TargetRecordRepository.cs" />
     <Compile Include="DAL\Mongo\TargetRepository.cs" />
+    <Compile Include="DAL\Mongo\WaterExpenseRepository.cs" />
     <Compile Include="DL\AllowanceTarget.cs" />
     <Compile Include="DL\WaterExpense.cs" />
     <Compile Include="DL\WaterMeter.cs" />
@@ -103,6 +105,7 @@
     <Compile Include="IDAL\IExpenseAccountRepository.cs" />
     <Compile Include="IDAL\ITargetRecordRepository.cs" />
     <Compile Include="IDAL\ITargetRepository.cs" />
+    <Compile Include="IDAL\IWaterExpenseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\EnergyConstant.cs" />
     <Compile Include="Utility\ModelTypeCode.cs" />
