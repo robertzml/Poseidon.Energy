@@ -36,7 +36,7 @@ namespace Poseidon.Energy.ClientDx
         }
         #endregion //Constructor
 
-        #region Field
+        #region Function
         private void InitData(string id)
         {
             this.currentAccount = BusinessFactory<ExpenseAccountBusiness>.Instance.FindById(id);
@@ -46,8 +46,9 @@ namespace Poseidon.Energy.ClientDx
         {
             this.txtAccountName.Text = this.currentAccount.Name;
             this.dpTicketDate.DateTime = DateTime.Now;
+            ControlUtil.BindDictToComboBox(this.cmbFeeType, typeof(WaterExpense), "FeeType");
 
-            SetRecords();
+            InitRecords();
 
             var last = BusinessFactory<WaterExpenseBusiness>.Instance.FindLast(this.currentAccount.Id);
             if (last != null)
@@ -60,9 +61,9 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
-        /// 设置关联水表
+        /// 初始化支出记录，关联水表
         /// </summary>
-        private void SetRecords()
+        private void InitRecords()
         {
             List<WaterExpenseRecord> records = new List<WaterExpenseRecord>();
 
@@ -87,7 +88,7 @@ namespace Poseidon.Energy.ClientDx
             entity.AccountId = this.currentAccount.Id;
             entity.BelongDate = this.dpBelongDate.DateTime.Date;
             entity.TicketDate = this.dpTicketDate.DateTime.Date;
-            entity.FeeType = Convert.ToInt32(this.spFeeType.Value);
+            entity.FeeType = Convert.ToInt32(this.cmbFeeType.EditValue);
             entity.TotalQuantity = this.spTotalQuantity.Value;
             entity.TotalAmount = this.spTotalAmount.Value;
             entity.Remark = this.txtRemark.Text;
@@ -114,6 +115,11 @@ namespace Poseidon.Energy.ClientDx
                 errorMessage = "归属日期不能为空";
                 return new Tuple<bool, string>(false, errorMessage);
             }
+            if (this.cmbFeeType.SelectedIndex == -1)
+            {
+                errorMessage = "请选择费用类型";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
 
             foreach (var item in this.expenseGrid.DataSource)
             {
@@ -126,7 +132,7 @@ namespace Poseidon.Energy.ClientDx
 
             return new Tuple<bool, string>(true, "");
         }
-        #endregion //Field
+        #endregion //Function
 
         #region Event
         /// <summary>

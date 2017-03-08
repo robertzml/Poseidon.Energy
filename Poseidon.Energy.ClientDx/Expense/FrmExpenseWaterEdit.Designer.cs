@@ -40,10 +40,10 @@
             this.expenseGrid = new Poseidon.Energy.ClientDx.WaterExpenseRecordGrid();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.cmbFeeType = new DevExpress.XtraEditors.ImageComboBoxEdit();
             this.btnSum = new DevExpress.XtraEditors.SimpleButton();
             this.spTotalAmount = new DevExpress.XtraEditors.SpinEdit();
             this.spTotalQuantity = new DevExpress.XtraEditors.SpinEdit();
-            this.spFeeType = new DevExpress.XtraEditors.SpinEdit();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.dpTicketDate = new DevExpress.XtraEditors.DateEdit();
             this.dpBelongDate = new DevExpress.XtraEditors.DateEdit();
@@ -53,11 +53,11 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -77,9 +77,9 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbFeeType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTotalAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTotalQuantity.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spFeeType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpTicketDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpTicketDate.Properties)).BeginInit();
@@ -91,11 +91,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -257,10 +257,10 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.cmbFeeType);
             this.layoutControl1.Controls.Add(this.btnSum);
             this.layoutControl1.Controls.Add(this.spTotalAmount);
             this.layoutControl1.Controls.Add(this.spTotalQuantity);
-            this.layoutControl1.Controls.Add(this.spFeeType);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.dpTicketDate);
             this.layoutControl1.Controls.Add(this.dpBelongDate);
@@ -272,6 +272,16 @@
             this.layoutControl1.Size = new System.Drawing.Size(874, 131);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // cmbFeeType
+            // 
+            this.cmbFeeType.Location = new System.Drawing.Point(699, 12);
+            this.cmbFeeType.Name = "cmbFeeType";
+            this.cmbFeeType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbFeeType.Size = new System.Drawing.Size(163, 20);
+            this.cmbFeeType.StyleController = this.layoutControl1;
+            this.cmbFeeType.TabIndex = 12;
             // 
             // btnSum
             // 
@@ -313,23 +323,6 @@
             this.spTotalQuantity.StyleController = this.layoutControl1;
             this.spTotalQuantity.TabIndex = 9;
             // 
-            // spFeeType
-            // 
-            this.spFeeType.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spFeeType.Location = new System.Drawing.Point(298, 12);
-            this.spFeeType.Name = "spFeeType";
-            this.spFeeType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spFeeType.Properties.IsFloatValue = false;
-            this.spFeeType.Properties.Mask.EditMask = "N00";
-            this.spFeeType.Size = new System.Drawing.Size(70, 20);
-            this.spFeeType.StyleController = this.layoutControl1;
-            this.spFeeType.TabIndex = 8;
-            // 
             // txtRemark
             // 
             this.txtRemark.Location = new System.Drawing.Point(85, 60);
@@ -341,7 +334,7 @@
             // dpTicketDate
             // 
             this.dpTicketDate.EditValue = null;
-            this.dpTicketDate.Location = new System.Drawing.Point(674, 12);
+            this.dpTicketDate.Location = new System.Drawing.Point(512, 12);
             this.dpTicketDate.Name = "dpTicketDate";
             this.dpTicketDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.dpTicketDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -349,14 +342,14 @@
             this.dpTicketDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dpTicketDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dpTicketDate.Size = new System.Drawing.Size(188, 20);
+            this.dpTicketDate.Size = new System.Drawing.Size(110, 20);
             this.dpTicketDate.StyleController = this.layoutControl1;
             this.dpTicketDate.TabIndex = 6;
             // 
             // dpBelongDate
             // 
             this.dpBelongDate.EditValue = null;
-            this.dpBelongDate.Location = new System.Drawing.Point(445, 12);
+            this.dpBelongDate.Location = new System.Drawing.Point(298, 12);
             this.dpBelongDate.Name = "dpBelongDate";
             this.dpBelongDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.dpBelongDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -372,7 +365,7 @@
             this.dpBelongDate.Properties.VistaCalendarViewStyle = ((DevExpress.XtraEditors.VistaCalendarViewStyle)(((DevExpress.XtraEditors.VistaCalendarViewStyle.YearView | DevExpress.XtraEditors.VistaCalendarViewStyle.YearsGroupView) 
             | DevExpress.XtraEditors.VistaCalendarViewStyle.CenturyView)));
             this.dpBelongDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
-            this.dpBelongDate.Size = new System.Drawing.Size(152, 20);
+            this.dpBelongDate.Size = new System.Drawing.Size(137, 20);
             this.dpBelongDate.StyleController = this.layoutControl1;
             this.dpBelongDate.TabIndex = 5;
             // 
@@ -396,11 +389,11 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.layoutControlItem4,
-            this.layoutControlItem5,
             this.layoutControlItem6,
             this.layoutControlItem7,
             this.layoutControlItem8,
-            this.emptySpaceItem1});
+            this.emptySpaceItem1,
+            this.layoutControlItem11});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(874, 131);
@@ -418,18 +411,18 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.dpBelongDate;
-            this.layoutControlItem2.Location = new System.Drawing.Point(360, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(213, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(229, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(214, 24);
             this.layoutControlItem2.Text = "归属日期";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(70, 14);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.dpTicketDate;
-            this.layoutControlItem3.Location = new System.Drawing.Point(589, 0);
+            this.layoutControlItem3.Location = new System.Drawing.Point(427, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(265, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(187, 24);
             this.layoutControlItem3.Text = "票据日期";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(70, 14);
             // 
@@ -441,15 +434,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(854, 37);
             this.layoutControlItem4.Text = "备注";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(70, 14);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.spFeeType;
-            this.layoutControlItem5.Location = new System.Drawing.Point(213, 0);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(147, 24);
-            this.layoutControlItem5.Text = "费用类型";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(70, 14);
             // 
             // layoutControlItem6
             // 
@@ -486,6 +470,15 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(427, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.cmbFeeType;
+            this.layoutControlItem11.Location = new System.Drawing.Point(614, 0);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(240, 24);
+            this.layoutControlItem11.Text = "费用类型";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(70, 14);
+            // 
             // FrmExpenseWaterEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -512,9 +505,9 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmbFeeType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTotalAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTotalQuantity.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spFeeType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpTicketDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpTicketDate.Properties)).EndInit();
@@ -526,11 +519,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -543,7 +536,6 @@
         private DevExpress.XtraEditors.SimpleButton btnSum;
         private DevExpress.XtraEditors.SpinEdit spTotalAmount;
         private DevExpress.XtraEditors.SpinEdit spTotalQuantity;
-        private DevExpress.XtraEditors.SpinEdit spFeeType;
         private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraEditors.DateEdit dpTicketDate;
         private DevExpress.XtraEditors.DateEdit dpBelongDate;
@@ -553,7 +545,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
@@ -567,5 +558,7 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraEditors.ImageComboBoxEdit cmbFeeType;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     }
 }

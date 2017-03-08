@@ -13,6 +13,7 @@ namespace Poseidon.Energy.ClientDx
     /// </summary>
     public static class EventUtil
     {
+        #region Method
         /// <summary>
         /// 列表控件显示月份
         /// </summary>
@@ -31,5 +32,6 @@ namespace Poseidon.Energy.ClientDx
             e.Graphics.DrawString(s, e.Appearance.Font, e.Cache.GetSolidBrush(e.Appearance.ForeColor), e.Bounds.Location);
             e.Handled = true;
         }
+        #endregion //Method
     }
 }

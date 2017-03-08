@@ -51,9 +51,9 @@ namespace Poseidon.Energy.ClientDx
         {
             this.txtAccountName.Text = this.currentAccount.Name;
 
-            this.spFeeType.Value = this.currentExpense.FeeType;
             this.dpBelongDate.DateTime = this.currentExpense.BelongDate;
             this.dpTicketDate.DateTime = this.currentExpense.TicketDate;
+            ControlUtil.BindDictToComboBox(this.cmbFeeType, typeof(WaterExpense), "FeeType", this.currentExpense.FeeType);
             this.spTotalQuantity.Value = this.currentExpense.TotalQuantity;
             this.spTotalAmount.Value = this.currentExpense.TotalAmount;
             this.txtRemark.Text = this.currentExpense.Remark;
@@ -79,7 +79,7 @@ namespace Poseidon.Energy.ClientDx
             entity.AccountId = this.currentAccount.Id;
             entity.BelongDate = this.dpBelongDate.DateTime.Date;
             entity.TicketDate = this.dpTicketDate.DateTime.Date;
-            entity.FeeType = Convert.ToInt32(this.spFeeType.Value);
+            entity.FeeType = Convert.ToInt32(this.cmbFeeType.EditValue);
             entity.TotalQuantity = this.spTotalQuantity.Value;
             entity.TotalAmount = this.spTotalAmount.Value;
             entity.Remark = this.txtRemark.Text;
@@ -104,6 +104,11 @@ namespace Poseidon.Energy.ClientDx
             if (this.dpBelongDate.EditValue == null)
             {
                 errorMessage = "归属日期不能为空";
+                return new Tuple<bool, string>(false, errorMessage);
+            }
+            if (this.cmbFeeType.SelectedIndex == -1)
+            {
+                errorMessage = "请选择费用类型";
                 return new Tuple<bool, string>(false, errorMessage);
             }
 

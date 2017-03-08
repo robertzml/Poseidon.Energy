@@ -39,6 +39,10 @@ namespace Poseidon.Energy.ClientDx
         private void WaterExpenseRecordGrid_Load(object sender, EventArgs e)
         {
             this.dataNavigator1.Visible = this.showNavigator;
+            if (!this.DesignMode)
+            {
+                ControlUtil.BindDictToComboBox(this.repoCmbFeeType, typeof(WaterExpense), "FeeType");
+            }
         }
         #endregion //Event
 
