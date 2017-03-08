@@ -52,7 +52,7 @@ namespace Poseidon.Energy.Test
 
         private void menuExpenseAccount_Click(object sender, EventArgs e)
         {
-            ChildFormManage.LoadMdiForm(this, typeof(FrmExpenseAccount));
+            ChildFormManage.LoadMdiForm(this, typeof(frmExpenseAccount));
         }
     }
 }

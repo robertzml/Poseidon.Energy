@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Energy.ClientDx
 {
-    partial class FrmExpenseAccount
+    partial class frmExpenseAccount
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -45,7 +46,12 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.accountTree = new Poseidon.Energy.ClientDx.ExpenseAccountTree();
+            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.wmGrid = new Poseidon.Energy.ClientDx.WaterMeterGrid();
+            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lbAccount = new DevExpress.XtraEditors.ListBoxControl();
+            this.bsAccount = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -62,6 +68,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
+            this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -83,7 +96,7 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.accountTree);
+            this.groupControl1.Controls.Add(this.lbAccount);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
@@ -235,6 +248,7 @@
             // 
             // groupControl3
             // 
+            this.groupControl3.Controls.Add(this.layoutControl2);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(203, 203);
             this.groupControl3.Name = "groupControl3";
@@ -242,22 +256,76 @@
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "表具信息";
             // 
-            // accountTree
+            // layoutControl2
             // 
-            this.accountTree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.accountTree.Location = new System.Drawing.Point(2, 21);
-            this.accountTree.Name = "accountTree";
-            this.accountTree.Size = new System.Drawing.Size(190, 476);
-            this.accountTree.TabIndex = 0;
-            this.accountTree.AccountSelected += new System.EventHandler(this.accountTree_AccountSelected);
+            this.layoutControl2.Controls.Add(this.wmGrid);
+            this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl2.Location = new System.Drawing.Point(2, 21);
+            this.layoutControl2.Name = "layoutControl2";
+            this.layoutControl2.Root = this.layoutControlGroup3;
+            this.layoutControl2.Size = new System.Drawing.Size(624, 276);
+            this.layoutControl2.TabIndex = 0;
+            this.layoutControl2.Text = "layoutControl2";
             // 
-            // FrmExpenseAccount
+            // wmGrid
+            // 
+            this.wmGrid.AllowFilter = true;
+            this.wmGrid.AllowGroup = true;
+            this.wmGrid.AllowSort = true;
+            this.wmGrid.DataSource = null;
+            this.wmGrid.Editable = false;
+            this.wmGrid.Location = new System.Drawing.Point(12, 12);
+            this.wmGrid.Name = "wmGrid";
+            this.wmGrid.ShowAddMenu = false;
+            this.wmGrid.ShowFooter = false;
+            this.wmGrid.ShowLineNumber = true;
+            this.wmGrid.ShowNavigator = false;
+            this.wmGrid.Size = new System.Drawing.Size(600, 252);
+            this.wmGrid.TabIndex = 4;
+            // 
+            // layoutControlGroup3
+            // 
+            this.layoutControlGroup3.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup3.GroupBordersVisible = false;
+            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem6});
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup3.Name = "layoutControlGroup3";
+            this.layoutControlGroup3.Size = new System.Drawing.Size(624, 276);
+            this.layoutControlGroup3.TextVisible = false;
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.wmGrid;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(604, 256);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
+            // 
+            // lbAccount
+            // 
+            this.lbAccount.DataSource = this.bsAccount;
+            this.lbAccount.DisplayMember = "Name";
+            this.lbAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbAccount.Location = new System.Drawing.Point(2, 21);
+            this.lbAccount.Name = "lbAccount";
+            this.lbAccount.Size = new System.Drawing.Size(190, 476);
+            this.lbAccount.TabIndex = 0;
+            this.lbAccount.ValueMember = "Id";
+            this.lbAccount.SelectedIndexChanged += new System.EventHandler(this.lbAccount_SelectedIndexChanged);
+            // 
+            // bsAccount
+            // 
+            this.bsAccount.DataSource = typeof(Poseidon.Energy.Core.DL.ExpenseAccount);
+            // 
+            // frmExpenseAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 505);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FrmExpenseAccount";
+            this.Name = "frmExpenseAccount";
             this.Text = "支出账户管理";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -275,6 +343,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
+            this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lbAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -286,7 +361,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.GroupControl groupControl3;
-        private ExpenseAccountTree accountTree;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.TextEdit txtName;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
@@ -299,5 +373,11 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.SimpleButton btnSetWater;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraLayout.LayoutControl layoutControl2;
+        private WaterMeterGrid wmGrid;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraEditors.ListBoxControl lbAccount;
+        private System.Windows.Forms.BindingSource bsAccount;
     }
 }

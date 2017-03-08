@@ -45,7 +45,7 @@ namespace Poseidon.Energy.ClientDx
             if (this.currentAccount == null)
                 return;
 
-            var receipts = BusinessFactory<WaterExpenseBusiness>.Instance.FindByAccount(this.currentAccount.Id);
+            var receipts = BusinessFactory<WaterExpenseBusiness>.Instance.FindByAccount(this.currentAccount.Id).OrderByDescending(r => r.BelongDate);
             this.bsWaterExpense.DataSource = receipts;
         }
 
@@ -61,6 +61,8 @@ namespace Poseidon.Energy.ClientDx
             this.txtTotalQuantity.Text = entity.TotalQuantity.ToString();
             this.txtTotalAmount.Text = entity.TotalAmount.ToString();
             this.txtRemark.Text = entity.Remark;
+            this.txtCreateUser.Text = entity.CreateBy.Name;
+            this.txtCreateTime.Text = entity.CreateBy.Time.ToDateTimeString();
 
             this.waterExpRecGrid.DataSource = entity.Records;
         }

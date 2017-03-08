@@ -45,6 +45,9 @@ namespace Poseidon.Energy.ClientDx
         {
             this.nowYear = DateTime.Now.Year;
 
+            for (int i = nowYear; i >= 2010; i--)
+                this.cmbWaterExpenseYear.Properties.Items.Add(i.ToString() + "年");
+
             base.InitForm();
         }
 
@@ -83,9 +86,6 @@ namespace Poseidon.Energy.ClientDx
             var currentYearList = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(this.currentAccount.Id, nowYear).ToList();
             this.waterYearGrid1.DataSource = currentYearList;
             this.waterYearGrid2.DataSource = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(this.currentAccount.Id, nowYear - 1).ToList();
-
-            for (int i = nowYear; i >= 2010; i--)
-                this.cmbWaterExpenseYear.Properties.Items.Add(i.ToString() + "年");
 
             // 水费单据
             this.tabPageWaterReceipt.PageVisible = true;

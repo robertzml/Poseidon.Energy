@@ -87,6 +87,7 @@
             // 
             // colMeterNumber
             // 
+            this.colMeterNumber.Caption = "水表编号";
             this.colMeterNumber.FieldName = "MeterNumber";
             this.colMeterNumber.Name = "colMeterNumber";
             this.colMeterNumber.Visible = true;
@@ -94,6 +95,7 @@
             // 
             // colMeterName
             // 
+            this.colMeterName.Caption = "水表名称";
             this.colMeterName.FieldName = "MeterName";
             this.colMeterName.Name = "colMeterName";
             this.colMeterName.Visible = true;
@@ -101,6 +103,7 @@
             // 
             // colFeeType
             // 
+            this.colFeeType.Caption = "费用类型";
             this.colFeeType.FieldName = "FeeType";
             this.colFeeType.Name = "colFeeType";
             this.colFeeType.Visible = true;
@@ -108,6 +111,7 @@
             // 
             // colPrevious
             // 
+            this.colPrevious.Caption = "上期数";
             this.colPrevious.FieldName = "Previous";
             this.colPrevious.Name = "colPrevious";
             this.colPrevious.Visible = true;
@@ -115,6 +119,7 @@
             // 
             // colCurrent
             // 
+            this.colCurrent.Caption = "本期数";
             this.colCurrent.FieldName = "Current";
             this.colCurrent.Name = "colCurrent";
             this.colCurrent.Visible = true;
@@ -122,6 +127,7 @@
             // 
             // colQuantity
             // 
+            this.colQuantity.Caption = "用量(吨)";
             this.colQuantity.FieldName = "Quantity";
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -131,6 +137,7 @@
             // 
             // colUnitPrice
             // 
+            this.colUnitPrice.Caption = "单价";
             this.colUnitPrice.FieldName = "UnitPrice";
             this.colUnitPrice.Name = "colUnitPrice";
             this.colUnitPrice.Visible = true;
@@ -138,6 +145,7 @@
             // 
             // colAmount
             // 
+            this.colAmount.Caption = "金额(元)";
             this.colAmount.FieldName = "Amount";
             this.colAmount.Name = "colAmount";
             this.colAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -147,6 +155,7 @@
             // 
             // colRemark
             // 
+            this.colRemark.Caption = "备注";
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;

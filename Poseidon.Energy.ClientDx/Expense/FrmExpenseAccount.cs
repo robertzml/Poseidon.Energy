@@ -19,7 +19,7 @@ namespace Poseidon.Energy.ClientDx
     /// <summary>
     /// 支出账户管理窗体
     /// </summary>
-    public partial class FrmExpenseAccount : BaseMdiForm
+    public partial class frmExpenseAccount : BaseMdiForm
     {
         #region Field
         /// <summary>
@@ -29,28 +29,42 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Field
 
         #region Constructor
-        public FrmExpenseAccount()
+        public frmExpenseAccount()
         {
             InitializeComponent();
         }
         #endregion //Constructor
 
+        #region Function
+        protected override void InitForm()
+        {
+            LoadAccount();
+            base.InitForm();
+        }
+
+        /// <summary>
+        /// 载入账户
+        /// </summary>
+        private void LoadAccount()
+        {
+            this.bsAccount.DataSource = BusinessFactory<ExpenseAccountBusiness>.Instance.FindAll().ToList();
+        }
+        #endregion //Function
+
         #region Event
         /// <summary>
-        /// 账户选择事件
+        /// 账户选择
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void accountTree_AccountSelected(object sender, EventArgs e)
+        private void lbAccount_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string id = this.accountTree.GetCurrentSelectAccountId();
-            if (id == null)
-                this.currentAccount = null;
-            else
-            {
-                this.currentAccount = BusinessFactory<ExpenseAccountBusiness>.Instance.FindById(id);
-                this.txtName.Text = this.currentAccount.Name;
-            }
+            if (this.lbAccount.SelectedItem == null)
+                return;
+
+            this.currentAccount = this.lbAccount.SelectedItem as ExpenseAccount;
+            this.wmGrid.DataSource = this.currentAccount.WaterMeters;
+            this.txtName.Text = this.currentAccount.Name;
         }
 
         /// <summary>
@@ -61,6 +75,7 @@ namespace Poseidon.Energy.ClientDx
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ChildFormManage.ShowDialogForm(typeof(FrmExpenseAccountAdd));
+            LoadAccount();
         }
 
         /// <summary>
@@ -74,6 +89,7 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmExpenseAccountEdit), new object[] { this.currentAccount.Id });
+            LoadAccount();
         }
 
         /// <summary>
@@ -87,6 +103,7 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmExpenseWaterMeterSet), new object[] { this.currentAccount.Id });
+            LoadAccount();
         }
         #endregion //Event
     }

@@ -136,6 +136,8 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnSum_Click(object sender, EventArgs e)
         {
+            this.expenseGrid.CloseEditor();
+
             decimal totalQuantity = 0;
             decimal totalAmount = 0;
             foreach (var item in this.expenseGrid.DataSource)
