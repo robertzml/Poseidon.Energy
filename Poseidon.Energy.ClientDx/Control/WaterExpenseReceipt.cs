@@ -12,6 +12,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
     using Poseidon.Common;
+    using Poseidon.Core.Utility;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
     using Poseidon.Energy.Core.Utility;
@@ -57,7 +58,7 @@ namespace Poseidon.Energy.ClientDx
         {
             this.txtBelongDate.Text = entity.BelongDate.ToString("yyyy年MM月");
             this.txtTicketDate.Text = entity.TicketDate.ToDateString();
-            this.txtFeeType.Text = entity.FeeType.ToString();
+            this.txtFeeType.Text = DictUtility.GetDictValue(entity, "FeeType", entity.FeeType);
             this.txtTotalQuantity.Text = entity.TotalQuantity.ToString();
             this.txtTotalAmount.Text = entity.TotalAmount.ToString();
             this.txtRemark.Text = entity.Remark;

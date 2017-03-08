@@ -279,7 +279,7 @@
     <Compile Include="Control\WaterExpenseRecordGrid.Designer.cs">
       <DependentUpon>WaterExpenseRecordGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utils\EventUtil.cs" />
+    <Compile Include="Utility\EventUtil.cs" />
     <Compile Include="Control\WaterYearExpenseGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>

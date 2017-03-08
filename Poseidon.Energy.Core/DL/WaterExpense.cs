@@ -7,6 +7,7 @@ using System.Text;
 namespace Poseidon.Energy.Core.DL
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Base.Utility;
 
     /// <summary>
     /// 水费支出类
@@ -23,6 +24,7 @@ namespace Poseidon.Energy.Core.DL
         /// <summary>
         /// 费用类型
         /// </summary>
+        [Dict("Energy.Expense.FeeType")]
         [Display(Name = "费用类型")]
         public int FeeType { get; set; }
 
