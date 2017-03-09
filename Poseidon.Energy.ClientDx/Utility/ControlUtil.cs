@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Poseidon.Energy.ClientDx
 {
     using DevExpress.XtraEditors;
-    using DevExpress.XtraEditors.Repository;
     using DevExpress.XtraEditors.Controls;
+    using DevExpress.XtraEditors.Repository;
     using Poseidon.Core.DL;
     using Poseidon.Core.Utility;
 
@@ -18,6 +19,19 @@ namespace Poseidon.Energy.ClientDx
     public static class ControlUtil
     {
         #region Method
+        /// <summary>
+        /// 检查控件是否在设计模式
+        /// </summary>
+        /// <returns></returns>
+        public static bool IsInDesignMode()
+        {
+            if (Application.ExecutablePath.IndexOf("devenv.exe", StringComparison.OrdinalIgnoreCase) > -1)
+            {
+                return true;
+            }
+            return false;
+        }
+
         /// <summary>
         /// 绑定字典到ComboBox
         /// </summary>

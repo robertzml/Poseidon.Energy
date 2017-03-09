@@ -10,6 +10,7 @@ namespace Poseidon.Energy.ClientDx
 {
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.DL;
+    using System.ComponentModel.Design;
 
     /// <summary>
     /// 水费支出记录表格控件
@@ -39,7 +40,8 @@ namespace Poseidon.Energy.ClientDx
         private void WaterExpenseRecordGrid_Load(object sender, EventArgs e)
         {
             this.dataNavigator1.Visible = this.showNavigator;
-            if (!this.DesignMode)
+
+            if (!ControlUtil.IsInDesignMode())
             {
                 ControlUtil.BindDictToComboBox(this.repoCmbFeeType, typeof(WaterExpense), "FeeType");
             }

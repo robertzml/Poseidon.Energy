@@ -349,11 +349,15 @@
             // 
             // frGrid
             // 
+            this.frGrid.AllowFilter = true;
+            this.frGrid.AllowGroup = true;
+            this.frGrid.AllowSort = true;
             this.frGrid.DataSource = null;
             this.frGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.frGrid.Editable = false;
             this.frGrid.Location = new System.Drawing.Point(2, 21);
             this.frGrid.Name = "frGrid";
+            this.frGrid.ShowAddMenu = false;
             this.frGrid.ShowFooter = true;
             this.frGrid.ShowLineNumber = true;
             this.frGrid.Size = new System.Drawing.Size(672, 310);
