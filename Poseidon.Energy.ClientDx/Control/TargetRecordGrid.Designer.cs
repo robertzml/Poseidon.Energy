@@ -34,8 +34,8 @@
             this.colFinance = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalQuantum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalAmount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCreateTime = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colUpdateTime = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCreateBy = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUpdateBy = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,10 +58,11 @@
             this.colFinance,
             this.colTotalQuantum,
             this.colTotalAmount,
-            this.colCreateTime,
-            this.colUpdateTime,
+            this.colCreateBy,
+            this.colUpdateBy,
             this.colRemark,
             this.colStatus});
+            this.dgvEntity.IndicatorWidth = 40;
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.Editable = false;
@@ -112,19 +113,19 @@
             this.colTotalAmount.Visible = true;
             this.colTotalAmount.VisibleIndex = 6;
             // 
-            // colCreateTime
+            // colCreateBy
             // 
-            this.colCreateTime.FieldName = "CreateTime";
-            this.colCreateTime.Name = "colCreateTime";
-            this.colCreateTime.Visible = true;
-            this.colCreateTime.VisibleIndex = 7;
+            this.colCreateBy.FieldName = "CreateBy";
+            this.colCreateBy.Name = "colCreateBy";
+            this.colCreateBy.Visible = true;
+            this.colCreateBy.VisibleIndex = 7;
             // 
-            // colUpdateTime
+            // colUpdateBy
             // 
-            this.colUpdateTime.FieldName = "UpdateTime";
-            this.colUpdateTime.Name = "colUpdateTime";
-            this.colUpdateTime.Visible = true;
-            this.colUpdateTime.VisibleIndex = 8;
+            this.colUpdateBy.FieldName = "UpdateBy";
+            this.colUpdateBy.Name = "colUpdateBy";
+            this.colUpdateBy.Visible = true;
+            this.colUpdateBy.VisibleIndex = 8;
             // 
             // colRemark
             // 
@@ -169,8 +170,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colFinance;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalQuantum;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalAmount;
-        private DevExpress.XtraGrid.Columns.GridColumn colCreateTime;
-        private DevExpress.XtraGrid.Columns.GridColumn colUpdateTime;
+        private DevExpress.XtraGrid.Columns.GridColumn colCreateBy;
+        private DevExpress.XtraGrid.Columns.GridColumn colUpdateBy;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
     }

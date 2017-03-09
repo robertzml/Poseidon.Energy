@@ -19,7 +19,7 @@ namespace Poseidon.Energy.ClientDx
     /// <summary>
     /// 支出账户管理窗体
     /// </summary>
-    public partial class frmExpenseAccount : BaseMdiForm
+    public partial class FrmExpenseAccount : BaseMdiForm
     {
         #region Field
         /// <summary>
@@ -29,7 +29,7 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Field
 
         #region Constructor
-        public frmExpenseAccount()
+        public FrmExpenseAccount()
         {
             InitializeComponent();
         }

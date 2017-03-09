@@ -376,11 +376,15 @@
             // 
             // prGrid
             // 
+            this.prGrid.AllowFilter = true;
+            this.prGrid.AllowGroup = true;
+            this.prGrid.AllowSort = true;
             this.prGrid.DataSource = null;
             this.prGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.prGrid.Editable = false;
             this.prGrid.Location = new System.Drawing.Point(2, 21);
             this.prGrid.Name = "prGrid";
+            this.prGrid.ShowAddMenu = false;
             this.prGrid.ShowFooter = true;
             this.prGrid.ShowLineNumber = true;
             this.prGrid.Size = new System.Drawing.Size(722, 334);

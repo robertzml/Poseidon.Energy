@@ -159,6 +159,12 @@
     <Compile Include="Expense\FrmExpenseWaterEdit.Designer.cs">
       <DependentUpon>FrmExpenseWaterEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Expense\FrmExpenseReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expense\FrmExpenseReceipt.Designer.cs">
+      <DependentUpon>FrmExpenseReceipt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -346,6 +352,9 @@
     <EmbeddedResource Include="Expense\FrmExpenseOverview.resx">
       <DependentUpon>FrmExpenseOverview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Expense\FrmExpenseReceipt.resx">
+      <DependentUpon>FrmExpenseReceipt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Expense\FrmExpenseWaterAdd.resx">
       <DependentUpon>FrmExpenseWaterAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -395,7 +404,6 @@
     <EmbeddedResource Include="Target\FrmTargetSelectDepartment.resx">
       <DependentUpon>FrmTargetSelectDepartment.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.AllowanceTarget.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Department.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.ExpenseAccount.datasource" />

@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Energy.ClientDx
 {
-    partial class frmExpenseAccount
+    partial class FrmExpenseAccount
     {
         /// <summary>
         /// Required designer variable.

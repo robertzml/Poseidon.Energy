@@ -40,6 +40,7 @@
             this.menuExpense = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExpenseOverview = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExpenseAccount = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuExpenseReceipt = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,6 +120,7 @@
             // 
             this.menuExpense.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuExpenseOverview,
+            this.menuExpenseReceipt,
             this.menuExpenseAccount});
             this.menuExpense.Name = "menuExpense";
             this.menuExpense.Size = new System.Drawing.Size(68, 21);
@@ -137,6 +139,13 @@
             this.menuExpenseAccount.Size = new System.Drawing.Size(152, 22);
             this.menuExpenseAccount.Text = "账户管理";
             this.menuExpenseAccount.Click += new System.EventHandler(this.menuExpenseAccount_Click);
+            // 
+            // menuExpenseReceipt
+            // 
+            this.menuExpenseReceipt.Name = "menuExpenseReceipt";
+            this.menuExpenseReceipt.Size = new System.Drawing.Size(152, 22);
+            this.menuExpenseReceipt.Text = "支出单据";
+            this.menuExpenseReceipt.Click += new System.EventHandler(this.menuExpenseReceipt_Click);
             // 
             // MainForm
             // 
@@ -170,6 +179,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuExpense;
         private System.Windows.Forms.ToolStripMenuItem menuExpenseOverview;
         private System.Windows.Forms.ToolStripMenuItem menuExpenseAccount;
+        private System.Windows.Forms.ToolStripMenuItem menuExpenseReceipt;
     }
 }
 
