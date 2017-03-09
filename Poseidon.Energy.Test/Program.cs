@@ -21,6 +21,8 @@ namespace Poseidon.Energy.Test
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            GlobalAction.Initialize();
+
             var user = BusinessFactory<UserBusiness>.Instance.FindByUserName("admin");
             GlobalAction.CurrentUser = GlobalAction.ConvertToLoginUser(user);
             Cache.Instance.Add("CurrentUser", GlobalAction.CurrentUser); //缓存用户信息
