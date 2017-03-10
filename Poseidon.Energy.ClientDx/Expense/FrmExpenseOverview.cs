@@ -56,21 +56,16 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void LoadBaseInfo()
         {
-            this.txtName.Text = this.currentAccount.Name;
-            this.txtShortName.Text = this.currentAccount.ShortName;
-            this.txtRemark.Text = this.currentAccount.Remark;
-
             if (this.currentAccount.EnergyType.Contains(1))
-                this.chkType1.Checked = true;
+            { }
             if (this.currentAccount.EnergyType.Contains(2))
             {
-                this.chkType2.Checked = true;
                 LoadWater();
             }
             if (this.currentAccount.EnergyType.Contains(3))
-                this.chkType3.Checked = true;
+            { }
             if (this.currentAccount.EnergyType.Contains(4))
-                this.chkType4.Checked = true;
+            { }
         }
 
         /// <summary>

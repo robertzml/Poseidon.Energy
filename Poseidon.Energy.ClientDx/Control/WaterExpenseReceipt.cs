@@ -28,6 +28,11 @@ namespace Poseidon.Energy.ClientDx
         /// 当前关联账户
         /// </summary>
         private ExpenseAccount currentAccount;
+
+        /// <summary>
+        /// 是否能编辑
+        /// </summary>
+        private bool editable;
         #endregion //Field
 
         #region Constructor
@@ -94,6 +99,9 @@ namespace Poseidon.Energy.ClientDx
             {
                 this.lbWaterReceipt.DrawItem += EventUtil.lbMonth_DrawItem;
             }
+
+            if (!this.editable)
+                this.lcGroupAction.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
         }
 
         /// <summary>
@@ -166,5 +174,23 @@ namespace Poseidon.Energy.ClientDx
             }
         }
         #endregion //Event
+
+        #region Property
+        /// <summary>
+        /// 是否能编辑
+        /// </summary>
+        [Description("是否能编辑")]
+        public bool Editable
+        {
+            get
+            {
+                return this.editable;
+            }
+            set
+            {
+                this.editable = value;
+            }
+        }
+        #endregion //Property
     }
 }

@@ -117,6 +117,12 @@
     <Compile Include="Control\ExpenseAccountTree.Designer.cs">
       <DependentUpon>ExpenseAccountTree.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\ExpenseAccountInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ExpenseAccountInfo.Designer.cs">
+      <DependentUpon>ExpenseAccountInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Expense\FrmExpenseOverview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,6 +315,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Control\AllowanceTargetGrid.resx">
       <DependentUpon>AllowanceTargetGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\ExpenseAccountInfo.resx">
+      <DependentUpon>ExpenseAccountInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\ExpenseAccountTree.resx">
       <DependentUpon>ExpenseAccountTree.cs</DependentUpon>
