@@ -16,9 +16,9 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 支出水表设置窗体
+    /// 设置电表窗体
     /// </summary>
-    public partial class FrmExpenseWaterMeterSet : BaseSingleForm
+    public partial class FrmExpenseElectricMeterSet : BaseSingleForm
     {
         #region Field
         /// <summary>
@@ -28,11 +28,11 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Field
 
         #region Constructor
-        public FrmExpenseWaterMeterSet(string accountId)
+        public FrmExpenseElectricMeterSet(string id)
         {
             InitializeComponent();
 
-            InitData(accountId);
+            InitData(id);
         }
         #endregion //Constructor
 
@@ -45,7 +45,7 @@ namespace Poseidon.Energy.ClientDx
         protected override void InitForm()
         {
             this.txtName.Text = this.currentAccount.Name;
-            this.waterGrid.DataSource = this.currentAccount.WaterMeters;
+            this.electricGrid.DataSource = this.currentAccount.ElectricMeters;
 
             base.InitForm();
         }
@@ -58,7 +58,7 @@ namespace Poseidon.Energy.ClientDx
         {
             string errorMessage = "";
 
-            foreach (var item in this.waterGrid.DataSource)
+            foreach (var item in this.electricGrid.DataSource)
             {
                 if (string.IsNullOrEmpty(item.Name))
                 {
@@ -74,11 +74,12 @@ namespace Poseidon.Energy.ClientDx
         /// 设置对象
         /// </summary>
         /// <param name="entity"></param>
-        private void SetEntity(List<WaterMeter> entity)
+        private void SetEntity(List<ElectricMeter> entity)
         {
             foreach (var item in entity)
             {
                 item.AccountName = item.AccountName ?? "";
+                item.SectionNumber = item.SectionNumber ?? "";
                 item.Number = item.Number ?? "";
                 item.Address = item.Address ?? "";
                 item.Remark = item.Remark ?? "";
@@ -94,7 +95,7 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            this.waterGrid.CloseEditor();
+            this.electricGrid.CloseEditor();
 
             var input = CheckInput();
             if (!input.Item1)
@@ -103,12 +104,12 @@ namespace Poseidon.Energy.ClientDx
                 return;
             }
 
-            var data = this.waterGrid.DataSource;
+            var data = this.electricGrid.DataSource;
             SetEntity(data);
 
             try
             {
-                BusinessFactory<ExpenseAccountBusiness>.Instance.Update(this.currentAccount);
+                BusinessFactory<ExpenseAccountBusiness>.Instance.SetElectricMeters(this.currentAccount.Id, data);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

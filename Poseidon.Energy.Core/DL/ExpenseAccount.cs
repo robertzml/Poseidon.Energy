@@ -28,6 +28,12 @@ namespace Poseidon.Energy.Core.DL
         public List<int> EnergyType { get; set; }
 
         /// <summary>
+        /// 包含电表
+        /// </summary>
+        [Display(Name = "包含电表")]
+        public List<ElectricMeter> ElectricMeters { get; set; }
+
+        /// <summary>
         /// 包含水表
         /// </summary>
         [Display(Name = "包含水表")]

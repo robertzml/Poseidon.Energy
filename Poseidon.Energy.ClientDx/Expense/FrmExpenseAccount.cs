@@ -93,6 +93,20 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
+        /// 设置电表
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSetEletric_Click(object sender, EventArgs e)
+        {
+            if (this.currentAccount == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmExpenseElectricMeterSet), new object[] { this.currentAccount.Id });
+            LoadAccount();
+        }
+
+        /// <summary>
         /// 设置水表
         /// </summary>
         /// <param name="sender"></param>

@@ -9,15 +9,21 @@ namespace Poseidon.Energy.Core.DL
     using Poseidon.Base.Framework;
 
     /// <summary>
-    /// 水表类
+    /// 电表类
     /// </summary>
-    public class WaterMeter : ObjectEntity
+    public class ElectricMeter : ObjectEntity
     {
         #region Property
         /// <summary>
-        /// 客户编号
+        /// 段户号
         /// </summary>
-        [Display(Name = "客户编号")]
+        [Display(Name = "段户号")]
+        public string SectionNumber { get; set; }
+
+        /// <summary>
+        /// 总户号
+        /// </summary>
+        [Display(Name = "总户号")]
         public string Number { get; set; }
 
         /// <summary>
@@ -31,6 +37,12 @@ namespace Poseidon.Energy.Core.DL
         /// </summary>
         [Display(Name = "地址")]
         public string Address { get; set; }
+
+        /// <summary>
+        /// 倍率
+        /// </summary>
+        [Display(Name = "倍率")]
+        public decimal Multiple { get; set; }
         #endregion //Property
     }
 }

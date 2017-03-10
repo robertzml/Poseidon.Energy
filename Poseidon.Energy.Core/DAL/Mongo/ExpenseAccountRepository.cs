@@ -63,6 +63,24 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 }
             }
 
+            entity.ElectricMeters = new List<ElectricMeter>();
+            if (doc.Contains("electricMeters"))
+            {
+                BsonArray array = doc["electricMeters"].AsBsonArray;
+                foreach (BsonDocument item in array)
+                {
+                    ElectricMeter meter = new ElectricMeter();
+                    meter.Name = item["name"].ToString();
+                    meter.Number = item["number"].ToString();
+                    meter.SectionNumber = item["sectionNumber"].ToString();
+                    meter.AccountName = item["accountName"].ToString();
+                    meter.Address = item["address"].ToString();
+                    meter.Multiple = item["multiple"].ToDecimal();
+                    meter.Remark = item["remark"].ToString();
+                    meter.Status = item["status"].ToInt32();
+                }
+            }
+
             entity.WaterMeters = new List<WaterMeter>();
             if (doc.Contains("waterMeters"))
             {
@@ -112,6 +130,28 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 }
 
                 doc.Add("energyType", array);
+            }
+
+            if (entity.ElectricMeters != null && entity.ElectricMeters.Count > 0)
+            {
+                BsonArray array = new BsonArray();
+                foreach (var item in entity.ElectricMeters)
+                {
+                    BsonDocument sub = new BsonDocument
+                    {
+                        { "name", item.Name },
+                        { "number", item.Number },
+                        { "sectionNumber", item.SectionNumber },
+                        { "accountName", item.AccountName },
+                        { "address", item.Address },
+                        { "multiple", item.Multiple },
+                        { "remark", item.Remark },
+                        { "status", item.Status }
+                    };
+                    array.Add(sub);
+                }
+
+                doc.Add("electricMeters", array);
             }
 
             if (entity.WaterMeters != null && entity.WaterMeters.Count > 0)

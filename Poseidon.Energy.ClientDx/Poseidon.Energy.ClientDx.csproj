@@ -123,6 +123,12 @@
     <Compile Include="Control\ExpenseAccountInfo.Designer.cs">
       <DependentUpon>ExpenseAccountInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\ElectricMeterGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ElectricMeterGrid.Designer.cs">
+      <DependentUpon>ElectricMeterGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Expense\FrmExpenseOverview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,12 @@
     </Compile>
     <Compile Include="Expense\FrmExpenseReceipt.Designer.cs">
       <DependentUpon>FrmExpenseReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\FrmExpenseElectricMeterSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expense\FrmExpenseElectricMeterSet.Designer.cs">
+      <DependentUpon>FrmExpenseElectricMeterSet.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -316,6 +328,9 @@
     <EmbeddedResource Include="Control\AllowanceTargetGrid.resx">
       <DependentUpon>AllowanceTargetGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\ElectricMeterGrid.resx">
+      <DependentUpon>ElectricMeterGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\ExpenseAccountInfo.resx">
       <DependentUpon>ExpenseAccountInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -357,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Expense\FrmExpenseAccountEdit.resx">
       <DependentUpon>FrmExpenseAccountEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expense\FrmExpenseElectricMeterSet.resx">
+      <DependentUpon>FrmExpenseElectricMeterSet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Expense\FrmExpenseOverview.resx">
       <DependentUpon>FrmExpenseOverview.cs</DependentUpon>
@@ -416,6 +434,7 @@
     <None Include="app.config" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.AllowanceTarget.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Department.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.ElectricMeter.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.ExpenseAccount.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Fund.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.FundRecord.datasource" />

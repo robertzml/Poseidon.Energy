@@ -13,9 +13,9 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 水表表格控件
+    /// 电表表格控件
     /// </summary>
-    public partial class WaterMeterGrid : WinEntityGrid<WaterMeter>
+    public partial class ElectricMeterGrid : WinEntityGrid<ElectricMeter>
     {
         #region Field
         /// <summary>
@@ -25,14 +25,14 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Field
 
         #region Constructor
-        public WaterMeterGrid()
+        public ElectricMeterGrid()
         {
             InitializeComponent();
         }
         #endregion //Constructor
 
         #region Event
-        private void WaterMeterGrid_Load(object sender, EventArgs e)
+        private void ElectricMeterGrid_Load(object sender, EventArgs e)
         {
             this.dataNavigator1.Visible = this.showNavigator;
         }

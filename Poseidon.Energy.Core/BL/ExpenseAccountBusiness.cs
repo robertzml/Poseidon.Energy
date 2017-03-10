@@ -27,6 +27,18 @@ namespace Poseidon.Energy.Core.BL
 
         #region Method
         /// <summary>
+        /// 设置电表
+        /// </summary>
+        /// <param name="id">账户ID</param>
+        /// <param name="meters">电表列表</param>
+        public void SetElectricMeters(string id, List<ElectricMeter> meters)
+        {
+            var entity = this.baseDal.FindById(id);
+            entity.ElectricMeters = meters;
+            this.baseDal.Update(entity);
+        }
+
+        /// <summary>
         /// 设置水表
         /// </summary>
         /// <param name="entity">实体对象</param>

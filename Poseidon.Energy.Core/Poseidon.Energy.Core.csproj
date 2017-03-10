@@ -86,6 +86,7 @@
     <Compile Include="DAL\Mongo\TargetRepository.cs" />
     <Compile Include="DAL\Mongo\WaterExpenseRepository.cs" />
     <Compile Include="DL\AllowanceTarget.cs" />
+    <Compile Include="DL\ElectricMeter.cs" />
     <Compile Include="DL\WaterExpense.cs" />
     <Compile Include="DL\WaterMeter.cs" />
     <Compile Include="DL\Department.cs" />
