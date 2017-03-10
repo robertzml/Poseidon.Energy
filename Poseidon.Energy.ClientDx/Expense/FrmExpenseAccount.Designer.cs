@@ -50,10 +50,11 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.wmGrid = new Poseidon.Energy.ClientDx.WaterMeterGrid();
-            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.waterGrid = new Poseidon.Energy.ClientDx.WaterMeterGrid();
+            this.tabMeters = new DevExpress.XtraTab.XtraTabControl();
+            this.tabPageElectric = new DevExpress.XtraTab.XtraTabPage();
+            this.tabPageWater = new DevExpress.XtraTab.XtraTabPage();
+            this.electricGrid = new Poseidon.Energy.ClientDx.ElectricMeterGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -74,10 +75,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
-            this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabMeters)).BeginInit();
+            this.tabMeters.SuspendLayout();
+            this.tabPageElectric.SuspendLayout();
+            this.tabPageWater.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -288,7 +289,7 @@
             // 
             // groupControl3
             // 
-            this.groupControl3.Controls.Add(this.layoutControl2);
+            this.groupControl3.Controls.Add(this.tabMeters);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(203, 203);
             this.groupControl3.Name = "groupControl3";
@@ -296,52 +297,65 @@
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "表具信息";
             // 
-            // layoutControl2
+            // waterGrid
             // 
-            this.layoutControl2.Controls.Add(this.wmGrid);
-            this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl2.Location = new System.Drawing.Point(2, 21);
-            this.layoutControl2.Name = "layoutControl2";
-            this.layoutControl2.Root = this.layoutControlGroup3;
-            this.layoutControl2.Size = new System.Drawing.Size(624, 276);
-            this.layoutControl2.TabIndex = 0;
-            this.layoutControl2.Text = "layoutControl2";
+            this.waterGrid.AllowFilter = true;
+            this.waterGrid.AllowGroup = true;
+            this.waterGrid.AllowSort = true;
+            this.waterGrid.DataSource = null;
+            this.waterGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.waterGrid.Editable = false;
+            this.waterGrid.Location = new System.Drawing.Point(0, 0);
+            this.waterGrid.Name = "waterGrid";
+            this.waterGrid.ShowAddMenu = false;
+            this.waterGrid.ShowFooter = false;
+            this.waterGrid.ShowLineNumber = true;
+            this.waterGrid.ShowNavigator = false;
+            this.waterGrid.Size = new System.Drawing.Size(618, 247);
+            this.waterGrid.TabIndex = 4;
             // 
-            // wmGrid
+            // tabMeters
             // 
-            this.wmGrid.AllowFilter = true;
-            this.wmGrid.AllowGroup = true;
-            this.wmGrid.AllowSort = true;
-            this.wmGrid.DataSource = null;
-            this.wmGrid.Editable = false;
-            this.wmGrid.Location = new System.Drawing.Point(12, 12);
-            this.wmGrid.Name = "wmGrid";
-            this.wmGrid.ShowAddMenu = false;
-            this.wmGrid.ShowFooter = false;
-            this.wmGrid.ShowLineNumber = true;
-            this.wmGrid.ShowNavigator = false;
-            this.wmGrid.Size = new System.Drawing.Size(600, 252);
-            this.wmGrid.TabIndex = 4;
+            this.tabMeters.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabMeters.Location = new System.Drawing.Point(2, 21);
+            this.tabMeters.Name = "tabMeters";
+            this.tabMeters.SelectedTabPage = this.tabPageElectric;
+            this.tabMeters.Size = new System.Drawing.Size(624, 276);
+            this.tabMeters.TabIndex = 1;
+            this.tabMeters.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabPageElectric,
+            this.tabPageWater});
             // 
-            // layoutControlGroup3
+            // tabPageElectric
             // 
-            this.layoutControlGroup3.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup3.GroupBordersVisible = false;
-            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem6});
-            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(624, 276);
-            this.layoutControlGroup3.TextVisible = false;
+            this.tabPageElectric.Controls.Add(this.electricGrid);
+            this.tabPageElectric.Name = "tabPageElectric";
+            this.tabPageElectric.Size = new System.Drawing.Size(618, 247);
+            this.tabPageElectric.Text = "电表";
             // 
-            // layoutControlItem6
+            // tabPageWater
             // 
-            this.layoutControlItem6.Control = this.wmGrid;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(604, 256);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
+            this.tabPageWater.Controls.Add(this.waterGrid);
+            this.tabPageWater.Name = "tabPageWater";
+            this.tabPageWater.Size = new System.Drawing.Size(618, 247);
+            this.tabPageWater.Text = "水表";
+            // 
+            // electricGrid
+            // 
+            this.electricGrid.AllowFilter = false;
+            this.electricGrid.AllowGroup = false;
+            this.electricGrid.AllowSort = false;
+            this.electricGrid.DataSource = null;
+            this.electricGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.electricGrid.Editable = false;
+            this.electricGrid.Location = new System.Drawing.Point(0, 0);
+            this.electricGrid.Name = "electricGrid";
+            this.electricGrid.ShowAddMenu = false;
+            this.electricGrid.ShowFooter = false;
+            this.electricGrid.ShowLineNumber = true;
+            this.electricGrid.ShowNavigator = false;
+            this.electricGrid.Size = new System.Drawing.Size(618, 247);
+            this.electricGrid.TabIndex = 0;
             // 
             // FrmExpenseAccount
             // 
@@ -371,10 +385,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
-            this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabMeters)).EndInit();
+            this.tabMeters.ResumeLayout(false);
+            this.tabPageElectric.ResumeLayout(false);
+            this.tabPageWater.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -398,13 +412,14 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.SimpleButton btnSetWater;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.LayoutControl layoutControl2;
-        private WaterMeterGrid wmGrid;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private WaterMeterGrid waterGrid;
         private DevExpress.XtraEditors.ListBoxControl lbAccount;
         private System.Windows.Forms.BindingSource bsAccount;
         private DevExpress.XtraEditors.SimpleButton btnSetEletric;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraTab.XtraTabControl tabMeters;
+        private DevExpress.XtraTab.XtraTabPage tabPageElectric;
+        private DevExpress.XtraTab.XtraTabPage tabPageWater;
+        private ElectricMeterGrid electricGrid;
     }
 }

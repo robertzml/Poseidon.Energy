@@ -63,7 +63,8 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             this.currentAccount = this.lbAccount.SelectedItem as ExpenseAccount;
-            this.wmGrid.DataSource = this.currentAccount.WaterMeters;
+            this.electricGrid.DataSource = this.currentAccount.ElectricMeters;
+            this.waterGrid.DataSource = this.currentAccount.WaterMeters;
             this.txtName.Text = this.currentAccount.Name;
         }
 

@@ -9,9 +9,9 @@ namespace Poseidon.Energy.Core.IDAL
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 水费支出票据数据访问接口
+    /// 电费支出票据数据访问接口
     /// </summary>
-    internal interface IWaterExpenseRepository : IBaseDAL<WaterExpense>
+    internal interface IElectricExpenseRepository : IBaseDAL<ElectricExpense>
     {
     }
 }

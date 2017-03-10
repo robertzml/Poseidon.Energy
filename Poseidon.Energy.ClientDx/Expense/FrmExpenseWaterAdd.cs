@@ -16,7 +16,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 添加水费支出窗体
+    /// 登记水费支出窗体
     /// </summary>
     public partial class FrmExpenseWaterAdd : BaseSingleForm
     {
@@ -47,6 +47,7 @@ namespace Poseidon.Energy.ClientDx
             this.txtAccountName.Text = this.currentAccount.Name;
             this.dpTicketDate.DateTime = DateTime.Now;
             ControlUtil.BindDictToComboBox(this.cmbFeeType, typeof(WaterExpense), "FeeType");
+            this.cmbFeeType.SelectedIndex = 0;
 
             InitRecords();
 

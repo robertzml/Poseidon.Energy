@@ -226,7 +226,7 @@
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(878, 194);
             this.groupControl2.TabIndex = 2;
-            this.groupControl2.Text = "支出记录";
+            this.groupControl2.Text = "支出明细";
             // 
             // expenseGrid
             // 

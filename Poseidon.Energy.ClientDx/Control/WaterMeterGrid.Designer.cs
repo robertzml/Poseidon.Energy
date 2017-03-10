@@ -69,6 +69,7 @@
             // 
             // colNumber
             // 
+            this.colNumber.Caption = "客户编号";
             this.colNumber.FieldName = "Number";
             this.colNumber.Name = "colNumber";
             this.colNumber.Visible = true;
@@ -76,6 +77,7 @@
             // 
             // colAccountName
             // 
+            this.colAccountName.Caption = "户名";
             this.colAccountName.FieldName = "AccountName";
             this.colAccountName.Name = "colAccountName";
             this.colAccountName.Visible = true;
@@ -83,6 +85,7 @@
             // 
             // colAddress
             // 
+            this.colAddress.Caption = "地址";
             this.colAddress.FieldName = "Address";
             this.colAddress.Name = "colAddress";
             this.colAddress.Visible = true;
@@ -90,6 +93,7 @@
             // 
             // colName
             // 
+            this.colName.Caption = "名称";
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
             this.colName.Visible = true;
@@ -97,6 +101,7 @@
             // 
             // colRemark
             // 
+            this.colRemark.Caption = "备注";
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
@@ -104,6 +109,7 @@
             // 
             // colStatus
             // 
+            this.colStatus.Caption = "状态";
             this.colStatus.FieldName = "Status";
             this.colStatus.Name = "colStatus";
             this.colStatus.OptionsColumn.AllowEdit = false;

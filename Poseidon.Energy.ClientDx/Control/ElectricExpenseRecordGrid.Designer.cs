@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Energy.ClientDx
 {
-    partial class WaterExpenseRecordGrid
+    partial class ElectricExpenseRecordGrid
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -32,30 +32,27 @@
             this.colMeterNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMeterName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFeeType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repoCmbFeeType = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.colPrevious = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCurrent = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMultiple = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPrize = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCalQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCalcAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCalcQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repoCmbFeeType)).BeginInit();
             this.SuspendLayout();
             // 
             // bsEntity
             // 
-            this.bsEntity.DataSource = typeof(Poseidon.Energy.Core.DL.WaterExpenseRecord);
+            this.bsEntity.DataSource = typeof(Poseidon.Energy.Core.DL.ElectricExpenseRecord);
             // 
             // dgcEntity
             // 
-            this.dgcEntity.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repoCmbFeeType});
-            this.dgcEntity.Size = new System.Drawing.Size(668, 354);
+            this.dgcEntity.Size = new System.Drawing.Size(568, 354);
             // 
             // dgvEntity
             // 
@@ -65,11 +62,12 @@
             this.colFeeType,
             this.colPrevious,
             this.colCurrent,
-            this.colCalQuantity,
+            this.colMultiple,
+            this.colCalcQuantity,
             this.colQuantity,
             this.colUnitPrice,
-            this.colCalcAmount,
             this.colAmount,
+            this.colPrize,
             this.colRemark});
             this.dgvEntity.IndicatorWidth = 40;
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -85,7 +83,7 @@
             this.dataNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataNavigator1.Location = new System.Drawing.Point(0, 354);
             this.dataNavigator1.Name = "dataNavigator1";
-            this.dataNavigator1.Size = new System.Drawing.Size(668, 24);
+            this.dataNavigator1.Size = new System.Drawing.Size(568, 24);
             this.dataNavigator1.TabIndex = 1;
             this.dataNavigator1.Text = "dataNavigator1";
             this.dataNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
@@ -93,7 +91,6 @@
             // 
             // colMeterNumber
             // 
-            this.colMeterNumber.Caption = "水表编号";
             this.colMeterNumber.FieldName = "MeterNumber";
             this.colMeterNumber.Name = "colMeterNumber";
             this.colMeterNumber.Visible = true;
@@ -101,7 +98,6 @@
             // 
             // colMeterName
             // 
-            this.colMeterName.Caption = "水表名称";
             this.colMeterName.FieldName = "MeterName";
             this.colMeterName.Name = "colMeterName";
             this.colMeterName.Visible = true;
@@ -109,23 +105,13 @@
             // 
             // colFeeType
             // 
-            this.colFeeType.Caption = "费用类型";
-            this.colFeeType.ColumnEdit = this.repoCmbFeeType;
             this.colFeeType.FieldName = "FeeType";
             this.colFeeType.Name = "colFeeType";
             this.colFeeType.Visible = true;
             this.colFeeType.VisibleIndex = 2;
             // 
-            // repoCmbFeeType
-            // 
-            this.repoCmbFeeType.AutoHeight = false;
-            this.repoCmbFeeType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repoCmbFeeType.Name = "repoCmbFeeType";
-            // 
             // colPrevious
             // 
-            this.colPrevious.Caption = "上期数";
             this.colPrevious.FieldName = "Previous";
             this.colPrevious.Name = "colPrevious";
             this.colPrevious.Visible = true;
@@ -133,84 +119,75 @@
             // 
             // colCurrent
             // 
-            this.colCurrent.Caption = "本期数";
             this.colCurrent.FieldName = "Current";
             this.colCurrent.Name = "colCurrent";
             this.colCurrent.Visible = true;
             this.colCurrent.VisibleIndex = 4;
             // 
+            // colMultiple
+            // 
+            this.colMultiple.FieldName = "Multiple";
+            this.colMultiple.Name = "colMultiple";
+            this.colMultiple.Visible = true;
+            this.colMultiple.VisibleIndex = 5;
+            // 
             // colQuantity
             // 
-            this.colQuantity.Caption = "用量(吨)";
             this.colQuantity.FieldName = "Quantity";
             this.colQuantity.Name = "colQuantity";
-            this.colQuantity.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantity", "合计={0:0.##}")});
             this.colQuantity.Visible = true;
-            this.colQuantity.VisibleIndex = 6;
+            this.colQuantity.VisibleIndex = 7;
             // 
             // colUnitPrice
             // 
-            this.colUnitPrice.Caption = "单价";
             this.colUnitPrice.FieldName = "UnitPrice";
             this.colUnitPrice.Name = "colUnitPrice";
             this.colUnitPrice.Visible = true;
-            this.colUnitPrice.VisibleIndex = 7;
+            this.colUnitPrice.VisibleIndex = 8;
             // 
             // colAmount
             // 
-            this.colAmount.Caption = "金额(元)";
             this.colAmount.FieldName = "Amount";
             this.colAmount.Name = "colAmount";
-            this.colAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "合计={0:0.##}")});
             this.colAmount.Visible = true;
             this.colAmount.VisibleIndex = 9;
             // 
+            // colPrize
+            // 
+            this.colPrize.FieldName = "Prize";
+            this.colPrize.Name = "colPrize";
+            this.colPrize.Visible = true;
+            this.colPrize.VisibleIndex = 10;
+            // 
             // colRemark
             // 
-            this.colRemark.Caption = "备注";
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 10;
+            this.colRemark.VisibleIndex = 11;
             // 
-            // colCalQuantity
+            // colCalcQuantity
             // 
-            this.colCalQuantity.Caption = "计算用量";
-            this.colCalQuantity.FieldName = "colCalQuantity";
-            this.colCalQuantity.Name = "colCalQuantity";
-            this.colCalQuantity.OptionsColumn.AllowEdit = false;
-            this.colCalQuantity.UnboundExpression = "[Current] - [Previous]";
-            this.colCalQuantity.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.colCalQuantity.Visible = true;
-            this.colCalQuantity.VisibleIndex = 5;
+            this.colCalcQuantity.Caption = "计算用量";
+            this.colCalcQuantity.FieldName = "colCalcQuantity";
+            this.colCalcQuantity.Name = "colCalcQuantity";
+            this.colCalcQuantity.UnboundExpression = "([Current] - [Previous]) * [Multiple]";
+            this.colCalcQuantity.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.colCalcQuantity.Visible = true;
+            this.colCalcQuantity.VisibleIndex = 6;
             // 
-            // colCalcAmount
-            // 
-            this.colCalcAmount.Caption = "计算金额";
-            this.colCalcAmount.FieldName = "colCalcAmount";
-            this.colCalcAmount.Name = "colCalcAmount";
-            this.colCalcAmount.OptionsColumn.AllowEdit = false;
-            this.colCalcAmount.UnboundExpression = "[colCalQuantity] * [UnitPrice]";
-            this.colCalcAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.colCalcAmount.Visible = true;
-            this.colCalcAmount.VisibleIndex = 8;
-            // 
-            // WaterExpenseRecordGrid
+            // ElectricExpenseRecordGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataNavigator1);
-            this.Name = "WaterExpenseRecordGrid";
-            this.Size = new System.Drawing.Size(668, 378);
-            this.Load += new System.EventHandler(this.WaterExpenseRecordGrid_Load);
+            this.Name = "ElectricExpenseRecordGrid";
+            this.Load += new System.EventHandler(this.ElectricExpenseRecordGrid_Load);
             this.Controls.SetChildIndex(this.dataNavigator1, 0);
             this.Controls.SetChildIndex(this.dgcEntity, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repoCmbFeeType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -222,12 +199,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn colFeeType;
         private DevExpress.XtraGrid.Columns.GridColumn colPrevious;
         private DevExpress.XtraGrid.Columns.GridColumn colCurrent;
+        private DevExpress.XtraGrid.Columns.GridColumn colMultiple;
+        private DevExpress.XtraGrid.Columns.GridColumn colCalcQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn colUnitPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn colPrize;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
-        private DevExpress.XtraGrid.Columns.GridColumn colCalQuantity;
-        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repoCmbFeeType;
-        private DevExpress.XtraGrid.Columns.GridColumn colCalcAmount;
     }
 }

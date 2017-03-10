@@ -31,6 +31,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.cmbFeeType = new DevExpress.XtraEditors.ImageComboBoxEdit();
             this.btnSum = new DevExpress.XtraEditors.SimpleButton();
             this.spTotalAmount = new DevExpress.XtraEditors.SpinEdit();
             this.spTotalQuantity = new DevExpress.XtraEditors.SpinEdit();
@@ -47,16 +48,15 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.expenseGrid = new Poseidon.Energy.ClientDx.WaterExpenseRecordGrid();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.previousGrid = new Poseidon.Energy.ClientDx.WaterExpenseRecordGrid();
             this.txtPreviousDate = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmbFeeType = new DevExpress.XtraEditors.ImageComboBoxEdit();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.expenseGrid = new Poseidon.Energy.ClientDx.WaterExpenseRecordGrid();
-            this.previousGrid = new Poseidon.Energy.ClientDx.WaterExpenseRecordGrid();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
@@ -67,6 +67,7 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbFeeType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTotalAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTotalQuantity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
@@ -84,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -93,8 +95,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPreviousDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbFeeType.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,6 +165,16 @@
             this.layoutControl1.Size = new System.Drawing.Size(874, 131);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // cmbFeeType
+            // 
+            this.cmbFeeType.Location = new System.Drawing.Point(718, 12);
+            this.cmbFeeType.Name = "cmbFeeType";
+            this.cmbFeeType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbFeeType.Size = new System.Drawing.Size(144, 20);
+            this.cmbFeeType.StyleController = this.layoutControl1;
+            this.cmbFeeType.TabIndex = 12;
             // 
             // btnSum
             // 
@@ -353,6 +363,15 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(449, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.cmbFeeType;
+            this.layoutControlItem11.Location = new System.Drawing.Point(633, 0);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(221, 24);
+            this.layoutControlItem11.Text = "费用类型";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(70, 14);
+            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.expenseGrid);
@@ -361,7 +380,24 @@
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(878, 194);
             this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "支出记录";
+            this.groupControl2.Text = "支出明细";
+            // 
+            // expenseGrid
+            // 
+            this.expenseGrid.AllowFilter = false;
+            this.expenseGrid.AllowGroup = false;
+            this.expenseGrid.AllowSort = false;
+            this.expenseGrid.DataSource = null;
+            this.expenseGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.expenseGrid.Editable = true;
+            this.expenseGrid.Location = new System.Drawing.Point(2, 21);
+            this.expenseGrid.Name = "expenseGrid";
+            this.expenseGrid.ShowAddMenu = false;
+            this.expenseGrid.ShowFooter = true;
+            this.expenseGrid.ShowLineNumber = true;
+            this.expenseGrid.ShowNavigator = true;
+            this.expenseGrid.Size = new System.Drawing.Size(874, 171);
+            this.expenseGrid.TabIndex = 0;
             // 
             // groupControl3
             // 
@@ -384,6 +420,22 @@
             this.layoutControl2.Size = new System.Drawing.Size(874, 146);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
+            // 
+            // previousGrid
+            // 
+            this.previousGrid.AllowFilter = false;
+            this.previousGrid.AllowGroup = false;
+            this.previousGrid.AllowSort = false;
+            this.previousGrid.DataSource = null;
+            this.previousGrid.Editable = false;
+            this.previousGrid.Location = new System.Drawing.Point(12, 36);
+            this.previousGrid.Name = "previousGrid";
+            this.previousGrid.ShowAddMenu = false;
+            this.previousGrid.ShowFooter = false;
+            this.previousGrid.ShowLineNumber = true;
+            this.previousGrid.ShowNavigator = false;
+            this.previousGrid.Size = new System.Drawing.Size(850, 98);
+            this.previousGrid.TabIndex = 5;
             // 
             // txtPreviousDate
             // 
@@ -417,58 +469,6 @@
             this.layoutControlItem9.Text = "上期日期";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // cmbFeeType
-            // 
-            this.cmbFeeType.Location = new System.Drawing.Point(718, 12);
-            this.cmbFeeType.Name = "cmbFeeType";
-            this.cmbFeeType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbFeeType.Size = new System.Drawing.Size(144, 20);
-            this.cmbFeeType.StyleController = this.layoutControl1;
-            this.cmbFeeType.TabIndex = 12;
-            // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.cmbFeeType;
-            this.layoutControlItem11.Location = new System.Drawing.Point(633, 0);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(221, 24);
-            this.layoutControlItem11.Text = "费用类型";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(70, 14);
-            // 
-            // expenseGrid
-            // 
-            this.expenseGrid.AllowFilter = false;
-            this.expenseGrid.AllowGroup = false;
-            this.expenseGrid.AllowSort = false;
-            this.expenseGrid.DataSource = null;
-            this.expenseGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.expenseGrid.Editable = true;
-            this.expenseGrid.Location = new System.Drawing.Point(2, 21);
-            this.expenseGrid.Name = "expenseGrid";
-            this.expenseGrid.ShowAddMenu = false;
-            this.expenseGrid.ShowFooter = true;
-            this.expenseGrid.ShowLineNumber = true;
-            this.expenseGrid.ShowNavigator = true;
-            this.expenseGrid.Size = new System.Drawing.Size(874, 171);
-            this.expenseGrid.TabIndex = 0;
-            // 
-            // previousGrid
-            // 
-            this.previousGrid.AllowFilter = false;
-            this.previousGrid.AllowGroup = false;
-            this.previousGrid.AllowSort = false;
-            this.previousGrid.DataSource = null;
-            this.previousGrid.Editable = false;
-            this.previousGrid.Location = new System.Drawing.Point(12, 36);
-            this.previousGrid.Name = "previousGrid";
-            this.previousGrid.ShowAddMenu = false;
-            this.previousGrid.ShowFooter = false;
-            this.previousGrid.ShowLineNumber = true;
-            this.previousGrid.ShowNavigator = false;
-            this.previousGrid.Size = new System.Drawing.Size(850, 98);
-            this.previousGrid.TabIndex = 5;
-            // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.previousGrid;
@@ -494,6 +494,7 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmbFeeType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTotalAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spTotalQuantity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
@@ -511,6 +512,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
@@ -520,8 +522,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPreviousDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbFeeType.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
 

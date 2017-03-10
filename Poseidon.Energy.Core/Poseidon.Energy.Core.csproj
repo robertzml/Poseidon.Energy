@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\DepartmentBusiness.cs" />
+    <Compile Include="BL\ElectricExpenseBusiness.cs" />
     <Compile Include="BL\FundBusiness.cs" />
     <Compile Include="BL\FundRecordBusiness.cs" />
     <Compile Include="BL\PopulationBusiness.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="BL\TargetRecordBusiness.cs" />
     <Compile Include="BL\WaterExpenseBusiness.cs" />
     <Compile Include="DAL\Mongo\DepartmentRepository.cs" />
+    <Compile Include="DAL\Mongo\ElectricExpenseRepository.cs" />
     <Compile Include="DAL\Mongo\FundRecordRepository.cs" />
     <Compile Include="DAL\Mongo\FundRepository.cs" />
     <Compile Include="DAL\Mongo\PopulationRecordRepository.cs" />
@@ -86,6 +88,7 @@
     <Compile Include="DAL\Mongo\TargetRepository.cs" />
     <Compile Include="DAL\Mongo\WaterExpenseRepository.cs" />
     <Compile Include="DL\AllowanceTarget.cs" />
+    <Compile Include="DL\ElectricExpense.cs" />
     <Compile Include="DL\ElectricMeter.cs" />
     <Compile Include="DL\WaterExpense.cs" />
     <Compile Include="DL\WaterMeter.cs" />
@@ -99,6 +102,7 @@
     <Compile Include="DL\Target.cs" />
     <Compile Include="DL\TargetRecord.cs" />
     <Compile Include="IDAL\IDepartmentRepository.cs" />
+    <Compile Include="IDAL\IElectricExpenseRepository.cs" />
     <Compile Include="IDAL\IFundRecordRepository.cs" />
     <Compile Include="IDAL\IFundRepository.cs" />
     <Compile Include="IDAL\IPopulationRecordRepository.cs" />

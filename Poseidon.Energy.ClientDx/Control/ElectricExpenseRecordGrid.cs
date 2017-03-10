@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Poseidon.Energy.ClientDx
@@ -12,9 +13,9 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 水费支出记录表格控件
+    /// 电费支出记录表格控件
     /// </summary>
-    public partial class WaterExpenseRecordGrid : WinEntityGrid<WaterExpenseRecord>
+    public partial class ElectricExpenseRecordGrid : WinEntityGrid<ElectricExpenseRecord>
     {
         #region Field
         /// <summary>
@@ -24,7 +25,7 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Field
 
         #region Constructor
-        public WaterExpenseRecordGrid()
+        public ElectricExpenseRecordGrid()
         {
             InitializeComponent();
         }
@@ -36,14 +37,9 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void WaterExpenseRecordGrid_Load(object sender, EventArgs e)
+        private void ElectricExpenseRecordGrid_Load(object sender, EventArgs e)
         {
             this.dataNavigator1.Visible = this.showNavigator;
-
-            if (!ControlUtil.IsInDesignMode())
-            {
-                ControlUtil.BindDictToComboBox(this.repoCmbFeeType, typeof(WaterExpenseRecord), "FeeType");
-            }
         }
         #endregion //Event
 

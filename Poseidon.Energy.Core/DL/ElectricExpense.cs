@@ -10,9 +10,9 @@ namespace Poseidon.Energy.Core.DL
     using Poseidon.Base.Utility;
 
     /// <summary>
-    /// 水费支出类
+    /// 电费支出票据类
     /// </summary>
-    public class WaterExpense : BusinessEntity
+    public class ElectricExpense : BusinessEntity
     {
         #region Property
         /// <summary>
@@ -41,9 +41,9 @@ namespace Poseidon.Energy.Core.DL
         public DateTime TicketDate { get; set; }
 
         /// <summary>
-        /// 用水量
+        /// 用电量
         /// </summary>
-        [Display(Name = "用水量")]
+        [Display(Name = "用电量")]
         public decimal TotalQuantity { get; set; }
 
         /// <summary>
@@ -53,29 +53,35 @@ namespace Poseidon.Energy.Core.DL
         public decimal TotalAmount { get; set; }
 
         /// <summary>
+        /// 功率因数奖
+        /// </summary>
+        [Display(Name = "功率因数奖")]
+        public decimal TotalPrize { get; set; }
+
+        /// <summary>
         /// 详细记录
         /// </summary>
         [Display(Name = "详细记录")]
-        public List<WaterExpenseRecord> Records { get; set; }
+        public List<ElectricExpenseRecord> Records { get; set; }
         #endregion //Property
     }
 
     /// <summary>
-    /// 水费支出详细记录
+    /// 电费支出详细记录
     /// </summary>
-    public class WaterExpenseRecord : BaseEntity
+    public class ElectricExpenseRecord : BaseEntity
     {
         #region Property
         /// <summary>
-        /// 水表编号
+        /// 电表编号
         /// </summary>
-        [Display(Name = "水表编号")]
+        [Display(Name = "电表编号")]
         public string MeterNumber { get; set; }
 
         /// <summary>
-        /// 水表名称
+        /// 电表名称
         /// </summary>
-        [Display(Name = "水表名称")]
+        [Display(Name = "电表名称")]
         public string MeterName { get; set; }
 
         /// <summary>
@@ -98,6 +104,12 @@ namespace Poseidon.Energy.Core.DL
         public decimal Current { get; set; }
 
         /// <summary>
+        /// 倍率
+        /// </summary>
+        [Display(Name = "倍率")]
+        public decimal Multiple { get; set; }
+
+        /// <summary>
         /// 用量
         /// </summary>
         [Display(Name = "用量")]
@@ -114,6 +126,12 @@ namespace Poseidon.Energy.Core.DL
         /// </summary>
         [Display(Name = "金额")]
         public decimal Amount { get; set; }
+
+        /// <summary>
+        /// 功率因数奖
+        /// </summary>
+        [Display(Name = "功率因数奖")]
+        public decimal Prize { get; set; }
 
         /// <summary>
         /// 备注

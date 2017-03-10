@@ -108,7 +108,7 @@ namespace Poseidon.Energy.ClientDx
 
             try
             {
-                BusinessFactory<ExpenseAccountBusiness>.Instance.Update(this.currentAccount);
+                BusinessFactory<ExpenseAccountBusiness>.Instance.SetWaterMeters(this.currentAccount.Id, data);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

@@ -78,6 +78,8 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                     meter.Multiple = item["multiple"].ToDecimal();
                     meter.Remark = item["remark"].ToString();
                     meter.Status = item["status"].ToInt32();
+
+                    entity.ElectricMeters.Add(meter);
                 }
             }
 
