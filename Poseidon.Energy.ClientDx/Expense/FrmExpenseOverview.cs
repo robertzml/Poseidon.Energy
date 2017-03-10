@@ -52,10 +52,12 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
-        /// 载入账户基本信息
+        /// 设置账户信息
         /// </summary>
-        private void LoadBaseInfo()
+        private void InitAccountInfo()
         {
+            this.ctrAccountInfo.SetAccount(this.currentAccount);
+
             if (this.currentAccount.EnergyType.Contains(1))
             { }
             if (this.currentAccount.EnergyType.Contains(2))
@@ -81,6 +83,7 @@ namespace Poseidon.Energy.ClientDx
             var currentYearList = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(this.currentAccount.Id, nowYear).ToList();
             this.waterYearGrid1.DataSource = currentYearList;
             this.waterYearGrid2.DataSource = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(this.currentAccount.Id, nowYear - 1).ToList();
+            this.waterYearGrid3.Clear();
 
             // 水费单据
             this.tabPageWaterReceipt.PageVisible = true;
@@ -106,7 +109,7 @@ namespace Poseidon.Energy.ClientDx
             else
             {
                 this.currentAccount = BusinessFactory<ExpenseAccountBusiness>.Instance.FindById(id);
-                LoadBaseInfo();
+                InitAccountInfo();
             }
         }
 

@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.lbAccount = new DevExpress.XtraEditors.ListBoxControl();
+            this.bsAccount = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnSetWater = new DevExpress.XtraEditors.SimpleButton();
@@ -50,11 +52,13 @@
             this.wmGrid = new Poseidon.Energy.ClientDx.WaterMeterGrid();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.lbAccount = new DevExpress.XtraEditors.ListBoxControl();
-            this.bsAccount = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSetEletric = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lbAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -73,8 +77,7 @@
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lbAccount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -105,6 +108,22 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "账户列表";
             // 
+            // lbAccount
+            // 
+            this.lbAccount.DataSource = this.bsAccount;
+            this.lbAccount.DisplayMember = "Name";
+            this.lbAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbAccount.Location = new System.Drawing.Point(2, 21);
+            this.lbAccount.Name = "lbAccount";
+            this.lbAccount.Size = new System.Drawing.Size(190, 476);
+            this.lbAccount.TabIndex = 0;
+            this.lbAccount.ValueMember = "Id";
+            this.lbAccount.SelectedIndexChanged += new System.EventHandler(this.lbAccount_SelectedIndexChanged);
+            // 
+            // bsAccount
+            // 
+            this.bsAccount.DataSource = typeof(Poseidon.Energy.Core.DL.ExpenseAccount);
+            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.layoutControl1);
@@ -117,6 +136,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnSetEletric);
             this.layoutControl1.Controls.Add(this.btnSetWater);
             this.layoutControl1.Controls.Add(this.btnDelete);
             this.layoutControl1.Controls.Add(this.btnEdit);
@@ -132,9 +152,9 @@
             // 
             // btnSetWater
             // 
-            this.btnSetWater.Location = new System.Drawing.Point(456, 67);
+            this.btnSetWater.Location = new System.Drawing.Point(205, 93);
             this.btnSetWater.Name = "btnSetWater";
-            this.btnSetWater.Size = new System.Drawing.Size(144, 22);
+            this.btnSetWater.Size = new System.Drawing.Size(182, 22);
             this.btnSetWater.StyleController = this.layoutControl1;
             this.btnSetWater.TabIndex = 7;
             this.btnSetWater.Text = "设置水表";
@@ -142,18 +162,18 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(309, 67);
+            this.btnDelete.Location = new System.Drawing.Point(391, 67);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(143, 22);
+            this.btnDelete.Size = new System.Drawing.Size(209, 22);
             this.btnDelete.StyleController = this.layoutControl1;
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "删除账户";
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(171, 67);
+            this.btnEdit.Location = new System.Drawing.Point(205, 67);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(134, 22);
+            this.btnEdit.Size = new System.Drawing.Size(182, 22);
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "编辑账户";
@@ -163,7 +183,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(24, 67);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(143, 22);
+            this.btnAdd.Size = new System.Drawing.Size(177, 22);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "添加账户";
@@ -204,7 +224,8 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.layoutControlItem4,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItem7});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(604, 127);
@@ -215,34 +236,34 @@
             this.layoutControlItem2.Control = this.btnAdd;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(147, 84);
+            this.layoutControlItem2.Size = new System.Drawing.Size(181, 26);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnEdit;
-            this.layoutControlItem3.Location = new System.Drawing.Point(147, 0);
+            this.layoutControlItem3.Location = new System.Drawing.Point(181, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(138, 84);
+            this.layoutControlItem3.Size = new System.Drawing.Size(186, 26);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnDelete;
-            this.layoutControlItem4.Location = new System.Drawing.Point(285, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(367, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(147, 84);
+            this.layoutControlItem4.Size = new System.Drawing.Size(213, 84);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btnSetWater;
-            this.layoutControlItem5.Location = new System.Drawing.Point(432, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(181, 26);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(148, 84);
+            this.layoutControlItem5.Size = new System.Drawing.Size(186, 58);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -303,33 +324,37 @@
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
-            // lbAccount
+            // btnSetEletric
             // 
-            this.lbAccount.DataSource = this.bsAccount;
-            this.lbAccount.DisplayMember = "Name";
-            this.lbAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbAccount.Location = new System.Drawing.Point(2, 21);
-            this.lbAccount.Name = "lbAccount";
-            this.lbAccount.Size = new System.Drawing.Size(190, 476);
-            this.lbAccount.TabIndex = 0;
-            this.lbAccount.ValueMember = "Id";
-            this.lbAccount.SelectedIndexChanged += new System.EventHandler(this.lbAccount_SelectedIndexChanged);
+            this.btnSetEletric.Location = new System.Drawing.Point(24, 93);
+            this.btnSetEletric.Name = "btnSetEletric";
+            this.btnSetEletric.Size = new System.Drawing.Size(177, 22);
+            this.btnSetEletric.StyleController = this.layoutControl1;
+            this.btnSetEletric.TabIndex = 8;
+            this.btnSetEletric.Text = "设置电表";
             // 
-            // bsAccount
+            // layoutControlItem7
             // 
-            this.bsAccount.DataSource = typeof(Poseidon.Energy.Core.DL.ExpenseAccount);
+            this.layoutControlItem7.Control = this.btnSetEletric;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(181, 58);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
             // 
-            // frmExpenseAccount
+            // FrmExpenseAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 505);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "frmExpenseAccount";
+            this.Name = "FrmExpenseAccount";
             this.Text = "支出账户管理";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lbAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -348,8 +373,7 @@
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lbAccount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -379,5 +403,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraEditors.ListBoxControl lbAccount;
         private System.Windows.Forms.BindingSource bsAccount;
+        private DevExpress.XtraEditors.SimpleButton btnSetEletric;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }

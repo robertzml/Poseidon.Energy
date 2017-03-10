@@ -35,6 +35,7 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.tabInfo = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageAccount = new DevExpress.XtraTab.XtraTabPage();
+            this.ctrAccountInfo = new Poseidon.Energy.ClientDx.ExpenseAccountInfo();
             this.tabPageWaterMeter = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.waterMeterGrid = new Poseidon.Energy.ClientDx.WaterMeterGrid();
@@ -65,7 +66,6 @@
             this.tabPageWaterReceipt = new DevExpress.XtraTab.XtraTabPage();
             this.waterExpenseReceipt = new Poseidon.Energy.ClientDx.WaterExpenseReceipt();
             this.bsWaterExpense = new System.Windows.Forms.BindingSource(this.components);
-            this.expenseAccountInfo1 = new Poseidon.Energy.ClientDx.ExpenseAccountInfo();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -164,10 +164,18 @@
             // 
             // tabPageAccount
             // 
-            this.tabPageAccount.Controls.Add(this.expenseAccountInfo1);
+            this.tabPageAccount.Controls.Add(this.ctrAccountInfo);
             this.tabPageAccount.Name = "tabPageAccount";
             this.tabPageAccount.Size = new System.Drawing.Size(689, 142);
             this.tabPageAccount.Text = "账户信息";
+            // 
+            // ctrAccountInfo
+            // 
+            this.ctrAccountInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctrAccountInfo.Location = new System.Drawing.Point(0, 0);
+            this.ctrAccountInfo.Name = "ctrAccountInfo";
+            this.ctrAccountInfo.Size = new System.Drawing.Size(689, 142);
+            this.ctrAccountInfo.TabIndex = 0;
             // 
             // tabPageWaterMeter
             // 
@@ -488,14 +496,6 @@
             // 
             this.bsWaterExpense.DataSource = typeof(Poseidon.Energy.Core.DL.WaterExpense);
             // 
-            // expenseAccountInfo1
-            // 
-            this.expenseAccountInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.expenseAccountInfo1.Location = new System.Drawing.Point(0, 0);
-            this.expenseAccountInfo1.Name = "expenseAccountInfo1";
-            this.expenseAccountInfo1.Size = new System.Drawing.Size(689, 142);
-            this.expenseAccountInfo1.TabIndex = 0;
-            // 
             // FrmExpenseOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -581,6 +581,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem25;
         private DevExpress.XtraTab.XtraTabPage tabPageWaterReceipt;
         private WaterExpenseReceipt waterExpenseReceipt;
-        private ExpenseAccountInfo expenseAccountInfo1;
+        private ExpenseAccountInfo ctrAccountInfo;
     }
 }

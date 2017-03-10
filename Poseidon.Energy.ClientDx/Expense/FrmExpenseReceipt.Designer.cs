@@ -34,10 +34,10 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.tabControl = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageInfo = new DevExpress.XtraTab.XtraTabPage();
+            this.ctrAccountInfo = new Poseidon.Energy.ClientDx.ExpenseAccountInfo();
             this.tabPageElectric = new DevExpress.XtraTab.XtraTabPage();
             this.tabPageWater = new DevExpress.XtraTab.XtraTabPage();
             this.waterReceipt = new Poseidon.Energy.ClientDx.WaterExpenseReceipt();
-            this.accountInfo = new Poseidon.Energy.ClientDx.ExpenseAccountInfo();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -109,10 +109,18 @@
             // 
             // tabPageInfo
             // 
-            this.tabPageInfo.Controls.Add(this.accountInfo);
+            this.tabPageInfo.Controls.Add(this.ctrAccountInfo);
             this.tabPageInfo.Name = "tabPageInfo";
             this.tabPageInfo.Size = new System.Drawing.Size(693, 481);
             this.tabPageInfo.Text = "基本信息";
+            // 
+            // ctrAccountInfo
+            // 
+            this.ctrAccountInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ctrAccountInfo.Location = new System.Drawing.Point(0, 0);
+            this.ctrAccountInfo.Name = "ctrAccountInfo";
+            this.ctrAccountInfo.Size = new System.Drawing.Size(693, 190);
+            this.ctrAccountInfo.TabIndex = 0;
             // 
             // tabPageElectric
             // 
@@ -137,14 +145,6 @@
             this.waterReceipt.Name = "waterReceipt";
             this.waterReceipt.Size = new System.Drawing.Size(693, 481);
             this.waterReceipt.TabIndex = 0;
-            // 
-            // accountInfo
-            // 
-            this.accountInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.accountInfo.Location = new System.Drawing.Point(0, 0);
-            this.accountInfo.Name = "accountInfo";
-            this.accountInfo.Size = new System.Drawing.Size(693, 190);
-            this.accountInfo.TabIndex = 0;
             // 
             // FrmExpenseReceipt
             // 
@@ -178,6 +178,6 @@
         private DevExpress.XtraTab.XtraTabPage tabPageElectric;
         private DevExpress.XtraTab.XtraTabPage tabPageWater;
         private WaterExpenseReceipt waterReceipt;
-        private ExpenseAccountInfo accountInfo;
+        private ExpenseAccountInfo ctrAccountInfo;
     }
 }

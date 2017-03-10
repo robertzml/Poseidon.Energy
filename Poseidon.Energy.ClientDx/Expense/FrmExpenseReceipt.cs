@@ -38,13 +38,11 @@ namespace Poseidon.Energy.ClientDx
 
         #region Function
         /// <summary>
-        /// 初始化选项卡
+        /// 初始化账户信息
         /// </summary>
-        private void InitTabPage()
+        private void InitAccountInfo()
         {
-            //this.txtName.Text = this.currentAccount.Name;
-            //this.txtShortName.Text = this.currentAccount.ShortName;
-            //this.txtRemark.Text = this.currentAccount.Remark;
+            this.ctrAccountInfo.SetAccount(this.currentAccount);
 
             //if (this.currentAccount.EnergyType.Contains(1))
             //    this.chkType1.Checked = true;
@@ -83,7 +81,7 @@ namespace Poseidon.Energy.ClientDx
             else
             {
                 this.currentAccount = BusinessFactory<ExpenseAccountBusiness>.Instance.FindById(id);
-                InitTabPage();
+                InitAccountInfo();
             }
         }
         #endregion //Event
