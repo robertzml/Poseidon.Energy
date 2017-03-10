@@ -44,6 +44,9 @@ namespace Poseidon.Energy.ClientDx
         {
             LoadGroups();
             LoadDepartment();
+
+            this.depGrid.DataSource = this.bindDepartments;
+
             base.InitForm();
         }
 
@@ -63,7 +66,6 @@ namespace Poseidon.Energy.ClientDx
         private void LoadDepartment()
         {
             this.bindDepartments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
-            this.depGrid.DataSource = this.bindDepartments;
         }
 
         /// <summary>
@@ -84,13 +86,13 @@ namespace Poseidon.Energy.ClientDx
 
         #region Event
         /// <summary>
-        /// 窗体载入
+        /// 显示全部
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void FrmDepartmentOverview_Load(object sender, EventArgs e)
+        private void btnShowAll_Click(object sender, EventArgs e)
         {
-
+            this.depGrid.DataSource = this.bindDepartments;
         }
 
         /// <summary>

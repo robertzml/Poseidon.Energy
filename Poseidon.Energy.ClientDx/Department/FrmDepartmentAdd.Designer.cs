@@ -34,6 +34,10 @@
             this.tluParentId = new DevExpress.XtraEditors.TreeListLookUpEdit();
             this.bsDepartment = new System.Windows.Forms.BindingSource(this.components);
             this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
+            this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colShortName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colRemark = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colStatus = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.spFoundYear = new DevExpress.XtraEditors.SpinEdit();
             this.txtShortName = new DevExpress.XtraEditors.TextEdit();
@@ -44,10 +48,6 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colShortName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colRemark = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.colStatus = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -128,6 +128,7 @@
             this.tluParentId.Properties.DataSource = this.bsDepartment;
             this.tluParentId.Properties.DisplayMember = "Name";
             this.tluParentId.Properties.NullText = "请选择部门";
+            this.tluParentId.Properties.ShowFooter = false;
             this.tluParentId.Properties.TreeList = this.treeListLookUpEdit1TreeList;
             this.tluParentId.Properties.ValueMember = "Id";
             this.tluParentId.Size = new System.Drawing.Size(315, 20);
@@ -154,6 +155,37 @@
             this.treeListLookUpEdit1TreeList.ParentFieldName = "ParentId";
             this.treeListLookUpEdit1TreeList.Size = new System.Drawing.Size(400, 200);
             this.treeListLookUpEdit1TreeList.TabIndex = 0;
+            // 
+            // colName
+            // 
+            this.colName.Caption = "名称";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Width = 64;
+            // 
+            // colShortName
+            // 
+            this.colShortName.Caption = "简称";
+            this.colShortName.FieldName = "ShortName";
+            this.colShortName.Name = "colShortName";
+            this.colShortName.Visible = true;
+            this.colShortName.VisibleIndex = 0;
+            this.colShortName.Width = 64;
+            // 
+            // colRemark
+            // 
+            this.colRemark.Caption = "备注";
+            this.colRemark.FieldName = "Remark";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.Visible = true;
+            this.colRemark.VisibleIndex = 1;
+            this.colRemark.Width = 64;
+            // 
+            // colStatus
+            // 
+            this.colStatus.FieldName = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.Width = 64;
             // 
             // txtRemark
             // 
@@ -265,37 +297,6 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(370, 24);
             this.layoutControlItem5.Text = "上级部门";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // colShortName
-            // 
-            this.colShortName.Caption = "简称";
-            this.colShortName.FieldName = "ShortName";
-            this.colShortName.Name = "colShortName";
-            this.colShortName.Visible = true;
-            this.colShortName.VisibleIndex = 0;
-            this.colShortName.Width = 64;
-            // 
-            // colName
-            // 
-            this.colName.Caption = "名称";
-            this.colName.FieldName = "Name";
-            this.colName.Name = "colName";
-            this.colName.Width = 64;
-            // 
-            // colRemark
-            // 
-            this.colRemark.Caption = "备注";
-            this.colRemark.FieldName = "Remark";
-            this.colRemark.Name = "colRemark";
-            this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 1;
-            this.colRemark.Width = 64;
-            // 
-            // colStatus
-            // 
-            this.colStatus.FieldName = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.Width = 64;
             // 
             // FrmDepartmentAdd
             // 

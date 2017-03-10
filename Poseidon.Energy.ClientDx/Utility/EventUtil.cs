@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Poseidon.Energy.ClientDx
 {
+    using DevExpress.Utils.Win;
     using DevExpress.XtraEditors;
+    using DevExpress.XtraEditors.Popup;
 
     /// <summary>
     /// 通用事件处理类
@@ -31,6 +33,30 @@ namespace Poseidon.Energy.ClientDx
             e.Appearance.DrawBackground(e.Cache, e.Bounds);
             e.Graphics.DrawString(s, e.Appearance.Font, e.Cache.GetSolidBrush(e.Appearance.ForeColor), e.Bounds.Location);
             e.Handled = true;
+        }
+
+        /// <summary>
+        /// Lookup弹出事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public static void Lookup_Popup(object sender, EventArgs e)
+        {
+            LookUpEdit edit = sender as LookUpEdit;
+            PopupLookUpEditForm f = (edit as IPopupControl).PopupWindow as PopupLookUpEditForm;
+            f.Width = edit.Width;
+        }
+
+        /// <summary>
+        /// TreeListLookup弹出事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public static void TreeListLookup_Popup(object sender, EventArgs e)
+        {
+            TreeListLookUpEdit edit = sender as TreeListLookUpEdit;
+            TreeListLookUpEditPopupForm f = (edit as IPopupControl).PopupWindow as TreeListLookUpEditPopupForm;
+            f.Width = edit.Width;
         }
         #endregion //Method
     }

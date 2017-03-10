@@ -34,6 +34,7 @@ namespace Poseidon.Energy.ClientDx
             var departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
             this.bsDepartment.DataSource = departments;
 
+            this.tluParentId.Popup += EventUtil.TreeListLookup_Popup;
             base.InitForm();
         }
 
