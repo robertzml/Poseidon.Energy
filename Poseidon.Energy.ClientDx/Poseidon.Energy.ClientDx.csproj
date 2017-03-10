@@ -404,6 +404,7 @@
     <EmbeddedResource Include="Target\FrmTargetSelectDepartment.resx">
       <DependentUpon>FrmTargetSelectDepartment.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.AllowanceTarget.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Department.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.ExpenseAccount.datasource" />
