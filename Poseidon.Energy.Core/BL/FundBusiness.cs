@@ -13,7 +13,7 @@ namespace Poseidon.Energy.Core.BL
     /// <summary>
     /// 经费统计业务类
     /// </summary>
-    public class FundBusiness : AbsctractBusiness<Fund>
+    public class FundBusiness : AbstractBusiness<Fund>
     {
         #region Constructor
         /// <summary>

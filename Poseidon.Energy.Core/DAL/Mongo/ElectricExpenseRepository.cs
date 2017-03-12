@@ -15,7 +15,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     /// <summary>
     /// 电费支出票据数据访问类
     /// </summary>
-    internal class ElectricExpenseRepository : AbsctractDALMongo<ElectricExpense>, IElectricExpenseRepository
+    internal class ElectricExpenseRepository : AbstractDALMongo<ElectricExpense>, IElectricExpenseRepository
     {
         #region Constructor
         /// <summary>
@@ -23,7 +23,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         public ElectricExpenseRepository()
         {
-            this.collectionName = "energy_electricExpense";
+            base.Init("energy_electricExpense");
         }
         #endregion //Constructor
 

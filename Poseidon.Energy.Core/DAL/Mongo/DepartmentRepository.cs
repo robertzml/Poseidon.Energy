@@ -15,7 +15,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     /// <summary>
     /// 部门数据访问类
     /// </summary>
-    internal class DepartmentRepository : AbsctractDALMongo<Department>, IDepartmentRepository
+    internal class DepartmentRepository : AbstractDALMongo<Department>, IDepartmentRepository
     {
         #region Field
         /// <summary>
@@ -30,7 +30,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         public DepartmentRepository()
         {
-            this.collectionName = "core_organization";
+            base.Init("core_organization");
         }
         #endregion //Constructor
 

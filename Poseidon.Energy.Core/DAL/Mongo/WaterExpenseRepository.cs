@@ -15,7 +15,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     /// <summary>
     /// 水费支出数据访问类
     /// </summary>
-    internal class WaterExpenseRepository : AbsctractDALMongo<WaterExpense>, IWaterExpenseRepository
+    internal class WaterExpenseRepository : AbstractDALMongo<WaterExpense>, IWaterExpenseRepository
     {
         #region Constructor
         /// <summary>
@@ -23,7 +23,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         public WaterExpenseRepository()
         {
-            this.collectionName = "energy_waterExpense";
+            base.Init("energy_waterExpense");
         }
         #endregion //Constructor
 

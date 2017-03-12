@@ -15,7 +15,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     /// <summary>
     /// 支出账户数据访问类
     /// </summary>
-    internal class ExpenseAccountRepository : AbsctractDALMongo<ExpenseAccount>, IExpenseAccountRepository
+    internal class ExpenseAccountRepository : AbstractDALMongo<ExpenseAccount>, IExpenseAccountRepository
     {
         #region Field
         /// <summary>
@@ -30,7 +30,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         public ExpenseAccountRepository()
         {
-            this.collectionName = "core_organization";
+            base.Init("core_organization");
         }
         #endregion //Constructor
 

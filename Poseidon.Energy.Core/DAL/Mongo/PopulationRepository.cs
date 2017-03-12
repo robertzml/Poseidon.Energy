@@ -14,7 +14,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     /// <summary>
     /// 人数统计数据访问类
     /// </summary>
-    internal class PopulationRepository : AbsctractDALMongo<Population>, IPopulationRepository
+    internal class PopulationRepository : AbstractDALMongo<Population>, IPopulationRepository
     {
         #region Field
 
@@ -26,7 +26,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         public PopulationRepository()
         {
-            this.collectionName = "energy_population";
+            base.Init("energy_population");
         }
         #endregion //Constructor
 

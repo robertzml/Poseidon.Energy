@@ -13,7 +13,7 @@ namespace Poseidon.Energy.Core.BL
     /// <summary>
     /// 部门业务类
     /// </summary>
-    public class DepartmentBusiness : AbsctractBusiness<Department>
+    public class DepartmentBusiness : AbstractBusiness<Department>
     {
         #region Constructor
         /// <summary>

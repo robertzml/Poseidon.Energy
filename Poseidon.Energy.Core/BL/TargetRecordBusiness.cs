@@ -15,7 +15,7 @@ namespace Poseidon.Energy.Core.BL
     /// <summary>
     /// 指标记录业务类
     /// </summary>
-    public class TargetRecordBusiness : AbsctractBusiness<TargetRecord>
+    public class TargetRecordBusiness : AbstractBusiness<TargetRecord>
     {
         #region Constructor
         /// <summary>

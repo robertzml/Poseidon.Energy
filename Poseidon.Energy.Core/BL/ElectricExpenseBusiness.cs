@@ -15,7 +15,7 @@ namespace Poseidon.Energy.Core.BL
     /// <summary>
     /// 电费支出单据业务类
     /// </summary>
-    public class ElectricExpenseBusiness : AbsctractBusiness<ElectricExpense>
+    public class ElectricExpenseBusiness : AbstractBusiness<ElectricExpense>
     {
         #region Constructor
         /// <summary>

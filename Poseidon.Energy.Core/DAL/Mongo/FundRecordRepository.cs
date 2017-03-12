@@ -17,7 +17,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     /// <summary>
     /// 经费记录数据访问类
     /// </summary>
-    internal class FundRecordRepository : AbsctractDALMongo<FundRecord>, IFundRecordRepository
+    internal class FundRecordRepository : AbstractDALMongo<FundRecord>, IFundRecordRepository
     {
         #region Constructor
         /// <summary>
@@ -25,7 +25,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         public FundRecordRepository()
         {
-            this.collectionName = "energy_fundRecord";
+            base.Init("energy_fundRecord");
         }
         #endregion //Constructor
 

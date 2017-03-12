@@ -15,7 +15,7 @@ namespace Poseidon.Energy.Core.BL
     /// <summary>
     /// 水费支出业务类
     /// </summary>
-    public class WaterExpenseBusiness : AbsctractBusiness<WaterExpense>
+    public class WaterExpenseBusiness : AbstractBusiness<WaterExpense>
     {
         #region Constructor
         /// <summary>

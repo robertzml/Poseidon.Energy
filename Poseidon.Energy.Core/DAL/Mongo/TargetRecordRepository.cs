@@ -16,7 +16,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     /// <summary>
     /// 指标记录数据访问类
     /// </summary>
-    internal class TargetRecordRepository : AbsctractDALMongo<TargetRecord>, ITargetRecordRepository
+    internal class TargetRecordRepository : AbstractDALMongo<TargetRecord>, ITargetRecordRepository
     {
         #region Constructor
         /// <summary>
@@ -24,7 +24,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         public TargetRecordRepository()
         {
-            this.collectionName = "energy_targetRecord";
+            base.Init("energy_targetRecord");
         }
         #endregion //Constructor
 
