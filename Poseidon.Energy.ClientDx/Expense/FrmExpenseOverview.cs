@@ -51,11 +51,15 @@ namespace Poseidon.Energy.ClientDx
             base.InitForm();
         }
 
+        /// <summary>
+        /// 隐藏标签
+        /// </summary>
         private void HideTab()
         {
             this.tabPageElectricMeter.PageVisible = false;
             this.tabPageWaterMeter.PageVisible = false;
 
+            this.tabPageElectricReceipt.PageVisible = false;
             this.tabPageWaterExpense.PageVisible = false;
             this.tabPageWaterReceipt.PageVisible = false;
         }
@@ -86,8 +90,13 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void LoadElectric()
         {
+            // 电表
             this.tabPageElectricMeter.PageVisible = true;
             this.electricMeterGrid.DataSource = this.currentAccount.ElectricMeters;
+
+            // 电费单据
+            this.tabPageElectricReceipt.PageVisible = true;
+            this.electricExpenseReceipt.SetAccount(this.currentAccount);
         }
 
         /// <summary>

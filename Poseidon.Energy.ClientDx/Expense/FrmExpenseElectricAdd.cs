@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,6 +73,7 @@ namespace Poseidon.Energy.ClientDx
                 ElectricExpenseRecord record = new ElectricExpenseRecord();
                 record.MeterName = item.Name;
                 record.MeterNumber = item.Number;
+                record.Multiple = item.Multiple;
 
                 records.Add(record);
             }

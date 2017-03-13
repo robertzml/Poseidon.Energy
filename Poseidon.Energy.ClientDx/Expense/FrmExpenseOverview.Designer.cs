@@ -36,11 +36,10 @@
             this.tabInfo = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageAccount = new DevExpress.XtraTab.XtraTabPage();
             this.ctrAccountInfo = new Poseidon.Energy.ClientDx.ExpenseAccountInfo();
+            this.tabPageElectricMeter = new DevExpress.XtraTab.XtraTabPage();
+            this.electricMeterGrid = new Poseidon.Energy.ClientDx.ElectricMeterGrid();
             this.tabPageWaterMeter = new DevExpress.XtraTab.XtraTabPage();
-            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.waterMeterGrid = new Poseidon.Energy.ClientDx.WaterMeterGrid();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.tabFee = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageSummary = new DevExpress.XtraTab.XtraTabPage();
@@ -66,8 +65,8 @@
             this.tabPageWaterReceipt = new DevExpress.XtraTab.XtraTabPage();
             this.waterExpenseReceipt = new Poseidon.Energy.ClientDx.WaterExpenseReceipt();
             this.bsWaterExpense = new System.Windows.Forms.BindingSource(this.components);
-            this.tabPageElectricMeter = new DevExpress.XtraTab.XtraTabPage();
-            this.electricMeterGrid = new Poseidon.Energy.ClientDx.ElectricMeterGrid();
+            this.tabPageElectricReceipt = new DevExpress.XtraTab.XtraTabPage();
+            this.electricExpenseReceipt = new Poseidon.Energy.ClientDx.ElectricExpenseReceipt();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -76,11 +75,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
             this.tabInfo.SuspendLayout();
             this.tabPageAccount.SuspendLayout();
+            this.tabPageElectricMeter.SuspendLayout();
             this.tabPageWaterMeter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
-            this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabFee)).BeginInit();
@@ -103,7 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
             this.tabPageWaterReceipt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsWaterExpense)).BeginInit();
-            this.tabPageElectricMeter.SuspendLayout();
+            this.tabPageElectricReceipt.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -181,24 +177,38 @@
             this.ctrAccountInfo.Size = new System.Drawing.Size(689, 142);
             this.ctrAccountInfo.TabIndex = 0;
             // 
+            // tabPageElectricMeter
+            // 
+            this.tabPageElectricMeter.Controls.Add(this.electricMeterGrid);
+            this.tabPageElectricMeter.Name = "tabPageElectricMeter";
+            this.tabPageElectricMeter.PageVisible = false;
+            this.tabPageElectricMeter.Size = new System.Drawing.Size(689, 142);
+            this.tabPageElectricMeter.Text = "电表表具";
+            // 
+            // electricMeterGrid
+            // 
+            this.electricMeterGrid.AllowFilter = true;
+            this.electricMeterGrid.AllowGroup = true;
+            this.electricMeterGrid.AllowSort = true;
+            this.electricMeterGrid.DataSource = null;
+            this.electricMeterGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.electricMeterGrid.Editable = false;
+            this.electricMeterGrid.Location = new System.Drawing.Point(0, 0);
+            this.electricMeterGrid.Name = "electricMeterGrid";
+            this.electricMeterGrid.ShowAddMenu = false;
+            this.electricMeterGrid.ShowFooter = false;
+            this.electricMeterGrid.ShowLineNumber = true;
+            this.electricMeterGrid.ShowNavigator = false;
+            this.electricMeterGrid.Size = new System.Drawing.Size(689, 142);
+            this.electricMeterGrid.TabIndex = 0;
+            // 
             // tabPageWaterMeter
             // 
-            this.tabPageWaterMeter.Controls.Add(this.layoutControl2);
+            this.tabPageWaterMeter.Controls.Add(this.waterMeterGrid);
             this.tabPageWaterMeter.Name = "tabPageWaterMeter";
             this.tabPageWaterMeter.PageVisible = false;
             this.tabPageWaterMeter.Size = new System.Drawing.Size(689, 142);
             this.tabPageWaterMeter.Text = "水表表具";
-            // 
-            // layoutControl2
-            // 
-            this.layoutControl2.Controls.Add(this.waterMeterGrid);
-            this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl2.Name = "layoutControl2";
-            this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(689, 142);
-            this.layoutControl2.TabIndex = 0;
-            this.layoutControl2.Text = "layoutControl2";
             // 
             // waterMeterGrid
             // 
@@ -206,35 +216,16 @@
             this.waterMeterGrid.AllowGroup = false;
             this.waterMeterGrid.AllowSort = true;
             this.waterMeterGrid.DataSource = null;
+            this.waterMeterGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.waterMeterGrid.Editable = false;
-            this.waterMeterGrid.Location = new System.Drawing.Point(12, 12);
+            this.waterMeterGrid.Location = new System.Drawing.Point(0, 0);
             this.waterMeterGrid.Name = "waterMeterGrid";
             this.waterMeterGrid.ShowAddMenu = false;
             this.waterMeterGrid.ShowFooter = false;
             this.waterMeterGrid.ShowLineNumber = true;
             this.waterMeterGrid.ShowNavigator = false;
-            this.waterMeterGrid.Size = new System.Drawing.Size(665, 118);
+            this.waterMeterGrid.Size = new System.Drawing.Size(689, 142);
             this.waterMeterGrid.TabIndex = 0;
-            // 
-            // layoutControlGroup2
-            // 
-            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup2.GroupBordersVisible = false;
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem3});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(689, 142);
-            this.layoutControlGroup2.TextVisible = false;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.waterMeterGrid;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(669, 122);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
             // 
             // groupControl3
             // 
@@ -256,6 +247,7 @@
             this.tabFee.TabIndex = 0;
             this.tabFee.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageSummary,
+            this.tabPageElectricReceipt,
             this.tabPageWaterExpense,
             this.tabPageWaterReceipt});
             // 
@@ -500,30 +492,22 @@
             // 
             this.bsWaterExpense.DataSource = typeof(Poseidon.Energy.Core.DL.WaterExpense);
             // 
-            // tabPageElectricMeter
+            // tabPageElectricReceipt
             // 
-            this.tabPageElectricMeter.Controls.Add(this.electricMeterGrid);
-            this.tabPageElectricMeter.Name = "tabPageElectricMeter";
-            this.tabPageElectricMeter.PageVisible = false;
-            this.tabPageElectricMeter.Size = new System.Drawing.Size(689, 142);
-            this.tabPageElectricMeter.Text = "电表表具";
+            this.tabPageElectricReceipt.Controls.Add(this.electricExpenseReceipt);
+            this.tabPageElectricReceipt.Name = "tabPageElectricReceipt";
+            this.tabPageElectricReceipt.PageVisible = false;
+            this.tabPageElectricReceipt.Size = new System.Drawing.Size(689, 252);
+            this.tabPageElectricReceipt.Text = "电费单据";
             // 
-            // electricMeterGrid
+            // electricExpenseReceipt
             // 
-            this.electricMeterGrid.AllowFilter = true;
-            this.electricMeterGrid.AllowGroup = true;
-            this.electricMeterGrid.AllowSort = true;
-            this.electricMeterGrid.DataSource = null;
-            this.electricMeterGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.electricMeterGrid.Editable = false;
-            this.electricMeterGrid.Location = new System.Drawing.Point(0, 0);
-            this.electricMeterGrid.Name = "electricMeterGrid";
-            this.electricMeterGrid.ShowAddMenu = false;
-            this.electricMeterGrid.ShowFooter = false;
-            this.electricMeterGrid.ShowLineNumber = true;
-            this.electricMeterGrid.ShowNavigator = false;
-            this.electricMeterGrid.Size = new System.Drawing.Size(689, 142);
-            this.electricMeterGrid.TabIndex = 0;
+            this.electricExpenseReceipt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.electricExpenseReceipt.Editable = false;
+            this.electricExpenseReceipt.Location = new System.Drawing.Point(0, 0);
+            this.electricExpenseReceipt.Name = "electricExpenseReceipt";
+            this.electricExpenseReceipt.Size = new System.Drawing.Size(689, 252);
+            this.electricExpenseReceipt.TabIndex = 0;
             // 
             // FrmExpenseOverview
             // 
@@ -541,11 +525,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).EndInit();
             this.tabInfo.ResumeLayout(false);
             this.tabPageAccount.ResumeLayout(false);
+            this.tabPageElectricMeter.ResumeLayout(false);
             this.tabPageWaterMeter.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
-            this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabFee)).EndInit();
@@ -568,7 +549,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
             this.tabPageWaterReceipt.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsWaterExpense)).EndInit();
-            this.tabPageElectricMeter.ResumeLayout(false);
+            this.tabPageElectricReceipt.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -584,9 +565,6 @@
         private DevExpress.XtraTab.XtraTabPage tabPageAccount;
         private DevExpress.XtraTab.XtraTabPage tabPageWaterMeter;
         private WaterMeterGrid waterMeterGrid;
-        private DevExpress.XtraLayout.LayoutControl layoutControl2;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraTab.XtraTabControl tabFee;
         private DevExpress.XtraTab.XtraTabPage tabPageSummary;
         private System.Windows.Forms.BindingSource bsWaterExpense;
@@ -614,5 +592,7 @@
         private ExpenseAccountInfo ctrAccountInfo;
         private DevExpress.XtraTab.XtraTabPage tabPageElectricMeter;
         private ElectricMeterGrid electricMeterGrid;
+        private DevExpress.XtraTab.XtraTabPage tabPageElectricReceipt;
+        private ElectricExpenseReceipt electricExpenseReceipt;
     }
 }

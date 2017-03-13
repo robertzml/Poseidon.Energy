@@ -174,7 +174,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbFeeType.Size = new System.Drawing.Size(144, 20);
             this.cmbFeeType.StyleController = this.layoutControl1;
-            this.cmbFeeType.TabIndex = 12;
+            this.cmbFeeType.TabIndex = 3;
             // 
             // btnSum
             // 
@@ -199,7 +199,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spTotalAmount.Size = new System.Drawing.Size(372, 20);
             this.spTotalAmount.StyleController = this.layoutControl1;
-            this.spTotalAmount.TabIndex = 10;
+            this.spTotalAmount.TabIndex = 5;
             // 
             // spTotalQuantity
             // 
@@ -214,7 +214,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spTotalQuantity.Size = new System.Drawing.Size(328, 20);
             this.spTotalQuantity.StyleController = this.layoutControl1;
-            this.spTotalQuantity.TabIndex = 9;
+            this.spTotalQuantity.TabIndex = 4;
             // 
             // txtRemark
             // 
@@ -222,7 +222,7 @@
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(777, 33);
             this.txtRemark.StyleController = this.layoutControl1;
-            this.txtRemark.TabIndex = 7;
+            this.txtRemark.TabIndex = 6;
             // 
             // dpTicketDate
             // 
@@ -237,7 +237,7 @@
             this.dpTicketDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.dpTicketDate.Size = new System.Drawing.Size(151, 20);
             this.dpTicketDate.StyleController = this.layoutControl1;
-            this.dpTicketDate.TabIndex = 6;
+            this.dpTicketDate.TabIndex = 2;
             // 
             // dpBelongDate
             // 
@@ -260,7 +260,7 @@
             this.dpBelongDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
             this.dpBelongDate.Size = new System.Drawing.Size(126, 20);
             this.dpBelongDate.StyleController = this.layoutControl1;
-            this.dpBelongDate.TabIndex = 5;
+            this.dpBelongDate.TabIndex = 1;
             // 
             // txtAccountName
             // 
@@ -271,7 +271,7 @@
             this.txtAccountName.Properties.ReadOnly = true;
             this.txtAccountName.Size = new System.Drawing.Size(125, 20);
             this.txtAccountName.StyleController = this.layoutControl1;
-            this.txtAccountName.TabIndex = 4;
+            this.txtAccountName.TabIndex = 0;
             // 
             // layoutControlGroup1
             // 
@@ -428,25 +428,25 @@
             this.previousGrid.AllowSort = false;
             this.previousGrid.DataSource = null;
             this.previousGrid.Editable = false;
-            this.previousGrid.Location = new System.Drawing.Point(12, 36);
+            this.previousGrid.Location = new System.Drawing.Point(2, 26);
             this.previousGrid.Name = "previousGrid";
             this.previousGrid.ShowAddMenu = false;
             this.previousGrid.ShowFooter = false;
             this.previousGrid.ShowLineNumber = true;
             this.previousGrid.ShowNavigator = false;
-            this.previousGrid.Size = new System.Drawing.Size(850, 98);
-            this.previousGrid.TabIndex = 5;
+            this.previousGrid.Size = new System.Drawing.Size(870, 118);
+            this.previousGrid.TabIndex = 1;
             // 
             // txtPreviousDate
             // 
-            this.txtPreviousDate.Location = new System.Drawing.Point(63, 12);
+            this.txtPreviousDate.Location = new System.Drawing.Point(53, 2);
             this.txtPreviousDate.Name = "txtPreviousDate";
             this.txtPreviousDate.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtPreviousDate.Properties.Appearance.Options.UseBackColor = true;
             this.txtPreviousDate.Properties.ReadOnly = true;
-            this.txtPreviousDate.Size = new System.Drawing.Size(799, 20);
+            this.txtPreviousDate.Size = new System.Drawing.Size(819, 20);
             this.txtPreviousDate.StyleController = this.layoutControl2;
-            this.txtPreviousDate.TabIndex = 4;
+            this.txtPreviousDate.TabIndex = 0;
             // 
             // layoutControlGroup2
             // 
@@ -457,6 +457,7 @@
             this.layoutControlItem10});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup2.Size = new System.Drawing.Size(874, 146);
             this.layoutControlGroup2.TextVisible = false;
             // 
@@ -465,7 +466,7 @@
             this.layoutControlItem9.Control = this.txtPreviousDate;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(854, 24);
+            this.layoutControlItem9.Size = new System.Drawing.Size(874, 24);
             this.layoutControlItem9.Text = "上期日期";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -474,7 +475,7 @@
             this.layoutControlItem10.Control = this.previousGrid;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(854, 102);
+            this.layoutControlItem10.Size = new System.Drawing.Size(874, 122);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 

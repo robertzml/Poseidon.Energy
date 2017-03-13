@@ -71,6 +71,7 @@
             // 
             // colSectionNumber
             // 
+            this.colSectionNumber.Caption = "段户号";
             this.colSectionNumber.FieldName = "SectionNumber";
             this.colSectionNumber.Name = "colSectionNumber";
             this.colSectionNumber.Visible = true;
@@ -78,6 +79,7 @@
             // 
             // colNumber
             // 
+            this.colNumber.Caption = "总户号";
             this.colNumber.FieldName = "Number";
             this.colNumber.Name = "colNumber";
             this.colNumber.Visible = true;
@@ -85,6 +87,7 @@
             // 
             // colAccountName
             // 
+            this.colAccountName.Caption = "户名";
             this.colAccountName.FieldName = "AccountName";
             this.colAccountName.Name = "colAccountName";
             this.colAccountName.Visible = true;
@@ -92,6 +95,7 @@
             // 
             // colAddress
             // 
+            this.colAddress.Caption = "地址";
             this.colAddress.FieldName = "Address";
             this.colAddress.Name = "colAddress";
             this.colAddress.Visible = true;
@@ -99,6 +103,7 @@
             // 
             // colMultiple
             // 
+            this.colMultiple.Caption = "倍率";
             this.colMultiple.FieldName = "Multiple";
             this.colMultiple.Name = "colMultiple";
             this.colMultiple.Visible = true;
@@ -106,6 +111,7 @@
             // 
             // colName
             // 
+            this.colName.Caption = "名称";
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
             this.colName.Visible = true;
@@ -113,6 +119,7 @@
             // 
             // colRemark
             // 
+            this.colRemark.Caption = "备注";
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
@@ -120,6 +127,7 @@
             // 
             // colStatus
             // 
+            this.colStatus.Caption = "状态";
             this.colStatus.FieldName = "Status";
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;

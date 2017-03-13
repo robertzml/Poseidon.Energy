@@ -15,7 +15,6 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Core.Utility;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
-    using Poseidon.Energy.Core.Utility;
     using Poseidon.Winform.Base;
 
     /// <summary>
@@ -69,8 +68,29 @@ namespace Poseidon.Energy.ClientDx
             this.txtRemark.Text = entity.Remark;
             this.txtCreateUser.Text = entity.CreateBy.Name;
             this.txtCreateTime.Text = entity.CreateBy.Time.ToDateTimeString();
+            this.txtEditUser.Text = entity.UpdateBy.Name;
+            this.txtEditTime.Text = entity.UpdateBy.Time.ToDateTimeString();
 
             this.waterExpRecGrid.DataSource = entity.Records;
+        }
+
+        /// <summary>
+        /// 清空显示
+        /// </summary>
+        private void Clear()
+        {
+            this.txtBelongDate.Text = "";
+            this.txtTicketDate.Text = "";
+            this.txtFeeType.Text = "";
+            this.txtTotalQuantity.Text = "";
+            this.txtTotalAmount.Text = "";
+            this.txtRemark.Text = "";
+            this.txtCreateUser.Text = "";
+            this.txtCreateTime.Text = "";
+            this.txtEditUser.Text = "";
+            this.txtEditTime.Text = "";
+
+            this.waterExpRecGrid.Clear();
         }
         #endregion //Function
 
@@ -112,7 +132,10 @@ namespace Poseidon.Energy.ClientDx
         private void lbWaterReceipt_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lbWaterReceipt.SelectedValue == null)
+            {
+                Clear();
                 return;
+            }
 
             ShowWaterExpense(this.lbWaterReceipt.SelectedItem as WaterExpense);
         }

@@ -32,6 +32,7 @@
             this.colMeterNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMeterName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFeeType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repoCmbFeeType = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.colPrevious = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCurrent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMultiple = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -41,7 +42,6 @@
             this.colPrize = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCalcQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repoCmbFeeType = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -95,6 +95,7 @@
             // 
             // colMeterNumber
             // 
+            this.colMeterNumber.Caption = "电表编号";
             this.colMeterNumber.FieldName = "MeterNumber";
             this.colMeterNumber.Name = "colMeterNumber";
             this.colMeterNumber.Visible = true;
@@ -102,6 +103,7 @@
             // 
             // colMeterName
             // 
+            this.colMeterName.Caption = "电表名称";
             this.colMeterName.FieldName = "MeterName";
             this.colMeterName.Name = "colMeterName";
             this.colMeterName.Visible = true;
@@ -109,14 +111,23 @@
             // 
             // colFeeType
             // 
+            this.colFeeType.Caption = "费用类型";
             this.colFeeType.ColumnEdit = this.repoCmbFeeType;
             this.colFeeType.FieldName = "FeeType";
             this.colFeeType.Name = "colFeeType";
             this.colFeeType.Visible = true;
             this.colFeeType.VisibleIndex = 2;
             // 
+            // repoCmbFeeType
+            // 
+            this.repoCmbFeeType.AutoHeight = false;
+            this.repoCmbFeeType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoCmbFeeType.Name = "repoCmbFeeType";
+            // 
             // colPrevious
             // 
+            this.colPrevious.Caption = "上期数";
             this.colPrevious.FieldName = "Previous";
             this.colPrevious.Name = "colPrevious";
             this.colPrevious.Visible = true;
@@ -124,6 +135,7 @@
             // 
             // colCurrent
             // 
+            this.colCurrent.Caption = "本期数";
             this.colCurrent.FieldName = "Current";
             this.colCurrent.Name = "colCurrent";
             this.colCurrent.Visible = true;
@@ -131,6 +143,7 @@
             // 
             // colMultiple
             // 
+            this.colMultiple.Caption = "倍率";
             this.colMultiple.FieldName = "Multiple";
             this.colMultiple.Name = "colMultiple";
             this.colMultiple.Visible = true;
@@ -138,13 +151,17 @@
             // 
             // colQuantity
             // 
+            this.colQuantity.Caption = "用量(度)";
             this.colQuantity.FieldName = "Quantity";
             this.colQuantity.Name = "colQuantity";
+            this.colQuantity.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantity", "合计={0:0.##}")});
             this.colQuantity.Visible = true;
             this.colQuantity.VisibleIndex = 7;
             // 
             // colUnitPrice
             // 
+            this.colUnitPrice.Caption = "单价";
             this.colUnitPrice.FieldName = "UnitPrice";
             this.colUnitPrice.Name = "colUnitPrice";
             this.colUnitPrice.Visible = true;
@@ -152,20 +169,27 @@
             // 
             // colAmount
             // 
+            this.colAmount.Caption = "金额(元)";
             this.colAmount.FieldName = "Amount";
             this.colAmount.Name = "colAmount";
+            this.colAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "合计={0:0.##}")});
             this.colAmount.Visible = true;
             this.colAmount.VisibleIndex = 9;
             // 
             // colPrize
             // 
+            this.colPrize.Caption = "功率因数奖(元)";
             this.colPrize.FieldName = "Prize";
             this.colPrize.Name = "colPrize";
+            this.colPrize.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Prize", "合计={0:0.##}")});
             this.colPrize.Visible = true;
             this.colPrize.VisibleIndex = 10;
             // 
             // colRemark
             // 
+            this.colRemark.Caption = "备注";
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
@@ -181,13 +205,6 @@
             this.colCalcQuantity.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colCalcQuantity.Visible = true;
             this.colCalcQuantity.VisibleIndex = 6;
-            // 
-            // repoCmbFeeType
-            // 
-            this.repoCmbFeeType.AutoHeight = false;
-            this.repoCmbFeeType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repoCmbFeeType.Name = "repoCmbFeeType";
             // 
             // ElectricExpenseRecordGrid
             // 
