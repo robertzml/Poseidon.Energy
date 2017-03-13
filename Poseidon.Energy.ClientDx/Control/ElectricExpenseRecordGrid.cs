@@ -40,6 +40,11 @@ namespace Poseidon.Energy.ClientDx
         private void ElectricExpenseRecordGrid_Load(object sender, EventArgs e)
         {
             this.dataNavigator1.Visible = this.showNavigator;
+
+            if (!ControlUtil.IsInDesignMode())
+            {
+                ControlUtil.BindDictToComboBox(this.repoCmbFeeType, typeof(ElectricExpenseRecord), "FeeType");
+            }
         }
         #endregion //Event
 

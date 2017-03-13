@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Energy.ClientDx
 {
-    partial class FrmExpenseElectricAdd
+    partial class FrmExpenseElectricEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,18 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.previousGrid = new Poseidon.Energy.ClientDx.ElectricExpenseRecordGrid();
+            this.txtPreviousDate = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.expenseGrid = new Poseidon.Energy.ClientDx.ElectricExpenseRecordGrid();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnSum = new DevExpress.XtraEditors.SimpleButton();
             this.spTotalPrize = new DevExpress.XtraEditors.SpinEdit();
             this.cmbFeeType = new DevExpress.XtraEditors.ImageComboBoxEdit();
             this.dpTicketDate = new DevExpress.XtraEditors.DateEdit();
@@ -48,23 +58,23 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.txtPreviousDate = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnSum = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.expenseGrid = new Poseidon.Energy.ClientDx.ElectricExpenseRecordGrid();
-            this.previousGrid = new Poseidon.Energy.ClientDx.ElectricExpenseRecordGrid();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
             this.plBottom.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
+            this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPreviousDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -88,18 +98,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
-            this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
-            this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPreviousDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -130,9 +130,9 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupControl3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupControl1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -143,6 +143,113 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 542);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.layoutControl2);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(3, 363);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(878, 176);
+            this.groupControl3.TabIndex = 3;
+            this.groupControl3.Text = "上期记录";
+            // 
+            // layoutControl2
+            // 
+            this.layoutControl2.Controls.Add(this.previousGrid);
+            this.layoutControl2.Controls.Add(this.txtPreviousDate);
+            this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl2.Location = new System.Drawing.Point(2, 21);
+            this.layoutControl2.Name = "layoutControl2";
+            this.layoutControl2.Root = this.layoutControlGroup2;
+            this.layoutControl2.Size = new System.Drawing.Size(874, 153);
+            this.layoutControl2.TabIndex = 1;
+            this.layoutControl2.Text = "layoutControl2";
+            // 
+            // previousGrid
+            // 
+            this.previousGrid.AllowFilter = false;
+            this.previousGrid.AllowGroup = false;
+            this.previousGrid.AllowSort = false;
+            this.previousGrid.DataSource = null;
+            this.previousGrid.Editable = false;
+            this.previousGrid.Location = new System.Drawing.Point(2, 26);
+            this.previousGrid.Name = "previousGrid";
+            this.previousGrid.ShowAddMenu = false;
+            this.previousGrid.ShowFooter = true;
+            this.previousGrid.ShowLineNumber = false;
+            this.previousGrid.ShowNavigator = false;
+            this.previousGrid.Size = new System.Drawing.Size(870, 125);
+            this.previousGrid.TabIndex = 1;
+            // 
+            // txtPreviousDate
+            // 
+            this.txtPreviousDate.Location = new System.Drawing.Point(53, 2);
+            this.txtPreviousDate.Name = "txtPreviousDate";
+            this.txtPreviousDate.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtPreviousDate.Properties.Appearance.Options.UseBackColor = true;
+            this.txtPreviousDate.Properties.ReadOnly = true;
+            this.txtPreviousDate.Size = new System.Drawing.Size(819, 20);
+            this.txtPreviousDate.StyleController = this.layoutControl2;
+            this.txtPreviousDate.TabIndex = 0;
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup2.GroupBordersVisible = false;
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem9,
+            this.layoutControlItem10});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(874, 153);
+            this.layoutControlGroup2.TextVisible = false;
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.txtPreviousDate;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(874, 24);
+            this.layoutControlItem9.Text = "上期日期";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.previousGrid;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(874, 129);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem10.TextVisible = false;
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.expenseGrid);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(3, 163);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(878, 194);
+            this.groupControl2.TabIndex = 2;
+            this.groupControl2.Text = "支出明细";
+            // 
+            // expenseGrid
+            // 
+            this.expenseGrid.AllowFilter = false;
+            this.expenseGrid.AllowGroup = false;
+            this.expenseGrid.AllowSort = false;
+            this.expenseGrid.DataSource = null;
+            this.expenseGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.expenseGrid.Editable = true;
+            this.expenseGrid.Location = new System.Drawing.Point(2, 21);
+            this.expenseGrid.Name = "expenseGrid";
+            this.expenseGrid.ShowAddMenu = false;
+            this.expenseGrid.ShowFooter = true;
+            this.expenseGrid.ShowLineNumber = false;
+            this.expenseGrid.ShowNavigator = true;
+            this.expenseGrid.Size = new System.Drawing.Size(874, 171);
+            this.expenseGrid.TabIndex = 0;
+            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.layoutControl1);
@@ -150,7 +257,7 @@
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(878, 154);
-            this.groupControl1.TabIndex = 0;
+            this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "支出信息";
             // 
             // layoutControl1
@@ -171,6 +278,16 @@
             this.layoutControl1.Size = new System.Drawing.Size(874, 131);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnSum
+            // 
+            this.btnSum.Location = new System.Drawing.Point(12, 97);
+            this.btnSum.Name = "btnSum";
+            this.btnSum.Size = new System.Drawing.Size(245, 22);
+            this.btnSum.StyleController = this.layoutControl1;
+            this.btnSum.TabIndex = 15;
+            this.btnSum.Text = "求和";
+            this.btnSum.Click += new System.EventHandler(this.btnSum_Click);
             // 
             // spTotalPrize
             // 
@@ -374,81 +491,6 @@
             this.layoutControlItem7.Text = "功率因数奖";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.expenseGrid);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 163);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(878, 194);
-            this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "支出明细";
-            // 
-            // groupControl3
-            // 
-            this.groupControl3.Controls.Add(this.layoutControl2);
-            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(3, 363);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(878, 176);
-            this.groupControl3.TabIndex = 2;
-            this.groupControl3.Text = "上期记录";
-            // 
-            // layoutControl2
-            // 
-            this.layoutControl2.Controls.Add(this.previousGrid);
-            this.layoutControl2.Controls.Add(this.txtPreviousDate);
-            this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl2.Location = new System.Drawing.Point(2, 21);
-            this.layoutControl2.Name = "layoutControl2";
-            this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(874, 153);
-            this.layoutControl2.TabIndex = 1;
-            this.layoutControl2.Text = "layoutControl2";
-            // 
-            // layoutControlGroup2
-            // 
-            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup2.GroupBordersVisible = false;
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem9,
-            this.layoutControlItem10});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup2.Size = new System.Drawing.Size(874, 153);
-            this.layoutControlGroup2.TextVisible = false;
-            // 
-            // txtPreviousDate
-            // 
-            this.txtPreviousDate.Location = new System.Drawing.Point(54, 2);
-            this.txtPreviousDate.Name = "txtPreviousDate";
-            this.txtPreviousDate.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtPreviousDate.Properties.Appearance.Options.UseBackColor = true;
-            this.txtPreviousDate.Properties.ReadOnly = true;
-            this.txtPreviousDate.Size = new System.Drawing.Size(818, 20);
-            this.txtPreviousDate.StyleController = this.layoutControl2;
-            this.txtPreviousDate.TabIndex = 0;
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.Control = this.txtPreviousDate;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(874, 24);
-            this.layoutControlItem9.Text = "上期日期";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // btnSum
-            // 
-            this.btnSum.Location = new System.Drawing.Point(12, 97);
-            this.btnSum.Name = "btnSum";
-            this.btnSum.Size = new System.Drawing.Size(245, 22);
-            this.btnSum.StyleController = this.layoutControl1;
-            this.btnSum.TabIndex = 15;
-            this.btnSum.Text = "求和";
-            this.btnSum.Click += new System.EventHandler(this.btnSum_Click);
-            // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.btnSum;
@@ -466,60 +508,28 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(605, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // expenseGrid
-            // 
-            this.expenseGrid.AllowFilter = false;
-            this.expenseGrid.AllowGroup = false;
-            this.expenseGrid.AllowSort = false;
-            this.expenseGrid.DataSource = null;
-            this.expenseGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.expenseGrid.Editable = true;
-            this.expenseGrid.Location = new System.Drawing.Point(2, 21);
-            this.expenseGrid.Name = "expenseGrid";
-            this.expenseGrid.ShowAddMenu = false;
-            this.expenseGrid.ShowFooter = true;
-            this.expenseGrid.ShowLineNumber = false;
-            this.expenseGrid.ShowNavigator = true;
-            this.expenseGrid.Size = new System.Drawing.Size(874, 171);
-            this.expenseGrid.TabIndex = 0;
-            // 
-            // previousGrid
-            // 
-            this.previousGrid.AllowFilter = false;
-            this.previousGrid.AllowGroup = false;
-            this.previousGrid.AllowSort = false;
-            this.previousGrid.DataSource = null;
-            this.previousGrid.Editable = false;
-            this.previousGrid.Location = new System.Drawing.Point(2, 26);
-            this.previousGrid.Name = "previousGrid";
-            this.previousGrid.ShowAddMenu = false;
-            this.previousGrid.ShowFooter = true;
-            this.previousGrid.ShowLineNumber = false;
-            this.previousGrid.ShowNavigator = false;
-            this.previousGrid.Size = new System.Drawing.Size(870, 125);
-            this.previousGrid.TabIndex = 1;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.previousGrid;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(874, 129);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
-            // 
-            // FrmExpenseElectricAdd
+            // FrmExpenseElectricEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 602);
-            this.Name = "FrmExpenseElectricAdd";
-            this.Text = "登记电费支出";
+            this.Name = "FrmExpenseElectricEdit";
+            this.Text = "编辑电费支出";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
             this.plBottom.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
+            this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtPreviousDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -543,18 +553,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
-            this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
-            this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPreviousDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -564,34 +564,34 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraEditors.TextEdit txtAccountName;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraEditors.DateEdit dpBelongDate;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraEditors.SpinEdit spTotalQuantity;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraEditors.SpinEdit spTotalAmount;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraEditors.MemoEdit txtRemark;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraEditors.SimpleButton btnSum;
         private DevExpress.XtraEditors.SpinEdit spTotalPrize;
         private DevExpress.XtraEditors.ImageComboBoxEdit cmbFeeType;
         private DevExpress.XtraEditors.DateEdit dpTicketDate;
+        private DevExpress.XtraEditors.MemoEdit txtRemark;
+        private DevExpress.XtraEditors.SpinEdit spTotalAmount;
+        private DevExpress.XtraEditors.SpinEdit spTotalQuantity;
+        private DevExpress.XtraEditors.DateEdit dpBelongDate;
+        private DevExpress.XtraEditors.TextEdit txtAccountName;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private ElectricExpenseRecordGrid expenseGrid;
         private DevExpress.XtraEditors.GroupControl groupControl3;
-        private ElectricExpenseRecordGrid previousGrid;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
+        private ElectricExpenseRecordGrid previousGrid;
         private DevExpress.XtraEditors.TextEdit txtPreviousDate;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private DevExpress.XtraEditors.SimpleButton btnSum;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }

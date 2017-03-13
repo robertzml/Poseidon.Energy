@@ -37,6 +37,7 @@
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.txtRemark = new DevExpress.XtraEditors.TextEdit();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.waterExpRecGrid = new Poseidon.Energy.ClientDx.WaterExpenseRecordGrid();
             this.txtTotalAmount = new DevExpress.XtraEditors.TextEdit();
             this.txtTotalQuantity = new DevExpress.XtraEditors.TextEdit();
             this.txtFeeType = new DevExpress.XtraEditors.TextEdit();
@@ -51,15 +52,14 @@
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.waterExpRecGrid = new Poseidon.Energy.ClientDx.WaterExpenseRecordGrid();
-            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lcGroupAction = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
@@ -81,14 +81,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lcGroupAction)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -118,6 +118,7 @@
             this.layoutControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl3.Location = new System.Drawing.Point(2, 2);
             this.layoutControl3.Name = "layoutControl3";
+            this.layoutControl3.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(788, 251, 534, 491);
             this.layoutControl3.Root = this.layoutControlGroup4;
             this.layoutControl3.Size = new System.Drawing.Size(892, 473);
             this.layoutControl3.TabIndex = 1;
@@ -185,6 +186,22 @@
             this.btnDelete.TabIndex = 12;
             this.btnDelete.Text = "删除单据";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // waterExpRecGrid
+            // 
+            this.waterExpRecGrid.AllowFilter = false;
+            this.waterExpRecGrid.AllowGroup = false;
+            this.waterExpRecGrid.AllowSort = true;
+            this.waterExpRecGrid.DataSource = null;
+            this.waterExpRecGrid.Editable = false;
+            this.waterExpRecGrid.Location = new System.Drawing.Point(164, 153);
+            this.waterExpRecGrid.Name = "waterExpRecGrid";
+            this.waterExpRecGrid.ShowAddMenu = false;
+            this.waterExpRecGrid.ShowFooter = true;
+            this.waterExpRecGrid.ShowLineNumber = true;
+            this.waterExpRecGrid.ShowNavigator = false;
+            this.waterExpRecGrid.Size = new System.Drawing.Size(716, 308);
+            this.waterExpRecGrid.TabIndex = 10;
             // 
             // txtTotalAmount
             // 
@@ -274,7 +291,7 @@
             this.layoutControlItem4,
             this.lcGroupAction});
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup4.Name = "layoutControlGroup4";
+            this.layoutControlGroup4.Name = "Root";
             this.layoutControlGroup4.Size = new System.Drawing.Size(892, 473);
             this.layoutControlGroup4.TextVisible = false;
             // 
@@ -332,14 +349,14 @@
             this.layoutControlItem14.Text = "金额(元)";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(58, 14);
             // 
-            // layoutControlItem19
+            // layoutControlItem15
             // 
-            this.layoutControlItem19.Control = this.btnDelete;
-            this.layoutControlItem19.Location = new System.Drawing.Point(459, 0);
-            this.layoutControlItem19.Name = "layoutControlItem19";
-            this.layoutControlItem19.Size = new System.Drawing.Size(237, 26);
-            this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem19.TextVisible = false;
+            this.layoutControlItem15.Control = this.waterExpRecGrid;
+            this.layoutControlItem15.Location = new System.Drawing.Point(152, 141);
+            this.layoutControlItem15.Name = "layoutControlItem15";
+            this.layoutControlItem15.Size = new System.Drawing.Size(720, 312);
+            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem15.TextVisible = false;
             // 
             // layoutControlItem20
             // 
@@ -349,24 +366,6 @@
             this.layoutControlItem20.Size = new System.Drawing.Size(249, 48);
             this.layoutControlItem20.Text = "备注";
             this.layoutControlItem20.TextSize = new System.Drawing.Size(58, 14);
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.btnAdd;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(210, 26);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.btnEdit;
-            this.layoutControlItem2.Location = new System.Drawing.Point(210, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(249, 26);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
@@ -386,31 +385,6 @@
             this.layoutControlItem4.Text = "登记时间";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(58, 14);
             // 
-            // waterExpRecGrid
-            // 
-            this.waterExpRecGrid.AllowFilter = false;
-            this.waterExpRecGrid.AllowGroup = false;
-            this.waterExpRecGrid.AllowSort = true;
-            this.waterExpRecGrid.DataSource = null;
-            this.waterExpRecGrid.Editable = false;
-            this.waterExpRecGrid.Location = new System.Drawing.Point(164, 153);
-            this.waterExpRecGrid.Name = "waterExpRecGrid";
-            this.waterExpRecGrid.ShowAddMenu = false;
-            this.waterExpRecGrid.ShowFooter = true;
-            this.waterExpRecGrid.ShowLineNumber = true;
-            this.waterExpRecGrid.ShowNavigator = false;
-            this.waterExpRecGrid.Size = new System.Drawing.Size(716, 308);
-            this.waterExpRecGrid.TabIndex = 10;
-            // 
-            // layoutControlItem15
-            // 
-            this.layoutControlItem15.Control = this.waterExpRecGrid;
-            this.layoutControlItem15.Location = new System.Drawing.Point(152, 141);
-            this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(720, 312);
-            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem15.TextVisible = false;
-            // 
             // lcGroupAction
             // 
             this.lcGroupAction.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -421,6 +395,33 @@
             this.lcGroupAction.Name = "lcGroupAction";
             this.lcGroupAction.Size = new System.Drawing.Size(720, 69);
             this.lcGroupAction.Text = "操作";
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.btnAdd;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(210, 26);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.btnEdit;
+            this.layoutControlItem2.Location = new System.Drawing.Point(210, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(249, 26);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // layoutControlItem19
+            // 
+            this.layoutControlItem19.Control = this.btnDelete;
+            this.layoutControlItem19.Location = new System.Drawing.Point(459, 0);
+            this.layoutControlItem19.Name = "layoutControlItem19";
+            this.layoutControlItem19.Size = new System.Drawing.Size(237, 26);
+            this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem19.TextVisible = false;
             // 
             // WaterExpenseReceipt
             // 
@@ -451,14 +452,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lcGroupAction)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             this.ResumeLayout(false);
 
         }

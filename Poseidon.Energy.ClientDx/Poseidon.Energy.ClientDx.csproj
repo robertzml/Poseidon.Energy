@@ -135,6 +135,12 @@
     <Compile Include="Control\ElectricExpenseRecordGrid.Designer.cs">
       <DependentUpon>ElectricExpenseRecordGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\ElectricExpenseReceipt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ElectricExpenseReceipt.Designer.cs">
+      <DependentUpon>ElectricExpenseReceipt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Expense\FrmExpenseOverview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,12 @@
     </Compile>
     <Compile Include="Expense\FrmExpenseElectricAdd.Designer.cs">
       <DependentUpon>FrmExpenseElectricAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expense\FrmExpenseElectricEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expense\FrmExpenseElectricEdit.Designer.cs">
+      <DependentUpon>FrmExpenseElectricEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -340,6 +352,9 @@
     <EmbeddedResource Include="Control\AllowanceTargetGrid.resx">
       <DependentUpon>AllowanceTargetGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\ElectricExpenseReceipt.resx">
+      <DependentUpon>ElectricExpenseReceipt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\ElectricExpenseRecordGrid.resx">
       <DependentUpon>ElectricExpenseRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -390,6 +405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Expense\FrmExpenseElectricAdd.resx">
       <DependentUpon>FrmExpenseElectricAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expense\FrmExpenseElectricEdit.resx">
+      <DependentUpon>FrmExpenseElectricEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Expense\FrmExpenseElectricMeterSet.resx">
       <DependentUpon>FrmExpenseElectricMeterSet.cs</DependentUpon>
@@ -452,6 +470,7 @@
     <None Include="app.config" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.AllowanceTarget.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Department.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.ElectricExpense.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.ElectricExpenseRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.ElectricMeter.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.ExpenseAccount.datasource" />

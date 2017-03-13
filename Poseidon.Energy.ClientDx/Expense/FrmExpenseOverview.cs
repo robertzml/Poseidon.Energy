@@ -51,6 +51,15 @@ namespace Poseidon.Energy.ClientDx
             base.InitForm();
         }
 
+        private void HideTab()
+        {
+            this.tabPageElectricMeter.PageVisible = false;
+            this.tabPageWaterMeter.PageVisible = false;
+
+            this.tabPageWaterExpense.PageVisible = false;
+            this.tabPageWaterReceipt.PageVisible = false;
+        }
+
         /// <summary>
         /// 设置账户信息
         /// </summary>
@@ -59,7 +68,9 @@ namespace Poseidon.Energy.ClientDx
             this.ctrAccountInfo.SetAccount(this.currentAccount);
 
             if (this.currentAccount.EnergyType.Contains(1))
-            { }
+            {
+                LoadElectric();
+            }
             if (this.currentAccount.EnergyType.Contains(2))
             {
                 LoadWater();
@@ -68,6 +79,15 @@ namespace Poseidon.Energy.ClientDx
             { }
             if (this.currentAccount.EnergyType.Contains(4))
             { }
+        }
+
+        /// <summary>
+        /// 载入电费相关数据
+        /// </summary>
+        private void LoadElectric()
+        {
+            this.tabPageElectricMeter.PageVisible = true;
+            this.electricMeterGrid.DataSource = this.currentAccount.ElectricMeters;
         }
 
         /// <summary>
@@ -104,6 +124,8 @@ namespace Poseidon.Energy.ClientDx
         private void accountTree_AccountSelected(object sender, EventArgs e)
         {
             string id = this.accountTree.GetCurrentSelectAccountId();
+
+            HideTab();
             if (id == null)
                 this.currentAccount = null;
             else

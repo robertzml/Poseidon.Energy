@@ -36,6 +36,7 @@
             this.tabPageInfo = new DevExpress.XtraTab.XtraTabPage();
             this.ctrAccountInfo = new Poseidon.Energy.ClientDx.ExpenseAccountInfo();
             this.tabPageElectric = new DevExpress.XtraTab.XtraTabPage();
+            this.electricReceipt = new Poseidon.Energy.ClientDx.ElectricExpenseReceipt();
             this.tabPageWater = new DevExpress.XtraTab.XtraTabPage();
             this.waterReceipt = new Poseidon.Energy.ClientDx.WaterExpenseReceipt();
             this.tableLayoutPanel1.SuspendLayout();
@@ -46,6 +47,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabControl)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tabPageInfo.SuspendLayout();
+            this.tabPageElectric.SuspendLayout();
             this.tabPageWater.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,10 +126,20 @@
             // 
             // tabPageElectric
             // 
+            this.tabPageElectric.Controls.Add(this.electricReceipt);
             this.tabPageElectric.Name = "tabPageElectric";
             this.tabPageElectric.PageVisible = false;
             this.tabPageElectric.Size = new System.Drawing.Size(693, 481);
             this.tabPageElectric.Text = "电费单据";
+            // 
+            // electricReceipt
+            // 
+            this.electricReceipt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.electricReceipt.Editable = true;
+            this.electricReceipt.Location = new System.Drawing.Point(0, 0);
+            this.electricReceipt.Name = "electricReceipt";
+            this.electricReceipt.Size = new System.Drawing.Size(693, 481);
+            this.electricReceipt.TabIndex = 0;
             // 
             // tabPageWater
             // 
@@ -162,6 +174,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabControl)).EndInit();
             this.tabControl.ResumeLayout(false);
             this.tabPageInfo.ResumeLayout(false);
+            this.tabPageElectric.ResumeLayout(false);
             this.tabPageWater.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -179,5 +192,6 @@
         private DevExpress.XtraTab.XtraTabPage tabPageWater;
         private WaterExpenseReceipt waterReceipt;
         private ExpenseAccountInfo ctrAccountInfo;
+        private ElectricExpenseReceipt electricReceipt;
     }
 }

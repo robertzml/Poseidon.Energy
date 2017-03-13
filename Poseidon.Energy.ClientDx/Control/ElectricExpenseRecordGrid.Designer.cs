@@ -41,9 +41,11 @@
             this.colPrize = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCalcQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repoCmbFeeType = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoCmbFeeType)).BeginInit();
             this.SuspendLayout();
             // 
             // bsEntity
@@ -52,7 +54,9 @@
             // 
             // dgcEntity
             // 
-            this.dgcEntity.Size = new System.Drawing.Size(568, 354);
+            this.dgcEntity.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repoCmbFeeType});
+            this.dgcEntity.Size = new System.Drawing.Size(647, 354);
             // 
             // dgvEntity
             // 
@@ -83,7 +87,7 @@
             this.dataNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataNavigator1.Location = new System.Drawing.Point(0, 354);
             this.dataNavigator1.Name = "dataNavigator1";
-            this.dataNavigator1.Size = new System.Drawing.Size(568, 24);
+            this.dataNavigator1.Size = new System.Drawing.Size(647, 24);
             this.dataNavigator1.TabIndex = 1;
             this.dataNavigator1.Text = "dataNavigator1";
             this.dataNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
@@ -105,6 +109,7 @@
             // 
             // colFeeType
             // 
+            this.colFeeType.ColumnEdit = this.repoCmbFeeType;
             this.colFeeType.FieldName = "FeeType";
             this.colFeeType.Name = "colFeeType";
             this.colFeeType.Visible = true;
@@ -171,10 +176,18 @@
             this.colCalcQuantity.Caption = "计算用量";
             this.colCalcQuantity.FieldName = "colCalcQuantity";
             this.colCalcQuantity.Name = "colCalcQuantity";
+            this.colCalcQuantity.OptionsColumn.AllowEdit = false;
             this.colCalcQuantity.UnboundExpression = "([Current] - [Previous]) * [Multiple]";
             this.colCalcQuantity.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colCalcQuantity.Visible = true;
             this.colCalcQuantity.VisibleIndex = 6;
+            // 
+            // repoCmbFeeType
+            // 
+            this.repoCmbFeeType.AutoHeight = false;
+            this.repoCmbFeeType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoCmbFeeType.Name = "repoCmbFeeType";
             // 
             // ElectricExpenseRecordGrid
             // 
@@ -182,12 +195,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataNavigator1);
             this.Name = "ElectricExpenseRecordGrid";
+            this.Size = new System.Drawing.Size(647, 378);
             this.Load += new System.EventHandler(this.ElectricExpenseRecordGrid_Load);
             this.Controls.SetChildIndex(this.dataNavigator1, 0);
             this.Controls.SetChildIndex(this.dgcEntity, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoCmbFeeType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,5 +221,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colPrize;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
+        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repoCmbFeeType;
     }
 }

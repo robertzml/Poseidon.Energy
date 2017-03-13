@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,40 +16,50 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 登记电费支出窗体
+    /// 编辑电费支出窗体
     /// </summary>
-    public partial class FrmExpenseElectricAdd : BaseSingleForm
+    public partial class FrmExpenseElectricEdit : BaseSingleForm
     {
         #region Field
         /// <summary>
-        /// 当前关联支出账户
+        /// 当前关联支出
+        /// </summary>
+        private ElectricExpense currentExpense;
+
+        /// <summary>
+        /// 当前关联账户
         /// </summary>
         private ExpenseAccount currentAccount;
         #endregion //Field
 
         #region Constructor
-        public FrmExpenseElectricAdd(string accountId)
+        public FrmExpenseElectricEdit(string id, string accountId)
         {
             InitializeComponent();
-
-            InitData(accountId);
+            InitData(id, accountId);
         }
         #endregion //Constructor
 
         #region Function
-        private void InitData(string id)
+        private void InitData(string id, string accountId)
         {
-            this.currentAccount = BusinessFactory<ExpenseAccountBusiness>.Instance.FindById(id);
+            this.currentExpense = BusinessFactory<ElectricExpenseBusiness>.Instance.FindById(id);
+            this.currentAccount = BusinessFactory<ExpenseAccountBusiness>.Instance.FindById(accountId);
         }
 
         protected override void InitForm()
         {
             this.txtAccountName.Text = this.currentAccount.Name;
-            this.dpTicketDate.DateTime = DateTime.Now;
-            ControlUtil.BindDictToComboBox(this.cmbFeeType, typeof(ElectricExpense), "FeeType");
-            this.cmbFeeType.SelectedIndex = 0;
 
-            InitRecords();
+            this.dpBelongDate.DateTime = this.currentExpense.BelongDate;
+            this.dpTicketDate.DateTime = this.currentExpense.TicketDate;
+            ControlUtil.BindDictToComboBox(this.cmbFeeType, typeof(WaterExpense), "FeeType", this.currentExpense.FeeType);
+            this.spTotalQuantity.Value = this.currentExpense.TotalQuantity;
+            this.spTotalAmount.Value = this.currentExpense.TotalAmount;
+            this.spTotalPrize.Value = this.currentExpense.TotalPrize;
+            this.txtRemark.Text = this.currentExpense.Remark;
+
+            this.expenseGrid.DataSource = this.currentExpense.Records;
 
             var last = BusinessFactory<ElectricExpenseBusiness>.Instance.FindLast(this.currentAccount.Id);
             if (last != null)
@@ -60,25 +69,6 @@ namespace Poseidon.Energy.ClientDx
             }
 
             base.InitForm();
-        }
-
-        /// <summary>
-        /// 初始化支出记录，关联电表
-        /// </summary>
-        private void InitRecords()
-        {
-            List<ElectricExpenseRecord> records = new List<ElectricExpenseRecord>();
-
-            foreach (var item in this.currentAccount.ElectricMeters)
-            {
-                ElectricExpenseRecord record = new ElectricExpenseRecord();
-                record.MeterName = item.Name;
-                record.MeterNumber = item.Number;
-
-                records.Add(record);
-            }
-
-            this.expenseGrid.DataSource = records;
         }
 
         /// <summary>
@@ -128,7 +118,7 @@ namespace Poseidon.Energy.ClientDx
             {
                 if (string.IsNullOrEmpty(item.MeterName))
                 {
-                    errorMessage = "电表名称不能为空";
+                    errorMessage = "水表名称不能为空";
                     return new Tuple<bool, string>(false, errorMessage);
                 }
             }
@@ -178,12 +168,11 @@ namespace Poseidon.Energy.ClientDx
                 return;
             }
 
-            ElectricExpense entity = new ElectricExpense();
-            SetEntity(entity);
+            SetEntity(this.currentExpense);
 
             try
             {
-                BusinessFactory<ElectricExpenseBusiness>.Instance.Create(entity, this.currentUser);
+                BusinessFactory<ElectricExpenseBusiness>.Instance.Update(this.currentExpense, this.currentUser);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

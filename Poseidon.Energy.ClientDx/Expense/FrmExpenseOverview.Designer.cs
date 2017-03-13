@@ -66,6 +66,8 @@
             this.tabPageWaterReceipt = new DevExpress.XtraTab.XtraTabPage();
             this.waterExpenseReceipt = new Poseidon.Energy.ClientDx.WaterExpenseReceipt();
             this.bsWaterExpense = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPageElectricMeter = new DevExpress.XtraTab.XtraTabPage();
+            this.electricMeterGrid = new Poseidon.Energy.ClientDx.ElectricMeterGrid();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -101,6 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
             this.tabPageWaterReceipt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsWaterExpense)).BeginInit();
+            this.tabPageElectricMeter.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -160,6 +163,7 @@
             this.tabInfo.TabIndex = 0;
             this.tabInfo.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageAccount,
+            this.tabPageElectricMeter,
             this.tabPageWaterMeter});
             // 
             // tabPageAccount
@@ -496,6 +500,31 @@
             // 
             this.bsWaterExpense.DataSource = typeof(Poseidon.Energy.Core.DL.WaterExpense);
             // 
+            // tabPageElectricMeter
+            // 
+            this.tabPageElectricMeter.Controls.Add(this.electricMeterGrid);
+            this.tabPageElectricMeter.Name = "tabPageElectricMeter";
+            this.tabPageElectricMeter.PageVisible = false;
+            this.tabPageElectricMeter.Size = new System.Drawing.Size(689, 142);
+            this.tabPageElectricMeter.Text = "电表表具";
+            // 
+            // electricMeterGrid
+            // 
+            this.electricMeterGrid.AllowFilter = true;
+            this.electricMeterGrid.AllowGroup = true;
+            this.electricMeterGrid.AllowSort = true;
+            this.electricMeterGrid.DataSource = null;
+            this.electricMeterGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.electricMeterGrid.Editable = false;
+            this.electricMeterGrid.Location = new System.Drawing.Point(0, 0);
+            this.electricMeterGrid.Name = "electricMeterGrid";
+            this.electricMeterGrid.ShowAddMenu = false;
+            this.electricMeterGrid.ShowFooter = false;
+            this.electricMeterGrid.ShowLineNumber = true;
+            this.electricMeterGrid.ShowNavigator = false;
+            this.electricMeterGrid.Size = new System.Drawing.Size(689, 142);
+            this.electricMeterGrid.TabIndex = 0;
+            // 
             // FrmExpenseOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -539,6 +568,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
             this.tabPageWaterReceipt.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsWaterExpense)).EndInit();
+            this.tabPageElectricMeter.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -582,5 +612,7 @@
         private DevExpress.XtraTab.XtraTabPage tabPageWaterReceipt;
         private WaterExpenseReceipt waterExpenseReceipt;
         private ExpenseAccountInfo ctrAccountInfo;
+        private DevExpress.XtraTab.XtraTabPage tabPageElectricMeter;
+        private ElectricMeterGrid electricMeterGrid;
     }
 }
