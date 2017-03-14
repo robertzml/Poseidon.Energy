@@ -70,15 +70,16 @@ namespace Poseidon.Energy.ClientDx
         /// 筛选部门
         /// </summary>
         /// <param name="ids">相关ID</param>
-        private void FilterDepartment(List<string> ids)
+        private void FilterDepartment(List<GroupItem> departments)
         {
-            if (ids.Count == 0)
-                this.depGrid.Clear();
+            if (departments.Count == 0)
+                this.depGrid.DataSource = null;
             else
             {
-                var data = this.bindDepartments.Where(r => ids.Contains(r.Id)).ToList();
+                var data = this.bindDepartments.Where(r => departments.Select(s => s.OrganizationId).Contains(r.Id)).ToList();
                 this.depGrid.DataSource = data;
             }
+            this.depGrid.UpdateBindingData();
         }
         #endregion //Function
 
@@ -91,6 +92,7 @@ namespace Poseidon.Energy.ClientDx
         private void btnShowAll_Click(object sender, EventArgs e)
         {
             this.depGrid.DataSource = this.bindDepartments;
+            this.depGrid.UpdateBindingData();
         }
 
         /// <summary>
@@ -131,7 +133,7 @@ namespace Poseidon.Energy.ClientDx
             if (select == null)
                 return;
 
-            FilterDepartment(select.Organizations);
+            FilterDepartment(select.Items);
         }
         #endregion //Event
     }

@@ -121,7 +121,7 @@ namespace Poseidon.Energy.ClientDx
 
                 // load contain account
                 var group = this.groups.Find(r => r.Id == id);
-                var orgs = BusinessFactory<OrganizationBusiness>.Instance.FindWithIds(group.Organizations);
+                var orgs = BusinessFactory<OrganizationBusiness>.Instance.FindWithIds(group.Items.Select(r => r.OrganizationId).ToList());
                 foreach (var item in orgs)
                 {
                     var node = this.tlData.AppendNode(new object[] { item.Id, item.Name, 2 }, e.Node);
