@@ -31,6 +31,7 @@ namespace Poseidon.Energy.ClientDx
         {
             entity.Name = this.txtName.Text;
             entity.Year = Convert.ToInt32(this.spYear.Value);
+            entity.BelongTime = this.txtBelongTime.Text;
             entity.Remark = this.txtRemark.Text;
         }
 

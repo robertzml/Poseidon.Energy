@@ -86,6 +86,7 @@ namespace Poseidon.Energy.Core.BL
                 Name = user.Name,
                 Time = DateTime.Now
             };
+            entity.Status = 0;
             base.Create(entity);
         }
 

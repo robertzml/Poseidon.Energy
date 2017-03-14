@@ -28,6 +28,21 @@ namespace Poseidon.Energy.Core.BL
 
         #region Method
         /// <summary>
+        /// 获取学生人数
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int GetStudentNumber(string id)
+        {
+            Poseidon.Core.BL.DictBusiness dictBusiness = new Poseidon.Core.BL.DictBusiness();
+            var dictItems = dictBusiness.FindItems("Energy.Target.StudentType");
+
+            PopulationRecordBusiness recordBusiness = new PopulationRecordBusiness();
+            int number = recordBusiness.GetDetailsNumber(id, dictItems.Select(r => r.Value).ToList());
+            return number;
+        }
+
+        /// <summary>
         /// 添加人数统计
         /// </summary>
         /// <param name="entity">实体对象</param>

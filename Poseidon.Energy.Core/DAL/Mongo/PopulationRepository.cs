@@ -6,6 +6,7 @@ using System.Text;
 namespace Poseidon.Energy.Core.DAL.Mongo
 {
     using MongoDB.Bson;
+    using MongoDB.Driver;
     using Poseidon.Base.Framework;
     using Poseidon.Data;
     using Poseidon.Energy.Core.DL;

@@ -40,6 +40,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             entity.Id = doc["_id"].ToString();
             entity.Name = doc["name"].ToString();
             entity.Year = doc["year"].ToInt32();
+            entity.BelongTime = doc.GetValue("belongTime", "").ToString();
 
             var createBy = doc["createBy"].ToBsonDocument();
             entity.CreateBy = new UpdateStamp
@@ -74,6 +75,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             {
                 { "name", entity.Name },
                 { "year", entity.Year },
+                { "belongTime", entity.BelongTime ?? "" },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },
                     { "name", entity.CreateBy.Name },

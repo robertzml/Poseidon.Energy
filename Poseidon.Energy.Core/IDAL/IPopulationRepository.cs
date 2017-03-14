@@ -13,5 +13,6 @@ namespace Poseidon.Energy.Core.IDAL
     /// </summary>
     internal interface IPopulationRepository : IBaseDAL<Population>
     {
+       
     }
 }

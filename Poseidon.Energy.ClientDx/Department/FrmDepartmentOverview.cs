@@ -44,8 +44,6 @@ namespace Poseidon.Energy.ClientDx
             LoadGroups();
             LoadDepartment();
 
-            this.depGrid.DataSource = this.bindDepartments;
-
             base.InitForm();
         }
 
@@ -65,6 +63,7 @@ namespace Poseidon.Energy.ClientDx
         private void LoadDepartment()
         {
             this.bindDepartments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
+            this.depGrid.DataSource = this.bindDepartments;
         }
 
         /// <summary>

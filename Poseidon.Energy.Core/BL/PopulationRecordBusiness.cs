@@ -50,6 +50,25 @@ namespace Poseidon.Energy.Core.BL
         }
 
         /// <summary>
+        /// 获取相关类型人数
+        /// </summary>
+        /// <param name="populationId">人数统计ID</param>
+        /// <param name="codes">人员类型代码</param>
+        /// <returns></returns>
+        public int GetDetailsNumber(string populationId, List<string> codes)
+        {
+            var records = this.baseDal.FindListByField("populationId", populationId);
+            int number = 0;
+
+            foreach (var item in records)
+            {
+                number += item.Details.Where(r => codes.Contains(r.Code)).Sum(s => s.Number);
+            }
+
+            return number;
+        }
+
+        /// <summary>
         /// 更新人数记录
         /// </summary>
         /// <param name="data">人数记录</param>

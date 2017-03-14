@@ -51,6 +51,7 @@ namespace Poseidon.Energy.ClientDx
         {
             this.txtName.Text = this.currentFund.Name;
             this.spYear.Value = this.currentFund.Year;
+            this.txtBelongTime.Text = this.currentFund.BelongTime;
             this.txtRemark.Text = this.currentFund.Remark;
 
             base.InitForm();
@@ -64,6 +65,7 @@ namespace Poseidon.Energy.ClientDx
         {
             entity.Name = this.txtName.Text;
             entity.Year = Convert.ToInt32(this.spYear.Value);
+            entity.BelongTime = this.txtBelongTime.Text;
             entity.Remark = this.txtRemark.Text;
         }
 

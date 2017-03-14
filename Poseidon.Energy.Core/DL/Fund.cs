@@ -24,6 +24,12 @@ namespace Poseidon.Energy.Core.DL
         /// </summary>
         [Display(Name = "年度")]
         public int Year { get; set; }
+
+        /// <summary>
+        /// 归属时间
+        /// </summary>
+        [Display(Name = "归属时间")]
+        public string BelongTime { get; set; }
         #endregion //Property
     }
 }
