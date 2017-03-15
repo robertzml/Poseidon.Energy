@@ -85,6 +85,17 @@ namespace Poseidon.Energy.ClientDx
             }
             this.depGrid.UpdateBindingData();
         }
+
+        /// <summary>
+        /// 筛选部门
+        /// </summary>
+        /// <param name="group">关联分组</param>
+        /// <param name="include">是否显示子分组部门</param>
+        private void FilterDepartment(Group group, bool include)
+        {
+            this.depGrid.DataSource = BusinessFactory<DepartmentBusiness>.Instance.FindInGroup(group.Code, include).ToList();
+            this.depGrid.UpdateBindingData();
+        }
         #endregion //Function
 
         #region Event
@@ -137,7 +148,7 @@ namespace Poseidon.Energy.ClientDx
             if (select == null)
                 return;
 
-            FilterDepartment(select.Items);
+            FilterDepartment(select, this.chkInclude.Checked);
         }
         #endregion //Event
     }

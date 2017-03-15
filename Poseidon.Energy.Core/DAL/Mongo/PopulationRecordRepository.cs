@@ -69,6 +69,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                     detail.Name = item["name"].ToString();
                     detail.Code = item["code"].ToString();
                     detail.Number = item["number"].ToInt32();
+                    detail.InTotal = item.GetValue("inTotal", true).ToBoolean();
 
                     entity.Details.Add(detail);
                 }
@@ -111,7 +112,8 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                     {
                         { "name", item.Name },
                         { "code", item.Code },
-                        { "number", item.Number }
+                        { "number", item.Number },
+                        { "inTotal", item.InTotal }
                     };
                     array.Add(detDoc);
                 }

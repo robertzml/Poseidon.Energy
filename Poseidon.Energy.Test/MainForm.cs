@@ -32,7 +32,7 @@ namespace Poseidon.Energy.Test
 
         private void menuPopulationOverview_Click(object sender, EventArgs e)
         {
-            ChildFormManage.LoadMdiForm(this, typeof(FrmPopulationOverview));
+            ChildFormManage.LoadMdiForm(this, typeof(FrmPopulationManage));
         }
 
         private void menuFundOverview_Click(object sender, EventArgs e)

@@ -48,6 +48,8 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.depGrid = new Poseidon.Energy.ClientDx.DepartmentGrid();
+            this.chkInclude = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -67,6 +69,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkInclude.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -100,6 +104,7 @@
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.chkInclude);
             this.layoutControl2.Controls.Add(this.btnShowAll);
             this.layoutControl2.Controls.Add(this.gtDepartment);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -123,11 +128,11 @@
             // gtDepartment
             // 
             this.gtDepartment.DataSource = null;
-            this.gtDepartment.Location = new System.Drawing.Point(2, 28);
+            this.gtDepartment.Location = new System.Drawing.Point(2, 51);
             this.gtDepartment.Name = "gtDepartment";
             this.gtDepartment.ShowCode = false;
             this.gtDepartment.ShowRemark = false;
-            this.gtDepartment.Size = new System.Drawing.Size(186, 445);
+            this.gtDepartment.Size = new System.Drawing.Size(186, 422);
             this.gtDepartment.TabIndex = 0;
             this.gtDepartment.GroupSelected += new System.Action<object, System.EventArgs>(this.gtDepartment_GroupSelected);
             // 
@@ -137,7 +142,8 @@
             this.layoutControlGroup2.GroupBordersVisible = false;
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem4,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItem6});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
@@ -147,9 +153,9 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.gtDepartment;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 49);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(190, 449);
+            this.layoutControlItem4.Size = new System.Drawing.Size(190, 426);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -289,6 +295,24 @@
             this.depGrid.Size = new System.Drawing.Size(674, 335);
             this.depGrid.TabIndex = 0;
             // 
+            // chkInclude
+            // 
+            this.chkInclude.Location = new System.Drawing.Point(2, 28);
+            this.chkInclude.Name = "chkInclude";
+            this.chkInclude.Properties.Caption = "显示子分组部门";
+            this.chkInclude.Size = new System.Drawing.Size(186, 19);
+            this.chkInclude.StyleController = this.layoutControl2;
+            this.chkInclude.TabIndex = 5;
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.chkInclude;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(190, 23);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
+            // 
             // FrmDepartmentOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -316,6 +340,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkInclude.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -342,5 +368,7 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraEditors.CheckEdit chkInclude;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }

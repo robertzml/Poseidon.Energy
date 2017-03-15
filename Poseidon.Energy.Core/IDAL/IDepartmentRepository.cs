@@ -13,5 +13,11 @@ namespace Poseidon.Energy.Core.IDAL
     /// </summary>
     internal interface IDepartmentRepository : IBaseDAL<Department>
     {
+        /// <summary>
+        /// 根据ID查找部门
+        /// </summary>
+        /// <param name="departmentIds">部门ID列表</param>
+        /// <returns></returns>
+        IEnumerable<Department> FindWithIds(List<string> departmentIds);
     }
 }

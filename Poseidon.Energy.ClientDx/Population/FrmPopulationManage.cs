@@ -18,7 +18,7 @@ namespace Poseidon.Energy.ClientDx
     /// <summary>
     /// 人数统计总览窗体
     /// </summary>
-    public partial class FrmPopulationOverview : BaseMdiForm
+    public partial class FrmPopulationManage : BaseMdiForm
     {
         #region Field
         /// <summary>
@@ -28,7 +28,7 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Field
 
         #region Constructor
-        public FrmPopulationOverview()
+        public FrmPopulationManage()
         {
             InitializeComponent();
         }
@@ -75,8 +75,10 @@ namespace Poseidon.Energy.ClientDx
             this.txtYear.Text = currentPopulation.Year.ToString();
             this.txtBelongTime.Text = currentPopulation.BelongTime;
             this.txtRemark.Text = currentPopulation.Remark;
+            this.txtCreateUser.Text = currentPopulation.CreateBy.Name;
             this.txtCreateTime.Text = currentPopulation.CreateBy.Time.ToDateTimeString();
-            this.txtUpdateTime.Text = currentPopulation.UpdateBy.Time.ToDateTimeString();
+            this.txtEditUser.Text = currentPopulation.UpdateBy.Name;
+            this.txtEditTime.Text = currentPopulation.UpdateBy.Time.ToDateTimeString();
 
             LoadPopulationRecords(this.currentPopulation.Id);
         }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Poseidon.Energy.Core.DAL.Mongo
 {
     using MongoDB.Bson;
+    using MongoDB.Driver;
     using Poseidon.Base.Framework;
     using Poseidon.Data;
     using Poseidon.Energy.Core.DL;
@@ -89,6 +90,21 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         public override IEnumerable<Department> FindAll()
         {
             return base.FindListByField<string>("modelType", this.modelType);
+        }
+
+        /// <summary>
+        /// 根据ID查找部门
+        /// </summary>
+        /// <param name="departmentIds">部门ID列表</param>
+        /// <returns></returns>
+        public IEnumerable<Department> FindWithIds(List<string> departmentIds)
+        {
+            var ids = departmentIds.Select(r => new ObjectId(r));
+            var filter = Builders<BsonDocument>.Filter;
+
+            var cond = filter.Eq("modelType", this.modelType) & filter.In("_id", ids);
+
+            return base.FindList(cond);
         }
 
         /// <summary>

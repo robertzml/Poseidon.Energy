@@ -301,11 +301,11 @@
     <Compile Include="Population\FrmPopulationAdd.Designer.cs">
       <DependentUpon>FrmPopulationAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Population\FrmPopulationOverview.cs">
+    <Compile Include="Population\FrmPopulationManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Population\FrmPopulationOverview.Designer.cs">
-      <DependentUpon>FrmPopulationOverview.cs</DependentUpon>
+    <Compile Include="Population\FrmPopulationManage.Designer.cs">
+      <DependentUpon>FrmPopulationManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Department\FrmDepartmentAdd.cs">
       <SubType>Form</SubType>
@@ -496,8 +496,8 @@
     <EmbeddedResource Include="Department\FrmDepartmentEdit.resx">
       <DependentUpon>FrmDepartmentEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Population\FrmPopulationOverview.resx">
-      <DependentUpon>FrmPopulationOverview.cs</DependentUpon>
+    <EmbeddedResource Include="Population\FrmPopulationManage.resx">
+      <DependentUpon>FrmPopulationManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Population\FrmPopulationAdd.resx">
       <DependentUpon>FrmPopulationAdd.cs</DependentUpon>

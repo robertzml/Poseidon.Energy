@@ -126,5 +126,11 @@ namespace Poseidon.Energy.Core.DL
         /// </summary>
         [Display(Name = "数量")]
         public int Number { get; set; }
+
+        /// <summary>
+        /// 是否计入总数
+        /// </summary>
+        [Display(Name = "是否计入总数")]
+        public bool InTotal { get; set; }
     }
 }
