@@ -212,6 +212,18 @@
     <Compile Include="Expense\FrmExpenseElectricEdit.Designer.cs">
       <DependentUpon>FrmExpenseElectricEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\PopulationDetailsGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\PopulationDetailsGrid.Designer.cs">
+      <DependentUpon>PopulationDetailsGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Population\FrmPopulationRecordEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Population\FrmPopulationRecordEdit.Designer.cs">
+      <DependentUpon>FrmPopulationRecordEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -253,11 +265,11 @@
     <Compile Include="Target\FrmTargetOverview.Designer.cs">
       <DependentUpon>FrmTargetOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Population\FrmPopulationRecordEdit.cs">
+    <Compile Include="Population\FrmPopulationRecordBatchEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Population\FrmPopulationRecordEdit.Designer.cs">
-      <DependentUpon>FrmPopulationRecordEdit.cs</DependentUpon>
+    <Compile Include="Population\FrmPopulationRecordBatchEdit.Designer.cs">
+      <DependentUpon>FrmPopulationRecordBatchEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Fund\FrmFundRecordEdit.cs">
       <SubType>Form</SubType>
@@ -375,6 +387,9 @@
     <EmbeddedResource Include="Control\FundRecordGrid.resx">
       <DependentUpon>FundRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\PopulationDetailsGrid.resx">
+      <DependentUpon>PopulationDetailsGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\PopulationRecordGrid.resx">
       <DependentUpon>PopulationRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -447,6 +462,9 @@
     <EmbeddedResource Include="Population\FrmPopulationEdit.resx">
       <DependentUpon>FrmPopulationEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Population\FrmPopulationRecordEdit.resx">
+      <DependentUpon>FrmPopulationRecordEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -457,8 +475,8 @@
     <EmbeddedResource Include="Target\FrmTargetAdd.resx">
       <DependentUpon>FrmTargetAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Population\FrmPopulationRecordEdit.resx">
-      <DependentUpon>FrmPopulationRecordEdit.cs</DependentUpon>
+    <EmbeddedResource Include="Population\FrmPopulationRecordBatchEdit.resx">
+      <DependentUpon>FrmPopulationRecordBatchEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Target\FrmTargetMake.resx">
       <DependentUpon>FrmTargetMake.cs</DependentUpon>
@@ -482,6 +500,7 @@
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Fund.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.FundRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Population.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.PopulationDetail.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.PopulationRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.StaffTarget.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Target.datasource" />

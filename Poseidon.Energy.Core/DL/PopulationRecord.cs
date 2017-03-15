@@ -107,7 +107,7 @@ namespace Poseidon.Energy.Core.DL
     /// <summary>
     /// 人数记录详情
     /// </summary>
-    public class PopulationDetail
+    public class PopulationDetail : BaseEntity
     {
         /// <summary>
         /// 名称

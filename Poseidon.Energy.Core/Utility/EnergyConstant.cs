@@ -18,6 +18,16 @@ namespace Poseidon.Energy.Core.Utility
         public static readonly string TargetDepartmentGroupCode = "TargetDepartment";
 
         /// <summary>
+        /// 教工人数字典代码
+        /// </summary>
+        public static readonly string TeacherDictCode = "Energy.Target.TeacherType";
+
+        /// <summary>
+        /// 学生人数字典代码
+        /// </summary>
+        public static readonly string StudentDictCode = "Energy.Target.StudentType";
+
+        /// <summary>
         /// 横向科研补贴代码
         /// </summary>
         public static readonly string HorizontalResearchCode = "HorizontalResearch";

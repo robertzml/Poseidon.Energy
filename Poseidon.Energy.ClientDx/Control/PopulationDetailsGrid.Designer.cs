@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Energy.ClientDx
 {
-    partial class WaterMeterGrid
+    partial class PopulationDetailsGrid
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.colNumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAccountName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -42,7 +39,7 @@
             // 
             // bsEntity
             // 
-            this.bsEntity.DataSource = typeof(Poseidon.Energy.Core.DL.WaterMeter);
+            this.bsEntity.DataSource = typeof(Poseidon.Energy.Core.DL.PopulationDetail);
             // 
             // dgcEntity
             // 
@@ -51,13 +48,10 @@
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colId,
             this.colName,
+            this.colCode,
             this.colNumber,
-            this.colAccountName,
-            this.colAddress,
-            this.colRemark,
-            this.colStatus});
+            this.colInTotal});
             this.dgvEntity.IndicatorWidth = 40;
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
@@ -66,65 +60,45 @@
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
             // 
-            // colNumber
-            // 
-            this.colNumber.Caption = "客户编号";
-            this.colNumber.FieldName = "Number";
-            this.colNumber.Name = "colNumber";
-            this.colNumber.Visible = true;
-            this.colNumber.VisibleIndex = 1;
-            // 
-            // colAccountName
-            // 
-            this.colAccountName.Caption = "户名";
-            this.colAccountName.FieldName = "AccountName";
-            this.colAccountName.Name = "colAccountName";
-            this.colAccountName.Visible = true;
-            this.colAccountName.VisibleIndex = 2;
-            // 
-            // colAddress
-            // 
-            this.colAddress.Caption = "地址";
-            this.colAddress.FieldName = "Address";
-            this.colAddress.Name = "colAddress";
-            this.colAddress.Visible = true;
-            this.colAddress.VisibleIndex = 3;
-            // 
             // colName
             // 
-            this.colName.Caption = "名称";
+            this.colName.Caption = "人员类型";
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
             this.colName.Visible = true;
             this.colName.VisibleIndex = 0;
             // 
-            // colRemark
+            // colCode
             // 
-            this.colRemark.Caption = "备注";
-            this.colRemark.FieldName = "Remark";
-            this.colRemark.Name = "colRemark";
-            this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 4;
+            this.colCode.Caption = "代码";
+            this.colCode.FieldName = "Code";
+            this.colCode.Name = "colCode";
+            this.colCode.Visible = true;
+            this.colCode.VisibleIndex = 1;
             // 
-            // colStatus
+            // colNumber
             // 
-            this.colStatus.Caption = "状态";
-            this.colStatus.FieldName = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.OptionsColumn.AllowEdit = false;
-            this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 5;
+            this.colNumber.Caption = "数量";
+            this.colNumber.FieldName = "Number";
+            this.colNumber.Name = "colNumber";
+            this.colNumber.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Number", "合计={0:0.##}")});
+            this.colNumber.Visible = true;
+            this.colNumber.VisibleIndex = 2;
             // 
-            // colId
+            // colInTotal
             // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
+            this.colInTotal.Caption = "是否计入总数";
+            this.colInTotal.FieldName = "InTotal";
+            this.colInTotal.Name = "colInTotal";
+            this.colInTotal.Visible = true;
+            this.colInTotal.VisibleIndex = 3;
             // 
-            // WaterMeterGrid
+            // PopulationDetailsGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "WaterMeterGrid";
+            this.Name = "PopulationDetailsGrid";
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
@@ -134,12 +108,9 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn colNumber;
-        private DevExpress.XtraGrid.Columns.GridColumn colAccountName;
-        private DevExpress.XtraGrid.Columns.GridColumn colAddress;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
-        private DevExpress.XtraGrid.Columns.GridColumn colRemark;
-        private DevExpress.XtraGrid.Columns.GridColumn colStatus;
-        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colNumber;
+        private DevExpress.XtraGrid.Columns.GridColumn colInTotal;
     }
 }

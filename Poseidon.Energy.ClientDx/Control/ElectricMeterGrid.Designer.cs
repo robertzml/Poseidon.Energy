@@ -36,7 +36,6 @@
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dataNavigator1 = new DevExpress.XtraEditors.DataNavigator();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -48,7 +47,7 @@
             // 
             // dgcEntity
             // 
-            this.dgcEntity.Size = new System.Drawing.Size(568, 354);
+            this.dgcEntity.Size = new System.Drawing.Size(568, 378);
             // 
             // dgvEntity
             // 
@@ -133,27 +132,11 @@
             this.colStatus.Visible = true;
             this.colStatus.VisibleIndex = 7;
             // 
-            // dataNavigator1
-            // 
-            this.dataNavigator1.DataSource = this.bsEntity;
-            this.dataNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataNavigator1.Location = new System.Drawing.Point(0, 354);
-            this.dataNavigator1.Name = "dataNavigator1";
-            this.dataNavigator1.Size = new System.Drawing.Size(568, 24);
-            this.dataNavigator1.TabIndex = 1;
-            this.dataNavigator1.Text = "dataNavigator1";
-            this.dataNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
-            this.dataNavigator1.TextStringFormat = "记录 {0} of {1}";
-            // 
             // ElectricMeterGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataNavigator1);
             this.Name = "ElectricMeterGrid";
-            this.Load += new System.EventHandler(this.ElectricMeterGrid_Load);
-            this.Controls.SetChildIndex(this.dataNavigator1, 0);
-            this.Controls.SetChildIndex(this.dgcEntity, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
@@ -171,6 +154,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
-        private DevExpress.XtraEditors.DataNavigator dataNavigator1;
     }
 }

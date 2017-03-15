@@ -113,6 +113,28 @@ namespace Poseidon.Energy.Core.BL
                 }
             }
         }
+
+        /// <summary>
+        /// 更新人数记录数据项
+        /// </summary>
+        /// <param name="id">人数记录ID</param>
+        /// <param name="details">人数项数据</param>
+        /// <param name="user">操作人</param>
+        /// <returns></returns>
+        /// <remarks></remarks>
+        public bool UpdateRecordDetails(string id, List<PopulationDetail> details, LoginUser user)
+        {
+            var entity = this.baseDal.FindById(id);
+            entity.Details = details;
+            entity.UpdateBy = new UpdateStamp
+            {
+                UserId = user.Id,
+                Name = user.Name,
+                Time = DateTime.Now
+            };
+
+            return this.baseDal.Update(entity);
+        }
         #endregion //Method
     }
 }

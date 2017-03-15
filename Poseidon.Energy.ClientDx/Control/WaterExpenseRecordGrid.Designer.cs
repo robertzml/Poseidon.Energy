@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataNavigator1 = new DevExpress.XtraEditors.DataNavigator();
             this.colMeterNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMeterName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFeeType = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,7 +54,7 @@
             // 
             this.dgcEntity.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoCmbFeeType});
-            this.dgcEntity.Size = new System.Drawing.Size(668, 354);
+            this.dgcEntity.Size = new System.Drawing.Size(668, 378);
             // 
             // dgvEntity
             // 
@@ -78,18 +77,6 @@
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
-            // 
-            // dataNavigator1
-            // 
-            this.dataNavigator1.DataSource = this.bsEntity;
-            this.dataNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataNavigator1.Location = new System.Drawing.Point(0, 354);
-            this.dataNavigator1.Name = "dataNavigator1";
-            this.dataNavigator1.Size = new System.Drawing.Size(668, 24);
-            this.dataNavigator1.TabIndex = 1;
-            this.dataNavigator1.Text = "dataNavigator1";
-            this.dataNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Center;
-            this.dataNavigator1.TextStringFormat = "记录 {0} of {1}";
             // 
             // colMeterNumber
             // 
@@ -201,12 +188,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataNavigator1);
             this.Name = "WaterExpenseRecordGrid";
             this.Size = new System.Drawing.Size(668, 378);
             this.Load += new System.EventHandler(this.WaterExpenseRecordGrid_Load);
-            this.Controls.SetChildIndex(this.dataNavigator1, 0);
-            this.Controls.SetChildIndex(this.dgcEntity, 0);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
@@ -216,7 +200,6 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.DataNavigator dataNavigator1;
         private DevExpress.XtraGrid.Columns.GridColumn colMeterNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colMeterName;
         private DevExpress.XtraGrid.Columns.GridColumn colFeeType;

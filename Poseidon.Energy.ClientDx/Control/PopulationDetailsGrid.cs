@@ -9,16 +9,18 @@ using System.Windows.Forms;
 
 namespace Poseidon.Energy.ClientDx
 {
+    using Poseidon.Base.Framework;
     using Poseidon.Winform.Base;
+    using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 电表表格控件
+    /// 人数详细记录表格窗体
     /// </summary>
-    public partial class ElectricMeterGrid : WinEntityGrid<ElectricMeter>
+    public partial class PopulationDetailsGrid : WinEntityGrid<PopulationDetail>
     {
         #region Constructor
-        public ElectricMeterGrid()
+        public PopulationDetailsGrid()
         {
             InitializeComponent();
         }

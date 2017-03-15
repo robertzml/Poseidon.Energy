@@ -87,7 +87,8 @@ namespace Poseidon.Energy.ClientDx
                             {
                                 Name = "在职在编",
                                 Code = "Establishment",
-                                Number = 0
+                                Number = 0,
+                                InTotal = true
                             };
                             record.Details.Add(detail);
                         }
@@ -107,7 +108,8 @@ namespace Poseidon.Energy.ClientDx
                             {
                                 Name = "人事代理",
                                 Code = "PersonnelAgency",
-                                Number = 0
+                                Number = 0,
+                                InTotal = true
                             };
                             record.Details.Add(detail);
                         }
@@ -127,7 +129,8 @@ namespace Poseidon.Energy.ClientDx
                             {
                                 Name = "本科生",
                                 Code = "Undergraduate",
-                                Number = 0
+                                Number = 0,
+                                InTotal = true
                             };
                             record.Details.Add(detail);
                         }
@@ -147,7 +150,8 @@ namespace Poseidon.Energy.ClientDx
                             {
                                 Name = "硕士生",
                                 Code = "Master",
-                                Number = 0
+                                Number = 0,
+                                InTotal = true
                             };
                             record.Details.Add(detail);
                         }
@@ -167,7 +171,8 @@ namespace Poseidon.Energy.ClientDx
                             {
                                 Name = "专业硕士生",
                                 Code = "ProfessionalMaster",
-                                Number = 0
+                                Number = 0,
+                                InTotal = true
                             };
                             record.Details.Add(detail);
                         }
@@ -187,7 +192,8 @@ namespace Poseidon.Energy.ClientDx
                             {
                                 Name = "博士生",
                                 Code = "Doctor",
-                                Number = 0
+                                Number = 0,
+                                InTotal = true
                             };
                             record.Details.Add(detail);
                         }
@@ -207,7 +213,8 @@ namespace Poseidon.Energy.ClientDx
                             {
                                 Name = "留学生",
                                 Code = "AbroadStudent",
-                                Number = 0
+                                Number = 0,
+                                InTotal = true
                             };
                             record.Details.Add(detail);
                         }

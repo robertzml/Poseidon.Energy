@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,92 +11,127 @@ namespace Poseidon.Energy.ClientDx
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Core.BL;
+    using Poseidon.Core.DL;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
+    using Poseidon.Energy.Core.Utility;
     using Poseidon.Winform.Base;
 
     /// <summary>
-    /// 编辑人数记录窗体
+    /// 人数统计记录编辑
     /// </summary>
     public partial class FrmPopulationRecordEdit : BaseSingleForm
     {
         #region Field
         /// <summary>
-        /// 当前关联人数统计
+        /// 当前关联记录
         /// </summary>
-        private Population currentEntity;
+        private PopulationRecord currentRecord;
         #endregion //Field
 
         #region Constructor
-        public FrmPopulationRecordEdit(string populationId)
+        public FrmPopulationRecordEdit(string id)
         {
             InitializeComponent();
 
-            InitData(populationId);
+            InitData(id);
         }
         #endregion //Constructor
 
         #region Function
-        /// <summary>
-        /// 初始化数据
-        /// </summary>
-        /// <param name="populationId"></param>
-        private void InitData(string populationId)
+        private void InitData(string id)
         {
-            this.currentEntity = BusinessFactory<PopulationBusiness>.Instance.FindById(populationId);
+            this.currentRecord = BusinessFactory<PopulationRecordBusiness>.Instance.FindById(id);
         }
 
         protected override void InitForm()
         {
-            this.txtName.Text = this.currentEntity.Name;
-            this.txtYear.Text = this.currentEntity.Year.ToString();
-            this.txtBelongTime.Text = this.currentEntity.BelongTime;
-            this.txtRemark.Text = this.currentEntity.Remark;
+            var department = BusinessFactory<DepartmentBusiness>.Instance.FindById(this.currentRecord.DepartmentId);
+            this.txtDepartmentName.Text = department.Name;
 
-            var data = LoadPopulationRecords();
-            this.prGrid.DataSource = data;
+            SetDetailGrid();
 
             base.InitForm();
         }
 
         /// <summary>
-        /// 载入人数记录
+        /// 设置人数记录表格
+        /// </summary>
+        private void SetDetailGrid()
+        {
+            List<PopulationDetail> details = new List<PopulationDetail>();
+            details.AddRange(this.currentRecord.Details);
+
+            //var dict1 = BusinessFactory<DictBusiness>.Instance.FindItems(EnergyConstant.TeacherDictCode);
+            //foreach (var dictItem in dict1)
+            //{
+            //    if (details.Any(r => r.Code == dictItem.Value))
+            //        continue;
+
+            //    PopulationDetail detail = new PopulationDetail
+            //    {
+            //        Code = dictItem.Value,
+            //        Name = dictItem.Remark,
+            //        Number = 0,
+            //        InTotal = false
+            //    };
+
+            //    details.Add(detail);
+            //}
+
+            var dict2 = BusinessFactory<DictBusiness>.Instance.FindItems(EnergyConstant.StudentDictCode);
+            foreach (var dictItem in dict2)
+            {
+                if (details.Any(r => r.Code == dictItem.Value))
+                    continue;
+
+                PopulationDetail detail = new PopulationDetail
+                {
+                    Code = dictItem.Value,
+                    Name = dictItem.Remark,
+                    Number = 0,
+                    InTotal = false
+                };
+
+                details.Add(detail);
+            }
+
+            this.popDetailsGrid.DataSource = details;
+        }
+
+        /// <summary>
+        /// 输入检查
         /// </summary>
         /// <returns></returns>
-        /// <remarks>
-        /// 同时插入未统计部门
-        /// </remarks>
-        private List<PopulationRecord> LoadPopulationRecords()
+        private Tuple<bool, string> CheckInput()
         {
-            var records = BusinessFactory<PopulationRecordBusiness>.Instance.FindByPopulationId(currentEntity.Id);
-            var departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll();
+            string errorMessage = "";
 
-            List<PopulationRecord> data = new List<PopulationRecord>();
-            data.AddRange(records);
-
-            foreach (var item in departments)
+            foreach (var item in this.popDetailsGrid.DataSource)
             {
-                if (!records.Any(r => r.DepartmentId == item.Id))
+                if (string.IsNullOrEmpty(item.Name))
                 {
-                    PopulationRecord pr = new PopulationRecord();
-                    pr.PopulationId = this.currentEntity.Id;
-                    pr.DepartmentId = item.Id;
-                    pr.Details = new List<PopulationDetail>();
-
-                    data.Add(pr);
+                    errorMessage = "人员类型不能为空";
+                    return new Tuple<bool, string>(false, errorMessage);
+                }
+                if (string.IsNullOrEmpty(item.Code))
+                {
+                    errorMessage = "人员代码不能为空";
+                    return new Tuple<bool, string>(false, errorMessage);
                 }
             }
 
-            return data;
+            return new Tuple<bool, string>(true, "");
         }
 
-        private void SetEntity(List<PopulationRecord> entity)
+        /// <summary>
+        /// 设置实体
+        /// </summary>
+        /// <param name="details"></param>
+        private void SetEntity(List<PopulationDetail> details)
         {
-            foreach (var item in entity)
-            {
-                item.Details.RemoveAll(r => r.Number <= 0);
-                item.Remark = item.Remark ?? "";
-            }
+            details.RemoveAll(r => r.Number <= 0);
         }
         #endregion //Function
 
@@ -109,17 +143,31 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            this.prGrid.CloseEditor();
+            this.popDetailsGrid.CloseEditor();
 
-            var data = this.prGrid.DataSource;
+            var input = CheckInput();
+            if (!input.Item1)
+            {
+                MessageUtil.ShowError(input.Item2);
+                return;
+            }
+
+            var data = this.popDetailsGrid.DataSource;
             SetEntity(data);
 
             try
             {
-                BusinessFactory<PopulationRecordBusiness>.Instance.Update(data, this.currentUser);
+                bool result = BusinessFactory<PopulationRecordBusiness>.Instance.UpdateRecordDetails(this.currentRecord.Id, data, this.currentUser);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowInfo("保存失败");
+                }
             }
             catch (PoseidonException pe)
             {

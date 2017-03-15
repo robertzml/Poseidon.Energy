@@ -16,7 +16,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 人数统计总览窗体
+    /// 人数统计管理窗体
     /// </summary>
     public partial class FrmPopulationManage : BaseMdiForm
     {
@@ -135,7 +135,7 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
-        /// 编辑记录
+        /// 批量编辑记录
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -144,7 +144,25 @@ namespace Poseidon.Energy.ClientDx
             if (this.currentPopulation == null)
                 return;
 
-            ChildFormManage.ShowDialogForm(typeof(FrmPopulationRecordEdit), new object[] { this.currentPopulation.Id });
+            ChildFormManage.ShowDialogForm(typeof(FrmPopulationRecordBatchEdit), new object[] { this.currentPopulation.Id });
+            LoadPopulations();
+        }
+
+        /// <summary>
+        /// 编辑单条记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEditSingle_Click(object sender, EventArgs e)
+        {
+            if (this.currentPopulation == null)
+                return;
+
+            var select = this.prGrid.GetCurrentSelect();
+            if (select == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmPopulationRecordEdit), new object[] { select.Id });
             LoadPopulations();
         }
         #endregion //Event

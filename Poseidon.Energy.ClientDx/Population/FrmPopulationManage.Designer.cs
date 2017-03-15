@@ -32,6 +32,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnEditSingle = new DevExpress.XtraEditors.SimpleButton();
+            this.txtEditUser = new DevExpress.XtraEditors.TextEdit();
+            this.txtCreateUser = new DevExpress.XtraEditors.TextEdit();
             this.btnEditNumber = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
@@ -47,27 +50,28 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.prGrid = new Poseidon.Energy.ClientDx.PopulationRecordGrid();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.lbPopulation = new DevExpress.XtraEditors.ListBoxControl();
-            this.prGrid = new Poseidon.Energy.ClientDx.PopulationRecordGrid();
             this.bsPopulation = new System.Windows.Forms.BindingSource(this.components);
-            this.txtCreateUser = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtEditUser = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditUser.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreateUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreateTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
@@ -79,23 +83,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbPopulation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCreateUser.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEditUser.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -110,7 +113,7 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 230F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(932, 543);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -121,12 +124,13 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(203, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(726, 204);
+            this.groupControl1.Size = new System.Drawing.Size(726, 224);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "选中统计";
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnEditSingle);
             this.layoutControl1.Controls.Add(this.txtEditUser);
             this.layoutControl1.Controls.Add(this.txtCreateUser);
             this.layoutControl1.Controls.Add(this.btnEditNumber);
@@ -143,25 +147,57 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(722, 181);
+            this.layoutControl1.Size = new System.Drawing.Size(722, 201);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnEditSingle
+            // 
+            this.btnEditSingle.Location = new System.Drawing.Point(245, 160);
+            this.btnEditSingle.Name = "btnEditSingle";
+            this.btnEditSingle.Size = new System.Drawing.Size(219, 22);
+            this.btnEditSingle.StyleController = this.layoutControl1;
+            this.btnEditSingle.TabIndex = 12;
+            this.btnEditSingle.Text = "编辑单条记录";
+            this.btnEditSingle.Click += new System.EventHandler(this.btnEditSingle_Click);
+            // 
+            // txtEditUser
+            // 
+            this.txtEditUser.Location = new System.Drawing.Point(58, 79);
+            this.txtEditUser.Name = "txtEditUser";
+            this.txtEditUser.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtEditUser.Properties.Appearance.Options.UseBackColor = true;
+            this.txtEditUser.Properties.ReadOnly = true;
+            this.txtEditUser.Size = new System.Drawing.Size(302, 20);
+            this.txtEditUser.StyleController = this.layoutControl1;
+            this.txtEditUser.TabIndex = 6;
+            // 
+            // txtCreateUser
+            // 
+            this.txtCreateUser.Location = new System.Drawing.Point(58, 55);
+            this.txtCreateUser.Name = "txtCreateUser";
+            this.txtCreateUser.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtCreateUser.Properties.Appearance.Options.UseBackColor = true;
+            this.txtCreateUser.Properties.ReadOnly = true;
+            this.txtCreateUser.Size = new System.Drawing.Size(302, 20);
+            this.txtCreateUser.StyleController = this.layoutControl1;
+            this.txtCreateUser.TabIndex = 4;
+            // 
             // btnEditNumber
             // 
-            this.btnEditNumber.Location = new System.Drawing.Point(536, 134);
+            this.btnEditNumber.Location = new System.Drawing.Point(19, 160);
             this.btnEditNumber.Name = "btnEditNumber";
-            this.btnEditNumber.Size = new System.Drawing.Size(167, 22);
+            this.btnEditNumber.Size = new System.Drawing.Size(222, 22);
             this.btnEditNumber.StyleController = this.layoutControl1;
             this.btnEditNumber.TabIndex = 11;
-            this.btnEditNumber.Text = "编辑记录";
+            this.btnEditNumber.Text = "批量编辑记录";
             this.btnEditNumber.Click += new System.EventHandler(this.btnEditNumber_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(364, 134);
+            this.btnDelete.Location = new System.Drawing.Point(468, 134);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(168, 22);
+            this.btnDelete.Size = new System.Drawing.Size(235, 22);
             this.btnDelete.StyleController = this.layoutControl1;
             this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "删除统计";
@@ -169,9 +205,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(189, 134);
+            this.btnEdit.Location = new System.Drawing.Point(245, 134);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(171, 22);
+            this.btnEdit.Size = new System.Drawing.Size(219, 22);
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 9;
             this.btnEdit.Text = "编辑统计";
@@ -181,7 +217,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(19, 134);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(166, 22);
+            this.btnAdd.Size = new System.Drawing.Size(222, 22);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "添加统计";
@@ -270,7 +306,7 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(722, 181);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(722, 201);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -309,15 +345,6 @@
             this.layoutControlItem4.Text = "备注";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.txtCreateTime;
-            this.layoutControlItem5.Location = new System.Drawing.Point(357, 48);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(355, 24);
-            this.layoutControlItem5.Text = "创建时间";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.txtEditTime;
@@ -333,10 +360,11 @@
             this.layoutControlItem7,
             this.layoutControlItem8,
             this.layoutControlItem9,
+            this.layoutControlItem13,
             this.layoutControlItem10});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 96);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(712, 75);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(712, 95);
             this.layoutControlGroup2.Text = "操作";
             // 
             // layoutControlItem7
@@ -344,46 +372,99 @@
             this.layoutControlItem7.Control = this.btnAdd;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(170, 32);
+            this.layoutControlItem7.Size = new System.Drawing.Size(226, 26);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.btnEdit;
-            this.layoutControlItem8.Location = new System.Drawing.Point(170, 0);
+            this.layoutControlItem8.Location = new System.Drawing.Point(226, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(175, 32);
+            this.layoutControlItem8.Size = new System.Drawing.Size(223, 26);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.btnDelete;
-            this.layoutControlItem9.Location = new System.Drawing.Point(345, 0);
+            this.layoutControlItem9.Location = new System.Drawing.Point(449, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(172, 32);
+            this.layoutControlItem9.Size = new System.Drawing.Size(239, 52);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
+            // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.Control = this.btnEditSingle;
+            this.layoutControlItem13.Location = new System.Drawing.Point(226, 26);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(223, 26);
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem13.TextVisible = false;
             // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.btnEditNumber;
-            this.layoutControlItem10.Location = new System.Drawing.Point(517, 0);
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(171, 32);
+            this.layoutControlItem10.Size = new System.Drawing.Size(226, 26);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.txtCreateUser;
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(357, 24);
+            this.layoutControlItem11.Text = "创建人";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.txtCreateTime;
+            this.layoutControlItem5.Location = new System.Drawing.Point(357, 48);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(355, 24);
+            this.layoutControlItem5.Text = "创建时间";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.txtEditUser;
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(357, 24);
+            this.layoutControlItem12.Text = "编辑人";
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(48, 14);
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.prGrid);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(203, 213);
+            this.groupControl2.Location = new System.Drawing.Point(203, 233);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(726, 327);
+            this.groupControl2.Size = new System.Drawing.Size(726, 307);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "人数记录";
+            // 
+            // prGrid
+            // 
+            this.prGrid.AllowFilter = true;
+            this.prGrid.AllowGroup = true;
+            this.prGrid.AllowSort = true;
+            this.prGrid.DataSource = null;
+            this.prGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.prGrid.Editable = false;
+            this.prGrid.Location = new System.Drawing.Point(2, 21);
+            this.prGrid.Name = "prGrid";
+            this.prGrid.ShowAddMenu = false;
+            this.prGrid.ShowFooter = true;
+            this.prGrid.ShowLineNumber = true;
+            this.prGrid.ShowNavigator = false;
+            this.prGrid.Size = new System.Drawing.Size(722, 284);
+            this.prGrid.TabIndex = 0;
             // 
             // groupControl3
             // 
@@ -408,65 +489,9 @@
             this.lbPopulation.ValueMember = "Id";
             this.lbPopulation.SelectedIndexChanged += new System.EventHandler(this.lbPopulation_SelectedIndexChanged);
             // 
-            // prGrid
-            // 
-            this.prGrid.AllowFilter = true;
-            this.prGrid.AllowGroup = true;
-            this.prGrid.AllowSort = true;
-            this.prGrid.DataSource = null;
-            this.prGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.prGrid.Editable = false;
-            this.prGrid.Location = new System.Drawing.Point(2, 21);
-            this.prGrid.Name = "prGrid";
-            this.prGrid.ShowAddMenu = false;
-            this.prGrid.ShowFooter = true;
-            this.prGrid.ShowLineNumber = true;
-            this.prGrid.Size = new System.Drawing.Size(722, 304);
-            this.prGrid.TabIndex = 0;
-            // 
             // bsPopulation
             // 
             this.bsPopulation.DataSource = typeof(Poseidon.Energy.Core.DL.Population);
-            // 
-            // txtCreateUser
-            // 
-            this.txtCreateUser.Location = new System.Drawing.Point(58, 55);
-            this.txtCreateUser.Name = "txtCreateUser";
-            this.txtCreateUser.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtCreateUser.Properties.Appearance.Options.UseBackColor = true;
-            this.txtCreateUser.Properties.ReadOnly = true;
-            this.txtCreateUser.Size = new System.Drawing.Size(302, 20);
-            this.txtCreateUser.StyleController = this.layoutControl1;
-            this.txtCreateUser.TabIndex = 4;
-            // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.txtCreateUser;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(357, 24);
-            this.layoutControlItem11.Text = "创建人";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // txtEditUser
-            // 
-            this.txtEditUser.Location = new System.Drawing.Point(58, 79);
-            this.txtEditUser.Name = "txtEditUser";
-            this.txtEditUser.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtEditUser.Properties.Appearance.Options.UseBackColor = true;
-            this.txtEditUser.Properties.ReadOnly = true;
-            this.txtEditUser.Size = new System.Drawing.Size(302, 20);
-            this.txtEditUser.StyleController = this.layoutControl1;
-            this.txtEditUser.TabIndex = 6;
-            // 
-            // layoutControlItem12
-            // 
-            this.layoutControlItem12.Control = this.txtEditUser;
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(357, 24);
-            this.layoutControlItem12.Text = "编辑人";
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(48, 14);
             // 
             // FrmPopulationManage
             // 
@@ -475,12 +500,14 @@
             this.ClientSize = new System.Drawing.Size(932, 543);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmPopulationManage";
-            this.Text = "人数统计总览";
+            this.Text = "人数统计管理";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditUser.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreateUser.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreateTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
@@ -492,23 +519,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lbPopulation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCreateUser.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEditUser.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -549,5 +575,7 @@
         private DevExpress.XtraEditors.TextEdit txtCreateUser;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
+        private DevExpress.XtraEditors.SimpleButton btnEditSingle;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
     }
 }

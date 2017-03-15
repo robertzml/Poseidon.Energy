@@ -16,13 +16,6 @@ namespace Poseidon.Energy.ClientDx
     /// </summary>
     public partial class WaterExpenseRecordGrid : WinEntityGrid<WaterExpenseRecord>
     {
-        #region Field
-        /// <summary>
-        /// 是否显示导航
-        /// </summary>
-        private bool showNavigator;
-        #endregion //Field
-
         #region Constructor
         public WaterExpenseRecordGrid()
         {
@@ -38,31 +31,11 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void WaterExpenseRecordGrid_Load(object sender, EventArgs e)
         {
-            this.dataNavigator1.Visible = this.showNavigator;
-
             if (!ControlUtil.IsInDesignMode())
             {
                 ControlUtil.BindDictToComboBox(this.repoCmbFeeType, typeof(WaterExpenseRecord), "FeeType");
             }
         }
         #endregion //Event
-
-        #region Property
-        /// <summary>
-        /// 是否显示导航条
-        /// </summary>
-        [Category("界面"), Description("是否显示导航条"), Browsable(true)]
-        public bool ShowNavigator
-        {
-            get
-            {
-                return this.showNavigator;
-            }
-            set
-            {
-                this.showNavigator = value;
-            }
-        }
-        #endregion //Property
     }
 }
