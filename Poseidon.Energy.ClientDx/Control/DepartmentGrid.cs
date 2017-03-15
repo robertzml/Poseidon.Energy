@@ -10,7 +10,9 @@ using System.Windows.Forms;
 
 namespace Poseidon.Energy.ClientDx
 {
+    using Poseidon.Base.Framework;
     using Poseidon.Winform.Base;
+    using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
@@ -44,6 +46,10 @@ namespace Poseidon.Energy.ClientDx
                 if (department.ParentId != null)
                 {
                     var parent = list.Find(r => r.Id == department.ParentId);
+                    if (parent == null)
+                    {
+                        parent = BusinessFactory<DepartmentBusiness>.Instance.FindById(department.ParentId);
+                    }
                     e.DisplayText = parent.Name;
                 }
             }

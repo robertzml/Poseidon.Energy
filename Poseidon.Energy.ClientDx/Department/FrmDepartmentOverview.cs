@@ -76,7 +76,11 @@ namespace Poseidon.Energy.ClientDx
                 this.depGrid.DataSource = null;
             else
             {
-                var data = this.bindDepartments.Where(r => departments.Select(s => s.OrganizationId).Contains(r.Id)).ToList();
+                List<Department> data = new List<Department>();
+                foreach (var item in departments.OrderBy(r => r.Sort))
+                {
+                    data.Add(this.bindDepartments.Find(r => r.Id == item.OrganizationId));
+                }
                 this.depGrid.DataSource = data;
             }
             this.depGrid.UpdateBindingData();

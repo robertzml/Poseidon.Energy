@@ -275,8 +275,8 @@
             // 
             // depGrid
             // 
-            this.depGrid.AllowFilter = true;
-            this.depGrid.AllowGroup = true;
+            this.depGrid.AllowFilter = false;
+            this.depGrid.AllowGroup = false;
             this.depGrid.AllowSort = true;
             this.depGrid.DataSource = null;
             this.depGrid.Dock = System.Windows.Forms.DockStyle.Fill;

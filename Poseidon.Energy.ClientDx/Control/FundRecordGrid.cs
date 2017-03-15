@@ -58,7 +58,7 @@ namespace Poseidon.Energy.ClientDx
             if (e.Column.FieldName == "DepartmentId")
             {
                 var department = this.departments.Find(r => r.Id == e.Value.ToString());
-                e.DisplayText = department.Name;
+                e.DisplayText = department.ShortName;
             }
         }
         #endregion //Event

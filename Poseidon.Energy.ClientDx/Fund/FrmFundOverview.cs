@@ -74,6 +74,7 @@ namespace Poseidon.Energy.ClientDx
             this.currentFund = this.lbFund.SelectedItem as Fund;
             this.txtName.Text = currentFund.Name;
             this.txtYear.Text = currentFund.Year.ToString();
+            this.txtBelongTime.Text = currentFund.BelongTime;
             this.txtRemark.Text = currentFund.Remark;
             this.txtCreateTime.Text = currentFund.CreateBy.Time.ToDateTimeString();
             this.txtUpdateTime.Text = currentFund.UpdateBy.Time.ToDateTimeString();
