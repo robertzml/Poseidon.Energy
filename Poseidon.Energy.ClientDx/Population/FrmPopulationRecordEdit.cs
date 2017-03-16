@@ -63,22 +63,22 @@ namespace Poseidon.Energy.ClientDx
             List<PopulationDetail> details = new List<PopulationDetail>();
             details.AddRange(this.currentRecord.Details);
 
-            //var dict1 = BusinessFactory<DictBusiness>.Instance.FindItems(EnergyConstant.TeacherDictCode);
-            //foreach (var dictItem in dict1)
-            //{
-            //    if (details.Any(r => r.Code == dictItem.Value))
-            //        continue;
+            var dict1 = BusinessFactory<DictBusiness>.Instance.FindItems(EnergyConstant.TeacherDictCode);
+            foreach (var dictItem in dict1)
+            {
+                if (details.Any(r => r.Code == dictItem.Value))
+                    continue;
 
-            //    PopulationDetail detail = new PopulationDetail
-            //    {
-            //        Code = dictItem.Value,
-            //        Name = dictItem.Remark,
-            //        Number = 0,
-            //        InTotal = false
-            //    };
+                PopulationDetail detail = new PopulationDetail
+                {
+                    Code = dictItem.Value,
+                    Name = dictItem.Remark,
+                    Number = 0,
+                    InTotal = false
+                };
 
-            //    details.Add(detail);
-            //}
+                details.Add(detail);
+            }
 
             var dict2 = BusinessFactory<DictBusiness>.Instance.FindItems(EnergyConstant.StudentDictCode);
             foreach (var dictItem in dict2)

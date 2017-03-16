@@ -135,6 +135,23 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
+        /// 查看人数记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnViewRecord_Click(object sender, EventArgs e)
+        {
+            if (this.currentPopulation == null)
+                return;
+
+            var select = this.prGrid.GetCurrentSelect();
+            if (select == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmPopulationRecordView), new object[] { select.Id });
+        }
+
+        /// <summary>
         /// 批量编辑记录
         /// </summary>
         /// <param name="sender"></param>

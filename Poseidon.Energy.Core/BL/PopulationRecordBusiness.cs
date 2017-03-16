@@ -115,6 +115,56 @@ namespace Poseidon.Energy.Core.BL
         }
 
         /// <summary>
+        /// 批量更新人数记录
+        /// </summary>
+        /// <param name="data">人数记录</param>
+        /// <param name="user">操作用户</param>
+        public void UpdateRecords(List<PopulationRecord> data, LoginUser user)
+        {
+            foreach(var item in data)
+            {
+                if (item.Id == null)  //新记录，保存人数求和大于0的
+                {
+                    if (item.Details.Sum(r => r.Number) > 0)
+                    {
+                        item.Details.RemoveAll(r => r.Number <= 0);
+                        item.CreateBy = new UpdateStamp
+                        {
+                            UserId = user.Id,
+                            Name = user.Name,
+                            Time = DateTime.Now
+                        };
+                        item.UpdateBy = new UpdateStamp
+                        {
+                            UserId = user.Id,
+                            Name = user.Name,
+                            Time = DateTime.Now
+                        };
+                        this.baseDal.Create(item);
+                    }
+                }
+                else  //已存在记录
+                {
+                    PopulationRecord record = this.baseDal.FindById(item.Id);
+
+                    //var other = from r in record.Details
+                    //            where !item.Details.Select(s => s.Code).Contains(r.Code)
+                    //            select r;
+
+                    //item.Details.AddRange(other);
+                    item.Details.RemoveAll(r => r.Number <= 0);
+                    item.UpdateBy = new UpdateStamp
+                    {
+                        UserId = user.Id,
+                        Name = user.Name,
+                        Time = DateTime.Now
+                    };
+                    this.baseDal.Update(item);
+                }
+            }
+        }
+
+        /// <summary>
         /// 更新人数记录数据项
         /// </summary>
         /// <param name="id">人数记录ID</param>

@@ -99,7 +99,7 @@ namespace Poseidon.Energy.ClientDx
         {
             foreach (var item in entity)
             {
-                item.Details.RemoveAll(r => r.Number <= 0);
+                //item.Details.RemoveAll(r => r.Number <= 0);
                 item.Remark = item.Remark ?? "";
             }
         }
@@ -120,7 +120,7 @@ namespace Poseidon.Energy.ClientDx
 
             try
             {
-                BusinessFactory<PopulationRecordBusiness>.Instance.Update(data, this.currentUser);
+                BusinessFactory<PopulationRecordBusiness>.Instance.UpdateRecords(data, this.currentUser);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

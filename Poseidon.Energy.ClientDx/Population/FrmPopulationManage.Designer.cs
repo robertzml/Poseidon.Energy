@@ -65,6 +65,8 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.lbPopulation = new DevExpress.XtraEditors.ListBoxControl();
             this.bsPopulation = new System.Windows.Forms.BindingSource(this.components);
+            this.btnViewRecord = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -99,6 +101,7 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbPopulation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -130,6 +133,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnViewRecord);
             this.layoutControl1.Controls.Add(this.btnEditSingle);
             this.layoutControl1.Controls.Add(this.txtEditUser);
             this.layoutControl1.Controls.Add(this.txtCreateUser);
@@ -153,9 +157,9 @@
             // 
             // btnEditSingle
             // 
-            this.btnEditSingle.Location = new System.Drawing.Point(245, 160);
+            this.btnEditSingle.Location = new System.Drawing.Point(468, 160);
             this.btnEditSingle.Name = "btnEditSingle";
-            this.btnEditSingle.Size = new System.Drawing.Size(219, 22);
+            this.btnEditSingle.Size = new System.Drawing.Size(235, 22);
             this.btnEditSingle.StyleController = this.layoutControl1;
             this.btnEditSingle.TabIndex = 12;
             this.btnEditSingle.Text = "编辑单条记录";
@@ -185,9 +189,9 @@
             // 
             // btnEditNumber
             // 
-            this.btnEditNumber.Location = new System.Drawing.Point(19, 160);
+            this.btnEditNumber.Location = new System.Drawing.Point(243, 160);
             this.btnEditNumber.Name = "btnEditNumber";
-            this.btnEditNumber.Size = new System.Drawing.Size(222, 22);
+            this.btnEditNumber.Size = new System.Drawing.Size(221, 22);
             this.btnEditNumber.StyleController = this.layoutControl1;
             this.btnEditNumber.TabIndex = 11;
             this.btnEditNumber.Text = "批量编辑记录";
@@ -360,8 +364,9 @@
             this.layoutControlItem7,
             this.layoutControlItem8,
             this.layoutControlItem9,
+            this.layoutControlItem10,
             this.layoutControlItem13,
-            this.layoutControlItem10});
+            this.layoutControlItem14});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 96);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(712, 95);
@@ -390,25 +395,25 @@
             this.layoutControlItem9.Control = this.btnDelete;
             this.layoutControlItem9.Location = new System.Drawing.Point(449, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(239, 52);
+            this.layoutControlItem9.Size = new System.Drawing.Size(239, 26);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.btnEditSingle;
-            this.layoutControlItem13.Location = new System.Drawing.Point(226, 26);
+            this.layoutControlItem13.Location = new System.Drawing.Point(449, 26);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(223, 26);
+            this.layoutControlItem13.Size = new System.Drawing.Size(239, 26);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.btnEditNumber;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem10.Location = new System.Drawing.Point(224, 26);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(226, 26);
+            this.layoutControlItem10.Size = new System.Drawing.Size(225, 26);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
@@ -493,6 +498,25 @@
             // 
             this.bsPopulation.DataSource = typeof(Poseidon.Energy.Core.DL.Population);
             // 
+            // btnViewRecord
+            // 
+            this.btnViewRecord.Location = new System.Drawing.Point(19, 160);
+            this.btnViewRecord.Name = "btnViewRecord";
+            this.btnViewRecord.Size = new System.Drawing.Size(220, 22);
+            this.btnViewRecord.StyleController = this.layoutControl1;
+            this.btnViewRecord.TabIndex = 13;
+            this.btnViewRecord.Text = "查看记录";
+            this.btnViewRecord.Click += new System.EventHandler(this.btnViewRecord_Click);
+            // 
+            // layoutControlItem14
+            // 
+            this.layoutControlItem14.Control = this.btnViewRecord;
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(224, 26);
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem14.TextVisible = false;
+            // 
             // FrmPopulationManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -535,6 +559,7 @@
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lbPopulation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -577,5 +602,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraEditors.SimpleButton btnEditSingle;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
+        private DevExpress.XtraEditors.SimpleButton btnViewRecord;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
     }
 }
