@@ -17,9 +17,9 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 经费统计总览窗体
+    /// 经费统计管理窗体
     /// </summary>
-    public partial class FrmFundOverview : BaseMdiForm
+    public partial class FrmFundManage : BaseMdiForm
     {
         #region Field
         /// <summary>
@@ -29,7 +29,7 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Field
 
         #region Constructor
-        public FrmFundOverview()
+        public FrmFundManage()
         {
             InitializeComponent();
         }
@@ -76,8 +76,10 @@ namespace Poseidon.Energy.ClientDx
             this.txtYear.Text = currentFund.Year.ToString();
             this.txtBelongTime.Text = currentFund.BelongTime;
             this.txtRemark.Text = currentFund.Remark;
+            this.txtCreateUser.Text = currentFund.CreateBy.Name;
             this.txtCreateTime.Text = currentFund.CreateBy.Time.ToDateTimeString();
-            this.txtUpdateTime.Text = currentFund.UpdateBy.Time.ToDateTimeString();
+            this.txtEditUser.Text = currentFund.UpdateBy.Name;
+            this.txtEditTime.Text = currentFund.UpdateBy.Time.ToDateTimeString();
 
             LoadFundRecords(this.currentFund.Id);
         }

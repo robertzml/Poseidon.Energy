@@ -301,11 +301,11 @@
     <Compile Include="Fund\FrmFundAdd.Designer.cs">
       <DependentUpon>FrmFundAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fund\FrmFundOverview.cs">
+    <Compile Include="Fund\FrmFundManage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Fund\FrmFundOverview.Designer.cs">
-      <DependentUpon>FrmFundOverview.cs</DependentUpon>
+    <Compile Include="Fund\FrmFundManage.Designer.cs">
+      <DependentUpon>FrmFundManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Target\FrmTargetAdd.cs">
       <SubType>Form</SubType>
@@ -465,8 +465,8 @@
     <EmbeddedResource Include="Fund\FrmFundEdit.resx">
       <DependentUpon>FrmFundEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Fund\FrmFundOverview.resx">
-      <DependentUpon>FrmFundOverview.cs</DependentUpon>
+    <EmbeddedResource Include="Fund\FrmFundManage.resx">
+      <DependentUpon>FrmFundManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fund\FrmFundRecordEdit.resx">
       <DependentUpon>FrmFundRecordEdit.cs</DependentUpon>

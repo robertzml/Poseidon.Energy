@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Energy.ClientDx
 {
-    partial class FrmFundOverview
+    partial class FrmFundManage
     {
         /// <summary>
         /// Required designer variable.
@@ -32,12 +32,15 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtEditUser = new DevExpress.XtraEditors.TextEdit();
+            this.txtCreateUser = new DevExpress.XtraEditors.TextEdit();
+            this.txtBelongTime = new DevExpress.XtraEditors.TextEdit();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.btnEditRecord = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.txtUpdateTime = new DevExpress.XtraEditors.TextEdit();
+            this.txtEditTime = new DevExpress.XtraEditors.TextEdit();
             this.txtCreateTime = new DevExpress.XtraEditors.TextEdit();
             this.txtRemark = new DevExpress.XtraEditors.TextEdit();
             this.txtYear = new DevExpress.XtraEditors.TextEdit();
@@ -49,23 +52,27 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.frGrid = new Poseidon.Energy.ClientDx.FundRecordGrid();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.lbFund = new DevExpress.XtraEditors.ListBoxControl();
             this.bsFund = new System.Windows.Forms.BindingSource(this.components);
-            this.txtBelongTime = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditUser.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreateUser.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBelongTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUpdateTime.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreateTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtYear.Properties)).BeginInit();
@@ -77,17 +84,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbFund)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFund)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBelongTime.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -102,7 +110,7 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 180F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 210F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(882, 519);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -113,19 +121,21 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(203, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(676, 174);
+            this.groupControl1.Size = new System.Drawing.Size(676, 204);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "选中统计";
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.txtEditUser);
+            this.layoutControl1.Controls.Add(this.txtCreateUser);
             this.layoutControl1.Controls.Add(this.txtBelongTime);
             this.layoutControl1.Controls.Add(this.txtName);
             this.layoutControl1.Controls.Add(this.btnEditRecord);
             this.layoutControl1.Controls.Add(this.btnDelete);
             this.layoutControl1.Controls.Add(this.btnEdit);
             this.layoutControl1.Controls.Add(this.btnAdd);
-            this.layoutControl1.Controls.Add(this.txtUpdateTime);
+            this.layoutControl1.Controls.Add(this.txtEditTime);
             this.layoutControl1.Controls.Add(this.txtCreateTime);
             this.layoutControl1.Controls.Add(this.txtRemark);
             this.layoutControl1.Controls.Add(this.txtYear);
@@ -133,9 +143,42 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(672, 151);
+            this.layoutControl1.Size = new System.Drawing.Size(672, 181);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtEditUser
+            // 
+            this.txtEditUser.Location = new System.Drawing.Point(58, 79);
+            this.txtEditUser.Name = "txtEditUser";
+            this.txtEditUser.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtEditUser.Properties.Appearance.Options.UseBackColor = true;
+            this.txtEditUser.Properties.ReadOnly = true;
+            this.txtEditUser.Size = new System.Drawing.Size(273, 20);
+            this.txtEditUser.StyleController = this.layoutControl1;
+            this.txtEditUser.TabIndex = 6;
+            // 
+            // txtCreateUser
+            // 
+            this.txtCreateUser.Location = new System.Drawing.Point(58, 55);
+            this.txtCreateUser.Name = "txtCreateUser";
+            this.txtCreateUser.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtCreateUser.Properties.Appearance.Options.UseBackColor = true;
+            this.txtCreateUser.Properties.ReadOnly = true;
+            this.txtCreateUser.Size = new System.Drawing.Size(273, 20);
+            this.txtCreateUser.StyleController = this.layoutControl1;
+            this.txtCreateUser.TabIndex = 4;
+            // 
+            // txtBelongTime
+            // 
+            this.txtBelongTime.Location = new System.Drawing.Point(58, 31);
+            this.txtBelongTime.Name = "txtBelongTime";
+            this.txtBelongTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtBelongTime.Properties.Appearance.Options.UseBackColor = true;
+            this.txtBelongTime.Properties.ReadOnly = true;
+            this.txtBelongTime.Size = new System.Drawing.Size(273, 20);
+            this.txtBelongTime.StyleController = this.layoutControl1;
+            this.txtBelongTime.TabIndex = 2;
             // 
             // txtName
             // 
@@ -144,13 +187,13 @@
             this.txtName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtName.Properties.Appearance.Options.UseBackColor = true;
             this.txtName.Properties.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(275, 20);
+            this.txtName.Size = new System.Drawing.Size(273, 20);
             this.txtName.StyleController = this.layoutControl1;
             this.txtName.TabIndex = 0;
             // 
             // btnEditRecord
             // 
-            this.btnEditRecord.Location = new System.Drawing.Point(496, 110);
+            this.btnEditRecord.Location = new System.Drawing.Point(496, 134);
             this.btnEditRecord.Name = "btnEditRecord";
             this.btnEditRecord.Size = new System.Drawing.Size(157, 22);
             this.btnEditRecord.StyleController = this.layoutControl1;
@@ -160,7 +203,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(337, 110);
+            this.btnDelete.Location = new System.Drawing.Point(337, 134);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(155, 22);
             this.btnDelete.StyleController = this.layoutControl1;
@@ -170,7 +213,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(177, 110);
+            this.btnEdit.Location = new System.Drawing.Point(177, 134);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(156, 22);
             this.btnEdit.StyleController = this.layoutControl1;
@@ -180,7 +223,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(19, 110);
+            this.btnAdd.Location = new System.Drawing.Point(19, 134);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(154, 22);
             this.btnAdd.StyleController = this.layoutControl1;
@@ -188,47 +231,47 @@
             this.btnAdd.Text = "添加统计";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtUpdateTime
+            // txtEditTime
             // 
-            this.txtUpdateTime.Location = new System.Drawing.Point(388, 55);
-            this.txtUpdateTime.Name = "txtUpdateTime";
-            this.txtUpdateTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtUpdateTime.Properties.Appearance.Options.UseBackColor = true;
-            this.txtUpdateTime.Properties.ReadOnly = true;
-            this.txtUpdateTime.Size = new System.Drawing.Size(277, 20);
-            this.txtUpdateTime.StyleController = this.layoutControl1;
-            this.txtUpdateTime.TabIndex = 3;
+            this.txtEditTime.Location = new System.Drawing.Point(386, 79);
+            this.txtEditTime.Name = "txtEditTime";
+            this.txtEditTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtEditTime.Properties.Appearance.Options.UseBackColor = true;
+            this.txtEditTime.Properties.ReadOnly = true;
+            this.txtEditTime.Size = new System.Drawing.Size(279, 20);
+            this.txtEditTime.StyleController = this.layoutControl1;
+            this.txtEditTime.TabIndex = 7;
             // 
             // txtCreateTime
             // 
-            this.txtCreateTime.Location = new System.Drawing.Point(58, 55);
+            this.txtCreateTime.Location = new System.Drawing.Point(386, 55);
             this.txtCreateTime.Name = "txtCreateTime";
             this.txtCreateTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtCreateTime.Properties.Appearance.Options.UseBackColor = true;
             this.txtCreateTime.Properties.ReadOnly = true;
-            this.txtCreateTime.Size = new System.Drawing.Size(275, 20);
+            this.txtCreateTime.Size = new System.Drawing.Size(279, 20);
             this.txtCreateTime.StyleController = this.layoutControl1;
-            this.txtCreateTime.TabIndex = 2;
+            this.txtCreateTime.TabIndex = 5;
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(388, 31);
+            this.txtRemark.Location = new System.Drawing.Point(386, 31);
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtRemark.Properties.Appearance.Options.UseBackColor = true;
             this.txtRemark.Properties.ReadOnly = true;
-            this.txtRemark.Size = new System.Drawing.Size(277, 20);
+            this.txtRemark.Size = new System.Drawing.Size(279, 20);
             this.txtRemark.StyleController = this.layoutControl1;
-            this.txtRemark.TabIndex = 4;
+            this.txtRemark.TabIndex = 3;
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(388, 7);
+            this.txtYear.Location = new System.Drawing.Point(386, 7);
             this.txtYear.Name = "txtYear";
             this.txtYear.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtYear.Properties.Appearance.Options.UseBackColor = true;
             this.txtYear.Properties.ReadOnly = true;
-            this.txtYear.Size = new System.Drawing.Size(277, 20);
+            this.txtYear.Size = new System.Drawing.Size(279, 20);
             this.txtYear.StyleController = this.layoutControl1;
             this.txtYear.TabIndex = 1;
             // 
@@ -241,30 +284,32 @@
             this.layoutControlItem3,
             this.layoutControlGroup2,
             this.layoutControlItem9,
-            this.layoutControlItem4,
             this.layoutControlItem10,
-            this.layoutControlItem2});
+            this.layoutControlItem2,
+            this.layoutControlItem4,
+            this.layoutControlItem11,
+            this.layoutControlItem12});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(672, 151);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(672, 181);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtYear;
-            this.layoutControlItem1.Location = new System.Drawing.Point(330, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(328, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(332, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(334, 24);
             this.layoutControlItem1.Text = "年度";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtCreateTime;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem3.Location = new System.Drawing.Point(328, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(330, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(334, 24);
             this.layoutControlItem3.Text = "创建时间";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -275,9 +320,9 @@
             this.layoutControlItem6,
             this.layoutControlItem7,
             this.layoutControlItem8});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 96);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(662, 69);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(662, 75);
             this.layoutControlGroup2.Text = "操作";
             // 
             // layoutControlItem5
@@ -285,7 +330,7 @@
             this.layoutControlItem5.Control = this.btnAdd;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(158, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(158, 32);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -294,7 +339,7 @@
             this.layoutControlItem6.Control = this.btnEdit;
             this.layoutControlItem6.Location = new System.Drawing.Point(158, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(160, 26);
+            this.layoutControlItem6.Size = new System.Drawing.Size(160, 32);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -303,7 +348,7 @@
             this.layoutControlItem7.Control = this.btnDelete;
             this.layoutControlItem7.Location = new System.Drawing.Point(318, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(159, 26);
+            this.layoutControlItem7.Size = new System.Drawing.Size(159, 32);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -312,44 +357,71 @@
             this.layoutControlItem8.Control = this.btnEditRecord;
             this.layoutControlItem8.Location = new System.Drawing.Point(477, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(161, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(161, 32);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.txtRemark;
-            this.layoutControlItem2.Location = new System.Drawing.Point(330, 24);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(332, 24);
-            this.layoutControlItem2.Text = "备注";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.txtName;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(330, 24);
+            this.layoutControlItem9.Size = new System.Drawing.Size(328, 24);
             this.layoutControlItem9.Text = "名称";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(48, 14);
             // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.txtBelongTime;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(328, 24);
+            this.layoutControlItem10.Text = "归属时间";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.txtRemark;
+            this.layoutControlItem2.Location = new System.Drawing.Point(328, 24);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(334, 24);
+            this.layoutControlItem2.Text = "备注";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
+            // 
             // layoutControlItem4
             // 
-            this.layoutControlItem4.Control = this.txtUpdateTime;
-            this.layoutControlItem4.Location = new System.Drawing.Point(330, 48);
+            this.layoutControlItem4.Control = this.txtEditTime;
+            this.layoutControlItem4.Location = new System.Drawing.Point(328, 72);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(332, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(334, 24);
             this.layoutControlItem4.Text = "更新时间";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.txtCreateUser;
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(328, 24);
+            this.layoutControlItem11.Text = "创建人";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.txtEditUser;
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(328, 24);
+            this.layoutControlItem12.Text = "编辑人";
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(48, 14);
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.frGrid);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(203, 183);
+            this.groupControl2.Location = new System.Drawing.Point(203, 213);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(676, 333);
+            this.groupControl2.Size = new System.Drawing.Size(676, 303);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "经费记录";
             // 
@@ -366,7 +438,8 @@
             this.frGrid.ShowAddMenu = false;
             this.frGrid.ShowFooter = true;
             this.frGrid.ShowLineNumber = true;
-            this.frGrid.Size = new System.Drawing.Size(672, 310);
+            this.frGrid.ShowNavigator = false;
+            this.frGrid.Size = new System.Drawing.Size(672, 280);
             this.frGrid.TabIndex = 0;
             // 
             // groupControl3
@@ -397,41 +470,24 @@
             // 
             this.bsFund.DataSource = typeof(Poseidon.Energy.Core.DL.Fund);
             // 
-            // txtBelongTime
-            // 
-            this.txtBelongTime.Location = new System.Drawing.Point(58, 31);
-            this.txtBelongTime.Name = "txtBelongTime";
-            this.txtBelongTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtBelongTime.Properties.Appearance.Options.UseBackColor = true;
-            this.txtBelongTime.Properties.ReadOnly = true;
-            this.txtBelongTime.Size = new System.Drawing.Size(275, 20);
-            this.txtBelongTime.StyleController = this.layoutControl1;
-            this.txtBelongTime.TabIndex = 9;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.txtBelongTime;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(330, 24);
-            this.layoutControlItem10.Text = "归属时间";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // FrmFundOverview
+            // FrmFundManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 519);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FrmFundOverview";
-            this.Text = "经费统计总览";
+            this.Name = "FrmFundManage";
+            this.Text = "经费统计管理";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditUser.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreateUser.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBelongTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUpdateTime.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEditTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreateTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtYear.Properties)).EndInit();
@@ -443,17 +499,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lbFund)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFund)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBelongTime.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -470,7 +527,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.ListBoxControl lbFund;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
-        private DevExpress.XtraEditors.TextEdit txtUpdateTime;
+        private DevExpress.XtraEditors.TextEdit txtEditTime;
         private DevExpress.XtraEditors.TextEdit txtCreateTime;
         private DevExpress.XtraEditors.TextEdit txtRemark;
         private DevExpress.XtraEditors.TextEdit txtYear;
@@ -490,5 +547,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraEditors.TextEdit txtBelongTime;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraEditors.TextEdit txtEditUser;
+        private DevExpress.XtraEditors.TextEdit txtCreateUser;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
     }
 }

@@ -152,6 +152,8 @@
             this.colDoctor.Caption = "博士生";
             this.colDoctor.FieldName = "colDoctor";
             this.colDoctor.Name = "colDoctor";
+            this.colDoctor.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colDoctor", "合计={0:0.##}")});
             this.colDoctor.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.colDoctor.Visible = true;
             this.colDoctor.VisibleIndex = 7;
@@ -161,6 +163,8 @@
             this.colProfessionalMaster.Caption = "专业硕士生";
             this.colProfessionalMaster.FieldName = "colProfessionalMaster";
             this.colProfessionalMaster.Name = "colProfessionalMaster";
+            this.colProfessionalMaster.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colProfessionalMaster", "合计={0:0.##}")});
             this.colProfessionalMaster.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.colProfessionalMaster.Visible = true;
             this.colProfessionalMaster.VisibleIndex = 6;
@@ -170,6 +174,8 @@
             this.colMaster.Caption = "硕士生";
             this.colMaster.FieldName = "colMaster";
             this.colMaster.Name = "colMaster";
+            this.colMaster.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colMaster", "合计={0:0.##}")});
             this.colMaster.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.colMaster.Visible = true;
             this.colMaster.VisibleIndex = 5;

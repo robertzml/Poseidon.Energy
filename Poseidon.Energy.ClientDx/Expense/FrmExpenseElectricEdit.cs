@@ -118,7 +118,7 @@ namespace Poseidon.Energy.ClientDx
             {
                 if (string.IsNullOrEmpty(item.MeterName))
                 {
-                    errorMessage = "水表名称不能为空";
+                    errorMessage = "电表名称不能为空";
                     return new Tuple<bool, string>(false, errorMessage);
                 }
             }
