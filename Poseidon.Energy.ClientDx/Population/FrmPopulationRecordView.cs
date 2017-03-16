@@ -10,12 +10,9 @@ using System.Windows.Forms;
 namespace Poseidon.Energy.ClientDx
 {
     using Poseidon.Base.Framework;
-    using Poseidon.Base.System;
-    using Poseidon.Core.BL;
-    using Poseidon.Core.DL;
+    using Poseidon.Common;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
-    using Poseidon.Energy.Core.Utility;
     using Poseidon.Winform.Base;
 
     /// <summary>
@@ -47,6 +44,10 @@ namespace Poseidon.Energy.ClientDx
         protected override void InitForm()
         {
             var department = BusinessFactory<DepartmentBusiness>.Instance.FindById(this.currentRecord.DepartmentId);
+            this.txtCreateUser.Text = this.currentRecord.CreateBy.Name;
+            this.txtCreateTime.Text = this.currentRecord.CreateBy.Time.ToDateTimeString();
+            this.txtEditUser.Text = this.currentRecord.UpdateBy.Name;
+            this.txtEditTime.Text = this.currentRecord.UpdateBy.Time.ToDateTimeString();
             this.txtDepartmentName.Text = department.Name;
             this.popDetailsGrid.DataSource = this.currentRecord.Details;
 

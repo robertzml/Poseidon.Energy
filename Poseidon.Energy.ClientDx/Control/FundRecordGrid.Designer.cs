@@ -44,16 +44,21 @@
             // 
             this.bsEntity.DataSource = typeof(Poseidon.Energy.Core.DL.FundRecord);
             // 
+            // dgcEntity
+            // 
+            this.dgcEntity.Size = new System.Drawing.Size(568, 378);
+            // 
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colFundId,
             this.colDepartmentId,
-            this.colHorizontalResearch,
             this.colVerticalResearch,
+            this.colHorizontalResearch,
             this.colRemark,
             this.colStatus});
+            this.dgvEntity.IndicatorWidth = 40;
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.Editable = false;
@@ -89,7 +94,7 @@
             this.colHorizontalResearch.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HorizontalResearch", "合计={0:0.##}")});
             this.colHorizontalResearch.Visible = true;
-            this.colHorizontalResearch.VisibleIndex = 1;
+            this.colHorizontalResearch.VisibleIndex = 2;
             // 
             // colVerticalResearch
             // 
@@ -99,7 +104,7 @@
             this.colVerticalResearch.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "VerticalResearch", "合计={0:0.##}")});
             this.colVerticalResearch.Visible = true;
-            this.colVerticalResearch.VisibleIndex = 2;
+            this.colVerticalResearch.VisibleIndex = 1;
             // 
             // colRemark
             // 
@@ -127,7 +132,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "FundRecordGrid";
             this.ShowFooter = true;
-            this.ShowLineNumber = true;
             this.Load += new System.EventHandler(this.FundRecordGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();

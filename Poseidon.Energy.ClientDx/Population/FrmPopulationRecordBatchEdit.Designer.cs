@@ -80,13 +80,13 @@
             this.plFill.Appearance.BackColor = System.Drawing.Color.White;
             this.plFill.Appearance.Options.UseBackColor = true;
             this.plFill.Controls.Add(this.groupControl1);
-            this.plFill.Size = new System.Drawing.Size(1008, 501);
+            this.plFill.Size = new System.Drawing.Size(1008, 522);
             // 
             // plBottom
             // 
             this.plBottom.Appearance.BackColor = System.Drawing.Color.White;
             this.plBottom.Appearance.Options.UseBackColor = true;
-            this.plBottom.Location = new System.Drawing.Point(0, 501);
+            this.plBottom.Location = new System.Drawing.Point(0, 522);
             this.plBottom.Size = new System.Drawing.Size(1008, 60);
             // 
             // groupControl1
@@ -95,7 +95,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1008, 501);
+            this.groupControl1.Size = new System.Drawing.Size(1008, 522);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "人数记录数据";
             // 
@@ -111,7 +111,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1004, 478);
+            this.layoutControl1.Size = new System.Drawing.Size(1004, 499);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -160,7 +160,7 @@
             this.prGrid.ShowFooter = true;
             this.prGrid.ShowLineNumber = true;
             this.prGrid.ShowNavigator = false;
-            this.prGrid.Size = new System.Drawing.Size(980, 343);
+            this.prGrid.Size = new System.Drawing.Size(980, 364);
             this.prGrid.TabIndex = 6;
             // 
             // txtYear
@@ -194,7 +194,7 @@
             this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1004, 478);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1004, 499);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlGroup2
@@ -261,7 +261,7 @@
             this.layoutControlItem3.Control = this.prGrid;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 111);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(984, 347);
+            this.layoutControlItem3.Size = new System.Drawing.Size(984, 368);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -269,7 +269,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.ClientSize = new System.Drawing.Size(1008, 582);
             this.Name = "FrmPopulationRecordBatchEdit";
             this.Text = "批量编辑人数记录";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();

@@ -34,14 +34,15 @@
             this.menuTargetMake = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuPopulationManage = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuFundOverview = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuFundManage = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPopulationOverview = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDepartment = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDepartmentOverview = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExpense = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExpenseOverview = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExpenseReceipt = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExpenseAccount = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuPopulationOverview = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuFundOverview = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,8 +65,9 @@
             this.menuTargetMake,
             this.toolStripSeparator1,
             this.menuPopulationManage,
-            this.menuFundOverview,
-            this.menuPopulationOverview});
+            this.menuFundManage,
+            this.menuPopulationOverview,
+            this.menuFundOverview});
             this.menuTarget.Name = "menuTarget";
             this.menuTarget.Size = new System.Drawing.Size(80, 21);
             this.menuTarget.Text = "指标化管理";
@@ -96,12 +98,19 @@
             this.menuPopulationManage.Text = "人数统计";
             this.menuPopulationManage.Click += new System.EventHandler(this.menuPopulationManage_Click);
             // 
-            // menuFundOverview
+            // menuFundManage
             // 
-            this.menuFundOverview.Name = "menuFundOverview";
-            this.menuFundOverview.Size = new System.Drawing.Size(152, 22);
-            this.menuFundOverview.Text = "经费统计";
-            this.menuFundOverview.Click += new System.EventHandler(this.menuFundOverview_Click);
+            this.menuFundManage.Name = "menuFundManage";
+            this.menuFundManage.Size = new System.Drawing.Size(152, 22);
+            this.menuFundManage.Text = "经费统计";
+            this.menuFundManage.Click += new System.EventHandler(this.menuFundManage_Click);
+            // 
+            // menuPopulationOverview
+            // 
+            this.menuPopulationOverview.Name = "menuPopulationOverview";
+            this.menuPopulationOverview.Size = new System.Drawing.Size(152, 22);
+            this.menuPopulationOverview.Text = "人数总览";
+            this.menuPopulationOverview.Click += new System.EventHandler(this.menuPopulationOverview_Click);
             // 
             // menuDepartment
             // 
@@ -149,12 +158,12 @@
             this.menuExpenseAccount.Text = "账户管理";
             this.menuExpenseAccount.Click += new System.EventHandler(this.menuExpenseAccount_Click);
             // 
-            // menuPopulationOverview
+            // menuFundOverview
             // 
-            this.menuPopulationOverview.Name = "menuPopulationOverview";
-            this.menuPopulationOverview.Size = new System.Drawing.Size(152, 22);
-            this.menuPopulationOverview.Text = "人数总览";
-            this.menuPopulationOverview.Click += new System.EventHandler(this.menuPopulationOverview_Click);
+            this.menuFundOverview.Name = "menuFundOverview";
+            this.menuFundOverview.Size = new System.Drawing.Size(152, 22);
+            this.menuFundOverview.Text = "经费总览";
+            this.menuFundOverview.Click += new System.EventHandler(this.menuFundOverview_Click);
             // 
             // MainForm
             // 
@@ -182,7 +191,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuTargetMake;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem menuPopulationManage;
-        private System.Windows.Forms.ToolStripMenuItem menuFundOverview;
+        private System.Windows.Forms.ToolStripMenuItem menuFundManage;
         private System.Windows.Forms.ToolStripMenuItem menuDepartment;
         private System.Windows.Forms.ToolStripMenuItem menuDepartmentOverview;
         private System.Windows.Forms.ToolStripMenuItem menuExpense;
@@ -190,6 +199,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuExpenseAccount;
         private System.Windows.Forms.ToolStripMenuItem menuExpenseReceipt;
         private System.Windows.Forms.ToolStripMenuItem menuPopulationOverview;
+        private System.Windows.Forms.ToolStripMenuItem menuFundOverview;
     }
 }
 

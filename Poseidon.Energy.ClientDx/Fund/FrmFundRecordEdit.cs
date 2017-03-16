@@ -14,6 +14,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 编辑经费记录窗体
@@ -65,7 +66,7 @@ namespace Poseidon.Energy.ClientDx
         private List<FundRecord> LoadFundRecords()
         {
             var records = BusinessFactory<FundRecordBusiness>.Instance.FindByFundId(this.currentFund.Id);
-            var departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll();
+            var departments = BusinessFactory<DepartmentBusiness>.Instance.FindInGroup(EnergyConstant.TargetDepartmentGroupCode, true);
 
             List<FundRecord> data = new List<FundRecord>();
             data.AddRange(records);
