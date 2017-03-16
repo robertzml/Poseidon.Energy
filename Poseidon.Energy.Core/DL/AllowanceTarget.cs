@@ -27,6 +27,12 @@ namespace Poseidon.Energy.Core.DL
         public string Code { get; set; }
 
         /// <summary>
+        /// 基数
+        /// </summary>
+        [Display(Name = "基数")]
+        public decimal Cardinal { get; set; }
+
+        /// <summary>
         /// 系数
         /// </summary>
         [Display(Name = "系数")]

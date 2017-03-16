@@ -152,8 +152,8 @@ namespace Poseidon.Energy.Core.BL
                     dt.DepartmentId = item;
                     dt.Type = 1;
                     dt.Finance = "";
-                    dt.TotalQuantum = 0;
-                    dt.TotalAmount = 0;
+                    dt.PlanQuantum = 0;
+                    dt.PlanAmount = 0;
                     dt.Remark = "";
                     dt.CreateBy = new UpdateStamp
                     {
@@ -183,8 +183,8 @@ namespace Poseidon.Energy.Core.BL
         {
             var dal = this.baseDal as ITargetRecordRepository;
 
-            entity.TotalQuantum = entity.StaffTarget.Sum(r => r.YearKilowatt) + entity.AllowanceTarget.Sum(r => r.YearKilowatt);
-            entity.TotalAmount = entity.StaffTarget.Sum(r => r.YearAmount) + entity.AllowanceTarget.Sum(r => r.YearAmount);
+            entity.PlanQuantum = entity.StaffTarget.Sum(r => r.YearKilowatt) + entity.AllowanceTarget.Sum(r => r.YearKilowatt);
+            entity.PlanAmount = entity.StaffTarget.Sum(r => r.YearAmount) + entity.AllowanceTarget.Sum(r => r.YearAmount);
             entity.UpdateBy = new UpdateStamp
             {
                 UserId = user.Id,

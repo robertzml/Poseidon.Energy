@@ -37,10 +37,18 @@ namespace Poseidon.Energy.ClientDx
         #region Function
         protected override void InitForm()
         {
-            var data = BusinessFactory<TargetBusiness>.Instance.FindAll().ToList();
-            this.bsTarget.DataSource = data;
+            LoadTargets();
 
             base.InitForm();
+        }
+
+        /// <summary>
+        /// 载入指标计划
+        /// </summary>
+        private void LoadTargets()
+        {
+            var data = BusinessFactory<TargetBusiness>.Instance.FindAll().ToList();
+            this.bsTarget.DataSource = data;
         }
 
         /// <summary>
@@ -116,6 +124,38 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Function
 
         #region Event
+        /// <summary>
+        /// 添加计划
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.ShowDialogForm(typeof(FrmTargetAdd));
+
+            LoadTargets();
+        }
+
+        /// <summary>
+        /// 编辑计划
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        /// <summary>
+        /// 删除计划
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /// <summary>
         /// 指标计划选择
         /// </summary>

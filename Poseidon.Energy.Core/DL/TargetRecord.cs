@@ -39,6 +39,18 @@ namespace Poseidon.Energy.Core.DL
         public string Finance { get; set; }
 
         /// <summary>
+        /// 学校承担比例
+        /// </summary>
+        [Display(Name = "学校承担比例")]
+        public decimal SchoolTake { get; set; }
+
+        /// <summary>
+        /// 部门承担比例
+        /// </summary>
+        [Display(Name = "部门承担比例")]
+        public decimal SelfTake { get; set; }
+
+        /// <summary>
         /// 人数指标
         /// </summary>
         [Display(Name = "人数指标")]
@@ -51,16 +63,16 @@ namespace Poseidon.Energy.Core.DL
         public List<AllowanceTarget> AllowanceTarget { get; set; }
 
         /// <summary>
-        /// 总用电量
+        /// 计划总用电量
         /// </summary>
-        [Display(Name = "总用电量")]
-        public decimal TotalQuantum { get; set; }
+        [Display(Name = "计划总用电量")]
+        public decimal PlanQuantum { get; set; }
 
         /// <summary>
-        /// 总金额
+        /// 计划总金额
         /// </summary>
-        [Display(Name = "总金额")]
-        public decimal TotalAmount { get; set; }
+        [Display(Name = "计划总金额")]
+        public decimal PlanAmount { get; set; }
         #endregion //Property
     }
 }

@@ -42,8 +42,10 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             entity.DepartmentId = doc["departmentId"].ToString();
             entity.Type = doc["type"].ToInt32();
             entity.Finance = doc["finance"].ToString();
-            entity.TotalQuantum = doc["totalQuantum"].ToDecimal();
-            entity.TotalAmount = doc["totalAmount"].ToDecimal();
+            entity.SchoolTake = doc["schoolTake"].ToDecimal();
+            entity.SelfTake = doc["selfTake"].ToDecimal();
+            entity.PlanQuantum = doc["planQuantum"].ToDecimal();
+            entity.PlanAmount = doc["planAmount"].ToDecimal();
 
             var createBy = doc["createBy"].ToBsonDocument();
             entity.CreateBy = new UpdateStamp
@@ -94,6 +96,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                     AllowanceTarget at = new AllowanceTarget();
                     at.Name = item["name"].ToString();
                     at.Code = item["code"].ToString();
+                    at.Cardinal = item["cardinal"].ToDecimal();
                     at.Factor = item["factor"].ToDecimal();
                     at.MonthKilowatt = item["monthKilowatt"].ToDecimal();
                     at.MonthCount = item["monthCount"].ToInt32();
@@ -122,8 +125,10 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 { "departmentId", entity.DepartmentId },
                 { "type", entity.Type },
                 { "finance", entity.Finance },
-                { "totalQuantum", entity.TotalQuantum },
-                { "totalAmount", entity.TotalAmount },
+                { "schoolTake", entity.SchoolTake },
+                { "selfTake", entity.SelfTake },
+                { "planQuantum", entity.PlanQuantum },
+                { "planAmount", entity.PlanAmount },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },
                     { "name", entity.CreateBy.Name },
@@ -170,6 +175,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                     {
                         { "name", item.Name },
                         { "code", item.Code },
+                        { "cardinal", item.Cardinal },
                         { "factor", item.Factor },
                         { "monthKilowatt", item.MonthKilowatt },
                         { "monthCount", item.MonthCount },
