@@ -19,11 +19,48 @@ namespace Poseidon.Energy.ClientDx
     /// </summary>
     public partial class PopulationDetailsGrid : WinEntityGrid<PopulationDetail>
     {
+        #region Field
+        /// <summary>
+        /// 是否显示计入总数列
+        /// </summary>
+        private bool showInTotal = true;
+        #endregion //Field
+
         #region Constructor
         public PopulationDetailsGrid()
         {
             InitializeComponent();
         }
         #endregion //Constructor
+
+        #region Event
+        /// <summary>
+        /// 控件载入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PopulationDetailsGrid_Load(object sender, EventArgs e)
+        {
+            this.colInTotal.Visible = this.showInTotal;
+        }
+        #endregion //Event
+
+        #region Property
+        /// <summary>
+        /// 是否显示计入总数列
+        /// </summary>
+        [Category("界面"), Description("是否显示计入总数列"), Browsable(true)]
+        public bool ShowInTotal
+        {
+            get
+            {
+                return this.showInTotal;
+            }
+            set
+            {
+                this.showInTotal = value;
+            }
+        }
+        #endregion //Property
     }
 }

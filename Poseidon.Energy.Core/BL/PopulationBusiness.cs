@@ -10,6 +10,7 @@ namespace Poseidon.Energy.Core.BL
     using Poseidon.Base.System;
     using Poseidon.Energy.Core.DL;
     using Poseidon.Energy.Core.IDAL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 人数统计业务类
@@ -28,17 +29,32 @@ namespace Poseidon.Energy.Core.BL
 
         #region Method
         /// <summary>
+        /// 获取教师人数
+        /// </summary>
+        /// <param name="id">人数统计ID</param>
+        /// <returns></returns>
+        public int GetTeacherNumber(string id)
+        {
+            Poseidon.Core.BL.DictBusiness dictBusiness = new Poseidon.Core.BL.DictBusiness();
+            var dictItems = dictBusiness.FindItems(EnergyConstant.TeacherDictCode);
+
+            PopulationRecordBusiness recordBusiness = new PopulationRecordBusiness();
+            int number = recordBusiness.GetDetailsNumber(id, dictItems.Select(r => r.Value).ToList(), true);
+            return number;
+        }
+
+        /// <summary>
         /// 获取学生人数
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">人数统计ID</param>
         /// <returns></returns>
         public int GetStudentNumber(string id)
         {
             Poseidon.Core.BL.DictBusiness dictBusiness = new Poseidon.Core.BL.DictBusiness();
-            var dictItems = dictBusiness.FindItems("Energy.Target.StudentType");
+            var dictItems = dictBusiness.FindItems(EnergyConstant.StudentDictCode);
 
             PopulationRecordBusiness recordBusiness = new PopulationRecordBusiness();
-            int number = recordBusiness.GetDetailsNumber(id, dictItems.Select(r => r.Value).ToList());
+            int number = recordBusiness.GetDetailsNumber(id, dictItems.Select(r => r.Value).ToList(), true);
             return number;
         }
 

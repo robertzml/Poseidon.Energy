@@ -218,6 +218,12 @@
     <Compile Include="Control\PopulationDetailsGrid.Designer.cs">
       <DependentUpon>PopulationDetailsGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Population\FrmPopulationOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Population\FrmPopulationOverview.Designer.cs">
+      <DependentUpon>FrmPopulationOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Population\FrmPopulationRecordView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -467,6 +473,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Population\FrmPopulationEdit.resx">
       <DependentUpon>FrmPopulationEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Population\FrmPopulationOverview.resx">
+      <DependentUpon>FrmPopulationOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Population\FrmPopulationRecordEdit.resx">
       <DependentUpon>FrmPopulationRecordEdit.cs</DependentUpon>

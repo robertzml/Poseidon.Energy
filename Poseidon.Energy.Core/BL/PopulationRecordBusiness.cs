@@ -54,64 +54,60 @@ namespace Poseidon.Energy.Core.BL
         /// </summary>
         /// <param name="populationId">人数统计ID</param>
         /// <param name="codes">人员类型代码</param>
+        /// <param name="useInclude">是否只计算计入总数记录项</param>
         /// <returns></returns>
-        public int GetDetailsNumber(string populationId, List<string> codes)
+        public int GetDetailsNumber(string populationId, List<string> codes, bool useInclude)
         {
             var records = this.baseDal.FindListByField("populationId", populationId);
             int number = 0;
 
             foreach (var item in records)
             {
-                number += item.Details.Where(r => codes.Contains(r.Code)).Sum(s => s.Number);
+                if (useInclude)
+                    number += item.Details.Where(r => r.InTotal == true && codes.Contains(r.Code)).Sum(s => s.Number);
+                else
+                    number += item.Details.Where(r => codes.Contains(r.Code)).Sum(s => s.Number);
             }
 
             return number;
         }
 
         /// <summary>
-        /// 更新人数记录
+        /// 获取人数记录项合计数
         /// </summary>
-        /// <param name="data">人数记录</param>
-        /// <param name="user">操作用户</param>
-        public void Update(List<PopulationRecord> data, LoginUser user)
+        /// <param name="populationId">人数统计ID</param>
+        /// <returns></returns>
+        public IEnumerable<PopulationDetail> FindSumDetails(string populationId)
         {
-            foreach (var item in data)
+            List<PopulationDetail> data = new List<PopulationDetail>();
+            var records = this.baseDal.FindListByField("populationId", populationId);
+
+            foreach (var record in records)
             {
-                if (item.Details.Sum(r => r.Number) == 0)
+                foreach (var item in record.Details)
                 {
-                    if (item.Id != null)
-                        this.baseDal.Delete(item);
-                }
-                else
-                {
-                    if (item.Id == null)
+                    if (item.InTotal)
                     {
-                        item.CreateBy = new UpdateStamp
+                        var detail = data.Find(r => r.Code == item.Code);
+                        if (detail == null)
                         {
-                            UserId = user.Id,
-                            Name = user.Name,
-                            Time = DateTime.Now
-                        };
-                        item.UpdateBy = new UpdateStamp
+                            PopulationDetail pd = new PopulationDetail
+                            {
+                                Name = item.Name,
+                                Code = item.Code,
+                                Number = item.Number
+                            };
+                            data.Add(pd);
+                        }
+                        else
                         {
-                            UserId = user.Id,
-                            Name = user.Name,
-                            Time = DateTime.Now
-                        };
-                        this.baseDal.Create(item);
-                    }
-                    else
-                    {
-                        item.UpdateBy = new UpdateStamp
-                        {
-                            UserId = user.Id,
-                            Name = user.Name,
-                            Time = DateTime.Now
-                        };
-                        this.baseDal.Update(item);
+                            detail.Number += item.Number;
+                        }
                     }
                 }
             }
+
+            return data;
         }
 
         /// <summary>
@@ -121,7 +117,7 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="user">操作用户</param>
         public void UpdateRecords(List<PopulationRecord> data, LoginUser user)
         {
-            foreach(var item in data)
+            foreach (var item in data)
             {
                 if (item.Id == null)  //新记录，保存人数求和大于0的
                 {
@@ -147,11 +143,6 @@ namespace Poseidon.Energy.Core.BL
                 {
                     PopulationRecord record = this.baseDal.FindById(item.Id);
 
-                    //var other = from r in record.Details
-                    //            where !item.Details.Select(s => s.Code).Contains(r.Code)
-                    //            select r;
-
-                    //item.Details.AddRange(other);
                     item.Details.RemoveAll(r => r.Number <= 0);
                     item.UpdateBy = new UpdateStamp
                     {

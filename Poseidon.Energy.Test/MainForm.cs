@@ -32,7 +32,7 @@ namespace Poseidon.Energy.Test
 
         private void menuPopulationOverview_Click(object sender, EventArgs e)
         {
-            ChildFormManage.LoadMdiForm(this, typeof(FrmPopulationManage));
+            ChildFormManage.LoadMdiForm(this, typeof(FrmPopulationOverview));
         }
 
         private void menuFundOverview_Click(object sender, EventArgs e)
@@ -58,6 +58,11 @@ namespace Poseidon.Energy.Test
         private void menuExpenseReceipt_Click(object sender, EventArgs e)
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmExpenseReceipt));
+        }
+
+        private void menuPopulationManage_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmPopulationManage));
         }
     }
 }
