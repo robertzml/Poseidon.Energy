@@ -166,7 +166,7 @@ namespace Poseidon.Energy.ClientDx
             if (this.luTarget.EditValue == null)
                 return;
 
-            this.currentTarget = this.luTarget.EditValue as Target;
+            this.currentTarget = this.luTarget.GetSelectedDataRow() as Target;
             LoadRecords();
         }
 
@@ -181,6 +181,7 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmTargetSelectDepartment), new object[] { this.currentTarget.Id });
+            LoadTargets();
         }
 
         /// <summary>

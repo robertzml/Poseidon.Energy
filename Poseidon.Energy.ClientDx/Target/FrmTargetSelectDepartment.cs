@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,12 +9,12 @@ using System.Windows.Forms;
 
 namespace Poseidon.Energy.ClientDx
 {
-    using DevExpress.XtraEditors.Controls;
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 指标计划部门选择窗体
@@ -46,7 +45,7 @@ namespace Poseidon.Energy.ClientDx
 
         protected override void InitForm()
         {
-            var departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
+            var departments = BusinessFactory<DepartmentBusiness>.Instance.FindInGroup(EnergyConstant.TargetDepartmentGroupCode, true);
             this.bsDepartment.DataSource = departments;
 
             SetSelectDepartment();

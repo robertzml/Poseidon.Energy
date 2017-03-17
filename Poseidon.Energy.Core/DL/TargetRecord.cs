@@ -7,6 +7,7 @@ using System.Text;
 namespace Poseidon.Energy.Core.DL
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Base.Utility;
 
     /// <summary>
     /// 指标记录类
@@ -29,6 +30,7 @@ namespace Poseidon.Energy.Core.DL
         /// <summary>
         /// 类型, 1:电指标  2:水指标
         /// </summary>
+        [Dict("Energy.Target.Type")]
         [Display(Name = "类型")]
         public int Type { get; set; }
 

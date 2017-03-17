@@ -8,6 +8,7 @@ namespace Poseidon.Energy.Core.BL
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Core.Utility;
     using Poseidon.Energy.Core.DL;
     using Poseidon.Energy.Core.IDAL;
     using Poseidon.Energy.Core.Utility;
@@ -147,11 +148,14 @@ namespace Poseidon.Energy.Core.BL
                     continue;
                 else
                 {
+                    // 创建默认指标
                     TargetRecord dt = new TargetRecord();
                     dt.TargetId = targetId;
                     dt.DepartmentId = item;
                     dt.Type = 1;
                     dt.Finance = "";
+                    dt.SchoolTake = 0.6M;
+                    dt.SelfTake = 0.4M;
                     dt.PlanQuantum = 0;
                     dt.PlanAmount = 0;
                     dt.Remark = "";

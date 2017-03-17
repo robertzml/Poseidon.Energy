@@ -69,13 +69,13 @@
             this.plFill.Appearance.BackColor = System.Drawing.Color.White;
             this.plFill.Appearance.Options.UseBackColor = true;
             this.plFill.Controls.Add(this.groupControl1);
-            this.plFill.Size = new System.Drawing.Size(327, 316);
+            this.plFill.Size = new System.Drawing.Size(327, 359);
             // 
             // plBottom
             // 
             this.plBottom.Appearance.BackColor = System.Drawing.Color.White;
             this.plBottom.Appearance.Options.UseBackColor = true;
-            this.plBottom.Location = new System.Drawing.Point(0, 316);
+            this.plBottom.Location = new System.Drawing.Point(0, 359);
             this.plBottom.Size = new System.Drawing.Size(327, 60);
             // 
             // groupControl1
@@ -84,7 +84,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(327, 316);
+            this.groupControl1.Size = new System.Drawing.Size(327, 359);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "部门列表";
             // 
@@ -97,13 +97,13 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(323, 293);
+            this.layoutControl1.Size = new System.Drawing.Size(323, 336);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // btnUncheckAll
             // 
-            this.btnUncheckAll.Location = new System.Drawing.Point(163, 259);
+            this.btnUncheckAll.Location = new System.Drawing.Point(163, 302);
             this.btnUncheckAll.Name = "btnUncheckAll";
             this.btnUncheckAll.Size = new System.Drawing.Size(148, 22);
             this.btnUncheckAll.StyleController = this.layoutControl1;
@@ -113,7 +113,7 @@
             // 
             // btnCheckAll
             // 
-            this.btnCheckAll.Location = new System.Drawing.Point(12, 259);
+            this.btnCheckAll.Location = new System.Drawing.Point(12, 302);
             this.btnCheckAll.Name = "btnCheckAll";
             this.btnCheckAll.Size = new System.Drawing.Size(147, 22);
             this.btnCheckAll.StyleController = this.layoutControl1;
@@ -124,11 +124,11 @@
             // clbDepartment
             // 
             this.clbDepartment.DataSource = this.bsDepartment;
-            this.clbDepartment.DisplayMember = "ShortName";
+            this.clbDepartment.DisplayMember = "Name";
             this.clbDepartment.Location = new System.Drawing.Point(12, 12);
             this.clbDepartment.Name = "clbDepartment";
             this.clbDepartment.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.clbDepartment.Size = new System.Drawing.Size(299, 243);
+            this.clbDepartment.Size = new System.Drawing.Size(299, 286);
             this.clbDepartment.StyleController = this.layoutControl1;
             this.clbDepartment.TabIndex = 0;
             this.clbDepartment.ValueMember = "Id";
@@ -147,7 +147,7 @@
             this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(323, 293);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(323, 336);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -155,14 +155,14 @@
             this.layoutControlItem1.Control = this.clbDepartment;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(303, 247);
+            this.layoutControlItem1.Size = new System.Drawing.Size(303, 290);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnCheckAll;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 247);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 290);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(151, 26);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -171,7 +171,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.btnUncheckAll;
-            this.layoutControlItem3.Location = new System.Drawing.Point(151, 247);
+            this.layoutControlItem3.Location = new System.Drawing.Point(151, 290);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(152, 26);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -181,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 376);
+            this.ClientSize = new System.Drawing.Size(327, 419);
             this.Name = "FrmTargetSelectDepartment";
             this.Text = "部门选择";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();

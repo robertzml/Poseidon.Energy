@@ -32,10 +32,10 @@
             this.colDepartmentId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFinance = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotalQuantum = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotalAmount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCreateBy = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colUpdateBy = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSchoolTake = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSelfTake = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPlanQuantum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPlanAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,6 +48,10 @@
             // 
             this.bsEntity.DataSource = typeof(Poseidon.Energy.Core.DL.TargetRecord);
             // 
+            // dgcEntity
+            // 
+            this.dgcEntity.Size = new System.Drawing.Size(568, 378);
+            // 
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -56,10 +60,10 @@
             this.colDepartmentId,
             this.colType,
             this.colFinance,
-            this.colTotalQuantum,
-            this.colTotalAmount,
-            this.colCreateBy,
-            this.colUpdateBy,
+            this.colSchoolTake,
+            this.colSelfTake,
+            this.colPlanQuantum,
+            this.colPlanAmount,
             this.colRemark,
             this.colStatus});
             this.dgvEntity.IndicatorWidth = 40;
@@ -99,33 +103,33 @@
             this.colFinance.Visible = true;
             this.colFinance.VisibleIndex = 4;
             // 
-            // colTotalQuantum
+            // colSchoolTake
             // 
-            this.colTotalQuantum.FieldName = "TotalQuantum";
-            this.colTotalQuantum.Name = "colTotalQuantum";
-            this.colTotalQuantum.Visible = true;
-            this.colTotalQuantum.VisibleIndex = 5;
+            this.colSchoolTake.FieldName = "SchoolTake";
+            this.colSchoolTake.Name = "colSchoolTake";
+            this.colSchoolTake.Visible = true;
+            this.colSchoolTake.VisibleIndex = 5;
             // 
-            // colTotalAmount
+            // colSelfTake
             // 
-            this.colTotalAmount.FieldName = "TotalAmount";
-            this.colTotalAmount.Name = "colTotalAmount";
-            this.colTotalAmount.Visible = true;
-            this.colTotalAmount.VisibleIndex = 6;
+            this.colSelfTake.FieldName = "SelfTake";
+            this.colSelfTake.Name = "colSelfTake";
+            this.colSelfTake.Visible = true;
+            this.colSelfTake.VisibleIndex = 6;
             // 
-            // colCreateBy
+            // colPlanQuantum
             // 
-            this.colCreateBy.FieldName = "CreateBy";
-            this.colCreateBy.Name = "colCreateBy";
-            this.colCreateBy.Visible = true;
-            this.colCreateBy.VisibleIndex = 7;
+            this.colPlanQuantum.FieldName = "PlanQuantum";
+            this.colPlanQuantum.Name = "colPlanQuantum";
+            this.colPlanQuantum.Visible = true;
+            this.colPlanQuantum.VisibleIndex = 7;
             // 
-            // colUpdateBy
+            // colPlanAmount
             // 
-            this.colUpdateBy.FieldName = "UpdateBy";
-            this.colUpdateBy.Name = "colUpdateBy";
-            this.colUpdateBy.Visible = true;
-            this.colUpdateBy.VisibleIndex = 8;
+            this.colPlanAmount.FieldName = "PlanAmount";
+            this.colPlanAmount.Name = "colPlanAmount";
+            this.colPlanAmount.Visible = true;
+            this.colPlanAmount.VisibleIndex = 8;
             // 
             // colRemark
             // 
@@ -168,10 +172,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDepartmentId;
         private DevExpress.XtraGrid.Columns.GridColumn colType;
         private DevExpress.XtraGrid.Columns.GridColumn colFinance;
-        private DevExpress.XtraGrid.Columns.GridColumn colTotalQuantum;
-        private DevExpress.XtraGrid.Columns.GridColumn colTotalAmount;
-        private DevExpress.XtraGrid.Columns.GridColumn colCreateBy;
-        private DevExpress.XtraGrid.Columns.GridColumn colUpdateBy;
+        private DevExpress.XtraGrid.Columns.GridColumn colSchoolTake;
+        private DevExpress.XtraGrid.Columns.GridColumn colSelfTake;
+        private DevExpress.XtraGrid.Columns.GridColumn colPlanQuantum;
+        private DevExpress.XtraGrid.Columns.GridColumn colPlanAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
     }
