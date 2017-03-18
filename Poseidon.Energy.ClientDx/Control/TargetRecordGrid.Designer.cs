@@ -31,6 +31,7 @@
             this.colTargetId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepartmentId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repoCmbType = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.colFinance = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSchoolTake = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSelfTake = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -42,6 +43,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoCmbType)).BeginInit();
             this.SuspendLayout();
             // 
             // bsEntity
@@ -50,6 +52,8 @@
             // 
             // dgcEntity
             // 
+            this.dgcEntity.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repoCmbType});
             this.dgcEntity.Size = new System.Drawing.Size(568, 378);
             // 
             // dgvEntity
@@ -91,10 +95,18 @@
             // 
             // colType
             // 
+            this.colType.ColumnEdit = this.repoCmbType;
             this.colType.FieldName = "Type";
             this.colType.Name = "colType";
             this.colType.Visible = true;
             this.colType.VisibleIndex = 3;
+            // 
+            // repoCmbType
+            // 
+            this.repoCmbType.AutoHeight = false;
+            this.repoCmbType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoCmbType.Name = "repoCmbType";
             // 
             // colFinance
             // 
@@ -161,6 +173,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoCmbType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,5 +191,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPlanAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
+        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repoCmbType;
     }
 }

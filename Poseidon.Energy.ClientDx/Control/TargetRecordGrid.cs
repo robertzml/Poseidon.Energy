@@ -45,7 +45,10 @@ namespace Poseidon.Energy.ClientDx
         private void TargetRecordGrid_Load(object sender, EventArgs e)
         {
             if (!this.DesignMode)
+            {
                 this.departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
+                ControlUtil.BindDictToComboBox(this.repoCmbType, typeof(TargetRecord), "Type");
+            }
         }
 
         /// <summary>
@@ -63,13 +66,6 @@ namespace Poseidon.Energy.ClientDx
             {
                 var department = this.departments.Find(r => r.Id == e.Value.ToString());
                 e.DisplayText = department.Name;
-            }
-            if (e.Column.FieldName == "Type")
-            {
-                if ((int)e.Value == 1)
-                    e.DisplayText = "电指标";
-                else if ((int)e.Value == 2)
-                    e.DisplayText = "水指标";
             }
         }
         #endregion //Event

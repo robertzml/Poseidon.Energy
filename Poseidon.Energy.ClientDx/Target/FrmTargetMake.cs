@@ -125,6 +125,20 @@ namespace Poseidon.Energy.ClientDx
 
         #region Event
         /// <summary>
+        /// 指标计划选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void luPlanTarget_EditValueChanged(object sender, EventArgs e)
+        {
+            if (this.luTarget.EditValue == null)
+                return;
+
+            this.currentTarget = this.luTarget.GetSelectedDataRow() as Target;
+            LoadRecords();
+        }
+
+        /// <summary>
         /// 添加计划
         /// </summary>
         /// <param name="sender"></param>
@@ -154,21 +168,7 @@ namespace Poseidon.Energy.ClientDx
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
-        }
-
-        /// <summary>
-        /// 指标计划选择
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void luPlanTarget_EditValueChanged(object sender, EventArgs e)
-        {
-            if (this.luTarget.EditValue == null)
-                return;
-
-            this.currentTarget = this.luTarget.GetSelectedDataRow() as Target;
-            LoadRecords();
-        }
+        }            
 
         /// <summary>
         /// 部门选择
@@ -181,7 +181,7 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmTargetSelectDepartment), new object[] { this.currentTarget.Id });
-            LoadTargets();
+            LoadRecords();
         }
 
         /// <summary>

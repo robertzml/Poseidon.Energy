@@ -171,6 +171,7 @@ namespace Poseidon.Energy.Core.BL
                         Name = user.Name,
                         Time = DateTime.Now
                     };
+                    dt.Status = 0;
 
                     dal.Create(dt);
                 }
