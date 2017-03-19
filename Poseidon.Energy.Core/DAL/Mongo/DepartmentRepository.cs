@@ -111,11 +111,12 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// 添加部门
         /// </summary>
         /// <param name="entity">部门对象</param>
-        public override void Create(Department entity)
+        /// <returns></returns>
+        public override Department Create(Department entity)
         {
             entity.ModelType = this.modelType;
             entity.Status = 0;
-            base.Create(entity);
+            return base.Create(entity);
         }
         #endregion //Method
     }

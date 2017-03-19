@@ -116,10 +116,11 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// 添加经费记录
         /// </summary>
         /// <param name="entity">实体对象</param>
-        public override void Create(FundRecord entity)
+        /// <returns></returns>
+        public override FundRecord Create(FundRecord entity)
         {
             entity.Status = 0;
-            base.Create(entity);
+            return base.Create(entity);
         }
 
         /// <summary>

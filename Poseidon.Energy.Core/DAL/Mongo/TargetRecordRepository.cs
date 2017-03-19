@@ -228,11 +228,11 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// 添加指标记录
         /// </summary>
         /// <param name="entity">实体对象</param>
-        public override void Create(TargetRecord entity)
+        /// <returns></returns>
+        public override TargetRecord Create(TargetRecord entity)
         {
             entity.Status = 0;
-
-            base.Create(entity);
+            return base.Create(entity);
         }
 
         /// <summary>

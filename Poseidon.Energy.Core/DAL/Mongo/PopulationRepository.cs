@@ -102,10 +102,11 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// 添加人数统计
         /// </summary>
         /// <param name="entity">实体对象</param>
-        public override void Create(Population entity)
+        /// <returns></returns>
+        public override Population Create(Population entity)
         {
             entity.Status = 0;
-            base.Create(entity);
+            return base.Create(entity);
         }
 
         /// <summary>

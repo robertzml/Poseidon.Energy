@@ -194,11 +194,12 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// 添加支出账户
         /// </summary>
         /// <param name="entity">支出账户对象</param>
-        public override void Create(ExpenseAccount entity)
+        /// <returns></returns>
+        public override ExpenseAccount Create(ExpenseAccount entity)
         {
             entity.ModelType = this.modelType;
             entity.Status = 0;
-            base.Create(entity);
+            return base.Create(entity);
         }
         #endregion //Method
     }

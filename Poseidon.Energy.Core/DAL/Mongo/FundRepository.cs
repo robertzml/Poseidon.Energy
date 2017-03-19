@@ -121,13 +121,14 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// 添加经费统计
         /// </summary>
         /// <param name="entity">实体对象</param>
-        public override void Create(Fund entity)
+        /// <returns></returns>
+        public override Fund Create(Fund entity)
         {
             if (!CheckDuplicate(entity))
                 throw new PoseidonException("年度已存在");
 
             entity.Status = 0;
-            base.Create(entity);
+            return base.Create(entity);
         }
 
         /// <summary>
