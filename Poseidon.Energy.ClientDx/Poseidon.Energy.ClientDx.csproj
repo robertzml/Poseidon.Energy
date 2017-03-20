@@ -218,6 +218,18 @@
     <Compile Include="Control\PopulationDetailsGrid.Designer.cs">
       <DependentUpon>PopulationDetailsGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Measure\FrmMeasureAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measure\FrmMeasureAdd.Designer.cs">
+      <DependentUpon>FrmMeasureAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Measure\FrmMeasureManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measure\FrmMeasureManage.Designer.cs">
+      <DependentUpon>FrmMeasureManage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Target\FrmTargetEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -486,6 +498,12 @@
     <EmbeddedResource Include="Fund\FrmFundRecordEdit.resx">
       <DependentUpon>FrmFundRecordEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Measure\FrmMeasureAdd.resx">
+      <DependentUpon>FrmMeasureAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measure\FrmMeasureManage.resx">
+      <DependentUpon>FrmMeasureManage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Population\FrmPopulationEdit.resx">
       <DependentUpon>FrmPopulationEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -535,6 +553,7 @@
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.ExpenseAccount.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Fund.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.FundRecord.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Measure.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Population.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.PopulationDetail.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.PopulationRecord.datasource" />

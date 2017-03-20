@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Poseidon.Energy.Core.DAL.Mongo
 {
@@ -12,17 +13,17 @@ namespace Poseidon.Energy.Core.DAL.Mongo
     using Poseidon.Energy.Core.IDAL;
 
     /// <summary>
-    /// 计划指标数据访问类
+    /// 能源计量数据访问类
     /// </summary>
-    internal class TargetRepository : AbstractDALMongo<Target>, ITargetRepository
+    internal class MeasureRepository : AbstractDALMongo<Measure>, IMeasureRepository
     {
         #region Constructor
         /// <summary>
-        /// 计划指标数据访问类
+        /// 能源计量数据访问类
         /// </summary>
-        public TargetRepository()
+        public MeasureRepository()
         {
-            base.Init("energy_target");
+            base.Init("energy_measure");
         }
         #endregion //Constructor
 
@@ -32,14 +33,15 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="doc">Bson文档</param>
         /// <returns></returns>
-        protected override Target DocToEntity(BsonDocument doc)
+        protected override Measure DocToEntity(BsonDocument doc)
         {
-            Target entity = new Target();
+            Measure entity = new Measure();
             entity.Id = doc["_id"].ToString();
             entity.Name = doc["name"].ToString();
             entity.Year = doc["year"].ToInt32();
-            entity.PopulationId = doc["populationId"].ToString();
-            entity.FundId = doc["fundId"].ToString();
+            entity.BelongTime = doc["belongTime"].ToString();
+            entity.StartTime = doc["startTime"].ToLocalTime();
+            entity.EndTime = doc["endTime"].ToLocalTime();
 
             var createBy = doc["createBy"].ToBsonDocument();
             entity.CreateBy = new UpdateStamp
@@ -68,14 +70,15 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <returns></returns>
-        protected override BsonDocument EntityToDoc(Target entity)
+        protected override BsonDocument EntityToDoc(Measure entity)
         {
             BsonDocument doc = new BsonDocument
             {
                 { "name", entity.Name },
                 { "year", entity.Year },
-                { "populationId", entity.PopulationId },
-                { "fundId", entity.FundId },
+                { "belongTime", entity.BelongTime },
+                { "startTime", entity.StartTime },
+                { "endTime", entity.EndTime },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },
                     { "name", entity.CreateBy.Name },
@@ -93,18 +96,5 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             return doc;
         }
         #endregion //Function
-
-        #region Method
-        /// <summary>
-        /// 添加计划指标
-        /// </summary>
-        /// <param name="entity">实体对象</param>
-        /// <returns></returns>
-        public override Target Create(Target entity)
-        {
-            entity.Status = 0;
-            return base.Create(entity);
-        }
-        #endregion //Method
     }
 }
