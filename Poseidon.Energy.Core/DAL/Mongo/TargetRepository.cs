@@ -57,6 +57,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 Time = updateBy["time"].ToLocalTime()
             };
 
+            entity.Remark = doc["remark"].ToString();
             entity.Status = doc["status"].ToInt32();
 
             return entity;

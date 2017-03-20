@@ -69,29 +69,6 @@ namespace Poseidon.Energy.ClientDx
             this.txtCreateTime.Text = currentTarget.CreateBy.Time.ToDateTimeString();
             this.txtUpdateTime.Text = currentTarget.UpdateBy.Time.ToDateTimeString();
         }
-
-        /// <summary>
-        /// 添加计划
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            ChildFormManage.ShowDialogForm(typeof(FrmTargetAdd));
-
-            LoadTargets();
-        }
-
-        /// <summary>
-        /// 指标设置
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnSet_Click(object sender, EventArgs e)
-        {
-            if (this.currentTarget == null)
-                return;
-        }
         #endregion //Event
     }
 }

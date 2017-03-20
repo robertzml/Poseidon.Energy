@@ -79,6 +79,8 @@ namespace Poseidon.Energy.Core.BL
 
             var frBusiness = new FundRecordBusiness();
             var fundRecord = frBusiness.FindByDepartment(fundId, departmentId);
+            if (fundRecord == null)
+                return data;
 
             if (fundRecord.HorizontalResearch > 0)
             {
@@ -89,8 +91,10 @@ namespace Poseidon.Energy.Core.BL
                 at.Factor = 0.0005m;
                 at.MonthCount = 1;
                 at.MonthKilowatt = 1;
+                at.UnitPrice = 0.6m;
                 at.YearAmount = Math.Round(at.Factor * at.Cardinal, 0);
-
+                at.YearKilowatt = Math.Round(at.YearAmount / at.UnitPrice, 0);
+                at.Remark = "";
                 data.Add(at);
             }
             if (fundRecord.VerticalResearch > 0)
@@ -102,7 +106,10 @@ namespace Poseidon.Energy.Core.BL
                 at.Factor = 0.0025m;
                 at.MonthCount = 1;
                 at.MonthKilowatt = 1;
+                at.UnitPrice = 0.6m;
                 at.YearAmount = Math.Round(at.Factor * at.Cardinal, 0);
+                at.YearKilowatt = Math.Round(at.YearAmount / at.UnitPrice, 0);
+                at.Remark = "";
 
                 data.Add(at);
             }
@@ -228,6 +235,36 @@ namespace Poseidon.Energy.Core.BL
             staffTarget.RemoveAll(r => r.YearAmount <= 0 && r.YearKilowatt <= 0);
 
             targetRecord.StaffTarget = staffTarget;
+            targetRecord.PlanQuantum = targetRecord.StaffTarget.Sum(r => r.YearKilowatt) + targetRecord.AllowanceTarget.Sum(r => r.YearKilowatt);
+            targetRecord.PlanAmount = targetRecord.StaffTarget.Sum(r => r.YearAmount) + targetRecord.AllowanceTarget.Sum(r => r.YearAmount);
+            targetRecord.UpdateBy = new UpdateStamp
+            {
+                UserId = user.Id,
+                Name = user.Name,
+                Time = DateTime.Now
+            };
+
+            return dal.Update(targetRecord);
+        }
+
+        /// <summary>
+        /// 更新记录相关补贴指标
+        /// </summary>
+        /// <param name="id">指标记录ID</param>
+        /// <param name="allowanceTarget">补贴指标</param>
+        /// <param name="user">操作用户</param>
+        /// <returns>删除金额度数为0项</returns>
+        public bool UpdateAllowanceTarget(string id, List<AllowanceTarget> allowanceTarget, LoginUser user)
+        {
+            var dal = this.baseDal as ITargetRecordRepository;
+
+            var targetRecord = dal.FindById(id);
+            foreach (var item in allowanceTarget)
+            {
+                item.Remark = item.Remark ?? "";
+            }
+            allowanceTarget.RemoveAll(r => r.YearAmount <= 0 && r.YearKilowatt <= 0);
+            targetRecord.AllowanceTarget = allowanceTarget;
             targetRecord.PlanQuantum = targetRecord.StaffTarget.Sum(r => r.YearKilowatt) + targetRecord.AllowanceTarget.Sum(r => r.YearKilowatt);
             targetRecord.PlanAmount = targetRecord.StaffTarget.Sum(r => r.YearAmount) + targetRecord.AllowanceTarget.Sum(r => r.YearAmount);
             targetRecord.UpdateBy = new UpdateStamp

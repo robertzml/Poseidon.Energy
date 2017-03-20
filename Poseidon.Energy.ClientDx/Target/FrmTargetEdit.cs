@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,26 +17,41 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 添加计划指标窗体
+    /// 编辑计划指标窗体
     /// </summary>
-    public partial class FrmTargetAdd : BaseSingleForm
+    public partial class FrmTargetEdit : BaseSingleForm
     {
+        #region Field
+        /// <summary>
+        /// 当前关联计划指标
+        /// </summary>
+        private Target currentTarget;
+        #endregion //Field
+
         #region Constructor
-        public FrmTargetAdd()
+        public FrmTargetEdit(string id)
         {
             InitializeComponent();
+            InitData(id);
         }
         #endregion //Constructor
 
         #region Function
+        private void InitData(string id)
+        {
+            this.currentTarget = BusinessFactory<TargetBusiness>.Instance.FindById(id);
+        }
+
         protected override void InitForm()
         {
-            var popu = BusinessFactory<PopulationBusiness>.Instance.FindAll().ToList();
-            this.bsPopulation.DataSource = popu;
+            this.bsPopulation.DataSource = BusinessFactory<PopulationBusiness>.Instance.FindAll().ToList();
+            this.bsFund.DataSource = BusinessFactory<FundBusiness>.Instance.FindAll().ToList();
 
-            var funds = BusinessFactory<FundBusiness>.Instance.FindAll().ToList();
-            this.bsFund.DataSource = funds;
-
+            this.txtName.Text = this.currentTarget.Name;
+            this.spYear.Value = Convert.ToInt32(this.currentTarget.Year);
+            this.luPopulation.EditValue = this.currentTarget.PopulationId;
+            this.luFund.EditValue = this.currentTarget.FundId;
+            this.txtRemark.Text = this.currentTarget.Remark;
             base.InitForm();
         }
 
@@ -95,12 +111,12 @@ namespace Poseidon.Energy.ClientDx
                 return;
             }
 
-            Target entity = new Target();
+            Target entity = BusinessFactory<TargetBusiness>.Instance.FindById(this.currentTarget.Id);
             SetEntity(entity);
 
             try
             {
-                BusinessFactory<TargetBusiness>.Instance.Create(entity, this.currentUser);
+                BusinessFactory<TargetBusiness>.Instance.Update(entity, this.currentUser);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

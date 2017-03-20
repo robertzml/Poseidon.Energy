@@ -42,7 +42,8 @@ namespace Poseidon.Energy.ClientDx
             var ds = this.bsEntity.DataSource as List<TargetRecord>;
             var index = ds.FindIndex(r => r.Id == entity.Id);
             var rowIndex = this.dgvEntity.GetRowHandle(index);
-            this.dgvEntity.SelectRow(rowIndex);
+            //this.dgvEntity.SelectRow(rowIndex);
+            this.dgvEntity.FocusedRowHandle = rowIndex;
         }
         #endregion //Method
 

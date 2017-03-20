@@ -83,15 +83,14 @@
             // 
             this.colTargetId.FieldName = "TargetId";
             this.colTargetId.Name = "colTargetId";
-            this.colTargetId.Visible = true;
-            this.colTargetId.VisibleIndex = 1;
             // 
             // colDepartmentId
             // 
+            this.colDepartmentId.Caption = "部门名称";
             this.colDepartmentId.FieldName = "DepartmentId";
             this.colDepartmentId.Name = "colDepartmentId";
             this.colDepartmentId.Visible = true;
-            this.colDepartmentId.VisibleIndex = 2;
+            this.colDepartmentId.VisibleIndex = 0;
             // 
             // colType
             // 
@@ -99,7 +98,7 @@
             this.colType.FieldName = "Type";
             this.colType.Name = "colType";
             this.colType.Visible = true;
-            this.colType.VisibleIndex = 3;
+            this.colType.VisibleIndex = 1;
             // 
             // repoCmbType
             // 
@@ -113,56 +112,56 @@
             this.colFinance.FieldName = "Finance";
             this.colFinance.Name = "colFinance";
             this.colFinance.Visible = true;
-            this.colFinance.VisibleIndex = 4;
+            this.colFinance.VisibleIndex = 2;
             // 
             // colSchoolTake
             // 
+            this.colSchoolTake.DisplayFormat.FormatString = "p0";
+            this.colSchoolTake.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSchoolTake.FieldName = "SchoolTake";
             this.colSchoolTake.Name = "colSchoolTake";
             this.colSchoolTake.Visible = true;
-            this.colSchoolTake.VisibleIndex = 5;
+            this.colSchoolTake.VisibleIndex = 3;
             // 
             // colSelfTake
             // 
+            this.colSelfTake.DisplayFormat.FormatString = "p0";
+            this.colSelfTake.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSelfTake.FieldName = "SelfTake";
             this.colSelfTake.Name = "colSelfTake";
             this.colSelfTake.Visible = true;
-            this.colSelfTake.VisibleIndex = 6;
+            this.colSelfTake.VisibleIndex = 4;
             // 
             // colPlanQuantum
             // 
             this.colPlanQuantum.FieldName = "PlanQuantum";
             this.colPlanQuantum.Name = "colPlanQuantum";
             this.colPlanQuantum.Visible = true;
-            this.colPlanQuantum.VisibleIndex = 7;
+            this.colPlanQuantum.VisibleIndex = 5;
             // 
             // colPlanAmount
             // 
             this.colPlanAmount.FieldName = "PlanAmount";
             this.colPlanAmount.Name = "colPlanAmount";
             this.colPlanAmount.Visible = true;
-            this.colPlanAmount.VisibleIndex = 8;
+            this.colPlanAmount.VisibleIndex = 6;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 9;
+            this.colRemark.VisibleIndex = 7;
             // 
             // colStatus
             // 
             this.colStatus.FieldName = "Status";
             this.colStatus.Name = "colStatus";
-            this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 10;
             // 
             // colId
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
             // 
             // TargetRecordGrid
             // 

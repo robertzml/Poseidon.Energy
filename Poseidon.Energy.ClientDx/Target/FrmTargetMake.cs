@@ -85,6 +85,56 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
+        /// 输入检查
+        /// </summary>
+        /// <returns></returns>
+        private Tuple<bool, string> CheckStaffTarget()
+        {
+            string errorMessage = "";
+
+            foreach (var item in this.stGrid.DataSource)
+            {
+                if (string.IsNullOrEmpty(item.Name))
+                {
+                    errorMessage = "指标名称不能为空";
+                    return new Tuple<bool, string>(false, errorMessage);
+                }
+                if (string.IsNullOrEmpty(item.Code))
+                {
+                    errorMessage = "指标代码不能为空";
+                    return new Tuple<bool, string>(false, errorMessage);
+                }
+            }
+
+            return new Tuple<bool, string>(true, "");
+        }
+
+        /// <summary>
+        /// 输入检查
+        /// </summary>
+        /// <returns></returns>
+        private Tuple<bool, string> CheckAllowanceTarget()
+        {
+            string errorMessage = "";
+
+            foreach (var item in this.atGrid.DataSource)
+            {
+                if (string.IsNullOrEmpty(item.Name))
+                {
+                    errorMessage = "指标名称不能为空";
+                    return new Tuple<bool, string>(false, errorMessage);
+                }
+                if (string.IsNullOrEmpty(item.Code))
+                {
+                    errorMessage = "指标代码不能为空";
+                    return new Tuple<bool, string>(false, errorMessage);
+                }
+            }
+
+            return new Tuple<bool, string>(true, "");
+        }
+
+        /// <summary>
         /// 导入选中部门经费记录
         /// </summary>
         /// <param name="fundId">经费统计ID</param>
@@ -131,7 +181,6 @@ namespace Poseidon.Energy.ClientDx
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ChildFormManage.ShowDialogForm(typeof(FrmTargetAdd));
-
             LoadTargets();
         }
 
@@ -142,7 +191,11 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            if (this.currentTarget == null)
+                return;
 
+            ChildFormManage.ShowDialogForm(typeof(FrmTargetEdit), new object[] { this.currentTarget.Id });
+            LoadTargets();
         }
 
         /// <summary>
@@ -254,6 +307,13 @@ namespace Poseidon.Energy.ClientDx
             if (select == null)
                 return;
 
+            var input = CheckStaffTarget();
+            if (!input.Item1)
+            {
+                MessageUtil.ShowError(input.Item2);
+                return;
+            }
+
             try
             {
                 var result = BusinessFactory<TargetRecordBusiness>.Instance.UpdateStaffTarget(select.Id, this.stGrid.DataSource, this.currentUser);
@@ -264,7 +324,7 @@ namespace Poseidon.Energy.ClientDx
                     MessageUtil.ShowInfo("保存失败");
 
                 LoadRecords(this.currentTarget);
-                //this.trGrid.SelectRow(select);
+                this.trGrid.SelectRow(select);
             }
             catch (PoseidonException pe)
             {
@@ -287,22 +347,6 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
-        /// 增加补贴
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnAddAllowance_Click(object sender, EventArgs e)
-        {
-            FrmAllowanceAdd form = new FrmAllowanceAdd();
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                var allowance = form.AllowanceTarget;
-                this.atGrid.DataSource.Add(allowance);
-                this.atGrid.UpdateBindingData();
-            }
-        }
-
-        /// <summary>
         /// 计算补贴指标
         /// </summary>
         /// <param name="sender"></param>
@@ -320,24 +364,30 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnSaveAllowance_Click(object sender, EventArgs e)
         {
+            this.atGrid.CloseEditor();
+
             var select = this.trGrid.GetCurrentSelect();
             if (select == null)
                 return;
 
-            //SetRecordEntity(select);
+            var input = CheckAllowanceTarget();
+            if (!input.Item1)
+            {
+                MessageUtil.ShowError(input.Item2);
+                return;
+            }
 
             try
             {
-                //var result = BusinessFactory<TargetRecordBusiness>.Instance.Update(select, this.currentUser);
+                var result = BusinessFactory<TargetRecordBusiness>.Instance.UpdateAllowanceTarget(select.Id, this.atGrid.DataSource, this.currentUser);
 
-                //if (result)
-                //{
-                //    MessageUtil.ShowInfo("保存成功");
-                //}
-                //else
-                //{
-                //    MessageUtil.ShowInfo("保存失败");
-                //}
+                if (result)
+                    MessageUtil.ShowInfo("保存成功");
+                else
+                    MessageUtil.ShowInfo("保存失败");
+
+                LoadRecords(this.currentTarget);
+                this.trGrid.SelectRow(select);
             }
             catch (PoseidonException pe)
             {
@@ -345,6 +395,5 @@ namespace Poseidon.Energy.ClientDx
             }
         }
         #endregion //Event
-
     }
 }

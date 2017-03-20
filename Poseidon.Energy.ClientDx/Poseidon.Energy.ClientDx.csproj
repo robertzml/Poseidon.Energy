@@ -218,6 +218,12 @@
     <Compile Include="Control\PopulationDetailsGrid.Designer.cs">
       <DependentUpon>PopulationDetailsGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Target\FrmTargetEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Target\FrmTargetEdit.Designer.cs">
+      <DependentUpon>FrmTargetEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Target\FrmTargetRecordEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -504,6 +510,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Target\FrmAllowanceAdd.resx">
       <DependentUpon>FrmAllowanceAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Target\FrmTargetEdit.resx">
+      <DependentUpon>FrmTargetEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Target\FrmTargetRecordEdit.resx">
       <DependentUpon>FrmTargetRecordEdit.cs</DependentUpon>

@@ -78,6 +78,7 @@
             // 
             // colName
             // 
+            this.colName.Caption = "名称";
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
             this.colName.Visible = true;
@@ -85,6 +86,7 @@
             // 
             // colCode
             // 
+            this.colCode.Caption = "代码";
             this.colCode.FieldName = "Code";
             this.colCode.Name = "colCode";
             this.colCode.Visible = true;
@@ -92,6 +94,7 @@
             // 
             // colCardinal
             // 
+            this.colCardinal.Caption = "基数";
             this.colCardinal.FieldName = "Cardinal";
             this.colCardinal.Name = "colCardinal";
             this.colCardinal.Visible = true;
@@ -99,6 +102,7 @@
             // 
             // colFactor
             // 
+            this.colFactor.Caption = "系数";
             this.colFactor.FieldName = "Factor";
             this.colFactor.Name = "colFactor";
             this.colFactor.Visible = true;
@@ -106,6 +110,7 @@
             // 
             // colMonthKilowatt
             // 
+            this.colMonthKilowatt.Caption = "月度数";
             this.colMonthKilowatt.FieldName = "MonthKilowatt";
             this.colMonthKilowatt.Name = "colMonthKilowatt";
             this.colMonthKilowatt.Visible = true;
@@ -113,6 +118,7 @@
             // 
             // colMonthCount
             // 
+            this.colMonthCount.Caption = "月数";
             this.colMonthCount.FieldName = "MonthCount";
             this.colMonthCount.Name = "colMonthCount";
             this.colMonthCount.Visible = true;
@@ -120,6 +126,7 @@
             // 
             // colUnitPrice
             // 
+            this.colUnitPrice.Caption = "单价";
             this.colUnitPrice.FieldName = "UnitPrice";
             this.colUnitPrice.Name = "colUnitPrice";
             this.colUnitPrice.Visible = true;
@@ -127,20 +134,25 @@
             // 
             // colYearKilowatt
             // 
+            this.colYearKilowatt.Caption = "年指标度数";
             this.colYearKilowatt.FieldName = "YearKilowatt";
             this.colYearKilowatt.Name = "colYearKilowatt";
+            this.colYearKilowatt.OptionsColumn.AllowEdit = false;
             this.colYearKilowatt.Visible = true;
             this.colYearKilowatt.VisibleIndex = 6;
             // 
             // colYearAmount
             // 
+            this.colYearAmount.Caption = "年指标金额";
             this.colYearAmount.FieldName = "YearAmount";
             this.colYearAmount.Name = "colYearAmount";
+            this.colYearAmount.OptionsColumn.AllowEdit = false;
             this.colYearAmount.Visible = true;
             this.colYearAmount.VisibleIndex = 8;
             // 
             // colRemark
             // 
+            this.colRemark.Caption = "备注";
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;

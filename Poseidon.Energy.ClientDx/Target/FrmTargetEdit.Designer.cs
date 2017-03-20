@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Energy.ClientDx
 {
-    partial class FrmTargetAdd
+    partial class FrmTargetEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -33,10 +33,8 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.luFund = new DevExpress.XtraEditors.LookUpEdit();
-            this.bsFund = new System.Windows.Forms.BindingSource(this.components);
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.luPopulation = new DevExpress.XtraEditors.LookUpEdit();
-            this.bsPopulation = new System.Windows.Forms.BindingSource(this.components);
             this.spYear = new DevExpress.XtraEditors.SpinEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -44,6 +42,8 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bsPopulation = new System.Windows.Forms.BindingSource(this.components);
+            this.bsFund = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -54,10 +54,8 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luFund.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luPopulation.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spYear.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -65,6 +63,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -97,7 +97,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(434, 242);
-            this.groupControl1.TabIndex = 0;
+            this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "计划指标信息";
             // 
             // layoutControl1
@@ -142,10 +142,6 @@
             this.luFund.StyleController = this.layoutControl1;
             this.luFund.TabIndex = 3;
             // 
-            // bsFund
-            // 
-            this.bsFund.DataSource = typeof(Poseidon.Energy.Core.DL.Fund);
-            // 
             // txtRemark
             // 
             this.txtRemark.Location = new System.Drawing.Point(87, 108);
@@ -173,10 +169,6 @@
             this.luPopulation.Size = new System.Drawing.Size(331, 20);
             this.luPopulation.StyleController = this.layoutControl1;
             this.luPopulation.TabIndex = 2;
-            // 
-            // bsPopulation
-            // 
-            this.bsPopulation.DataSource = typeof(Poseidon.Energy.Core.DL.Population);
             // 
             // spYear
             // 
@@ -265,13 +257,21 @@
             this.layoutControlItem5.Text = "名称";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(72, 14);
             // 
-            // FrmTargetAdd
+            // bsPopulation
+            // 
+            this.bsPopulation.DataSource = typeof(Poseidon.Energy.Core.DL.Population);
+            // 
+            // bsFund
+            // 
+            this.bsFund.DataSource = typeof(Poseidon.Energy.Core.DL.Fund);
+            // 
+            // FrmTargetEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 302);
-            this.Name = "FrmTargetAdd";
-            this.Text = "添加计划指标";
+            this.Name = "FrmTargetEdit";
+            this.Text = "编辑计划指标";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
@@ -282,10 +282,8 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luFund.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luPopulation.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spYear.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -293,6 +291,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -301,6 +301,8 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraEditors.TextEdit txtName;
+        private DevExpress.XtraEditors.LookUpEdit luFund;
         private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraEditors.LookUpEdit luPopulation;
         private DevExpress.XtraEditors.SpinEdit spYear;
@@ -308,11 +310,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private System.Windows.Forms.BindingSource bsPopulation;
-        private DevExpress.XtraEditors.LookUpEdit luFund;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private System.Windows.Forms.BindingSource bsFund;
-        private DevExpress.XtraEditors.TextEdit txtName;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private System.Windows.Forms.BindingSource bsFund;
+        private System.Windows.Forms.BindingSource bsPopulation;
     }
 }
