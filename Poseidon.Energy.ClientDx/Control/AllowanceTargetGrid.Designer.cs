@@ -137,7 +137,8 @@
             this.colYearKilowatt.Caption = "年指标度数";
             this.colYearKilowatt.FieldName = "YearKilowatt";
             this.colYearKilowatt.Name = "colYearKilowatt";
-            this.colYearKilowatt.OptionsColumn.AllowEdit = false;
+            this.colYearKilowatt.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "YearKilowatt", "合计={0:0.##}")});
             this.colYearKilowatt.Visible = true;
             this.colYearKilowatt.VisibleIndex = 6;
             // 
@@ -146,7 +147,8 @@
             this.colYearAmount.Caption = "年指标金额";
             this.colYearAmount.FieldName = "YearAmount";
             this.colYearAmount.Name = "colYearAmount";
-            this.colYearAmount.OptionsColumn.AllowEdit = false;
+            this.colYearAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "YearAmount", "合计={0:0.##}")});
             this.colYearAmount.Visible = true;
             this.colYearAmount.VisibleIndex = 8;
             // 

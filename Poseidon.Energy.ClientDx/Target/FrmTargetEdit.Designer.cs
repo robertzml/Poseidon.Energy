@@ -33,8 +33,10 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtName = new DevExpress.XtraEditors.TextEdit();
             this.luFund = new DevExpress.XtraEditors.LookUpEdit();
+            this.bsFund = new System.Windows.Forms.BindingSource(this.components);
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.luPopulation = new DevExpress.XtraEditors.LookUpEdit();
+            this.bsPopulation = new System.Windows.Forms.BindingSource(this.components);
             this.spYear = new DevExpress.XtraEditors.SpinEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -42,8 +44,6 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bsPopulation = new System.Windows.Forms.BindingSource(this.components);
-            this.bsFund = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -54,8 +54,10 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luFund.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luPopulation.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spYear.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -63,8 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -132,7 +132,8 @@
             this.luFund.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 21, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "名称", 54, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Year", "年度", 35, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Year", "年度", 35, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("BelongTime", "归属时间")});
             this.luFund.Properties.DataSource = this.bsFund;
             this.luFund.Properties.DisplayMember = "Name";
             this.luFund.Properties.NullText = "请选择";
@@ -141,6 +142,10 @@
             this.luFund.Size = new System.Drawing.Size(331, 20);
             this.luFund.StyleController = this.layoutControl1;
             this.luFund.TabIndex = 3;
+            // 
+            // bsFund
+            // 
+            this.bsFund.DataSource = typeof(Poseidon.Energy.Core.DL.Fund);
             // 
             // txtRemark
             // 
@@ -169,6 +174,10 @@
             this.luPopulation.Size = new System.Drawing.Size(331, 20);
             this.luPopulation.StyleController = this.layoutControl1;
             this.luPopulation.TabIndex = 2;
+            // 
+            // bsPopulation
+            // 
+            this.bsPopulation.DataSource = typeof(Poseidon.Energy.Core.DL.Population);
             // 
             // spYear
             // 
@@ -257,14 +266,6 @@
             this.layoutControlItem5.Text = "名称";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(72, 14);
             // 
-            // bsPopulation
-            // 
-            this.bsPopulation.DataSource = typeof(Poseidon.Energy.Core.DL.Population);
-            // 
-            // bsFund
-            // 
-            this.bsFund.DataSource = typeof(Poseidon.Energy.Core.DL.Fund);
-            // 
             // FrmTargetEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -282,8 +283,10 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luFund.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luPopulation.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spYear.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -291,8 +294,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPopulation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsFund)).EndInit();
             this.ResumeLayout(false);
 
         }
