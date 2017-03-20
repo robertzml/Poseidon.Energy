@@ -30,6 +30,7 @@
         {
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCardinal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFactor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMonthKilowatt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMonthCount = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -37,7 +38,6 @@
             this.colYearKilowatt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colYearAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -54,16 +54,17 @@
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colId,
             this.colName,
             this.colCode,
+            this.colCardinal,
             this.colFactor,
             this.colMonthKilowatt,
             this.colMonthCount,
-            this.colUnitPrice,
             this.colYearKilowatt,
+            this.colUnitPrice,
             this.colYearAmount,
             this.colRemark});
+            this.dgvEntity.IndicatorWidth = 40;
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.Editable = false;
@@ -79,7 +80,6 @@
             // 
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
-            this.colName.OptionsColumn.AllowEdit = false;
             this.colName.Visible = true;
             this.colName.VisibleIndex = 0;
             // 
@@ -90,63 +90,61 @@
             this.colCode.Visible = true;
             this.colCode.VisibleIndex = 1;
             // 
+            // colCardinal
+            // 
+            this.colCardinal.FieldName = "Cardinal";
+            this.colCardinal.Name = "colCardinal";
+            this.colCardinal.Visible = true;
+            this.colCardinal.VisibleIndex = 2;
+            // 
             // colFactor
             // 
             this.colFactor.FieldName = "Factor";
             this.colFactor.Name = "colFactor";
             this.colFactor.Visible = true;
-            this.colFactor.VisibleIndex = 2;
+            this.colFactor.VisibleIndex = 3;
             // 
             // colMonthKilowatt
             // 
             this.colMonthKilowatt.FieldName = "MonthKilowatt";
             this.colMonthKilowatt.Name = "colMonthKilowatt";
             this.colMonthKilowatt.Visible = true;
-            this.colMonthKilowatt.VisibleIndex = 3;
+            this.colMonthKilowatt.VisibleIndex = 4;
             // 
             // colMonthCount
             // 
             this.colMonthCount.FieldName = "MonthCount";
             this.colMonthCount.Name = "colMonthCount";
             this.colMonthCount.Visible = true;
-            this.colMonthCount.VisibleIndex = 4;
+            this.colMonthCount.VisibleIndex = 5;
             // 
             // colUnitPrice
             // 
             this.colUnitPrice.FieldName = "UnitPrice";
             this.colUnitPrice.Name = "colUnitPrice";
             this.colUnitPrice.Visible = true;
-            this.colUnitPrice.VisibleIndex = 6;
+            this.colUnitPrice.VisibleIndex = 7;
             // 
             // colYearKilowatt
             // 
             this.colYearKilowatt.FieldName = "YearKilowatt";
             this.colYearKilowatt.Name = "colYearKilowatt";
-            this.colYearKilowatt.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "YearKilowatt", "合计={0:0.##}")});
             this.colYearKilowatt.Visible = true;
-            this.colYearKilowatt.VisibleIndex = 5;
+            this.colYearKilowatt.VisibleIndex = 6;
             // 
             // colYearAmount
             // 
             this.colYearAmount.FieldName = "YearAmount";
             this.colYearAmount.Name = "colYearAmount";
-            this.colYearAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "YearAmount", "合计={0:0.##}")});
             this.colYearAmount.Visible = true;
-            this.colYearAmount.VisibleIndex = 7;
+            this.colYearAmount.VisibleIndex = 8;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 8;
-            // 
-            // colId
-            // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
+            this.colRemark.VisibleIndex = 9;
             // 
             // AllowanceTargetGrid
             // 
@@ -163,14 +161,14 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colCardinal;
         private DevExpress.XtraGrid.Columns.GridColumn colFactor;
         private DevExpress.XtraGrid.Columns.GridColumn colMonthKilowatt;
         private DevExpress.XtraGrid.Columns.GridColumn colMonthCount;
-        private DevExpress.XtraGrid.Columns.GridColumn colUnitPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colYearKilowatt;
+        private DevExpress.XtraGrid.Columns.GridColumn colUnitPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colYearAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
     }

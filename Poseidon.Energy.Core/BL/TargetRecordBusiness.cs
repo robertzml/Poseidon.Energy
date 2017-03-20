@@ -47,10 +47,13 @@ namespace Poseidon.Energy.Core.BL
         /// <returns></returns>
         public List<StaffTarget> ImportPopulation(string populationId, string departmentId)
         {
-            var dal = RepositoryFactory<IPopulationRecordRepository>.Instance;
-            var popRecord = dal.FindOne(populationId, departmentId);
-
             List<StaffTarget> data = new List<StaffTarget>();
+            PopulationRecordBusiness prBusienss = new PopulationRecordBusiness();
+            var popRecord = prBusienss.FindByDepartment(populationId, departmentId);
+
+            if (popRecord == null)
+                return data;
+
             foreach (var item in popRecord.Details)
             {
                 StaffTarget st = new StaffTarget();
@@ -72,19 +75,21 @@ namespace Poseidon.Energy.Core.BL
         /// <returns></returns>
         public List<AllowanceTarget> ImportFund(string fundId, string departmentId)
         {
-            var dal = RepositoryFactory<IFundRecordRepository>.Instance;
-            var fundRecord = dal.FindOne(fundId, departmentId);
-
             List<AllowanceTarget> data = new List<AllowanceTarget>();
+
+            var frBusiness = new FundRecordBusiness();
+            var fundRecord = frBusiness.FindByDepartment(fundId, departmentId);
+
             if (fundRecord.HorizontalResearch > 0)
             {
                 AllowanceTarget at = new AllowanceTarget();
                 at.Name = "横向科研";
                 at.Code = EnergyConstant.HorizontalResearchCode;
-                at.Factor = fundRecord.HorizontalResearch;
+                at.Cardinal = fundRecord.HorizontalResearch;
+                at.Factor = 0.0005m;
                 at.MonthCount = 1;
                 at.MonthKilowatt = 1;
-                at.YearAmount = Math.Round(at.Factor * 0.0005m, 0);
+                at.YearAmount = Math.Round(at.Factor * at.Cardinal, 0);
 
                 data.Add(at);
             }
@@ -93,10 +98,11 @@ namespace Poseidon.Energy.Core.BL
                 AllowanceTarget at = new AllowanceTarget();
                 at.Name = "纵向科研";
                 at.Code = EnergyConstant.VerticalResearchCode;
-                at.Factor = fundRecord.VerticalResearch;
+                at.Cardinal = fundRecord.VerticalResearch;
+                at.Factor = 0.0025m;
                 at.MonthCount = 1;
                 at.MonthKilowatt = 1;
-                at.YearAmount = Math.Round(at.Factor * 0.0025m, 0);
+                at.YearAmount = Math.Round(at.Factor * at.Cardinal, 0);
 
                 data.Add(at);
             }
@@ -142,6 +148,7 @@ namespace Poseidon.Energy.Core.BL
             var records = dal.FindListByField("targetId", targetId);
             dal.DeleteNotIn(targetId, departmentIds);
 
+            DateTime now = DateTime.Now;
             foreach (var item in departmentIds)
             {
                 if (records.Any(r => r.DepartmentId == item))
@@ -163,13 +170,13 @@ namespace Poseidon.Energy.Core.BL
                     {
                         UserId = user.Id,
                         Name = user.Name,
-                        Time = DateTime.Now
+                        Time = now
                     };
                     dt.UpdateBy = new UpdateStamp
                     {
                         UserId = user.Id,
                         Name = user.Name,
-                        Time = DateTime.Now
+                        Time = now
                     };
                     dt.Status = 0;
 
@@ -188,8 +195,6 @@ namespace Poseidon.Energy.Core.BL
         {
             var dal = this.baseDal as ITargetRecordRepository;
 
-            entity.PlanQuantum = entity.StaffTarget.Sum(r => r.YearKilowatt) + entity.AllowanceTarget.Sum(r => r.YearKilowatt);
-            entity.PlanAmount = entity.StaffTarget.Sum(r => r.YearAmount) + entity.AllowanceTarget.Sum(r => r.YearAmount);
             entity.UpdateBy = new UpdateStamp
             {
                 UserId = user.Id,
@@ -198,6 +203,41 @@ namespace Poseidon.Energy.Core.BL
             };
 
             return dal.Update(entity);
+        }
+
+        /// <summary>
+        /// 更新记录相关人数指标
+        /// </summary>
+        /// <param name="id">指标记录ID</param>
+        /// <param name="staffTarget">人数指标</param>
+        /// <param name="user">操作用户</param>
+        /// <returns></returns>
+        /// <remarks>
+        /// 删除金额度数为0项
+        /// </remarks>
+        public bool UpdateStaffTarget(string id, List<StaffTarget> staffTarget, LoginUser user)
+        {
+            var dal = this.baseDal as ITargetRecordRepository;
+
+            var targetRecord = dal.FindById(id);
+
+            foreach (var item in staffTarget)
+            {
+                item.Remark = item.Remark ?? "";
+            }
+            staffTarget.RemoveAll(r => r.YearAmount <= 0 && r.YearKilowatt <= 0);
+
+            targetRecord.StaffTarget = staffTarget;
+            targetRecord.PlanQuantum = targetRecord.StaffTarget.Sum(r => r.YearKilowatt) + targetRecord.AllowanceTarget.Sum(r => r.YearKilowatt);
+            targetRecord.PlanAmount = targetRecord.StaffTarget.Sum(r => r.YearAmount) + targetRecord.AllowanceTarget.Sum(r => r.YearAmount);
+            targetRecord.UpdateBy = new UpdateStamp
+            {
+                UserId = user.Id,
+                Name = user.Name,
+                Time = DateTime.Now
+            };
+
+            return dal.Update(targetRecord);
         }
         #endregion //Method
     }

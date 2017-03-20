@@ -54,9 +54,10 @@ namespace Poseidon.Energy.ClientDx
         /// <summary>
         /// 载入指标记录
         /// </summary>
-        private void LoadRecords()
+        /// <param name="target">相关计划</param>
+        private void LoadRecords(Target target)
         {
-            var records = BusinessFactory<TargetRecordBusiness>.Instance.FindByTarget(this.currentTarget.Id).ToList();
+            var records = BusinessFactory<TargetRecordBusiness>.Instance.FindByTarget(target.Id).ToList();
             this.trGrid.DataSource = records;
         }
 
@@ -81,22 +82,6 @@ namespace Poseidon.Energy.ClientDx
             }
 
             this.stGrid.UpdateBindingData();
-        }
-
-        /// <summary>
-        /// 设置实体对象
-        /// </summary>
-        /// <param name="entity"></param>
-        private void SetRecordEntity(TargetRecord entity)
-        {
-            foreach (var item in entity.StaffTarget)
-            {
-                item.Remark = item.Remark == null ? "" : item.Remark;
-            }
-            foreach (var item in entity.AllowanceTarget)
-            {
-                item.Remark = item.Remark == null ? "" : item.Remark;
-            }
         }
 
         /// <summary>
@@ -135,7 +120,7 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             this.currentTarget = this.luTarget.GetSelectedDataRow() as Target;
-            LoadRecords();
+            LoadRecords(this.currentTarget);
         }
 
         /// <summary>
@@ -157,7 +142,7 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         /// <summary>
@@ -168,10 +153,10 @@ namespace Poseidon.Energy.ClientDx
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
-        }            
+        }
 
         /// <summary>
-        /// 部门选择
+        /// 部门关联选择
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -181,7 +166,7 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmTargetSelectDepartment), new object[] { this.currentTarget.Id });
-            LoadRecords();
+            LoadRecords(this.currentTarget);
         }
 
         /// <summary>
@@ -195,7 +180,25 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmTargetRecordAdd), new object[] { this.currentTarget.Id });
-            LoadRecords();
+            LoadRecords(this.currentTarget);
+        }
+
+        /// <summary>
+        /// 编辑指标记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnEditRecord_Click(object sender, EventArgs e)
+        {
+            if (this.currentTarget == null)
+                return;
+
+            var select = this.trGrid.GetCurrentSelect();
+            if (select == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmTargetRecordEdit), new object[] { select.Id });
+            LoadRecords(this.currentTarget);
         }
 
         /// <summary>
@@ -245,24 +248,23 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnSaveStaff_Click(object sender, EventArgs e)
         {
+            this.stGrid.CloseEditor();
+
             var select = this.trGrid.GetCurrentSelect();
             if (select == null)
                 return;
 
-            SetRecordEntity(select);
-
             try
             {
-                var result = BusinessFactory<TargetRecordBusiness>.Instance.Update(select, this.currentUser);
+                var result = BusinessFactory<TargetRecordBusiness>.Instance.UpdateStaffTarget(select.Id, this.stGrid.DataSource, this.currentUser);
 
                 if (result)
-                {
                     MessageUtil.ShowInfo("保存成功");
-                }
                 else
-                {
                     MessageUtil.ShowInfo("保存失败");
-                }
+
+                LoadRecords(this.currentTarget);
+                //this.trGrid.SelectRow(select);
             }
             catch (PoseidonException pe)
             {
@@ -322,20 +324,20 @@ namespace Poseidon.Energy.ClientDx
             if (select == null)
                 return;
 
-            SetRecordEntity(select);
+            //SetRecordEntity(select);
 
             try
             {
-                var result = BusinessFactory<TargetRecordBusiness>.Instance.Update(select, this.currentUser);
+                //var result = BusinessFactory<TargetRecordBusiness>.Instance.Update(select, this.currentUser);
 
-                if (result)
-                {
-                    MessageUtil.ShowInfo("保存成功");
-                }
-                else
-                {
-                    MessageUtil.ShowInfo("保存失败");
-                }
+                //if (result)
+                //{
+                //    MessageUtil.ShowInfo("保存成功");
+                //}
+                //else
+                //{
+                //    MessageUtil.ShowInfo("保存失败");
+                //}
             }
             catch (PoseidonException pe)
             {
@@ -343,5 +345,6 @@ namespace Poseidon.Energy.ClientDx
             }
         }
         #endregion //Event
+
     }
 }

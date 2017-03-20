@@ -38,6 +38,18 @@ namespace Poseidon.Energy.Core.BL
         }
 
         /// <summary>
+        /// 根据统计、部门查找记录
+        /// </summary>
+        /// <param name="fundId">经费统计ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <returns></returns>
+        public FundRecord FindByDepartment(string fundId, string departmentId)
+        {
+            var dal = this.baseDal as IFundRecordRepository;
+            return dal.FindOne(fundId, departmentId);
+        }
+
+        /// <summary>
         /// 更新经费记录
         /// </summary>
         /// <param name="data">经费记录</param>

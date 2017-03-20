@@ -32,11 +32,11 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnEditRecord = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddRecord = new DevExpress.XtraEditors.SimpleButton();
-            this.trGrid = new Poseidon.Energy.ClientDx.TargetRecordGrid();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
@@ -56,9 +56,7 @@
             this.btnSaveStaff = new DevExpress.XtraEditors.SimpleButton();
             this.btnCalcStaff = new DevExpress.XtraEditors.SimpleButton();
             this.btnImportStaff = new DevExpress.XtraEditors.SimpleButton();
-            this.stGrid = new Poseidon.Energy.ClientDx.StaffTargetGrid();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -66,23 +64,25 @@
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
             this.btnCalcAllowance = new DevExpress.XtraEditors.SimpleButton();
             this.btnSaveAllowance = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAddAllowance = new DevExpress.XtraEditors.SimpleButton();
             this.btnImportFund = new DevExpress.XtraEditors.SimpleButton();
-            this.atGrid = new Poseidon.Energy.ClientDx.AllowanceTargetGrid();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.trGrid = new Poseidon.Energy.ClientDx.TargetRecordGrid();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.stGrid = new Poseidon.Energy.ClientDx.StaffTargetGrid();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.atGrid = new Poseidon.Energy.ClientDx.AllowanceTargetGrid();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -100,7 +100,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
@@ -109,11 +108,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
             this.layoutControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -148,6 +148,7 @@
             // 
             // layoutControl3
             // 
+            this.layoutControl3.Controls.Add(this.btnEditRecord);
             this.layoutControl3.Controls.Add(this.btnAddRecord);
             this.layoutControl3.Controls.Add(this.trGrid);
             this.layoutControl3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -158,32 +159,25 @@
             this.layoutControl3.TabIndex = 0;
             this.layoutControl3.Text = "layoutControl3";
             // 
+            // btnEditRecord
+            // 
+            this.btnEditRecord.Location = new System.Drawing.Point(230, 368);
+            this.btnEditRecord.Name = "btnEditRecord";
+            this.btnEditRecord.Size = new System.Drawing.Size(220, 22);
+            this.btnEditRecord.StyleController = this.layoutControl3;
+            this.btnEditRecord.TabIndex = 5;
+            this.btnEditRecord.Text = "编辑记录";
+            this.btnEditRecord.Click += new System.EventHandler(this.btnEditRecord_Click);
+            // 
             // btnAddRecord
             // 
             this.btnAddRecord.Location = new System.Drawing.Point(7, 368);
             this.btnAddRecord.Name = "btnAddRecord";
-            this.btnAddRecord.Size = new System.Drawing.Size(443, 22);
+            this.btnAddRecord.Size = new System.Drawing.Size(219, 22);
             this.btnAddRecord.StyleController = this.layoutControl3;
             this.btnAddRecord.TabIndex = 4;
             this.btnAddRecord.Text = "添加记录";
             this.btnAddRecord.Click += new System.EventHandler(this.btnAddRecord_Click);
-            // 
-            // trGrid
-            // 
-            this.trGrid.AllowFilter = true;
-            this.trGrid.AllowGroup = true;
-            this.trGrid.AllowSort = true;
-            this.trGrid.DataSource = null;
-            this.trGrid.Editable = false;
-            this.trGrid.Location = new System.Drawing.Point(7, 7);
-            this.trGrid.Name = "trGrid";
-            this.trGrid.ShowAddMenu = false;
-            this.trGrid.ShowFooter = false;
-            this.trGrid.ShowLineNumber = false;
-            this.trGrid.ShowNavigator = false;
-            this.trGrid.Size = new System.Drawing.Size(443, 357);
-            this.trGrid.TabIndex = 0;
-            this.trGrid.RowSelected += new System.Action<object, System.EventArgs>(this.trGrid_RowSelected);
             // 
             // layoutControlGroup3
             // 
@@ -191,30 +185,31 @@
             this.layoutControlGroup3.GroupBordersVisible = false;
             this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem5,
-            this.layoutControlItem6});
+            this.layoutControlItem6,
+            this.layoutControlItem17});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlGroup3.Size = new System.Drawing.Size(457, 397);
             this.layoutControlGroup3.TextVisible = false;
             // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.trGrid;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(447, 361);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btnAddRecord;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 361);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(447, 26);
+            this.layoutControlItem6.Size = new System.Drawing.Size(223, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
+            // 
+            // layoutControlItem17
+            // 
+            this.layoutControlItem17.Control = this.btnEditRecord;
+            this.layoutControlItem17.Location = new System.Drawing.Point(223, 361);
+            this.layoutControlItem17.Name = "layoutControlItem17";
+            this.layoutControlItem17.Size = new System.Drawing.Size(224, 26);
+            this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem17.TextVisible = false;
             // 
             // groupControl2
             // 
@@ -296,6 +291,7 @@
             this.luTarget.Properties.DataSource = this.bsTarget;
             this.luTarget.Properties.DisplayMember = "Name";
             this.luTarget.Properties.NullText = "请选择";
+            this.luTarget.Properties.ShowFooter = false;
             this.luTarget.Properties.ValueMember = "Id";
             this.luTarget.Size = new System.Drawing.Size(850, 20);
             this.luTarget.StyleController = this.layoutControl1;
@@ -420,22 +416,6 @@
             this.btnImportStaff.Text = "导入人数记录";
             this.btnImportStaff.Click += new System.EventHandler(this.btnImportStaff_Click);
             // 
-            // stGrid
-            // 
-            this.stGrid.AllowFilter = true;
-            this.stGrid.AllowGroup = true;
-            this.stGrid.AllowSort = true;
-            this.stGrid.DataSource = null;
-            this.stGrid.Editable = true;
-            this.stGrid.Location = new System.Drawing.Point(7, 7);
-            this.stGrid.Name = "stGrid";
-            this.stGrid.ShowAddMenu = false;
-            this.stGrid.ShowFooter = true;
-            this.stGrid.ShowLineNumber = false;
-            this.stGrid.ShowNavigator = false;
-            this.stGrid.Size = new System.Drawing.Size(444, 144);
-            this.stGrid.TabIndex = 0;
-            // 
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -450,15 +430,6 @@
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlGroup2.Size = new System.Drawing.Size(458, 184);
             this.layoutControlGroup2.TextVisible = false;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.stGrid;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(448, 148);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
@@ -501,7 +472,6 @@
             // 
             this.layoutControl4.Controls.Add(this.btnCalcAllowance);
             this.layoutControl4.Controls.Add(this.btnSaveAllowance);
-            this.layoutControl4.Controls.Add(this.btnAddAllowance);
             this.layoutControl4.Controls.Add(this.btnImportFund);
             this.layoutControl4.Controls.Add(this.atGrid);
             this.layoutControl4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -514,9 +484,9 @@
             // 
             // btnCalcAllowance
             // 
-            this.btnCalcAllowance.Location = new System.Drawing.Point(247, 150);
+            this.btnCalcAllowance.Location = new System.Drawing.Point(230, 150);
             this.btnCalcAllowance.Name = "btnCalcAllowance";
-            this.btnCalcAllowance.Size = new System.Drawing.Size(106, 22);
+            this.btnCalcAllowance.Size = new System.Drawing.Size(113, 22);
             this.btnCalcAllowance.StyleController = this.layoutControl4;
             this.btnCalcAllowance.TabIndex = 9;
             this.btnCalcAllowance.Text = "计算";
@@ -524,49 +494,23 @@
             // 
             // btnSaveAllowance
             // 
-            this.btnSaveAllowance.Location = new System.Drawing.Point(357, 150);
+            this.btnSaveAllowance.Location = new System.Drawing.Point(347, 150);
             this.btnSaveAllowance.Name = "btnSaveAllowance";
-            this.btnSaveAllowance.Size = new System.Drawing.Size(89, 22);
+            this.btnSaveAllowance.Size = new System.Drawing.Size(99, 22);
             this.btnSaveAllowance.StyleController = this.layoutControl4;
             this.btnSaveAllowance.TabIndex = 8;
             this.btnSaveAllowance.Text = "保存修改";
             this.btnSaveAllowance.Click += new System.EventHandler(this.btnSaveAllowance_Click);
             // 
-            // btnAddAllowance
-            // 
-            this.btnAddAllowance.Location = new System.Drawing.Point(130, 150);
-            this.btnAddAllowance.Name = "btnAddAllowance";
-            this.btnAddAllowance.Size = new System.Drawing.Size(113, 22);
-            this.btnAddAllowance.StyleController = this.layoutControl4;
-            this.btnAddAllowance.TabIndex = 6;
-            this.btnAddAllowance.Text = "增加补贴";
-            this.btnAddAllowance.Click += new System.EventHandler(this.btnAddAllowance_Click);
-            // 
             // btnImportFund
             // 
             this.btnImportFund.Location = new System.Drawing.Point(12, 150);
             this.btnImportFund.Name = "btnImportFund";
-            this.btnImportFund.Size = new System.Drawing.Size(114, 22);
+            this.btnImportFund.Size = new System.Drawing.Size(214, 22);
             this.btnImportFund.StyleController = this.layoutControl4;
             this.btnImportFund.TabIndex = 5;
             this.btnImportFund.Text = "导入经费记录";
             this.btnImportFund.Click += new System.EventHandler(this.btnImportFund_Click);
-            // 
-            // atGrid
-            // 
-            this.atGrid.AllowFilter = true;
-            this.atGrid.AllowGroup = true;
-            this.atGrid.AllowSort = true;
-            this.atGrid.DataSource = null;
-            this.atGrid.Editable = true;
-            this.atGrid.Location = new System.Drawing.Point(12, 12);
-            this.atGrid.Name = "atGrid";
-            this.atGrid.ShowAddMenu = false;
-            this.atGrid.ShowFooter = true;
-            this.atGrid.ShowLineNumber = false;
-            this.atGrid.ShowNavigator = false;
-            this.atGrid.Size = new System.Drawing.Size(434, 134);
-            this.atGrid.TabIndex = 4;
             // 
             // layoutControlGroup4
             // 
@@ -575,13 +519,106 @@
             this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem9,
             this.layoutControlItem10,
-            this.layoutControlItem11,
             this.layoutControlItem13,
             this.layoutControlItem12});
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.Size = new System.Drawing.Size(458, 184);
             this.layoutControlGroup4.TextVisible = false;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.btnImportFund;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 138);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(218, 26);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem10.TextVisible = false;
+            // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.Control = this.btnSaveAllowance;
+            this.layoutControlItem13.Location = new System.Drawing.Point(335, 138);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(103, 26);
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem13.TextVisible = false;
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.btnCalcAllowance;
+            this.layoutControlItem12.Location = new System.Drawing.Point(218, 138);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(117, 26);
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem12.TextVisible = false;
+            // 
+            // trGrid
+            // 
+            this.trGrid.AllowFilter = true;
+            this.trGrid.AllowGroup = true;
+            this.trGrid.AllowSort = true;
+            this.trGrid.DataSource = null;
+            this.trGrid.Editable = false;
+            this.trGrid.Location = new System.Drawing.Point(7, 7);
+            this.trGrid.Name = "trGrid";
+            this.trGrid.ShowAddMenu = false;
+            this.trGrid.ShowFooter = false;
+            this.trGrid.ShowLineNumber = false;
+            this.trGrid.ShowNavigator = false;
+            this.trGrid.Size = new System.Drawing.Size(443, 357);
+            this.trGrid.TabIndex = 0;
+            this.trGrid.RowSelected += new System.Action<object, System.EventArgs>(this.trGrid_RowSelected);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.trGrid;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(447, 361);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
+            // 
+            // stGrid
+            // 
+            this.stGrid.AllowFilter = false;
+            this.stGrid.AllowGroup = false;
+            this.stGrid.AllowSort = false;
+            this.stGrid.DataSource = null;
+            this.stGrid.Editable = true;
+            this.stGrid.Location = new System.Drawing.Point(7, 7);
+            this.stGrid.Name = "stGrid";
+            this.stGrid.ShowAddMenu = false;
+            this.stGrid.ShowFooter = true;
+            this.stGrid.ShowLineNumber = false;
+            this.stGrid.ShowNavigator = true;
+            this.stGrid.Size = new System.Drawing.Size(444, 144);
+            this.stGrid.TabIndex = 0;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.stGrid;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(448, 148);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // atGrid
+            // 
+            this.atGrid.AllowFilter = false;
+            this.atGrid.AllowGroup = false;
+            this.atGrid.AllowSort = false;
+            this.atGrid.DataSource = null;
+            this.atGrid.Editable = true;
+            this.atGrid.Location = new System.Drawing.Point(12, 12);
+            this.atGrid.Name = "atGrid";
+            this.atGrid.ShowAddMenu = false;
+            this.atGrid.ShowFooter = true;
+            this.atGrid.ShowLineNumber = false;
+            this.atGrid.ShowNavigator = true;
+            this.atGrid.Size = new System.Drawing.Size(434, 134);
+            this.atGrid.TabIndex = 4;
             // 
             // layoutControlItem9
             // 
@@ -591,42 +628,6 @@
             this.layoutControlItem9.Size = new System.Drawing.Size(438, 138);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.btnImportFund;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 138);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(118, 26);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
-            // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.btnAddAllowance;
-            this.layoutControlItem11.Location = new System.Drawing.Point(118, 138);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(117, 26);
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem11.TextVisible = false;
-            // 
-            // layoutControlItem13
-            // 
-            this.layoutControlItem13.Control = this.btnSaveAllowance;
-            this.layoutControlItem13.Location = new System.Drawing.Point(345, 138);
-            this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(93, 26);
-            this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem13.TextVisible = false;
-            // 
-            // layoutControlItem12
-            // 
-            this.layoutControlItem12.Control = this.btnCalcAllowance;
-            this.layoutControlItem12.Location = new System.Drawing.Point(235, 138);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(110, 26);
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem12.TextVisible = false;
             // 
             // FrmTargetMake
             // 
@@ -642,8 +643,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -661,7 +662,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
@@ -670,11 +670,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
             this.layoutControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -715,8 +716,6 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private DevExpress.XtraEditors.SimpleButton btnAddAllowance;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraEditors.SimpleButton btnCalcAllowance;
         private DevExpress.XtraEditors.SimpleButton btnSaveAllowance;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
@@ -727,5 +726,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
+        private DevExpress.XtraEditors.SimpleButton btnEditRecord;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
     }
 }

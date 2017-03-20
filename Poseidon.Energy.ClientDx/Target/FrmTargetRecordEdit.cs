@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,28 +16,42 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 添加指标记录窗体
+    /// 编辑计划指标记录窗体
     /// </summary>
-    public partial class FrmTargetRecordAdd : BaseSingleForm
+    public partial class FrmTargetRecordEdit : BaseSingleForm
     {
         #region Field
-        private string targetId;
+        /// <summary>
+        /// 当前关联记录
+        /// </summary>
+        private TargetRecord currentRecord;
         #endregion //Field
 
         #region Constructor
-        public FrmTargetRecordAdd(string targetId)
+        public FrmTargetRecordEdit(string id)
         {
             InitializeComponent();
 
-            this.targetId = targetId;
+            InitData(id);
         }
         #endregion //Constructor
 
         #region Function
+        private void InitData(string id)
+        {
+            this.currentRecord = BusinessFactory<TargetRecordBusiness>.Instance.FindById(id);
+        }
+
         protected override void InitForm()
         {
-            this.bsDepartment.DataSource = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
+            this.txtDepartmentName.Text = BusinessFactory<DepartmentBusiness>.Instance.FindById(this.currentRecord.DepartmentId).Name;
             ControlUtil.BindDictToComboBox(this.cmbType, typeof(TargetRecord), "Type");
+            this.cmbType.EditValue = this.currentRecord.Type;
+            this.txtFinance.Text = this.currentRecord.Finance;
+            this.spSchoolTake.Value = this.currentRecord.SchoolTake;
+            this.spSelfTake.Value = this.currentRecord.SelfTake;
+            this.txtRemark.Text = this.currentRecord.Remark;
+
             base.InitForm();
         }
 
@@ -50,11 +63,6 @@ namespace Poseidon.Energy.ClientDx
         {
             string errorMessage = "";
 
-            if (this.luDepartment.EditValue == null)
-            {
-                errorMessage = "相关部门不能为空";
-                return new Tuple<bool, string>(false, errorMessage);
-            }
             if (this.cmbType.EditValue == null)
             {
                 errorMessage = "指标类型不能为空";
@@ -70,8 +78,6 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="entity"></param>
         private void SetEntity(TargetRecord entity)
         {
-            entity.TargetId = this.targetId;
-            entity.DepartmentId = this.luDepartment.EditValue.ToString();
             entity.Type = Convert.ToInt32(this.cmbType.EditValue);
             entity.Finance = this.txtFinance.Text;
             entity.SchoolTake = this.spSchoolTake.Value;
@@ -95,15 +101,20 @@ namespace Poseidon.Energy.ClientDx
                 return;
             }
 
-            TargetRecord entity = new TargetRecord();
+            TargetRecord entity = BusinessFactory<TargetRecordBusiness>.Instance.FindById(this.currentRecord.Id);
             SetEntity(entity);
 
             try
             {
-                BusinessFactory<TargetRecordBusiness>.Instance.Create(entity, this.currentUser);
+                var result = BusinessFactory<TargetRecordBusiness>.Instance.Update(entity, this.currentUser);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                    MessageUtil.ShowInfo("保存失败");
             }
             catch (PoseidonException pe)
             {

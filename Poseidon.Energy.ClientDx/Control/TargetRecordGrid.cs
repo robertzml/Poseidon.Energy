@@ -36,6 +36,16 @@ namespace Poseidon.Energy.ClientDx
         #region Function
         #endregion //Function
 
+        #region Method
+        public void SelectRow(TargetRecord entity)
+        {
+            var ds = this.bsEntity.DataSource as List<TargetRecord>;
+            var index = ds.FindIndex(r => r.Id == entity.Id);
+            var rowIndex = this.dgvEntity.GetRowHandle(index);
+            this.dgvEntity.SelectRow(rowIndex);
+        }
+        #endregion //Method
+
         #region Event
         /// <summary>
         /// 控件载入

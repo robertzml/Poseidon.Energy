@@ -37,7 +37,6 @@
             this.colYearKilowatt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colYearAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -49,12 +48,11 @@
             // 
             // dgcEntity
             // 
-            this.dgcEntity.Size = new System.Drawing.Size(462, 303);
+            this.dgcEntity.Size = new System.Drawing.Size(608, 327);
             // 
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colId,
             this.colName,
             this.colCode,
             this.colNumber,
@@ -64,6 +62,7 @@
             this.colUnitPrice,
             this.colYearAmount,
             this.colRemark});
+            this.dgvEntity.IndicatorWidth = 40;
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.Editable = false;
@@ -82,7 +81,6 @@
             // 
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
-            this.colName.OptionsColumn.AllowEdit = false;
             this.colName.Visible = true;
             this.colName.VisibleIndex = 0;
             // 
@@ -90,7 +88,6 @@
             // 
             this.colCode.FieldName = "Code";
             this.colCode.Name = "colCode";
-            this.colCode.OptionsColumn.AllowEdit = false;
             this.colCode.Visible = true;
             this.colCode.VisibleIndex = 1;
             // 
@@ -149,17 +146,12 @@
             this.colRemark.Visible = true;
             this.colRemark.VisibleIndex = 8;
             // 
-            // colId
-            // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
-            // 
             // StaffTargetGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "StaffTargetGrid";
-            this.Size = new System.Drawing.Size(462, 303);
+            this.Size = new System.Drawing.Size(608, 327);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
@@ -169,7 +161,6 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colCode;
         private DevExpress.XtraGrid.Columns.GridColumn colNumber;
