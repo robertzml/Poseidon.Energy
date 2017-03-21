@@ -48,7 +48,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void LoadPopulations()
         {
-            var data = BusinessFactory<PopulationBusiness>.Instance.FindAll().ToList();
+            var data = BusinessFactory<PopulationBusiness>.Instance.FindAll().OrderByDescending(r => r.BelongTime).ToList();
             this.bsPopulation.DataSource = data;
         }
 

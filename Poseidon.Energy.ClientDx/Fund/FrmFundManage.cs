@@ -48,7 +48,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void LoadFunds()
         {
-            var funds = BusinessFactory<FundBusiness>.Instance.FindAll().ToList();
+            var funds = BusinessFactory<FundBusiness>.Instance.FindAll().OrderByDescending(r => r.Year).ToList();
             this.bsFund.DataSource = funds;
         }
 

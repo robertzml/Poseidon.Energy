@@ -35,6 +35,7 @@
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -56,6 +57,7 @@
             this.colDepartmentId,
             this.colVerticalResearch,
             this.colHorizontalResearch,
+            this.colTotal,
             this.colRemark,
             this.colStatus});
             this.dgvEntity.IndicatorWidth = 40;
@@ -64,6 +66,7 @@
             this.dgvEntity.OptionsBehavior.Editable = false;
             this.dgvEntity.OptionsCustomization.AllowFilter = false;
             this.dgvEntity.OptionsCustomization.AllowGroup = false;
+            this.dgvEntity.OptionsDetail.EnableMasterViewMode = false;
             this.dgvEntity.OptionsMenu.EnableGroupPanelMenu = false;
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
@@ -112,7 +115,7 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 3;
+            this.colRemark.VisibleIndex = 4;
             // 
             // colStatus
             // 
@@ -125,6 +128,19 @@
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
             this.colId.OptionsColumn.AllowEdit = false;
+            // 
+            // colTotal
+            // 
+            this.colTotal.Caption = "经费合计(万元)";
+            this.colTotal.FieldName = "colTotal";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.OptionsColumn.AllowEdit = false;
+            this.colTotal.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colTotal", "合计={0:0.##}")});
+            this.colTotal.UnboundExpression = "([HorizontalResearch] + [VerticalResearch]) / 10000";
+            this.colTotal.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.colTotal.Visible = true;
+            this.colTotal.VisibleIndex = 3;
             // 
             // FundRecordGrid
             // 
@@ -149,5 +165,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotal;
     }
 }

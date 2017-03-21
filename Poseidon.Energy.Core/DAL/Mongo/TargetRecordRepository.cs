@@ -200,11 +200,12 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="targetId">指标计划ID</param>
         /// <param name="departmentId">部门ID</param>
+        /// <param name="type">指标类型</param>
         /// <returns></returns>
-        public TargetRecord FindOne(string targetId, string departmentId)
+        public TargetRecord FindOne(string targetId, string departmentId, int type)
         {
             var builder = Builders<BsonDocument>.Filter;
-            var filter = builder.Eq("targetId", targetId) & builder.Eq("departmentId", departmentId);
+            var filter = builder.Eq("targetId", targetId) & builder.Eq("departmentId", departmentId) & builder.Eq("type", type);
 
             return this.FindOne(filter);
         }

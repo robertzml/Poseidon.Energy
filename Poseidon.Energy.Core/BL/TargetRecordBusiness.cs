@@ -40,6 +40,19 @@ namespace Poseidon.Energy.Core.BL
         }
 
         /// <summary>
+        /// 查找指标记录
+        /// </summary>
+        /// <param name="targetId">指标计划ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <param name="type">指标类型</param>
+        /// <returns></returns>
+        public TargetRecord FindByDepartment(string targetId, string departmentId, int type)
+        {
+            var dal = this.baseDal as ITargetRecordRepository;
+            return dal.FindOne(targetId, departmentId, type);
+        }
+
+        /// <summary>
         /// 导入人数记录
         /// </summary>
         /// <param name="populationId">人数统计ID</param>

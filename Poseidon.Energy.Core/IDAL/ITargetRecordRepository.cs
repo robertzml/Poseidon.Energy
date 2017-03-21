@@ -19,8 +19,9 @@ namespace Poseidon.Energy.Core.IDAL
         /// </summary>
         /// <param name="targetId">指标计划ID</param>
         /// <param name="departmentId">部门ID</param>
+        /// <param name="type">指标类型</param>
         /// <returns></returns>
-        TargetRecord FindOne(string targetId, string departmentId);
+        TargetRecord FindOne(string targetId, string departmentId, int type);
 
         /// <summary>
         /// 检查指标记录是否存在
