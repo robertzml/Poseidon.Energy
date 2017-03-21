@@ -38,10 +38,15 @@ namespace Poseidon.Energy.ClientDx
                 var at = bsEntity[i] as AllowanceTarget;
 
                 if (at.Code == EnergyConstant.HorizontalResearchCode || at.Code == EnergyConstant.VerticalResearchCode)
-                    continue;
-
-                at.YearKilowatt = Math.Round(at.Cardinal * at.Factor * at.MonthKilowatt * at.MonthCount, 0);
-                at.YearAmount = Math.Round(at.YearKilowatt * at.UnitPrice, 0);
+                {
+                    at.YearAmount = Math.Round(at.Cardinal * at.Factor * at.MonthKilowatt * at.MonthCount, 0);
+                    at.YearKilowatt = Math.Round(at.YearAmount / at.UnitPrice, 0);
+                }
+                else
+                {
+                    at.YearKilowatt = Math.Round(at.Cardinal * at.Factor * at.MonthKilowatt * at.MonthCount, 0);
+                    at.YearAmount = Math.Round(at.YearKilowatt * at.UnitPrice, 0);
+                }
             }
 
             this.bsEntity.ResetBindings(false);

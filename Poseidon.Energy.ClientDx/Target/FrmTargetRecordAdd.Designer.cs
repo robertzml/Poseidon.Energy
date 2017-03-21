@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.spSelfTake = new DevExpress.XtraEditors.SpinEdit();
+            this.spSchoolTake = new DevExpress.XtraEditors.SpinEdit();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.txtFinance = new DevExpress.XtraEditors.TextEdit();
             this.cmbType = new DevExpress.XtraEditors.ImageComboBoxEdit();
@@ -41,9 +43,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.spSchoolTake = new DevExpress.XtraEditors.SpinEdit();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.spSelfTake = new DevExpress.XtraEditors.SpinEdit();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
@@ -53,6 +53,8 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spSelfTake.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spSchoolTake.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFinance.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbType.Properties)).BeginInit();
@@ -63,9 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spSchoolTake.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spSelfTake.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,6 +118,40 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // spSelfTake
+            // 
+            this.spSelfTake.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spSelfTake.Location = new System.Drawing.Point(87, 108);
+            this.spSelfTake.Name = "spSelfTake";
+            this.spSelfTake.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spSelfTake.Properties.Mask.EditMask = "p3";
+            this.spSelfTake.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.spSelfTake.Size = new System.Drawing.Size(261, 20);
+            this.spSelfTake.StyleController = this.layoutControl1;
+            this.spSelfTake.TabIndex = 4;
+            // 
+            // spSchoolTake
+            // 
+            this.spSchoolTake.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spSchoolTake.Location = new System.Drawing.Point(87, 84);
+            this.spSchoolTake.Name = "spSchoolTake";
+            this.spSchoolTake.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spSchoolTake.Properties.Mask.EditMask = "p3";
+            this.spSchoolTake.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.spSchoolTake.Size = new System.Drawing.Size(261, 20);
+            this.spSchoolTake.StyleController = this.layoutControl1;
+            this.spSchoolTake.TabIndex = 3;
+            // 
             // txtRemark
             // 
             this.txtRemark.Location = new System.Drawing.Point(87, 132);
@@ -157,6 +191,7 @@
             this.luDepartment.Properties.DataSource = this.bsDepartment;
             this.luDepartment.Properties.DisplayMember = "ShortName";
             this.luDepartment.Properties.NullText = "请选择";
+            this.luDepartment.Properties.ShowFooter = false;
             this.luDepartment.Properties.ValueMember = "Id";
             this.luDepartment.Size = new System.Drawing.Size(261, 20);
             this.luDepartment.StyleController = this.layoutControl1;
@@ -218,21 +253,6 @@
             this.layoutControlItem4.Text = "备注";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(72, 14);
             // 
-            // spSchoolTake
-            // 
-            this.spSchoolTake.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spSchoolTake.Location = new System.Drawing.Point(87, 84);
-            this.spSchoolTake.Name = "spSchoolTake";
-            this.spSchoolTake.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spSchoolTake.Size = new System.Drawing.Size(261, 20);
-            this.spSchoolTake.StyleController = this.layoutControl1;
-            this.spSchoolTake.TabIndex = 3;
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.spSchoolTake;
@@ -241,21 +261,6 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(340, 24);
             this.layoutControlItem5.Text = "学校承担比例";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(72, 14);
-            // 
-            // spSelfTake
-            // 
-            this.spSelfTake.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spSelfTake.Location = new System.Drawing.Point(87, 108);
-            this.spSelfTake.Name = "spSelfTake";
-            this.spSelfTake.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spSelfTake.Size = new System.Drawing.Size(261, 20);
-            this.spSelfTake.StyleController = this.layoutControl1;
-            this.spSelfTake.TabIndex = 4;
             // 
             // layoutControlItem6
             // 
@@ -281,6 +286,8 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spSelfTake.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spSchoolTake.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFinance.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbType.Properties)).EndInit();
@@ -291,9 +298,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spSchoolTake.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spSelfTake.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 

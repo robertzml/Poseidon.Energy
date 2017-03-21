@@ -55,6 +55,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtDepartmentName1 = new DevExpress.XtraEditors.TextEdit();
             this.btnSaveStaff = new DevExpress.XtraEditors.SimpleButton();
             this.btnCalcStaff = new DevExpress.XtraEditors.SimpleButton();
             this.btnImportStaff = new DevExpress.XtraEditors.SimpleButton();
@@ -64,8 +65,10 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtDepartmentName2 = new DevExpress.XtraEditors.TextEdit();
             this.btnCalcAllowance = new DevExpress.XtraEditors.SimpleButton();
             this.btnSaveAllowance = new DevExpress.XtraEditors.SimpleButton();
             this.btnImportFund = new DevExpress.XtraEditors.SimpleButton();
@@ -75,6 +78,7 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -100,20 +104,24 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDepartmentName1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
             this.layoutControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDepartmentName2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -181,11 +189,12 @@
             // 
             // trGrid
             // 
-            this.trGrid.AllowFilter = true;
-            this.trGrid.AllowGroup = true;
+            this.trGrid.AllowFilter = false;
+            this.trGrid.AllowGroup = false;
             this.trGrid.AllowSort = true;
             this.trGrid.DataSource = null;
             this.trGrid.Editable = false;
+            this.trGrid.EnableMasterView = false;
             this.trGrid.Location = new System.Drawing.Point(7, 7);
             this.trGrid.Name = "trGrid";
             this.trGrid.ShowAddMenu = false;
@@ -400,6 +409,7 @@
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.txtDepartmentName1);
             this.layoutControl2.Controls.Add(this.btnSaveStaff);
             this.layoutControl2.Controls.Add(this.btnCalcStaff);
             this.layoutControl2.Controls.Add(this.btnImportStaff);
@@ -411,6 +421,17 @@
             this.layoutControl2.Size = new System.Drawing.Size(458, 204);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
+            // 
+            // txtDepartmentName1
+            // 
+            this.txtDepartmentName1.Location = new System.Drawing.Point(58, 7);
+            this.txtDepartmentName1.Name = "txtDepartmentName1";
+            this.txtDepartmentName1.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtDepartmentName1.Properties.Appearance.Options.UseBackColor = true;
+            this.txtDepartmentName1.Properties.ReadOnly = true;
+            this.txtDepartmentName1.Size = new System.Drawing.Size(393, 20);
+            this.txtDepartmentName1.StyleController = this.layoutControl2;
+            this.txtDepartmentName1.TabIndex = 7;
             // 
             // btnSaveStaff
             // 
@@ -449,13 +470,14 @@
             this.stGrid.AllowSort = false;
             this.stGrid.DataSource = null;
             this.stGrid.Editable = true;
-            this.stGrid.Location = new System.Drawing.Point(7, 7);
+            this.stGrid.EnableMasterView = false;
+            this.stGrid.Location = new System.Drawing.Point(7, 31);
             this.stGrid.Name = "stGrid";
             this.stGrid.ShowAddMenu = false;
             this.stGrid.ShowFooter = true;
             this.stGrid.ShowLineNumber = false;
             this.stGrid.ShowNavigator = true;
-            this.stGrid.Size = new System.Drawing.Size(444, 164);
+            this.stGrid.Size = new System.Drawing.Size(444, 140);
             this.stGrid.TabIndex = 0;
             // 
             // layoutControlGroup2
@@ -466,7 +488,8 @@
             this.layoutControlItem3,
             this.layoutControlItem4,
             this.layoutControlItem7,
-            this.layoutControlItem8});
+            this.layoutControlItem8,
+            this.layoutControlItem11});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
@@ -476,9 +499,9 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.stGrid;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(448, 168);
+            this.layoutControlItem3.Size = new System.Drawing.Size(448, 144);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -509,6 +532,15 @@
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.txtDepartmentName1;
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(448, 24);
+            this.layoutControlItem11.Text = "部门名称";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(48, 14);
+            // 
             // groupControl4
             // 
             this.groupControl4.Controls.Add(this.layoutControl4);
@@ -521,6 +553,7 @@
             // 
             // layoutControl4
             // 
+            this.layoutControl4.Controls.Add(this.txtDepartmentName2);
             this.layoutControl4.Controls.Add(this.btnCalcAllowance);
             this.layoutControl4.Controls.Add(this.btnSaveAllowance);
             this.layoutControl4.Controls.Add(this.btnImportFund);
@@ -532,6 +565,17 @@
             this.layoutControl4.Size = new System.Drawing.Size(458, 204);
             this.layoutControl4.TabIndex = 0;
             this.layoutControl4.Text = "layoutControl4";
+            // 
+            // txtDepartmentName2
+            // 
+            this.txtDepartmentName2.Location = new System.Drawing.Point(58, 7);
+            this.txtDepartmentName2.Name = "txtDepartmentName2";
+            this.txtDepartmentName2.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtDepartmentName2.Properties.Appearance.Options.UseBackColor = true;
+            this.txtDepartmentName2.Properties.ReadOnly = true;
+            this.txtDepartmentName2.Size = new System.Drawing.Size(393, 20);
+            this.txtDepartmentName2.StyleController = this.layoutControl4;
+            this.txtDepartmentName2.TabIndex = 10;
             // 
             // btnCalcAllowance
             // 
@@ -570,13 +614,14 @@
             this.atGrid.AllowSort = false;
             this.atGrid.DataSource = null;
             this.atGrid.Editable = true;
-            this.atGrid.Location = new System.Drawing.Point(7, 7);
+            this.atGrid.EnableMasterView = false;
+            this.atGrid.Location = new System.Drawing.Point(7, 31);
             this.atGrid.Name = "atGrid";
             this.atGrid.ShowAddMenu = false;
             this.atGrid.ShowFooter = true;
             this.atGrid.ShowLineNumber = false;
             this.atGrid.ShowNavigator = true;
-            this.atGrid.Size = new System.Drawing.Size(444, 164);
+            this.atGrid.Size = new System.Drawing.Size(444, 140);
             this.atGrid.TabIndex = 4;
             // 
             // layoutControlGroup4
@@ -587,7 +632,8 @@
             this.layoutControlItem9,
             this.layoutControlItem10,
             this.layoutControlItem13,
-            this.layoutControlItem12});
+            this.layoutControlItem12,
+            this.layoutControlItem18});
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
@@ -597,9 +643,9 @@
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.atGrid;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(448, 168);
+            this.layoutControlItem9.Size = new System.Drawing.Size(448, 144);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -629,6 +675,15 @@
             this.layoutControlItem12.Size = new System.Drawing.Size(114, 26);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
+            // 
+            // layoutControlItem18
+            // 
+            this.layoutControlItem18.Control = this.txtDepartmentName2;
+            this.layoutControlItem18.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem18.Name = "layoutControlItem18";
+            this.layoutControlItem18.Size = new System.Drawing.Size(448, 24);
+            this.layoutControlItem18.Text = "部门名称";
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(48, 14);
             // 
             // FrmTargetMake
             // 
@@ -663,20 +718,24 @@
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtDepartmentName1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
             this.layoutControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtDepartmentName2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -729,5 +788,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
         private DevExpress.XtraEditors.SimpleButton btnEditRecord;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
+        private DevExpress.XtraEditors.TextEdit txtDepartmentName1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private DevExpress.XtraEditors.TextEdit txtDepartmentName2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
     }
 }

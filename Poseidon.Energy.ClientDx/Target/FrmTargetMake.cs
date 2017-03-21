@@ -265,6 +265,8 @@ namespace Poseidon.Energy.ClientDx
             if (select == null)
                 return;
 
+            this.txtDepartmentName1.Text = this.txtDepartmentName2.Text 
+                = BusinessFactory<DepartmentBusiness>.Instance.FindById(select.DepartmentId).Name;
             this.stGrid.DataSource = select.StaffTarget;
             this.atGrid.DataSource = select.AllowanceTarget;
         }
