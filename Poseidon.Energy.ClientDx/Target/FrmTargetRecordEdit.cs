@@ -243,6 +243,7 @@ namespace Poseidon.Energy.ClientDx
         private void btnImportStaff_Click(object sender, EventArgs e)
         {
             LoadStaffRecord(this.currentTarget.PopulationId, this.currentRecord.DepartmentId);
+            this.stGrid.BestFitColumns();
         }
 
         /// <summary>
@@ -299,6 +300,7 @@ namespace Poseidon.Energy.ClientDx
         private void btnImportFund_Click(object sender, EventArgs e)
         {
             LoadFundRecord(this.currentTarget.FundId, this.currentRecord.DepartmentId);
+            this.atGrid.BestFitColumns();
         }
 
         /// <summary>

@@ -19,6 +19,14 @@ namespace Poseidon.Energy.Core.IDAL
         /// </summary>
         /// <param name="targetId">指标计划ID</param>
         /// <param name="departmentId">部门ID</param>
+        /// <returns></returns>
+        IEnumerable<TargetRecord> FindOne(string targetId, string departmentId);
+
+        /// <summary>
+        /// 查找指标记录
+        /// </summary>
+        /// <param name="targetId">指标计划ID</param>
+        /// <param name="departmentId">部门ID</param>
         /// <param name="type">指标类型</param>
         /// <returns></returns>
         TargetRecord FindOne(string targetId, string departmentId, int type);

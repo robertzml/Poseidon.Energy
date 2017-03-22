@@ -34,7 +34,9 @@
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.btnEditRecord = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddRecord = new DevExpress.XtraEditors.SimpleButton();
+            this.trGrid = new Poseidon.Energy.ClientDx.TargetRecordGrid();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -54,25 +56,24 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.txtDepartmentName1 = new DevExpress.XtraEditors.TextEdit();
+            this.stGrid = new Poseidon.Energy.ClientDx.StaffTargetGrid();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
             this.txtDepartmentName2 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.trGrid = new Poseidon.Energy.ClientDx.TargetRecordGrid();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.stGrid = new Poseidon.Energy.ClientDx.StaffTargetGrid();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.atGrid = new Poseidon.Energy.ClientDx.AllowanceTargetGrid();
+            this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -93,6 +94,7 @@
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDepartmentName1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
@@ -100,10 +102,8 @@
             this.layoutControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDepartmentName2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -169,6 +169,24 @@
             this.btnAddRecord.Text = "添加记录";
             this.btnAddRecord.Click += new System.EventHandler(this.btnAddRecord_Click);
             // 
+            // trGrid
+            // 
+            this.trGrid.AllowFilter = false;
+            this.trGrid.AllowGroup = false;
+            this.trGrid.AllowSort = true;
+            this.trGrid.DataSource = null;
+            this.trGrid.Editable = false;
+            this.trGrid.EnableMasterView = false;
+            this.trGrid.Location = new System.Drawing.Point(7, 33);
+            this.trGrid.Name = "trGrid";
+            this.trGrid.ShowAddMenu = false;
+            this.trGrid.ShowFooter = false;
+            this.trGrid.ShowLineNumber = true;
+            this.trGrid.ShowNavigator = false;
+            this.trGrid.Size = new System.Drawing.Size(443, 397);
+            this.trGrid.TabIndex = 0;
+            this.trGrid.RowSelected += new System.Action<object, System.EventArgs>(this.trGrid_RowSelected);
+            // 
             // layoutControlGroup3
             // 
             this.layoutControlGroup3.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -182,6 +200,15 @@
             this.layoutControlGroup3.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlGroup3.Size = new System.Drawing.Size(457, 437);
             this.layoutControlGroup3.TextVisible = false;
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.trGrid;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(447, 401);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
@@ -385,6 +412,23 @@
             this.txtDepartmentName1.StyleController = this.layoutControl2;
             this.txtDepartmentName1.TabIndex = 7;
             // 
+            // stGrid
+            // 
+            this.stGrid.AllowFilter = false;
+            this.stGrid.AllowGroup = false;
+            this.stGrid.AllowSort = false;
+            this.stGrid.DataSource = null;
+            this.stGrid.Editable = false;
+            this.stGrid.EnableMasterView = false;
+            this.stGrid.Location = new System.Drawing.Point(7, 31);
+            this.stGrid.Name = "stGrid";
+            this.stGrid.ShowAddMenu = false;
+            this.stGrid.ShowFooter = true;
+            this.stGrid.ShowLineNumber = false;
+            this.stGrid.ShowNavigator = false;
+            this.stGrid.Size = new System.Drawing.Size(444, 166);
+            this.stGrid.TabIndex = 0;
+            // 
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -397,6 +441,15 @@
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlGroup2.Size = new System.Drawing.Size(458, 204);
             this.layoutControlGroup2.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.stGrid;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(448, 170);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem11
             // 
@@ -440,81 +493,6 @@
             this.txtDepartmentName2.StyleController = this.layoutControl4;
             this.txtDepartmentName2.TabIndex = 10;
             // 
-            // layoutControlGroup4
-            // 
-            this.layoutControlGroup4.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup4.GroupBordersVisible = false;
-            this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem9,
-            this.layoutControlItem18});
-            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup4.Name = "layoutControlGroup4";
-            this.layoutControlGroup4.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlGroup4.Size = new System.Drawing.Size(458, 204);
-            this.layoutControlGroup4.TextVisible = false;
-            // 
-            // layoutControlItem18
-            // 
-            this.layoutControlItem18.Control = this.txtDepartmentName2;
-            this.layoutControlItem18.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(448, 24);
-            this.layoutControlItem18.Text = "部门名称";
-            this.layoutControlItem18.TextSize = new System.Drawing.Size(48, 14);
-            // 
-            // trGrid
-            // 
-            this.trGrid.AllowFilter = false;
-            this.trGrid.AllowGroup = false;
-            this.trGrid.AllowSort = true;
-            this.trGrid.DataSource = null;
-            this.trGrid.Editable = false;
-            this.trGrid.EnableMasterView = false;
-            this.trGrid.Location = new System.Drawing.Point(7, 33);
-            this.trGrid.Name = "trGrid";
-            this.trGrid.ShowAddMenu = false;
-            this.trGrid.ShowFooter = false;
-            this.trGrid.ShowLineNumber = true;
-            this.trGrid.ShowNavigator = false;
-            this.trGrid.Size = new System.Drawing.Size(443, 397);
-            this.trGrid.TabIndex = 0;
-            this.trGrid.RowSelected += new System.Action<object, System.EventArgs>(this.trGrid_RowSelected);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.trGrid;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 26);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(447, 401);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
-            // 
-            // stGrid
-            // 
-            this.stGrid.AllowFilter = false;
-            this.stGrid.AllowGroup = false;
-            this.stGrid.AllowSort = false;
-            this.stGrid.DataSource = null;
-            this.stGrid.Editable = false;
-            this.stGrid.EnableMasterView = false;
-            this.stGrid.Location = new System.Drawing.Point(7, 31);
-            this.stGrid.Name = "stGrid";
-            this.stGrid.ShowAddMenu = false;
-            this.stGrid.ShowFooter = true;
-            this.stGrid.ShowLineNumber = false;
-            this.stGrid.ShowNavigator = false;
-            this.stGrid.Size = new System.Drawing.Size(444, 166);
-            this.stGrid.TabIndex = 0;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.stGrid;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(448, 170);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
             // atGrid
             // 
             this.atGrid.AllowFilter = false;
@@ -532,6 +510,19 @@
             this.atGrid.Size = new System.Drawing.Size(444, 166);
             this.atGrid.TabIndex = 4;
             // 
+            // layoutControlGroup4
+            // 
+            this.layoutControlGroup4.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup4.GroupBordersVisible = false;
+            this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem9,
+            this.layoutControlItem18});
+            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup4.Name = "layoutControlGroup4";
+            this.layoutControlGroup4.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(458, 204);
+            this.layoutControlGroup4.TextVisible = false;
+            // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.atGrid;
@@ -540,6 +531,15 @@
             this.layoutControlItem9.Size = new System.Drawing.Size(448, 170);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
+            // 
+            // layoutControlItem18
+            // 
+            this.layoutControlItem18.Control = this.txtDepartmentName2;
+            this.layoutControlItem18.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem18.Name = "layoutControlItem18";
+            this.layoutControlItem18.Size = new System.Drawing.Size(448, 24);
+            this.layoutControlItem18.Text = "部门名称";
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(48, 14);
             // 
             // FrmTargetMake
             // 
@@ -555,6 +555,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
@@ -575,6 +576,7 @@
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtDepartmentName1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
@@ -582,10 +584,8 @@
             this.layoutControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtDepartmentName2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             this.ResumeLayout(false);
 
         }

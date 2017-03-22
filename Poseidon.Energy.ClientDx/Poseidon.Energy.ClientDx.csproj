@@ -92,6 +92,12 @@
     <Compile Include="Control\DepartmentGrid.Designer.cs">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\DepartmentTargetModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\DepartmentTargetModule.Designer.cs">
+      <DependentUpon>DepartmentTargetModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Department\FrmDepartmentEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +235,12 @@
     </Compile>
     <Compile Include="Measure\FrmMeasureManage.Designer.cs">
       <DependentUpon>FrmMeasureManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TargetRecordModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\TargetRecordModule.Designer.cs">
+      <DependentUpon>TargetRecordModule.cs</DependentUpon>
     </Compile>
     <Compile Include="Target\FrmTargetEdit.cs">
       <SubType>Form</SubType>
@@ -405,6 +417,9 @@
     <EmbeddedResource Include="Control\AllowanceTargetGrid.resx">
       <DependentUpon>AllowanceTargetGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\DepartmentTargetModule.resx">
+      <DependentUpon>DepartmentTargetModule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\ElectricExpenseReceipt.resx">
       <DependentUpon>ElectricExpenseReceipt.cs</DependentUpon>
     </EmbeddedResource>
@@ -434,6 +449,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\TargetRecordGrid.resx">
       <DependentUpon>TargetRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\TargetRecordModule.resx">
+      <DependentUpon>TargetRecordModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\WaterExpenseChart.resx">
       <DependentUpon>WaterExpenseChart.cs</DependentUpon>

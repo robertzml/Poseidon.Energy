@@ -43,6 +43,8 @@
             DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtRefTotalAmount = new DevExpress.XtraEditors.TextEdit();
+            this.txtRefTotalQuantum = new DevExpress.XtraEditors.TextEdit();
             this.luReferenceTarget = new DevExpress.XtraEditors.LookUpEdit();
             this.bsTarget = new System.Windows.Forms.BindingSource(this.components);
             this.txtPlanAmount = new DevExpress.XtraEditors.TextEdit();
@@ -63,6 +65,8 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.tabDetails = new DevExpress.XtraTab.XtraTabControl();
@@ -92,10 +96,6 @@
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtRefTotalQuantum = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtRefTotalAmount = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -104,6 +104,8 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRefTotalAmount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRefTotalQuantum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.luReferenceTarget.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTarget)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPlanAmount.Properties)).BeginInit();
@@ -124,6 +126,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -147,10 +151,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRefTotalQuantum.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRefTotalAmount.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -182,7 +182,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(828, 184);
+            this.groupControl1.Size = new System.Drawing.Size(828, 194);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "基本信息";
             // 
@@ -203,9 +203,31 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(824, 161);
+            this.layoutControl1.Size = new System.Drawing.Size(824, 171);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtRefTotalAmount
+            // 
+            this.txtRefTotalAmount.Location = new System.Drawing.Point(488, 139);
+            this.txtRefTotalAmount.Name = "txtRefTotalAmount";
+            this.txtRefTotalAmount.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtRefTotalAmount.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRefTotalAmount.Properties.ReadOnly = true;
+            this.txtRefTotalAmount.Size = new System.Drawing.Size(324, 20);
+            this.txtRefTotalAmount.StyleController = this.layoutControl1;
+            this.txtRefTotalAmount.TabIndex = 10;
+            // 
+            // txtRefTotalQuantum
+            // 
+            this.txtRefTotalQuantum.Location = new System.Drawing.Point(87, 139);
+            this.txtRefTotalQuantum.Name = "txtRefTotalQuantum";
+            this.txtRefTotalQuantum.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtRefTotalQuantum.Properties.Appearance.Options.UseBackColor = true;
+            this.txtRefTotalQuantum.Properties.ReadOnly = true;
+            this.txtRefTotalQuantum.Size = new System.Drawing.Size(322, 20);
+            this.txtRefTotalQuantum.StyleController = this.layoutControl1;
+            this.txtRefTotalQuantum.TabIndex = 9;
             // 
             // luReferenceTarget
             // 
@@ -233,7 +255,7 @@
             // 
             // txtPlanAmount
             // 
-            this.txtPlanAmount.Location = new System.Drawing.Point(488, 105);
+            this.txtPlanAmount.Location = new System.Drawing.Point(488, 115);
             this.txtPlanAmount.Name = "txtPlanAmount";
             this.txtPlanAmount.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtPlanAmount.Properties.Appearance.Options.UseBackColor = true;
@@ -244,7 +266,7 @@
             // 
             // txtPlanQuantum
             // 
-            this.txtPlanQuantum.Location = new System.Drawing.Point(87, 105);
+            this.txtPlanQuantum.Location = new System.Drawing.Point(87, 115);
             this.txtPlanQuantum.Name = "txtPlanQuantum";
             this.txtPlanQuantum.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtPlanQuantum.Properties.Appearance.Options.UseBackColor = true;
@@ -302,7 +324,7 @@
             // 
             this.txtRemark.Location = new System.Drawing.Point(87, 84);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(725, 17);
+            this.txtRemark.Size = new System.Drawing.Size(725, 27);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 5;
             // 
@@ -342,7 +364,7 @@
             this.layoutControlItem21});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(824, 161);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(824, 171);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem2
@@ -359,7 +381,7 @@
             this.layoutControlItem4.Control = this.txtRemark;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(804, 21);
+            this.layoutControlItem4.Size = new System.Drawing.Size(804, 31);
             this.layoutControlItem4.Text = "备注";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -402,7 +424,7 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtPlanQuantum;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 93);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 103);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(401, 24);
             this.layoutControlItem1.Text = "计划总用电量";
@@ -411,7 +433,7 @@
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.txtPlanAmount;
-            this.layoutControlItem8.Location = new System.Drawing.Point(401, 93);
+            this.layoutControlItem8.Location = new System.Drawing.Point(401, 103);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(403, 24);
             this.layoutControlItem8.Text = "计划总金额";
@@ -426,6 +448,24 @@
             this.layoutControlItem9.Text = "参考指标计划";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(72, 14);
             // 
+            // layoutControlItem20
+            // 
+            this.layoutControlItem20.Control = this.txtRefTotalQuantum;
+            this.layoutControlItem20.Location = new System.Drawing.Point(0, 127);
+            this.layoutControlItem20.Name = "layoutControlItem20";
+            this.layoutControlItem20.Size = new System.Drawing.Size(401, 24);
+            this.layoutControlItem20.Text = "参考总用电量";
+            this.layoutControlItem20.TextSize = new System.Drawing.Size(72, 14);
+            // 
+            // layoutControlItem21
+            // 
+            this.layoutControlItem21.Control = this.txtRefTotalAmount;
+            this.layoutControlItem21.Location = new System.Drawing.Point(401, 127);
+            this.layoutControlItem21.Name = "layoutControlItem21";
+            this.layoutControlItem21.Size = new System.Drawing.Size(403, 24);
+            this.layoutControlItem21.Text = "参考总金额";
+            this.layoutControlItem21.TextSize = new System.Drawing.Size(72, 14);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -436,7 +476,7 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 190F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(834, 622);
             this.tableLayoutPanel1.TabIndex = 2;
@@ -445,9 +485,9 @@
             // 
             this.groupControl2.Controls.Add(this.tabDetails);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 193);
+            this.groupControl2.Location = new System.Drawing.Point(3, 203);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(828, 426);
+            this.groupControl2.Size = new System.Drawing.Size(828, 416);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "指标组成";
             // 
@@ -457,7 +497,7 @@
             this.tabDetails.Location = new System.Drawing.Point(2, 21);
             this.tabDetails.Name = "tabDetails";
             this.tabDetails.SelectedTabPage = this.tabStaff;
-            this.tabDetails.Size = new System.Drawing.Size(824, 403);
+            this.tabDetails.Size = new System.Drawing.Size(824, 393);
             this.tabDetails.TabIndex = 0;
             this.tabDetails.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabStaff,
@@ -467,7 +507,7 @@
             // 
             this.tabStaff.Controls.Add(this.layoutControl2);
             this.tabStaff.Name = "tabStaff";
-            this.tabStaff.Size = new System.Drawing.Size(818, 374);
+            this.tabStaff.Size = new System.Drawing.Size(818, 364);
             this.tabStaff.Text = "人员指标";
             // 
             // layoutControl2
@@ -481,7 +521,7 @@
             this.layoutControl2.Location = new System.Drawing.Point(0, 0);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(818, 374);
+            this.layoutControl2.Size = new System.Drawing.Size(818, 364);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -493,18 +533,18 @@
             this.refStGrid.DataSource = null;
             this.refStGrid.Editable = false;
             this.refStGrid.EnableMasterView = false;
-            this.refStGrid.Location = new System.Drawing.Point(7, 218);
+            this.refStGrid.Location = new System.Drawing.Point(7, 213);
             this.refStGrid.Name = "refStGrid";
             this.refStGrid.ShowAddMenu = false;
             this.refStGrid.ShowFooter = true;
             this.refStGrid.ShowLineNumber = true;
             this.refStGrid.ShowNavigator = false;
-            this.refStGrid.Size = new System.Drawing.Size(804, 149);
+            this.refStGrid.Size = new System.Drawing.Size(804, 144);
             this.refStGrid.TabIndex = 8;
             // 
             // btnSaveStaff
             // 
-            this.btnSaveStaff.Location = new System.Drawing.Point(545, 194);
+            this.btnSaveStaff.Location = new System.Drawing.Point(545, 189);
             this.btnSaveStaff.Name = "btnSaveStaff";
             this.btnSaveStaff.Size = new System.Drawing.Size(266, 20);
             this.btnSaveStaff.StyleController = this.layoutControl2;
@@ -514,7 +554,7 @@
             // 
             // btnCalcStaff
             // 
-            this.btnCalcStaff.Location = new System.Drawing.Point(276, 194);
+            this.btnCalcStaff.Location = new System.Drawing.Point(276, 189);
             this.btnCalcStaff.Name = "btnCalcStaff";
             this.btnCalcStaff.Size = new System.Drawing.Size(265, 20);
             this.btnCalcStaff.StyleController = this.layoutControl2;
@@ -524,7 +564,7 @@
             // 
             // btnImportStaff
             // 
-            this.btnImportStaff.Location = new System.Drawing.Point(7, 194);
+            this.btnImportStaff.Location = new System.Drawing.Point(7, 189);
             this.btnImportStaff.Name = "btnImportStaff";
             this.btnImportStaff.Size = new System.Drawing.Size(265, 20);
             this.btnImportStaff.StyleController = this.layoutControl2;
@@ -546,7 +586,7 @@
             this.stGrid.ShowFooter = true;
             this.stGrid.ShowLineNumber = true;
             this.stGrid.ShowNavigator = true;
-            this.stGrid.Size = new System.Drawing.Size(804, 183);
+            this.stGrid.Size = new System.Drawing.Size(804, 178);
             this.stGrid.TabIndex = 4;
             // 
             // layoutControlGroup2
@@ -583,7 +623,7 @@
             rowDefinition2,
             rowDefinition3});
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlGroup2.Size = new System.Drawing.Size(818, 374);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(818, 364);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem10
@@ -592,14 +632,14 @@
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.OptionsTableLayoutItem.ColumnSpan = 3;
-            this.layoutControlItem10.Size = new System.Drawing.Size(808, 187);
+            this.layoutControlItem10.Size = new System.Drawing.Size(808, 182);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.btnImportStaff;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 187);
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 182);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.OptionsTableLayoutItem.RowIndex = 1;
             this.layoutControlItem11.Size = new System.Drawing.Size(269, 24);
@@ -609,7 +649,7 @@
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.btnCalcStaff;
-            this.layoutControlItem12.Location = new System.Drawing.Point(269, 187);
+            this.layoutControlItem12.Location = new System.Drawing.Point(269, 182);
             this.layoutControlItem12.Name = "layoutControlItem12";
             this.layoutControlItem12.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem12.OptionsTableLayoutItem.RowIndex = 1;
@@ -620,7 +660,7 @@
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.btnSaveStaff;
-            this.layoutControlItem13.Location = new System.Drawing.Point(538, 187);
+            this.layoutControlItem13.Location = new System.Drawing.Point(538, 182);
             this.layoutControlItem13.Name = "layoutControlItem13";
             this.layoutControlItem13.OptionsTableLayoutItem.ColumnIndex = 2;
             this.layoutControlItem13.OptionsTableLayoutItem.RowIndex = 1;
@@ -631,11 +671,11 @@
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.refStGrid;
-            this.layoutControlItem14.Location = new System.Drawing.Point(0, 211);
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 206);
             this.layoutControlItem14.Name = "layoutControlItem14";
             this.layoutControlItem14.OptionsTableLayoutItem.ColumnSpan = 3;
             this.layoutControlItem14.OptionsTableLayoutItem.RowIndex = 2;
-            this.layoutControlItem14.Size = new System.Drawing.Size(808, 153);
+            this.layoutControlItem14.Size = new System.Drawing.Size(808, 148);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
@@ -643,7 +683,7 @@
             // 
             this.tabAllowance.Controls.Add(this.layoutControl3);
             this.tabAllowance.Name = "tabAllowance";
-            this.tabAllowance.Size = new System.Drawing.Size(440, 24);
+            this.tabAllowance.Size = new System.Drawing.Size(440, 14);
             this.tabAllowance.Text = "补贴指标";
             // 
             // layoutControl3
@@ -657,7 +697,7 @@
             this.layoutControl3.Location = new System.Drawing.Point(0, 0);
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.Root = this.layoutControlGroup3;
-            this.layoutControl3.Size = new System.Drawing.Size(440, 24);
+            this.layoutControl3.Size = new System.Drawing.Size(440, 14);
             this.layoutControl3.TabIndex = 0;
             this.layoutControl3.Text = "layoutControl3";
             // 
@@ -815,46 +855,6 @@
             this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem19.TextVisible = false;
             // 
-            // txtRefTotalQuantum
-            // 
-            this.txtRefTotalQuantum.Location = new System.Drawing.Point(87, 129);
-            this.txtRefTotalQuantum.Name = "txtRefTotalQuantum";
-            this.txtRefTotalQuantum.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtRefTotalQuantum.Properties.Appearance.Options.UseBackColor = true;
-            this.txtRefTotalQuantum.Properties.ReadOnly = true;
-            this.txtRefTotalQuantum.Size = new System.Drawing.Size(322, 20);
-            this.txtRefTotalQuantum.StyleController = this.layoutControl1;
-            this.txtRefTotalQuantum.TabIndex = 9;
-            // 
-            // layoutControlItem20
-            // 
-            this.layoutControlItem20.Control = this.txtRefTotalQuantum;
-            this.layoutControlItem20.Location = new System.Drawing.Point(0, 117);
-            this.layoutControlItem20.Name = "layoutControlItem20";
-            this.layoutControlItem20.Size = new System.Drawing.Size(401, 24);
-            this.layoutControlItem20.Text = "参考总用电量";
-            this.layoutControlItem20.TextSize = new System.Drawing.Size(72, 14);
-            // 
-            // txtRefTotalAmount
-            // 
-            this.txtRefTotalAmount.Location = new System.Drawing.Point(488, 129);
-            this.txtRefTotalAmount.Name = "txtRefTotalAmount";
-            this.txtRefTotalAmount.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtRefTotalAmount.Properties.Appearance.Options.UseBackColor = true;
-            this.txtRefTotalAmount.Properties.ReadOnly = true;
-            this.txtRefTotalAmount.Size = new System.Drawing.Size(324, 20);
-            this.txtRefTotalAmount.StyleController = this.layoutControl1;
-            this.txtRefTotalAmount.TabIndex = 10;
-            // 
-            // layoutControlItem21
-            // 
-            this.layoutControlItem21.Control = this.txtRefTotalAmount;
-            this.layoutControlItem21.Location = new System.Drawing.Point(401, 117);
-            this.layoutControlItem21.Name = "layoutControlItem21";
-            this.layoutControlItem21.Size = new System.Drawing.Size(403, 24);
-            this.layoutControlItem21.Text = "参考总金额";
-            this.layoutControlItem21.TextSize = new System.Drawing.Size(72, 14);
-            // 
             // FrmTargetRecordEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -870,6 +870,8 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtRefTotalAmount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRefTotalQuantum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.luReferenceTarget.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTarget)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPlanAmount.Properties)).EndInit();
@@ -890,6 +892,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
@@ -913,10 +917,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRefTotalQuantum.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtRefTotalAmount.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
             this.ResumeLayout(false);
 
         }

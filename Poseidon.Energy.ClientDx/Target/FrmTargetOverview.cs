@@ -22,10 +22,7 @@ namespace Poseidon.Energy.ClientDx
     public partial class FrmTargetOverview : BaseMdiForm
     {
         #region Field
-        /// <summary>
-        /// 当前关联指标计划
-        /// </summary>
-        private Target currentTarget;
+
         #endregion //Field
 
         #region Constructor
@@ -39,7 +36,6 @@ namespace Poseidon.Energy.ClientDx
         protected override void InitForm()
         {
             this.groupTreeTarget.SetGroupCode(EnergyConstant.TargetDepartmentGroupCode);
-           
 
             base.InitForm();
         }
@@ -62,14 +58,29 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void lbPlanTarget_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //this.currentTarget = this.lbTarget.SelectedItem as Target;
 
-            this.txtName.Text = currentTarget.Name;
-            this.txtYear.Text = currentTarget.Year.ToString();
-            this.txtPopulation.Text = BusinessFactory<PopulationBusiness>.Instance.FindById(currentTarget.PopulationId).Name;
-            this.txtFund.Text = BusinessFactory<FundBusiness>.Instance.FindById(currentTarget.FundId).Name;
-            this.txtCreateTime.Text = currentTarget.CreateBy.Time.ToDateTimeString();
-            this.txtUpdateTime.Text = currentTarget.UpdateBy.Time.ToDateTimeString();
+        }
+
+        /// <summary>
+        /// 部门选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void groupTreeTarget_OrganizationSelected(object sender, EventArgs e)
+        {
+            var departmentId = this.groupTreeTarget.GetCurrentSelectId();
+            this.depTargetMod.SetDepartment(departmentId);
+
+            //this.plDepartmentTarget.BeginInit();
+
+            //this.plDepartmentTarget.Controls.Clear();
+
+            //DepartmentTargetModule module = new DepartmentTargetModule();
+            //this.plDepartmentTarget.Controls.Add(module);
+            //module.Dock = DockStyle.Fill;
+            //module.SetDepartment(departmentId);
+
+            //this.plDepartmentTarget.EndInit();
         }
         #endregion //Event
     }
