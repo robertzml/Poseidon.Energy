@@ -9,11 +9,13 @@ using System.Windows.Forms;
 
 namespace Poseidon.Energy.ClientDx
 {
+    using DevExpress.XtraReports.UI;
     using Poseidon.Base.Framework;
     using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
+    using Poseidon.Energy.ClientDx.Report;
 
     /// <summary>
     /// 分组下指标计划组件
@@ -93,6 +95,23 @@ namespace Poseidon.Energy.ClientDx
             var target = this.lbTargets.SelectedItem as Target;
             DisplayInfo(target);
             LoadTargetRecords(target, this.currentGroup);
+        }
+
+        /// <summary>
+        /// 打印
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            var data = this.recordGrid.DataSource;
+
+            RepDepartmentTarget report = new RepDepartmentTarget();
+            report.DataSource = data;
+
+            ReportPrintTool printTool = new ReportPrintTool(report);
+
+            printTool.ShowRibbonPreview();
         }
         #endregion //Event
     }
