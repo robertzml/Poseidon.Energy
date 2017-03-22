@@ -14,6 +14,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 指标计划总览窗体
@@ -37,7 +38,8 @@ namespace Poseidon.Energy.ClientDx
         #region Function
         protected override void InitForm()
         {
-            LoadTargets();
+            this.groupTreeTarget.SetGroupCode(EnergyConstant.TargetDepartmentGroupCode);
+           
 
             base.InitForm();
         }
@@ -47,8 +49,8 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void LoadTargets()
         {
-            var data = BusinessFactory<TargetBusiness>.Instance.FindAll().ToList();
-            this.bsTarget.DataSource = data;
+            //var data = BusinessFactory<TargetBusiness>.Instance.FindAll().ToList();
+            //this.bsTarget.DataSource = data;
         }
         #endregion //Function
 
@@ -60,7 +62,7 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void lbPlanTarget_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.currentTarget = this.lbTarget.SelectedItem as Target;
+            //this.currentTarget = this.lbTarget.SelectedItem as Target;
 
             this.txtName.Text = currentTarget.Name;
             this.txtYear.Text = currentTarget.Year.ToString();

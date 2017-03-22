@@ -71,6 +71,7 @@
             this.dgvEntity.OptionsCustomization.AllowGroup = false;
             this.dgvEntity.OptionsCustomization.AllowQuickHideColumns = false;
             this.dgvEntity.OptionsCustomization.AllowSort = false;
+            this.dgvEntity.OptionsDetail.EnableMasterViewMode = false;
             this.dgvEntity.OptionsMenu.EnableColumnMenu = false;
             this.dgvEntity.OptionsMenu.EnableGroupPanelMenu = false;
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
@@ -130,7 +131,6 @@
             this.colYearKilowatt.Caption = "年指标度数";
             this.colYearKilowatt.FieldName = "YearKilowatt";
             this.colYearKilowatt.Name = "colYearKilowatt";
-            this.colYearKilowatt.OptionsColumn.AllowEdit = false;
             this.colYearKilowatt.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "YearKilowatt", "合计={0:0.##}")});
             this.colYearKilowatt.Visible = true;
@@ -141,7 +141,6 @@
             this.colYearAmount.Caption = "年指标金额";
             this.colYearAmount.FieldName = "YearAmount";
             this.colYearAmount.Name = "colYearAmount";
-            this.colYearAmount.OptionsColumn.AllowEdit = false;
             this.colYearAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "YearAmount", "合计={0:0.##}")});
             this.colYearAmount.Visible = true;

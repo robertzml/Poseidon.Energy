@@ -76,6 +76,16 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
+        /// 更新指标总数
+        /// </summary>
+        private void UpdateTotalAmount()
+        {
+            var record = BusinessFactory<TargetRecordBusiness>.Instance.FindById(this.currentRecord.Id);
+            this.txtPlanQuantum.Text = record.PlanQuantum.ToString();
+            this.txtPlanAmount.Text = record.PlanAmount.ToString();
+        }
+
+        /// <summary>
         /// 导入选中部门人数记录
         /// </summary>
         /// <param name="populationId">人数统计ID</param>
@@ -218,6 +228,8 @@ namespace Poseidon.Energy.ClientDx
             var record = BusinessFactory<TargetRecordBusiness>.Instance.FindByDepartment(tid, this.currentRecord.DepartmentId, this.currentRecord.Type);
             if (record != null)
             {
+                this.txtRefTotalQuantum.Text = record.PlanQuantum.ToString();
+                this.txtRefTotalAmount.Text = record.PlanAmount.ToString();
                 this.refStGrid.DataSource = record.StaffTarget;
                 this.refAtGrid.DataSource = record.AllowanceTarget;
             }
@@ -265,7 +277,10 @@ namespace Poseidon.Energy.ClientDx
                 var result = BusinessFactory<TargetRecordBusiness>.Instance.UpdateStaffTarget(this.currentRecord.Id, this.stGrid.DataSource, this.currentUser);
 
                 if (result)
+                {
+                    UpdateTotalAmount();
                     MessageUtil.ShowInfo("保存成功");
+                }
                 else
                     MessageUtil.ShowInfo("保存失败");
 
@@ -318,7 +333,10 @@ namespace Poseidon.Energy.ClientDx
                 var result = BusinessFactory<TargetRecordBusiness>.Instance.UpdateAllowanceTarget(this.currentRecord.Id, this.atGrid.DataSource, this.currentUser);
 
                 if (result)
+                {
+                    UpdateTotalAmount();
                     MessageUtil.ShowInfo("保存成功");
+                }
                 else
                     MessageUtil.ShowInfo("保存失败");
             }

@@ -66,7 +66,7 @@ namespace Poseidon.Energy.ClientDx
         private List<FundRecord> LoadFundRecords()
         {
             var records = BusinessFactory<FundRecordBusiness>.Instance.FindByFundId(this.currentFund.Id);
-            var departments = BusinessFactory<DepartmentBusiness>.Instance.FindInGroup(EnergyConstant.TargetDepartmentGroupCode, true);
+            var departments = BusinessFactory<DepartmentBusiness>.Instance.FindInGroup(EnergyConstant.FundDepartmentGroupCode, true);
 
             List<FundRecord> data = new List<FundRecord>();
             data.AddRange(records);

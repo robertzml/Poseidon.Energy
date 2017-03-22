@@ -70,7 +70,7 @@ namespace Poseidon.Energy.ClientDx
         private List<PopulationRecord> LoadPopulationRecords()
         {
             var records = BusinessFactory<PopulationRecordBusiness>.Instance.FindByPopulationId(currentEntity.Id);
-            var departments = BusinessFactory<DepartmentBusiness>.Instance.FindInGroup(EnergyConstant.TargetDepartmentGroupCode, true);
+            var departments = BusinessFactory<DepartmentBusiness>.Instance.FindInGroup(EnergyConstant.PopulationDepartmentGroupCode, true);
 
             List<PopulationRecord> data = new List<PopulationRecord>();
             data.AddRange(records);

@@ -181,8 +181,8 @@ namespace Poseidon.Energy.Core.BL
                     dt.DepartmentId = item;
                     dt.Type = 1;
                     dt.Finance = "";
-                    dt.SchoolTake = 0.6M;
-                    dt.SelfTake = 0.4M;
+                    dt.SchoolTake = 0.4M;
+                    dt.SelfTake = 0.6M;
                     dt.PlanQuantum = 0;
                     dt.PlanAmount = 0;
                     dt.Remark = "";
