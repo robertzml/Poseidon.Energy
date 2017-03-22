@@ -41,7 +41,7 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void TargetRecordGrid_Load(object sender, EventArgs e)
         {
-            if (!this.DesignMode)
+            if (!ControlUtil.IsInDesignMode())
             {
                 this.departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
                 ControlUtil.BindDictToComboBox(this.repoCmbType, typeof(TargetRecord), "Type");

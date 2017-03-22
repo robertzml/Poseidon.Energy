@@ -31,11 +31,13 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.chkInclude = new DevExpress.XtraEditors.CheckEdit();
             this.btnShowAll = new DevExpress.XtraEditors.SimpleButton();
             this.gtDepartment = new Poseidon.Winform.Core.GroupsTree();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
@@ -48,16 +50,16 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.depGrid = new Poseidon.Energy.ClientDx.DepartmentGrid();
-            this.chkInclude = new DevExpress.XtraEditors.CheckEdit();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkInclude.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -69,8 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkInclude.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -114,6 +114,15 @@
             this.layoutControl2.Size = new System.Drawing.Size(190, 475);
             this.layoutControl2.TabIndex = 1;
             this.layoutControl2.Text = "layoutControl2";
+            // 
+            // chkInclude
+            // 
+            this.chkInclude.Location = new System.Drawing.Point(2, 28);
+            this.chkInclude.Name = "chkInclude";
+            this.chkInclude.Properties.Caption = "显示子分组部门";
+            this.chkInclude.Size = new System.Drawing.Size(186, 19);
+            this.chkInclude.StyleController = this.layoutControl2;
+            this.chkInclude.TabIndex = 5;
             // 
             // btnShowAll
             // 
@@ -167,6 +176,15 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(190, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.chkInclude;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(190, 23);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
             // 
             // groupControl2
             // 
@@ -287,31 +305,15 @@
             this.depGrid.DataSource = null;
             this.depGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.depGrid.Editable = false;
+            this.depGrid.EnableMasterView = false;
             this.depGrid.Location = new System.Drawing.Point(2, 21);
             this.depGrid.Name = "depGrid";
             this.depGrid.ShowAddMenu = false;
             this.depGrid.ShowFooter = false;
             this.depGrid.ShowLineNumber = true;
+            this.depGrid.ShowNavigator = false;
             this.depGrid.Size = new System.Drawing.Size(674, 335);
             this.depGrid.TabIndex = 0;
-            // 
-            // chkInclude
-            // 
-            this.chkInclude.Location = new System.Drawing.Point(2, 28);
-            this.chkInclude.Name = "chkInclude";
-            this.chkInclude.Properties.Caption = "显示子分组部门";
-            this.chkInclude.Size = new System.Drawing.Size(186, 19);
-            this.chkInclude.StyleController = this.layoutControl2;
-            this.chkInclude.TabIndex = 5;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.chkInclude;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 26);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(190, 23);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
             // 
             // FrmDepartmentOverview
             // 
@@ -326,9 +328,11 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkInclude.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -340,8 +344,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chkInclude.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
         }

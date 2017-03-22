@@ -31,25 +31,25 @@
             this.components = new System.ComponentModel.Container();
             this.tabMain = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageTarget = new DevExpress.XtraTab.XtraTabPage();
-            this.tabPageTrend = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.lbTargets = new DevExpress.XtraEditors.ListBoxControl();
             this.bsTarget = new System.Windows.Forms.BindingSource(this.components);
-            this.targetRecordGrid1 = new Poseidon.Energy.ClientDx.TargetRecordGrid();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.recordGrid = new Poseidon.Energy.ClientDx.TargetRecordGrid();
+            this.tabPageTrend = new DevExpress.XtraTab.XtraTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
             this.tabPageTarget.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lbTargets)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTarget)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lbTargets)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsTarget)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMain
@@ -70,12 +70,6 @@
             this.tabPageTarget.Name = "tabPageTarget";
             this.tabPageTarget.Size = new System.Drawing.Size(814, 481);
             this.tabPageTarget.Text = "指标计划";
-            // 
-            // tabPageTrend
-            // 
-            this.tabPageTrend.Name = "tabPageTrend";
-            this.tabPageTrend.Size = new System.Drawing.Size(294, 271);
-            this.tabPageTrend.Text = "指标趋势";
             // 
             // tableLayoutPanel1
             // 
@@ -105,25 +99,6 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "指标计划列表";
             // 
-            // groupControl2
-            // 
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(163, 3);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(648, 194);
-            this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "groupControl2";
-            // 
-            // groupControl3
-            // 
-            this.groupControl3.Controls.Add(this.targetRecordGrid1);
-            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(163, 203);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(648, 275);
-            this.groupControl3.TabIndex = 2;
-            this.groupControl3.Text = "指标记录";
-            // 
             // lbTargets
             // 
             this.lbTargets.DataSource = this.bsTarget;
@@ -140,23 +115,48 @@
             // 
             this.bsTarget.DataSource = typeof(Poseidon.Energy.Core.DL.Target);
             // 
-            // targetRecordGrid1
+            // groupControl2
             // 
-            this.targetRecordGrid1.AllowFilter = true;
-            this.targetRecordGrid1.AllowGroup = false;
-            this.targetRecordGrid1.AllowSort = true;
-            this.targetRecordGrid1.DataSource = null;
-            this.targetRecordGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.targetRecordGrid1.Editable = false;
-            this.targetRecordGrid1.EnableMasterView = false;
-            this.targetRecordGrid1.Location = new System.Drawing.Point(2, 21);
-            this.targetRecordGrid1.Name = "targetRecordGrid1";
-            this.targetRecordGrid1.ShowAddMenu = false;
-            this.targetRecordGrid1.ShowFooter = false;
-            this.targetRecordGrid1.ShowLineNumber = true;
-            this.targetRecordGrid1.ShowNavigator = false;
-            this.targetRecordGrid1.Size = new System.Drawing.Size(644, 252);
-            this.targetRecordGrid1.TabIndex = 0;
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(163, 3);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(648, 194);
+            this.groupControl2.TabIndex = 1;
+            this.groupControl2.Text = "groupControl2";
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.recordGrid);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(163, 203);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(648, 275);
+            this.groupControl3.TabIndex = 2;
+            this.groupControl3.Text = "指标记录";
+            // 
+            // recordGrid
+            // 
+            this.recordGrid.AllowFilter = true;
+            this.recordGrid.AllowGroup = false;
+            this.recordGrid.AllowSort = true;
+            this.recordGrid.DataSource = null;
+            this.recordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.recordGrid.Editable = false;
+            this.recordGrid.EnableMasterView = false;
+            this.recordGrid.Location = new System.Drawing.Point(2, 21);
+            this.recordGrid.Name = "recordGrid";
+            this.recordGrid.ShowAddMenu = false;
+            this.recordGrid.ShowFooter = false;
+            this.recordGrid.ShowLineNumber = true;
+            this.recordGrid.ShowNavigator = false;
+            this.recordGrid.Size = new System.Drawing.Size(644, 252);
+            this.recordGrid.TabIndex = 0;
+            // 
+            // tabPageTrend
+            // 
+            this.tabPageTrend.Name = "tabPageTrend";
+            this.tabPageTrend.Size = new System.Drawing.Size(814, 481);
+            this.tabPageTrend.Text = "指标趋势";
             // 
             // GroupTargetModule
             // 
@@ -171,11 +171,11 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lbTargets)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTarget)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lbTargets)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsTarget)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -191,6 +191,6 @@
         private System.Windows.Forms.BindingSource bsTarget;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.GroupControl groupControl3;
-        private TargetRecordGrid targetRecordGrid1;
+        private TargetRecordGrid recordGrid;
     }
 }

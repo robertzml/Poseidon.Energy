@@ -52,13 +52,15 @@ namespace Poseidon.Energy.ClientDx
 
         #region Event
         /// <summary>
-        /// 选择指标计划
+        /// 分组选择
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void lbPlanTarget_SelectedIndexChanged(object sender, EventArgs e)
+        private void groupTreeTarget_GroupSelected(object sender, EventArgs e)
         {
-
+            this.navFrame.SelectedPageIndex = 0;
+            var groupId = this.groupTreeTarget.GetCurrentSelectId();
+            this.groupTargetMod.SetGroup(groupId);
         }
 
         /// <summary>
@@ -68,19 +70,9 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void groupTreeTarget_OrganizationSelected(object sender, EventArgs e)
         {
+            this.navFrame.SelectedPageIndex = 1;
             var departmentId = this.groupTreeTarget.GetCurrentSelectId();
             this.depTargetMod.SetDepartment(departmentId);
-
-            //this.plDepartmentTarget.BeginInit();
-
-            //this.plDepartmentTarget.Controls.Clear();
-
-            //DepartmentTargetModule module = new DepartmentTargetModule();
-            //this.plDepartmentTarget.Controls.Add(module);
-            //module.Dock = DockStyle.Fill;
-            //module.SetDepartment(departmentId);
-
-            //this.plDepartmentTarget.EndInit();
         }
         #endregion //Event
     }

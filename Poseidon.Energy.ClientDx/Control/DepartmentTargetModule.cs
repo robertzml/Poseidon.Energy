@@ -50,6 +50,35 @@ namespace Poseidon.Energy.ClientDx
 
             this.bsTarget.DataSource = data;
         }
+
+        /// <summary>
+        /// 显示指标信息
+        /// </summary>
+        /// <param name="target">相关计划指标</param>
+        private void DisplayInfo(Target target)
+        {
+            var records = BusinessFactory<TargetRecordBusiness>.Instance.FindByDepartment(target.Id, this.currentDepartment.Id);
+
+            foreach (var item in records)
+            {
+                if (item.Type == 1)
+                {
+                    this.recordElectric.SetTargetRecord(item.Id);
+                    this.tabPageElectric.PageVisible = true;
+                }
+                else if (item.Type == 2)
+                {
+                    this.recordWater.SetTargetRecord(item.Id);
+                    this.tabPageWater.PageVisible = true;
+                }
+            }
+
+            //避免界面闪烁
+            if (records.All(r => r.Type != 1))
+                this.tabPageElectric.PageVisible = false;
+            if (records.All(r => r.Type != 2))
+                this.tabPageWater.PageVisible = false;
+        }
         #endregion //Function
 
         #region Method
@@ -83,27 +112,7 @@ namespace Poseidon.Energy.ClientDx
             }
 
             var target = this.lbTargets.SelectedItem as Target;
-            var records = BusinessFactory<TargetRecordBusiness>.Instance.FindByDepartment(target.Id, this.currentDepartment.Id);
-
-            foreach (var item in records)
-            {
-                if (item.Type == 1)
-                {
-                    this.recordElectric.SetTargetRecord(item.Id);
-                    this.tabPageElectric.PageVisible = true;
-                }
-                else if (item.Type == 2)
-                {
-                    this.recordWater.SetTargetRecord(item.Id);
-                    this.tabPageWater.PageVisible = true;
-                }
-            }
-
-            //避免界面闪烁
-            if (records.All(r => r.Type != 1))
-                this.tabPageElectric.PageVisible = false;
-            if (records.All(r => r.Type != 2))
-                this.tabPageWater.PageVisible = false;
+            DisplayInfo(target);
         }
         #endregion //Event
     }

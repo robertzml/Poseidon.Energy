@@ -43,6 +43,26 @@ namespace Poseidon.Energy.ClientDx
             var targets = BusinessFactory<TargetBusiness>.Instance.FindAll().OrderByDescending(r => r.Year);
             this.bsTarget.DataSource = targets;
         }
+
+        /// <summary>
+        /// 载入相关指标记录
+        /// </summary>
+        /// <param name="target">指标计划</param>
+        /// <param name="group">相关分组</param>
+        private void LoadTargetRecords(Target target, Group group)
+        {
+            var records = BusinessFactory<TargetRecordBusiness>.Instance.FindByTarget(target.Id);
+            var groupItems = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
+
+            records = records.Where(r => groupItems.Select(s => s.OrganizationId).Contains(r.DepartmentId));
+
+            this.recordGrid.DataSource = records.ToList();
+        }
+
+        private void DisplayInfo(Target target)
+        {
+
+        }
         #endregion //Function
 
         #region Method
@@ -58,9 +78,21 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Method
 
         #region Event
+        /// <summary>
+        /// 选择指标计划
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lbTargets_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (this.lbTargets.SelectedItem == null)
+            {
+                return;
+            }
 
+            var target = this.lbTargets.SelectedItem as Target;
+            DisplayInfo(target);
+            LoadTargetRecords(target, this.currentGroup);
         }
         #endregion //Event
     }
