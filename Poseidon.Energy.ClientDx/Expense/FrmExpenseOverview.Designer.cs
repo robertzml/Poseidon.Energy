@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.accountTree = new Poseidon.Energy.ClientDx.ExpenseAccountTree();
+            this.groupTree = new Poseidon.Winform.Core.GroupChildrenTree();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.tabInfo = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageAccount = new DevExpress.XtraTab.XtraTabPage();
@@ -121,7 +121,7 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.accountTree);
+            this.groupControl1.Controls.Add(this.groupTree);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
@@ -130,14 +130,15 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "支出账户";
             // 
-            // accountTree
+            // groupTree
             // 
-            this.accountTree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.accountTree.Location = new System.Drawing.Point(2, 21);
-            this.accountTree.Name = "accountTree";
-            this.accountTree.Size = new System.Drawing.Size(190, 481);
-            this.accountTree.TabIndex = 0;
-            this.accountTree.AccountSelected += new System.EventHandler(this.accountTree_AccountSelected);
+            this.groupTree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupTree.Location = new System.Drawing.Point(2, 21);
+            this.groupTree.Name = "groupTree";
+            this.groupTree.ShowFindPanel = false;
+            this.groupTree.Size = new System.Drawing.Size(190, 481);
+            this.groupTree.TabIndex = 1;
+            this.groupTree.OrganizationSelected += new System.EventHandler(this.groupTree_OrganizationSelected);
             // 
             // groupControl2
             // 
@@ -566,7 +567,6 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private ExpenseAccountTree accountTree;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraTab.XtraTabControl tabInfo;
@@ -602,5 +602,6 @@
         private ElectricMeterGrid electricMeterGrid;
         private DevExpress.XtraTab.XtraTabPage tabPageElectricReceipt;
         private ElectricExpenseReceipt electricExpenseReceipt;
+        private Winform.Core.GroupChildrenTree groupTree;
     }
 }

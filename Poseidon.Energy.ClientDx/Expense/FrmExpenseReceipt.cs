@@ -16,6 +16,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 支出单据窗体
@@ -37,6 +38,12 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Constructor
 
         #region Function
+        protected override void InitForm()
+        {
+            this.groupTree.SetGroupCode(EnergyConstant.ExpenseAccountGroupCode);
+            base.InitForm();
+        }
+
         /// <summary>
         /// 初始化账户信息
         /// </summary>
@@ -83,9 +90,9 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void accountTree_AccountSelected(object sender, EventArgs e)
+        private void groupTree_OrganizationSelected(object sender, EventArgs e)
         {
-            string id = this.accountTree.GetCurrentSelectAccountId();
+            string id = this.groupTree.GetCurrentSelectId();
             if (id == null)
                 this.currentAccount = null;
             else

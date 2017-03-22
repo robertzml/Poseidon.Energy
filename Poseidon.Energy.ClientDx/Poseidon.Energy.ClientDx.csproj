@@ -224,6 +224,12 @@
     <Compile Include="Control\PopulationDetailsGrid.Designer.cs">
       <DependentUpon>PopulationDetailsGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\GroupTargetModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\GroupTargetModule.Designer.cs">
+      <DependentUpon>GroupTargetModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Measure\FrmMeasureAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -437,6 +443,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\FundRecordGrid.resx">
       <DependentUpon>FundRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\GroupTargetModule.resx">
+      <DependentUpon>GroupTargetModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\PopulationDetailsGrid.resx">
       <DependentUpon>PopulationDetailsGrid.cs</DependentUpon>

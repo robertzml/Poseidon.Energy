@@ -15,6 +15,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 支出总览窗体
@@ -43,6 +44,8 @@ namespace Poseidon.Energy.ClientDx
         #region Function
         protected override void InitForm()
         {
+            this.groupTree.SetGroupCode(EnergyConstant.ExpenseAccountGroupCode);
+
             this.nowYear = DateTime.Now.Year;
 
             for (int i = nowYear; i >= 2010; i--)
@@ -130,9 +133,9 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void accountTree_AccountSelected(object sender, EventArgs e)
+        private void groupTree_OrganizationSelected(object sender, EventArgs e)
         {
-            string id = this.accountTree.GetCurrentSelectAccountId();
+            string id = this.groupTree.GetCurrentSelectId();
 
             HideTab();
             if (id == null)
@@ -155,5 +158,6 @@ namespace Poseidon.Energy.ClientDx
             this.waterYearGrid3.DataSource = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(this.currentAccount.Id, year).ToList();
         }
         #endregion //Event
+
     }
 }

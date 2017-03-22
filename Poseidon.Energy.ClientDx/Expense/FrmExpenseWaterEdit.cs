@@ -163,11 +163,12 @@ namespace Poseidon.Energy.ClientDx
                 return;
             }
 
-            SetEntity(this.currentExpense);
-
             try
             {
-                BusinessFactory<WaterExpenseBusiness>.Instance.Update(this.currentExpense, this.currentUser);
+                var entity = BusinessFactory<WaterExpenseBusiness>.Instance.FindById(this.currentExpense.Id);
+                SetEntity(entity);
+
+                BusinessFactory<WaterExpenseBusiness>.Instance.Update(entity, this.currentUser);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();
