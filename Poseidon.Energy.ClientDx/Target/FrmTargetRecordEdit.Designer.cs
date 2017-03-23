@@ -59,14 +59,14 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.tabDetails = new DevExpress.XtraTab.XtraTabControl();
@@ -120,14 +120,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -167,13 +167,13 @@
             this.plFill.Appearance.BackColor = System.Drawing.Color.White;
             this.plFill.Appearance.Options.UseBackColor = true;
             this.plFill.Controls.Add(this.tableLayoutPanel1);
-            this.plFill.Size = new System.Drawing.Size(834, 622);
+            this.plFill.Size = new System.Drawing.Size(834, 652);
             // 
             // plBottom
             // 
             this.plBottom.Appearance.BackColor = System.Drawing.Color.White;
             this.plBottom.Appearance.Options.UseBackColor = true;
-            this.plBottom.Location = new System.Drawing.Point(0, 622);
+            this.plBottom.Location = new System.Drawing.Point(0, 652);
             this.plBottom.Size = new System.Drawing.Size(834, 60);
             // 
             // groupControl1
@@ -182,7 +182,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(828, 194);
+            this.groupControl1.Size = new System.Drawing.Size(828, 174);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "基本信息";
             // 
@@ -203,13 +203,13 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(824, 171);
+            this.layoutControl1.Size = new System.Drawing.Size(824, 151);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // txtRefTotalAmount
             // 
-            this.txtRefTotalAmount.Location = new System.Drawing.Point(488, 139);
+            this.txtRefTotalAmount.Location = new System.Drawing.Point(488, 119);
             this.txtRefTotalAmount.Name = "txtRefTotalAmount";
             this.txtRefTotalAmount.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtRefTotalAmount.Properties.Appearance.Options.UseBackColor = true;
@@ -220,7 +220,7 @@
             // 
             // txtRefTotalQuantum
             // 
-            this.txtRefTotalQuantum.Location = new System.Drawing.Point(87, 139);
+            this.txtRefTotalQuantum.Location = new System.Drawing.Point(87, 119);
             this.txtRefTotalQuantum.Name = "txtRefTotalQuantum";
             this.txtRefTotalQuantum.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtRefTotalQuantum.Properties.Appearance.Options.UseBackColor = true;
@@ -255,7 +255,7 @@
             // 
             // txtPlanAmount
             // 
-            this.txtPlanAmount.Location = new System.Drawing.Point(488, 115);
+            this.txtPlanAmount.Location = new System.Drawing.Point(488, 95);
             this.txtPlanAmount.Name = "txtPlanAmount";
             this.txtPlanAmount.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtPlanAmount.Properties.Appearance.Options.UseBackColor = true;
@@ -266,7 +266,7 @@
             // 
             // txtPlanQuantum
             // 
-            this.txtPlanQuantum.Location = new System.Drawing.Point(87, 115);
+            this.txtPlanQuantum.Location = new System.Drawing.Point(87, 95);
             this.txtPlanQuantum.Name = "txtPlanQuantum";
             this.txtPlanQuantum.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtPlanQuantum.Properties.Appearance.Options.UseBackColor = true;
@@ -282,13 +282,13 @@
             0,
             0,
             0});
-            this.spSelfTake.Location = new System.Drawing.Point(488, 60);
+            this.spSelfTake.Location = new System.Drawing.Point(689, 36);
             this.spSelfTake.Name = "spSelfTake";
             this.spSelfTake.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spSelfTake.Properties.Mask.EditMask = "p";
             this.spSelfTake.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.spSelfTake.Size = new System.Drawing.Size(324, 20);
+            this.spSelfTake.Size = new System.Drawing.Size(123, 20);
             this.spSelfTake.StyleController = this.layoutControl1;
             this.spSelfTake.TabIndex = 4;
             // 
@@ -299,13 +299,13 @@
             0,
             0,
             0});
-            this.spSchoolTake.Location = new System.Drawing.Point(87, 60);
+            this.spSchoolTake.Location = new System.Drawing.Point(488, 36);
             this.spSchoolTake.Name = "spSchoolTake";
             this.spSchoolTake.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.spSchoolTake.Properties.Mask.EditMask = "p";
             this.spSchoolTake.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.spSchoolTake.Size = new System.Drawing.Size(322, 20);
+            this.spSchoolTake.Size = new System.Drawing.Size(122, 20);
             this.spSchoolTake.StyleController = this.layoutControl1;
             this.spSchoolTake.TabIndex = 3;
             // 
@@ -322,17 +322,17 @@
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(87, 84);
+            this.txtRemark.Location = new System.Drawing.Point(87, 60);
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(725, 27);
+            this.txtRemark.Size = new System.Drawing.Size(725, 31);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 5;
             // 
             // txtFinance
             // 
-            this.txtFinance.Location = new System.Drawing.Point(488, 36);
+            this.txtFinance.Location = new System.Drawing.Point(242, 36);
             this.txtFinance.Name = "txtFinance";
-            this.txtFinance.Size = new System.Drawing.Size(324, 20);
+            this.txtFinance.Size = new System.Drawing.Size(167, 20);
             this.txtFinance.StyleController = this.layoutControl1;
             this.txtFinance.TabIndex = 2;
             // 
@@ -342,7 +342,7 @@
             this.cmbType.Name = "cmbType";
             this.cmbType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbType.Size = new System.Drawing.Size(322, 20);
+            this.cmbType.Size = new System.Drawing.Size(76, 20);
             this.cmbType.StyleController = this.layoutControl1;
             this.cmbType.TabIndex = 1;
             // 
@@ -354,17 +354,17 @@
             this.layoutControlItem2,
             this.layoutControlItem4,
             this.layoutControlItem5,
-            this.layoutControlItem6,
             this.layoutControlItem3,
-            this.layoutControlItem7,
             this.layoutControlItem1,
             this.layoutControlItem8,
             this.layoutControlItem9,
             this.layoutControlItem20,
-            this.layoutControlItem21});
+            this.layoutControlItem21,
+            this.layoutControlItem6,
+            this.layoutControlItem7});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(824, 171);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(824, 151);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem2
@@ -372,16 +372,16 @@
             this.layoutControlItem2.Control = this.cmbType;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(401, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(155, 24);
             this.layoutControlItem2.Text = "指标类型";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(72, 14);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.txtRemark;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(804, 31);
+            this.layoutControlItem4.Size = new System.Drawing.Size(804, 35);
             this.layoutControlItem4.Text = "备注";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -394,37 +394,19 @@
             this.layoutControlItem5.Text = "部门名称";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(72, 14);
             // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.spSchoolTake;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(401, 24);
-            this.layoutControlItem6.Text = "学校承担比例";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(72, 14);
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtFinance;
-            this.layoutControlItem3.Location = new System.Drawing.Point(401, 24);
+            this.layoutControlItem3.Location = new System.Drawing.Point(155, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(403, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(246, 24);
             this.layoutControlItem3.Text = "经费本";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(72, 14);
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.spSelfTake;
-            this.layoutControlItem7.Location = new System.Drawing.Point(401, 48);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(403, 24);
-            this.layoutControlItem7.Text = "部门承担比例";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(72, 14);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtPlanQuantum;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 103);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 83);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(401, 24);
             this.layoutControlItem1.Text = "计划总用电量";
@@ -433,7 +415,7 @@
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.txtPlanAmount;
-            this.layoutControlItem8.Location = new System.Drawing.Point(401, 103);
+            this.layoutControlItem8.Location = new System.Drawing.Point(401, 83);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(403, 24);
             this.layoutControlItem8.Text = "计划总金额";
@@ -451,7 +433,7 @@
             // layoutControlItem20
             // 
             this.layoutControlItem20.Control = this.txtRefTotalQuantum;
-            this.layoutControlItem20.Location = new System.Drawing.Point(0, 127);
+            this.layoutControlItem20.Location = new System.Drawing.Point(0, 107);
             this.layoutControlItem20.Name = "layoutControlItem20";
             this.layoutControlItem20.Size = new System.Drawing.Size(401, 24);
             this.layoutControlItem20.Text = "参考总用电量";
@@ -460,11 +442,29 @@
             // layoutControlItem21
             // 
             this.layoutControlItem21.Control = this.txtRefTotalAmount;
-            this.layoutControlItem21.Location = new System.Drawing.Point(401, 127);
+            this.layoutControlItem21.Location = new System.Drawing.Point(401, 107);
             this.layoutControlItem21.Name = "layoutControlItem21";
             this.layoutControlItem21.Size = new System.Drawing.Size(403, 24);
             this.layoutControlItem21.Text = "参考总金额";
             this.layoutControlItem21.TextSize = new System.Drawing.Size(72, 14);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.spSchoolTake;
+            this.layoutControlItem6.Location = new System.Drawing.Point(401, 24);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(201, 24);
+            this.layoutControlItem6.Text = "学校承担比例";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(72, 14);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.spSelfTake;
+            this.layoutControlItem7.Location = new System.Drawing.Point(602, 24);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(202, 24);
+            this.layoutControlItem7.Text = "部门承担比例";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(72, 14);
             // 
             // tableLayoutPanel1
             // 
@@ -476,18 +476,18 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 180F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(834, 622);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(834, 652);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.tabDetails);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 203);
+            this.groupControl2.Location = new System.Drawing.Point(3, 183);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(828, 416);
+            this.groupControl2.Size = new System.Drawing.Size(828, 466);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "指标组成";
             // 
@@ -497,7 +497,7 @@
             this.tabDetails.Location = new System.Drawing.Point(2, 21);
             this.tabDetails.Name = "tabDetails";
             this.tabDetails.SelectedTabPage = this.tabStaff;
-            this.tabDetails.Size = new System.Drawing.Size(824, 393);
+            this.tabDetails.Size = new System.Drawing.Size(824, 443);
             this.tabDetails.TabIndex = 0;
             this.tabDetails.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabStaff,
@@ -507,7 +507,7 @@
             // 
             this.tabStaff.Controls.Add(this.layoutControl2);
             this.tabStaff.Name = "tabStaff";
-            this.tabStaff.Size = new System.Drawing.Size(818, 364);
+            this.tabStaff.Size = new System.Drawing.Size(818, 414);
             this.tabStaff.Text = "人员指标";
             // 
             // layoutControl2
@@ -521,7 +521,7 @@
             this.layoutControl2.Location = new System.Drawing.Point(0, 0);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(818, 364);
+            this.layoutControl2.Size = new System.Drawing.Size(818, 414);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -533,18 +533,18 @@
             this.refStGrid.DataSource = null;
             this.refStGrid.Editable = false;
             this.refStGrid.EnableMasterView = false;
-            this.refStGrid.Location = new System.Drawing.Point(7, 213);
+            this.refStGrid.Location = new System.Drawing.Point(7, 240);
             this.refStGrid.Name = "refStGrid";
             this.refStGrid.ShowAddMenu = false;
             this.refStGrid.ShowFooter = true;
             this.refStGrid.ShowLineNumber = true;
             this.refStGrid.ShowNavigator = false;
-            this.refStGrid.Size = new System.Drawing.Size(804, 144);
+            this.refStGrid.Size = new System.Drawing.Size(804, 167);
             this.refStGrid.TabIndex = 8;
             // 
             // btnSaveStaff
             // 
-            this.btnSaveStaff.Location = new System.Drawing.Point(545, 189);
+            this.btnSaveStaff.Location = new System.Drawing.Point(545, 216);
             this.btnSaveStaff.Name = "btnSaveStaff";
             this.btnSaveStaff.Size = new System.Drawing.Size(266, 20);
             this.btnSaveStaff.StyleController = this.layoutControl2;
@@ -554,7 +554,7 @@
             // 
             // btnCalcStaff
             // 
-            this.btnCalcStaff.Location = new System.Drawing.Point(276, 189);
+            this.btnCalcStaff.Location = new System.Drawing.Point(276, 216);
             this.btnCalcStaff.Name = "btnCalcStaff";
             this.btnCalcStaff.Size = new System.Drawing.Size(265, 20);
             this.btnCalcStaff.StyleController = this.layoutControl2;
@@ -564,7 +564,7 @@
             // 
             // btnImportStaff
             // 
-            this.btnImportStaff.Location = new System.Drawing.Point(7, 189);
+            this.btnImportStaff.Location = new System.Drawing.Point(7, 216);
             this.btnImportStaff.Name = "btnImportStaff";
             this.btnImportStaff.Size = new System.Drawing.Size(265, 20);
             this.btnImportStaff.StyleController = this.layoutControl2;
@@ -586,7 +586,7 @@
             this.stGrid.ShowFooter = true;
             this.stGrid.ShowLineNumber = true;
             this.stGrid.ShowNavigator = true;
-            this.stGrid.Size = new System.Drawing.Size(804, 178);
+            this.stGrid.Size = new System.Drawing.Size(804, 205);
             this.stGrid.TabIndex = 4;
             // 
             // layoutControlGroup2
@@ -623,7 +623,7 @@
             rowDefinition2,
             rowDefinition3});
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlGroup2.Size = new System.Drawing.Size(818, 364);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(818, 414);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem10
@@ -632,14 +632,14 @@
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.OptionsTableLayoutItem.ColumnSpan = 3;
-            this.layoutControlItem10.Size = new System.Drawing.Size(808, 182);
+            this.layoutControlItem10.Size = new System.Drawing.Size(808, 209);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.btnImportStaff;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 182);
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 209);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.OptionsTableLayoutItem.RowIndex = 1;
             this.layoutControlItem11.Size = new System.Drawing.Size(269, 24);
@@ -649,7 +649,7 @@
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.btnCalcStaff;
-            this.layoutControlItem12.Location = new System.Drawing.Point(269, 182);
+            this.layoutControlItem12.Location = new System.Drawing.Point(269, 209);
             this.layoutControlItem12.Name = "layoutControlItem12";
             this.layoutControlItem12.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem12.OptionsTableLayoutItem.RowIndex = 1;
@@ -660,7 +660,7 @@
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.btnSaveStaff;
-            this.layoutControlItem13.Location = new System.Drawing.Point(538, 182);
+            this.layoutControlItem13.Location = new System.Drawing.Point(538, 209);
             this.layoutControlItem13.Name = "layoutControlItem13";
             this.layoutControlItem13.OptionsTableLayoutItem.ColumnIndex = 2;
             this.layoutControlItem13.OptionsTableLayoutItem.RowIndex = 1;
@@ -671,11 +671,11 @@
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.refStGrid;
-            this.layoutControlItem14.Location = new System.Drawing.Point(0, 206);
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 233);
             this.layoutControlItem14.Name = "layoutControlItem14";
             this.layoutControlItem14.OptionsTableLayoutItem.ColumnSpan = 3;
             this.layoutControlItem14.OptionsTableLayoutItem.RowIndex = 2;
-            this.layoutControlItem14.Size = new System.Drawing.Size(808, 148);
+            this.layoutControlItem14.Size = new System.Drawing.Size(808, 171);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
@@ -683,7 +683,7 @@
             // 
             this.tabAllowance.Controls.Add(this.layoutControl3);
             this.tabAllowance.Name = "tabAllowance";
-            this.tabAllowance.Size = new System.Drawing.Size(440, 14);
+            this.tabAllowance.Size = new System.Drawing.Size(440, 34);
             this.tabAllowance.Text = "补贴指标";
             // 
             // layoutControl3
@@ -697,7 +697,7 @@
             this.layoutControl3.Location = new System.Drawing.Point(0, 0);
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.Root = this.layoutControlGroup3;
-            this.layoutControl3.Size = new System.Drawing.Size(440, 14);
+            this.layoutControl3.Size = new System.Drawing.Size(440, 34);
             this.layoutControl3.TabIndex = 0;
             this.layoutControl3.Text = "layoutControl3";
             // 
@@ -859,7 +859,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 682);
+            this.ClientSize = new System.Drawing.Size(834, 712);
             this.Name = "FrmTargetRecordEdit";
             this.Text = "编辑指标记录";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
@@ -886,14 +886,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);

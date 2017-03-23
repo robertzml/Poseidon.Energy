@@ -398,7 +398,7 @@
     <Compile Include="Department\FrmDepartmentOverview.Designer.cs">
       <DependentUpon>FrmDepartmentOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Control\WaterMeterGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -556,6 +556,7 @@
     <EmbeddedResource Include="Population\FrmPopulationRecordView.resx">
       <DependentUpon>FrmPopulationRecordView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -606,7 +607,6 @@
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.WaterExpense.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.WaterExpenseRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.WaterMeter.datasource" />
-    <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Control\DepartmentGrid.resx">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>
     </EmbeddedResource>

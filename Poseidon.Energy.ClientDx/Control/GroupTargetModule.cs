@@ -104,10 +104,17 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            if (this.lbTargets.SelectedItem == null)
+            {
+                return;
+            }
+            var target = this.lbTargets.SelectedItem as Target;
+
             var data = this.recordGrid.DataSource;
 
             RepDepartmentTarget report = new RepDepartmentTarget();
             report.DataSource = data;
+            report.Parameters["Year"].Value = target.Year;
 
             ReportPrintTool printTool = new ReportPrintTool(report);
 

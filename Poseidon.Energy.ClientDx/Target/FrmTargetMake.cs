@@ -47,7 +47,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void LoadTargets()
         {
-            var data = BusinessFactory<TargetBusiness>.Instance.FindAll().ToList();
+            var data = BusinessFactory<TargetBusiness>.Instance.FindAll().OrderByDescending(r => r.Year).ToList();
             this.bsTarget.DataSource = data;
         }
 
