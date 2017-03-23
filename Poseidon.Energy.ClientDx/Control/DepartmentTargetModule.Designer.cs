@@ -61,7 +61,7 @@
             this.tabMain.Location = new System.Drawing.Point(0, 0);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedTabPage = this.tabPageYear;
-            this.tabMain.Size = new System.Drawing.Size(714, 484);
+            this.tabMain.Size = new System.Drawing.Size(748, 577);
             this.tabMain.TabIndex = 0;
             this.tabMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageYear,
@@ -71,7 +71,7 @@
             // 
             this.tabPageYear.Controls.Add(this.tableLayoutPanel1);
             this.tabPageYear.Name = "tabPageYear";
-            this.tabPageYear.Size = new System.Drawing.Size(708, 455);
+            this.tabPageYear.Size = new System.Drawing.Size(742, 548);
             this.tabPageYear.Text = "年度指标计划";
             // 
             // tableLayoutPanel1
@@ -87,7 +87,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(708, 455);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(742, 548);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl1
@@ -97,7 +97,7 @@
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
             this.tableLayoutPanel1.SetRowSpan(this.groupControl1, 2);
-            this.groupControl1.Size = new System.Drawing.Size(154, 449);
+            this.groupControl1.Size = new System.Drawing.Size(154, 542);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "指标计划列表";
             // 
@@ -108,7 +108,7 @@
             this.lbTargets.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbTargets.Location = new System.Drawing.Point(2, 21);
             this.lbTargets.Name = "lbTargets";
-            this.lbTargets.Size = new System.Drawing.Size(150, 426);
+            this.lbTargets.Size = new System.Drawing.Size(150, 519);
             this.lbTargets.TabIndex = 0;
             this.lbTargets.ValueMember = "Id";
             this.lbTargets.SelectedIndexChanged += new System.EventHandler(this.lbTargets_SelectedIndexChanged);
@@ -124,7 +124,7 @@
             this.tabRecords.Name = "tabRecords";
             this.tableLayoutPanel1.SetRowSpan(this.tabRecords, 2);
             this.tabRecords.SelectedTabPage = this.tabPageElectric;
-            this.tabRecords.Size = new System.Drawing.Size(542, 449);
+            this.tabRecords.Size = new System.Drawing.Size(576, 542);
             this.tabRecords.TabIndex = 1;
             this.tabRecords.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageElectric,
@@ -135,7 +135,7 @@
             this.tabPageElectric.Controls.Add(this.recordElectric);
             this.tabPageElectric.Name = "tabPageElectric";
             this.tabPageElectric.PageVisible = false;
-            this.tabPageElectric.Size = new System.Drawing.Size(536, 420);
+            this.tabPageElectric.Size = new System.Drawing.Size(570, 513);
             this.tabPageElectric.Text = "电指标";
             // 
             // recordElectric
@@ -143,7 +143,7 @@
             this.recordElectric.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recordElectric.Location = new System.Drawing.Point(0, 0);
             this.recordElectric.Name = "recordElectric";
-            this.recordElectric.Size = new System.Drawing.Size(536, 420);
+            this.recordElectric.Size = new System.Drawing.Size(570, 513);
             this.recordElectric.TabIndex = 0;
             // 
             // tabPageWater
@@ -151,7 +151,7 @@
             this.tabPageWater.Controls.Add(this.recordWater);
             this.tabPageWater.Name = "tabPageWater";
             this.tabPageWater.PageVisible = false;
-            this.tabPageWater.Size = new System.Drawing.Size(536, 420);
+            this.tabPageWater.Size = new System.Drawing.Size(570, 513);
             this.tabPageWater.Text = "水指标";
             // 
             // recordWater
@@ -159,7 +159,7 @@
             this.recordWater.Dock = System.Windows.Forms.DockStyle.Fill;
             this.recordWater.Location = new System.Drawing.Point(0, 0);
             this.recordWater.Name = "recordWater";
-            this.recordWater.Size = new System.Drawing.Size(536, 420);
+            this.recordWater.Size = new System.Drawing.Size(570, 513);
             this.recordWater.TabIndex = 0;
             // 
             // tabPageTrend
@@ -174,7 +174,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabMain);
             this.Name = "DepartmentTargetModule";
-            this.Size = new System.Drawing.Size(714, 484);
+            this.Size = new System.Drawing.Size(748, 577);
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
             this.tabMain.ResumeLayout(false);
             this.tabPageYear.ResumeLayout(false);

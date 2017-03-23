@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -11,6 +10,7 @@ using System.Windows.Forms;
 namespace Poseidon.Energy.ClientDx
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Common;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
 
@@ -49,6 +49,10 @@ namespace Poseidon.Energy.ClientDx
             this.txtRemark.Text = entity.Remark;
             this.txtPlanQuantum.Text = entity.PlanQuantum.ToString();
             this.txtPlanAmount.Text = entity.PlanAmount.ToString();
+            this.txtCreateUser.Text = entity.CreateBy.Name;
+            this.txtCreateTime.Text = entity.CreateBy.Time.ToDateTimeString();
+            this.txtEditUser.Text = entity.UpdateBy.Name;
+            this.txtEditTime.Text = entity.UpdateBy.Time.ToDateTimeString();
 
             this.stGrid.DataSource = entity.StaffTarget;
             this.atGrid.DataSource = entity.AllowanceTarget;
@@ -80,6 +84,10 @@ namespace Poseidon.Energy.ClientDx
             this.txtRemark.Text = "";
             this.txtPlanQuantum.Text = "";
             this.txtPlanAmount.Text = "";
+            this.txtCreateUser.Text = "";
+            this.txtCreateTime.Text = "";
+            this.txtEditUser.Text = "";
+            this.txtEditTime.Text = "";
 
             this.stGrid.DataSource = null;
             this.atGrid.DataSource = null;

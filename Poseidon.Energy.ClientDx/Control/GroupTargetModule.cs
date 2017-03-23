@@ -47,23 +47,25 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
-        /// 载入相关指标记录
+        /// 显示指标计划概览
         /// </summary>
         /// <param name="target">指标计划</param>
         /// <param name="group">相关分组</param>
-        private void LoadTargetRecords(Target target, Group group)
+        private void DisplayInfo(Target target, Group group)
         {
-            var records = BusinessFactory<TargetRecordBusiness>.Instance.FindByTarget(target.Id);
+            var targetRecords = BusinessFactory<TargetRecordBusiness>.Instance.FindByTarget(target.Id);
             var groupItems = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
 
-            records = records.Where(r => groupItems.Select(s => s.OrganizationId).Contains(r.DepartmentId));
+            var records = targetRecords.Where(r => groupItems.Select(s => s.OrganizationId).Contains(r.DepartmentId)).ToList();
 
-            this.recordGrid.DataSource = records.ToList();
-        }
+            this.recordGrid.DataSource = records;
 
-        private void DisplayInfo(Target target)
-        {
-
+            this.txtGroupName.Text = group.Name;
+            this.txtDepartmentCount.Text = records.Count.ToString();
+            this.txtTotalElectricQuantum.Text = records.Where(r => r.Type == 1).Sum(r => r.PlanQuantum).ToString();
+            this.txtTotalElectricAmount.Text = records.Where(r => r.Type == 1).Sum(r => r.PlanAmount).ToString();
+            this.txtTotalWaterQuantum.Text = records.Where(r => r.Type == 2).Sum(r => r.PlanQuantum).ToString();
+            this.txtTotalWaterAmount.Text = records.Where(r => r.Type == 2).Sum(r => r.PlanAmount).ToString();
         }
         #endregion //Function
 
@@ -93,8 +95,7 @@ namespace Poseidon.Energy.ClientDx
             }
 
             var target = this.lbTargets.SelectedItem as Target;
-            DisplayInfo(target);
-            LoadTargetRecords(target, this.currentGroup);
+            DisplayInfo(target, this.currentGroup);
         }
 
         /// <summary>
