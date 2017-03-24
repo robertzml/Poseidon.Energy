@@ -40,14 +40,19 @@ namespace Poseidon.Energy.ClientDx.Report
         #endregion //Function
 
         #region Event
-        private void lbDepartment_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        /// <summary>
+        /// 格式化部门名称
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lbDepartment_EvaluateBinding(object sender, BindingEventArgs e)
         {
             var id = this.GetCurrentColumnValue<string>("DepartmentId");
             var dep = this.departments.Find(r => r.Id == id);
             if (dep == null)
-                this.lbDepartment.Text = "";
+                e.Value = "";
             else
-                this.lbDepartment.Text = dep.Name;
+                e.Value = dep.Name;
         }
 
         private void lbType_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
@@ -67,6 +72,24 @@ namespace Poseidon.Energy.ClientDx.Report
                 this.lbTotalQuantum.Text = string.Format("{0} 度", quantum);
             else if (type == 2)
                 this.lbTotalQuantum.Text = string.Format("{0} 吨", quantum);
+        }
+
+        private void tableHeadST_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            var st = this.GetCurrentColumnValue("StaffTarget") as List<StaffTarget>;
+            if (st.Count == 0)
+                this.tableHeadST.Visible = false;
+            else
+                this.tableHeadST.Visible = true;
+        }
+
+        private void tableBodyST_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            var st = this.GetCurrentColumnValue("StaffTarget") as List<StaffTarget>;
+            if (st.Count == 0)
+                this.tableBodyST.Visible = false;
+            else
+                this.tableBodyST.Visible = true;
         }
 
         private void tableHeadAT_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)

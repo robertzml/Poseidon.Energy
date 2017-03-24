@@ -15,6 +15,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 添加指标记录窗体
@@ -37,7 +38,7 @@ namespace Poseidon.Energy.ClientDx
         #region Function
         protected override void InitForm()
         {
-            this.bsDepartment.DataSource = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
+            this.bsDepartment.DataSource = BusinessFactory<DepartmentBusiness>.Instance.FindInGroup(EnergyConstant.TargetDepartmentGroupCode, true);
             ControlUtil.BindDictToComboBox(this.cmbType, typeof(TargetRecord), "Type");
             base.InitForm();
         }
