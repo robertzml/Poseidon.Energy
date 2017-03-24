@@ -16,23 +16,42 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 添加能源计量窗体
+    /// 编辑能源计量窗体
     /// </summary>
-    public partial class FrmMeasureAdd : BaseSingleForm
+    public partial class FrmMeasureEdit : BaseSingleForm
     {
+        #region Field
+        /// <summary>
+        /// 相关关联计量
+        /// </summary>
+        private Measure currentMeasure;
+        #endregion //Field
+
         #region Constructor
-        public FrmMeasureAdd()
+        public FrmMeasureEdit(string id)
         {
             InitializeComponent();
+            InitData(id);
         }
         #endregion //Constructor
 
         #region Function
+        private void InitData(string id)
+        {
+            this.currentMeasure = BusinessFactory<MeasureBusiness>.Instance.FindById(id);
+        }
+
         protected override void InitForm()
         {
-            ControlUtil.BindDictToComboBox(this.cmbEnergyType, typeof(Measure), "EnergyType");
-            this.dpStartTime.DateTime = DateTime.Now.Date;
-            this.dpEndTime.DateTime = DateTime.Now.Date;
+            this.txtName.Text = this.currentMeasure.Name;
+            this.txtBelongTime.Text = this.currentMeasure.BelongTime;
+            this.spYear.Value = this.currentMeasure.Year;
+            ControlUtil.BindDictToComboBox(this.cmbEnergyType, typeof(Measure), "EnergyType", this.currentMeasure.EnergyType);
+            this.dpStartTime.DateTime = this.currentMeasure.StartTime;
+            this.dpEndTime.DateTime = this.currentMeasure.EndTime;
+            this.chkIncluded.Checked = this.currentMeasure.Included;
+            this.txtRemark.Text = this.currentMeasure.Remark;
+
             base.InitForm();
         }
 
@@ -100,12 +119,12 @@ namespace Poseidon.Energy.ClientDx
                 return;
             }
 
-            Measure entity = new Measure();
-            SetEntity(entity);
-
             try
             {
-                BusinessFactory<MeasureBusiness>.Instance.Create(entity, this.currentUser);
+                var entity = BusinessFactory<MeasureBusiness>.Instance.FindById(this.currentMeasure.Id);
+                SetEntity(entity);
+
+                BusinessFactory<MeasureBusiness>.Instance.Update(entity, this.currentUser);
 
                 MessageUtil.ShowInfo("保存成功");
                 this.Close();

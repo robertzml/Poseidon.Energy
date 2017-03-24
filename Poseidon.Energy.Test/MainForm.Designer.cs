@@ -36,13 +36,15 @@
             this.menuPopulationManage = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFundManage = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPopulationOverview = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuFundOverview = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDepartment = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDepartmentOverview = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExpense = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExpenseOverview = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExpenseReceipt = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExpenseAccount = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuFundOverview = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuMeasure = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuMeasureManage = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +53,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuTarget,
             this.menuDepartment,
-            this.menuExpense});
+            this.menuExpense,
+            this.menuMeasure});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(767, 25);
@@ -112,6 +115,13 @@
             this.menuPopulationOverview.Text = "人数总览";
             this.menuPopulationOverview.Click += new System.EventHandler(this.menuPopulationOverview_Click);
             // 
+            // menuFundOverview
+            // 
+            this.menuFundOverview.Name = "menuFundOverview";
+            this.menuFundOverview.Size = new System.Drawing.Size(152, 22);
+            this.menuFundOverview.Text = "经费总览";
+            this.menuFundOverview.Click += new System.EventHandler(this.menuFundOverview_Click);
+            // 
             // menuDepartment
             // 
             this.menuDepartment.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -140,30 +150,38 @@
             // menuExpenseOverview
             // 
             this.menuExpenseOverview.Name = "menuExpenseOverview";
-            this.menuExpenseOverview.Size = new System.Drawing.Size(124, 22);
+            this.menuExpenseOverview.Size = new System.Drawing.Size(152, 22);
             this.menuExpenseOverview.Text = "支出总览";
             this.menuExpenseOverview.Click += new System.EventHandler(this.menuExpenseOverview_Click);
             // 
             // menuExpenseReceipt
             // 
             this.menuExpenseReceipt.Name = "menuExpenseReceipt";
-            this.menuExpenseReceipt.Size = new System.Drawing.Size(124, 22);
+            this.menuExpenseReceipt.Size = new System.Drawing.Size(152, 22);
             this.menuExpenseReceipt.Text = "支出单据";
             this.menuExpenseReceipt.Click += new System.EventHandler(this.menuExpenseReceipt_Click);
             // 
             // menuExpenseAccount
             // 
             this.menuExpenseAccount.Name = "menuExpenseAccount";
-            this.menuExpenseAccount.Size = new System.Drawing.Size(124, 22);
+            this.menuExpenseAccount.Size = new System.Drawing.Size(152, 22);
             this.menuExpenseAccount.Text = "账户管理";
             this.menuExpenseAccount.Click += new System.EventHandler(this.menuExpenseAccount_Click);
             // 
-            // menuFundOverview
+            // menuMeasure
             // 
-            this.menuFundOverview.Name = "menuFundOverview";
-            this.menuFundOverview.Size = new System.Drawing.Size(152, 22);
-            this.menuFundOverview.Text = "经费总览";
-            this.menuFundOverview.Click += new System.EventHandler(this.menuFundOverview_Click);
+            this.menuMeasure.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuMeasureManage});
+            this.menuMeasure.Name = "menuMeasure";
+            this.menuMeasure.Size = new System.Drawing.Size(68, 21);
+            this.menuMeasure.Text = "能源计量";
+            // 
+            // menuMeasureManage
+            // 
+            this.menuMeasureManage.Name = "menuMeasureManage";
+            this.menuMeasureManage.Size = new System.Drawing.Size(152, 22);
+            this.menuMeasureManage.Text = "能源计量管理";
+            this.menuMeasureManage.Click += new System.EventHandler(this.menuMeasureManage_Click);
             // 
             // MainForm
             // 
@@ -200,6 +218,8 @@
         private System.Windows.Forms.ToolStripMenuItem menuExpenseReceipt;
         private System.Windows.Forms.ToolStripMenuItem menuPopulationOverview;
         private System.Windows.Forms.ToolStripMenuItem menuFundOverview;
+        private System.Windows.Forms.ToolStripMenuItem menuMeasure;
+        private System.Windows.Forms.ToolStripMenuItem menuMeasureManage;
     }
 }
 

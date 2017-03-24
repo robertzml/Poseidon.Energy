@@ -28,10 +28,15 @@ namespace Poseidon.Energy.Core.Utility
         public static readonly string PopulationDepartmentGroupCode = "PopulationDepartment";
 
         /// <summary>
+        /// 能源计量单位分组代码
+        /// </summary>
+        public static readonly string MeasureDepartmentGroupCode = "MeasureDepartment";
+
+        /// <summary>
         /// 支出账户分组代码
         /// </summary>
         public static readonly string ExpenseAccountGroupCode = "ExpenseAccount";
-
+        
         /// <summary>
         /// 教工人数字典代码
         /// </summary>

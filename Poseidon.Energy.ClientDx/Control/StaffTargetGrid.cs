@@ -25,7 +25,7 @@ namespace Poseidon.Energy.ClientDx
         }
         #endregion //Constructor
 
-        #region Method       
+        #region Method
         /// <summary>
         /// 计算总量
         /// </summary>

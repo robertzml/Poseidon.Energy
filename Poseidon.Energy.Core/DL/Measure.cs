@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace Poseidon.Energy.Core.DL
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Base.Utility;
 
     /// <summary>
     /// 能源计量总类
@@ -44,6 +45,19 @@ namespace Poseidon.Energy.Core.DL
         /// </summary>
         [Display(Name = "截至时间")]
         public DateTime EndTime { get; set; }
+
+        /// <summary>
+        /// 能源类型
+        /// </summary>
+        [Dict("Energy.Type")]
+        [Display(Name = "能源类型")]
+        public int EnergyType { get; set; }
+
+        /// <summary>
+        /// 是否计入合计
+        /// </summary>
+        [Display(Name = "是否计入合计")]
+        public bool Included { get; set; }
         #endregion //Property
     }
 }

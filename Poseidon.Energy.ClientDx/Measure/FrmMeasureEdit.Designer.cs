@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Energy.ClientDx
 {
-    partial class FrmMeasureAdd
+    partial class FrmMeasureEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.chkIncluded = new DevExpress.XtraEditors.CheckEdit();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.dpEndTime = new DevExpress.XtraEditors.DateEdit();
             this.dpStartTime = new DevExpress.XtraEditors.DateEdit();
@@ -43,7 +44,6 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.chkIncluded = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.cmbEnergyType = new DevExpress.XtraEditors.ImageComboBoxEdit();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -55,6 +55,7 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkIncluded.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpEndTime.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpEndTime.Properties)).BeginInit();
@@ -70,7 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkIncluded.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbEnergyType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
@@ -106,7 +106,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(364, 261);
-            this.groupControl1.TabIndex = 0;
+            this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "能源计量信息";
             // 
             // layoutControl1
@@ -126,6 +126,15 @@
             this.layoutControl1.Size = new System.Drawing.Size(360, 238);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // chkIncluded
+            // 
+            this.chkIncluded.Location = new System.Drawing.Point(12, 156);
+            this.chkIncluded.Name = "chkIncluded";
+            this.chkIncluded.Properties.Caption = "是否计入合计";
+            this.chkIncluded.Size = new System.Drawing.Size(336, 19);
+            this.chkIncluded.StyleController = this.layoutControl1;
+            this.chkIncluded.TabIndex = 6;
             // 
             // txtRemark
             // 
@@ -280,15 +289,6 @@
             this.layoutControlItem6.Text = "备注";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // chkIncluded
-            // 
-            this.chkIncluded.Location = new System.Drawing.Point(12, 156);
-            this.chkIncluded.Name = "chkIncluded";
-            this.chkIncluded.Properties.Caption = "是否计入合计";
-            this.chkIncluded.Size = new System.Drawing.Size(336, 19);
-            this.chkIncluded.StyleController = this.layoutControl1;
-            this.chkIncluded.TabIndex = 6;
-            // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.chkIncluded;
@@ -317,13 +317,13 @@
             this.layoutControlItem8.Text = "能源类型";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // FrmMeasureAdd
+            // FrmMeasureEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 321);
-            this.Name = "FrmMeasureAdd";
-            this.Text = "添加能源计量";
+            this.Name = "FrmMeasureEdit";
+            this.Text = "编辑能源计量";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
@@ -332,6 +332,7 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chkIncluded.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpEndTime.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpEndTime.Properties)).EndInit();
@@ -347,7 +348,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkIncluded.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbEnergyType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
@@ -359,20 +359,20 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.TextEdit txtName;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraEditors.TextEdit txtBelongTime;
-        private DevExpress.XtraEditors.SpinEdit spYear;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraEditors.CheckEdit chkIncluded;
         private DevExpress.XtraEditors.MemoEdit txtRemark;
         private DevExpress.XtraEditors.DateEdit dpEndTime;
         private DevExpress.XtraEditors.DateEdit dpStartTime;
+        private DevExpress.XtraEditors.TextEdit txtBelongTime;
+        private DevExpress.XtraEditors.SpinEdit spYear;
+        private DevExpress.XtraEditors.TextEdit txtName;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraEditors.CheckEdit chkIncluded;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraEditors.ImageComboBoxEdit cmbEnergyType;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;

@@ -42,6 +42,8 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             entity.BelongTime = doc["belongTime"].ToString();
             entity.StartTime = doc["startTime"].ToLocalTime();
             entity.EndTime = doc["endTime"].ToLocalTime();
+            entity.Included = doc["included"].ToBoolean();
+            entity.EnergyType = doc["energyType"].ToInt32();
 
             var createBy = doc["createBy"].ToBsonDocument();
             entity.CreateBy = new UpdateStamp
@@ -79,6 +81,8 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 { "belongTime", entity.BelongTime },
                 { "startTime", entity.StartTime },
                 { "endTime", entity.EndTime },
+                { "included", entity.Included },
+                { "energyType", entity.EnergyType },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },
                     { "name", entity.CreateBy.Name },

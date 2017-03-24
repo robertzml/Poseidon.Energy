@@ -26,13 +26,7 @@ namespace Poseidon.Energy.Core.DL
         /// </summary>
         [Display(Name = "部门ID")]
         public string DepartmentId { get; set; }
-
-        /// <summary>
-        /// 能源类型
-        /// </summary>
-        [Display(Name = "能源类型")]
-        public int EnergyType { get; set; }
-
+        
         /// <summary>
         /// 用量
         /// </summary>

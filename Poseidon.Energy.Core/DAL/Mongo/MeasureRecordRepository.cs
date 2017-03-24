@@ -39,7 +39,6 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             entity.Id = doc["_id"].ToString();
             entity.MeasureId = doc["measureId"].ToString();
             entity.DepartmentId = doc["departmentId"].ToString();
-            entity.EnergyType = doc["energyType"].ToInt32();
             entity.Quantum = doc["quantum"].ToDecimal();
 
             var createBy = doc["createBy"].ToBsonDocument();
@@ -75,7 +74,6 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             {
                 { "measureId", entity.MeasureId },
                 { "departmentId", entity.DepartmentId },
-                { "energyType", entity.EnergyType },
                 { "quantum", entity.Quantum },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },

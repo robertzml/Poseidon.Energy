@@ -28,6 +28,16 @@ namespace Poseidon.Energy.Core.BL
 
         #region Method
         /// <summary>
+        /// 根据能源计量查找记录
+        /// </summary>
+        /// <param name="measureId">能源计量ID</param>
+        /// <returns></returns>
+        public IEnumerable<MeasureRecord> FindByMeasureId(string measureId)
+        {
+            return this.baseDal.FindListByField("measureId", measureId);
+        }
+
+        /// <summary>
         /// 添加能源计量记录
         /// </summary>
         /// <param name="entity">实体对象</param>
