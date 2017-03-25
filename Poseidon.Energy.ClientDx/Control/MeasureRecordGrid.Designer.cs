@@ -35,6 +35,7 @@
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRefQuantum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIncrease = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -56,6 +57,7 @@
             this.colDepartmentId,
             this.colRefQuantum,
             this.colQuantum,
+            this.colIncrease,
             this.colRemark,
             this.colStatus});
             this.dgvEntity.IndicatorWidth = 40;
@@ -66,6 +68,7 @@
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
+            this.dgvEntity.CustomSummaryCalculate += new DevExpress.Data.CustomSummaryEventHandler(this.dgvEntity_CustomSummaryCalculate);
             this.dgvEntity.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.dgvEntity_CustomUnboundColumnData);
             this.dgvEntity.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.dgvEntity_CustomColumnDisplayText);
             // 
@@ -73,22 +76,25 @@
             // 
             this.colMeasureId.FieldName = "MeasureId";
             this.colMeasureId.Name = "colMeasureId";
-            this.colMeasureId.Visible = true;
-            this.colMeasureId.VisibleIndex = 0;
             // 
             // colDepartmentId
             // 
+            this.colDepartmentId.Caption = "部门名称";
             this.colDepartmentId.FieldName = "DepartmentId";
             this.colDepartmentId.Name = "colDepartmentId";
+            this.colDepartmentId.OptionsColumn.AllowEdit = false;
             this.colDepartmentId.Visible = true;
-            this.colDepartmentId.VisibleIndex = 1;
+            this.colDepartmentId.VisibleIndex = 0;
             // 
             // colQuantum
             // 
+            this.colQuantum.Caption = "用量(度/吨)";
             this.colQuantum.FieldName = "Quantum";
             this.colQuantum.Name = "colQuantum";
+            this.colQuantum.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantum", "合计={0:0.##}")});
             this.colQuantum.Visible = true;
-            this.colQuantum.VisibleIndex = 3;
+            this.colQuantum.VisibleIndex = 2;
             // 
             // colRemark
             // 
@@ -101,8 +107,6 @@
             // 
             this.colStatus.FieldName = "Status";
             this.colStatus.Name = "colStatus";
-            this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 5;
             // 
             // colId
             // 
@@ -111,12 +115,30 @@
             // 
             // colRefQuantum
             // 
-            this.colRefQuantum.Caption = "参考用量";
+            this.colRefQuantum.Caption = "参考用量(度/吨)";
             this.colRefQuantum.FieldName = "colRefQuantum";
             this.colRefQuantum.Name = "colRefQuantum";
+            this.colRefQuantum.OptionsColumn.AllowEdit = false;
+            this.colRefQuantum.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colRefQuantum", "合计={0:0.##}")});
             this.colRefQuantum.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colRefQuantum.Visible = true;
-            this.colRefQuantum.VisibleIndex = 2;
+            this.colRefQuantum.VisibleIndex = 1;
+            // 
+            // colIncrease
+            // 
+            this.colIncrease.Caption = "涨幅";
+            this.colIncrease.DisplayFormat.FormatString = "p1";
+            this.colIncrease.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.colIncrease.FieldName = "colIncrease";
+            this.colIncrease.Name = "colIncrease";
+            this.colIncrease.OptionsColumn.AllowEdit = false;
+            this.colIncrease.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom)});
+            this.colIncrease.UnboundExpression = "Iif([colRefQuantum] = 0, 1, ([Quantum] - [colRefQuantum]) / [colRefQuantum])";
+            this.colIncrease.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.colIncrease.Visible = true;
+            this.colIncrease.VisibleIndex = 3;
             // 
             // MeasureRecordGrid
             // 
@@ -140,5 +162,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colRefQuantum;
+        private DevExpress.XtraGrid.Columns.GridColumn colIncrease;
     }
 }

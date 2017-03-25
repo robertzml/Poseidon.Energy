@@ -46,6 +46,12 @@ namespace Poseidon.Energy.ClientDx
         public void SetReference(List<MeasureRecord> records)
         {
             this.refRecords = records;
+
+            //re update the unbound column
+            this.dgvEntity.Columns.Remove(this.colRefQuantum);
+            this.dgvEntity.Columns.Add(colRefQuantum);
+            this.colRefQuantum.Visible = true;
+            this.colRefQuantum.VisibleIndex = 2;
         }
         #endregion //Method
 
@@ -101,8 +107,17 @@ namespace Poseidon.Energy.ClientDx
                     e.Value = 0;
             }
         }
-        #endregion //Event
 
-      
+        /// <summary>
+        /// 自定义汇总
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvEntity_CustomSummaryCalculate(object sender, DevExpress.Data.CustomSummaryEventArgs e)
+        {
+            //decimal totalRefQuantum = Convert.ToDecimal(this.colRefQuantum.SummaryItem.SummaryValue);
+            //decimal totalQuantum = Convert.ToDecimal(this.colQuantum.SummaryItem.SummaryValue);
+        }
+        #endregion //Event
     }
 }

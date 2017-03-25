@@ -50,9 +50,32 @@ namespace Poseidon.Energy.ClientDx
         {
             var groups = BusinessFactory<GroupBusiness>.Instance.FindWithChildrenByCode(EnergyConstant.MeasureDepartmentGroupCode).ToList();
             this.measureGroup.DataSource = groups;
+
+            var refMeasures = BusinessFactory<MeasureBusiness>.Instance.FindByEnergyType(this.currentMeasure.EnergyType).Where(r => r.Id != this.currentMeasure.Id);
+            this.bsMeasure.DataSource = refMeasures;
+
+            DisplayInfo(this.currentMeasure);
+
             base.InitForm();
         }
 
+        /// <summary>
+        /// 显示能耗计量信息
+        /// </summary>
+        /// <param name="entity">能耗计量</param>
+        private void DisplayInfo(Measure entity)
+        {
+            this.txtBelongTime.Text = entity.BelongTime;
+            this.txtEnergyType.Text = DictUtility.GetDictValue(entity, "EnergyType", entity.EnergyType);
+            this.txtStartTime.Text = entity.StartTime.ToDateString();
+            this.txtEndTime.Text = entity.EndTime.ToDateString();
+
+        }
+
+        /// <summary>
+        /// 载入部门能耗表格
+        /// </summary>
+        /// <param name="group"></param>
         private void LoadDepartments(Group group)
         {
             var departments = BusinessFactory<DepartmentBusiness>.Instance.FindInGroup(group.Code, true);
@@ -60,7 +83,7 @@ namespace Poseidon.Energy.ClientDx
 
             List<MeasureRecord> data = new List<MeasureRecord>();
 
-            foreach(var item in departments)
+            foreach (var item in departments)
             {
                 var record = records.SingleOrDefault(r => r.DepartmentId == item.Id);
                 if (record != null)
@@ -77,6 +100,21 @@ namespace Poseidon.Energy.ClientDx
             }
 
             this.mrGrid.DataSource = data;
+
+            this.txtDepartmentCount.Text = data.Count.ToString();
+            this.txtTotalQuantum.Text = data.Sum(r => r.Quantum).ToString();
+        }
+
+        /// <summary>
+        /// 设置对象
+        /// </summary>
+        /// <param name="entity"></param>
+        private void SetEntity(List<MeasureRecord> entity)
+        {
+            foreach (var item in entity)
+            {
+                item.Remark = item.Remark ?? "";
+            }
         }
         #endregion //Function
 
@@ -93,6 +131,47 @@ namespace Poseidon.Energy.ClientDx
             this.txtGroupName.Text = group.Name;
 
             LoadDepartments(group);
+        }
+
+        /// <summary>
+        /// 参考记录选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void luRefMeasure_EditValueChanged(object sender, EventArgs e)
+        {
+            if (this.luRefMeasure.EditValue == null)
+                return;
+
+            Measure select = this.luRefMeasure.GetSelectedDataRow() as Measure;
+            var refRecords = BusinessFactory<MeasureRecordBusiness>.Instance.FindByMeasureId(select.Id).ToList();
+
+            this.mrGrid.SetReference(refRecords);
+        }
+
+        /// <summary>
+        /// 保存
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            this.mrGrid.CloseEditor();
+
+            var data = this.mrGrid.DataSource;
+            SetEntity(data);
+
+            try
+            {
+                BusinessFactory<MeasureRecordBusiness>.Instance.Update(data, this.currentUser);
+
+                MessageUtil.ShowInfo("保存成功");
+                this.Close();
+            }
+            catch (PoseidonException pe)
+            {
+                MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+            }
         }
         #endregion //Event
     }

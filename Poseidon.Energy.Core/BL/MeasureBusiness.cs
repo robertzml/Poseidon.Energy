@@ -28,6 +28,16 @@ namespace Poseidon.Energy.Core.BL
 
         #region Method
         /// <summary>
+        /// 按能源类型获取用能计量
+        /// </summary>
+        /// <param name="energyType">能源类型</param>
+        /// <returns></returns>
+        public IEnumerable<Measure> FindByEnergyType(int energyType)
+        {
+            return this.baseDal.FindListByField("energyType", energyType);
+        }
+
+        /// <summary>
         /// 添加能源计量
         /// </summary>
         /// <param name="entity">实体对象</param>

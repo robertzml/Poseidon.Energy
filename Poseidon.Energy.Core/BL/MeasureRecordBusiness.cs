@@ -57,6 +57,7 @@ namespace Poseidon.Energy.Core.BL
                 Name = user.Name,
                 Time = DateTime.Now
             };
+            entity.Status = 0;
             return base.Create(entity);
         }
 
@@ -75,6 +76,47 @@ namespace Poseidon.Energy.Core.BL
                 Time = DateTime.Now
             };
             return base.Update(entity);
+        }
+
+        /// <summary>
+        /// 批量编辑能源计量记录
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <param name="user">操作用户</param>
+        /// <returns></returns>
+        public void Update(List<MeasureRecord> entity, LoginUser user)
+        {
+            foreach (var item in entity)
+            {
+                if (item.Id == null)
+                {
+                    item.CreateBy = new UpdateStamp
+                    {
+                        UserId = user.Id,
+                        Name = user.Name,
+                        Time = DateTime.Now
+                    };
+                    item.UpdateBy = new UpdateStamp
+                    {
+                        UserId = user.Id,
+                        Name = user.Name,
+                        Time = DateTime.Now
+                    };
+                    item.Status = 0;
+                    this.baseDal.Create(item);
+
+                }
+                else
+                {
+                    item.UpdateBy = new UpdateStamp
+                    {
+                        UserId = user.Id,
+                        Name = user.Name,
+                        Time = DateTime.Now
+                    };
+                    this.baseDal.Update(item);
+                }
+            }
         }
         #endregion //Method
     }
