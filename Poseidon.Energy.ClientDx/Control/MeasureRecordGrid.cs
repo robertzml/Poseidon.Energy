@@ -9,7 +9,9 @@ using System.Windows.Forms;
 
 namespace Poseidon.Energy.ClientDx
 {
-    using Poseidon.Base.Framework;    
+    using DevExpress.Data;
+    using DevExpress.XtraGrid;
+    using Poseidon.Base.Framework;
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
@@ -29,6 +31,11 @@ namespace Poseidon.Energy.ClientDx
         /// 参考用能记录
         /// </summary>
         private List<MeasureRecord> refRecords;
+
+        /// <summary>
+        /// 是否显示参考用能列
+        /// </summary>
+        private bool showRefColumn = true;
         #endregion //Field
 
         #region Constructor
@@ -65,6 +72,9 @@ namespace Poseidon.Energy.ClientDx
         {
             if (!this.DesignMode)
                 this.departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
+
+            this.colRefQuantum.Visible = this.showRefColumn;
+            this.colIncrease.Visible = this.showRefColumn;
         }
 
         /// <summary>
@@ -115,9 +125,39 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void dgvEntity_CustomSummaryCalculate(object sender, DevExpress.Data.CustomSummaryEventArgs e)
         {
-            //decimal totalRefQuantum = Convert.ToDecimal(this.colRefQuantum.SummaryItem.SummaryValue);
-            //decimal totalQuantum = Convert.ToDecimal(this.colQuantum.SummaryItem.SummaryValue);
+            if (e.SummaryProcess == CustomSummaryProcess.Finalize)
+            {
+                var item = e.Item as GridSummaryItem;
+                if (item.FieldName == "colIncrease")
+                {
+                    decimal totalRefQuantum = Convert.ToDecimal(this.colRefQuantum.SummaryItem.SummaryValue);
+                    decimal totalQuantum = Convert.ToDecimal(this.colQuantum.SummaryItem.SummaryValue);
+
+                    if (totalRefQuantum == 0)
+                        e.TotalValue = 1;
+                    else
+                        e.TotalValue = (totalQuantum - totalRefQuantum) / totalRefQuantum;
+                }
+            }
         }
         #endregion //Event
+
+        #region Property
+        /// <summary>
+        /// 是否显示参考列
+        /// </summary>
+        [Category("界面"), Description("是否显示参考列"), Browsable(true)]
+        public bool ShowRefColumn
+        {
+            get
+            {
+                return this.showRefColumn;
+            }
+            set
+            {
+                this.showRefColumn = value;
+            }
+        }
+        #endregion //Property
     }
 }

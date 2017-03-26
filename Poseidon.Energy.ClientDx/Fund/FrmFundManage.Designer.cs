@@ -433,11 +433,13 @@
             this.frGrid.DataSource = null;
             this.frGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.frGrid.Editable = false;
+            this.frGrid.EnableMasterView = false;
             this.frGrid.Location = new System.Drawing.Point(2, 21);
             this.frGrid.Name = "frGrid";
             this.frGrid.ShowAddMenu = false;
             this.frGrid.ShowFooter = true;
             this.frGrid.ShowLineNumber = true;
+            this.frGrid.ShowMenu = false;
             this.frGrid.ShowNavigator = false;
             this.frGrid.Size = new System.Drawing.Size(672, 280);
             this.frGrid.TabIndex = 0;

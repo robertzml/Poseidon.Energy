@@ -70,6 +70,9 @@ namespace Poseidon.Energy.ClientDx
             this.txtEditUser.Text = entity.UpdateBy.Name;
             this.txtEditTime.Text = entity.UpdateBy.Time.ToDateTimeString();
             this.txtRemark.Text = entity.Remark;
+
+            var records = BusinessFactory<MeasureRecordBusiness>.Instance.FindByMeasureId(entity.Id).ToList();
+            this.mrGrid.DataSource = records;
         }
         #endregion //Function
 
@@ -112,7 +115,33 @@ namespace Poseidon.Energy.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmMeasureEdit), new object[] { this.currentMeasure.Id });
             LoadMeasures();
         }
-        
+
+        /// <summary>
+        /// 删除计量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.lbMeasure.SelectedItem == null || this.currentMeasure == null)
+                return;
+
+            if (MessageUtil.ConfirmYesNo("是否确认删除选中能耗计量") == DialogResult.Yes)
+            {
+                try
+                {
+                    BusinessFactory<MeasureBusiness>.Instance.Delete(this.currentMeasure);
+                    LoadMeasures();
+
+                    MessageUtil.ShowInfo("删除成功");
+                }
+                catch (PoseidonException pe)
+                {
+                    MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+                }
+            }
+        }
+
         /// <summary>
         /// 录入能耗数据
         /// </summary>

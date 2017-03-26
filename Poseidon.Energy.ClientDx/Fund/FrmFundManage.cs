@@ -53,12 +53,21 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
-        /// 载入经费记录
+        /// 显示信息
         /// </summary>
-        /// <param name="fundId">统计ID</param>
-        private void LoadFundRecords(string fundId)
+        /// <param name="entity">经费统计信息</param>
+        private void DisplayInfo(Fund entity)
         {
-            var records = BusinessFactory<FundRecordBusiness>.Instance.FindByFundId(fundId).ToList();
+            this.txtName.Text = entity.Name;
+            this.txtYear.Text = entity.Year.ToString();
+            this.txtBelongTime.Text = entity.BelongTime;
+            this.txtRemark.Text = entity.Remark;
+            this.txtCreateUser.Text = entity.CreateBy.Name;
+            this.txtCreateTime.Text = entity.CreateBy.Time.ToDateTimeString();
+            this.txtEditUser.Text = entity.UpdateBy.Name;
+            this.txtEditTime.Text = entity.UpdateBy.Time.ToDateTimeString();
+
+            var records = BusinessFactory<FundRecordBusiness>.Instance.FindByFundId(entity.Id).ToList();
             this.frGrid.DataSource = records;
         }
         #endregion //Function
@@ -71,17 +80,11 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void lbFund_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.currentFund = this.lbFund.SelectedItem as Fund;
-            this.txtName.Text = currentFund.Name;
-            this.txtYear.Text = currentFund.Year.ToString();
-            this.txtBelongTime.Text = currentFund.BelongTime;
-            this.txtRemark.Text = currentFund.Remark;
-            this.txtCreateUser.Text = currentFund.CreateBy.Name;
-            this.txtCreateTime.Text = currentFund.CreateBy.Time.ToDateTimeString();
-            this.txtEditUser.Text = currentFund.UpdateBy.Name;
-            this.txtEditTime.Text = currentFund.UpdateBy.Time.ToDateTimeString();
+            if (this.lbFund.SelectedItem == null)
+                return;
 
-            LoadFundRecords(this.currentFund.Id);
+            this.currentFund = this.lbFund.SelectedItem as Fund;
+            DisplayInfo(this.currentFund);
         }
 
         /// <summary>
@@ -102,7 +105,7 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (this.currentFund == null)
+            if (this.lbFund.SelectedItem == null || this.currentFund == null)
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmFundEdit), new object[] { this.currentFund.Id });
@@ -116,7 +119,7 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (this.currentFund == null)
+            if (this.lbFund.SelectedItem == null || this.currentFund == null)
                 return;
 
             if (MessageUtil.ConfirmYesNo("是否确认删除选中经费统计") == DialogResult.Yes)
@@ -142,7 +145,7 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnEditRecord_Click(object sender, EventArgs e)
         {
-            if (this.currentFund == null)
+            if (this.lbFund.SelectedItem == null || this.currentFund == null)
                 return;
 
             ChildFormManage.ShowDialogForm(typeof(FrmFundRecordEdit), new object[] { this.currentFund.Id });

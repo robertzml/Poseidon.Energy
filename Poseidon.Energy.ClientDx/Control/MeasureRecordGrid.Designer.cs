@@ -134,7 +134,7 @@
             this.colIncrease.Name = "colIncrease";
             this.colIncrease.OptionsColumn.AllowEdit = false;
             this.colIncrease.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom)});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "colIncrease", "{0:p1}")});
             this.colIncrease.UnboundExpression = "Iif([colRefQuantum] = 0, 1, ([Quantum] - [colRefQuantum]) / [colRefQuantum])";
             this.colIncrease.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colIncrease.Visible = true;
@@ -145,6 +145,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "MeasureRecordGrid";
+            this.ShowFooter = true;
             this.Load += new System.EventHandler(this.MeasureRecordGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
