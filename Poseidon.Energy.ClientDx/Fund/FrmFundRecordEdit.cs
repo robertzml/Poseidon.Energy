@@ -86,6 +86,10 @@ namespace Poseidon.Energy.ClientDx
             return data;
         }
 
+        /// <summary>
+        /// 设置实体
+        /// </summary>
+        /// <param name="entity"></param>
         private void SetEntity(List<FundRecord> entity)
         {
             foreach (var item in entity)

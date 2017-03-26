@@ -143,6 +143,16 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
+        /// 设置部门
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSet_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
         /// 录入能耗数据
         /// </summary>
         /// <param name="sender"></param>

@@ -32,9 +32,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lbMeasure = new DevExpress.XtraEditors.ListBoxControl();
-            this.bsMeasure = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.txtEnergyType = new DevExpress.XtraEditors.TextEdit();
             this.btnRecordEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
@@ -65,17 +65,18 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.bsMeasure = new System.Windows.Forms.BindingSource(this.components);
             this.mrGrid = new Poseidon.Energy.ClientDx.MeasureRecordGrid();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.btnSet = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbMeasure)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMeasure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -107,11 +108,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMeasure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -154,10 +157,6 @@
             this.lbMeasure.ValueMember = "Id";
             this.lbMeasure.SelectedIndexChanged += new System.EventHandler(this.lbMeasure_SelectedIndexChanged);
             // 
-            // bsMeasure
-            // 
-            this.bsMeasure.DataSource = typeof(Poseidon.Energy.Core.DL.Measure);
-            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.layoutControl1);
@@ -170,6 +169,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnSet);
             this.layoutControl1.Controls.Add(this.btnDelete);
             this.layoutControl1.Controls.Add(this.txtEnergyType);
             this.layoutControl1.Controls.Add(this.btnRecordEdit);
@@ -194,6 +194,16 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(296, 165);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(124, 22);
+            this.btnDelete.StyleController = this.layoutControl1;
+            this.btnDelete.TabIndex = 19;
+            this.btnDelete.Text = "删除计量";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // txtEnergyType
             // 
             this.txtEnergyType.Location = new System.Drawing.Point(512, 12);
@@ -207,9 +217,9 @@
             // 
             // btnRecordEdit
             // 
-            this.btnRecordEdit.Location = new System.Drawing.Point(493, 165);
+            this.btnRecordEdit.Location = new System.Drawing.Point(538, 165);
             this.btnRecordEdit.Name = "btnRecordEdit";
-            this.btnRecordEdit.Size = new System.Drawing.Size(155, 22);
+            this.btnRecordEdit.Size = new System.Drawing.Size(110, 22);
             this.btnRecordEdit.StyleController = this.layoutControl1;
             this.btnRecordEdit.TabIndex = 17;
             this.btnRecordEdit.Text = "录入能耗数据";
@@ -217,9 +227,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(183, 165);
+            this.btnEdit.Location = new System.Drawing.Point(165, 165);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(148, 22);
+            this.btnEdit.Size = new System.Drawing.Size(127, 22);
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 16;
             this.btnEdit.Text = "编辑计量";
@@ -239,7 +249,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(24, 165);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(155, 22);
+            this.btnAdd.Size = new System.Drawing.Size(137, 22);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "添加计量";
@@ -474,7 +484,8 @@
             this.layoutControlItem11,
             this.layoutControlItem13,
             this.layoutControlItem14,
-            this.layoutControlItem16});
+            this.layoutControlItem16,
+            this.layoutControlItem17});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 122);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(652, 69);
@@ -485,27 +496,36 @@
             this.layoutControlItem11.Control = this.btnAdd;
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(159, 26);
+            this.layoutControlItem11.Size = new System.Drawing.Size(141, 26);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.btnEdit;
-            this.layoutControlItem13.Location = new System.Drawing.Point(159, 0);
+            this.layoutControlItem13.Location = new System.Drawing.Point(141, 0);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(152, 26);
+            this.layoutControlItem13.Size = new System.Drawing.Size(131, 26);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.btnRecordEdit;
-            this.layoutControlItem14.Location = new System.Drawing.Point(469, 0);
+            this.layoutControlItem14.Location = new System.Drawing.Point(514, 0);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(159, 26);
+            this.layoutControlItem14.Size = new System.Drawing.Size(114, 26);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
+            // 
+            // layoutControlItem16
+            // 
+            this.layoutControlItem16.Control = this.btnDelete;
+            this.layoutControlItem16.Location = new System.Drawing.Point(272, 0);
+            this.layoutControlItem16.Name = "layoutControlItem16";
+            this.layoutControlItem16.Size = new System.Drawing.Size(128, 26);
+            this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem16.TextVisible = false;
             // 
             // layoutControlItem12
             // 
@@ -535,6 +555,10 @@
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "能耗记录";
             // 
+            // bsMeasure
+            // 
+            this.bsMeasure.DataSource = typeof(Poseidon.Energy.Core.DL.Measure);
+            // 
             // mrGrid
             // 
             this.mrGrid.AllowFilter = false;
@@ -555,24 +579,24 @@
             this.mrGrid.Size = new System.Drawing.Size(672, 272);
             this.mrGrid.TabIndex = 0;
             // 
-            // btnDelete
+            // btnSet
             // 
-            this.btnDelete.Location = new System.Drawing.Point(335, 165);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(154, 22);
-            this.btnDelete.StyleController = this.layoutControl1;
-            this.btnDelete.TabIndex = 19;
-            this.btnDelete.Text = "删除计量";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnSet.Location = new System.Drawing.Point(424, 165);
+            this.btnSet.Name = "btnSet";
+            this.btnSet.Size = new System.Drawing.Size(110, 22);
+            this.btnSet.StyleController = this.layoutControl1;
+            this.btnSet.TabIndex = 20;
+            this.btnSet.Text = "设置部门";
+            this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
             // 
-            // layoutControlItem16
+            // layoutControlItem17
             // 
-            this.layoutControlItem16.Control = this.btnDelete;
-            this.layoutControlItem16.Location = new System.Drawing.Point(311, 0);
-            this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(158, 26);
-            this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem16.TextVisible = false;
+            this.layoutControlItem17.Control = this.btnSet;
+            this.layoutControlItem17.Location = new System.Drawing.Point(400, 0);
+            this.layoutControlItem17.Name = "layoutControlItem17";
+            this.layoutControlItem17.Size = new System.Drawing.Size(114, 26);
+            this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem17.TextVisible = false;
             // 
             // FrmMeasureManage
             // 
@@ -586,7 +610,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lbMeasure)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMeasure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -618,11 +641,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMeasure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -671,5 +696,7 @@
         private MeasureRecordGrid mrGrid;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
+        private DevExpress.XtraEditors.SimpleButton btnSet;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
     }
 }

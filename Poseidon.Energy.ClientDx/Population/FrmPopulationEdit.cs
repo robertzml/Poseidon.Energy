@@ -105,11 +105,12 @@ namespace Poseidon.Energy.ClientDx
                 return;
             }
 
-            SetEntity(this.currentPopulation);
-
             try
             {
-                bool result = BusinessFactory<PopulationBusiness>.Instance.Update(this.currentPopulation, this.currentUser);
+                var entity = BusinessFactory<PopulationBusiness>.Instance.FindById(this.currentPopulation.Id);
+                SetEntity(entity);
+
+                bool result = BusinessFactory<PopulationBusiness>.Instance.Update(entity, this.currentUser);
 
                 if (result)
                 {
