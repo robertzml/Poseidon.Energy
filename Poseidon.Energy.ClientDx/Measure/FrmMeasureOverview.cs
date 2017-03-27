@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,5 +38,31 @@ namespace Poseidon.Energy.ClientDx
             base.InitForm();
         }
         #endregion //Function
+
+        #region Event
+        /// <summary>
+        /// 分组选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void measureTree_GroupSelected(object sender, EventArgs e)
+        {
+            this.navFrame.SelectedPageIndex = 0;
+            var groupId = this.measureTree.GetCurrentSelectId();
+            this.groupMeasureMod.SetGroup(groupId);
+        }
+
+        /// <summary>
+        /// 部门选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void measureTree_OrganizationSelected(object sender, EventArgs e)
+        {
+            this.navFrame.SelectedPageIndex = 1;
+            var departmentId = this.measureTree.GetCurrentSelectId();
+            this.depMeasureMod.SetDepartment(departmentId);
+        }
+        #endregion //Event
     }
 }

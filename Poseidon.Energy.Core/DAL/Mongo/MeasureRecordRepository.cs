@@ -98,6 +98,20 @@ namespace Poseidon.Energy.Core.DAL.Mongo
 
         #region Method
         /// <summary>
+        /// 查找单条记录
+        /// </summary>
+        /// <param name="measureId">能源计量ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <returns></returns>
+        public MeasureRecord FindOne(string measureId, string departmentId)
+        {
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("measureId", measureId) & builder.Eq("departmentId", departmentId);
+
+            return base.FindOne(filter);
+        }
+
+        /// <summary>
         /// 删除未选择部门能源计量记录
         /// </summary>
         /// <param name="measureId">能源计量ID</param>

@@ -58,6 +58,17 @@ namespace Poseidon.Energy.Core.BL
 
             return data;
         }
+
+        /// <summary>
+        /// 查找部门所有子部门
+        /// </summary>
+        /// <param name="id">部门ID</param>
+        /// <returns></returns>
+        public IEnumerable<Department> FindChildren(string id)
+        {
+            var dal = this.baseDal as IDepartmentRepository;
+            return dal.FindAllChildren(id);
+        }
         #endregion //Method
     }
 }

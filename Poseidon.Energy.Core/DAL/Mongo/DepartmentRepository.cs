@@ -80,6 +80,26 @@ namespace Poseidon.Energy.Core.DAL.Mongo
 
             return doc;
         }
+
+        /// <summary>
+        /// 递归载入所有子部门
+        /// </summary>
+        /// <param name="parentId">父部门ID</param>
+        /// <returns></returns>
+        private IEnumerable<Department> LoadChildren(string parentId)
+        {
+            List<Department> data = new List<Department>();
+            var children = FindListByField("parentId", parentId);
+            data.AddRange(children);
+
+            foreach (var item in children)
+            {
+                var c = LoadChildren(item.Id);
+                data.AddRange(c);
+            }
+
+            return data;
+        }
         #endregion //Function
 
         #region Method
@@ -90,6 +110,17 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         public override IEnumerable<Department> FindAll()
         {
             return base.FindListByField<string>("modelType", this.modelType);
+        }
+
+        /// <summary>
+        /// 查找所有子部门
+        /// </summary>
+        /// <param name="id">父部门ID</param>
+        /// <returns></returns>
+        public IEnumerable<Department> FindAllChildren(string id)
+        {
+            var data = LoadChildren(id);
+            return data;
         }
 
         /// <summary>

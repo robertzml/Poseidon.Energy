@@ -165,7 +165,7 @@
             // tabPageTrend
             // 
             this.tabPageTrend.Name = "tabPageTrend";
-            this.tabPageTrend.Size = new System.Drawing.Size(708, 455);
+            this.tabPageTrend.Size = new System.Drawing.Size(742, 548);
             this.tabPageTrend.Text = "指标趋势";
             // 
             // DepartmentTargetModule

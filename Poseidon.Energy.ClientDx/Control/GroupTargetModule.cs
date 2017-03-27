@@ -18,7 +18,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.ClientDx.Report;
 
     /// <summary>
-    /// 分组下指标计划组件
+    /// 分组指标计划组件
     /// </summary>
     public partial class GroupTargetModule : DevExpress.XtraEditors.XtraUserControl
     {

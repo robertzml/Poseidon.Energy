@@ -55,8 +55,7 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.recordGrid = new Poseidon.Energy.ClientDx.TargetRecordGrid();
             this.tabPageTrend = new DevExpress.XtraTab.XtraTabPage();
-            this.btnPrintSum = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
             this.tabPageTarget.SuspendLayout();
@@ -85,7 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMain
@@ -163,7 +162,6 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.btnPrintSum);
             this.layoutControl1.Controls.Add(this.txtTotalWaterAmount);
             this.layoutControl1.Controls.Add(this.txtTotalWaterQuantum);
             this.layoutControl1.Controls.Add(this.txtTotalElectricAmount);
@@ -267,7 +265,7 @@
             this.layoutControlItem5,
             this.layoutControlItem6,
             this.layoutControlItem7,
-            this.layoutControlItem8});
+            this.emptySpaceItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(644, 131);
@@ -360,6 +358,7 @@
             this.recordGrid.ShowAddMenu = false;
             this.recordGrid.ShowFooter = false;
             this.recordGrid.ShowLineNumber = true;
+            this.recordGrid.ShowMenu = false;
             this.recordGrid.ShowNavigator = false;
             this.recordGrid.Size = new System.Drawing.Size(644, 292);
             this.recordGrid.TabIndex = 0;
@@ -370,23 +369,13 @@
             this.tabPageTrend.Size = new System.Drawing.Size(814, 481);
             this.tabPageTrend.Text = "指标趋势";
             // 
-            // btnPrintSum
+            // emptySpaceItem1
             // 
-            this.btnPrintSum.Location = new System.Drawing.Point(324, 84);
-            this.btnPrintSum.Name = "btnPrintSum";
-            this.btnPrintSum.Size = new System.Drawing.Size(308, 22);
-            this.btnPrintSum.StyleController = this.layoutControl1;
-            this.btnPrintSum.TabIndex = 10;
-            this.btnPrintSum.Text = "打印指标总单";
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.btnPrintSum;
-            this.layoutControlItem8.Location = new System.Drawing.Point(312, 72);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(312, 39);
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem8.TextVisible = false;
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(312, 72);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(312, 39);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // GroupTargetModule
             // 
@@ -423,7 +412,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -456,7 +445,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private DevExpress.XtraEditors.SimpleButton btnPrintSum;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }

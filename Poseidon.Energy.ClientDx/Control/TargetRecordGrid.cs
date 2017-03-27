@@ -65,6 +65,27 @@ namespace Poseidon.Energy.ClientDx
                 e.DisplayText = department.Name;
             }
         }
+
+        /// <summary>
+        /// 导出Excel格式化数据
+        /// </summary>
+        /// <param name="e"></param>
+        private void TargetRecordGrid_ExportToExcelCustomCell(DevExpress.Export.CustomizeCellEventArgs e)
+        {
+            int rowIndex = e.DataSourceRowIndex;
+            if (rowIndex < 0 || rowIndex >= this.bsEntity.Count)
+                return;
+
+            if (e.ColumnFieldName == "DepartmentId")
+            {
+                var department = this.departments.Find(r => r.Id == e.Value.ToString());
+                if (department == null)
+                    return;
+
+                e.Handled = true;
+                e.Value = department.Name;
+            }
+        }
         #endregion //Event
     }
 }

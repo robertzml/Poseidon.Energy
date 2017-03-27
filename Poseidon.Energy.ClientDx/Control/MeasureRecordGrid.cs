@@ -75,7 +75,7 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void MeasureRecordGrid_Load(object sender, EventArgs e)
         {
-            if (!this.DesignMode)
+            if (!ControlUtil.IsInDesignMode())
                 this.departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
 
             this.colRefQuantum.Visible = this.showRefColumn;
@@ -137,7 +137,7 @@ namespace Poseidon.Energy.ClientDx
 
             if (e.SummaryProcess == CustomSummaryProcess.Calculate)
             {
-                bool included  = Convert.ToBoolean(this.dgvEntity.GetRowCellValue(e.RowHandle, "Included"));
+                bool included = Convert.ToBoolean(this.dgvEntity.GetRowCellValue(e.RowHandle, "Included"));
                 if (included)
                 {
                     var item = e.Item as GridSummaryItem;
@@ -163,6 +163,27 @@ namespace Poseidon.Energy.ClientDx
                 {
                     e.TotalValue = totalQuantum;
                 }
+            }
+        }
+
+        /// <summary>
+        /// 导出到Excel格式化数据
+        /// </summary>
+        /// <param name="e"></param>
+        private void MeasureRecordGrid_ExportToExcelCustomCell(DevExpress.Export.CustomizeCellEventArgs e)
+        {
+            int rowIndex = e.DataSourceRowIndex;
+            if (rowIndex < 0 || rowIndex >= this.bsEntity.Count)
+                return;
+
+            if (e.ColumnFieldName == "DepartmentId")
+            {
+                var department = this.departments.Find(r => r.Id == e.Value.ToString());
+                if (department == null)
+                    return;
+
+                e.Handled = true;
+                e.Value = department.ShortName;
             }
         }
         #endregion //Event

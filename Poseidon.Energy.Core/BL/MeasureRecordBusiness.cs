@@ -38,6 +38,18 @@ namespace Poseidon.Energy.Core.BL
         }
 
         /// <summary>
+        /// 根据部门查找记录
+        /// </summary>
+        /// <param name="measureId">能源计量ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <returns></returns>
+        public MeasureRecord FindByDepartment(string measureId, string departmentId)
+        {
+            var dal = this.baseDal as IMeasureRecordRepository;
+            return dal.FindOne(measureId, departmentId);
+        }
+
+        /// <summary>
         /// 添加能源计量记录
         /// </summary>
         /// <param name="entity">实体对象</param>

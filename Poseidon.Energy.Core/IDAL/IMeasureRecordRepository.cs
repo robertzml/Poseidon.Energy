@@ -15,6 +15,14 @@ namespace Poseidon.Energy.Core.IDAL
     internal interface IMeasureRecordRepository : IBaseDAL<MeasureRecord>
     {
         /// <summary>
+        /// 查找单条记录
+        /// </summary>
+        /// <param name="measureId">能源计量ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <returns></returns>
+        MeasureRecord FindOne(string measureId, string departmentId);
+
+        /// <summary>
         /// 删除未选择部门能源计量记录
         /// </summary>
         /// <param name="measureId">能源计量ID</param>

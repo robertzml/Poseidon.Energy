@@ -111,6 +111,12 @@
     <Compile Include="Control\DepartmentTree.Designer.cs">
       <DependentUpon>DepartmentTree.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\DepartmentMeasureModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\DepartmentMeasureModule.Designer.cs">
+      <DependentUpon>DepartmentMeasureModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Department\FrmDepartmentEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +254,12 @@
     </Compile>
     <Compile Include="Control\MeasureRecordGrid.Designer.cs">
       <DependentUpon>MeasureRecordGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\GroupMeasureModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\GroupMeasureModule.Designer.cs">
+      <DependentUpon>GroupMeasureModule.cs</DependentUpon>
     </Compile>
     <Compile Include="Measure\FrmMeasureOverview.cs">
       <SubType>Form</SubType>
@@ -478,6 +490,9 @@
     <EmbeddedResource Include="Control\AllowanceTargetGrid.resx">
       <DependentUpon>AllowanceTargetGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\DepartmentMeasureModule.resx">
+      <DependentUpon>DepartmentMeasureModule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\DepartmentTargetModule.resx">
       <DependentUpon>DepartmentTargetModule.cs</DependentUpon>
     </EmbeddedResource>
@@ -501,6 +516,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\FundRecordGrid.resx">
       <DependentUpon>FundRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\GroupMeasureModule.resx">
+      <DependentUpon>GroupMeasureModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\GroupTargetModule.resx">
       <DependentUpon>GroupTargetModule.cs</DependentUpon>
