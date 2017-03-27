@@ -176,6 +176,16 @@ namespace Poseidon.Energy.Core.BL
 
             return this.baseDal.Update(entity);
         }
+
+        /// <summary>
+        /// 删除人数统计相关记录
+        /// </summary>
+        /// <param name="populationId">人数统计ID</param>
+        /// <returns></returns>
+        public bool DeleteByPopulation(string populationId)
+        {
+            return this.baseDal.DeleteMany("populationId", populationId);
+        }
         #endregion //Method
     }
 }

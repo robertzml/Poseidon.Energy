@@ -64,26 +64,7 @@ namespace Poseidon.Energy.ClientDx
         {
             this.bindDepartments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
             this.depGrid.DataSource = this.bindDepartments;
-        }
-
-        /// <summary>
-        /// 筛选部门
-        /// </summary>
-        /// <param name="ids">相关ID</param>
-        private void FilterDepartment(List<GroupItem> departments)
-        {
-            if (departments.Count == 0)
-                this.depGrid.DataSource = null;
-            else
-            {
-                List<Department> data = new List<Department>();
-                foreach (var item in departments.OrderBy(r => r.Sort))
-                {
-                    data.Add(this.bindDepartments.Find(r => r.Id == item.OrganizationId));
-                }
-                this.depGrid.DataSource = data;
-            }
-            this.depGrid.UpdateBindingData();
+            this.depTree.DataSource = this.bindDepartments;
         }
 
         /// <summary>
@@ -93,8 +74,12 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="include">是否显示子分组部门</param>
         private void FilterDepartment(Group group, bool include)
         {
-            this.depGrid.DataSource = BusinessFactory<DepartmentBusiness>.Instance.FindInGroup(group.Code, include).ToList();
+            var data = BusinessFactory<DepartmentBusiness>.Instance.FindInGroup(group.Code, include).ToList();
+
+            this.depGrid.DataSource = data;
             this.depGrid.UpdateBindingData();
+
+            this.depTree.DataSource = data;
         }
         #endregion //Function
 
@@ -108,6 +93,8 @@ namespace Poseidon.Energy.ClientDx
         {
             this.depGrid.DataSource = this.bindDepartments;
             this.depGrid.UpdateBindingData();
+
+            this.depTree.DataSource = this.bindDepartments;
         }
 
         /// <summary>

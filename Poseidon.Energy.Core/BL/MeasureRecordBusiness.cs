@@ -84,6 +84,7 @@ namespace Poseidon.Energy.Core.BL
                 record.MeasureId = measureId;
                 record.DepartmentId = item;
                 record.Quantum = 0;
+                record.Included = true;
                 record.Remark = "";
                 record.CreateBy = new UpdateStamp
                 {
@@ -141,6 +142,16 @@ namespace Poseidon.Energy.Core.BL
                 };
                 this.baseDal.Update(item);
             }
+        }
+
+        /// <summary>
+        /// 删除能源计量相关记录
+        /// </summary>
+        /// <param name="measureId">能源计量ID</param>
+        /// <returns></returns>
+        public bool DeleteByMeasure(string measureId)
+        {
+            return this.baseDal.DeleteMany("measureId", measureId);
         }
         #endregion //Method
     }

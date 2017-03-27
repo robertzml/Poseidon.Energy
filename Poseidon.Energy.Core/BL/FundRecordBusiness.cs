@@ -95,6 +95,16 @@ namespace Poseidon.Energy.Core.BL
                 }
             }
         }
+
+        /// <summary>
+        /// 删除经费统计相关记录
+        /// </summary>
+        /// <param name="fundId">经费统计ID</param>
+        /// <returns></returns>
+        public bool DeleteByFund(string fundId)
+        {
+            return this.baseDal.DeleteMany("fundId", fundId);
+        }
         #endregion //Method
     }
 }

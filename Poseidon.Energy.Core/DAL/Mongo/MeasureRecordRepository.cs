@@ -41,6 +41,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             entity.MeasureId = doc["measureId"].ToString();
             entity.DepartmentId = doc["departmentId"].ToString();
             entity.Quantum = doc["quantum"].ToDecimal();
+            entity.Included = doc["included"].ToBoolean();
 
             var createBy = doc["createBy"].ToBsonDocument();
             entity.CreateBy = new UpdateStamp
@@ -76,6 +77,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 { "measureId", entity.MeasureId },
                 { "departmentId", entity.DepartmentId },
                 { "quantum", entity.Quantum },
+                { "included", entity.Included },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },
                     { "name", entity.CreateBy.Name },

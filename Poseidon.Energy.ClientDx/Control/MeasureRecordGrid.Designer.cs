@@ -36,6 +36,7 @@
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRefQuantum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIncrease = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIncluded = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -58,6 +59,7 @@
             this.colRefQuantum,
             this.colQuantum,
             this.colIncrease,
+            this.colIncluded,
             this.colRemark,
             this.colStatus});
             this.dgvEntity.IndicatorWidth = 40;
@@ -93,7 +95,7 @@
             this.colQuantum.FieldName = "Quantum";
             this.colQuantum.Name = "colQuantum";
             this.colQuantum.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantum", "合计={0:0.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "Quantum", "合计={0:0.##}")});
             this.colQuantum.Visible = true;
             this.colQuantum.VisibleIndex = 2;
             // 
@@ -102,7 +104,7 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 4;
+            this.colRemark.VisibleIndex = 5;
             // 
             // colStatus
             // 
@@ -142,6 +144,14 @@
             this.colIncrease.Visible = true;
             this.colIncrease.VisibleIndex = 3;
             // 
+            // colIncluded
+            // 
+            this.colIncluded.Caption = "是否计入合计";
+            this.colIncluded.FieldName = "Included";
+            this.colIncluded.Name = "colIncluded";
+            this.colIncluded.Visible = true;
+            this.colIncluded.VisibleIndex = 4;
+            // 
             // MeasureRecordGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -166,5 +176,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colRefQuantum;
         private DevExpress.XtraGrid.Columns.GridColumn colIncrease;
+        private DevExpress.XtraGrid.Columns.GridColumn colIncluded;
     }
 }

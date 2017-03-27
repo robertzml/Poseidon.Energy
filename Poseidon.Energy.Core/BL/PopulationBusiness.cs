@@ -105,8 +105,7 @@ namespace Poseidon.Energy.Core.BL
         public override bool Delete(Population entity)
         {
             // delete the records
-            var repo = RepositoryFactory<IPopulationRecordRepository>.Instance;
-            repo.DeleteMany<string>("populationId", entity.Id);
+            BusinessFactory<PopulationRecordBusiness>.Instance.DeleteByPopulation(entity.Id);
 
             return base.Delete(entity);
         }

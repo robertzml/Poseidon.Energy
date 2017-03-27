@@ -36,6 +36,11 @@ namespace Poseidon.Energy.ClientDx
         /// 是否显示参考用能列
         /// </summary>
         private bool showRefColumn = true;
+
+        /// <summary>
+        /// 用量合计
+        /// </summary>
+        private decimal totalQuantum = 0;
         #endregion //Field
 
         #region Constructor
@@ -125,6 +130,22 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void dgvEntity_CustomSummaryCalculate(object sender, DevExpress.Data.CustomSummaryEventArgs e)
         {
+            if (e.SummaryProcess == CustomSummaryProcess.Start)
+            {
+                totalQuantum = 0;
+            }
+
+            if (e.SummaryProcess == CustomSummaryProcess.Calculate)
+            {
+                bool included  = Convert.ToBoolean(this.dgvEntity.GetRowCellValue(e.RowHandle, "Included"));
+                if (included)
+                {
+                    var item = e.Item as GridSummaryItem;
+                    if (item.FieldName == "Quantum")
+                        totalQuantum += Convert.ToDecimal(e.FieldValue);
+                }
+            }
+
             if (e.SummaryProcess == CustomSummaryProcess.Finalize)
             {
                 var item = e.Item as GridSummaryItem;
@@ -137,6 +158,10 @@ namespace Poseidon.Energy.ClientDx
                         e.TotalValue = 1;
                     else
                         e.TotalValue = (totalQuantum - totalRefQuantum) / totalRefQuantum;
+                }
+                if (item.FieldName == "Quantum")
+                {
+                    e.TotalValue = totalQuantum;
                 }
             }
         }

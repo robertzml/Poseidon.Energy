@@ -74,5 +74,10 @@ namespace Poseidon.Energy.Test
         {
             ChildFormManage.LoadMdiForm(this, typeof(FrmMeasureManage));
         }
+
+        private void menuMeasureOverview_Click(object sender, EventArgs e)
+        {
+            ChildFormManage.LoadMdiForm(this, typeof(FrmMeasureOverview));
+        }
     }
 }

@@ -26,12 +26,18 @@ namespace Poseidon.Energy.Core.DL
         /// </summary>
         [Display(Name = "部门ID")]
         public string DepartmentId { get; set; }
-        
+
         /// <summary>
         /// 用量
         /// </summary>
         [Display(Name = "用量")]
         public decimal Quantum { get; set; }
+
+        /// <summary>
+        /// 是否计入合计
+        /// </summary>
+        [Display(Name = "是否计入合计")]
+        public bool Included { get; set; }
         #endregion //Property
     }
 }

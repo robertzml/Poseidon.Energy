@@ -77,6 +77,19 @@ namespace Poseidon.Energy.Core.BL
             };
             return base.Update(entity);
         }
+
+        /// <summary>
+        /// 删除能源计量
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <returns></returns>
+        public override bool Delete(Measure entity)
+        {
+            // delete the records
+            BusinessFactory<MeasureRecordBusiness>.Instance.DeleteByMeasure(entity.Id);
+
+            return base.Delete(entity);
+        }
         #endregion //Method
     }
 }

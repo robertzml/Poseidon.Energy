@@ -50,6 +50,10 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.depGrid = new Poseidon.Energy.ClientDx.DepartmentGrid();
+            this.tabView = new DevExpress.XtraTab.XtraTabControl();
+            this.tabPageGrid = new DevExpress.XtraTab.XtraTabPage();
+            this.tabPageTree = new DevExpress.XtraTab.XtraTabPage();
+            this.depTree = new Poseidon.Energy.ClientDx.DepartmentTree();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -71,6 +75,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabView)).BeginInit();
+            this.tabView.SuspendLayout();
+            this.tabPageGrid.SuspendLayout();
+            this.tabPageTree.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -289,13 +297,13 @@
             // 
             // groupControl3
             // 
-            this.groupControl3.Controls.Add(this.depGrid);
+            this.groupControl3.Controls.Add(this.tabView);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(203, 143);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(678, 358);
             this.groupControl3.TabIndex = 2;
-            this.groupControl3.Text = "部门列表";
+            this.groupControl3.Text = "部门记录";
             // 
             // depGrid
             // 
@@ -306,14 +314,51 @@
             this.depGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.depGrid.Editable = false;
             this.depGrid.EnableMasterView = false;
-            this.depGrid.Location = new System.Drawing.Point(2, 21);
+            this.depGrid.Location = new System.Drawing.Point(0, 0);
             this.depGrid.Name = "depGrid";
             this.depGrid.ShowAddMenu = false;
             this.depGrid.ShowFooter = false;
             this.depGrid.ShowLineNumber = true;
+            this.depGrid.ShowMenu = false;
             this.depGrid.ShowNavigator = false;
-            this.depGrid.Size = new System.Drawing.Size(674, 335);
+            this.depGrid.Size = new System.Drawing.Size(668, 306);
             this.depGrid.TabIndex = 0;
+            // 
+            // tabView
+            // 
+            this.tabView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabView.Location = new System.Drawing.Point(2, 21);
+            this.tabView.Name = "tabView";
+            this.tabView.SelectedTabPage = this.tabPageGrid;
+            this.tabView.Size = new System.Drawing.Size(674, 335);
+            this.tabView.TabIndex = 1;
+            this.tabView.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabPageGrid,
+            this.tabPageTree});
+            // 
+            // tabPageGrid
+            // 
+            this.tabPageGrid.Controls.Add(this.depGrid);
+            this.tabPageGrid.Name = "tabPageGrid";
+            this.tabPageGrid.Size = new System.Drawing.Size(668, 306);
+            this.tabPageGrid.Text = "列表视图";
+            // 
+            // tabPageTree
+            // 
+            this.tabPageTree.Controls.Add(this.depTree);
+            this.tabPageTree.Name = "tabPageTree";
+            this.tabPageTree.Size = new System.Drawing.Size(668, 306);
+            this.tabPageTree.Text = "树形视图";
+            // 
+            // depTree
+            // 
+            this.depTree.DataSource = null;
+            this.depTree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.depTree.Editable = false;
+            this.depTree.Location = new System.Drawing.Point(0, 0);
+            this.depTree.Name = "depTree";
+            this.depTree.Size = new System.Drawing.Size(668, 306);
+            this.depTree.TabIndex = 0;
             // 
             // FrmDepartmentOverview
             // 
@@ -344,6 +389,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabView)).EndInit();
+            this.tabView.ResumeLayout(false);
+            this.tabPageGrid.ResumeLayout(false);
+            this.tabPageTree.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -372,5 +421,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraEditors.CheckEdit chkInclude;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraTab.XtraTabControl tabView;
+        private DevExpress.XtraTab.XtraTabPage tabPageGrid;
+        private DevExpress.XtraTab.XtraTabPage tabPageTree;
+        private DepartmentTree depTree;
     }
 }

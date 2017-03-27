@@ -105,6 +105,12 @@
     <Compile Include="Control\DepartmentTargetModule.Designer.cs">
       <DependentUpon>DepartmentTargetModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\DepartmentTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\DepartmentTree.Designer.cs">
+      <DependentUpon>DepartmentTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="Department\FrmDepartmentEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,12 @@
     </Compile>
     <Compile Include="Control\MeasureRecordGrid.Designer.cs">
       <DependentUpon>MeasureRecordGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Measure\FrmMeasureOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Measure\FrmMeasureOverview.Designer.cs">
+      <DependentUpon>FrmMeasureOverview.cs</DependentUpon>
     </Compile>
     <Compile Include="Measure\FrmMeasureSetDepartment.cs">
       <SubType>Form</SubType>
@@ -469,6 +481,9 @@
     <EmbeddedResource Include="Control\DepartmentTargetModule.resx">
       <DependentUpon>DepartmentTargetModule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\DepartmentTree.resx">
+      <DependentUpon>DepartmentTree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\ElectricExpenseReceipt.resx">
       <DependentUpon>ElectricExpenseReceipt.cs</DependentUpon>
     </EmbeddedResource>
@@ -579,6 +594,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Measure\FrmMeasureManage.resx">
       <DependentUpon>FrmMeasureManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Measure\FrmMeasureOverview.resx">
+      <DependentUpon>FrmMeasureOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Measure\FrmMeasureRecordEdit.resx">
       <DependentUpon>FrmMeasureRecordEdit.cs</DependentUpon>
