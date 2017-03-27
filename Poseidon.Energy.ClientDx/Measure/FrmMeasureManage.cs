@@ -149,7 +149,11 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnSet_Click(object sender, EventArgs e)
         {
+            if (this.lbMeasure.SelectedItem == null || this.currentMeasure == null)
+                return;
 
+            ChildFormManage.ShowDialogForm(typeof(FrmMeasureSetDepartment), new object[] { this.currentMeasure.Id });
+            LoadMeasures();
         }
 
         /// <summary>

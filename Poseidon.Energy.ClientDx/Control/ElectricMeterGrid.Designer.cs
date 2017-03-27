@@ -64,6 +64,7 @@
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.Editable = false;
+            this.dgvEntity.OptionsDetail.EnableMasterViewMode = false;
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
@@ -113,6 +114,7 @@
             this.colName.Caption = "名称";
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
+            this.colName.OptionsColumn.AllowEdit = false;
             this.colName.Visible = true;
             this.colName.VisibleIndex = 0;
             // 

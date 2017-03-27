@@ -32,8 +32,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lbMeasure = new DevExpress.XtraEditors.ListBoxControl();
+            this.bsMeasure = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnSet = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.txtEnergyType = new DevExpress.XtraEditors.TextEdit();
             this.btnRecordEdit = new DevExpress.XtraEditors.SimpleButton();
@@ -66,17 +68,16 @@
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.bsMeasure = new System.Windows.Forms.BindingSource(this.components);
             this.mrGrid = new Poseidon.Energy.ClientDx.MeasureRecordGrid();
-            this.btnSet = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbMeasure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMeasure)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -109,12 +110,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMeasure)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -157,6 +157,10 @@
             this.lbMeasure.ValueMember = "Id";
             this.lbMeasure.SelectedIndexChanged += new System.EventHandler(this.lbMeasure_SelectedIndexChanged);
             // 
+            // bsMeasure
+            // 
+            this.bsMeasure.DataSource = typeof(Poseidon.Energy.Core.DL.Measure);
+            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.layoutControl1);
@@ -193,6 +197,16 @@
             this.layoutControl1.Size = new System.Drawing.Size(672, 211);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnSet
+            // 
+            this.btnSet.Location = new System.Drawing.Point(424, 165);
+            this.btnSet.Name = "btnSet";
+            this.btnSet.Size = new System.Drawing.Size(110, 22);
+            this.btnSet.StyleController = this.layoutControl1;
+            this.btnSet.TabIndex = 20;
+            this.btnSet.Text = "选择部门";
+            this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
             // 
             // btnDelete
             // 
@@ -527,6 +541,15 @@
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
             // 
+            // layoutControlItem17
+            // 
+            this.layoutControlItem17.Control = this.btnSet;
+            this.layoutControlItem17.Location = new System.Drawing.Point(400, 0);
+            this.layoutControlItem17.Name = "layoutControlItem17";
+            this.layoutControlItem17.Size = new System.Drawing.Size(114, 26);
+            this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem17.TextVisible = false;
+            // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.chkIncluded;
@@ -555,10 +578,6 @@
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "能耗记录";
             // 
-            // bsMeasure
-            // 
-            this.bsMeasure.DataSource = typeof(Poseidon.Energy.Core.DL.Measure);
-            // 
             // mrGrid
             // 
             this.mrGrid.AllowFilter = false;
@@ -579,25 +598,6 @@
             this.mrGrid.Size = new System.Drawing.Size(672, 272);
             this.mrGrid.TabIndex = 0;
             // 
-            // btnSet
-            // 
-            this.btnSet.Location = new System.Drawing.Point(424, 165);
-            this.btnSet.Name = "btnSet";
-            this.btnSet.Size = new System.Drawing.Size(110, 22);
-            this.btnSet.StyleController = this.layoutControl1;
-            this.btnSet.TabIndex = 20;
-            this.btnSet.Text = "设置部门";
-            this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
-            // 
-            // layoutControlItem17
-            // 
-            this.layoutControlItem17.Control = this.btnSet;
-            this.layoutControlItem17.Location = new System.Drawing.Point(400, 0);
-            this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(114, 26);
-            this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem17.TextVisible = false;
-            // 
             // FrmMeasureManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -610,6 +610,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lbMeasure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMeasure)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -642,12 +643,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bsMeasure)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             this.ResumeLayout(false);
 
         }

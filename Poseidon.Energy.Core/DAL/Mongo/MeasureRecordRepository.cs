@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Poseidon.Energy.Core.DAL.Mongo
 {
     using MongoDB.Bson;
+    using MongoDB.Driver;
     using Poseidon.Base.Framework;
     using Poseidon.Data;
     using Poseidon.Energy.Core.DL;
@@ -92,5 +93,21 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             return doc;
         }
         #endregion //Function
+
+        #region Method
+        /// <summary>
+        /// 删除未选择部门能源计量记录
+        /// </summary>
+        /// <param name="measureId">能源计量ID</param>
+        /// <param name="departmentIds">已选择部门ID</param>
+        /// <returns></returns>
+        public bool DeleteNotIn(string measureId, List<string> departmentIds)
+        {
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("measureId", measureId) & builder.Nin("departmentId", departmentIds);
+
+            return base.DeleteMany(filter);
+        }
+        #endregion //Method
     }
 }

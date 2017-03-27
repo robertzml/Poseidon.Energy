@@ -74,6 +74,7 @@
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.Editable = false;
+            this.dgvEntity.OptionsDetail.EnableMasterViewMode = false;
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
@@ -83,6 +84,7 @@
             // 
             this.colTargetId.FieldName = "TargetId";
             this.colTargetId.Name = "colTargetId";
+            this.colTargetId.OptionsColumn.AllowEdit = false;
             // 
             // colDepartmentId
             // 
@@ -162,6 +164,7 @@
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
+            this.colId.OptionsColumn.AllowEdit = false;
             // 
             // TargetRecordGrid
             // 

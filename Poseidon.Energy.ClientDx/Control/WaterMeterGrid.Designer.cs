@@ -62,6 +62,7 @@
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.Editable = false;
+            this.dgvEntity.OptionsDetail.EnableMasterViewMode = false;
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
@@ -119,6 +120,7 @@
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
+            this.colId.OptionsColumn.AllowEdit = false;
             // 
             // WaterMeterGrid
             // 

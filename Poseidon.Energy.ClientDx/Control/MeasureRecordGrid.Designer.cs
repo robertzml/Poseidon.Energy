@@ -76,6 +76,7 @@
             // 
             this.colMeasureId.FieldName = "MeasureId";
             this.colMeasureId.Name = "colMeasureId";
+            this.colMeasureId.OptionsColumn.AllowEdit = false;
             // 
             // colDepartmentId
             // 
@@ -112,6 +113,7 @@
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
+            this.colId.OptionsColumn.AllowEdit = false;
             // 
             // colRefQuantum
             // 

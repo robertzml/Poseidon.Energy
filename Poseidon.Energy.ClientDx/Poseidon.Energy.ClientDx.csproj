@@ -583,6 +583,9 @@
     <EmbeddedResource Include="Measure\FrmMeasureRecordEdit.resx">
       <DependentUpon>FrmMeasureRecordEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Measure\FrmMeasureSetDepartment.resx">
+      <DependentUpon>FrmMeasureSetDepartment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Population\FrmPopulationEdit.resx">
       <DependentUpon>FrmPopulationEdit.cs</DependentUpon>
     </EmbeddedResource>

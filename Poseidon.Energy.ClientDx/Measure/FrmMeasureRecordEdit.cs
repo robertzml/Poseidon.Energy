@@ -88,15 +88,6 @@ namespace Poseidon.Energy.ClientDx
                 var record = records.SingleOrDefault(r => r.DepartmentId == item.Id);
                 if (record != null)
                     data.Add(record);
-                else
-                {
-                    MeasureRecord mr = new MeasureRecord
-                    {
-                        MeasureId = this.currentMeasure.Id,
-                        DepartmentId = item.Id
-                    };
-                    data.Add(mr);
-                }
             }
 
             this.mrGrid.DataSource = data;
