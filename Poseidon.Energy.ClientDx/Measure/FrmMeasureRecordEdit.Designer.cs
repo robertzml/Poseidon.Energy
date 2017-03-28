@@ -97,11 +97,11 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(713, 18);
+            this.btnCancel.Location = new System.Drawing.Point(787, 15);
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(604, 18);
+            this.btnConfirm.Location = new System.Drawing.Point(678, 15);
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // plFill
@@ -109,14 +109,14 @@
             this.plFill.Appearance.BackColor = System.Drawing.Color.White;
             this.plFill.Appearance.Options.UseBackColor = true;
             this.plFill.Controls.Add(this.tableLayoutPanel1);
-            this.plFill.Size = new System.Drawing.Size(805, 490);
+            this.plFill.Size = new System.Drawing.Size(884, 542);
             // 
             // plBottom
             // 
             this.plBottom.Appearance.BackColor = System.Drawing.Color.White;
             this.plBottom.Appearance.Options.UseBackColor = true;
-            this.plBottom.Location = new System.Drawing.Point(0, 490);
-            this.plBottom.Size = new System.Drawing.Size(805, 60);
+            this.plBottom.Location = new System.Drawing.Point(0, 542);
+            this.plBottom.Size = new System.Drawing.Size(884, 60);
             // 
             // tableLayoutPanel1
             // 
@@ -132,7 +132,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(805, 490);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 542);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl1
@@ -142,7 +142,7 @@
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
             this.tableLayoutPanel1.SetRowSpan(this.groupControl1, 2);
-            this.groupControl1.Size = new System.Drawing.Size(194, 484);
+            this.groupControl1.Size = new System.Drawing.Size(194, 536);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "能耗部门分组";
             // 
@@ -154,7 +154,7 @@
             this.measureGroup.Name = "measureGroup";
             this.measureGroup.ShowCode = false;
             this.measureGroup.ShowRemark = false;
-            this.measureGroup.Size = new System.Drawing.Size(190, 461);
+            this.measureGroup.Size = new System.Drawing.Size(190, 513);
             this.measureGroup.TabIndex = 0;
             this.measureGroup.GroupSelected += new System.Action<object, System.EventArgs>(this.measureGroup_GroupSelected);
             // 
@@ -164,7 +164,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(203, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(599, 194);
+            this.groupControl2.Size = new System.Drawing.Size(678, 194);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "基本信息";
             // 
@@ -184,18 +184,18 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(595, 171);
+            this.layoutControl1.Size = new System.Drawing.Size(674, 171);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // txtRefTotalQuantum
             // 
-            this.txtRefTotalQuantum.Location = new System.Drawing.Point(374, 132);
+            this.txtRefTotalQuantum.Location = new System.Drawing.Point(413, 132);
             this.txtRefTotalQuantum.Name = "txtRefTotalQuantum";
             this.txtRefTotalQuantum.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtRefTotalQuantum.Properties.Appearance.Options.UseBackColor = true;
             this.txtRefTotalQuantum.Properties.ReadOnly = true;
-            this.txtRefTotalQuantum.Size = new System.Drawing.Size(209, 20);
+            this.txtRefTotalQuantum.Size = new System.Drawing.Size(249, 20);
             this.txtRefTotalQuantum.StyleController = this.layoutControl1;
             this.txtRefTotalQuantum.TabIndex = 13;
             // 
@@ -206,7 +206,7 @@
             this.txtRefDepartmentCount.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtRefDepartmentCount.Properties.Appearance.Options.UseBackColor = true;
             this.txtRefDepartmentCount.Properties.ReadOnly = true;
-            this.txtRefDepartmentCount.Size = new System.Drawing.Size(208, 20);
+            this.txtRefDepartmentCount.Size = new System.Drawing.Size(247, 20);
             this.txtRefDepartmentCount.StyleController = this.layoutControl1;
             this.txtRefDepartmentCount.TabIndex = 12;
             // 
@@ -226,7 +226,7 @@
             this.luRefMeasure.Properties.NullText = "请选择";
             this.luRefMeasure.Properties.ShowFooter = false;
             this.luRefMeasure.Properties.ValueMember = "Id";
-            this.luRefMeasure.Size = new System.Drawing.Size(496, 20);
+            this.luRefMeasure.Size = new System.Drawing.Size(575, 20);
             this.luRefMeasure.StyleController = this.layoutControl1;
             this.luRefMeasure.TabIndex = 11;
             this.luRefMeasure.EditValueChanged += new System.EventHandler(this.luRefMeasure_EditValueChanged);
@@ -237,12 +237,12 @@
             // 
             // txtTotalQuantum
             // 
-            this.txtTotalQuantum.Location = new System.Drawing.Point(374, 84);
+            this.txtTotalQuantum.Location = new System.Drawing.Point(413, 84);
             this.txtTotalQuantum.Name = "txtTotalQuantum";
             this.txtTotalQuantum.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtTotalQuantum.Properties.Appearance.Options.UseBackColor = true;
             this.txtTotalQuantum.Properties.ReadOnly = true;
-            this.txtTotalQuantum.Size = new System.Drawing.Size(209, 20);
+            this.txtTotalQuantum.Size = new System.Drawing.Size(249, 20);
             this.txtTotalQuantum.StyleController = this.layoutControl1;
             this.txtTotalQuantum.TabIndex = 10;
             // 
@@ -253,18 +253,18 @@
             this.txtDepartmentCount.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtDepartmentCount.Properties.Appearance.Options.UseBackColor = true;
             this.txtDepartmentCount.Properties.ReadOnly = true;
-            this.txtDepartmentCount.Size = new System.Drawing.Size(208, 20);
+            this.txtDepartmentCount.Size = new System.Drawing.Size(247, 20);
             this.txtDepartmentCount.StyleController = this.layoutControl1;
             this.txtDepartmentCount.TabIndex = 9;
             // 
             // txtEndTime
             // 
-            this.txtEndTime.Location = new System.Drawing.Point(374, 60);
+            this.txtEndTime.Location = new System.Drawing.Point(413, 60);
             this.txtEndTime.Name = "txtEndTime";
             this.txtEndTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtEndTime.Properties.Appearance.Options.UseBackColor = true;
             this.txtEndTime.Properties.ReadOnly = true;
-            this.txtEndTime.Size = new System.Drawing.Size(209, 20);
+            this.txtEndTime.Size = new System.Drawing.Size(249, 20);
             this.txtEndTime.StyleController = this.layoutControl1;
             this.txtEndTime.TabIndex = 8;
             // 
@@ -275,18 +275,18 @@
             this.txtStartTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtStartTime.Properties.Appearance.Options.UseBackColor = true;
             this.txtStartTime.Properties.ReadOnly = true;
-            this.txtStartTime.Size = new System.Drawing.Size(208, 20);
+            this.txtStartTime.Size = new System.Drawing.Size(247, 20);
             this.txtStartTime.StyleController = this.layoutControl1;
             this.txtStartTime.TabIndex = 7;
             // 
             // txtEnergyType
             // 
-            this.txtEnergyType.Location = new System.Drawing.Point(374, 36);
+            this.txtEnergyType.Location = new System.Drawing.Point(413, 36);
             this.txtEnergyType.Name = "txtEnergyType";
             this.txtEnergyType.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtEnergyType.Properties.Appearance.Options.UseBackColor = true;
             this.txtEnergyType.Properties.ReadOnly = true;
-            this.txtEnergyType.Size = new System.Drawing.Size(209, 20);
+            this.txtEnergyType.Size = new System.Drawing.Size(249, 20);
             this.txtEnergyType.StyleController = this.layoutControl1;
             this.txtEnergyType.TabIndex = 6;
             // 
@@ -297,7 +297,7 @@
             this.txtBelongTime.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtBelongTime.Properties.Appearance.Options.UseBackColor = true;
             this.txtBelongTime.Properties.ReadOnly = true;
-            this.txtBelongTime.Size = new System.Drawing.Size(208, 20);
+            this.txtBelongTime.Size = new System.Drawing.Size(247, 20);
             this.txtBelongTime.StyleController = this.layoutControl1;
             this.txtBelongTime.TabIndex = 5;
             // 
@@ -308,7 +308,7 @@
             this.txtGroupName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtGroupName.Properties.Appearance.Options.UseBackColor = true;
             this.txtGroupName.Properties.ReadOnly = true;
-            this.txtGroupName.Size = new System.Drawing.Size(496, 20);
+            this.txtGroupName.Size = new System.Drawing.Size(575, 20);
             this.txtGroupName.StyleController = this.layoutControl1;
             this.txtGroupName.TabIndex = 4;
             // 
@@ -329,7 +329,7 @@
             this.layoutControlItem10});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(595, 171);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(674, 171);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -337,7 +337,7 @@
             this.layoutControlItem1.Control = this.txtGroupName;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(575, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(654, 24);
             this.layoutControlItem1.Text = "分组名称";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -346,16 +346,16 @@
             this.layoutControlItem2.Control = this.txtBelongTime;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(287, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(326, 24);
             this.layoutControlItem2.Text = "归属时间";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(72, 14);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.txtEnergyType;
-            this.layoutControlItem3.Location = new System.Drawing.Point(287, 24);
+            this.layoutControlItem3.Location = new System.Drawing.Point(326, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(288, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(328, 24);
             this.layoutControlItem3.Text = "能源类型";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -364,16 +364,16 @@
             this.layoutControlItem4.Control = this.txtStartTime;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(287, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(326, 24);
             this.layoutControlItem4.Text = "起始时间";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(72, 14);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtEndTime;
-            this.layoutControlItem5.Location = new System.Drawing.Point(287, 48);
+            this.layoutControlItem5.Location = new System.Drawing.Point(326, 48);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(288, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(328, 24);
             this.layoutControlItem5.Text = "截至时间";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -382,16 +382,16 @@
             this.layoutControlItem6.Control = this.txtDepartmentCount;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(287, 24);
+            this.layoutControlItem6.Size = new System.Drawing.Size(326, 24);
             this.layoutControlItem6.Text = "部门数量";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(72, 14);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.txtTotalQuantum;
-            this.layoutControlItem7.Location = new System.Drawing.Point(287, 72);
+            this.layoutControlItem7.Location = new System.Drawing.Point(326, 72);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(288, 24);
+            this.layoutControlItem7.Size = new System.Drawing.Size(328, 24);
             this.layoutControlItem7.Text = "用量合计";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -400,7 +400,7 @@
             this.layoutControlItem8.Control = this.luRefMeasure;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(575, 24);
+            this.layoutControlItem8.Size = new System.Drawing.Size(654, 24);
             this.layoutControlItem8.Text = "选择参考记录";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -409,16 +409,16 @@
             this.layoutControlItem9.Control = this.txtRefDepartmentCount;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(287, 31);
+            this.layoutControlItem9.Size = new System.Drawing.Size(326, 31);
             this.layoutControlItem9.Text = "参考部门数量";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(72, 14);
             // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.txtRefTotalQuantum;
-            this.layoutControlItem10.Location = new System.Drawing.Point(287, 120);
+            this.layoutControlItem10.Location = new System.Drawing.Point(326, 120);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(288, 31);
+            this.layoutControlItem10.Size = new System.Drawing.Size(328, 31);
             this.layoutControlItem10.Text = "参考用量合计";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -428,7 +428,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(203, 203);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(599, 284);
+            this.groupControl3.Size = new System.Drawing.Size(678, 336);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "能耗数据";
             // 
@@ -448,14 +448,15 @@
             this.mrGrid.ShowLineNumber = true;
             this.mrGrid.ShowMenu = false;
             this.mrGrid.ShowNavigator = false;
-            this.mrGrid.Size = new System.Drawing.Size(595, 261);
+            this.mrGrid.ShowRefColumn = true;
+            this.mrGrid.Size = new System.Drawing.Size(674, 313);
             this.mrGrid.TabIndex = 0;
             // 
             // FrmMeasureRecordEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 550);
+            this.ClientSize = new System.Drawing.Size(884, 602);
             this.Name = "FrmMeasureRecordEdit";
             this.Text = "录入能耗记录";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();

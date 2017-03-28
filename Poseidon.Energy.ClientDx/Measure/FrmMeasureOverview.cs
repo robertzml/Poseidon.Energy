@@ -10,9 +10,7 @@ using System.Windows.Forms;
 namespace Poseidon.Energy.ClientDx
 {
     using Poseidon.Base.Framework;
-    using Poseidon.Base.System;
     using Poseidon.Common;
-    using Poseidon.Core.Utility;
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
