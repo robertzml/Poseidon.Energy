@@ -40,9 +40,15 @@ namespace Poseidon.Energy.Core.DL
         public string BelongTime { get; set; }
 
         /// <summary>
+        /// 关联指标计划ID
+        /// </summary>
+        [Display(Name = "关联指标计划")]
+        public string TargetId { get; set; }
+
+        /// <summary>
         /// 上期结算ID
         /// </summary>
-        [Display(Name = "上期结算ID")]
+        [Display(Name = "上期结算")]
         public string PreviousId { get; set; }
         #endregion //Property
     }

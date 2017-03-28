@@ -129,6 +129,7 @@
     <Compile Include="IDAL\IWaterExpenseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\EnergyConstant.cs" />
+    <Compile Include="Utility\EnergyEnum.cs" />
     <Compile Include="Utility\ModelTypeCode.cs" />
   </ItemGroup>
   <ItemGroup />

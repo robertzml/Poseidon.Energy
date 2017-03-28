@@ -301,6 +301,16 @@ namespace Poseidon.Energy.Core.BL
 
             return dal.Update(targetRecord);
         }
+
+        /// <summary>
+        /// 删除指标计划相关记录
+        /// </summary>
+        /// <param name="targetId">指标计划ID</param>
+        /// <returns></returns>
+        public bool DeleteByTarget(string targetId)
+        {
+            return this.baseDal.DeleteMany("targetId", targetId);
+        }
         #endregion //Method
     }
 }

@@ -65,6 +65,20 @@ namespace Poseidon.Energy.Core.BL
             };
             return base.Update(entity);
         }
+
+        /// <summary>
+        /// 删除计划指标
+        /// </summary>
+        /// <param name="entity">实体对象</param>
+        /// <returns></returns>
+        public override bool Delete(Target entity)
+        {
+            // delete the records
+            TargetRecordBusiness recordBusiness = new TargetRecordBusiness();
+            recordBusiness.DeleteByTarget(entity.Id);
+
+            return base.Delete(entity);
+        }
         #endregion //Method
     }
 }

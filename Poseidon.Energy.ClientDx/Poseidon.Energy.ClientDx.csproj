@@ -261,6 +261,18 @@
     <Compile Include="Control\GroupMeasureModule.Designer.cs">
       <DependentUpon>GroupMeasureModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settlement\FrmSettlementEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settlement\FrmSettlementEdit.Designer.cs">
+      <DependentUpon>FrmSettlementEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settlement\FrmSettlementAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settlement\FrmSettlementAdd.Designer.cs">
+      <DependentUpon>FrmSettlementAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Measure\FrmMeasureOverview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -635,6 +647,7 @@
       <DependentUpon>FrmPopulationRecordView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.MeasureRecord.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Settlement.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -642,6 +655,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\RepDepartmentTarget.resx">
       <DependentUpon>RepDepartmentTarget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settlement\FrmSettlementAdd.resx">
+      <DependentUpon>FrmSettlementAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settlement\FrmSettlementEdit.resx">
+      <DependentUpon>FrmSettlementEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settlement\FrmSettlementManage.resx">
       <DependentUpon>FrmSettlementManage.cs</DependentUpon>

@@ -41,6 +41,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             entity.Year = doc["year"].ToInt32();
             entity.Type = doc["type"].ToInt32();
             entity.BelongTime = doc["belongTime"].ToString();
+            entity.TargetId = doc["targetId"].ToString();
             entity.PreviousId = doc["previousId"].ToString();
 
             var createBy = doc["createBy"].ToBsonDocument();
@@ -78,6 +79,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 { "year", entity.Year },
                 { "type", entity.Type },
                 { "belongTime", entity.BelongTime },
+                { "targetId", entity.TargetId },
                 { "previousId", entity.PreviousId },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },

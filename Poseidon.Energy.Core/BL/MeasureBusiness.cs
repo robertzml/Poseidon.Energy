@@ -86,7 +86,8 @@ namespace Poseidon.Energy.Core.BL
         public override bool Delete(Measure entity)
         {
             // delete the records
-            BusinessFactory<MeasureRecordBusiness>.Instance.DeleteByMeasure(entity.Id);
+            MeasureRecordBusiness recordBusiness = new MeasureRecordBusiness();
+            recordBusiness.DeleteByMeasure(entity.Id);
 
             return base.Delete(entity);
         }

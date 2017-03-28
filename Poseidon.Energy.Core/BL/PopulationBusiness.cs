@@ -105,7 +105,8 @@ namespace Poseidon.Energy.Core.BL
         public override bool Delete(Population entity)
         {
             // delete the records
-            BusinessFactory<PopulationRecordBusiness>.Instance.DeleteByPopulation(entity.Id);
+            PopulationRecordBusiness recordBusiness = new PopulationRecordBusiness();
+            recordBusiness.DeleteByPopulation(entity.Id);
 
             return base.Delete(entity);
         }
