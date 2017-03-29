@@ -16,9 +16,9 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 用水支出对比组件
+    /// 用电支出比较组件
     /// </summary>
-    public partial class WaterCompareModule : DevExpress.XtraEditors.XtraUserControl
+    public partial class ElectricCompareModule : DevExpress.XtraEditors.XtraUserControl
     {
         #region Field
         /// <summary>
@@ -28,7 +28,7 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Field
 
         #region Constructor
-        public WaterCompareModule()
+        public ElectricCompareModule()
         {
             InitializeComponent();
         }
@@ -48,7 +48,7 @@ namespace Poseidon.Energy.ClientDx
             }
 
             this.cmbDataType.SelectedIndex = 0;
-            this.energyChart.SetChartTitle("年度用水支出对比");
+            this.energyChart.SetChartTitle("年度用电支出对比");
         }
 
         /// <summary>
@@ -70,19 +70,19 @@ namespace Poseidon.Energy.ClientDx
                 string title = years[i].Trim();
                 int type = this.cmbDataType.SelectedIndex;
 
-                var waterExpenses = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(account.Id, year).ToList();
+                var electricExpenses = BusinessFactory<ElectricExpenseBusiness>.Instance.FindYearByAccount(account.Id, year).ToList();
 
-                AddSeries(title, waterExpenses, type);
+                AddSeries(title, electricExpenses, type);
             }
         }
 
         /// <summary>
-        /// 添加图表系列
+        /// 添加系列
         /// </summary>
         /// <param name="title">标题</param>
         /// <param name="data">数据</param>
         /// <param name="type">显示数据类型</param>
-        private void AddSeries(string title, List<WaterExpense> data, int type)
+        private void AddSeries(string title, List<ElectricExpense> data, int type)
         {
             List<SeriesPoint> points = new List<SeriesPoint>();
             string unit = "";
@@ -94,7 +94,7 @@ namespace Poseidon.Energy.ClientDx
                 if (type == 0)
                 {
                     point.Values = new double[] { Convert.ToDouble(data[i].TotalQuantity) };
-                    unit = "吨";
+                    unit = "度";
                 }
                 else if (type == 1)
                 {
@@ -125,7 +125,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void WaterCompareMod_Load(object sender, EventArgs e)
+        private void ElectricCompareModule_Load(object sender, EventArgs e)
         {
             if (!ControlUtil.IsInDesignMode())
             {

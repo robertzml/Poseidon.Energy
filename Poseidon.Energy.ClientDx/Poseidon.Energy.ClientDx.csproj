@@ -99,6 +99,18 @@
     <Compile Include="Control\DepartmentGrid.Designer.cs">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chart\EnergyCompareChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\EnergyCompareChart.Designer.cs">
+      <DependentUpon>EnergyCompareChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\ElectricCompareModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\ElectricCompareModule.Designer.cs">
+      <DependentUpon>ElectricCompareModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mod\DepartmentTargetModule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -470,12 +482,6 @@
     <Compile Include="Department\FrmDepartmentOverview.Designer.cs">
       <DependentUpon>FrmDepartmentOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chart\WaterCompareChart.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Chart\WaterCompareChart.Designer.cs">
-      <DependentUpon>WaterCompareChart.cs</DependentUpon>
-    </Compile>
     <Compile Include="Mod\WaterCompareModule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -517,8 +523,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Chart\WaterCompareChart.resx">
-      <DependentUpon>WaterCompareChart.cs</DependentUpon>
+    <EmbeddedResource Include="Chart\EnergyCompareChart.resx">
+      <DependentUpon>EnergyCompareChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\AllowanceTargetGrid.resx">
       <DependentUpon>AllowanceTargetGrid.cs</DependentUpon>
@@ -531,6 +537,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\DepartmentTree.resx">
       <DependentUpon>DepartmentTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\ElectricCompareModule.resx">
+      <DependentUpon>ElectricCompareModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\ElectricExpenseReceipt.resx">
       <DependentUpon>ElectricExpenseReceipt.cs</DependentUpon>

@@ -62,6 +62,7 @@ namespace Poseidon.Energy.ClientDx
             this.tabPageElectricMeter.PageVisible = false;
             this.tabPageWaterMeter.PageVisible = false;
 
+            this.tabPageElectricCompare.PageVisible = false;
             this.tabPageElectricReceipt.PageVisible = false;
             this.tabPageWaterExpense.PageVisible = false;
             this.tabPageWaterCompare.PageVisible = false;
@@ -98,6 +99,10 @@ namespace Poseidon.Energy.ClientDx
             this.tabPageElectricMeter.PageVisible = true;
             this.electricMeterGrid.DataSource = this.currentAccount.ElectricMeters;
 
+            // 用电对比
+            this.tabPageElectricCompare.PageVisible = true;
+            this.modElectricCompare.SetAccount(this.currentAccount);
+
             // 电费单据
             this.tabPageElectricReceipt.PageVisible = true;
             this.electricExpenseReceipt.SetAccount(this.currentAccount);
@@ -108,6 +113,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void LoadWater()
         {
+            // 水表
             this.tabPageWaterMeter.PageVisible = true;
             this.waterMeterGrid.DataSource = this.currentAccount.WaterMeters;
 
@@ -118,7 +124,7 @@ namespace Poseidon.Energy.ClientDx
             this.waterYearGrid2.DataSource = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(this.currentAccount.Id, nowYear - 1).ToList();
             this.waterYearGrid3.Clear();
 
-            //水费对比
+            // 水费对比
             this.tabPageWaterCompare.PageVisible = true;
             this.modWaterCompare.SetAccount(this.currentAccount);
 
@@ -163,6 +169,5 @@ namespace Poseidon.Energy.ClientDx
             this.waterYearGrid3.DataSource = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(this.currentAccount.Id, year).ToList();
         }
         #endregion //Event
-
     }
 }

@@ -47,6 +47,8 @@
             this.waterExpChart = new Poseidon.Energy.ClientDx.WaterExpenseChart();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tabPageElectricCompare = new DevExpress.XtraTab.XtraTabPage();
+            this.modElectricCompare = new Poseidon.Energy.ClientDx.ElectricCompareModule();
             this.tabPageElectricReceipt = new DevExpress.XtraTab.XtraTabPage();
             this.electricExpenseReceipt = new Poseidon.Energy.ClientDx.ElectricExpenseReceipt();
             this.tabPageWaterExpense = new DevExpress.XtraTab.XtraTabPage();
@@ -88,6 +90,7 @@
             this.layoutControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
+            this.tabPageElectricCompare.SuspendLayout();
             this.tabPageElectricReceipt.SuspendLayout();
             this.tabPageWaterExpense.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).BeginInit();
@@ -256,6 +259,7 @@
             this.tabFee.TabIndex = 0;
             this.tabFee.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageSummary,
+            this.tabPageElectricCompare,
             this.tabPageElectricReceipt,
             this.tabPageWaterExpense,
             this.tabPageWaterCompare,
@@ -306,6 +310,22 @@
             this.layoutControlItem25.Size = new System.Drawing.Size(669, 232);
             this.layoutControlItem25.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem25.TextVisible = false;
+            // 
+            // tabPageElectricCompare
+            // 
+            this.tabPageElectricCompare.Controls.Add(this.modElectricCompare);
+            this.tabPageElectricCompare.Name = "tabPageElectricCompare";
+            this.tabPageElectricCompare.PageVisible = false;
+            this.tabPageElectricCompare.Size = new System.Drawing.Size(689, 252);
+            this.tabPageElectricCompare.Text = "用电对比";
+            // 
+            // modElectricCompare
+            // 
+            this.modElectricCompare.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.modElectricCompare.Location = new System.Drawing.Point(0, 0);
+            this.modElectricCompare.Name = "modElectricCompare";
+            this.modElectricCompare.Size = new System.Drawing.Size(689, 252);
+            this.modElectricCompare.TabIndex = 0;
             // 
             // tabPageElectricReceipt
             // 
@@ -514,7 +534,7 @@
             this.tabPageWaterCompare.Name = "tabPageWaterCompare";
             this.tabPageWaterCompare.PageVisible = false;
             this.tabPageWaterCompare.Size = new System.Drawing.Size(689, 252);
-            this.tabPageWaterCompare.Text = "水费对比";
+            this.tabPageWaterCompare.Text = "用水对比";
             // 
             // modWaterCompare
             // 
@@ -571,6 +591,7 @@
             this.layoutControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
+            this.tabPageElectricCompare.ResumeLayout(false);
             this.tabPageElectricReceipt.ResumeLayout(false);
             this.tabPageWaterExpense.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).EndInit();
@@ -632,5 +653,7 @@
         private Winform.Core.GroupChildrenTree groupTree;
         private DevExpress.XtraTab.XtraTabPage tabPageWaterCompare;
         private WaterCompareModule modWaterCompare;
+        private DevExpress.XtraTab.XtraTabPage tabPageElectricCompare;
+        private ElectricCompareModule modElectricCompare;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -13,29 +14,49 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.DL;
 
     /// <summary>
-    /// 用水支出对比图表
+    /// 能源比较图表
     /// </summary>
-    public partial class WaterCompareChart : DevExpress.XtraEditors.XtraUserControl
+    /// <remarks>
+    /// X轴为月份，Y轴为数据
+    /// </remarks>
+    public partial class EnergyCompareChart : DevExpress.XtraEditors.XtraUserControl
     {
         #region Field
         CrosshairFreePosition crosshairPosition = new CrosshairFreePosition();
         #endregion //Field
 
         #region Constructor
-        public WaterCompareChart()
+        public EnergyCompareChart()
         {
             InitializeComponent();
         }
         #endregion //Constructor
 
-        #region Function
+        #region Method
+        /// <summary>
+        /// 设置图表标题
+        /// </summary>
+        /// <param name="text"></param>
+        public void SetChartTitle(string text)
+        {
+            this.chartMain.Titles[0].Text = text;
+        }
+
+        /// <summary>
+        /// 清空显示
+        /// </summary>
+        public void Clear()
+        {
+            this.chartMain.Series.Clear();
+        }
+
         /// <summary>
         /// 添加系列
         /// </summary>
         /// <param name="legendTest">图例标题</param>
         /// <param name="points">数据点</param>
-        /// <param name="unit">单位</param>
-        private void AddSeries(string legendTest, List<SeriesPoint> points, string unit)
+        /// <param name="unit">Y轴单位</param>
+        public void AddSeries(string legendTest, List<SeriesPoint> points, string unit)
         {
             Series series = new Series(legendTest, ViewType.Bar);
             series.LegendText = legendTest;
@@ -54,47 +75,18 @@ namespace Poseidon.Energy.ClientDx
             crosshairPosition.DockTarget = ((XYDiagram2D)chartMain.Diagram).DefaultPane;
             this.chartMain.CrosshairOptions.CommonLabelPosition = crosshairPosition;
         }
-        #endregion //Function
-
-        #region Method
-        /// <summary>
-        /// 添加系列
-        /// </summary>
-        /// <param name="title">标题</param>
-        /// <param name="data">数据</param>
-        /// <param name="type">显示数据类型</param>
-        public void AddSeries(string title, List<WaterExpense> data, int type)
-        {
-            List<SeriesPoint> points = new List<SeriesPoint>();
-            string unit = "";
-            for (int i = 0; i < data.Count; i++)
-            {
-                string month = string.Format("{0}月", data[i].BelongDate.Month);
-                SeriesPoint point = new SeriesPoint();
-                point.Argument = month;
-                if (type == 0)
-                {
-                    point.Values = new double[] { Convert.ToDouble(data[i].TotalQuantity) };
-                    unit = "吨";
-                }
-                else if (type == 1)
-                {
-                    point.Values = new double[] { Convert.ToDouble(data[i].TotalAmount) };
-                    unit = "元";
-                }
-                points.Add(point);
-            }
-
-            AddSeries(title, points, unit);
-        }
-
-        /// <summary>
-        /// 清空显示
-        /// </summary>
-        public void Clear()
-        {
-            this.chartMain.Series.Clear();
-        }
         #endregion //Method
+
+        #region Event
+        /// <summary>
+        /// 打印
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void menuPrint_Click(object sender, EventArgs e)
+        {
+            this.chartMain.ShowRibbonPrintPreview();
+        }
+        #endregion //Event
     }
 }
