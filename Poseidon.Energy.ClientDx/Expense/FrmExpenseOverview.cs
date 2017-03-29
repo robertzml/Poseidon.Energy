@@ -64,6 +64,7 @@ namespace Poseidon.Energy.ClientDx
 
             this.tabPageElectricReceipt.PageVisible = false;
             this.tabPageWaterExpense.PageVisible = false;
+            this.tabPageWaterCompare.PageVisible = false;
             this.tabPageWaterReceipt.PageVisible = false;
         }
 
@@ -118,6 +119,7 @@ namespace Poseidon.Energy.ClientDx
             this.waterYearGrid3.Clear();
 
             //水费对比
+            this.tabPageWaterCompare.PageVisible = true;
             this.modWaterCompare.SetAccount(this.currentAccount);
 
             // 水费单据

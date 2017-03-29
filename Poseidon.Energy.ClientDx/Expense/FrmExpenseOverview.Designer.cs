@@ -512,6 +512,7 @@
             // 
             this.tabPageWaterCompare.Controls.Add(this.modWaterCompare);
             this.tabPageWaterCompare.Name = "tabPageWaterCompare";
+            this.tabPageWaterCompare.PageVisible = false;
             this.tabPageWaterCompare.Size = new System.Drawing.Size(689, 252);
             this.tabPageWaterCompare.Text = "水费对比";
             // 

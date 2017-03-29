@@ -158,11 +158,13 @@
             this.waterExpRecGrid.AllowSort = true;
             this.waterExpRecGrid.DataSource = null;
             this.waterExpRecGrid.Editable = false;
+            this.waterExpRecGrid.EnableMasterView = false;
             this.waterExpRecGrid.Location = new System.Drawing.Point(12, 177);
             this.waterExpRecGrid.Name = "waterExpRecGrid";
             this.waterExpRecGrid.ShowAddMenu = false;
             this.waterExpRecGrid.ShowFooter = false;
             this.waterExpRecGrid.ShowLineNumber = true;
+            this.waterExpRecGrid.ShowMenu = false;
             this.waterExpRecGrid.ShowNavigator = false;
             this.waterExpRecGrid.Size = new System.Drawing.Size(746, 282);
             this.waterExpRecGrid.TabIndex = 18;

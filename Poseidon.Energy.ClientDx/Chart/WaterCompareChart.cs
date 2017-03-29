@@ -17,6 +17,10 @@ namespace Poseidon.Energy.ClientDx
     /// </summary>
     public partial class WaterCompareChart : DevExpress.XtraEditors.XtraUserControl
     {
+        #region Field
+        CrosshairFreePosition crosshairPosition = new CrosshairFreePosition();
+        #endregion //Field
+
         #region Constructor
         public WaterCompareChart()
         {
@@ -25,44 +29,71 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Constructor
 
         #region Function
-        private void SetSeries(int index, string legendText, List<SeriesPoint> points)
+        /// <summary>
+        /// 添加系列
+        /// </summary>
+        /// <param name="legendTest">图例标题</param>
+        /// <param name="points">数据点</param>
+        /// <param name="unit">单位</param>
+        private void AddSeries(string legendTest, List<SeriesPoint> points, string unit)
         {
-            this.chartMain.Series[index].LegendText = legendText;
-            this.chartMain.Series[index].Points.Clear();            
-            this.chartMain.Series[index].Points.AddRange(points.ToArray());
+            Series series = new Series(legendTest, ViewType.Bar);
+            series.LegendText = legendTest;
+            series.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series.ArgumentScaleType = ScaleType.Qualitative;
+            series.Points.AddRange(points.ToArray());
+            series.CrosshairLabelPattern = "{S}{A}:{V}" + unit.ToString();
+
+            var label = series.Label as SideBySideBarSeriesLabel;
+            label.Position = BarSeriesLabelPosition.Top;
+
+            this.chartMain.Series.Add(series);
             this.chartMain.Update();
+
+            crosshairPosition.DockCorner = DockCorner.LeftTop;
+            crosshairPosition.DockTarget = ((XYDiagram2D)chartMain.Diagram).DefaultPane;
+            this.chartMain.CrosshairOptions.CommonLabelPosition = crosshairPosition;
         }
         #endregion //Function
 
         #region Method
-        public void SetMainSeries(string legendText,List<WaterExpense> data)
+        /// <summary>
+        /// 添加系列
+        /// </summary>
+        /// <param name="title">标题</param>
+        /// <param name="data">数据</param>
+        /// <param name="type">显示数据类型</param>
+        public void AddSeries(string title, List<WaterExpense> data, int type)
         {
-            List<WaterExpense> format = new List<WaterExpense>();
-
-            if (data.Count == 0)
-                return;
-
-            format.AddRange(data);
-            var last = data.Max(r => r.BelongDate);
-            for (int i = last.Month + 1; i <= 12; i++)
-            {
-                format.Add(new WaterExpense
-                {
-                    BelongDate = new DateTime(last.Year, i, 1),
-                    TotalAmount = 0,
-                    TotalQuantity = 0
-                });
-            }
-
             List<SeriesPoint> points = new List<SeriesPoint>();
-            for(int i = 0; i < format.Count; i++)
+            string unit = "";
+            for (int i = 0; i < data.Count; i++)
             {
-                SeriesPoint point = new SeriesPoint(format[i].BelongDate);
-                point.Values = new double[] { Convert.ToDouble(format[i].TotalQuantity) };
+                string month = string.Format("{0}月", data[i].BelongDate.Month);
+                SeriesPoint point = new SeriesPoint();
+                point.Argument = month;
+                if (type == 0)
+                {
+                    point.Values = new double[] { Convert.ToDouble(data[i].TotalQuantity) };
+                    unit = "吨";
+                }
+                else if (type == 1)
+                {
+                    point.Values = new double[] { Convert.ToDouble(data[i].TotalAmount) };
+                    unit = "元";
+                }
                 points.Add(point);
             }
 
-            SetSeries(0, legendText, points);
+            AddSeries(title, points, unit);
+        }
+
+        /// <summary>
+        /// 清空显示
+        /// </summary>
+        public void Clear()
+        {
+            this.chartMain.Series.Clear();
         }
         #endregion //Method
     }

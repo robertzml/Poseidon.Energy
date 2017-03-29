@@ -35,6 +35,8 @@ namespace Poseidon.Energy.ClientDx
             this.txtShortName.Text = account.ShortName;
             this.txtRemark.Text = account.Remark;
 
+            this.chkType1.Checked = this.chkType2.Checked = this.chkType3.Checked = this.chkType4.Checked = false;
+
             if (account.EnergyType.Contains(1))
                 this.chkType1.Checked = true;
             if (account.EnergyType.Contains(2))
