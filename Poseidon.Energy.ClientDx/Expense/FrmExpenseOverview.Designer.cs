@@ -64,6 +64,8 @@
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tabPageWaterCompare = new DevExpress.XtraTab.XtraTabPage();
+            this.modWaterCompare = new Poseidon.Energy.ClientDx.WaterCompareModule();
             this.tabPageWaterReceipt = new DevExpress.XtraTab.XtraTabPage();
             this.waterExpenseReceipt = new Poseidon.Energy.ClientDx.WaterExpenseReceipt();
             this.bsWaterExpense = new System.Windows.Forms.BindingSource(this.components);
@@ -98,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
+            this.tabPageWaterCompare.SuspendLayout();
             this.tabPageWaterReceipt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsWaterExpense)).BeginInit();
             this.SuspendLayout();
@@ -132,6 +135,7 @@
             // 
             // groupTree
             // 
+            this.groupTree.CascadeOrganization = false;
             this.groupTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupTree.Location = new System.Drawing.Point(2, 21);
             this.groupTree.Name = "groupTree";
@@ -200,6 +204,7 @@
             this.electricMeterGrid.ShowAddMenu = false;
             this.electricMeterGrid.ShowFooter = false;
             this.electricMeterGrid.ShowLineNumber = true;
+            this.electricMeterGrid.ShowMenu = false;
             this.electricMeterGrid.ShowNavigator = false;
             this.electricMeterGrid.Size = new System.Drawing.Size(689, 142);
             this.electricMeterGrid.TabIndex = 0;
@@ -226,6 +231,7 @@
             this.waterMeterGrid.ShowAddMenu = false;
             this.waterMeterGrid.ShowFooter = false;
             this.waterMeterGrid.ShowLineNumber = true;
+            this.waterMeterGrid.ShowMenu = false;
             this.waterMeterGrid.ShowNavigator = false;
             this.waterMeterGrid.Size = new System.Drawing.Size(689, 142);
             this.waterMeterGrid.TabIndex = 0;
@@ -252,6 +258,7 @@
             this.tabPageSummary,
             this.tabPageElectricReceipt,
             this.tabPageWaterExpense,
+            this.tabPageWaterCompare,
             this.tabPageWaterReceipt});
             // 
             // tabPageSummary
@@ -390,6 +397,7 @@
             this.waterYearGrid3.ShowAddMenu = false;
             this.waterYearGrid3.ShowFooter = true;
             this.waterYearGrid3.ShowLineNumber = false;
+            this.waterYearGrid3.ShowMenu = false;
             this.waterYearGrid3.ShowNavigator = false;
             this.waterYearGrid3.Size = new System.Drawing.Size(236, 204);
             this.waterYearGrid3.TabIndex = 6;
@@ -407,6 +415,7 @@
             this.waterYearGrid2.ShowAddMenu = false;
             this.waterYearGrid2.ShowFooter = true;
             this.waterYearGrid2.ShowLineNumber = false;
+            this.waterYearGrid2.ShowMenu = false;
             this.waterYearGrid2.ShowNavigator = false;
             this.waterYearGrid2.Size = new System.Drawing.Size(206, 204);
             this.waterYearGrid2.TabIndex = 5;
@@ -424,6 +433,7 @@
             this.waterYearGrid1.ShowAddMenu = false;
             this.waterYearGrid1.ShowFooter = true;
             this.waterYearGrid1.ShowLineNumber = false;
+            this.waterYearGrid1.ShowMenu = false;
             this.waterYearGrid1.ShowNavigator = false;
             this.waterYearGrid1.Size = new System.Drawing.Size(215, 204);
             this.waterYearGrid1.TabIndex = 4;
@@ -498,6 +508,21 @@
             this.layoutControlItem24.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem24.TextVisible = false;
             // 
+            // tabPageWaterCompare
+            // 
+            this.tabPageWaterCompare.Controls.Add(this.modWaterCompare);
+            this.tabPageWaterCompare.Name = "tabPageWaterCompare";
+            this.tabPageWaterCompare.Size = new System.Drawing.Size(689, 252);
+            this.tabPageWaterCompare.Text = "水费对比";
+            // 
+            // modWaterCompare
+            // 
+            this.modWaterCompare.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.modWaterCompare.Location = new System.Drawing.Point(0, 0);
+            this.modWaterCompare.Name = "modWaterCompare";
+            this.modWaterCompare.Size = new System.Drawing.Size(689, 252);
+            this.modWaterCompare.TabIndex = 0;
+            // 
             // tabPageWaterReceipt
             // 
             this.tabPageWaterReceipt.Controls.Add(this.waterExpenseReceipt);
@@ -557,6 +582,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
+            this.tabPageWaterCompare.ResumeLayout(false);
             this.tabPageWaterReceipt.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsWaterExpense)).EndInit();
             this.ResumeLayout(false);
@@ -603,5 +629,7 @@
         private DevExpress.XtraTab.XtraTabPage tabPageElectricReceipt;
         private ElectricExpenseReceipt electricExpenseReceipt;
         private Winform.Core.GroupChildrenTree groupTree;
+        private DevExpress.XtraTab.XtraTabPage tabPageWaterCompare;
+        private WaterCompareModule modWaterCompare;
     }
 }

@@ -117,6 +117,9 @@ namespace Poseidon.Energy.ClientDx
             this.waterYearGrid2.DataSource = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(this.currentAccount.Id, nowYear - 1).ToList();
             this.waterYearGrid3.Clear();
 
+            //水费对比
+            this.modWaterCompare.SetAccount(this.currentAccount);
+
             // 水费单据
             this.tabPageWaterReceipt.PageVisible = true;
             this.waterExpenseReceipt.SetAccount(this.currentAccount);

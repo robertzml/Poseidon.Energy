@@ -261,6 +261,12 @@
     <Compile Include="Control\GroupMeasureModule.Designer.cs">
       <DependentUpon>GroupMeasureModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settlement\FrmSettlementOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settlement\FrmSettlementOverview.Designer.cs">
+      <DependentUpon>FrmSettlementOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settlement\FrmSettlementEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -464,6 +470,18 @@
     <Compile Include="Department\FrmDepartmentOverview.Designer.cs">
       <DependentUpon>FrmDepartmentOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chart\WaterCompareChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\WaterCompareChart.Designer.cs">
+      <DependentUpon>WaterCompareChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\WaterCompareModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\WaterCompareModule.Designer.cs">
+      <DependentUpon>WaterCompareModule.cs</DependentUpon>
+    </Compile>
     <None Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Control\WaterMeterGrid.cs">
       <SubType>UserControl</SubType>
@@ -485,10 +503,10 @@
     <Compile Include="Control\WaterYearExpenseGrid.Designer.cs">
       <DependentUpon>WaterYearExpenseGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\WaterExpenseChart.cs">
+    <Compile Include="Chart\WaterExpenseChart.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\WaterExpenseChart.Designer.cs">
+    <Compile Include="Chart\WaterExpenseChart.Designer.cs">
       <DependentUpon>WaterExpenseChart.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\WaterExpenseReceipt.cs">
@@ -499,6 +517,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Chart\WaterCompareChart.resx">
+      <DependentUpon>WaterCompareChart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\AllowanceTargetGrid.resx">
       <DependentUpon>AllowanceTargetGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -553,7 +574,7 @@
     <EmbeddedResource Include="Control\TargetRecordModule.resx">
       <DependentUpon>TargetRecordModule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\WaterExpenseChart.resx">
+    <EmbeddedResource Include="Chart\WaterExpenseChart.resx">
       <DependentUpon>WaterExpenseChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\WaterExpenseReceipt.resx">
@@ -633,6 +654,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Measure\FrmMeasureSetDepartment.resx">
       <DependentUpon>FrmMeasureSetDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\WaterCompareModule.resx">
+      <DependentUpon>WaterCompareModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Population\FrmPopulationEdit.resx">
       <DependentUpon>FrmPopulationEdit.cs</DependentUpon>
