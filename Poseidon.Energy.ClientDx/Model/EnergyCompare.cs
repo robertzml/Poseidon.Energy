@@ -16,19 +16,39 @@ namespace Poseidon.Energy.ClientDx
     {
         #region Property
         /// <summary>
-        /// 归属时间
+        /// 选择
         /// </summary>
-        [Display(Name = "归属时间")]
-        public string BelongTime { get; set; }
+        [Display(Name = "选择")]
+        public bool Include { get; set; }
 
+        /// <summary>
+        /// 月份
+        /// </summary>
+        [Display(Name = "月份")]
+        public string Month { get; set; }
+
+        /// <summary>
+        /// 用量1
+        /// </summary>
+        [Display(Name = "用量1")]
         public decimal QuantumFirst { get; set; }
 
+        /// <summary>
+        /// 金额1
+        /// </summary>
+        [Display(Name = "金额1")]
         public decimal AmountFirst { get; set; }
 
-
+        /// <summary>
+        /// 用量2
+        /// </summary>
+        [Display(Name = "用量2")]
         public decimal QuantumSecond { get; set; }
 
-
+        /// <summary>
+        /// 金额2
+        /// </summary>
+        [Display(Name = "金额2")]
         public decimal AmountSecond { get; set; }
         #endregion //Proeprty
     }

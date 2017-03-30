@@ -45,12 +45,7 @@ namespace Poseidon.Energy.ClientDx
         protected override void InitForm()
         {
             this.groupTree.SetGroupCode(EnergyConstant.ExpenseAccountGroupCode);
-
             this.nowYear = DateTime.Now.Year;
-
-            for (int i = nowYear; i >= 2010; i--)
-                this.cmbWaterExpenseYear.Properties.Items.Add(i.ToString() + "年");
-
             base.InitForm();
         }
 
@@ -62,6 +57,7 @@ namespace Poseidon.Energy.ClientDx
             this.tabPageElectricMeter.PageVisible = false;
             this.tabPageWaterMeter.PageVisible = false;
 
+            this.tabPageElectricExpense.PageVisible = false;
             this.tabPageElectricCompare.PageVisible = false;
             this.tabPageElectricReceipt.PageVisible = false;
             this.tabPageWaterExpense.PageVisible = false;
@@ -102,6 +98,10 @@ namespace Poseidon.Energy.ClientDx
             this.tabPageElectricMeter.PageVisible = true;
             this.electricMeterGrid.DataSource = this.currentAccount.ElectricMeters;
 
+            // 用电支出
+            this.tabPageElectricExpense.PageVisible = true;
+            this.modElecCompGrid.SetAccount(this.currentAccount);
+
             // 用电对比
             this.tabPageElectricCompare.PageVisible = true;
             this.modElectricCompare.SetAccount(this.currentAccount);
@@ -125,7 +125,7 @@ namespace Poseidon.Energy.ClientDx
             var currentYearList = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(this.currentAccount.Id, nowYear).ToList();
             this.waterYearGrid1.DataSource = currentYearList;
             this.waterYearGrid2.DataSource = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(this.currentAccount.Id, nowYear - 1).ToList();
-            this.waterYearGrid3.Clear();
+            this.modWaterCompareGrid.SetAccount(this.currentAccount);
 
             // 用水对比
             this.tabPageWaterCompare.PageVisible = true;
@@ -159,17 +159,6 @@ namespace Poseidon.Energy.ClientDx
                 this.currentAccount = BusinessFactory<ExpenseAccountBusiness>.Instance.FindById(id);
                 InitAccountInfo();
             }
-        }
-
-        /// <summary>
-        /// 选择水费年份
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void cmbWaterExpenseYear_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int year = Convert.ToInt32(this.cmbWaterExpenseYear.SelectedItem.ToString().Substring(0, 4));
-            this.waterYearGrid3.DataSource = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(this.currentAccount.Id, year).ToList();
         }
         #endregion //Event
     }

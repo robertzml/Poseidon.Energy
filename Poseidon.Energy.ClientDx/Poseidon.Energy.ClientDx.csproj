@@ -111,6 +111,12 @@
     <Compile Include="Control\EnergyCompareGrid.Designer.cs">
       <DependentUpon>EnergyCompareGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\ElectricCompareGridModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\ElectricCompareGridModule.Designer.cs">
+      <DependentUpon>ElectricCompareGridModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\EnergyCompare.cs" />
     <Compile Include="Mod\ElectricCompareModule.cs">
       <SubType>UserControl</SubType>
@@ -495,6 +501,12 @@
     <Compile Include="Mod\WaterCompareModule.Designer.cs">
       <DependentUpon>WaterCompareModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\WaterCompareGridModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\WaterCompareGridModule.Designer.cs">
+      <DependentUpon>WaterCompareGridModule.cs</DependentUpon>
+    </Compile>
     <None Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Control\WaterMeterGrid.cs">
       <SubType>UserControl</SubType>
@@ -536,6 +548,9 @@
     <EmbeddedResource Include="Control\AllowanceTargetGrid.resx">
       <DependentUpon>AllowanceTargetGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\EnergyCompareGrid.resx">
+      <DependentUpon>EnergyCompareGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mod\DepartmentMeasureModule.resx">
       <DependentUpon>DepartmentMeasureModule.cs</DependentUpon>
     </EmbeddedResource>
@@ -544,6 +559,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\DepartmentTree.resx">
       <DependentUpon>DepartmentTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\ElectricCompareGridModule.resx">
+      <DependentUpon>ElectricCompareGridModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\ElectricCompareModule.resx">
       <DependentUpon>ElectricCompareModule.cs</DependentUpon>
@@ -592,6 +610,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chart\WaterExpenseChart.resx">
       <DependentUpon>WaterExpenseChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\WaterCompareGridModule.resx">
+      <DependentUpon>WaterCompareGridModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\WaterExpenseReceipt.resx">
       <DependentUpon>WaterExpenseReceipt.cs</DependentUpon>
@@ -686,6 +707,7 @@
     <EmbeddedResource Include="Population\FrmPopulationRecordView.resx">
       <DependentUpon>FrmPopulationRecordView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\EnergyCompare.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.MeasureRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Settlement.datasource" />
     <None Include="Properties\licenses.licx" />
