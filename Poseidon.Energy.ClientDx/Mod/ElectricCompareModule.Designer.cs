@@ -30,13 +30,15 @@
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.energyChart = new Poseidon.Energy.ClientDx.EnergyCompareChart();
             this.cmbDataType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.ccbYears = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.energyChart = new Poseidon.Energy.ClientDx.EnergyCompareChart();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.chkShowLabel = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -47,6 +49,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkShowLabel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -60,6 +64,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.chkShowLabel);
             this.layoutControl1.Controls.Add(this.energyChart);
             this.layoutControl1.Controls.Add(this.cmbDataType);
             this.layoutControl1.Controls.Add(this.ccbYears);
@@ -71,13 +76,6 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // energyChart
-            // 
-            this.energyChart.Location = new System.Drawing.Point(12, 36);
-            this.energyChart.Name = "energyChart";
-            this.energyChart.Size = new System.Drawing.Size(716, 426);
-            this.energyChart.TabIndex = 6;
-            // 
             // cmbDataType
             // 
             this.cmbDataType.Location = new System.Drawing.Point(582, 12);
@@ -88,13 +86,14 @@
             "用量",
             "金额"});
             this.cmbDataType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cmbDataType.Size = new System.Drawing.Size(146, 20);
+            this.cmbDataType.Size = new System.Drawing.Size(70, 20);
             this.cmbDataType.StyleController = this.layoutControl1;
             this.cmbDataType.TabIndex = 5;
             this.cmbDataType.SelectedIndexChanged += new System.EventHandler(this.cmbDataType_SelectedIndexChanged);
             // 
             // ccbYears
             // 
+            this.ccbYears.EditValue = "";
             this.ccbYears.Location = new System.Drawing.Point(63, 12);
             this.ccbYears.Name = "ccbYears";
             this.ccbYears.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -112,7 +111,8 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(740, 474);
@@ -132,9 +132,16 @@
             this.layoutControlItem2.Control = this.cmbDataType;
             this.layoutControlItem2.Location = new System.Drawing.Point(519, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(201, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(125, 24);
             this.layoutControlItem2.Text = "显示数据";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // energyChart
+            // 
+            this.energyChart.Location = new System.Drawing.Point(12, 36);
+            this.energyChart.Name = "energyChart";
+            this.energyChart.Size = new System.Drawing.Size(716, 426);
+            this.energyChart.TabIndex = 6;
             // 
             // layoutControlItem3
             // 
@@ -144,6 +151,26 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(720, 430);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
+            // 
+            // chkShowLabel
+            // 
+            this.chkShowLabel.EditValue = true;
+            this.chkShowLabel.Location = new System.Drawing.Point(656, 12);
+            this.chkShowLabel.Name = "chkShowLabel";
+            this.chkShowLabel.Properties.Caption = "显示数值";
+            this.chkShowLabel.Size = new System.Drawing.Size(72, 19);
+            this.chkShowLabel.StyleController = this.layoutControl1;
+            this.chkShowLabel.TabIndex = 7;
+            this.chkShowLabel.CheckedChanged += new System.EventHandler(this.chkShowLabel_CheckedChanged);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.chkShowLabel;
+            this.layoutControlItem4.Location = new System.Drawing.Point(644, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(76, 24);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
             // 
             // ElectricCompareModule
             // 
@@ -163,6 +190,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkShowLabel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,5 +207,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraEditors.CheckEdit chkShowLabel;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

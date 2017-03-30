@@ -1023,7 +1023,7 @@
             this.DataSource = this.dsTargetRecord;
             this.Dpi = 254F;
             this.Margins = new System.Drawing.Printing.Margins(30, 10, 40, 30);
-            this.PageHeight = 935;
+            this.PageHeight = 933;
             this.PageWidth = 2170;
             this.PaperKind = System.Drawing.Printing.PaperKind.Custom;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {

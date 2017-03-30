@@ -57,14 +57,17 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="account">账户</param>
         private void LoadData(ExpenseAccount account)
         {
-            var yeartext = this.ccbYears.EditValue.ToString();
+            var yeartext = this.ccbYears.EditValue.ToString();                       
 
             if (string.IsNullOrEmpty(yeartext))
                 return;
 
-            string[] years = yeartext.Split(',');
+            var years = yeartext.Split(',').ToList();
 
-            for (int i = 0; i < years.Length; i++)
+            years.ForEach(r => r.Trim());
+            years.Sort();
+
+            for (int i = 0; i < years.Count; i++)
             {
                 int year = Convert.ToInt32(years[i].Trim().Substring(0, 4));
                 string title = years[i].Trim();
@@ -117,6 +120,15 @@ namespace Poseidon.Energy.ClientDx
         {
             this.currentAccount = account;
         }
+
+        /// <summary>
+        /// 清空显示
+        /// </summary>
+        public void Clear()
+        {
+            this.ccbYears.EditValue = "";
+            this.energyChart.Clear();
+        }
         #endregion //Method
 
         #region Event
@@ -159,6 +171,16 @@ namespace Poseidon.Energy.ClientDx
         {
             this.energyChart.Clear();
             LoadData(this.currentAccount);
+        }
+       
+        /// <summary>
+        /// 是否显示数值
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void chkShowLabel_CheckedChanged(object sender, EventArgs e)
+        {
+            this.energyChart.SetLabelVisible(this.chkShowLabel.Checked);
         }
         #endregion //Event
     }

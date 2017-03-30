@@ -57,7 +57,7 @@ namespace Poseidon.Energy.ClientDx
         /// <summary>
         /// 隐藏标签
         /// </summary>
-        private void HideTab()
+        private void ClearDisplay()
         {
             this.tabPageElectricMeter.PageVisible = false;
             this.tabPageWaterMeter.PageVisible = false;
@@ -67,6 +67,9 @@ namespace Poseidon.Energy.ClientDx
             this.tabPageWaterExpense.PageVisible = false;
             this.tabPageWaterCompare.PageVisible = false;
             this.tabPageWaterReceipt.PageVisible = false;
+
+            this.modElectricCompare.Clear();
+            this.modWaterCompare.Clear();
         }
 
         /// <summary>
@@ -124,7 +127,7 @@ namespace Poseidon.Energy.ClientDx
             this.waterYearGrid2.DataSource = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(this.currentAccount.Id, nowYear - 1).ToList();
             this.waterYearGrid3.Clear();
 
-            // 水费对比
+            // 用水对比
             this.tabPageWaterCompare.PageVisible = true;
             this.modWaterCompare.SetAccount(this.currentAccount);
 
@@ -148,7 +151,7 @@ namespace Poseidon.Energy.ClientDx
         {
             string id = this.groupTree.GetCurrentSelectId();
 
-            HideTab();
+            ClearDisplay();
             if (id == null)
                 this.currentAccount = null;
             else

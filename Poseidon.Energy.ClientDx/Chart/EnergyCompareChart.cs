@@ -75,6 +75,21 @@ namespace Poseidon.Energy.ClientDx
             crosshairPosition.DockTarget = ((XYDiagram2D)chartMain.Diagram).DefaultPane;
             this.chartMain.CrosshairOptions.CommonLabelPosition = crosshairPosition;
         }
+
+        /// <summary>
+        /// 设置数值标签是否显示
+        /// </summary>
+        /// <param name="visible"></param>
+        public void SetLabelVisible(bool visible)
+        {
+            for (int i = 0; i < this.chartMain.Series.Count; i++)
+            {
+                if (visible)
+                    this.chartMain.Series[i].LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+                else
+                    this.chartMain.Series[i].LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
+            }
+        }
         #endregion //Method
 
         #region Event
