@@ -56,7 +56,8 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="legendTest">图例标题</param>
         /// <param name="points">数据点</param>
         /// <param name="unit">Y轴单位</param>
-        public void AddSeries(string legendTest, List<SeriesPoint> points, string unit)
+        /// <param name="showLabel">是否显示数值标签</param>
+        public void AddSeries(string legendTest, List<SeriesPoint> points, string unit, bool showLabel)
         {
             Series series = new Series(legendTest, ViewType.Bar);
             series.LegendText = legendTest;
@@ -64,6 +65,10 @@ namespace Poseidon.Energy.ClientDx
             series.ArgumentScaleType = ScaleType.Qualitative;
             series.Points.AddRange(points.ToArray());
             series.CrosshairLabelPattern = "{S}{A}:{V}" + unit.ToString();
+            if (showLabel)
+                series.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+            else
+                series.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
 
             var label = series.Label as SideBySideBarSeriesLabel;
             label.Position = BarSeriesLabelPosition.Top;

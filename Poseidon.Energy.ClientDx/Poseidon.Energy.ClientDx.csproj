@@ -105,6 +105,13 @@
     <Compile Include="Chart\EnergyCompareChart.Designer.cs">
       <DependentUpon>EnergyCompareChart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\EnergyCompareGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\EnergyCompareGrid.Designer.cs">
+      <DependentUpon>EnergyCompareGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnergyCompare.cs" />
     <Compile Include="Mod\ElectricCompareModule.cs">
       <SubType>UserControl</SubType>
     </Compile>

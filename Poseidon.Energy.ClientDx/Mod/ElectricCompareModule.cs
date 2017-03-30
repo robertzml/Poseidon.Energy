@@ -72,10 +72,11 @@ namespace Poseidon.Energy.ClientDx
                 int year = Convert.ToInt32(years[i].Trim().Substring(0, 4));
                 string title = years[i].Trim();
                 int type = this.cmbDataType.SelectedIndex;
+                bool showLabel = this.chkShowLabel.Checked;
 
                 var electricExpenses = BusinessFactory<ElectricExpenseBusiness>.Instance.FindYearByAccount(account.Id, year).ToList();
 
-                AddSeries(title, electricExpenses, type);
+                AddSeries(title, electricExpenses, type, showLabel);
             }
         }
 
@@ -85,7 +86,8 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="title">标题</param>
         /// <param name="data">数据</param>
         /// <param name="type">显示数据类型</param>
-        private void AddSeries(string title, List<ElectricExpense> data, int type)
+        /// <param name="showLabel">是否显示数值标签</param>
+        private void AddSeries(string title, List<ElectricExpense> data, int type, bool showLabel)
         {
             List<SeriesPoint> points = new List<SeriesPoint>();
             string unit = "";
@@ -107,7 +109,7 @@ namespace Poseidon.Energy.ClientDx
                 points.Add(point);
             }
 
-            this.energyChart.AddSeries(title, points, unit);
+            this.energyChart.AddSeries(title, points, unit, showLabel);
         }
         #endregion //Function
 
