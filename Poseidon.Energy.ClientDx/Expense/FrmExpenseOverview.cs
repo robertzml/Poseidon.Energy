@@ -57,14 +57,16 @@ namespace Poseidon.Energy.ClientDx
             this.tabPageElectricMeter.PageVisible = false;
             this.tabPageWaterMeter.PageVisible = false;
 
-            this.tabPageElectricExpense.PageVisible = false;
-            this.tabPageElectricCompare.PageVisible = false;
+            this.tabPageElectricCompareGrid.PageVisible = false;
+            this.tabPageElectricCompareChart.PageVisible = false;
             this.tabPageElectricReceipt.PageVisible = false;
-            this.tabPageWaterExpense.PageVisible = false;
-            this.tabPageWaterCompare.PageVisible = false;
+            this.tabPageWaterCompareGrid.PageVisible = false;
+            this.tabPageWaterCompareChart.PageVisible = false;
             this.tabPageWaterReceipt.PageVisible = false;
 
+            this.modElecCompGrid.Clear();
             this.modElectricCompare.Clear();
+            this.modWaterCompareGrid.Clear();
             this.modWaterCompare.Clear();
         }
 
@@ -98,12 +100,12 @@ namespace Poseidon.Energy.ClientDx
             this.tabPageElectricMeter.PageVisible = true;
             this.electricMeterGrid.DataSource = this.currentAccount.ElectricMeters;
 
-            // 用电支出
-            this.tabPageElectricExpense.PageVisible = true;
+            // 用电对比表
+            this.tabPageElectricCompareGrid.PageVisible = true;
             this.modElecCompGrid.SetAccount(this.currentAccount);
 
-            // 用电对比
-            this.tabPageElectricCompare.PageVisible = true;
+            // 用电对比图
+            this.tabPageElectricCompareChart.PageVisible = true;
             this.modElectricCompare.SetAccount(this.currentAccount);
 
             // 电费单据
@@ -120,15 +122,13 @@ namespace Poseidon.Energy.ClientDx
             this.tabPageWaterMeter.PageVisible = true;
             this.waterMeterGrid.DataSource = this.currentAccount.WaterMeters;
 
-            // 水费支出
-            this.tabPageWaterExpense.PageVisible = true;
+            // 用水对比表
+            this.tabPageWaterCompareGrid.PageVisible = true;
             var currentYearList = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(this.currentAccount.Id, nowYear).ToList();
-            this.waterYearGrid1.DataSource = currentYearList;
-            this.waterYearGrid2.DataSource = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(this.currentAccount.Id, nowYear - 1).ToList();
             this.modWaterCompareGrid.SetAccount(this.currentAccount);
 
-            // 用水对比
-            this.tabPageWaterCompare.PageVisible = true;
+            // 用水对比图
+            this.tabPageWaterCompareChart.PageVisible = true;
             this.modWaterCompare.SetAccount(this.currentAccount);
 
             // 水费单据

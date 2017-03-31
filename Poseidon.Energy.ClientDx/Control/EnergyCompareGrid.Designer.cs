@@ -173,7 +173,7 @@
             this.colIncAmount.Name = "colIncAmount";
             this.colIncAmount.OptionsColumn.AllowEdit = false;
             this.colIncAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "colIncAmount", "涨幅={0:0.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "colIncAmount", "涨幅={0:p1}")});
             this.colIncAmount.UnboundExpression = "Iif([AmountFirst] = 0, 1, ([AmountSecond] - [AmountFirst]) / [AmountFirst])";
             this.colIncAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colIncAmount.Visible = true;

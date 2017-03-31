@@ -125,6 +125,18 @@ namespace Poseidon.Energy.ClientDx
         {
             this.currentAccount = account;
         }
+
+        /// <summary>
+        /// 清空显示
+        /// </summary>
+        public void Clear()
+        {
+            this.chkAmount.Checked = true;
+            this.chkQuantum.Checked = true;
+            this.cmbFirst.SelectedIndex = -1;
+            this.cmbSecond.SelectedIndex = -1;
+            InitCompareData();
+        }
         #endregion //Method
 
         #region Event
