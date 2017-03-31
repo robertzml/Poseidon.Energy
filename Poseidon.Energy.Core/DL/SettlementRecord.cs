@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace Poseidon.Energy.Core.DL
 {
     using Poseidon.Base.Framework;
+    using Poseidon.Base.Utility;
 
     /// <summary>
     /// 结算记录类
@@ -30,6 +31,7 @@ namespace Poseidon.Energy.Core.DL
         /// <summary>
         /// 能源类型
         /// </summary>
+        [Dict("Energy.Type")]
         [Display(Name = "能源类型")]
         public int EnergyType { get; set; }
 

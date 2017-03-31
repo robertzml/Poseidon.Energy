@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Poseidon.Energy.Core.DAL.Mongo
 {
     using MongoDB.Bson;
+    using MongoDB.Driver;
     using Poseidon.Base.Framework;
     using Poseidon.Data;
     using Poseidon.Energy.Core.DL;
@@ -106,5 +107,35 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             return doc;
         }
         #endregion //Function
+
+        #region Method
+        /// <summary>
+        /// 查找单条记录
+        /// </summary>
+        /// <param name="settlementId">能源结算ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <returns></returns>
+        public SettlementRecord FindOne(string settlementId, string departmentId)
+        {
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("settlementId", settlementId) & builder.Eq("departmentId", departmentId);
+
+            return base.FindOne(filter);
+        }
+
+        /// <summary>
+        /// 删除未选择部门能源结算记录
+        /// </summary>
+        /// <param name="settlementId">能源结算ID</param>
+        /// <param name="departmentIds">已选择部门ID</param>
+        /// <returns></returns>
+        public bool DeleteNotIn(string settlementId, List<string> departmentIds)
+        {
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("settlementId", settlementId) & builder.Nin("departmentId", departmentIds);
+
+            return base.DeleteMany(filter);
+        }
+        #endregion //Method
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Energy.ClientDx
 {
-    partial class FrmMeasureSetDepartment
+    partial class FrmSettlementSetDepartment
     {
         /// <summary>
         /// Required designer variable.
@@ -33,11 +33,11 @@
             this.btnUncheckAll = new DevExpress.XtraEditors.SimpleButton();
             this.btnCheckAll = new DevExpress.XtraEditors.SimpleButton();
             this.clbDepartments = new DevExpress.XtraEditors.CheckedListBoxControl();
-            this.bsDepartment = new System.Windows.Forms.BindingSource();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.bsDepartment = new System.Windows.Forms.BindingSource();
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).BeginInit();
             this.plFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).BeginInit();
@@ -47,11 +47,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clbDepartments)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsDepartment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDepartment)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -84,7 +84,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(334, 322);
-            this.groupControl1.TabIndex = 0;
+            this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "部门列表";
             // 
             // layoutControl1
@@ -132,10 +132,6 @@
             this.clbDepartments.TabIndex = 4;
             this.clbDepartments.ValueMember = "Id";
             // 
-            // bsDepartment
-            // 
-            this.bsDepartment.DataSource = typeof(Poseidon.Energy.Core.DL.Department);
-            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -176,13 +172,17 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
-            // FrmMeasureSetDepartment
+            // bsDepartment
+            // 
+            this.bsDepartment.DataSource = typeof(Poseidon.Energy.Core.DL.Department);
+            // 
+            // FrmSettlementSetDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 382);
-            this.Name = "FrmMeasureSetDepartment";
-            this.Text = "选择能源计量部门";
+            this.Name = "FrmSettlementSetDepartment";
+            this.Text = "选择能源结算部门";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
             this.plFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plBottom)).EndInit();
@@ -192,11 +192,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.clbDepartments)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsDepartment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDepartment)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,10 +205,10 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraEditors.SimpleButton btnUncheckAll;
         private DevExpress.XtraEditors.SimpleButton btnCheckAll;
         private DevExpress.XtraEditors.CheckedListBoxControl clbDepartments;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;

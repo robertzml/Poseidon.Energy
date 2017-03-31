@@ -111,6 +111,12 @@
     <Compile Include="Control\EnergyCompareGrid.Designer.cs">
       <DependentUpon>EnergyCompareGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settlement\FrmSettlementSetDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settlement\FrmSettlementSetDepartment.Designer.cs">
+      <DependentUpon>FrmSettlementSetDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mod\ElectricCompareGridModule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -726,6 +732,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settlement\FrmSettlementManage.resx">
       <DependentUpon>FrmSettlementManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settlement\FrmSettlementSetDepartment.resx">
+      <DependentUpon>FrmSettlementSetDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Target\FrmTargetEdit.resx">
       <DependentUpon>FrmTargetEdit.cs</DependentUpon>

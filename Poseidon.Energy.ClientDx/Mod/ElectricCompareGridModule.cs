@@ -22,7 +22,7 @@ namespace Poseidon.Energy.ClientDx
         /// <summary>
         /// 起始年份
         /// </summary>
-        private int startYear = 2012;
+        private int startYear = 2011;
 
         /// <summary>
         /// 关联账户

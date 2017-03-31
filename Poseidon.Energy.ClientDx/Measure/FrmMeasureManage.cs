@@ -88,6 +88,9 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             this.currentMeasure = this.lbMeasure.SelectedItem as Measure;
+            if (this.currentMeasure == null)
+                return;
+
             DisplayInfo(this.currentMeasure);
         }
 

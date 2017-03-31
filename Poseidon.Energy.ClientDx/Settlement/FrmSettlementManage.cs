@@ -97,6 +97,9 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             this.currentSettlement = this.lbSettlements.SelectedItem as Settlement;
+            if (this.currentSettlement == null)
+                return;
+
             DisplayInfo(this.currentSettlement);
         }
 
@@ -116,7 +119,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             if (this.lbSettlements.SelectedItem == null || this.currentSettlement == null)
                 return;
@@ -124,6 +127,21 @@ namespace Poseidon.Energy.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmSettlementEdit), new object[] { this.currentSettlement.Id });
             LoadSettlements();
         }
+
+        /// <summary>
+        /// 选择部门
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            if (this.lbSettlements.SelectedItem == null || this.currentSettlement == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmSettlementSetDepartment), new object[] { this.currentSettlement.Id });
+            LoadSettlements();
+        }
         #endregion //Event
+
     }
 }
