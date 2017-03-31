@@ -32,6 +32,7 @@ namespace Poseidon.Energy.ClientDx
         public FrmSettlementSetDepartment(string settlementId)
         {
             InitializeComponent();
+            InitData(settlementId);
         }
         #endregion //Constructor
 
@@ -54,7 +55,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void SetSelectDepartment()
         {
-            var records = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlementId(this.currentSettlement.Id);
+            var records = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(this.currentSettlement.Id);
 
             for (int i = 0; i < this.bsDepartment.Count; i++)
             {
@@ -62,6 +63,21 @@ namespace Poseidon.Energy.ClientDx
                 if (records.Any(r => r.DepartmentId == department.Id))
                     this.clbDepartments.SetItemChecked(i, true);
             }
+        }
+
+        /// <summary>
+        /// 保存选中部门
+        /// </summary>
+        private void SaveSelectDepartment()
+        {
+            List<string> ids = new List<string>();
+
+            foreach (Department item in this.clbDepartments.CheckedItems)
+            {
+                ids.Add(item.Id);
+            }
+
+            BusinessFactory<SettlementRecordBusiness>.Instance.CreateMany(this.currentSettlement.Id, ids, this.currentUser);
         }
         #endregion //Function
 
@@ -86,9 +102,24 @@ namespace Poseidon.Energy.ClientDx
             this.clbDepartments.UnCheckAll();
         }
 
+        /// <summary>
+        /// 保存
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            try
+            {
+                SaveSelectDepartment();
 
+                MessageUtil.ShowInfo("保存成功");
+                this.Close();
+            }
+            catch (PoseidonException pe)
+            {
+                MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+            }
         }
         #endregion //Event
     }

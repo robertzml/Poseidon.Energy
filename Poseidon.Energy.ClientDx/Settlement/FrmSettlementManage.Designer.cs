@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lbSettlements = new DevExpress.XtraEditors.ListBoxControl();
-            this.bsSettlement = new System.Windows.Forms.BindingSource();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRecordEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSelect = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
@@ -69,11 +69,15 @@
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.bsSettlement = new System.Windows.Forms.BindingSource(this.components);
+            this.electricRecordGrid = new Poseidon.Energy.ClientDx.SettlementRecordGrid();
+            this.tabRecord = new DevExpress.XtraTab.XtraTabControl();
+            this.tabPageElectric = new DevExpress.XtraTab.XtraTabPage();
+            this.tabPageWater = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbSettlements)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsSettlement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -108,6 +112,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSettlement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabRecord)).BeginInit();
+            this.tabRecord.SuspendLayout();
+            this.tabPageElectric.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -150,10 +159,6 @@
             this.lbSettlements.ValueMember = "Id";
             this.lbSettlements.SelectedIndexChanged += new System.EventHandler(this.lbSettlements_SelectedIndexChanged);
             // 
-            // bsSettlement
-            // 
-            this.bsSettlement.DataSource = typeof(Poseidon.Energy.Core.DL.Settlement);
-            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.layoutControl1);
@@ -166,7 +171,7 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.simpleButton4);
+            this.layoutControl1.Controls.Add(this.btnRecordEdit);
             this.layoutControl1.Controls.Add(this.btnSelect);
             this.layoutControl1.Controls.Add(this.btnDelete);
             this.layoutControl1.Controls.Add(this.btnEdit);
@@ -190,20 +195,21 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // simpleButton4
+            // btnRecordEdit
             // 
-            this.simpleButton4.Location = new System.Drawing.Point(553, 195);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(116, 22);
-            this.simpleButton4.StyleController = this.layoutControl1;
-            this.simpleButton4.TabIndex = 19;
-            this.simpleButton4.Text = "登记结算数据";
+            this.btnRecordEdit.Location = new System.Drawing.Point(547, 195);
+            this.btnRecordEdit.Name = "btnRecordEdit";
+            this.btnRecordEdit.Size = new System.Drawing.Size(122, 22);
+            this.btnRecordEdit.StyleController = this.layoutControl1;
+            this.btnRecordEdit.TabIndex = 19;
+            this.btnRecordEdit.Text = "登记结算数据";
+            this.btnRecordEdit.Click += new System.EventHandler(this.btnRecordEdit_Click);
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(425, 195);
+            this.btnSelect.Location = new System.Drawing.Point(418, 195);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(124, 22);
+            this.btnSelect.Size = new System.Drawing.Size(125, 22);
             this.btnSelect.StyleController = this.layoutControl1;
             this.btnSelect.TabIndex = 18;
             this.btnSelect.Text = "选择部门";
@@ -211,18 +217,19 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(296, 195);
+            this.btnDelete.Location = new System.Drawing.Point(287, 195);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(125, 22);
+            this.btnDelete.Size = new System.Drawing.Size(127, 22);
             this.btnDelete.StyleController = this.layoutControl1;
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "删除结算";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(166, 195);
+            this.btnEdit.Location = new System.Drawing.Point(161, 195);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(126, 22);
+            this.btnEdit.Size = new System.Drawing.Size(122, 22);
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 16;
             this.btnEdit.Text = "编辑结算";
@@ -320,7 +327,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(24, 195);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(138, 22);
+            this.btnAdd.Size = new System.Drawing.Size(133, 22);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "添加结算";
@@ -498,54 +505,103 @@
             this.layoutControlItem4.Control = this.btnAdd;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(142, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(137, 26);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.btnEdit;
-            this.layoutControlItem13.Location = new System.Drawing.Point(142, 0);
+            this.layoutControlItem13.Location = new System.Drawing.Point(137, 0);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(130, 26);
+            this.layoutControlItem13.Size = new System.Drawing.Size(126, 26);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.btnDelete;
-            this.layoutControlItem14.Location = new System.Drawing.Point(272, 0);
+            this.layoutControlItem14.Location = new System.Drawing.Point(263, 0);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(129, 26);
+            this.layoutControlItem14.Size = new System.Drawing.Size(131, 26);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
             // layoutControlItem15
             // 
             this.layoutControlItem15.Control = this.btnSelect;
-            this.layoutControlItem15.Location = new System.Drawing.Point(401, 0);
+            this.layoutControlItem15.Location = new System.Drawing.Point(394, 0);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(128, 26);
+            this.layoutControlItem15.Size = new System.Drawing.Size(129, 26);
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
             // 
             // layoutControlItem16
             // 
-            this.layoutControlItem16.Control = this.simpleButton4;
-            this.layoutControlItem16.Location = new System.Drawing.Point(529, 0);
+            this.layoutControlItem16.Control = this.btnRecordEdit;
+            this.layoutControlItem16.Location = new System.Drawing.Point(523, 0);
             this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(120, 26);
+            this.layoutControlItem16.Size = new System.Drawing.Size(126, 26);
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
             // 
             // groupControl3
             // 
+            this.groupControl3.Controls.Add(this.tabRecord);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(203, 273);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(697, 244);
             this.groupControl3.TabIndex = 2;
-            this.groupControl3.Text = "groupControl3";
+            this.groupControl3.Text = "结算记录";
+            // 
+            // bsSettlement
+            // 
+            this.bsSettlement.DataSource = typeof(Poseidon.Energy.Core.DL.Settlement);
+            // 
+            // electricRecordGrid
+            // 
+            this.electricRecordGrid.AllowFilter = true;
+            this.electricRecordGrid.AllowGroup = false;
+            this.electricRecordGrid.AllowSort = true;
+            this.electricRecordGrid.DataSource = null;
+            this.electricRecordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.electricRecordGrid.Editable = false;
+            this.electricRecordGrid.EnableMasterView = false;
+            this.electricRecordGrid.Location = new System.Drawing.Point(0, 0);
+            this.electricRecordGrid.Name = "electricRecordGrid";
+            this.electricRecordGrid.ShowAddMenu = false;
+            this.electricRecordGrid.ShowFooter = true;
+            this.electricRecordGrid.ShowLineNumber = true;
+            this.electricRecordGrid.ShowMenu = false;
+            this.electricRecordGrid.ShowNavigator = false;
+            this.electricRecordGrid.Size = new System.Drawing.Size(687, 192);
+            this.electricRecordGrid.TabIndex = 0;
+            // 
+            // tabRecord
+            // 
+            this.tabRecord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabRecord.Location = new System.Drawing.Point(2, 21);
+            this.tabRecord.Name = "tabRecord";
+            this.tabRecord.SelectedTabPage = this.tabPageElectric;
+            this.tabRecord.Size = new System.Drawing.Size(693, 221);
+            this.tabRecord.TabIndex = 1;
+            this.tabRecord.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabPageElectric,
+            this.tabPageWater});
+            // 
+            // tabPageElectric
+            // 
+            this.tabPageElectric.Controls.Add(this.electricRecordGrid);
+            this.tabPageElectric.Name = "tabPageElectric";
+            this.tabPageElectric.Size = new System.Drawing.Size(687, 192);
+            this.tabPageElectric.Text = "用电结算";
+            // 
+            // tabPageWater
+            // 
+            this.tabPageWater.Name = "tabPageWater";
+            this.tabPageWater.Size = new System.Drawing.Size(687, 192);
+            this.tabPageWater.Text = "用水结算";
             // 
             // FrmSettlementManage
             // 
@@ -559,7 +615,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lbSettlements)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsSettlement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -594,6 +649,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bsSettlement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabRecord)).EndInit();
+            this.tabRecord.ResumeLayout(false);
+            this.tabPageElectric.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -639,7 +699,11 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private DevExpress.XtraEditors.SimpleButton btnSelect;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btnRecordEdit;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
+        private DevExpress.XtraTab.XtraTabControl tabRecord;
+        private DevExpress.XtraTab.XtraTabPage tabPageElectric;
+        private SettlementRecordGrid electricRecordGrid;
+        private DevExpress.XtraTab.XtraTabPage tabPageWater;
     }
 }

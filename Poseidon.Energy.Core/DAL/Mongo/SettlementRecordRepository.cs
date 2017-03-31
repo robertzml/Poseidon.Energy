@@ -124,6 +124,20 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         }
 
         /// <summary>
+        /// 查找多条记录
+        /// </summary>
+        /// <param name="settlementId">能源结算ID</param>
+        /// <param name="energyType">能源类型</param>
+        /// <returns></returns>
+        public IEnumerable<SettlementRecord> FindList(string settlementId, int energyType)
+        {
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("settlementId", settlementId) & builder.Eq("energyType", energyType);
+
+            return base.FindList(filter);
+        }
+
+        /// <summary>
         /// 删除未选择部门能源结算记录
         /// </summary>
         /// <param name="settlementId">能源结算ID</param>

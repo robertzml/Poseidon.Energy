@@ -80,8 +80,9 @@ namespace Poseidon.Energy.ClientDx
                 this.txtPrevious.Text = previous.Name;
             }
 
-            //var records = BusinessFactory<MeasureRecordBusiness>.Instance.FindByMeasureId(entity.Id).ToList();
-            //this.mrGrid.DataSource = records;
+            this.electricRecordGrid.DataSource = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, 1).ToList();
+
+           
         }
         #endregion //Function
 
@@ -129,6 +130,32 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
+        /// 删除结算
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.lbSettlements.SelectedItem == null || this.currentSettlement == null)
+                return;
+
+            if (MessageUtil.ConfirmYesNo("是否确认删除选中能源结算") == DialogResult.Yes)
+            {
+                try
+                {
+                    BusinessFactory<SettlementBusiness>.Instance.Delete(this.currentSettlement);
+                    LoadSettlements();
+
+                    MessageUtil.ShowInfo("删除成功");
+                }
+                catch (PoseidonException pe)
+                {
+                    MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+                }
+            }
+        }
+
+        /// <summary>
         /// 选择部门
         /// </summary>
         /// <param name="sender"></param>
@@ -141,7 +168,16 @@ namespace Poseidon.Energy.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmSettlementSetDepartment), new object[] { this.currentSettlement.Id });
             LoadSettlements();
         }
-        #endregion //Event
+        
+        /// <summary>
+        /// 登记结算数据
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRecordEdit_Click(object sender, EventArgs e)
+        {
 
+        }
+        #endregion //Event
     }
 }

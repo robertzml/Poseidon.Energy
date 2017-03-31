@@ -28,7 +28,7 @@ namespace Poseidon.Energy.Core.DL
         public int Year { get; set; }
 
         /// <summary>
-        /// 年度结算：1，季度结算：2
+        /// 1:年度结算，2:季度结算，3:月度结算
         /// </summary>
         [Display(Name = "结算类型")]
         public int Type { get; set; }

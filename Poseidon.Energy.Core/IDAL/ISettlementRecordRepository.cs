@@ -23,6 +23,14 @@ namespace Poseidon.Energy.Core.IDAL
         SettlementRecord FindOne(string settlementId, string departmentId);
 
         /// <summary>
+        /// 查找多条记录
+        /// </summary>
+        /// <param name="settlementId">能源结算ID</param>
+        /// <param name="energyType">能源类型</param>
+        /// <returns></returns>
+        IEnumerable<SettlementRecord> FindList(string settlementId, int energyType);
+
+        /// <summary>
         /// 删除未选择部门能源结算记录
         /// </summary>
         /// <param name="settlementId">能源结算ID</param>

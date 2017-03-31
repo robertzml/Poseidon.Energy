@@ -111,6 +111,18 @@
     <Compile Include="Control\EnergyCompareGrid.Designer.cs">
       <DependentUpon>EnergyCompareGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\SettlementRecordGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\SettlementRecordGrid.Designer.cs">
+      <DependentUpon>SettlementRecordGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settlement\FrmSettlementRecordEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settlement\FrmSettlementRecordEdit.Designer.cs">
+      <DependentUpon>FrmSettlementRecordEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settlement\FrmSettlementSetDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -557,6 +569,9 @@
     <EmbeddedResource Include="Control\EnergyCompareGrid.resx">
       <DependentUpon>EnergyCompareGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\SettlementRecordGrid.resx">
+      <DependentUpon>SettlementRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mod\DepartmentMeasureModule.resx">
       <DependentUpon>DepartmentMeasureModule.cs</DependentUpon>
     </EmbeddedResource>
@@ -716,6 +731,7 @@
     <None Include="Properties\DataSources\EnergyCompare.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.MeasureRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Settlement.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.SettlementRecord.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -732,6 +748,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settlement\FrmSettlementManage.resx">
       <DependentUpon>FrmSettlementManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settlement\FrmSettlementRecordEdit.resx">
+      <DependentUpon>FrmSettlementRecordEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settlement\FrmSettlementSetDepartment.resx">
       <DependentUpon>FrmSettlementSetDepartment.cs</DependentUpon>
