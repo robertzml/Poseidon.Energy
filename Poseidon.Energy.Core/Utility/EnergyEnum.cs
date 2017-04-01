@@ -8,6 +8,24 @@ using System.Threading.Tasks;
 namespace Poseidon.Energy.Core.Utility
 {
     /// <summary>
+    /// 能源类型
+    /// </summary>
+    public enum EnergyType
+    {
+        /// <summary>
+        /// 电
+        /// </summary>
+        [Display(Name = "电")]
+        Electric = 1,
+
+        /// <summary>
+        /// 水
+        /// </summary>
+        [Display(Name = "水")]
+        Water = 2
+    }
+
+    /// <summary>
     /// 结算类型
     /// </summary>
     public enum SettlementType

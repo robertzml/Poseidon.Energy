@@ -14,5 +14,12 @@ namespace Poseidon.Energy.Core.IDAL
     /// </summary>
     internal interface IMeasureRepository : IBaseDAL<Measure>
     {
+        /// <summary>
+        /// 按年度查找能源计量
+        /// </summary>
+        /// <param name="year">年度</param>
+        /// <param name="energyType">能源类型</param>
+        /// <returns></returns>
+        IEnumerable<Measure> FindByYear(int year, int energyType);
     }
 }

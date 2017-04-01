@@ -10,6 +10,7 @@ namespace Poseidon.Energy.Core.BL
     using Poseidon.Base.System;
     using Poseidon.Energy.Core.DL;
     using Poseidon.Energy.Core.IDAL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 能源结算记录数据访问类
@@ -43,10 +44,10 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="settlementId">结算ID</param>
         /// <param name="energyType">能源类型</param>
         /// <returns></returns>
-        public IEnumerable<SettlementRecord> FindBySettlement(string settlementId, int energyType)
+        public IEnumerable<SettlementRecord> FindBySettlement(string settlementId, EnergyType energyType)
         {
             var dal = this.baseDal as ISettlementRecordRepository;
-            return dal.FindList(settlementId, energyType);
+            return dal.FindList(settlementId, (int)energyType);
         }
 
         /// <summary>
@@ -68,7 +69,7 @@ namespace Poseidon.Energy.Core.BL
                 if (records.Any(r => r.DepartmentId == item))
                     continue;
 
-                Create(settlementId, item, 1, user);
+                Create(settlementId, item, EnergyType.Electric, user);
                 //SettlementRecord record = new SettlementRecord();
                 //record.SettlementId = settlementId;
                 //record.DepartmentId = item;
@@ -99,13 +100,13 @@ namespace Poseidon.Energy.Core.BL
 
 
         /// <summary>
-        /// 添加结算记录
+        /// 添加默认结算记录
         /// </summary>
-        /// <param name="settlementId"></param>
-        /// <param name="departmentId"></param>
-        /// <param name="energyType"></param>
-        /// <param name="user"></param>
-        public void Create(string settlementId, string departmentId, int energyType, LoginUser user)
+        /// <param name="settlementId">结算ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <param name="energyType">能源类型</param>
+        /// <param name="user">操作用户</param>
+        public void Create(string settlementId, string departmentId, EnergyType energyType, LoginUser user)
         {
             var dal = this.baseDal as ISettlementRecordRepository;
 
@@ -116,8 +117,8 @@ namespace Poseidon.Energy.Core.BL
             SettlementRecord record = new SettlementRecord();
             record.SettlementId = settlementId;
             record.DepartmentId = departmentId;
-            record.EnergyType = energyType;
-            record.UnitPrice = 0;
+            record.EnergyType = (int)energyType;
+            record.UnitPrice = 0.6m;
             record.Quantum = 0;
             record.Amount = 0;
             record.SchoolTakeAmount = 0;

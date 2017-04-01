@@ -10,6 +10,7 @@ namespace Poseidon.Energy.Core.BL
     using Poseidon.Base.System;
     using Poseidon.Energy.Core.DL;
     using Poseidon.Energy.Core.IDAL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 能源计量业务类
@@ -35,6 +36,18 @@ namespace Poseidon.Energy.Core.BL
         public IEnumerable<Measure> FindByEnergyType(int energyType)
         {
             return this.baseDal.FindListByField("energyType", energyType);
+        }
+
+        /// <summary>
+        /// 按年度查找能源计量
+        /// </summary>
+        /// <param name="year">年度</param>
+        /// <param name="energyType">能源类型</param>
+        /// <returns></returns>
+        public IEnumerable<Measure> FindByYear(int year, EnergyType energyType)
+        {
+            var dal = this.baseDal as IMeasureRepository;
+            return dal.FindByYear(year, (int)energyType);
         }
 
         /// <summary>

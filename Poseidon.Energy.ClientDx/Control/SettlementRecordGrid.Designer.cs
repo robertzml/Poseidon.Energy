@@ -41,6 +41,8 @@
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRefQuantum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRefAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -52,7 +54,7 @@
             // 
             // dgcEntity
             // 
-            this.dgcEntity.Size = new System.Drawing.Size(568, 378);
+            this.dgcEntity.Size = new System.Drawing.Size(745, 423);
             // 
             // dgvEntity
             // 
@@ -64,7 +66,9 @@
             this.colUnitPrice,
             this.colBeginQuantum,
             this.colBeginAmount,
+            this.colRefQuantum,
             this.colQuantum,
+            this.colRefAmount,
             this.colAmount,
             this.colSchoolTakeAmount,
             this.colSelfTakeAmount,
@@ -78,6 +82,7 @@
             this.dgvEntity.OptionsView.EnableAppearanceEvenRow = true;
             this.dgvEntity.OptionsView.EnableAppearanceOddRow = true;
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
+            this.dgvEntity.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.dgvEntity_CustomUnboundColumnData);
             this.dgvEntity.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.dgvEntity_CustomColumnDisplayText);
             // 
             // colSettlementId
@@ -98,6 +103,7 @@
             // 
             this.colEnergyType.FieldName = "EnergyType";
             this.colEnergyType.Name = "colEnergyType";
+            this.colEnergyType.OptionsColumn.AllowEdit = false;
             this.colEnergyType.Visible = true;
             this.colEnergyType.VisibleIndex = 1;
             // 
@@ -112,6 +118,7 @@
             // 
             this.colBeginQuantum.FieldName = "BeginQuantum";
             this.colBeginQuantum.Name = "colBeginQuantum";
+            this.colBeginQuantum.OptionsColumn.AllowEdit = false;
             this.colBeginQuantum.Visible = true;
             this.colBeginQuantum.VisibleIndex = 3;
             // 
@@ -119,6 +126,7 @@
             // 
             this.colBeginAmount.FieldName = "BeginAmount";
             this.colBeginAmount.Name = "colBeginAmount";
+            this.colBeginAmount.OptionsColumn.AllowEdit = false;
             this.colBeginAmount.Visible = true;
             this.colBeginAmount.VisibleIndex = 4;
             // 
@@ -127,42 +135,42 @@
             this.colQuantum.FieldName = "Quantum";
             this.colQuantum.Name = "colQuantum";
             this.colQuantum.Visible = true;
-            this.colQuantum.VisibleIndex = 5;
+            this.colQuantum.VisibleIndex = 6;
             // 
             // colAmount
             // 
             this.colAmount.FieldName = "Amount";
             this.colAmount.Name = "colAmount";
             this.colAmount.Visible = true;
-            this.colAmount.VisibleIndex = 6;
+            this.colAmount.VisibleIndex = 8;
             // 
             // colSchoolTakeAmount
             // 
             this.colSchoolTakeAmount.FieldName = "SchoolTakeAmount";
             this.colSchoolTakeAmount.Name = "colSchoolTakeAmount";
             this.colSchoolTakeAmount.Visible = true;
-            this.colSchoolTakeAmount.VisibleIndex = 7;
+            this.colSchoolTakeAmount.VisibleIndex = 9;
             // 
             // colSelfTakeAmount
             // 
             this.colSelfTakeAmount.FieldName = "SelfTakeAmount";
             this.colSelfTakeAmount.Name = "colSelfTakeAmount";
             this.colSelfTakeAmount.Visible = true;
-            this.colSelfTakeAmount.VisibleIndex = 8;
+            this.colSelfTakeAmount.VisibleIndex = 10;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 9;
+            this.colRemark.VisibleIndex = 11;
             // 
             // colStatus
             // 
             this.colStatus.FieldName = "Status";
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 10;
+            this.colStatus.VisibleIndex = 12;
             // 
             // colId
             // 
@@ -170,11 +178,33 @@
             this.colId.Name = "colId";
             this.colId.OptionsColumn.AllowEdit = false;
             // 
+            // colRefQuantum
+            // 
+            this.colRefQuantum.Caption = "参考用电量";
+            this.colRefQuantum.FieldName = "colRefQuantum";
+            this.colRefQuantum.Name = "colRefQuantum";
+            this.colRefQuantum.OptionsColumn.AllowEdit = false;
+            this.colRefQuantum.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.colRefQuantum.Visible = true;
+            this.colRefQuantum.VisibleIndex = 5;
+            // 
+            // colRefAmount
+            // 
+            this.colRefAmount.Caption = "参考金额";
+            this.colRefAmount.FieldName = "colRefAmount";
+            this.colRefAmount.Name = "colRefAmount";
+            this.colRefAmount.OptionsColumn.AllowEdit = false;
+            this.colRefAmount.UnboundExpression = "[UnitPrice] * [Quantum]";
+            this.colRefAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.colRefAmount.Visible = true;
+            this.colRefAmount.VisibleIndex = 7;
+            // 
             // SettlementRecordGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "SettlementRecordGrid";
+            this.Size = new System.Drawing.Size(745, 423);
             this.Load += new System.EventHandler(this.SettlementRecordGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
@@ -198,5 +228,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colRefQuantum;
+        private DevExpress.XtraGrid.Columns.GridColumn colRefAmount;
     }
 }

@@ -80,9 +80,8 @@ namespace Poseidon.Energy.ClientDx
                 this.txtPrevious.Text = previous.Name;
             }
 
-            this.electricRecordGrid.DataSource = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, 1).ToList();
-
-           
+            this.electricRecordGrid.DataSource = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Electric).ToList();
+                       
         }
         #endregion //Function
 
@@ -176,7 +175,11 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void btnRecordEdit_Click(object sender, EventArgs e)
         {
+            if (this.lbSettlements.SelectedItem == null || this.currentSettlement == null)
+                return;
 
+            ChildFormManage.ShowDialogForm(typeof(FrmSettlementRecordEdit), new object[] { this.currentSettlement.Id });
+            LoadSettlements();
         }
         #endregion //Event
     }

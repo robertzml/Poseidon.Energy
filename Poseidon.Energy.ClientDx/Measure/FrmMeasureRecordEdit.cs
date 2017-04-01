@@ -69,7 +69,6 @@ namespace Poseidon.Energy.ClientDx
             this.txtEnergyType.Text = DictUtility.GetDictValue(entity, "EnergyType", entity.EnergyType);
             this.txtStartTime.Text = entity.StartTime.ToDateString();
             this.txtEndTime.Text = entity.EndTime.ToDateString();
-
         }
 
         /// <summary>

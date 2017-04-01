@@ -32,6 +32,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lbSettlements = new DevExpress.XtraEditors.ListBoxControl();
+            this.bsSettlement = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnRecordEdit = new DevExpress.XtraEditors.SimpleButton();
@@ -69,15 +70,15 @@
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.bsSettlement = new System.Windows.Forms.BindingSource(this.components);
-            this.electricRecordGrid = new Poseidon.Energy.ClientDx.SettlementRecordGrid();
             this.tabRecord = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageElectric = new DevExpress.XtraTab.XtraTabPage();
+            this.electricRecordGrid = new Poseidon.Energy.ClientDx.SettlementRecordGrid();
             this.tabPageWater = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbSettlements)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSettlement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -113,7 +114,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsSettlement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabRecord)).BeginInit();
             this.tabRecord.SuspendLayout();
             this.tabPageElectric.SuspendLayout();
@@ -158,6 +158,10 @@
             this.lbSettlements.TabIndex = 0;
             this.lbSettlements.ValueMember = "Id";
             this.lbSettlements.SelectedIndexChanged += new System.EventHandler(this.lbSettlements_SelectedIndexChanged);
+            // 
+            // bsSettlement
+            // 
+            this.bsSettlement.DataSource = typeof(Poseidon.Energy.Core.DL.Settlement);
             // 
             // groupControl2
             // 
@@ -555,9 +559,24 @@
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "结算记录";
             // 
-            // bsSettlement
+            // tabRecord
             // 
-            this.bsSettlement.DataSource = typeof(Poseidon.Energy.Core.DL.Settlement);
+            this.tabRecord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabRecord.Location = new System.Drawing.Point(2, 21);
+            this.tabRecord.Name = "tabRecord";
+            this.tabRecord.SelectedTabPage = this.tabPageElectric;
+            this.tabRecord.Size = new System.Drawing.Size(693, 221);
+            this.tabRecord.TabIndex = 1;
+            this.tabRecord.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabPageElectric,
+            this.tabPageWater});
+            // 
+            // tabPageElectric
+            // 
+            this.tabPageElectric.Controls.Add(this.electricRecordGrid);
+            this.tabPageElectric.Name = "tabPageElectric";
+            this.tabPageElectric.Size = new System.Drawing.Size(687, 192);
+            this.tabPageElectric.Text = "用电结算";
             // 
             // electricRecordGrid
             // 
@@ -578,25 +597,6 @@
             this.electricRecordGrid.Size = new System.Drawing.Size(687, 192);
             this.electricRecordGrid.TabIndex = 0;
             // 
-            // tabRecord
-            // 
-            this.tabRecord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabRecord.Location = new System.Drawing.Point(2, 21);
-            this.tabRecord.Name = "tabRecord";
-            this.tabRecord.SelectedTabPage = this.tabPageElectric;
-            this.tabRecord.Size = new System.Drawing.Size(693, 221);
-            this.tabRecord.TabIndex = 1;
-            this.tabRecord.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.tabPageElectric,
-            this.tabPageWater});
-            // 
-            // tabPageElectric
-            // 
-            this.tabPageElectric.Controls.Add(this.electricRecordGrid);
-            this.tabPageElectric.Name = "tabPageElectric";
-            this.tabPageElectric.Size = new System.Drawing.Size(687, 192);
-            this.tabPageElectric.Text = "用电结算";
-            // 
             // tabPageWater
             // 
             this.tabPageWater.Name = "tabPageWater";
@@ -615,6 +615,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lbSettlements)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSettlement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -650,7 +651,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bsSettlement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabRecord)).EndInit();
             this.tabRecord.ResumeLayout(false);
             this.tabPageElectric.ResumeLayout(false);
