@@ -81,7 +81,7 @@ namespace Poseidon.Energy.ClientDx
             }
 
             this.electricRecordGrid.DataSource = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Electric).ToList();
-                       
+            this.waterRecordGrid.DataSource = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Water).ToList();
         }
         #endregion //Function
 
@@ -167,7 +167,21 @@ namespace Poseidon.Energy.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmSettlementSetDepartment), new object[] { this.currentSettlement.Id });
             LoadSettlements();
         }
-        
+
+        /// <summary>
+        /// 添加结算记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAddRecord_Click(object sender, EventArgs e)
+        {
+            if (this.lbSettlements.SelectedItem == null || this.currentSettlement == null)
+                return;
+
+            ChildFormManage.ShowDialogForm(typeof(FrmSettlementRecordAdd), new object[] { this.currentSettlement.Id });
+            LoadSettlements();
+        }
+
         /// <summary>
         /// 登记结算数据
         /// </summary>

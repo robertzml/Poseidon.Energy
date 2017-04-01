@@ -55,7 +55,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void SetSelectDepartment()
         {
-            var records = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(this.currentSettlement.Id);
+            var records = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(this.currentSettlement.Id, EnergyType.Electric);
 
             for (int i = 0; i < this.bsDepartment.Count; i++)
             {

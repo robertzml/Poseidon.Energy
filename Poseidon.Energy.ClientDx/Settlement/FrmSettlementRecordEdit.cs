@@ -53,7 +53,7 @@ namespace Poseidon.Energy.ClientDx
             this.settlementGroup.DataSource = groups;
 
             this.bsMeasureElectric.DataSource = BusinessFactory<MeasureBusiness>.Instance.FindByYear(this.currentSettlement.Year, EnergyType.Electric);
-
+            this.bsMeasureWater.DataSource = BusinessFactory<MeasureBusiness>.Instance.FindByYear(this.currentSettlement.Year, EnergyType.Water);
 
             this.electricRecordGrid.SetEnergyType(EnergyType.Electric);
             this.waterRecordGrid.SetEnergyType(EnergyType.Water);
@@ -107,14 +107,18 @@ namespace Poseidon.Energy.ClientDx
 
             this.electricRecordGrid.DataSource = edata;
             this.waterRecordGrid.DataSource = wdata;
-
-            //this.txtDepartmentCount.Text = data.Count.ToString();
-            //this.txtTotalQuantum.Text = data.Sum(r => r.Quantum).ToString();
         }
 
-        private void SetQuantum()
+        /// <summary>
+        /// 设置对象
+        /// </summary>
+        /// <param name="entity"></param>
+        private void SetEntity(List<SettlementRecord> entity)
         {
-
+            foreach (var item in entity)
+            {
+                item.Remark = item.Remark ?? "";
+            }
         }
         #endregion //Function
 
@@ -132,7 +136,7 @@ namespace Poseidon.Energy.ClientDx
 
             LoadDepartments(group);
         }
-        
+
         /// <summary>
         /// 选择参考用电计量
         /// </summary>
@@ -148,7 +152,7 @@ namespace Poseidon.Energy.ClientDx
             var data = BusinessFactory<MeasureRecordBusiness>.Instance.FindByMeasureId(measure.Id).ToList();
             this.electricRecordGrid.SetReferenceMeasure(data);
         }
-        
+
         /// <summary>
         /// 采用参考用量
         /// </summary>
@@ -157,6 +161,44 @@ namespace Poseidon.Energy.ClientDx
         private void btnUseRefElectricQuantum_Click(object sender, EventArgs e)
         {
             this.electricRecordGrid.UseRefQuantum();
+        }
+
+        /// <summary>
+        /// 采用参考金额
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnUseRefElectricAmount_Click(object sender, EventArgs e)
+        {
+            this.electricRecordGrid.UseRefAmount();
+        }
+
+        /// <summary>
+        /// 保存
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.electricRecordGrid.CloseEditor();
+                var erecrods = this.electricRecordGrid.DataSource;
+                SetEntity(erecrods);
+                BusinessFactory<SettlementRecordBusiness>.Instance.Update(erecrods, this.currentUser);
+
+                this.waterRecordGrid.CloseEditor();
+                var wrecords = this.waterRecordGrid.DataSource;
+                SetEntity(wrecords);
+                BusinessFactory<SettlementRecordBusiness>.Instance.Update(wrecords, this.currentUser);
+
+                MessageUtil.ShowInfo("保存成功");
+                this.Close();
+            }
+            catch (PoseidonException pe)
+            {
+                MessageUtil.ShowError(string.Format("保存失败，错误消息:{0}", pe.Message));
+            }
         }
         #endregion //Event
     }

@@ -142,11 +142,12 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="settlementId">能源结算ID</param>
         /// <param name="departmentIds">已选择部门ID</param>
+        /// <param name="energyType">能源类型</param>
         /// <returns></returns>
-        public bool DeleteNotIn(string settlementId, List<string> departmentIds)
+        public bool DeleteNotIn(string settlementId, List<string> departmentIds, int energyType)
         {
             var builder = Builders<BsonDocument>.Filter;
-            var filter = builder.Eq("settlementId", settlementId) & builder.Nin("departmentId", departmentIds);
+            var filter = builder.Eq("settlementId", settlementId) & builder.Eq("energyType", energyType) & builder.Nin("departmentId", departmentIds);
 
             return base.DeleteMany(filter);
         }

@@ -178,7 +178,7 @@ namespace Poseidon.Energy.Core.BL
             var dal = this.baseDal as ITargetRecordRepository;
 
             var records = dal.FindListByField("targetId", targetId);
-            dal.DeleteNotIn(targetId, departmentIds);
+            dal.DeleteNotIn(targetId, departmentIds, 1);
 
             DateTime now = DateTime.Now;
             foreach (var item in departmentIds)

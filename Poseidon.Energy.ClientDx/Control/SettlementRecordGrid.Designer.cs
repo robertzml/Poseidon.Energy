@@ -43,6 +43,8 @@
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRefQuantum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRefAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEndAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEndQuantum = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -70,6 +72,8 @@
             this.colQuantum,
             this.colRefAmount,
             this.colAmount,
+            this.colEndQuantum,
+            this.colEndAmount,
             this.colSchoolTakeAmount,
             this.colSelfTakeAmount,
             this.colRemark,
@@ -93,6 +97,7 @@
             // 
             // colDepartmentId
             // 
+            this.colDepartmentId.Caption = "部门名称";
             this.colDepartmentId.FieldName = "DepartmentId";
             this.colDepartmentId.Name = "colDepartmentId";
             this.colDepartmentId.OptionsColumn.AllowEdit = false;
@@ -134,6 +139,8 @@
             // 
             this.colQuantum.FieldName = "Quantum";
             this.colQuantum.Name = "colQuantum";
+            this.colQuantum.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantum", "合计={0:0.##}")});
             this.colQuantum.Visible = true;
             this.colQuantum.VisibleIndex = 6;
             // 
@@ -141,6 +148,8 @@
             // 
             this.colAmount.FieldName = "Amount";
             this.colAmount.Name = "colAmount";
+            this.colAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "合计={0:0.##}")});
             this.colAmount.Visible = true;
             this.colAmount.VisibleIndex = 8;
             // 
@@ -148,29 +157,30 @@
             // 
             this.colSchoolTakeAmount.FieldName = "SchoolTakeAmount";
             this.colSchoolTakeAmount.Name = "colSchoolTakeAmount";
+            this.colSchoolTakeAmount.OptionsColumn.AllowEdit = false;
             this.colSchoolTakeAmount.Visible = true;
-            this.colSchoolTakeAmount.VisibleIndex = 9;
+            this.colSchoolTakeAmount.VisibleIndex = 11;
             // 
             // colSelfTakeAmount
             // 
             this.colSelfTakeAmount.FieldName = "SelfTakeAmount";
             this.colSelfTakeAmount.Name = "colSelfTakeAmount";
+            this.colSelfTakeAmount.OptionsColumn.AllowEdit = false;
             this.colSelfTakeAmount.Visible = true;
-            this.colSelfTakeAmount.VisibleIndex = 10;
+            this.colSelfTakeAmount.VisibleIndex = 12;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 11;
+            this.colRemark.VisibleIndex = 13;
             // 
             // colStatus
             // 
             this.colStatus.FieldName = "Status";
             this.colStatus.Name = "colStatus";
-            this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 12;
+            this.colStatus.OptionsColumn.AllowEdit = false;
             // 
             // colId
             // 
@@ -194,10 +204,32 @@
             this.colRefAmount.FieldName = "colRefAmount";
             this.colRefAmount.Name = "colRefAmount";
             this.colRefAmount.OptionsColumn.AllowEdit = false;
-            this.colRefAmount.UnboundExpression = "[UnitPrice] * [Quantum]";
+            this.colRefAmount.UnboundExpression = "Round([UnitPrice] * [colRefQuantum])";
             this.colRefAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colRefAmount.Visible = true;
             this.colRefAmount.VisibleIndex = 7;
+            // 
+            // colEndAmount
+            // 
+            this.colEndAmount.Caption = "期末金额";
+            this.colEndAmount.FieldName = "colEndAmount";
+            this.colEndAmount.Name = "colEndAmount";
+            this.colEndAmount.OptionsColumn.AllowEdit = false;
+            this.colEndAmount.UnboundExpression = "[BeginAmount] - [Amount]";
+            this.colEndAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.colEndAmount.Visible = true;
+            this.colEndAmount.VisibleIndex = 10;
+            // 
+            // colEndQuantum
+            // 
+            this.colEndQuantum.Caption = "期末用电量";
+            this.colEndQuantum.FieldName = "colEndQuantum";
+            this.colEndQuantum.Name = "colEndQuantum";
+            this.colEndQuantum.OptionsColumn.AllowEdit = false;
+            this.colEndQuantum.UnboundExpression = "[BeginQuantum] - [Quantum]";
+            this.colEndQuantum.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.colEndQuantum.Visible = true;
+            this.colEndQuantum.VisibleIndex = 9;
             // 
             // SettlementRecordGrid
             // 
@@ -230,5 +262,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colRefQuantum;
         private DevExpress.XtraGrid.Columns.GridColumn colRefAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn colEndQuantum;
+        private DevExpress.XtraGrid.Columns.GridColumn colEndAmount;
     }
 }

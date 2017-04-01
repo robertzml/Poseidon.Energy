@@ -51,7 +51,7 @@ namespace Poseidon.Energy.Core.BL
         }
 
         /// <summary>
-        /// 添加一组空能源结算记录
+        /// 添加一组空用电能源结算记录
         /// </summary>
         /// <param name="settlementId">能源结算ID</param>
         /// <param name="departmentIds">部门ID列表</param>
@@ -61,77 +61,54 @@ namespace Poseidon.Energy.Core.BL
             var dal = this.baseDal as ISettlementRecordRepository;
 
             var records = dal.FindListByField("settlementId", settlementId);
-            dal.DeleteNotIn(settlementId, departmentIds);
+            dal.DeleteNotIn(settlementId, departmentIds, (int)EnergyType.Electric);
 
             DateTime now = DateTime.Now;
             foreach (var item in departmentIds)
             {
-                if (records.Any(r => r.DepartmentId == item))
+                if (records.Any(r => r.DepartmentId == item && r.EnergyType == (int)EnergyType.Electric))
                     continue;
 
-                Create(settlementId, item, EnergyType.Electric, user);
-                //SettlementRecord record = new SettlementRecord();
-                //record.SettlementId = settlementId;
-                //record.DepartmentId = item;
-                //record.EnergyType = 1;
-                //record.UnitPrice = 0;
-                //record.BeginQuantum = 0;
-                //record.BeginAmount = 0;
-                //record.Quantum = 0;
-                //record.Amount = 0;
-                //record.Remark = "";
-                //record.CreateBy = new UpdateStamp
-                //{
-                //    UserId = user.Id,
-                //    Name = user.Name,
-                //    Time = now
-                //};
-                //record.UpdateBy = new UpdateStamp
-                //{
-                //    UserId = user.Id,
-                //    Name = user.Name,
-                //    Time = now
-                //};
-                //record.Status = 0;
+                SettlementRecord record = new SettlementRecord();
+                record.SettlementId = settlementId;
+                record.DepartmentId = item;
+                record.EnergyType = (int)EnergyType.Electric;
+                record.UnitPrice = 0.6m;
+                record.Remark = "";
 
-                //dal.Create(record);
+                Create(record, user);
             }
         }
-
 
         /// <summary>
         /// 添加默认结算记录
         /// </summary>
-        /// <param name="settlementId">结算ID</param>
-        /// <param name="departmentId">部门ID</param>
-        /// <param name="energyType">能源类型</param>
+        /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
-        public void Create(string settlementId, string departmentId, EnergyType energyType, LoginUser user)
+        public void Create(SettlementRecord entity, LoginUser user)
         {
             var dal = this.baseDal as ISettlementRecordRepository;
 
             SettlementBusiness settlementBusiness = new SettlementBusiness();
-            var settlement = settlementBusiness.FindById(settlementId);
+            var settlement = settlementBusiness.FindById(entity.SettlementId);
+
+            TargetRecordBusiness trBusiness = new TargetRecordBusiness();
+            var targetRecord = trBusiness.FindByDepartment(settlement.TargetId, entity.DepartmentId, entity.EnergyType);
 
             DateTime now = DateTime.Now;
-            SettlementRecord record = new SettlementRecord();
-            record.SettlementId = settlementId;
-            record.DepartmentId = departmentId;
-            record.EnergyType = (int)energyType;
-            record.UnitPrice = 0.6m;
-            record.Quantum = 0;
-            record.Amount = 0;
-            record.SchoolTakeAmount = 0;
-            record.SelfTakeAmount = 0;
-            record.Remark = "";
-            record.Status = 0;
-            record.CreateBy = new UpdateStamp
+
+            entity.Quantum = 0;
+            entity.Amount = 0;
+            entity.SchoolTakeAmount = 0;
+            entity.SelfTakeAmount = 0;
+            entity.Status = 0;
+            entity.CreateBy = new UpdateStamp
             {
                 UserId = user.Id,
                 Name = user.Name,
                 Time = now
             };
-            record.UpdateBy = new UpdateStamp
+            entity.UpdateBy = new UpdateStamp
             {
                 UserId = user.Id,
                 Name = user.Name,
@@ -140,8 +117,16 @@ namespace Poseidon.Energy.Core.BL
 
             if (string.IsNullOrEmpty(settlement.PreviousId)) //first settle
             {
-                record.BeginQuantum = 0;
-                record.BeginAmount = 0;
+                if (targetRecord != null)
+                {
+                    entity.BeginQuantum = targetRecord.PlanQuantum;
+                    entity.BeginAmount = targetRecord.PlanAmount;
+                }
+                else
+                {
+                    entity.BeginQuantum = 0;
+                    entity.BeginAmount = 0;
+                }
             }
             else
             {
@@ -149,8 +134,30 @@ namespace Poseidon.Energy.Core.BL
 
             }
 
-            dal.Create(record);
+            dal.Create(entity);
             return;
+        }
+
+        /// <summary>
+        /// 批量编辑记录
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="user"></param>
+        public void Update(List<SettlementRecord> entity, LoginUser user)
+        {
+            foreach (var item in entity)
+            {
+                if (item.Id == null)
+                    continue;
+
+                item.UpdateBy = new UpdateStamp
+                {
+                    UserId = user.Id,
+                    Name = user.Name,
+                    Time = DateTime.Now
+                };
+                this.baseDal.Update(item);
+            }
         }
 
         /// <summary>

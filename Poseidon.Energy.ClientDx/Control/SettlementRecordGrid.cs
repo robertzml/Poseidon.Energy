@@ -13,6 +13,7 @@ namespace Poseidon.Energy.ClientDx
     using DevExpress.Data;
     using DevExpress.XtraGrid;
     using Poseidon.Base.Framework;
+    using Poseidon.Common;
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
@@ -64,12 +65,14 @@ namespace Poseidon.Energy.ClientDx
                 this.colBeginQuantum.Caption = "期初用电量";
                 this.colRefQuantum.Caption = "参考用电量";
                 this.colQuantum.Caption = "用电量(度)";
+                this.colEndQuantum.Caption = "期末用电量";
             }
             else if (type == EnergyType.Water)
             {
                 this.colBeginQuantum.Caption = "期初用水量";
                 this.colRefQuantum.Caption = "参考用水量";
                 this.colQuantum.Caption = "用水量(吨)";
+                this.colEndQuantum.Caption = "期末用水量";
             }
         }
 
@@ -99,6 +102,18 @@ namespace Poseidon.Energy.ClientDx
                 this.dgvEntity.SetRowCellValue(i, "Quantum", quantum);
             }
         }
+
+        /// <summary>
+        /// 采用参考金额
+        /// </summary>
+        public void UseRefAmount()
+        {
+            for (int i = 0; i < this.dgvEntity.RowCount; i++)
+            {
+                var amount = Convert.ToDecimal(this.dgvEntity.GetRowCellValue(i, "colRefAmount"));
+                this.dgvEntity.SetRowCellValue(i, "Amount", amount);
+            }
+        }
         #endregion //Method
 
         #region Event
@@ -115,6 +130,7 @@ namespace Poseidon.Energy.ClientDx
             this.colSchoolTakeAmount.Visible = this.showTakeColumn;
             this.colSelfTakeAmount.Visible = this.showTakeColumn;
             this.colRefQuantum.Visible = this.showRefColumn;
+            this.colRefAmount.Visible = this.showRefColumn;
         }
 
         /// <summary>
@@ -132,6 +148,10 @@ namespace Poseidon.Energy.ClientDx
             {
                 var department = this.departments.Find(r => r.Id == e.Value.ToString());
                 e.DisplayText = department.ShortName;
+            }
+            if (e.Column.FieldName == "EnergyType")
+            {
+                e.DisplayText = ((EnergyType)e.Value).DisplayName();
             }
         }
 

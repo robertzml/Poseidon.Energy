@@ -44,7 +44,8 @@ namespace Poseidon.Energy.Core.IDAL
         /// </summary>
         /// <param name="targetId">计划指标ID</param>
         /// <param name="departmentIds">已选择部门ID</param>
+        /// <param name="type">指标类型</param>
         /// <returns></returns>
-        bool DeleteNotIn(string targetId, List<string> departmentIds);
+        bool DeleteNotIn(string targetId, List<string> departmentIds, int type);
     }
 }

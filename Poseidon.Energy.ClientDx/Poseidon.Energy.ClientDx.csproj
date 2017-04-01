@@ -117,6 +117,12 @@
     <Compile Include="Control\SettlementRecordGrid.Designer.cs">
       <DependentUpon>SettlementRecordGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settlement\FrmSettlementRecordAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settlement\FrmSettlementRecordAdd.Designer.cs">
+      <DependentUpon>FrmSettlementRecordAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settlement\FrmSettlementRecordEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -748,6 +754,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settlement\FrmSettlementManage.resx">
       <DependentUpon>FrmSettlementManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settlement\FrmSettlementRecordAdd.resx">
+      <DependentUpon>FrmSettlementRecordAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settlement\FrmSettlementRecordEdit.resx">
       <DependentUpon>FrmSettlementRecordEdit.cs</DependentUpon>
