@@ -48,6 +48,7 @@
             this.menuMeasureOverview = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSettlement = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSettlementManage = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSettlementOverview = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -198,7 +199,8 @@
             // menuSettlement
             // 
             this.menuSettlement.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuSettlementManage});
+            this.menuSettlementManage,
+            this.menuSettlementOverview});
             this.menuSettlement.Name = "menuSettlement";
             this.menuSettlement.Size = new System.Drawing.Size(68, 21);
             this.menuSettlement.Text = "能源结算";
@@ -209,6 +211,13 @@
             this.menuSettlementManage.Size = new System.Drawing.Size(152, 22);
             this.menuSettlementManage.Text = "能源结算管理";
             this.menuSettlementManage.Click += new System.EventHandler(this.menuSettlementManage_Click);
+            // 
+            // menuSettlementOverview
+            // 
+            this.menuSettlementOverview.Name = "menuSettlementOverview";
+            this.menuSettlementOverview.Size = new System.Drawing.Size(152, 22);
+            this.menuSettlementOverview.Text = "能源结算总览";
+            this.menuSettlementOverview.Click += new System.EventHandler(this.menuSettlementOverview_Click);
             // 
             // MainForm
             // 
@@ -250,6 +259,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuMeasureOverview;
         private System.Windows.Forms.ToolStripMenuItem menuSettlement;
         private System.Windows.Forms.ToolStripMenuItem menuSettlementManage;
+        private System.Windows.Forms.ToolStripMenuItem menuSettlementOverview;
     }
 }
 

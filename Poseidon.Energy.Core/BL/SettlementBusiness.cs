@@ -39,23 +39,91 @@ namespace Poseidon.Energy.Core.BL
             return this.baseDal.FindListByField("targetId", targetId);
         }
 
+        /// <summary>
+        /// 按年度获取顺序能源结算
+        /// </summary>
+        /// <param name="year">年度</param>
+        /// <returns></returns>
+        public IEnumerable<Settlement> FindByYear(int year)
+        {
+            var settlements = this.baseDal.FindListByField("year", year);
 
+            List<Settlement> data = new List<Settlement>();
+            var first = settlements.Single(r => string.IsNullOrEmpty(r.PreviousId));
+
+            data.Add(first);
+
+            string previousId = first.Id;
+            bool flag = true;
+            while (flag)
+            {
+                var item = settlements.SingleOrDefault(r => r.PreviousId == previousId);
+                if (item != null)
+                {
+                    data.Add(item);
+                    previousId = item.Id;
+                }
+                else
+                    flag = false;
+            }
+
+            return data;
+        }
+
+        /// <summary>
+        /// 获取能源结算用量汇总
+        /// </summary>
+        /// <param name="year">年度</param>
+        /// <param name="energyType">能源类型</param>
+        /// <param name="departments">部门列表</param>
+        /// <returns></returns>
         public IEnumerable<SettlementQuantumSummary> GetQuantumSummary(int year, EnergyType energyType, List<Department> departments)
         {
             List<SettlementQuantumSummary> data = new List<SettlementQuantumSummary>();
 
-            TargetBusiness targetBusiness = new TargetBusiness();
-            var target = targetBusiness.FindByYear(year);
+            SettlementRecordBusiness srBusiness = new SettlementRecordBusiness();
 
-            var settlements = this.baseDal.FindListByField("year", year);
+            var settlements = FindByYear(year).ToList();
 
-            foreach(var item in departments)
+            foreach (var item in departments)
             {
                 SettlementQuantumSummary summary = new SettlementQuantumSummary();
                 summary.DepartmentName = item.Name;
                 summary.EnergyType = energyType.DisplayName();
 
+                bool flag = false;
 
+                for (int i = 0; i < settlements.Count; i++)
+                {
+                    var settle = settlements[i];
+                    var record = srBusiness.FindByDepartment(settle.Id, item.Id, energyType);
+                    if (record == null)
+                        continue;
+
+                    switch (i)
+                    {
+                        case 0:
+                            summary.PlanQuantum = record.BeginQuantum;
+                            summary.FirstQuarter = record.Quantum;
+                            break;
+                        case 1:
+                            summary.SecondQuarter = record.Quantum;
+                            break;
+                        case 2:
+                            summary.ThirdQuarter = record.Quantum;
+                            break;
+                        case 3:
+                            summary.FourthQuarter = record.Quantum;
+                            break;
+                    }
+                    flag = true;
+                }
+
+                summary.TotalQuantum = summary.FirstQuarter + summary.SecondQuarter + summary.ThirdQuarter + summary.FourthQuarter;
+                summary.RemainQuantum = summary.PlanQuantum - summary.TotalQuantum;
+
+                if (flag)
+                    data.Add(summary);
             }
 
             return data;

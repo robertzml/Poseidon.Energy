@@ -22,6 +22,11 @@ namespace Poseidon.Energy.ClientDx
     {
         #region Field
         /// <summary>
+        /// 起始年份
+        /// </summary>
+        private int startYear = 2011;
+
+        /// <summary>
         /// 关联支出账户
         /// </summary>
         private ExpenseAccount currentAccount;
@@ -42,7 +47,7 @@ namespace Poseidon.Energy.ClientDx
         {
             int nowYear = DateTime.Now.Year;
 
-            for (int i = nowYear; i >= 2010; i--)
+            for (int i = nowYear; i >= startYear; i--)
             {
                 this.ccbYears.Properties.Items.Add(i.ToString() + "年");
             }

@@ -154,6 +154,22 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
+        /// 选择参考用水计量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void luMeasureWater_EditValueChanged(object sender, EventArgs e)
+        {
+            if (this.luMeasureWater.EditValue == null)
+                return;
+
+            var measure = this.luMeasureWater.GetSelectedDataRow() as Measure;
+
+            var data = BusinessFactory<MeasureRecordBusiness>.Instance.FindByMeasureId(measure.Id).ToList();
+            this.waterRecordGrid.SetReferenceMeasure(data);
+        }
+
+        /// <summary>
         /// 采用参考用量
         /// </summary>
         /// <param name="sender"></param>
@@ -171,6 +187,26 @@ namespace Poseidon.Energy.ClientDx
         private void btnUseRefElectricAmount_Click(object sender, EventArgs e)
         {
             this.electricRecordGrid.UseRefAmount();
+        }
+
+        /// <summary>
+        /// 采用参考用量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnUseRefWaterQuantum_Click(object sender, EventArgs e)
+        {
+            this.waterRecordGrid.UseRefQuantum();
+        }
+
+        /// <summary>
+        /// 采用参考金额
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnUseRefWaterAmount_Click(object sender, EventArgs e)
+        {
+            this.waterRecordGrid.UseRefAmount();
         }
 
         /// <summary>

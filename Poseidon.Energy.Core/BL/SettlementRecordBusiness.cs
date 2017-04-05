@@ -95,6 +95,19 @@ namespace Poseidon.Energy.Core.BL
         }
 
         /// <summary>
+        /// 根据部门查找记录
+        /// </summary>
+        /// <param name="settlementId">结算ID</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <param name="energyType">能源类型</param>
+        /// <returns></returns>
+        public SettlementRecord FindByDepartment(string settlementId, string departmentId, EnergyType energyType)
+        {
+            var dal = this.baseDal as ISettlementRecordRepository;
+            return dal.FindOne(settlementId, departmentId, (int)energyType);
+        }
+
+        /// <summary>
         /// 添加一组空用电能源结算记录
         /// </summary>
         /// <param name="settlementId">能源结算ID</param>

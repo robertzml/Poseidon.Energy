@@ -47,7 +47,9 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void settlementTree_GroupSelected(object sender, EventArgs e)
         {
-
+            this.navFrame.SelectedPageIndex = 0;
+            var groupId = this.settlementTree.GetCurrentSelectId();
+            this.groupSettlementMod.SetGroup(groupId);
         }
 
         /// <summary>
