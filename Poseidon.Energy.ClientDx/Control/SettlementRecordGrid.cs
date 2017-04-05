@@ -39,11 +39,6 @@ namespace Poseidon.Energy.ClientDx
         /// 是否显示参考用能列
         /// </summary>
         private bool showRefColumn = true;
-
-        /// <summary>
-        /// 是否显示超额支付列
-        /// </summary>
-        private bool showTakeColumn = true;
         #endregion //Field
 
         #region Constructor
@@ -127,8 +122,6 @@ namespace Poseidon.Energy.ClientDx
             if (!ControlUtil.IsInDesignMode())
                 this.departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
 
-            this.colSchoolTakeAmount.Visible = this.showTakeColumn;
-            this.colSelfTakeAmount.Visible = this.showTakeColumn;
             this.colRefQuantum.Visible = this.showRefColumn;
             this.colRefAmount.Visible = this.showRefColumn;
         }
@@ -180,22 +173,6 @@ namespace Poseidon.Energy.ClientDx
         #endregion //Event
 
         #region Property
-        /// <summary>
-        /// 是否显示超额支付列
-        /// </summary>
-        [Category("界面"), Description("是否显示超额支付列"), Browsable(true)]
-        public bool ShowTakeColumn
-        {
-            get
-            {
-                return this.showTakeColumn;
-            }
-            set
-            {
-                this.showTakeColumn = value;
-            }
-        }
-
         /// <summary>
         /// 是否显示参考列
         /// </summary>

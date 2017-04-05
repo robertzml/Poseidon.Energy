@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lbSettlements = new DevExpress.XtraEditors.ListBoxControl();
-            this.bsSettlement = new System.Windows.Forms.BindingSource();
+            this.bsSettlement = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnAddRecord = new DevExpress.XtraEditors.SimpleButton();
             this.btnRecordEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnSelect = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
@@ -68,14 +70,13 @@
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.tabRecord = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageElectric = new DevExpress.XtraTab.XtraTabPage();
             this.electricRecordGrid = new Poseidon.Energy.ClientDx.SettlementRecordGrid();
             this.tabPageWater = new DevExpress.XtraTab.XtraTabPage();
             this.waterRecordGrid = new Poseidon.Energy.ClientDx.SettlementRecordGrid();
-            this.btnAddRecord = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -114,13 +115,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabRecord)).BeginInit();
             this.tabRecord.SuspendLayout();
             this.tabPageElectric.SuspendLayout();
             this.tabPageWater.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -203,6 +204,16 @@
             this.layoutControl1.Size = new System.Drawing.Size(674, 241);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnAddRecord
+            // 
+            this.btnAddRecord.Location = new System.Drawing.Point(447, 195);
+            this.btnAddRecord.Name = "btnAddRecord";
+            this.btnAddRecord.Size = new System.Drawing.Size(99, 22);
+            this.btnAddRecord.StyleController = this.layoutControl1;
+            this.btnAddRecord.TabIndex = 20;
+            this.btnAddRecord.Text = "添加结算记录";
+            this.btnAddRecord.Click += new System.EventHandler(this.btnAddRecord_Click);
             // 
             // btnRecordEdit
             // 
@@ -555,6 +566,15 @@
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
             // 
+            // layoutControlItem17
+            // 
+            this.layoutControlItem17.Control = this.btnAddRecord;
+            this.layoutControlItem17.Location = new System.Drawing.Point(423, 0);
+            this.layoutControlItem17.Name = "layoutControlItem17";
+            this.layoutControlItem17.Size = new System.Drawing.Size(103, 26);
+            this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem17.TextVisible = false;
+            // 
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.tabRecord);
@@ -601,7 +621,6 @@
             this.electricRecordGrid.ShowMenu = false;
             this.electricRecordGrid.ShowNavigator = false;
             this.electricRecordGrid.ShowRefColumn = false;
-            this.electricRecordGrid.ShowTakeColumn = true;
             this.electricRecordGrid.Size = new System.Drawing.Size(668, 234);
             this.electricRecordGrid.TabIndex = 0;
             // 
@@ -629,28 +648,8 @@
             this.waterRecordGrid.ShowMenu = false;
             this.waterRecordGrid.ShowNavigator = false;
             this.waterRecordGrid.ShowRefColumn = false;
-            this.waterRecordGrid.ShowTakeColumn = true;
             this.waterRecordGrid.Size = new System.Drawing.Size(668, 234);
             this.waterRecordGrid.TabIndex = 0;
-            // 
-            // btnAddRecord
-            // 
-            this.btnAddRecord.Location = new System.Drawing.Point(447, 195);
-            this.btnAddRecord.Name = "btnAddRecord";
-            this.btnAddRecord.Size = new System.Drawing.Size(99, 22);
-            this.btnAddRecord.StyleController = this.layoutControl1;
-            this.btnAddRecord.TabIndex = 20;
-            this.btnAddRecord.Text = "添加结算记录";
-            this.btnAddRecord.Click += new System.EventHandler(this.btnAddRecord_Click);
-            // 
-            // layoutControlItem17
-            // 
-            this.layoutControlItem17.Control = this.btnAddRecord;
-            this.layoutControlItem17.Location = new System.Drawing.Point(423, 0);
-            this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(103, 26);
-            this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem17.TextVisible = false;
             // 
             // FrmSettlementManage
             // 
@@ -698,13 +697,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabRecord)).EndInit();
             this.tabRecord.ResumeLayout(false);
             this.tabPageElectric.ResumeLayout(false);
             this.tabPageWater.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             this.ResumeLayout(false);
 
         }

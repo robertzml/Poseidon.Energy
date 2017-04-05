@@ -117,6 +117,18 @@
     <Compile Include="Control\SettlementRecordGrid.Designer.cs">
       <DependentUpon>SettlementRecordGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\GroupSettlementModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\GroupSettlementModule.Designer.cs">
+      <DependentUpon>GroupSettlementModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SettlementQuantumSummaryGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\SettlementQuantumSummaryGrid.Designer.cs">
+      <DependentUpon>SettlementQuantumSummaryGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settlement\FrmSettlementRecordAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -575,6 +587,9 @@
     <EmbeddedResource Include="Control\EnergyCompareGrid.resx">
       <DependentUpon>EnergyCompareGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\SettlementQuantumSummaryGrid.resx">
+      <DependentUpon>SettlementQuantumSummaryGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\SettlementRecordGrid.resx">
       <DependentUpon>SettlementRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -613,6 +628,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\GroupMeasureModule.resx">
       <DependentUpon>GroupMeasureModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\GroupSettlementModule.resx">
+      <DependentUpon>GroupSettlementModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\GroupTargetModule.resx">
       <DependentUpon>GroupTargetModule.cs</DependentUpon>
@@ -738,6 +756,7 @@
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.MeasureRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Settlement.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.SettlementRecord.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.Utility.SettlementQuantumSummary.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -754,6 +773,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settlement\FrmSettlementManage.resx">
       <DependentUpon>FrmSettlementManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settlement\FrmSettlementOverview.resx">
+      <DependentUpon>FrmSettlementOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settlement\FrmSettlementRecordAdd.resx">
       <DependentUpon>FrmSettlementRecordAdd.cs</DependentUpon>

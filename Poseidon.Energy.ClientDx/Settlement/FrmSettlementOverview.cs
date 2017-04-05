@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,5 +29,36 @@ namespace Poseidon.Energy.ClientDx
             InitializeComponent();
         }
         #endregion //Constructor
+
+        #region Function
+        protected override void InitForm()
+        {
+            this.settlementTree.SetGroupCode(EnergyConstant.SettlementDepartmentGroupCode);
+
+            base.InitForm();
+        }
+        #endregion //Function
+
+        #region Event
+        /// <summary>
+        /// 分组选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void settlementTree_GroupSelected(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 部门选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void settlementTree_OrganizationSelected(object sender, EventArgs e)
+        {
+
+        }
+        #endregion //Event
     }
 }

@@ -39,13 +39,14 @@ namespace Poseidon.Energy.Core.BL
             var dal = this.baseDal as IDepartmentRepository;
             List<Department> data = new List<Department>();
 
-            var group = BusinessFactory<GroupBusiness>.Instance.FindByCode(groupCode);
+            GroupBusiness groupBusiness = new GroupBusiness();
+            var group = groupBusiness.FindByCode(groupCode);
             if (group == null)
                 return data;
 
             List<GroupItem> groupItems = new List<GroupItem>();
             if (include)
-                groupItems.AddRange(BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id));
+                groupItems.AddRange(groupBusiness.FindAllItems(group.Id));
             else
                 groupItems.AddRange(group.Items);
 

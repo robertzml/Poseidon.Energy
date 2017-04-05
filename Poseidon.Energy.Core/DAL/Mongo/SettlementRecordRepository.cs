@@ -46,8 +46,6 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             entity.BeginAmount = doc["beginAmount"].ToDecimal();
             entity.Quantum = doc["quantum"].ToDecimal();
             entity.Amount = doc["amount"].ToDecimal();
-            entity.SchoolTakeAmount = doc["schoolTakeAmount"].ToDecimal();
-            entity.SelfTakeAmount = doc["selfTakeAmount"].ToDecimal();
 
             var createBy = doc["createBy"].ToBsonDocument();
             entity.CreateBy = new UpdateStamp
@@ -88,8 +86,6 @@ namespace Poseidon.Energy.Core.DAL.Mongo
                 { "beginAmount", entity.BeginAmount },
                 { "quantum", entity.Quantum },
                 { "amount", entity.Amount },
-                { "schoolTakeAmount", entity.SchoolTakeAmount },
-                { "selfTakeAmount", entity.SelfTakeAmount },
                 { "createBy", new BsonDocument {
                     { "userId", entity.CreateBy.UserId },
                     { "name", entity.CreateBy.Name },
@@ -114,11 +110,12 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="settlementId">能源结算ID</param>
         /// <param name="departmentId">部门ID</param>
+        /// <param name="energyType">能源类型</param>
         /// <returns></returns>
-        public SettlementRecord FindOne(string settlementId, string departmentId)
+        public SettlementRecord FindOne(string settlementId, string departmentId, int energyType)
         {
             var builder = Builders<BsonDocument>.Filter;
-            var filter = builder.Eq("settlementId", settlementId) & builder.Eq("departmentId", departmentId);
+            var filter = builder.Eq("settlementId", settlementId) & builder.Eq("departmentId", departmentId) & builder.Eq("energyType", energyType);
 
             return base.FindOne(filter);
         }

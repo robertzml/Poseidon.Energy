@@ -8,8 +8,10 @@ namespace Poseidon.Energy.Core.BL
 {
     using Poseidon.Base.Framework;
     using Poseidon.Base.System;
+    using Poseidon.Common;
     using Poseidon.Energy.Core.DL;
     using Poseidon.Energy.Core.IDAL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 能源结算业务类
@@ -35,6 +37,28 @@ namespace Poseidon.Energy.Core.BL
         public IEnumerable<Settlement> FindByTarget(string targetId)
         {
             return this.baseDal.FindListByField("targetId", targetId);
+        }
+
+
+        public IEnumerable<SettlementQuantumSummary> GetQuantumSummary(int year, EnergyType energyType, List<Department> departments)
+        {
+            List<SettlementQuantumSummary> data = new List<SettlementQuantumSummary>();
+
+            TargetBusiness targetBusiness = new TargetBusiness();
+            var target = targetBusiness.FindByYear(year);
+
+            var settlements = this.baseDal.FindListByField("year", year);
+
+            foreach(var item in departments)
+            {
+                SettlementQuantumSummary summary = new SettlementQuantumSummary();
+                summary.DepartmentName = item.Name;
+                summary.EnergyType = energyType.DisplayName();
+
+
+            }
+
+            return data;
         }
 
         /// <summary>

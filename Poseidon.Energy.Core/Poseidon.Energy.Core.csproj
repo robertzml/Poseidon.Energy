@@ -46,6 +46,10 @@
     <Reference Include="Poseidon.Base">
       <HintPath>..\..\Assembly\Poseidon.Base.dll</HintPath>
     </Reference>
+    <Reference Include="Poseidon.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assembly\Poseidon.Common.dll</HintPath>
+    </Reference>
     <Reference Include="Poseidon.Core">
       <HintPath>..\..\Assembly\Poseidon.Core.dll</HintPath>
     </Reference>
@@ -131,6 +135,7 @@
     <Compile Include="Utility\EnergyConstant.cs" />
     <Compile Include="Utility\EnergyEnum.cs" />
     <Compile Include="Utility\ModelTypeCode.cs" />
+    <Compile Include="Utility\SettlementQuantumSummary.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -27,6 +27,50 @@ namespace Poseidon.Energy.Core.BL
         }
         #endregion //Constructor
 
+        #region Function
+        /// <summary>
+        /// 获取记录期初数据
+        /// </summary>
+        /// <param name="settlement">能源结算</param>
+        /// <param name="record">能源结算记录</param>
+        /// <returns>期初用量，期初金额</returns>
+        private Tuple<decimal, decimal> GetBeginData(Settlement settlement, SettlementRecord record)
+        {
+            TargetRecordBusiness trBusiness = new TargetRecordBusiness();
+            var targetRecord = trBusiness.FindByDepartment(settlement.TargetId, record.DepartmentId, record.EnergyType);
+
+            decimal beginQuantum = 0;
+            decimal beginAmount = 0;
+
+            if (string.IsNullOrEmpty(settlement.PreviousId))
+            {
+                if (targetRecord != null)
+                {
+                    beginQuantum = targetRecord.PlanQuantum;
+                    beginAmount = targetRecord.PlanAmount;
+                }
+                else
+                {
+                    beginQuantum = 0;
+                    beginAmount = 0;
+                }               
+            }
+            else
+            {
+                SettlementBusiness settlementBusiness = new SettlementBusiness();
+                var previous = settlementBusiness.FindById(settlement.PreviousId);
+
+                var dal = this.baseDal as ISettlementRecordRepository;
+                var previousRecord = dal.FindOne(previous.Id, record.DepartmentId, record.EnergyType);
+
+                beginQuantum = previousRecord.BeginQuantum - previousRecord.Quantum;
+                beginAmount = previousRecord.BeginAmount - previousRecord.Amount;
+            }
+
+            return new Tuple<decimal, decimal>(beginQuantum, beginAmount);
+        }
+        #endregion //Function
+
         #region Method
         /// <summary>
         /// 根据结算查找记录
@@ -99,8 +143,6 @@ namespace Poseidon.Energy.Core.BL
 
             entity.Quantum = 0;
             entity.Amount = 0;
-            entity.SchoolTakeAmount = 0;
-            entity.SelfTakeAmount = 0;
             entity.Status = 0;
             entity.CreateBy = new UpdateStamp
             {
@@ -115,24 +157,9 @@ namespace Poseidon.Energy.Core.BL
                 Time = now
             };
 
-            if (string.IsNullOrEmpty(settlement.PreviousId)) //first settle
-            {
-                if (targetRecord != null)
-                {
-                    entity.BeginQuantum = targetRecord.PlanQuantum;
-                    entity.BeginAmount = targetRecord.PlanAmount;
-                }
-                else
-                {
-                    entity.BeginQuantum = 0;
-                    entity.BeginAmount = 0;
-                }
-            }
-            else
-            {
-                var previous = BusinessFactory<SettlementBusiness>.Instance.FindById(settlement.PreviousId);
-
-            }
+            var begin = GetBeginData(settlement, entity);
+            entity.BeginQuantum = begin.Item1;
+            entity.BeginAmount = begin.Item2;
 
             dal.Create(entity);
             return;

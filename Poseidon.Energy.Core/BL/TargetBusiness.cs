@@ -28,6 +28,16 @@ namespace Poseidon.Energy.Core.BL
 
         #region Method
         /// <summary>
+        /// 按年度查找指标计划
+        /// </summary>
+        /// <param name="year">年度</param>
+        /// <returns></returns>
+        public Target FindByYear(int year)
+        {
+            return this.baseDal.FindOneByField("year", year);
+        }
+
+        /// <summary>
         /// 添加计划指标
         /// </summary>
         /// <param name="entity">实体对象</param>

@@ -36,8 +36,6 @@
             this.colBeginAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSchoolTakeAmount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSelfTakeAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,8 +72,6 @@
             this.colAmount,
             this.colEndQuantum,
             this.colEndAmount,
-            this.colSchoolTakeAmount,
-            this.colSelfTakeAmount,
             this.colRemark,
             this.colStatus});
             this.dgvEntity.IndicatorWidth = 40;
@@ -153,28 +149,12 @@
             this.colAmount.Visible = true;
             this.colAmount.VisibleIndex = 8;
             // 
-            // colSchoolTakeAmount
-            // 
-            this.colSchoolTakeAmount.FieldName = "SchoolTakeAmount";
-            this.colSchoolTakeAmount.Name = "colSchoolTakeAmount";
-            this.colSchoolTakeAmount.OptionsColumn.AllowEdit = false;
-            this.colSchoolTakeAmount.Visible = true;
-            this.colSchoolTakeAmount.VisibleIndex = 11;
-            // 
-            // colSelfTakeAmount
-            // 
-            this.colSelfTakeAmount.FieldName = "SelfTakeAmount";
-            this.colSelfTakeAmount.Name = "colSelfTakeAmount";
-            this.colSelfTakeAmount.OptionsColumn.AllowEdit = false;
-            this.colSelfTakeAmount.Visible = true;
-            this.colSelfTakeAmount.VisibleIndex = 12;
-            // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 13;
+            this.colRemark.VisibleIndex = 11;
             // 
             // colStatus
             // 
@@ -255,8 +235,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colBeginAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colQuantum;
         private DevExpress.XtraGrid.Columns.GridColumn colAmount;
-        private DevExpress.XtraGrid.Columns.GridColumn colSchoolTakeAmount;
-        private DevExpress.XtraGrid.Columns.GridColumn colSelfTakeAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colId;

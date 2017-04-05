@@ -63,18 +63,6 @@ namespace Poseidon.Energy.Core.DL
         /// </summary>
         [Display(Name = "金额")]
         public decimal Amount { get; set; }
-
-        /// <summary>
-        /// 学校支付金额
-        /// </summary>
-        [Display(Name = "学校支付金额")]
-        public decimal SchoolTakeAmount { get; set; }
-
-        /// <summary>
-        /// 部门支付金额
-        /// </summary>
-        [Display(Name = "部门支付金额")]
-        public decimal SelfTakeAmount { get; set; }
         #endregion //Property
     }
 }

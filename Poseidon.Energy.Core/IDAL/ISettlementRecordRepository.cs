@@ -19,8 +19,9 @@ namespace Poseidon.Energy.Core.IDAL
         /// </summary>
         /// <param name="settlementId">能源结算ID</param>
         /// <param name="departmentId">部门ID</param>
+        /// <param name="energyType">能源类型</param>
         /// <returns></returns>
-        SettlementRecord FindOne(string settlementId, string departmentId);
+        SettlementRecord FindOne(string settlementId, string departmentId, int energyType);
 
         /// <summary>
         /// 查找多条记录
