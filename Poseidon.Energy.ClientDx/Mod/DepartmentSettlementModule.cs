@@ -41,7 +41,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void LoadSettlements()
         {
-            this.bsSettlement.DataSource = BusinessFactory<SettlementBusiness>.Instance.FindAll().OrderByDescending(r => r.BelongTime);
+            this.bsSettlement.DataSource = BusinessFactory<SettlementBusiness>.Instance.FindAll();
         }
 
         /// <summary>

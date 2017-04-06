@@ -30,6 +30,43 @@ namespace Poseidon.Energy.Core.BL
 
         #region Method
         /// <summary>
+        /// 查找所有结算，按顺序返回
+        /// </summary>
+        /// <returns></returns>
+        public override IEnumerable<Settlement> FindAll()
+        {
+            List<Settlement> data = new List<Settlement>();
+            var all = base.FindAll();
+            int[] years = all.GroupBy(r => r.Year).Select(s => s.Key).OrderByDescending(t => t).ToArray();
+
+            for (int i = 0; i < years.Length; i++)
+            {
+                var settlements = all.Where(r => r.Year == years[i]);
+
+                var first = settlements.Single(r => string.IsNullOrEmpty(r.PreviousId));
+
+                data.Add(first);
+
+                string previousId = first.Id;
+                bool flag = true;
+                while (flag)
+                {
+                    var item = settlements.SingleOrDefault(r => r.PreviousId == previousId);
+                    if (item != null)
+                    {
+                        data.Add(item);
+                        previousId = item.Id;
+                    }
+                    else
+                        flag = false;
+                }
+            }
+
+            data.Reverse();
+            return data;
+        }
+
+        /// <summary>
         /// 获取指标化相关能源结算
         /// </summary>
         /// <param name="targetId">指标计划ID</param>
@@ -191,7 +228,7 @@ namespace Poseidon.Energy.Core.BL
                     var targetRecord = trBusiness.FindByDepartment(target.Id, item.Id, (int)energyType);
 
                     summary.SchoolTake = Math.Round(-summary.RemainAmount * targetRecord.SchoolTake);
-                    summary.SelfTake = -summary.RemainAmount - summary.SelfTake;
+                    summary.SelfTake = -summary.RemainAmount - summary.SchoolTake;
                 }
 
                 if (flag)

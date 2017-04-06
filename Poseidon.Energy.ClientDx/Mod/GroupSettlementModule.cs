@@ -43,15 +43,17 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void InitControls()
         {
+            var settlements = BusinessFactory<SettlementBusiness>.Instance.FindAll();
+
             this.lbYears.Items.Clear();
-            var years = BusinessFactory<SettlementBusiness>.Instance.FindAll().GroupBy(r => r.Year).Select(s => s.Key).OrderByDescending(t => t);
+            var years = settlements.GroupBy(r => r.Year).Select(s => s.Key).OrderByDescending(t => t);
 
             foreach (var year in years)
             {
                 this.lbYears.Items.Add(year.ToString() + "年");
             }
 
-            this.bsSettlement.DataSource = BusinessFactory<SettlementBusiness>.Instance.FindAll().OrderByDescending(r => r.BelongTime);
+            this.bsSettlement.DataSource = settlements;
         }
 
         /// <summary>

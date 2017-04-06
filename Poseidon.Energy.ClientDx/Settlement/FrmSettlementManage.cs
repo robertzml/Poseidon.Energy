@@ -49,7 +49,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void LoadSettlements()
         {
-            var data = BusinessFactory<SettlementBusiness>.Instance.FindAll().OrderByDescending(r => r.Name);
+            var data = BusinessFactory<SettlementBusiness>.Instance.FindAll();
             this.bsSettlement.DataSource = data;
         }
 
