@@ -43,10 +43,6 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.tabFee = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageSummary = new DevExpress.XtraTab.XtraTabPage();
-            this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
-            this.waterExpChart = new Poseidon.Energy.ClientDx.WaterExpenseChart();
-            this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabPageElectricCompareGrid = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.modElecCompGrid = new Poseidon.Energy.ClientDx.ElectricCompareGridModule();
@@ -80,11 +76,6 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabFee)).BeginInit();
             this.tabFee.SuspendLayout();
-            this.tabPageSummary.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
-            this.layoutControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             this.tabPageElectricCompareGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -184,7 +175,7 @@
             this.tabPageElectricMeter.Controls.Add(this.electricMeterGrid);
             this.tabPageElectricMeter.Name = "tabPageElectricMeter";
             this.tabPageElectricMeter.PageVisible = false;
-            this.tabPageElectricMeter.Size = new System.Drawing.Size(689, 122);
+            this.tabPageElectricMeter.Size = new System.Drawing.Size(689, 142);
             this.tabPageElectricMeter.Text = "电表表具";
             // 
             // electricMeterGrid
@@ -203,7 +194,7 @@
             this.electricMeterGrid.ShowLineNumber = true;
             this.electricMeterGrid.ShowMenu = false;
             this.electricMeterGrid.ShowNavigator = false;
-            this.electricMeterGrid.Size = new System.Drawing.Size(689, 122);
+            this.electricMeterGrid.Size = new System.Drawing.Size(689, 142);
             this.electricMeterGrid.TabIndex = 0;
             // 
             // tabPageWaterMeter
@@ -211,7 +202,7 @@
             this.tabPageWaterMeter.Controls.Add(this.waterMeterGrid);
             this.tabPageWaterMeter.Name = "tabPageWaterMeter";
             this.tabPageWaterMeter.PageVisible = false;
-            this.tabPageWaterMeter.Size = new System.Drawing.Size(689, 122);
+            this.tabPageWaterMeter.Size = new System.Drawing.Size(689, 142);
             this.tabPageWaterMeter.Text = "水表表具";
             // 
             // waterMeterGrid
@@ -230,7 +221,7 @@
             this.waterMeterGrid.ShowLineNumber = true;
             this.waterMeterGrid.ShowMenu = false;
             this.waterMeterGrid.ShowNavigator = false;
-            this.waterMeterGrid.Size = new System.Drawing.Size(689, 122);
+            this.waterMeterGrid.Size = new System.Drawing.Size(689, 142);
             this.waterMeterGrid.TabIndex = 0;
             // 
             // groupControl3
@@ -262,49 +253,9 @@
             // 
             // tabPageSummary
             // 
-            this.tabPageSummary.Controls.Add(this.layoutControl4);
             this.tabPageSummary.Name = "tabPageSummary";
             this.tabPageSummary.Size = new System.Drawing.Size(689, 329);
             this.tabPageSummary.Text = "摘要";
-            // 
-            // layoutControl4
-            // 
-            this.layoutControl4.Controls.Add(this.waterExpChart);
-            this.layoutControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl4.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl4.Name = "layoutControl4";
-            this.layoutControl4.Root = this.layoutControlGroup5;
-            this.layoutControl4.Size = new System.Drawing.Size(689, 329);
-            this.layoutControl4.TabIndex = 0;
-            this.layoutControl4.Text = "layoutControl4";
-            // 
-            // waterExpChart
-            // 
-            this.waterExpChart.Location = new System.Drawing.Point(12, 12);
-            this.waterExpChart.Name = "waterExpChart";
-            this.waterExpChart.Size = new System.Drawing.Size(665, 305);
-            this.waterExpChart.TabIndex = 4;
-            this.waterExpChart.Visible = false;
-            // 
-            // layoutControlGroup5
-            // 
-            this.layoutControlGroup5.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup5.GroupBordersVisible = false;
-            this.layoutControlGroup5.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem25});
-            this.layoutControlGroup5.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup5.Name = "layoutControlGroup5";
-            this.layoutControlGroup5.Size = new System.Drawing.Size(689, 329);
-            this.layoutControlGroup5.TextVisible = false;
-            // 
-            // layoutControlItem25
-            // 
-            this.layoutControlItem25.Control = this.waterExpChart;
-            this.layoutControlItem25.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem25.Name = "layoutControlItem25";
-            this.layoutControlItem25.Size = new System.Drawing.Size(669, 309);
-            this.layoutControlItem25.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem25.TextVisible = false;
             // 
             // tabPageElectricCompareGrid
             // 
@@ -436,7 +387,7 @@
             this.tabPageWaterCompareChart.Controls.Add(this.modWaterCompare);
             this.tabPageWaterCompareChart.Name = "tabPageWaterCompareChart";
             this.tabPageWaterCompareChart.PageVisible = false;
-            this.tabPageWaterCompareChart.Size = new System.Drawing.Size(689, 349);
+            this.tabPageWaterCompareChart.Size = new System.Drawing.Size(689, 329);
             this.tabPageWaterCompareChart.Text = "用水对比图";
             // 
             // modWaterCompare
@@ -444,14 +395,14 @@
             this.modWaterCompare.Dock = System.Windows.Forms.DockStyle.Fill;
             this.modWaterCompare.Location = new System.Drawing.Point(0, 0);
             this.modWaterCompare.Name = "modWaterCompare";
-            this.modWaterCompare.Size = new System.Drawing.Size(689, 349);
+            this.modWaterCompare.Size = new System.Drawing.Size(689, 329);
             this.modWaterCompare.TabIndex = 0;
             // 
             // tabPageWaterReceipt
             // 
             this.tabPageWaterReceipt.Controls.Add(this.waterExpenseReceipt);
             this.tabPageWaterReceipt.Name = "tabPageWaterReceipt";
-            this.tabPageWaterReceipt.Size = new System.Drawing.Size(689, 349);
+            this.tabPageWaterReceipt.Size = new System.Drawing.Size(689, 329);
             this.tabPageWaterReceipt.Text = "水费单据";
             // 
             // waterExpenseReceipt
@@ -460,7 +411,7 @@
             this.waterExpenseReceipt.Editable = false;
             this.waterExpenseReceipt.Location = new System.Drawing.Point(0, 0);
             this.waterExpenseReceipt.Name = "waterExpenseReceipt";
-            this.waterExpenseReceipt.Size = new System.Drawing.Size(689, 349);
+            this.waterExpenseReceipt.Size = new System.Drawing.Size(689, 329);
             this.waterExpenseReceipt.TabIndex = 0;
             // 
             // bsWaterExpense
@@ -489,11 +440,6 @@
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabFee)).EndInit();
             this.tabFee.ResumeLayout(false);
-            this.tabPageSummary.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
-            this.layoutControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             this.tabPageElectricCompareGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -526,13 +472,9 @@
         private DevExpress.XtraTab.XtraTabControl tabFee;
         private DevExpress.XtraTab.XtraTabPage tabPageSummary;
         private System.Windows.Forms.BindingSource bsWaterExpense;
-        private DevExpress.XtraLayout.LayoutControl layoutControl4;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup5;
         private DevExpress.XtraTab.XtraTabPage tabPageWaterCompareGrid;
         private DevExpress.XtraLayout.LayoutControl layoutControl5;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup6;
-        private WaterExpenseChart waterExpChart;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem25;
         private DevExpress.XtraTab.XtraTabPage tabPageWaterReceipt;
         private WaterExpenseReceipt waterExpenseReceipt;
         private ExpenseAccountInfo ctrAccountInfo;

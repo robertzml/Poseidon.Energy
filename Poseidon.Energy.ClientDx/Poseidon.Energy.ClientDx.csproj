@@ -117,6 +117,12 @@
     <Compile Include="Control\SettlementRecordGrid.Designer.cs">
       <DependentUpon>SettlementRecordGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\DepartmentSettlementModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\DepartmentSettlementModule.Designer.cs">
+      <DependentUpon>DepartmentSettlementModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mod\GroupSettlementModule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -604,6 +610,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\DepartmentMeasureModule.resx">
       <DependentUpon>DepartmentMeasureModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\DepartmentSettlementModule.resx">
+      <DependentUpon>DepartmentSettlementModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\DepartmentTargetModule.resx">
       <DependentUpon>DepartmentTargetModule.cs</DependentUpon>

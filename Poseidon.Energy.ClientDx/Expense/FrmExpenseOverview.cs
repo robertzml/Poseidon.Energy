@@ -134,10 +134,6 @@ namespace Poseidon.Energy.ClientDx
             // 水费单据
             this.tabPageWaterReceipt.PageVisible = true;
             this.waterExpenseReceipt.SetAccount(this.currentAccount);
-
-            // 水费图表  
-            this.waterExpChart.SetDataSource(currentYearList);
-            this.waterExpChart.Visible = true;
         }
         #endregion //Function
 

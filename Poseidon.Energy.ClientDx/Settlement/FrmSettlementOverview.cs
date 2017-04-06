@@ -59,7 +59,9 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void settlementTree_OrganizationSelected(object sender, EventArgs e)
         {
-
+            this.navFrame.SelectedPageIndex = 1;
+            var departmentId = this.settlementTree.GetCurrentSelectId();
+            this.depSettlementMod.SetDepartment(departmentId);
         }
         #endregion //Event
     }

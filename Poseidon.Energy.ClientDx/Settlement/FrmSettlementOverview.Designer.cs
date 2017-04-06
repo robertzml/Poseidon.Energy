@@ -34,8 +34,10 @@
             this.navFrame = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navPageGroup = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.groupSettlementMod = new Poseidon.Energy.ClientDx.GroupSettlementModule();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.groupSettlementMod = new Poseidon.Energy.ClientDx.GroupSettlementModule();
+            this.depSettlementMod = new Poseidon.Energy.ClientDx.DepartmentSettlementModule();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -44,6 +46,9 @@
             this.navPageGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            this.navigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -84,6 +89,7 @@
             // 
             // navFrame
             // 
+            this.navFrame.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
             this.navFrame.Controls.Add(this.navPageGroup);
             this.navFrame.Controls.Add(this.navigationPage2);
             this.navFrame.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -93,7 +99,7 @@
             this.navPageGroup,
             this.navigationPage2});
             this.navFrame.SelectedPage = this.navigationPage2;
-            this.navFrame.SelectedPageIndex = 0;
+            this.navFrame.SelectedPageIndex = 1;
             this.navFrame.Size = new System.Drawing.Size(692, 542);
             this.navFrame.TabIndex = 0;
             this.navFrame.Text = "navigationFrame1";
@@ -115,6 +121,23 @@
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "分组能源结算总览";
             // 
+            // navigationPage2
+            // 
+            this.navigationPage2.Caption = "navigationPage2";
+            this.navigationPage2.Controls.Add(this.groupControl3);
+            this.navigationPage2.Name = "navigationPage2";
+            this.navigationPage2.Size = new System.Drawing.Size(692, 542);
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.depSettlementMod);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl3.Location = new System.Drawing.Point(0, 0);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(692, 542);
+            this.groupControl3.TabIndex = 0;
+            this.groupControl3.Text = "部门能源结算总览";
+            // 
             // groupSettlementMod
             // 
             this.groupSettlementMod.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -123,11 +146,13 @@
             this.groupSettlementMod.Size = new System.Drawing.Size(688, 519);
             this.groupSettlementMod.TabIndex = 0;
             // 
-            // navigationPage2
+            // depSettlementMod
             // 
-            this.navigationPage2.Caption = "navigationPage2";
-            this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(692, 542);
+            this.depSettlementMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.depSettlementMod.Location = new System.Drawing.Point(2, 21);
+            this.depSettlementMod.Name = "depSettlementMod";
+            this.depSettlementMod.Size = new System.Drawing.Size(688, 519);
+            this.depSettlementMod.TabIndex = 0;
             // 
             // FrmSettlementOverview
             // 
@@ -145,6 +170,9 @@
             this.navPageGroup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            this.navigationPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -159,5 +187,7 @@
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private GroupSettlementModule groupSettlementMod;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DepartmentSettlementModule depSettlementMod;
     }
 }
