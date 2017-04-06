@@ -50,6 +50,8 @@ namespace Poseidon.Energy.ClientDx
             {
                 this.lbYears.Items.Add(year.ToString() + "年");
             }
+
+            this.bsSettlement.DataSource = BusinessFactory<SettlementBusiness>.Instance.FindAll().OrderByDescending(r => r.BelongTime);
         }
 
         /// <summary>
@@ -69,6 +71,50 @@ namespace Poseidon.Energy.ClientDx
 
             var waterQuantum = BusinessFactory<SettlementBusiness>.Instance.GetQuantumSummary(year, EnergyType.Water, departments).ToList();
             this.waterQSGrid.DataSource = waterQuantum;
+
+            var elecAmount = BusinessFactory<SettlementBusiness>.Instance.GetAmountSummary(year, EnergyType.Electric, departments).ToList();
+            this.elecASGrid.DataSource = elecAmount;
+
+            var waterAmount = BusinessFactory<SettlementBusiness>.Instance.GetAmountSummary(year, EnergyType.Water, departments).ToList();
+            this.watASGrid.DataSource = waterAmount;
+
+            this.txtTotalElectricQuantum.Text = string.Format("{0}度", elecQuantum.Sum(r => r.TotalQuantum));
+            this.txtTotalElectricAmount.Text = string.Format("{0}元", elecAmount.Sum(r => r.TotalAmount));
+            this.txtTotalWaterQuantum.Text = string.Format("{0}吨", waterQuantum.Sum(r => r.TotalQuantum));
+            this.txtTotalWaterAmount.Text = string.Format("{0}元", waterAmount.Sum(r => r.TotalAmount));
+        }
+
+        /// <summary>
+        /// 显示能源结算信息
+        /// </summary>
+        /// <param name="entity">能源结算</param>
+        /// <param name="group">分组</param>
+        public void DisplaySettlmentInfo(Settlement entity, Group group)
+        {
+            this.txtGroupName2.Text = group.Name;
+            this.txtName.Text = entity.Name;
+            this.txtYear2.Text = entity.Year.ToString();
+            this.txtBelongTime.Text = entity.BelongTime;
+            this.txtSettlementType.Text = ((SettlementType)entity.Type).DisplayName();
+            this.txtCreateUser.Text = entity.CreateBy.Name;
+            this.txtCreateTime.Text = entity.CreateBy.Time.ToDateTimeString();
+            this.txtEditUser.Text = entity.UpdateBy.Name;
+            this.txtEditTime.Text = entity.UpdateBy.Time.ToDateTimeString();
+            this.txtRemark.Text = entity.Remark;
+
+            var target = BusinessFactory<TargetBusiness>.Instance.FindById(entity.TargetId);
+            this.txtTargetName.Text = target.Name;
+
+            if (string.IsNullOrEmpty(entity.PreviousId))
+                this.txtPrevious.Text = "首次结算";
+            else
+            {
+                var previous = BusinessFactory<SettlementBusiness>.Instance.FindById(entity.PreviousId);
+                this.txtPrevious.Text = previous.Name;
+            }
+
+            this.electricSRGrid.DataSource = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Electric).ToList();
+            this.waterSRGrid.DataSource = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Water).ToList();
         }
         #endregion //Function
 
@@ -98,6 +144,22 @@ namespace Poseidon.Energy.ClientDx
             string text = this.lbYears.SelectedItem.ToString();
             int year = Convert.ToInt32(text.Substring(0, 4));
             LoadSummaryData(year, this.currentGroup);
+        }
+
+        /// <summary>
+        /// 选择结算记录
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void lbSettlements_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.lbSettlements.SelectedItem == null)
+            {
+                return;
+            }
+
+            var settlement = this.lbSettlements.SelectedItem as Settlement;
+            DisplaySettlmentInfo(settlement, this.currentGroup);
         }
         #endregion //Event
     }

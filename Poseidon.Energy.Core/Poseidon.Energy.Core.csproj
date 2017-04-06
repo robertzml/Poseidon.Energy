@@ -135,6 +135,7 @@
     <Compile Include="Utility\EnergyConstant.cs" />
     <Compile Include="Utility\EnergyEnum.cs" />
     <Compile Include="Utility\ModelTypeCode.cs" />
+    <Compile Include="Utility\SettlementAmountSummary.cs" />
     <Compile Include="Utility\SettlementQuantumSummary.cs" />
   </ItemGroup>
   <ItemGroup />

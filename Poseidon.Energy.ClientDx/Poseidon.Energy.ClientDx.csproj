@@ -129,6 +129,12 @@
     <Compile Include="Control\SettlementQuantumSummaryGrid.Designer.cs">
       <DependentUpon>SettlementQuantumSummaryGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\SettlementAmountSummaryGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\SettlementAmountSummaryGrid.Designer.cs">
+      <DependentUpon>SettlementAmountSummaryGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settlement\FrmSettlementRecordAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -587,6 +593,9 @@
     <EmbeddedResource Include="Control\EnergyCompareGrid.resx">
       <DependentUpon>EnergyCompareGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\SettlementAmountSummaryGrid.resx">
+      <DependentUpon>SettlementAmountSummaryGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\SettlementQuantumSummaryGrid.resx">
       <DependentUpon>SettlementQuantumSummaryGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -756,6 +765,7 @@
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.MeasureRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Settlement.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.SettlementRecord.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.Utility.SettlementAmountSummary.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.Utility.SettlementQuantumSummary.datasource" />
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

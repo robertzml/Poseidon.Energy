@@ -130,6 +130,78 @@ namespace Poseidon.Energy.Core.BL
         }
 
         /// <summary>
+        /// 获取能源结算金额汇总
+        /// </summary>
+        /// <param name="year">年度</param>
+        /// <param name="energyType">能源类型</param>
+        /// <param name="departments">部门列表</param>
+        /// <returns></returns>
+        public IEnumerable<SettlementAmountSummary> GetAmountSummary(int year, EnergyType energyType, List<Department> departments)
+        {
+            List<SettlementAmountSummary> data = new List<SettlementAmountSummary>();
+
+            TargetBusiness targetBusiness = new TargetBusiness();
+            var target = targetBusiness.FindByYear(year);
+
+            SettlementRecordBusiness srBusiness = new SettlementRecordBusiness();
+
+            var settlements = FindByYear(year).ToList();
+
+            foreach (var item in departments)
+            {
+                SettlementAmountSummary summary = new SettlementAmountSummary();
+                summary.DepartmentName = item.Name;
+                summary.EnergyType = energyType.DisplayName();
+
+                bool flag = false;
+
+                for (int i = 0; i < settlements.Count; i++)
+                {
+                    var settle = settlements[i];
+                    var record = srBusiness.FindByDepartment(settle.Id, item.Id, energyType);
+                    if (record == null)
+                        continue;
+
+                    switch (i)
+                    {
+                        case 0:
+                            summary.UnitPrice = record.UnitPrice;
+                            summary.PlanAmount = record.BeginAmount;
+                            summary.FirstQuarter = record.Amount;
+                            break;
+                        case 1:
+                            summary.SecondQuarter = record.Amount;
+                            break;
+                        case 2:
+                            summary.ThirdQuarter = record.Amount;
+                            break;
+                        case 3:
+                            summary.FourthQuarter = record.Amount;
+                            break;
+                    }
+                    flag = true;
+                }
+
+                summary.TotalAmount = summary.FirstQuarter + summary.SecondQuarter + summary.ThirdQuarter + summary.FourthQuarter;
+                summary.RemainAmount = summary.PlanAmount - summary.TotalAmount;
+
+                if (summary.RemainAmount < 0)
+                {
+                    TargetRecordBusiness trBusiness = new TargetRecordBusiness();
+                    var targetRecord = trBusiness.FindByDepartment(target.Id, item.Id, (int)energyType);
+
+                    summary.SchoolTake = Math.Round(-summary.RemainAmount * targetRecord.SchoolTake);
+                    summary.SelfTake = -summary.RemainAmount - summary.SelfTake;
+                }
+
+                if (flag)
+                    data.Add(summary);
+            }
+
+            return data;
+        }
+
+        /// <summary>
         /// 添加能源结算
         /// </summary>
         /// <param name="entity">实体对象</param>
