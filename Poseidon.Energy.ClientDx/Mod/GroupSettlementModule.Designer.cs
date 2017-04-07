@@ -65,6 +65,7 @@
             this.bsSettlement = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
             this.txtEditTime = new DevExpress.XtraEditors.TextEdit();
             this.txtEditUser = new DevExpress.XtraEditors.TextEdit();
@@ -90,12 +91,14 @@
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.tabRecord = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.electricSRGrid = new Poseidon.Energy.ClientDx.SettlementRecordGrid();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.waterSRGrid = new Poseidon.Energy.ClientDx.SettlementRecordGrid();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabSettlement)).BeginInit();
             this.tabSettlement.SuspendLayout();
             this.tabPageSummary.SuspendLayout();
@@ -161,12 +164,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabRecord)).BeginInit();
             this.tabRecord.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabSettlement
@@ -568,6 +573,7 @@
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.btnPrint);
             this.layoutControl2.Controls.Add(this.txtRemark);
             this.layoutControl2.Controls.Add(this.txtEditTime);
             this.layoutControl2.Controls.Add(this.txtEditUser);
@@ -588,6 +594,16 @@
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(12, 137);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(320, 22);
+            this.btnPrint.StyleController = this.layoutControl2;
+            this.btnPrint.TabIndex = 16;
+            this.btnPrint.Text = "打印结算报表";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // txtRemark
             // 
             this.txtRemark.Location = new System.Drawing.Point(87, 108);
@@ -595,7 +611,7 @@
             this.txtRemark.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtRemark.Properties.Appearance.Options.UseBackColor = true;
             this.txtRemark.Properties.ReadOnly = true;
-            this.txtRemark.Size = new System.Drawing.Size(568, 51);
+            this.txtRemark.Size = new System.Drawing.Size(568, 25);
             this.txtRemark.StyleController = this.layoutControl2;
             this.txtRemark.TabIndex = 15;
             // 
@@ -645,12 +661,12 @@
             // 
             // txtPrevious
             // 
-            this.txtPrevious.Location = new System.Drawing.Point(411, 36);
+            this.txtPrevious.Location = new System.Drawing.Point(410, 36);
             this.txtPrevious.Name = "txtPrevious";
             this.txtPrevious.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtPrevious.Properties.Appearance.Options.UseBackColor = true;
             this.txtPrevious.Properties.ReadOnly = true;
-            this.txtPrevious.Size = new System.Drawing.Size(83, 20);
+            this.txtPrevious.Size = new System.Drawing.Size(84, 20);
             this.txtPrevious.StyleController = this.layoutControl2;
             this.txtPrevious.TabIndex = 10;
             // 
@@ -661,7 +677,7 @@
             this.txtTargetName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtTargetName.Properties.Appearance.Options.UseBackColor = true;
             this.txtTargetName.Properties.ReadOnly = true;
-            this.txtTargetName.Size = new System.Drawing.Size(83, 20);
+            this.txtTargetName.Size = new System.Drawing.Size(82, 20);
             this.txtTargetName.StyleController = this.layoutControl2;
             this.txtTargetName.TabIndex = 9;
             // 
@@ -689,12 +705,12 @@
             // 
             // txtYear2
             // 
-            this.txtYear2.Location = new System.Drawing.Point(411, 12);
+            this.txtYear2.Location = new System.Drawing.Point(410, 12);
             this.txtYear2.Name = "txtYear2";
             this.txtYear2.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtYear2.Properties.Appearance.Options.UseBackColor = true;
             this.txtYear2.Properties.ReadOnly = true;
-            this.txtYear2.Size = new System.Drawing.Size(83, 20);
+            this.txtYear2.Size = new System.Drawing.Size(84, 20);
             this.txtYear2.StyleController = this.layoutControl2;
             this.txtYear2.TabIndex = 6;
             // 
@@ -705,7 +721,7 @@
             this.txtName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtName.Properties.Appearance.Options.UseBackColor = true;
             this.txtName.Properties.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(83, 20);
+            this.txtName.Size = new System.Drawing.Size(82, 20);
             this.txtName.StyleController = this.layoutControl2;
             this.txtName.TabIndex = 5;
             // 
@@ -736,7 +752,9 @@
             this.layoutControlItem15,
             this.layoutControlItem16,
             this.layoutControlItem17,
-            this.layoutControlItem18});
+            this.layoutControlItem18,
+            this.layoutControlItem19,
+            this.emptySpaceItem1});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(667, 171);
@@ -756,16 +774,16 @@
             this.layoutControlItem8.Control = this.txtName;
             this.layoutControlItem8.Location = new System.Drawing.Point(162, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(162, 24);
+            this.layoutControlItem8.Size = new System.Drawing.Size(161, 24);
             this.layoutControlItem8.Text = "结算名称";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(72, 14);
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.txtYear2;
-            this.layoutControlItem9.Location = new System.Drawing.Point(324, 0);
+            this.layoutControlItem9.Location = new System.Drawing.Point(323, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(162, 24);
+            this.layoutControlItem9.Size = new System.Drawing.Size(163, 24);
             this.layoutControlItem9.Text = "年度";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -792,16 +810,16 @@
             this.layoutControlItem12.Control = this.txtTargetName;
             this.layoutControlItem12.Location = new System.Drawing.Point(162, 24);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(162, 24);
+            this.layoutControlItem12.Size = new System.Drawing.Size(161, 24);
             this.layoutControlItem12.Text = "关联指标计划";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(72, 14);
             // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.txtPrevious;
-            this.layoutControlItem13.Location = new System.Drawing.Point(324, 24);
+            this.layoutControlItem13.Location = new System.Drawing.Point(323, 24);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(162, 24);
+            this.layoutControlItem13.Size = new System.Drawing.Size(163, 24);
             this.layoutControlItem13.Text = "上期结算";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(72, 14);
             // 
@@ -846,9 +864,18 @@
             this.layoutControlItem18.Control = this.txtRemark;
             this.layoutControlItem18.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(647, 55);
+            this.layoutControlItem18.Size = new System.Drawing.Size(647, 29);
             this.layoutControlItem18.Text = "备注";
             this.layoutControlItem18.TextSize = new System.Drawing.Size(72, 14);
+            // 
+            // layoutControlItem19
+            // 
+            this.layoutControlItem19.Control = this.btnPrint;
+            this.layoutControlItem19.Location = new System.Drawing.Point(0, 125);
+            this.layoutControlItem19.Name = "layoutControlItem19";
+            this.layoutControlItem19.Size = new System.Drawing.Size(324, 26);
+            this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem19.TextVisible = false;
             // 
             // groupControl5
             // 
@@ -926,6 +953,14 @@
             this.waterSRGrid.Size = new System.Drawing.Size(661, 258);
             this.waterSRGrid.TabIndex = 0;
             // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(324, 125);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(323, 26);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // GroupSettlementModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -998,12 +1033,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabRecord)).EndInit();
             this.tabRecord.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1077,5 +1114,8 @@
         private SettlementRecordGrid electricSRGrid;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private SettlementRecordGrid waterSRGrid;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }

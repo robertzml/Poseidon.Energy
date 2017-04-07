@@ -9,11 +9,14 @@ using System.Windows.Forms;
 
 namespace Poseidon.Energy.ClientDx
 {
+    using DevExpress.XtraReports.UI;
     using Poseidon.Base.Framework;
     using Poseidon.Common;
     using Poseidon.Core.BL;
     using Poseidon.Core.DL;
     using Poseidon.Core.Utility;
+    using Poseidon.Energy.ClientDx.Utility;
+    using Poseidon.Energy.ClientDx.Report;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
     using Poseidon.Energy.Core.Utility;
@@ -91,7 +94,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         /// <param name="entity">能源结算</param>
         /// <param name="group">分组</param>
-        public void DisplaySettlmentInfo(Settlement entity, Group group)
+        private void DisplaySettlmentInfo(Settlement entity, Group group)
         {
             this.txtGroupName2.Text = group.Name;
             this.txtName.Text = entity.Name;
@@ -115,8 +118,47 @@ namespace Poseidon.Energy.ClientDx
                 this.txtPrevious.Text = previous.Name;
             }
 
-            this.electricSRGrid.DataSource = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Electric).ToList();
-            this.waterSRGrid.DataSource = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Water).ToList();
+            var groupItems = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
+
+            var electricRecords = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Electric);
+            this.electricSRGrid.DataSource = electricRecords.Where(r => groupItems.Select(s => s.OrganizationId).Contains(r.DepartmentId)).ToList();
+
+            var waterRecords = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Water);
+            this.waterSRGrid.DataSource = waterRecords.Where(r => groupItems.Select(s => s.OrganizationId).Contains(r.DepartmentId)).ToList();
+        }
+
+        /// <summary>
+        /// 载入结算报表数据
+        /// </summary>
+        /// <param name="settlement"></param>
+        /// <param name="electricRecords"></param>
+        /// <param name="waterRecords"></param>
+        /// <returns></returns>
+        private List<SettlementReportModel> LoadReportData(Settlement settlement, List<SettlementRecord> electricRecords, List<SettlementRecord> waterRecords)
+        {
+            List<SettlementReportModel> data = new List<SettlementReportModel>();
+
+            foreach (var item in electricRecords)
+            {
+                var department = BusinessFactory<DepartmentBusiness>.Instance.FindById(item.DepartmentId);
+                var targetRecord = BusinessFactory<TargetRecordBusiness>.Instance.FindByDepartment(settlement.TargetId, department.Id, (int)EnergyType.Electric);
+
+                var model = ReportUtil.SettlementReportTranslate(department.Name, settlement, item, targetRecord);
+
+                data.Add(model);
+            }
+
+            foreach (var item in waterRecords)
+            {
+                var department = BusinessFactory<DepartmentBusiness>.Instance.FindById(item.DepartmentId);
+                var targetRecord = BusinessFactory<TargetRecordBusiness>.Instance.FindByDepartment(settlement.TargetId, department.Id, (int)EnergyType.Water);
+
+                var model = ReportUtil.SettlementReportTranslate(department.Name, settlement, item, targetRecord);
+
+                data.Add(model);
+            }
+
+            return data;
         }
         #endregion //Function
 
@@ -162,6 +204,29 @@ namespace Poseidon.Energy.ClientDx
 
             var settlement = this.lbSettlements.SelectedItem as Settlement;
             DisplaySettlmentInfo(settlement, this.currentGroup);
+        }
+
+        /// <summary>
+        /// 打印结算
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (this.lbSettlements.SelectedItem == null)
+            {
+                return;
+            }
+
+            var settlement = this.lbSettlements.SelectedItem as Settlement;
+            var data = LoadReportData(settlement, this.electricSRGrid.DataSource, this.waterSRGrid.DataSource);
+
+            RepSettlement report = new RepSettlement();
+            report.DataSource = data;
+
+            ReportPrintTool printTool = new ReportPrintTool(report);
+
+            printTool.ShowRibbonPreview();
         }
         #endregion //Event
     }

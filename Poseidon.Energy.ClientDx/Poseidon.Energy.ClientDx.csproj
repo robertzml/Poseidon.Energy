@@ -117,6 +117,7 @@
     <Compile Include="Control\SettlementRecordGrid.Designer.cs">
       <DependentUpon>SettlementRecordGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\SettlementReportModel.cs" />
     <Compile Include="Mod\DepartmentSettlementModule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -140,6 +141,12 @@
     </Compile>
     <Compile Include="Control\SettlementAmountSummaryGrid.Designer.cs">
       <DependentUpon>SettlementAmountSummaryGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RepSettlement.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RepSettlement.Designer.cs">
+      <DependentUpon>RepSettlement.cs</DependentUpon>
     </Compile>
     <Compile Include="Settlement\FrmSettlementRecordAdd.cs">
       <SubType>Form</SubType>
@@ -555,6 +562,7 @@
     <Compile Include="Mod\WaterCompareGridModule.Designer.cs">
       <DependentUpon>WaterCompareGridModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utility\ReportUtil.cs" />
     <None Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Control\WaterMeterGrid.cs">
       <SubType>UserControl</SubType>
@@ -783,6 +791,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\RepDepartmentTarget.resx">
       <DependentUpon>RepDepartmentTarget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RepSettlement.resx">
+      <DependentUpon>RepSettlement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settlement\FrmSettlementAdd.resx">
       <DependentUpon>FrmSettlementAdd.cs</DependentUpon>

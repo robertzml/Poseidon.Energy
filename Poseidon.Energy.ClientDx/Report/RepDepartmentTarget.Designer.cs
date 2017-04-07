@@ -60,7 +60,6 @@
             this.FieldCaption = new DevExpress.XtraReports.UI.XRControlStyle();
             this.PageInfo = new DevExpress.XtraReports.UI.XRControlStyle();
             this.DataField = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.dsTargetRecord = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource();
             this.DetailReportST = new DevExpress.XtraReports.UI.DetailReportBand();
             this.Detail1 = new DevExpress.XtraReports.UI.DetailBand();
             this.tableBodyST = new DevExpress.XtraReports.UI.XRTable();
@@ -105,11 +104,12 @@
             this.xrTableCell42 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell43 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTargetRecord)).BeginInit();
+            this.dsTargetRecord = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource();
             ((System.ComponentModel.ISupportInitialize)(this.tableBodyST)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableHeadST)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBodyAT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableHeadAT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTargetRecord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -460,11 +460,6 @@
             this.DataField.ForeColor = System.Drawing.Color.Black;
             this.DataField.Name = "DataField";
             this.DataField.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            // 
-            // dsTargetRecord
-            // 
-            this.dsTargetRecord.DataSource = typeof(Poseidon.Energy.Core.DL.TargetRecord);
-            this.dsTargetRecord.Name = "dsTargetRecord";
             // 
             // DetailReportST
             // 
@@ -1008,6 +1003,11 @@
             this.xrTableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell8.Weight = 32.750486251480439D;
             // 
+            // dsTargetRecord
+            // 
+            this.dsTargetRecord.DataSource = typeof(Poseidon.Energy.Core.DL.TargetRecord);
+            this.dsTargetRecord.Name = "dsTargetRecord";
+            // 
             // RepDepartmentTarget
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1036,11 +1036,11 @@
             this.PageInfo,
             this.DataField});
             this.Version = "15.1";
-            ((System.ComponentModel.ISupportInitialize)(this.dsTargetRecord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBodyST)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableHeadST)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBodyAT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableHeadAT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTargetRecord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
