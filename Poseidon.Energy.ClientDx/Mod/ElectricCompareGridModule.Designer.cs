@@ -32,15 +32,15 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.chkAmount = new DevExpress.XtraEditors.CheckEdit();
             this.chkQuantum = new DevExpress.XtraEditors.CheckEdit();
+            this.energyGrid = new Poseidon.Energy.ClientDx.EnergyCompareGrid();
             this.cmbSecond = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cmbFirst = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.energyGrid = new Poseidon.Energy.ClientDx.EnergyCompareGrid();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -52,9 +52,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -102,6 +102,24 @@
             this.chkQuantum.StyleController = this.layoutControl1;
             this.chkQuantum.TabIndex = 7;
             this.chkQuantum.CheckedChanged += new System.EventHandler(this.chkQuantum_CheckedChanged);
+            // 
+            // energyGrid
+            // 
+            this.energyGrid.AllowFilter = false;
+            this.energyGrid.AllowGroup = false;
+            this.energyGrid.AllowSort = false;
+            this.energyGrid.DataSource = null;
+            this.energyGrid.Editable = true;
+            this.energyGrid.EnableMasterView = false;
+            this.energyGrid.Location = new System.Drawing.Point(12, 36);
+            this.energyGrid.Name = "energyGrid";
+            this.energyGrid.ShowAddMenu = false;
+            this.energyGrid.ShowFooter = true;
+            this.energyGrid.ShowLineNumber = true;
+            this.energyGrid.ShowMenu = false;
+            this.energyGrid.ShowNavigator = false;
+            this.energyGrid.Size = new System.Drawing.Size(651, 419);
+            this.energyGrid.TabIndex = 6;
             // 
             // cmbSecond
             // 
@@ -160,6 +178,15 @@
             this.layoutControlItem2.Text = "选择2";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(31, 14);
             // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.energyGrid;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(655, 423);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.chkQuantum;
@@ -177,33 +204,6 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(86, 24);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
-            // 
-            // energyGrid
-            // 
-            this.energyGrid.AllowFilter = false;
-            this.energyGrid.AllowGroup = false;
-            this.energyGrid.AllowSort = false;
-            this.energyGrid.DataSource = null;
-            this.energyGrid.Editable = true;
-            this.energyGrid.EnableMasterView = false;
-            this.energyGrid.Location = new System.Drawing.Point(12, 36);
-            this.energyGrid.Name = "energyGrid";
-            this.energyGrid.ShowAddMenu = false;
-            this.energyGrid.ShowFooter = true;
-            this.energyGrid.ShowLineNumber = true;
-            this.energyGrid.ShowMenu = false;
-            this.energyGrid.ShowNavigator = false;
-            this.energyGrid.Size = new System.Drawing.Size(651, 419);
-            this.energyGrid.TabIndex = 6;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.energyGrid;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(655, 423);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
             // 
             // ElectricCompareGridModule
             // 
@@ -224,9 +224,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
         }

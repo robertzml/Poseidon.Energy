@@ -117,6 +117,31 @@
     <Compile Include="Control\SettlementRecordGrid.Designer.cs">
       <DependentUpon>SettlementRecordGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\EnergyYearExpenseGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\EnergyYearExpenseGrid.Designer.cs">
+      <DependentUpon>EnergyYearExpenseGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\EnergyExpenseChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\EnergyExpenseChart.Designer.cs">
+      <DependentUpon>EnergyExpenseChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\ExpenseAccountModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\ExpenseAccountModule.Designer.cs">
+      <DependentUpon>ExpenseAccountModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EnergyExpense.cs" />
+    <Compile Include="Mod\GroupExpenseModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\GroupExpenseModule.Designer.cs">
+      <DependentUpon>GroupExpenseModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\SettlementReportModel.cs" />
     <Compile Include="Mod\DepartmentSettlementModule.cs">
       <SubType>UserControl</SubType>
@@ -578,12 +603,6 @@
     </Compile>
     <Compile Include="Utility\ControlUtil.cs" />
     <Compile Include="Utility\EventUtil.cs" />
-    <Compile Include="Control\WaterYearExpenseGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\WaterYearExpenseGrid.Designer.cs">
-      <DependentUpon>WaterYearExpenseGrid.cs</DependentUpon>
-    </Compile>
     <Compile Include="Chart\WaterExpenseChart.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -601,11 +620,17 @@
     <EmbeddedResource Include="Chart\EnergyCompareChart.resx">
       <DependentUpon>EnergyCompareChart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Chart\EnergyExpenseChart.resx">
+      <DependentUpon>EnergyExpenseChart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\AllowanceTargetGrid.resx">
       <DependentUpon>AllowanceTargetGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\EnergyCompareGrid.resx">
       <DependentUpon>EnergyCompareGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\EnergyYearExpenseGrid.resx">
+      <DependentUpon>EnergyYearExpenseGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\SettlementAmountSummaryGrid.resx">
       <DependentUpon>SettlementAmountSummaryGrid.cs</DependentUpon>
@@ -652,6 +677,12 @@
     <EmbeddedResource Include="Control\FundRecordGrid.resx">
       <DependentUpon>FundRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mod\ExpenseAccountModule.resx">
+      <DependentUpon>ExpenseAccountModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\GroupExpenseModule.resx">
+      <DependentUpon>GroupExpenseModule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mod\GroupMeasureModule.resx">
       <DependentUpon>GroupMeasureModule.cs</DependentUpon>
     </EmbeddedResource>
@@ -693,9 +724,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\WaterMeterGrid.resx">
       <DependentUpon>WaterMeterGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\WaterYearExpenseGrid.resx">
-      <DependentUpon>WaterYearExpenseGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Expense\FrmExpenseAccount.resx">
       <DependentUpon>FrmExpenseAccount.cs</DependentUpon>
@@ -779,6 +807,7 @@
       <DependentUpon>FrmPopulationRecordView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\EnergyCompare.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.ClientDx.Model.EnergyExpense.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.MeasureRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Settlement.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.SettlementRecord.datasource" />

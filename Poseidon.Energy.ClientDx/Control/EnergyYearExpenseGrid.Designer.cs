@@ -1,6 +1,6 @@
 ﻿namespace Poseidon.Energy.ClientDx
 {
-    partial class WaterYearExpenseGrid
+    partial class EnergyYearExpenseGrid
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.colBelongDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotalQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotalAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colQuantum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -38,14 +39,19 @@
             // 
             // bsEntity
             // 
-            this.bsEntity.DataSource = typeof(Poseidon.Energy.Core.DL.WaterExpense);
+            this.bsEntity.DataSource = typeof(Poseidon.Energy.ClientDx.Model.EnergyExpense);
+            // 
+            // dgcEntity
+            // 
+            this.dgcEntity.Size = new System.Drawing.Size(568, 378);
             // 
             // dgvEntity
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colBelongDate,
-            this.colTotalQuantity,
-            this.colTotalAmount});
+            this.colQuantum,
+            this.colUnitPrice,
+            this.colAmount});
             this.dgvEntity.IndicatorWidth = 40;
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
@@ -65,31 +71,40 @@
             this.colBelongDate.Visible = true;
             this.colBelongDate.VisibleIndex = 0;
             // 
-            // colTotalQuantity
+            // colQuantum
             // 
-            this.colTotalQuantity.Caption = "用水量(吨)";
-            this.colTotalQuantity.FieldName = "TotalQuantity";
-            this.colTotalQuantity.Name = "colTotalQuantity";
-            this.colTotalQuantity.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalQuantity", "合计={0:0.##}")});
-            this.colTotalQuantity.Visible = true;
-            this.colTotalQuantity.VisibleIndex = 1;
+            this.colQuantum.Caption = "用量";
+            this.colQuantum.FieldName = "Quantum";
+            this.colQuantum.Name = "colQuantum";
+            this.colQuantum.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantum", "合计={0:0.##}")});
+            this.colQuantum.Visible = true;
+            this.colQuantum.VisibleIndex = 1;
             // 
-            // colTotalAmount
+            // colUnitPrice
             // 
-            this.colTotalAmount.Caption = "金额(元)";
-            this.colTotalAmount.FieldName = "TotalAmount";
-            this.colTotalAmount.Name = "colTotalAmount";
-            this.colTotalAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalAmount", "合计={0:0.##}")});
-            this.colTotalAmount.Visible = true;
-            this.colTotalAmount.VisibleIndex = 2;
+            this.colUnitPrice.Caption = "单价";
+            this.colUnitPrice.FieldName = "UnitPrice";
+            this.colUnitPrice.Name = "colUnitPrice";
+            this.colUnitPrice.Visible = true;
+            this.colUnitPrice.VisibleIndex = 2;
             // 
-            // WaterYearExpense
+            // colAmount
+            // 
+            this.colAmount.Caption = "金额(元)";
+            this.colAmount.FieldName = "Amount";
+            this.colAmount.Name = "colAmount";
+            this.colAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "合计={0:0.##}")});
+            this.colAmount.Visible = true;
+            this.colAmount.VisibleIndex = 3;
+            // 
+            // EnergyYearExpenseGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "WaterYearExpense";
+            this.Name = "EnergyYearExpenseGrid";
+            this.Load += new System.EventHandler(this.EnergyYearExpenseGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
@@ -98,8 +113,10 @@
         }
 
         #endregion
+
         private DevExpress.XtraGrid.Columns.GridColumn colBelongDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colTotalQuantity;
-        private DevExpress.XtraGrid.Columns.GridColumn colTotalAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn colQuantum;
+        private DevExpress.XtraGrid.Columns.GridColumn colUnitPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colAmount;
     }
 }
