@@ -53,7 +53,7 @@ namespace Poseidon.Energy.ClientDx
             }
 
             this.cmbDataType.SelectedIndex = 0;
-            this.energyChart.SetChartTitle("年度用电支出对比");
+            this.energyChart.SetChartTitle(currentAccount.ShortName + "年度用电支出对比");
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="account">账户</param>
         private void LoadData(ExpenseAccount account)
         {
-            var yeartext = this.ccbYears.EditValue.ToString();                       
+            var yeartext = this.ccbYears.EditValue.ToString();
 
             if (string.IsNullOrEmpty(yeartext))
                 return;
@@ -179,7 +179,7 @@ namespace Poseidon.Energy.ClientDx
             this.energyChart.Clear();
             LoadData(this.currentAccount);
         }
-       
+
         /// <summary>
         /// 是否显示数值
         /// </summary>

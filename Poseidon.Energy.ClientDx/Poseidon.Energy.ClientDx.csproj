@@ -129,6 +129,12 @@
     <Compile Include="Chart\EnergyExpenseChart.Designer.cs">
       <DependentUpon>EnergyExpenseChart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chart\EnergyYearExpenseChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\EnergyYearExpenseChart.Designer.cs">
+      <DependentUpon>EnergyYearExpenseChart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mod\ExpenseAccountModule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -622,6 +628,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Chart\EnergyExpenseChart.resx">
       <DependentUpon>EnergyExpenseChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chart\EnergyYearExpenseChart.resx">
+      <DependentUpon>EnergyYearExpenseChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\AllowanceTargetGrid.resx">
       <DependentUpon>AllowanceTargetGrid.cs</DependentUpon>

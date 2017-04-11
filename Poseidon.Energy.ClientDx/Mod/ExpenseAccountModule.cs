@@ -23,6 +23,8 @@ namespace Poseidon.Energy.ClientDx
     public partial class ExpenseAccountModule : DevExpress.XtraEditors.XtraUserControl
     {
         #region Field
+        private int startYear = 2011;
+
         /// <summary>
         /// 当前关联账户
         /// </summary>
@@ -77,6 +79,7 @@ namespace Poseidon.Energy.ClientDx
                 this.tabPageElectricCompareGrid.PageVisible = false;
                 this.tabPageElectricCompareChart.PageVisible = false;
                 this.tabPageElectricReceipt.PageVisible = false;
+                this.tabPageElectricYear.PageVisible = false;
             }
 
             if (account.EnergyType.Contains(2))
@@ -89,6 +92,7 @@ namespace Poseidon.Energy.ClientDx
                 this.tabPageWaterCompareGrid.PageVisible = false;
                 this.tabPageWaterCompareChart.PageVisible = false;
                 this.tabPageWaterReceipt.PageVisible = false;
+                this.tabPageWaterYear.PageVisible = false;
             }
 
 
@@ -119,8 +123,7 @@ namespace Poseidon.Energy.ClientDx
                 }
                 this.currentYearElectricGrid.DataSource = electricData;
 
-                this.currentYearElectricChart.SetChartTitle(string.Format("{0}年用电支出", this.nowYear));
-                this.currentYearElectricChart.OnlyShowMonth();
+                this.currentYearElectricChart.SetChartTitle(string.Format("{0}{1}年电量消耗", account.ShortName, this.nowYear));
                 this.currentYearElectricChart.SetDataSource(electricData);
             }
 
@@ -140,10 +143,61 @@ namespace Poseidon.Energy.ClientDx
                 }
                 this.currentYearWaterGrid.DataSource = waterData;
 
-                this.currentYearWaterChart.SetChartTitle(string.Format("{0}年用水支出", this.nowYear));
-                this.currentYearWaterChart.OnlyShowMonth();
+                this.currentYearWaterChart.SetChartTitle(string.Format("{0}{1}年水量消耗", account.ShortName, this.nowYear));
                 this.currentYearWaterChart.SetDataSource(waterData);
             }
+        }
+
+        /// <summary>
+        /// 获取历年用电数据
+        /// </summary>
+        /// <param name="account">支出账户</param>
+        private void LoadYearsElectric(ExpenseAccount account)
+        {
+            List<EnergyExpense> data = new List<EnergyExpense>();
+            for (int i = startYear; i <= nowYear; i++)
+            {
+                var yearData = BusinessFactory<ElectricExpenseBusiness>.Instance.FindYearByAccount(account.Id, i);
+                if (yearData.Count() == 0)
+                    continue;
+
+                EnergyExpense energyExpense = new EnergyExpense();
+                energyExpense.BelongDate = new DateTime(i, 1, 1);
+                energyExpense.Quantum = yearData.Sum(r => r.TotalQuantity);
+                energyExpense.Amount = yearData.Sum(r => r.TotalAmount);
+
+                data.Add(energyExpense);
+            }
+
+            this.electricYearChart.SetChartTitle(account.ShortName + "历年用电对比");
+            this.electricYearChart.SetSeriesLengedText(0, "用电量(度)");
+            this.electricYearChart.DataSource = data;
+        }
+
+        /// <summary>
+        /// 获取历年用水数据
+        /// </summary>
+        /// <param name="account">支出账户</param>
+        private void LoadYearsWater(ExpenseAccount account)
+        {
+            List<EnergyExpense> data = new List<EnergyExpense>();
+            for (int i = startYear; i <= nowYear; i++)
+            {
+                var yearData = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(account.Id, i);
+                if (yearData.Count() == 0)
+                    continue;
+
+                EnergyExpense energyExpense = new EnergyExpense();
+                energyExpense.BelongDate = new DateTime(i, 1, 1);
+                energyExpense.Quantum = yearData.Sum(r => r.TotalQuantity);
+                energyExpense.Amount = yearData.Sum(r => r.TotalAmount);
+
+                data.Add(energyExpense);
+            }
+
+            this.waterYearChart.SetChartTitle(account.ShortName + "历年用水对比");
+            this.waterYearChart.SetSeriesLengedText(0, "用水量(吨)");
+            this.waterYearChart.DataSource = data;
         }
 
         /// <summary>
@@ -166,6 +220,10 @@ namespace Poseidon.Energy.ClientDx
             // 电费单据
             this.tabPageElectricReceipt.PageVisible = true;
             this.electricExpenseReceipt.SetAccount(this.currentAccount);
+
+            // 历年用电
+            this.tabPageElectricYear.PageVisible = true;
+            LoadYearsElectric(this.currentAccount);
         }
 
         /// <summary>
@@ -189,6 +247,10 @@ namespace Poseidon.Energy.ClientDx
             // 水费单据
             this.tabPageWaterReceipt.PageVisible = true;
             this.waterExpenseReceipt.SetAccount(this.currentAccount);
+
+            // 历年用水
+            this.tabPageWaterYear.PageVisible = true;
+            LoadYearsWater(this.currentAccount);
         }
         #endregion //Function
 

@@ -17,6 +17,13 @@ namespace Poseidon.Energy.ClientDx
     /// </summary>
     public partial class EnergyExpenseChart : DevExpress.XtraEditors.XtraUserControl
     {
+        #region Field
+        /// <summary>
+        /// X轴只显示月份
+        /// </summary>
+        private bool showMonthTick = false;
+        #endregion //Field
+
         #region Constructor
         public EnergyExpenseChart()
         {
@@ -38,17 +45,8 @@ namespace Poseidon.Energy.ClientDx
         /// 清空显示
         /// </summary>
         public void Clear()
-        {
-            this.chartMain.Series.Clear();
-        }
-
-        /// <summary>
-        /// X轴只显示月份
-        /// </summary>
-        public void OnlyShowMonth()
-        {
-            XYDiagram diagram = this.chartMain.Diagram as XYDiagram;
-            diagram.AxisX.Label.TextPattern = "{A:M月}";
+        {            
+            this.bsEnergyExpense.DataSource = null;
         }
 
         /// <summary>
@@ -78,6 +76,27 @@ namespace Poseidon.Energy.ClientDx
         }
         #endregion //Method
 
+        #region Event
+        /// <summary>
+        /// 控件载入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EnergyExpenseChart_Load(object sender, EventArgs e)
+        {
+            if (this.showMonthTick)
+            {
+                XYDiagram diagram = this.chartMain.Diagram as XYDiagram;
+                diagram.AxisX.Label.TextPattern = "{A:M月}";
+            }
+            else
+            {
+                XYDiagram diagram = this.chartMain.Diagram as XYDiagram;
+                diagram.AxisX.Label.TextPattern = "{A:yyyy年M月}";
+            }
+        }
+        #endregion //Event
+
         #region Property
         /// <summary>
         /// 数据源
@@ -88,6 +107,22 @@ namespace Poseidon.Energy.ClientDx
             get
             {
                 return this.bsEnergyExpense.DataSource as List<EnergyExpense>;
+            }
+        }
+
+        /// <summary>
+        /// X轴显示月份
+        /// </summary>
+        [Description("X轴显示月份"), Category("界面"), Browsable(true)]
+        public bool ShowMonthTick
+        {
+            get
+            {
+                return this.showMonthTick;
+            }
+            set
+            {
+                this.showMonthTick = value;
             }
         }
         #endregion //Property
