@@ -239,6 +239,32 @@ namespace Poseidon.Energy.Core.BL
         }
 
         /// <summary>
+        /// 获取部门结算汇总
+        /// </summary>
+        /// <param name="year">年度</param>
+        /// <param name="energyType">能源类型</param>
+        /// <param name="departmentId">部门ID</param>
+        /// <returns></returns>
+        public DepartmentSettlementSummary GetDepartmentSummary(int year, EnergyType energyType, string departmentId)
+        {
+            DepartmentSettlementSummary data = new DepartmentSettlementSummary();
+            data.Year = year;
+            data.DepartmentId = departmentId;
+            data.EnergyType = energyType.DisplayName();
+
+            DepartmentBusiness depBusiness = new DepartmentBusiness();
+            var department = depBusiness.FindById(departmentId);
+            data.DepartmentName = department.Name;
+
+            SettlementRecordBusiness srBusiness = new SettlementRecordBusiness();
+            var settlements = FindByYear(year).ToList();
+
+
+
+            return data;
+        }
+
+        /// <summary>
         /// 添加能源结算
         /// </summary>
         /// <param name="entity">实体对象</param>

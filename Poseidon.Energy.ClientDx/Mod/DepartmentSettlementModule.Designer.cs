@@ -54,6 +54,8 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtWaterRemark = new DevExpress.XtraEditors.MemoEdit();
+            this.txtElectricRemark = new DevExpress.XtraEditors.MemoEdit();
             this.txtWaterEndAmount = new DevExpress.XtraEditors.TextEdit();
             this.txtWaterEndQuantum = new DevExpress.XtraEditors.TextEdit();
             this.txtWaterAmount = new DevExpress.XtraEditors.TextEdit();
@@ -82,6 +84,7 @@
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -91,12 +94,9 @@
             this.layoutControlItem22 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tabPageTrend = new DevExpress.XtraTab.XtraTabPage();
-            this.txtElectricRemark = new DevExpress.XtraEditors.MemoEdit();
-            this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtWaterRemark = new DevExpress.XtraEditors.MemoEdit();
-            this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
             this.tabPageRecord.SuspendLayout();
@@ -128,6 +128,8 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtWaterRemark.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtElectricRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWaterEndAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWaterEndQuantum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWaterAmount.Properties)).BeginInit();
@@ -156,6 +158,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
@@ -165,11 +168,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtElectricRemark.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtWaterRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMain
@@ -457,6 +457,28 @@
             this.layoutControl2.Size = new System.Drawing.Size(605, 362);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
+            // 
+            // txtWaterRemark
+            // 
+            this.txtWaterRemark.Location = new System.Drawing.Point(109, 322);
+            this.txtWaterRemark.Name = "txtWaterRemark";
+            this.txtWaterRemark.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtWaterRemark.Properties.Appearance.Options.UseBackColor = true;
+            this.txtWaterRemark.Properties.ReadOnly = true;
+            this.txtWaterRemark.Size = new System.Drawing.Size(455, 16);
+            this.txtWaterRemark.StyleController = this.layoutControl2;
+            this.txtWaterRemark.TabIndex = 22;
+            // 
+            // txtElectricRemark
+            // 
+            this.txtElectricRemark.Location = new System.Drawing.Point(109, 163);
+            this.txtElectricRemark.Name = "txtElectricRemark";
+            this.txtElectricRemark.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
+            this.txtElectricRemark.Properties.Appearance.Options.UseBackColor = true;
+            this.txtElectricRemark.Properties.ReadOnly = true;
+            this.txtElectricRemark.Size = new System.Drawing.Size(455, 16);
+            this.txtElectricRemark.StyleController = this.layoutControl2;
+            this.txtElectricRemark.TabIndex = 21;
             // 
             // txtWaterEndAmount
             // 
@@ -759,6 +781,15 @@
             this.layoutControlItem16.Text = "期末金额(元)";
             this.layoutControlItem16.TextSize = new System.Drawing.Size(82, 14);
             // 
+            // layoutControlItem25
+            // 
+            this.layoutControlItem25.Control = this.txtElectricRemark;
+            this.layoutControlItem25.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem25.Name = "layoutControlItem25";
+            this.layoutControlItem25.Size = new System.Drawing.Size(544, 20);
+            this.layoutControlItem25.Text = "备注";
+            this.layoutControlItem25.TextSize = new System.Drawing.Size(82, 14);
+            // 
             // layoutControlGroup4
             // 
             this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -848,6 +879,15 @@
             this.layoutControlItem24.Text = "期末金额(元)";
             this.layoutControlItem24.TextSize = new System.Drawing.Size(82, 14);
             // 
+            // layoutControlItem26
+            // 
+            this.layoutControlItem26.Control = this.txtWaterRemark;
+            this.layoutControlItem26.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem26.Name = "layoutControlItem26";
+            this.layoutControlItem26.Size = new System.Drawing.Size(544, 20);
+            this.layoutControlItem26.Text = "备注";
+            this.layoutControlItem26.TextSize = new System.Drawing.Size(82, 14);
+            // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
@@ -859,48 +899,8 @@
             // tabPageTrend
             // 
             this.tabPageTrend.Name = "tabPageTrend";
-            this.tabPageTrend.Size = new System.Drawing.Size(775, 539);
+            this.tabPageTrend.Size = new System.Drawing.Size(775, 571);
             this.tabPageTrend.Text = "能源结算趋势";
-            // 
-            // txtElectricRemark
-            // 
-            this.txtElectricRemark.Location = new System.Drawing.Point(109, 163);
-            this.txtElectricRemark.Name = "txtElectricRemark";
-            this.txtElectricRemark.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtElectricRemark.Properties.Appearance.Options.UseBackColor = true;
-            this.txtElectricRemark.Properties.ReadOnly = true;
-            this.txtElectricRemark.Size = new System.Drawing.Size(455, 16);
-            this.txtElectricRemark.StyleController = this.layoutControl2;
-            this.txtElectricRemark.TabIndex = 21;
-            // 
-            // layoutControlItem25
-            // 
-            this.layoutControlItem25.Control = this.txtElectricRemark;
-            this.layoutControlItem25.Location = new System.Drawing.Point(0, 96);
-            this.layoutControlItem25.Name = "layoutControlItem25";
-            this.layoutControlItem25.Size = new System.Drawing.Size(544, 20);
-            this.layoutControlItem25.Text = "备注";
-            this.layoutControlItem25.TextSize = new System.Drawing.Size(82, 14);
-            // 
-            // txtWaterRemark
-            // 
-            this.txtWaterRemark.Location = new System.Drawing.Point(109, 322);
-            this.txtWaterRemark.Name = "txtWaterRemark";
-            this.txtWaterRemark.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
-            this.txtWaterRemark.Properties.Appearance.Options.UseBackColor = true;
-            this.txtWaterRemark.Properties.ReadOnly = true;
-            this.txtWaterRemark.Size = new System.Drawing.Size(455, 16);
-            this.txtWaterRemark.StyleController = this.layoutControl2;
-            this.txtWaterRemark.TabIndex = 22;
-            // 
-            // layoutControlItem26
-            // 
-            this.layoutControlItem26.Control = this.txtWaterRemark;
-            this.layoutControlItem26.Location = new System.Drawing.Point(0, 96);
-            this.layoutControlItem26.Name = "layoutControlItem26";
-            this.layoutControlItem26.Size = new System.Drawing.Size(544, 20);
-            this.layoutControlItem26.Text = "备注";
-            this.layoutControlItem26.TextSize = new System.Drawing.Size(82, 14);
             // 
             // DepartmentSettlementModule
             // 
@@ -940,6 +940,8 @@
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtWaterRemark.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtElectricRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWaterEndAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWaterEndQuantum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWaterAmount.Properties)).EndInit();
@@ -968,6 +970,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
@@ -977,11 +980,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtElectricRemark.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtWaterRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
