@@ -40,6 +40,12 @@ namespace Poseidon.Energy.Core.Utility
         public int Year { get; set; }
 
         /// <summary>
+        /// 单价
+        /// </summary>
+        [Display(Name = "单价")]
+        public decimal UnitPrice { get; set; }
+
+        /// <summary>
         /// 计划用量
         /// </summary>
         [Display(Name = "计划用量")]

@@ -97,6 +97,13 @@
             this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tabPageTrend = new DevExpress.XtraTab.XtraTabPage();
+            this.tabTrend = new DevExpress.XtraTab.XtraTabControl();
+            this.tabPageElectricTrend = new DevExpress.XtraTab.XtraTabPage();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.depElectricSettleGrid = new Poseidon.Energy.ClientDx.DepartmentSettlementSummaryGrid();
+            this.tabPageWaterTrend = new DevExpress.XtraTab.XtraTabPage();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.depWaterSettleGrid = new Poseidon.Energy.ClientDx.DepartmentSettlementSummaryGrid();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
             this.tabPageRecord.SuspendLayout();
@@ -170,6 +177,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            this.tabPageTrend.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabTrend)).BeginInit();
+            this.tabTrend.SuspendLayout();
+            this.tabPageElectricTrend.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tabPageWaterTrend.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMain
@@ -898,9 +912,104 @@
             // 
             // tabPageTrend
             // 
+            this.tabPageTrend.Controls.Add(this.tabTrend);
             this.tabPageTrend.Name = "tabPageTrend";
             this.tabPageTrend.Size = new System.Drawing.Size(775, 571);
             this.tabPageTrend.Text = "能源结算趋势";
+            // 
+            // tabTrend
+            // 
+            this.tabTrend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabTrend.Location = new System.Drawing.Point(0, 0);
+            this.tabTrend.Name = "tabTrend";
+            this.tabTrend.SelectedTabPage = this.tabPageElectricTrend;
+            this.tabTrend.Size = new System.Drawing.Size(775, 571);
+            this.tabTrend.TabIndex = 0;
+            this.tabTrend.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabPageElectricTrend,
+            this.tabPageWaterTrend});
+            // 
+            // tabPageElectricTrend
+            // 
+            this.tabPageElectricTrend.Controls.Add(this.tableLayoutPanel2);
+            this.tabPageElectricTrend.Name = "tabPageElectricTrend";
+            this.tabPageElectricTrend.Size = new System.Drawing.Size(769, 542);
+            this.tabPageElectricTrend.Text = "用电结算";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Controls.Add(this.depElectricSettleGrid, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(769, 542);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // depElectricSettleGrid
+            // 
+            this.depElectricSettleGrid.AllowFilter = false;
+            this.depElectricSettleGrid.AllowGroup = false;
+            this.depElectricSettleGrid.AllowSort = true;
+            this.depElectricSettleGrid.DataSource = null;
+            this.depElectricSettleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.depElectricSettleGrid.Editable = false;
+            this.depElectricSettleGrid.EnableMasterView = false;
+            this.depElectricSettleGrid.Location = new System.Drawing.Point(3, 3);
+            this.depElectricSettleGrid.Name = "depElectricSettleGrid";
+            this.depElectricSettleGrid.ShowAddMenu = false;
+            this.depElectricSettleGrid.ShowFooter = false;
+            this.depElectricSettleGrid.ShowLineNumber = true;
+            this.depElectricSettleGrid.ShowMenu = false;
+            this.depElectricSettleGrid.ShowNavigator = false;
+            this.depElectricSettleGrid.Size = new System.Drawing.Size(763, 265);
+            this.depElectricSettleGrid.TabIndex = 0;
+            // 
+            // tabPageWaterTrend
+            // 
+            this.tabPageWaterTrend.Controls.Add(this.tableLayoutPanel3);
+            this.tabPageWaterTrend.Name = "tabPageWaterTrend";
+            this.tabPageWaterTrend.Size = new System.Drawing.Size(769, 542);
+            this.tabPageWaterTrend.Text = "用水结算";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.depWaterSettleGrid, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(769, 542);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // depWaterSettleGrid
+            // 
+            this.depWaterSettleGrid.AllowFilter = false;
+            this.depWaterSettleGrid.AllowGroup = false;
+            this.depWaterSettleGrid.AllowSort = true;
+            this.depWaterSettleGrid.DataSource = null;
+            this.depWaterSettleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.depWaterSettleGrid.Editable = false;
+            this.depWaterSettleGrid.EnableMasterView = false;
+            this.depWaterSettleGrid.Location = new System.Drawing.Point(3, 3);
+            this.depWaterSettleGrid.Name = "depWaterSettleGrid";
+            this.depWaterSettleGrid.ShowAddMenu = false;
+            this.depWaterSettleGrid.ShowFooter = false;
+            this.depWaterSettleGrid.ShowLineNumber = true;
+            this.depWaterSettleGrid.ShowMenu = false;
+            this.depWaterSettleGrid.ShowNavigator = false;
+            this.depWaterSettleGrid.Size = new System.Drawing.Size(763, 265);
+            this.depWaterSettleGrid.TabIndex = 0;
             // 
             // DepartmentSettlementModule
             // 
@@ -982,6 +1091,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            this.tabPageTrend.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabTrend)).EndInit();
+            this.tabTrend.ResumeLayout(false);
+            this.tabPageElectricTrend.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tabPageWaterTrend.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1056,5 +1172,12 @@
         private DevExpress.XtraEditors.MemoEdit txtElectricRemark;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem25;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem26;
+        private DevExpress.XtraTab.XtraTabControl tabTrend;
+        private DevExpress.XtraTab.XtraTabPage tabPageElectricTrend;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private DepartmentSettlementSummaryGrid depElectricSettleGrid;
+        private DevExpress.XtraTab.XtraTabPage tabPageWaterTrend;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private DepartmentSettlementSummaryGrid depWaterSettleGrid;
     }
 }

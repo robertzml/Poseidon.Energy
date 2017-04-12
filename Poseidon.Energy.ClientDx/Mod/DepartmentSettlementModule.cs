@@ -26,6 +26,10 @@ namespace Poseidon.Energy.ClientDx
         /// 当前关联部门
         /// </summary>
         private Department currentDepartment;
+
+        private int startYear = 2011;
+
+        private int nowYear;
         #endregion //Field
 
         #region Constructor
@@ -70,7 +74,7 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
-        /// 显示部门记录信息
+        /// 显示部门结算记录信息
         /// </summary>
         /// <param name="settlement">能源结算</param>
         /// <param name="department">部门</param>
@@ -104,6 +108,36 @@ namespace Poseidon.Energy.ClientDx
                 this.txtWaterRemark.Text = wrecord.Remark;
             }
         }
+
+        /// <summary>
+        /// 显示结算趋势
+        /// </summary>
+        /// <param name="settlement">能源结算</param>
+        /// <param name="department">部门</param>
+        private void DisplayTrend(Settlement settlement, Department department)
+        {
+            List<DepartmentSettlementSummary> electricData = new List<DepartmentSettlementSummary>();
+            for (int i = nowYear; i >= startYear; i--)
+            {
+                var item = BusinessFactory<SettlementBusiness>.Instance.GetDepartmentSummary(i, EnergyType.Electric, department.Id);
+                if (item != null)
+                    electricData.Add(item);
+            }
+
+            this.depElectricSettleGrid.SetEnergyType(EnergyType.Electric);
+            this.depElectricSettleGrid.DataSource = electricData;
+
+            List<DepartmentSettlementSummary> waterData = new List<DepartmentSettlementSummary>();
+            for (int i = nowYear; i >= startYear; i--)
+            {
+                var item = BusinessFactory<SettlementBusiness>.Instance.GetDepartmentSummary(i, EnergyType.Water, department.Id);
+                if (item != null)
+                    waterData.Add(item);
+            }
+
+            this.depWaterSettleGrid.SetEnergyType(EnergyType.Water);
+            this.depWaterSettleGrid.DataSource = waterData;
+        }
         #endregion //Function
 
         #region Method
@@ -114,6 +148,7 @@ namespace Poseidon.Energy.ClientDx
         public void SetDepartment(string id)
         {
             this.currentDepartment = BusinessFactory<DepartmentBusiness>.Instance.FindById(id);
+            this.nowYear = DateTime.Now.Year;
             LoadSettlements();
         }
 
@@ -160,8 +195,10 @@ namespace Poseidon.Energy.ClientDx
             Clear();
 
             var settlement = this.lbSettlements.SelectedItem as Settlement;
+
             DisplaySettlementInfo(settlement);
             DisplayRecordInfo(settlement, this.currentDepartment);
+            DisplayTrend(settlement, this.currentDepartment);
         }
         #endregion //Event
     }

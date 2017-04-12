@@ -86,6 +86,11 @@ namespace Poseidon.Energy.Core.BL
             var settlements = this.baseDal.FindListByField("year", year);
 
             List<Settlement> data = new List<Settlement>();
+            if (settlements.Count() == 0)
+            {
+                return data;
+            }
+
             var first = settlements.Single(r => string.IsNullOrEmpty(r.PreviousId));
 
             data.Add(first);
@@ -252,14 +257,62 @@ namespace Poseidon.Energy.Core.BL
             data.DepartmentId = departmentId;
             data.EnergyType = energyType.DisplayName();
 
+            data.SettleQuantum = 0;
+            data.SettleAmount = 0;
+
             DepartmentBusiness depBusiness = new DepartmentBusiness();
             var department = depBusiness.FindById(departmentId);
             data.DepartmentName = department.Name;
 
+            TargetBusiness targetBusiness = new TargetBusiness();
+            var target = targetBusiness.FindByYear(year);
+
             SettlementRecordBusiness srBusiness = new SettlementRecordBusiness();
             var settlements = FindByYear(year).ToList();
+            if (settlements.Count == 0)
+                return null;
 
+            bool flag = false;
+            for (int i = 0; i < settlements.Count; i++)
+            {
+                var settle = settlements[i];
+                var record = srBusiness.FindByDepartment(settle.Id, departmentId, energyType);
+                if (record == null)
+                    continue;
 
+                if (i == 0)
+                {
+                    data.PlanQuantum = record.BeginQuantum;
+                    data.PlanAmount = record.BeginAmount;
+                    data.UnitPrice = record.UnitPrice;
+                }
+
+                data.SettleQuantum += record.Quantum;
+                data.SettleAmount += record.Amount;
+                flag = true;
+            }
+
+            if (!flag)
+                return null;
+
+            data.RemainQuantum = data.PlanQuantum - data.SettleQuantum;
+            data.RemainAmount = data.PlanAmount - data.SettleAmount;
+
+            if (data.RemainAmount < 0)
+            {
+                TargetRecordBusiness trBusiness = new TargetRecordBusiness();
+                var targetRecord = trBusiness.FindByDepartment(target.Id, departmentId, (int)energyType);
+                if (targetRecord == null)
+                {
+                    data.SchoolTake = 0;
+                    data.SelfTake = -data.RemainAmount;
+                }
+                else
+                {
+                    data.SchoolTake = Math.Round(-data.RemainAmount * targetRecord.SchoolTake);
+                    data.SelfTake = -data.RemainAmount - data.SchoolTake;
+                }
+            }
 
             return data;
         }

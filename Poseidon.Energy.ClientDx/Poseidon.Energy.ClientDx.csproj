@@ -135,6 +135,12 @@
     <Compile Include="Chart\EnergyYearExpenseChart.Designer.cs">
       <DependentUpon>EnergyYearExpenseChart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\DepartmentSettlementSummaryGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\DepartmentSettlementSummaryGrid.Designer.cs">
+      <DependentUpon>DepartmentSettlementSummaryGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mod\ExpenseAccountModule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -635,6 +641,9 @@
     <EmbeddedResource Include="Control\AllowanceTargetGrid.resx">
       <DependentUpon>AllowanceTargetGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\DepartmentSettlementSummaryGrid.resx">
+      <DependentUpon>DepartmentSettlementSummaryGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\EnergyCompareGrid.resx">
       <DependentUpon>EnergyCompareGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -820,6 +829,7 @@
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.MeasureRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Settlement.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.SettlementRecord.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.Utility.DepartmentSettlementSummary.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.Utility.SettlementAmountSummary.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.Utility.SettlementQuantumSummary.datasource" />
     <None Include="Properties\licenses.licx" />
