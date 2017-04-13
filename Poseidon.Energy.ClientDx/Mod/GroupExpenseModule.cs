@@ -56,60 +56,74 @@ namespace Poseidon.Energy.ClientDx
         /// 显示今年支出
         /// </summary>
         /// <param name="group">分组</param>
-        private void DisplayYearExpense(Group group)
+        private async void DisplayYearExpense(Group group)
         {
             var items = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
 
-            List<EnergyExpense> data = new List<EnergyExpense>();
-
-            foreach (var item in items)
+            var task1 = Task.Run(() =>
             {
-                var expense = BusinessFactory<ElectricExpenseBusiness>.Instance.FindYearByAccount(item.OrganizationId, year);
-                foreach (var exp in expense)
-                {
-                    var energyExpense = data.SingleOrDefault(r => r.BelongDate == exp.BelongDate);
-                    if (energyExpense != null)
-                    {
-                        energyExpense.Amount += exp.TotalAmount;
-                        energyExpense.Quantum += exp.TotalQuantity;
-                    }
-                    else
-                    {
-                        var model = new EnergyExpense();
-                        model.BelongDate = exp.BelongDate;
-                        model.Quantum = exp.TotalQuantity;
-                        model.Amount = exp.TotalAmount;
+                List<EnergyExpense> data = new List<EnergyExpense>();
 
-                        data.Add(model);
+                foreach (var item in items)
+                {
+                    var expense = BusinessFactory<ElectricExpenseBusiness>.Instance.FindYearByAccount(item.OrganizationId, year);
+                    foreach (var exp in expense)
+                    {
+                        var energyExpense = data.SingleOrDefault(r => r.BelongDate == exp.BelongDate);
+                        if (energyExpense != null)
+                        {
+                            energyExpense.Amount += exp.TotalAmount;
+                            energyExpense.Quantum += exp.TotalQuantity;
+                        }
+                        else
+                        {
+                            var model = new EnergyExpense();
+                            model.BelongDate = exp.BelongDate;
+                            model.Quantum = exp.TotalQuantity;
+                            model.Amount = exp.TotalAmount;
+
+                            data.Add(model);
+                        }
                     }
                 }
-            }
-            this.currentYearElectricGrid.DataSource = data;
 
-            List<EnergyExpense> waterData = new List<EnergyExpense>();
-            foreach (var item in items)
+                return data;
+            });
+
+            var data1 = await task1;
+            this.currentYearElectricGrid.DataSource = data1;
+
+            var task2 = Task.Run(() =>
             {
-                var expense = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(item.OrganizationId, year);
-                foreach (var exp in expense)
+                List<EnergyExpense> waterData = new List<EnergyExpense>();
+                foreach (var item in items)
                 {
-                    var energyExpense = waterData.SingleOrDefault(r => r.BelongDate == exp.BelongDate);
-                    if (energyExpense != null)
+                    var expense = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(item.OrganizationId, year);
+                    foreach (var exp in expense)
                     {
-                        energyExpense.Amount += exp.TotalAmount;
-                        energyExpense.Quantum += exp.TotalQuantity;
-                    }
-                    else
-                    {
-                        var model = new EnergyExpense();
-                        model.BelongDate = exp.BelongDate;
-                        model.Quantum = exp.TotalQuantity;
-                        model.Amount = exp.TotalAmount;
+                        var energyExpense = waterData.SingleOrDefault(r => r.BelongDate == exp.BelongDate);
+                        if (energyExpense != null)
+                        {
+                            energyExpense.Amount += exp.TotalAmount;
+                            energyExpense.Quantum += exp.TotalQuantity;
+                        }
+                        else
+                        {
+                            var model = new EnergyExpense();
+                            model.BelongDate = exp.BelongDate;
+                            model.Quantum = exp.TotalQuantity;
+                            model.Amount = exp.TotalAmount;
 
-                        waterData.Add(model);
+                            waterData.Add(model);
+                        }
                     }
                 }
-            }
-            this.currentYearWaterGrid.DataSource = waterData;
+
+                return waterData;
+            });
+
+            var data2 = await task2;
+            this.currentYearWaterGrid.DataSource = data2;
         }
         #endregion //Function
 

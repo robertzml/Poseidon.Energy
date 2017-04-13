@@ -105,46 +105,59 @@ namespace Poseidon.Energy.ClientDx
         /// <summary>
         /// 载入摘要
         /// </summary>
-        private void LoadSummary(ExpenseAccount account)
+        private async void LoadSummary(ExpenseAccount account)
         {
             if (account.EnergyType.Contains(1))
             {
-                List<EnergyExpense> electricData = new List<EnergyExpense>();
-                var electricExpense = BusinessFactory<ElectricExpenseBusiness>.Instance.FindYearByAccount(account.Id, this.nowYear);
-
-                foreach (var exp in electricExpense)
+                var task = Task.Run(() =>
                 {
-                    var model = new EnergyExpense();
-                    model.BelongDate = exp.BelongDate;
-                    model.Quantum = exp.TotalQuantity;
-                    model.Amount = exp.TotalAmount;
+                    List<EnergyExpense> electricData = new List<EnergyExpense>();
+                    var electricExpense = BusinessFactory<ElectricExpenseBusiness>.Instance.FindYearByAccount(account.Id, this.nowYear);
 
-                    electricData.Add(model);
-                }
-                this.currentYearElectricGrid.DataSource = electricData;
+                    foreach (var exp in electricExpense)
+                    {
+                        var model = new EnergyExpense();
+                        model.BelongDate = exp.BelongDate;
+                        model.Quantum = exp.TotalQuantity;
+                        model.Amount = exp.TotalAmount;
+
+                        electricData.Add(model);
+                    }
+                    return electricData;
+                });
+
+                var data = await task;
+                this.currentYearElectricGrid.DataSource = data;
 
                 this.currentYearElectricChart.SetChartTitle(string.Format("{0}{1}年电量消耗", account.ShortName, this.nowYear));
-                this.currentYearElectricChart.SetDataSource(electricData);
+                this.currentYearElectricChart.SetDataSource(data);
             }
 
             if (account.EnergyType.Contains(2))
             {
-                List<EnergyExpense> waterData = new List<EnergyExpense>();
-                var electricExpense = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(account.Id, this.nowYear);
-
-                foreach (var exp in electricExpense)
+                var task = Task.Run(() =>
                 {
-                    var model = new EnergyExpense();
-                    model.BelongDate = exp.BelongDate;
-                    model.Quantum = exp.TotalQuantity;
-                    model.Amount = exp.TotalAmount;
+                    List<EnergyExpense> waterData = new List<EnergyExpense>();
+                    var electricExpense = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(account.Id, this.nowYear);
 
-                    waterData.Add(model);
-                }
-                this.currentYearWaterGrid.DataSource = waterData;
+                    foreach (var exp in electricExpense)
+                    {
+                        var model = new EnergyExpense();
+                        model.BelongDate = exp.BelongDate;
+                        model.Quantum = exp.TotalQuantity;
+                        model.Amount = exp.TotalAmount;
+
+                        waterData.Add(model);
+                    }
+
+                    return waterData;
+                });
+
+                var data = await task;
+                this.currentYearWaterGrid.DataSource = data;
 
                 this.currentYearWaterChart.SetChartTitle(string.Format("{0}{1}年水量消耗", account.ShortName, this.nowYear));
-                this.currentYearWaterChart.SetDataSource(waterData);
+                this.currentYearWaterChart.SetDataSource(data);
             }
         }
 
@@ -152,52 +165,65 @@ namespace Poseidon.Energy.ClientDx
         /// 获取历年用电数据
         /// </summary>
         /// <param name="account">支出账户</param>
-        private void LoadYearsElectric(ExpenseAccount account)
+        private async void LoadYearsElectric(ExpenseAccount account)
         {
-            List<EnergyExpense> data = new List<EnergyExpense>();
-            for (int i = startYear; i <= nowYear; i++)
+            var task = Task.Run(() =>
             {
-                var yearData = BusinessFactory<ElectricExpenseBusiness>.Instance.FindYearByAccount(account.Id, i);
-                if (yearData.Count() == 0)
-                    continue;
+                List<EnergyExpense> data = new List<EnergyExpense>();
+                for (int i = startYear; i <= nowYear; i++)
+                {
+                    var yearData = BusinessFactory<ElectricExpenseBusiness>.Instance.FindYearByAccount(account.Id, i);
+                    if (yearData.Count() == 0)
+                        continue;
 
-                EnergyExpense energyExpense = new EnergyExpense();
-                energyExpense.BelongDate = new DateTime(i, 1, 1);
-                energyExpense.Quantum = yearData.Sum(r => r.TotalQuantity);
-                energyExpense.Amount = yearData.Sum(r => r.TotalAmount);
+                    EnergyExpense energyExpense = new EnergyExpense();
+                    energyExpense.BelongDate = new DateTime(i, 1, 1);
+                    energyExpense.Quantum = yearData.Sum(r => r.TotalQuantity);
+                    energyExpense.Amount = yearData.Sum(r => r.TotalAmount);
 
-                data.Add(energyExpense);
-            }
+                    data.Add(energyExpense);
+                }
+
+                return data;
+            });
+
+            var result = await task;
 
             this.electricYearChart.SetChartTitle(account.ShortName + "历年用电对比");
             this.electricYearChart.SetSeriesLengedText(0, "用电量(度)");
-            this.electricYearChart.DataSource = data;
+            this.electricYearChart.DataSource = result;
         }
 
         /// <summary>
         /// 获取历年用水数据
         /// </summary>
         /// <param name="account">支出账户</param>
-        private void LoadYearsWater(ExpenseAccount account)
+        private async void LoadYearsWater(ExpenseAccount account)
         {
-            List<EnergyExpense> data = new List<EnergyExpense>();
-            for (int i = startYear; i <= nowYear; i++)
+            var task = Task.Run(() =>
             {
-                var yearData = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(account.Id, i);
-                if (yearData.Count() == 0)
-                    continue;
+                List<EnergyExpense> data = new List<EnergyExpense>();
+                for (int i = startYear; i <= nowYear; i++)
+                {
+                    var yearData = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(account.Id, i);
+                    if (yearData.Count() == 0)
+                        continue;
 
-                EnergyExpense energyExpense = new EnergyExpense();
-                energyExpense.BelongDate = new DateTime(i, 1, 1);
-                energyExpense.Quantum = yearData.Sum(r => r.TotalQuantity);
-                energyExpense.Amount = yearData.Sum(r => r.TotalAmount);
+                    EnergyExpense energyExpense = new EnergyExpense();
+                    energyExpense.BelongDate = new DateTime(i, 1, 1);
+                    energyExpense.Quantum = yearData.Sum(r => r.TotalQuantity);
+                    energyExpense.Amount = yearData.Sum(r => r.TotalAmount);
 
-                data.Add(energyExpense);
-            }
+                    data.Add(energyExpense);
+                }
+                return data;
+            });
+
+            var result = await task;
 
             this.waterYearChart.SetChartTitle(account.ShortName + "历年用水对比");
             this.waterYearChart.SetSeriesLengedText(0, "用水量(吨)");
-            this.waterYearChart.DataSource = data;
+            this.waterYearChart.DataSource = result;
         }
 
         /// <summary>

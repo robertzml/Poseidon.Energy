@@ -64,24 +64,24 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         /// <param name="year">年度</param>
         /// <param name="group">分组</param>
-        private void LoadSummaryData(int year, Group group)
+        private async Task LoadSummaryData(int year, Group group)
         {
             this.txtGroupName.Text = group.Name;
             this.txtYear.Text = year.ToString();
 
             var departments = BusinessFactory<DepartmentBusiness>.Instance.FindInGroup(group.Code, true).ToList();
 
-            var elecQuantum = BusinessFactory<SettlementBusiness>.Instance.GetQuantumSummary(year, EnergyType.Electric, departments).ToList();
-            this.electricQSGrid.DataSource = elecQuantum;
+            var elecQuantum = await BusinessFactory<SettlementBusiness>.Instance.GetQuantumSummary(year, EnergyType.Electric, departments);
+            this.electricQSGrid.DataSource = elecQuantum.ToList();
 
-            var waterQuantum = BusinessFactory<SettlementBusiness>.Instance.GetQuantumSummary(year, EnergyType.Water, departments).ToList();
-            this.waterQSGrid.DataSource = waterQuantum;
+            var waterQuantum = await BusinessFactory<SettlementBusiness>.Instance.GetQuantumSummary(year, EnergyType.Water, departments);
+            this.waterQSGrid.DataSource = waterQuantum.ToList();
 
-            var elecAmount = BusinessFactory<SettlementBusiness>.Instance.GetAmountSummary(year, EnergyType.Electric, departments).ToList();
-            this.elecASGrid.DataSource = elecAmount;
+            var elecAmount = await BusinessFactory<SettlementBusiness>.Instance.GetAmountSummary(year, EnergyType.Electric, departments);
+            this.elecASGrid.DataSource = elecAmount.ToList();
 
-            var waterAmount = BusinessFactory<SettlementBusiness>.Instance.GetAmountSummary(year, EnergyType.Water, departments).ToList();
-            this.watASGrid.DataSource = waterAmount;
+            var waterAmount = await BusinessFactory<SettlementBusiness>.Instance.GetAmountSummary(year, EnergyType.Water, departments);
+            this.watASGrid.DataSource = waterAmount.ToList();
 
             this.txtTotalElectricQuantum.Text = string.Format("{0}度", elecQuantum.Sum(r => r.TotalQuantum));
             this.txtTotalElectricAmount.Text = string.Format("{0}元", elecAmount.Sum(r => r.TotalAmount));
@@ -180,14 +180,15 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void lbYears_SelectedIndexChanged(object sender, EventArgs e)
+        private async void lbYears_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lbYears.SelectedIndex == -1)
                 return;
 
             string text = this.lbYears.SelectedItem.ToString();
             int year = Convert.ToInt32(text.Substring(0, 4));
-            LoadSummaryData(year, this.currentGroup);
+
+            await LoadSummaryData(year, this.currentGroup);
         }
 
         /// <summary>

@@ -119,56 +119,61 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="energyType">能源类型</param>
         /// <param name="departments">部门列表</param>
         /// <returns></returns>
-        public IEnumerable<SettlementQuantumSummary> GetQuantumSummary(int year, EnergyType energyType, List<Department> departments)
+        public async Task<IEnumerable<SettlementQuantumSummary>> GetQuantumSummary(int year, EnergyType energyType, List<Department> departments)
         {
-            List<SettlementQuantumSummary> data = new List<SettlementQuantumSummary>();
-
-            SettlementRecordBusiness srBusiness = new SettlementRecordBusiness();
-
-            var settlements = FindByYear(year).ToList();
-
-            foreach (var item in departments)
+            var task = Task<IEnumerable<SettlementQuantumSummary>>.Run(() =>
             {
-                SettlementQuantumSummary summary = new SettlementQuantumSummary();
-                summary.DepartmentName = item.Name;
-                summary.EnergyType = energyType.DisplayName();
+                List<SettlementQuantumSummary> data = new List<SettlementQuantumSummary>();
 
-                bool flag = false;
+                SettlementRecordBusiness srBusiness = new SettlementRecordBusiness();
 
-                for (int i = 0; i < settlements.Count; i++)
+                var settlements = FindByYear(year).ToList();
+
+                foreach (var item in departments)
                 {
-                    var settle = settlements[i];
-                    var record = srBusiness.FindByDepartment(settle.Id, item.Id, energyType);
-                    if (record == null)
-                        continue;
+                    SettlementQuantumSummary summary = new SettlementQuantumSummary();
+                    summary.DepartmentName = item.Name;
+                    summary.EnergyType = energyType.DisplayName();
 
-                    switch (i)
+                    bool flag = false;
+
+                    for (int i = 0; i < settlements.Count; i++)
                     {
-                        case 0:
-                            summary.PlanQuantum = record.BeginQuantum;
-                            summary.FirstQuarter = record.Quantum;
-                            break;
-                        case 1:
-                            summary.SecondQuarter = record.Quantum;
-                            break;
-                        case 2:
-                            summary.ThirdQuarter = record.Quantum;
-                            break;
-                        case 3:
-                            summary.FourthQuarter = record.Quantum;
-                            break;
+                        var settle = settlements[i];
+                        var record = srBusiness.FindByDepartment(settle.Id, item.Id, energyType);
+                        if (record == null)
+                            continue;
+
+                        switch (i)
+                        {
+                            case 0:
+                                summary.PlanQuantum = record.BeginQuantum;
+                                summary.FirstQuarter = record.Quantum;
+                                break;
+                            case 1:
+                                summary.SecondQuarter = record.Quantum;
+                                break;
+                            case 2:
+                                summary.ThirdQuarter = record.Quantum;
+                                break;
+                            case 3:
+                                summary.FourthQuarter = record.Quantum;
+                                break;
+                        }
+                        flag = true;
                     }
-                    flag = true;
+
+                    summary.TotalQuantum = summary.FirstQuarter + summary.SecondQuarter + summary.ThirdQuarter + summary.FourthQuarter;
+                    summary.RemainQuantum = summary.PlanQuantum - summary.TotalQuantum;
+
+                    if (flag)
+                        data.Add(summary);
                 }
 
-                summary.TotalQuantum = summary.FirstQuarter + summary.SecondQuarter + summary.ThirdQuarter + summary.FourthQuarter;
-                summary.RemainQuantum = summary.PlanQuantum - summary.TotalQuantum;
+                return data;
+            });
 
-                if (flag)
-                    data.Add(summary);
-            }
-
-            return data;
+            return await task;
         }
 
         /// <summary>
@@ -178,69 +183,74 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="energyType">能源类型</param>
         /// <param name="departments">部门列表</param>
         /// <returns></returns>
-        public IEnumerable<SettlementAmountSummary> GetAmountSummary(int year, EnergyType energyType, List<Department> departments)
+        public async Task<IEnumerable<SettlementAmountSummary>> GetAmountSummary(int year, EnergyType energyType, List<Department> departments)
         {
-            List<SettlementAmountSummary> data = new List<SettlementAmountSummary>();
-
-            TargetBusiness targetBusiness = new TargetBusiness();
-            var target = targetBusiness.FindByYear(year);
-
-            SettlementRecordBusiness srBusiness = new SettlementRecordBusiness();
-
-            var settlements = FindByYear(year).ToList();
-
-            foreach (var item in departments)
+            var task = Task<IEnumerable<SettlementAmountSummary>>.Run(() =>
             {
-                SettlementAmountSummary summary = new SettlementAmountSummary();
-                summary.DepartmentName = item.Name;
-                summary.EnergyType = energyType.DisplayName();
+                List<SettlementAmountSummary> data = new List<SettlementAmountSummary>();
 
-                bool flag = false;
+                TargetBusiness targetBusiness = new TargetBusiness();
+                var target = targetBusiness.FindByYear(year);
 
-                for (int i = 0; i < settlements.Count; i++)
+                SettlementRecordBusiness srBusiness = new SettlementRecordBusiness();
+
+                var settlements = FindByYear(year).ToList();
+
+                foreach (var item in departments)
                 {
-                    var settle = settlements[i];
-                    var record = srBusiness.FindByDepartment(settle.Id, item.Id, energyType);
-                    if (record == null)
-                        continue;
+                    SettlementAmountSummary summary = new SettlementAmountSummary();
+                    summary.DepartmentName = item.Name;
+                    summary.EnergyType = energyType.DisplayName();
 
-                    switch (i)
+                    bool flag = false;
+
+                    for (int i = 0; i < settlements.Count; i++)
                     {
-                        case 0:
-                            summary.UnitPrice = record.UnitPrice;
-                            summary.PlanAmount = record.BeginAmount;
-                            summary.FirstQuarter = record.Amount;
-                            break;
-                        case 1:
-                            summary.SecondQuarter = record.Amount;
-                            break;
-                        case 2:
-                            summary.ThirdQuarter = record.Amount;
-                            break;
-                        case 3:
-                            summary.FourthQuarter = record.Amount;
-                            break;
+                        var settle = settlements[i];
+                        var record = srBusiness.FindByDepartment(settle.Id, item.Id, energyType);
+                        if (record == null)
+                            continue;
+
+                        switch (i)
+                        {
+                            case 0:
+                                summary.UnitPrice = record.UnitPrice;
+                                summary.PlanAmount = record.BeginAmount;
+                                summary.FirstQuarter = record.Amount;
+                                break;
+                            case 1:
+                                summary.SecondQuarter = record.Amount;
+                                break;
+                            case 2:
+                                summary.ThirdQuarter = record.Amount;
+                                break;
+                            case 3:
+                                summary.FourthQuarter = record.Amount;
+                                break;
+                        }
+                        flag = true;
                     }
-                    flag = true;
+
+                    summary.TotalAmount = summary.FirstQuarter + summary.SecondQuarter + summary.ThirdQuarter + summary.FourthQuarter;
+                    summary.RemainAmount = summary.PlanAmount - summary.TotalAmount;
+
+                    if (summary.RemainAmount < 0)
+                    {
+                        TargetRecordBusiness trBusiness = new TargetRecordBusiness();
+                        var targetRecord = trBusiness.FindByDepartment(target.Id, item.Id, (int)energyType);
+
+                        summary.SchoolTake = Math.Round(-summary.RemainAmount * targetRecord.SchoolTake);
+                        summary.SelfTake = -summary.RemainAmount - summary.SchoolTake;
+                    }
+
+                    if (flag)
+                        data.Add(summary);
                 }
 
-                summary.TotalAmount = summary.FirstQuarter + summary.SecondQuarter + summary.ThirdQuarter + summary.FourthQuarter;
-                summary.RemainAmount = summary.PlanAmount - summary.TotalAmount;
+                return data;
+            });
 
-                if (summary.RemainAmount < 0)
-                {
-                    TargetRecordBusiness trBusiness = new TargetRecordBusiness();
-                    var targetRecord = trBusiness.FindByDepartment(target.Id, item.Id, (int)energyType);
-
-                    summary.SchoolTake = Math.Round(-summary.RemainAmount * targetRecord.SchoolTake);
-                    summary.SelfTake = -summary.RemainAmount - summary.SchoolTake;
-                }
-
-                if (flag)
-                    data.Add(summary);
-            }
-
-            return data;
+            return await task;
         }
 
         /// <summary>
