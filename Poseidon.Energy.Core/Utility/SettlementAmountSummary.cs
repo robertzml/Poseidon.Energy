@@ -22,6 +22,12 @@ namespace Poseidon.Energy.Core.Utility
         public string DepartmentName { get; set; }
 
         /// <summary>
+        /// 年度
+        /// </summary>
+        [Display(Name = "年度")]
+        public int Year { get; set; }
+
+        /// <summary>
         /// 能源类型
         /// </summary>
         [Display(Name = "能源类型")]

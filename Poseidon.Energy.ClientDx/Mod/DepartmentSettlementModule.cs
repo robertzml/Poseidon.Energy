@@ -110,33 +110,113 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
+        /// 显示结算汇总
+        /// </summary>
+        /// <param name="department">部门</param>
+        private async void DisplaySummary(Department department)
+        {
+            var task1 = Task.Run(() =>
+            {
+                List<DepartmentSettlementSummary> data = new List<DepartmentSettlementSummary>();
+                for (int i = nowYear; i >= startYear; i--)
+                {
+                    var item = BusinessFactory<SettlementBusiness>.Instance.GetDepartmentSummary(i, EnergyType.Electric, department);
+                    if (item != null)
+                        data.Add(item);
+                }
+
+                return data;
+            });
+            var data1 = await task1;
+            this.depElectricSettleGrid.SetEnergyType(EnergyType.Electric);
+            this.depElectricSettleGrid.DataSource = data1;
+
+            var task2 = Task.Run(() =>
+            {
+                List<SettlementQuantumSummary> data = new List<SettlementQuantumSummary>();
+                for (int i = nowYear; i >= startYear; i--)
+                {
+                    var item = BusinessFactory<SettlementBusiness>.Instance.GetDepartmentQuantumSummary(i, EnergyType.Electric, department);
+                    if (item != null)
+                        data.Add(item);
+                }
+
+                return data;
+            });
+            var data2 = await task2;
+            this.electricQSGrid.SetEnergyType(EnergyType.Electric);
+            this.electricQSGrid.DataSource = data2;
+
+            var task3 = Task.Run(() =>
+            {
+                List<SettlementAmountSummary> data = new List<SettlementAmountSummary>();
+                for (int i = nowYear; i >= startYear; i--)
+                {
+                    var item = BusinessFactory<SettlementBusiness>.Instance.GetDepartmentAmountSummary(i, EnergyType.Electric, department);
+                    if (item != null)
+                        data.Add(item);
+                }
+
+                return data;
+            });
+            var data3 = await task3;
+            this.electricASGrid.DataSource = data3;
+
+            var task4 = Task.Run(() =>
+            {
+                List<DepartmentSettlementSummary> data = new List<DepartmentSettlementSummary>();
+                for (int i = nowYear; i >= startYear; i--)
+                {
+                    var item = BusinessFactory<SettlementBusiness>.Instance.GetDepartmentSummary(i, EnergyType.Water, department);
+                    if (item != null)
+                        data.Add(item);
+                }
+
+                return data;
+            });
+            var data4 = await task4;
+            this.depWaterSettleGrid.SetEnergyType(EnergyType.Water);
+            this.depWaterSettleGrid.DataSource = data4;
+
+            var task5 = Task.Run(() =>
+            {
+                List<SettlementQuantumSummary> data = new List<SettlementQuantumSummary>();
+                for (int i = nowYear; i >= startYear; i--)
+                {
+                    var item = BusinessFactory<SettlementBusiness>.Instance.GetDepartmentQuantumSummary(i, EnergyType.Water, department);
+                    if (item != null)
+                        data.Add(item);
+                }
+
+                return data;
+            });
+            var data5 = await task5;
+            this.waterQSGrid.SetEnergyType(EnergyType.Water);
+            this.waterQSGrid.DataSource = data5;
+
+            var task6 = Task.Run(() =>
+            {
+                List<SettlementAmountSummary> data = new List<SettlementAmountSummary>();
+                for (int i = nowYear; i >= startYear; i--)
+                {
+                    var item = BusinessFactory<SettlementBusiness>.Instance.GetDepartmentAmountSummary(i, EnergyType.Water, department);
+                    if (item != null)
+                        data.Add(item);
+                }
+
+                return data;
+            });
+            var data6 = await task6;
+            this.waterASGrid.DataSource = data6;
+        }
+
+        /// <summary>
         /// 显示结算趋势
         /// </summary>
-        /// <param name="settlement">能源结算</param>
         /// <param name="department">部门</param>
-        private void DisplayTrend(Settlement settlement, Department department)
+        private void DisplayTrend(Department department)
         {
-            List<DepartmentSettlementSummary> electricData = new List<DepartmentSettlementSummary>();
-            for (int i = nowYear; i >= startYear; i--)
-            {
-                var item = BusinessFactory<SettlementBusiness>.Instance.GetDepartmentSummary(i, EnergyType.Electric, department.Id);
-                if (item != null)
-                    electricData.Add(item);
-            }
 
-            this.depElectricSettleGrid.SetEnergyType(EnergyType.Electric);
-            this.depElectricSettleGrid.DataSource = electricData;
-
-            List<DepartmentSettlementSummary> waterData = new List<DepartmentSettlementSummary>();
-            for (int i = nowYear; i >= startYear; i--)
-            {
-                var item = BusinessFactory<SettlementBusiness>.Instance.GetDepartmentSummary(i, EnergyType.Water, department.Id);
-                if (item != null)
-                    waterData.Add(item);
-            }
-
-            this.depWaterSettleGrid.SetEnergyType(EnergyType.Water);
-            this.depWaterSettleGrid.DataSource = waterData;
         }
         #endregion //Function
 
@@ -149,7 +229,10 @@ namespace Poseidon.Energy.ClientDx
         {
             this.currentDepartment = BusinessFactory<DepartmentBusiness>.Instance.FindById(id);
             this.nowYear = DateTime.Now.Year;
+
             LoadSettlements();
+            DisplaySummary(this.currentDepartment);
+            DisplayTrend(this.currentDepartment);
         }
 
         /// <summary>
@@ -198,7 +281,6 @@ namespace Poseidon.Energy.ClientDx
 
             DisplaySettlementInfo(settlement);
             DisplayRecordInfo(settlement, this.currentDepartment);
-            DisplayTrend(settlement, this.currentDepartment);
         }
         #endregion //Event
     }

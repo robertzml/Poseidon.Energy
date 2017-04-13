@@ -96,14 +96,30 @@
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.tabPageSummary = new DevExpress.XtraTab.XtraTabPage();
+            this.tabSummary = new DevExpress.XtraTab.XtraTabControl();
+            this.tabPageElectricSummary = new DevExpress.XtraTab.XtraTabPage();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.depElectricSettleGrid = new Poseidon.Energy.ClientDx.DepartmentSettlementSummaryGrid();
+            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.electricQSGrid = new Poseidon.Energy.ClientDx.SettlementQuantumSummaryGrid();
+            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.electricASGrid = new Poseidon.Energy.ClientDx.SettlementAmountSummaryGrid();
+            this.tabPageWaterSummary = new DevExpress.XtraTab.XtraTabPage();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
+            this.depWaterSettleGrid = new Poseidon.Energy.ClientDx.DepartmentSettlementSummaryGrid();
+            this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
+            this.waterQSGrid = new Poseidon.Energy.ClientDx.SettlementQuantumSummaryGrid();
+            this.groupControl9 = new DevExpress.XtraEditors.GroupControl();
+            this.waterASGrid = new Poseidon.Energy.ClientDx.SettlementAmountSummaryGrid();
             this.tabPageTrend = new DevExpress.XtraTab.XtraTabPage();
             this.tabTrend = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageElectricTrend = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.depElectricSettleGrid = new Poseidon.Energy.ClientDx.DepartmentSettlementSummaryGrid();
             this.tabPageWaterTrend = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.depWaterSettleGrid = new Poseidon.Energy.ClientDx.DepartmentSettlementSummaryGrid();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
             this.tabPageRecord.SuspendLayout();
@@ -177,13 +193,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            this.tabPageSummary.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabSummary)).BeginInit();
+            this.tabSummary.SuspendLayout();
+            this.tabPageElectricSummary.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
+            this.groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
+            this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
+            this.groupControl6.SuspendLayout();
+            this.tabPageWaterSummary.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
+            this.groupControl7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
+            this.groupControl8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).BeginInit();
+            this.groupControl9.SuspendLayout();
             this.tabPageTrend.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabTrend)).BeginInit();
             this.tabTrend.SuspendLayout();
             this.tabPageElectricTrend.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.tabPageWaterTrend.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMain
@@ -196,6 +229,7 @@
             this.tabMain.TabIndex = 0;
             this.tabMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageRecord,
+            this.tabPageSummary,
             this.tabPageTrend});
             // 
             // tabPageRecord
@@ -910,6 +944,252 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(568, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // tabPageSummary
+            // 
+            this.tabPageSummary.Controls.Add(this.tabSummary);
+            this.tabPageSummary.Name = "tabPageSummary";
+            this.tabPageSummary.Size = new System.Drawing.Size(775, 571);
+            this.tabPageSummary.Text = "能源结算汇总";
+            // 
+            // tabSummary
+            // 
+            this.tabSummary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabSummary.Location = new System.Drawing.Point(0, 0);
+            this.tabSummary.Name = "tabSummary";
+            this.tabSummary.SelectedTabPage = this.tabPageElectricSummary;
+            this.tabSummary.Size = new System.Drawing.Size(775, 571);
+            this.tabSummary.TabIndex = 0;
+            this.tabSummary.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabPageElectricSummary,
+            this.tabPageWaterSummary});
+            // 
+            // tabPageElectricSummary
+            // 
+            this.tabPageElectricSummary.Controls.Add(this.tableLayoutPanel4);
+            this.tabPageElectricSummary.Name = "tabPageElectricSummary";
+            this.tabPageElectricSummary.Size = new System.Drawing.Size(769, 542);
+            this.tabPageElectricSummary.Text = "用电结算";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.groupControl4, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.groupControl5, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.groupControl6, 0, 2);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(769, 542);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // groupControl4
+            // 
+            this.groupControl4.Controls.Add(this.depElectricSettleGrid);
+            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl4.Location = new System.Drawing.Point(3, 3);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(763, 178);
+            this.groupControl4.TabIndex = 0;
+            this.groupControl4.Text = "历年结算汇总";
+            // 
+            // depElectricSettleGrid
+            // 
+            this.depElectricSettleGrid.AllowFilter = false;
+            this.depElectricSettleGrid.AllowGroup = false;
+            this.depElectricSettleGrid.AllowSort = true;
+            this.depElectricSettleGrid.DataSource = null;
+            this.depElectricSettleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.depElectricSettleGrid.Editable = false;
+            this.depElectricSettleGrid.EnableMasterView = false;
+            this.depElectricSettleGrid.Location = new System.Drawing.Point(2, 21);
+            this.depElectricSettleGrid.Name = "depElectricSettleGrid";
+            this.depElectricSettleGrid.ShowAddMenu = false;
+            this.depElectricSettleGrid.ShowFooter = false;
+            this.depElectricSettleGrid.ShowLineNumber = true;
+            this.depElectricSettleGrid.ShowMenu = false;
+            this.depElectricSettleGrid.ShowNavigator = false;
+            this.depElectricSettleGrid.Size = new System.Drawing.Size(759, 155);
+            this.depElectricSettleGrid.TabIndex = 1;
+            // 
+            // groupControl5
+            // 
+            this.groupControl5.Controls.Add(this.electricQSGrid);
+            this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl5.Location = new System.Drawing.Point(3, 187);
+            this.groupControl5.Name = "groupControl5";
+            this.groupControl5.Size = new System.Drawing.Size(763, 172);
+            this.groupControl5.TabIndex = 1;
+            this.groupControl5.Text = "历年用能结算";
+            // 
+            // electricQSGrid
+            // 
+            this.electricQSGrid.AllowFilter = false;
+            this.electricQSGrid.AllowGroup = false;
+            this.electricQSGrid.AllowSort = false;
+            this.electricQSGrid.DataSource = null;
+            this.electricQSGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.electricQSGrid.Editable = false;
+            this.electricQSGrid.EnableMasterView = false;
+            this.electricQSGrid.Location = new System.Drawing.Point(2, 21);
+            this.electricQSGrid.Name = "electricQSGrid";
+            this.electricQSGrid.ShowAddMenu = false;
+            this.electricQSGrid.ShowFooter = false;
+            this.electricQSGrid.ShowLineNumber = true;
+            this.electricQSGrid.ShowMenu = false;
+            this.electricQSGrid.ShowNavigator = false;
+            this.electricQSGrid.ShowYear = true;
+            this.electricQSGrid.Size = new System.Drawing.Size(759, 149);
+            this.electricQSGrid.TabIndex = 0;
+            // 
+            // groupControl6
+            // 
+            this.groupControl6.Controls.Add(this.electricASGrid);
+            this.groupControl6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl6.Location = new System.Drawing.Point(3, 365);
+            this.groupControl6.Name = "groupControl6";
+            this.groupControl6.Size = new System.Drawing.Size(763, 174);
+            this.groupControl6.TabIndex = 2;
+            this.groupControl6.Text = "历年费用结算";
+            // 
+            // electricASGrid
+            // 
+            this.electricASGrid.AllowFilter = false;
+            this.electricASGrid.AllowGroup = false;
+            this.electricASGrid.AllowSort = false;
+            this.electricASGrid.DataSource = null;
+            this.electricASGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.electricASGrid.Editable = false;
+            this.electricASGrid.EnableMasterView = false;
+            this.electricASGrid.Location = new System.Drawing.Point(2, 21);
+            this.electricASGrid.Name = "electricASGrid";
+            this.electricASGrid.ShowAddMenu = false;
+            this.electricASGrid.ShowFooter = false;
+            this.electricASGrid.ShowLineNumber = true;
+            this.electricASGrid.ShowMenu = false;
+            this.electricASGrid.ShowNavigator = false;
+            this.electricASGrid.ShowYear = true;
+            this.electricASGrid.Size = new System.Drawing.Size(759, 151);
+            this.electricASGrid.TabIndex = 0;
+            // 
+            // tabPageWaterSummary
+            // 
+            this.tabPageWaterSummary.Controls.Add(this.tableLayoutPanel5);
+            this.tabPageWaterSummary.Name = "tabPageWaterSummary";
+            this.tabPageWaterSummary.Size = new System.Drawing.Size(769, 542);
+            this.tabPageWaterSummary.Text = "用水结算";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Controls.Add(this.groupControl7, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.groupControl8, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.groupControl9, 0, 2);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(769, 542);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // groupControl7
+            // 
+            this.groupControl7.Controls.Add(this.depWaterSettleGrid);
+            this.groupControl7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl7.Location = new System.Drawing.Point(3, 3);
+            this.groupControl7.Name = "groupControl7";
+            this.groupControl7.Size = new System.Drawing.Size(763, 178);
+            this.groupControl7.TabIndex = 0;
+            this.groupControl7.Text = "历年结算汇总";
+            // 
+            // depWaterSettleGrid
+            // 
+            this.depWaterSettleGrid.AllowFilter = false;
+            this.depWaterSettleGrid.AllowGroup = false;
+            this.depWaterSettleGrid.AllowSort = true;
+            this.depWaterSettleGrid.DataSource = null;
+            this.depWaterSettleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.depWaterSettleGrid.Editable = false;
+            this.depWaterSettleGrid.EnableMasterView = false;
+            this.depWaterSettleGrid.Location = new System.Drawing.Point(2, 21);
+            this.depWaterSettleGrid.Name = "depWaterSettleGrid";
+            this.depWaterSettleGrid.ShowAddMenu = false;
+            this.depWaterSettleGrid.ShowFooter = false;
+            this.depWaterSettleGrid.ShowLineNumber = true;
+            this.depWaterSettleGrid.ShowMenu = false;
+            this.depWaterSettleGrid.ShowNavigator = false;
+            this.depWaterSettleGrid.Size = new System.Drawing.Size(759, 155);
+            this.depWaterSettleGrid.TabIndex = 1;
+            // 
+            // groupControl8
+            // 
+            this.groupControl8.Controls.Add(this.waterQSGrid);
+            this.groupControl8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl8.Location = new System.Drawing.Point(3, 187);
+            this.groupControl8.Name = "groupControl8";
+            this.groupControl8.Size = new System.Drawing.Size(763, 172);
+            this.groupControl8.TabIndex = 1;
+            this.groupControl8.Text = "历年用能结算";
+            // 
+            // waterQSGrid
+            // 
+            this.waterQSGrid.AllowFilter = false;
+            this.waterQSGrid.AllowGroup = false;
+            this.waterQSGrid.AllowSort = false;
+            this.waterQSGrid.DataSource = null;
+            this.waterQSGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.waterQSGrid.Editable = false;
+            this.waterQSGrid.EnableMasterView = false;
+            this.waterQSGrid.Location = new System.Drawing.Point(2, 21);
+            this.waterQSGrid.Name = "waterQSGrid";
+            this.waterQSGrid.ShowAddMenu = false;
+            this.waterQSGrid.ShowFooter = false;
+            this.waterQSGrid.ShowLineNumber = true;
+            this.waterQSGrid.ShowMenu = false;
+            this.waterQSGrid.ShowNavigator = false;
+            this.waterQSGrid.ShowYear = true;
+            this.waterQSGrid.Size = new System.Drawing.Size(759, 149);
+            this.waterQSGrid.TabIndex = 0;
+            // 
+            // groupControl9
+            // 
+            this.groupControl9.Controls.Add(this.waterASGrid);
+            this.groupControl9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl9.Location = new System.Drawing.Point(3, 365);
+            this.groupControl9.Name = "groupControl9";
+            this.groupControl9.Size = new System.Drawing.Size(763, 174);
+            this.groupControl9.TabIndex = 2;
+            this.groupControl9.Text = "历年费用结算";
+            // 
+            // waterASGrid
+            // 
+            this.waterASGrid.AllowFilter = false;
+            this.waterASGrid.AllowGroup = false;
+            this.waterASGrid.AllowSort = false;
+            this.waterASGrid.DataSource = null;
+            this.waterASGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.waterASGrid.Editable = false;
+            this.waterASGrid.EnableMasterView = false;
+            this.waterASGrid.Location = new System.Drawing.Point(2, 21);
+            this.waterASGrid.Name = "waterASGrid";
+            this.waterASGrid.ShowAddMenu = false;
+            this.waterASGrid.ShowFooter = false;
+            this.waterASGrid.ShowLineNumber = true;
+            this.waterASGrid.ShowMenu = false;
+            this.waterASGrid.ShowNavigator = false;
+            this.waterASGrid.ShowYear = true;
+            this.waterASGrid.Size = new System.Drawing.Size(759, 151);
+            this.waterASGrid.TabIndex = 0;
+            // 
             // tabPageTrend
             // 
             this.tabPageTrend.Controls.Add(this.tabTrend);
@@ -941,7 +1221,6 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.depElectricSettleGrid, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -950,25 +1229,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(769, 542);
             this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // depElectricSettleGrid
-            // 
-            this.depElectricSettleGrid.AllowFilter = false;
-            this.depElectricSettleGrid.AllowGroup = false;
-            this.depElectricSettleGrid.AllowSort = true;
-            this.depElectricSettleGrid.DataSource = null;
-            this.depElectricSettleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.depElectricSettleGrid.Editable = false;
-            this.depElectricSettleGrid.EnableMasterView = false;
-            this.depElectricSettleGrid.Location = new System.Drawing.Point(3, 3);
-            this.depElectricSettleGrid.Name = "depElectricSettleGrid";
-            this.depElectricSettleGrid.ShowAddMenu = false;
-            this.depElectricSettleGrid.ShowFooter = false;
-            this.depElectricSettleGrid.ShowLineNumber = true;
-            this.depElectricSettleGrid.ShowMenu = false;
-            this.depElectricSettleGrid.ShowNavigator = false;
-            this.depElectricSettleGrid.Size = new System.Drawing.Size(763, 265);
-            this.depElectricSettleGrid.TabIndex = 0;
             // 
             // tabPageWaterTrend
             // 
@@ -982,7 +1242,6 @@
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.depWaterSettleGrid, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -991,25 +1250,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(769, 542);
             this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // depWaterSettleGrid
-            // 
-            this.depWaterSettleGrid.AllowFilter = false;
-            this.depWaterSettleGrid.AllowGroup = false;
-            this.depWaterSettleGrid.AllowSort = true;
-            this.depWaterSettleGrid.DataSource = null;
-            this.depWaterSettleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.depWaterSettleGrid.Editable = false;
-            this.depWaterSettleGrid.EnableMasterView = false;
-            this.depWaterSettleGrid.Location = new System.Drawing.Point(3, 3);
-            this.depWaterSettleGrid.Name = "depWaterSettleGrid";
-            this.depWaterSettleGrid.ShowAddMenu = false;
-            this.depWaterSettleGrid.ShowFooter = false;
-            this.depWaterSettleGrid.ShowLineNumber = true;
-            this.depWaterSettleGrid.ShowMenu = false;
-            this.depWaterSettleGrid.ShowNavigator = false;
-            this.depWaterSettleGrid.Size = new System.Drawing.Size(763, 265);
-            this.depWaterSettleGrid.TabIndex = 0;
             // 
             // DepartmentSettlementModule
             // 
@@ -1091,13 +1331,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            this.tabPageSummary.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabSummary)).EndInit();
+            this.tabSummary.ResumeLayout(false);
+            this.tabPageElectricSummary.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
+            this.groupControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
+            this.groupControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
+            this.groupControl6.ResumeLayout(false);
+            this.tabPageWaterSummary.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
+            this.groupControl7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
+            this.groupControl8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).EndInit();
+            this.groupControl9.ResumeLayout(false);
             this.tabPageTrend.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabTrend)).EndInit();
             this.tabTrend.ResumeLayout(false);
             this.tabPageElectricTrend.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.tabPageWaterTrend.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1175,9 +1432,25 @@
         private DevExpress.XtraTab.XtraTabControl tabTrend;
         private DevExpress.XtraTab.XtraTabPage tabPageElectricTrend;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private DepartmentSettlementSummaryGrid depElectricSettleGrid;
         private DevExpress.XtraTab.XtraTabPage tabPageWaterTrend;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private DevExpress.XtraTab.XtraTabPage tabPageSummary;
+        private DevExpress.XtraTab.XtraTabControl tabSummary;
+        private DevExpress.XtraTab.XtraTabPage tabPageElectricSummary;
+        private DevExpress.XtraTab.XtraTabPage tabPageWaterSummary;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private DevExpress.XtraEditors.GroupControl groupControl4;
+        private DepartmentSettlementSummaryGrid depElectricSettleGrid;
+        private DevExpress.XtraEditors.GroupControl groupControl5;
+        private SettlementQuantumSummaryGrid electricQSGrid;
+        private DevExpress.XtraEditors.GroupControl groupControl6;
+        private SettlementAmountSummaryGrid electricASGrid;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private DevExpress.XtraEditors.GroupControl groupControl7;
         private DepartmentSettlementSummaryGrid depWaterSettleGrid;
+        private DevExpress.XtraEditors.GroupControl groupControl8;
+        private SettlementQuantumSummaryGrid waterQSGrid;
+        private DevExpress.XtraEditors.GroupControl groupControl9;
+        private SettlementAmountSummaryGrid waterASGrid;
     }
 }

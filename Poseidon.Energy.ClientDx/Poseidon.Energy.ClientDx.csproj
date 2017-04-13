@@ -615,12 +615,6 @@
     </Compile>
     <Compile Include="Utility\ControlUtil.cs" />
     <Compile Include="Utility\EventUtil.cs" />
-    <Compile Include="Chart\WaterExpenseChart.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Chart\WaterExpenseChart.Designer.cs">
-      <DependentUpon>WaterExpenseChart.cs</DependentUpon>
-    </Compile>
     <Compile Include="Mod\WaterExpenseReceipt.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -727,9 +721,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\TargetRecordModule.resx">
       <DependentUpon>TargetRecordModule.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Chart\WaterExpenseChart.resx">
-      <DependentUpon>WaterExpenseChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\WaterCompareGridModule.resx">
       <DependentUpon>WaterCompareGridModule.cs</DependentUpon>

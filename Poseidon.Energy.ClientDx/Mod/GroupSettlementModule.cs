@@ -71,17 +71,39 @@ namespace Poseidon.Energy.ClientDx
 
             var departments = BusinessFactory<DepartmentBusiness>.Instance.FindInGroup(group.Code, true).ToList();
 
-            var elecQuantum = await BusinessFactory<SettlementBusiness>.Instance.GetQuantumSummary(year, EnergyType.Electric, departments);
-            this.electricQSGrid.DataSource = elecQuantum.ToList();
+            var task1 = Task.Run(() =>
+            {
+                var data = BusinessFactory<SettlementBusiness>.Instance.GetQuantumSummary(year, EnergyType.Electric, departments);
+                return data.ToList();
+            });
+            var elecQuantum = await task1;
+            this.electricQSGrid.SetEnergyType(EnergyType.Electric);
+            this.electricQSGrid.DataSource = elecQuantum;
 
-            var waterQuantum = await BusinessFactory<SettlementBusiness>.Instance.GetQuantumSummary(year, EnergyType.Water, departments);
-            this.waterQSGrid.DataSource = waterQuantum.ToList();
+            var task2 = Task.Run(() =>
+            {
+                var data = BusinessFactory<SettlementBusiness>.Instance.GetQuantumSummary(year, EnergyType.Water, departments);
+                return data.ToList();
+            });
+            var waterQuantum = await task2;
+            this.waterQSGrid.SetEnergyType(EnergyType.Water);
+            this.waterQSGrid.DataSource = waterQuantum;
 
-            var elecAmount = await BusinessFactory<SettlementBusiness>.Instance.GetAmountSummary(year, EnergyType.Electric, departments);
-            this.elecASGrid.DataSource = elecAmount.ToList();
+            var task3 = Task.Run(() =>
+            {
+                var data = BusinessFactory<SettlementBusiness>.Instance.GetAmountSummary(year, EnergyType.Electric, departments);
+                return data.ToList();
+            });
+            var elecAmount = await task3;
+            this.elecASGrid.DataSource = elecAmount;
 
-            var waterAmount = await BusinessFactory<SettlementBusiness>.Instance.GetAmountSummary(year, EnergyType.Water, departments);
-            this.watASGrid.DataSource = waterAmount.ToList();
+            var task4 = Task.Run(() =>
+            {
+                var data = BusinessFactory<SettlementBusiness>.Instance.GetAmountSummary(year, EnergyType.Water, departments);
+                return data.ToList();
+            });
+            var waterAmount = await task4;
+            this.watASGrid.DataSource = waterAmount;
 
             this.txtTotalElectricQuantum.Text = string.Format("{0}度", elecQuantum.Sum(r => r.TotalQuantum));
             this.txtTotalElectricAmount.Text = string.Format("{0}元", elecAmount.Sum(r => r.TotalAmount));

@@ -42,6 +42,7 @@
             this.colTotalAmount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSchoolTake = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSelfTake = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colYear = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -59,6 +60,7 @@
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colDepartmentName,
+            this.colYear,
             this.colEnergyType,
             this.colUnitPrice,
             this.colPlanAmount,
@@ -96,7 +98,7 @@
             this.colRemainAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "RemainAmount", "合计={0:0.##}")});
             this.colRemainAmount.Visible = true;
-            this.colRemainAmount.VisibleIndex = 9;
+            this.colRemainAmount.VisibleIndex = 10;
             // 
             // colDepartmentName
             // 
@@ -110,14 +112,14 @@
             this.colEnergyType.FieldName = "EnergyType";
             this.colEnergyType.Name = "colEnergyType";
             this.colEnergyType.Visible = true;
-            this.colEnergyType.VisibleIndex = 1;
+            this.colEnergyType.VisibleIndex = 2;
             // 
             // colUnitPrice
             // 
             this.colUnitPrice.FieldName = "UnitPrice";
             this.colUnitPrice.Name = "colUnitPrice";
             this.colUnitPrice.Visible = true;
-            this.colUnitPrice.VisibleIndex = 2;
+            this.colUnitPrice.VisibleIndex = 3;
             // 
             // colPlanAmount
             // 
@@ -127,7 +129,7 @@
             this.colPlanAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PlanAmount", "合计={0:0.##}")});
             this.colPlanAmount.Visible = true;
-            this.colPlanAmount.VisibleIndex = 3;
+            this.colPlanAmount.VisibleIndex = 4;
             // 
             // colFirstQuarter
             // 
@@ -137,7 +139,7 @@
             this.colFirstQuarter.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "FirstQuarter", "合计={0:0.##}")});
             this.colFirstQuarter.Visible = true;
-            this.colFirstQuarter.VisibleIndex = 4;
+            this.colFirstQuarter.VisibleIndex = 5;
             // 
             // colSecondQuarter
             // 
@@ -147,7 +149,7 @@
             this.colSecondQuarter.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SecondQuarter", "合计={0:0.##}")});
             this.colSecondQuarter.Visible = true;
-            this.colSecondQuarter.VisibleIndex = 5;
+            this.colSecondQuarter.VisibleIndex = 6;
             // 
             // colThirdQuarter
             // 
@@ -157,7 +159,7 @@
             this.colThirdQuarter.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThirdQuarter", "合计={0:0.##}")});
             this.colThirdQuarter.Visible = true;
-            this.colThirdQuarter.VisibleIndex = 6;
+            this.colThirdQuarter.VisibleIndex = 7;
             // 
             // colFourthQuarter
             // 
@@ -167,7 +169,7 @@
             this.colFourthQuarter.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "FourthQuarter", "合计={0:0.##}")});
             this.colFourthQuarter.Visible = true;
-            this.colFourthQuarter.VisibleIndex = 7;
+            this.colFourthQuarter.VisibleIndex = 8;
             // 
             // colTotalAmount
             // 
@@ -177,7 +179,7 @@
             this.colTotalAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalAmount", "合计={0:0.##}")});
             this.colTotalAmount.Visible = true;
-            this.colTotalAmount.VisibleIndex = 8;
+            this.colTotalAmount.VisibleIndex = 9;
             // 
             // colSchoolTake
             // 
@@ -185,7 +187,7 @@
             this.colSchoolTake.FieldName = "SchoolTake";
             this.colSchoolTake.Name = "colSchoolTake";
             this.colSchoolTake.Visible = true;
-            this.colSchoolTake.VisibleIndex = 10;
+            this.colSchoolTake.VisibleIndex = 11;
             // 
             // colSelfTake
             // 
@@ -193,13 +195,22 @@
             this.colSelfTake.FieldName = "SelfTake";
             this.colSelfTake.Name = "colSelfTake";
             this.colSelfTake.Visible = true;
-            this.colSelfTake.VisibleIndex = 11;
+            this.colSelfTake.VisibleIndex = 12;
+            // 
+            // colYear
+            // 
+            this.colYear.Caption = "年度";
+            this.colYear.FieldName = "Year";
+            this.colYear.Name = "colYear";
+            this.colYear.Visible = true;
+            this.colYear.VisibleIndex = 1;
             // 
             // SettlementAmountSummaryGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "SettlementAmountSummaryGrid";
+            this.Load += new System.EventHandler(this.SettlementAmountSummaryGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
@@ -221,5 +232,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRemainAmount;
         private DevExpress.XtraGrid.Columns.GridColumn colSchoolTake;
         private DevExpress.XtraGrid.Columns.GridColumn colSelfTake;
+        private DevExpress.XtraGrid.Columns.GridColumn colYear;
     }
 }

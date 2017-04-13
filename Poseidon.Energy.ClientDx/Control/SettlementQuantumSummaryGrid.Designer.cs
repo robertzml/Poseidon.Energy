@@ -37,6 +37,7 @@
             this.colFourthQuarter = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalQuantum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRemainQuantum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colYear = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -54,6 +55,7 @@
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colDepartmentName,
+            this.colYear,
             this.colEnergyType,
             this.colPlanQuantum,
             this.colFirstQuarter,
@@ -83,7 +85,7 @@
             this.colEnergyType.FieldName = "EnergyType";
             this.colEnergyType.Name = "colEnergyType";
             this.colEnergyType.Visible = true;
-            this.colEnergyType.VisibleIndex = 1;
+            this.colEnergyType.VisibleIndex = 2;
             // 
             // colPlanQuantum
             // 
@@ -92,7 +94,7 @@
             this.colPlanQuantum.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PlanQuantum", "合计={0:0.##}")});
             this.colPlanQuantum.Visible = true;
-            this.colPlanQuantum.VisibleIndex = 2;
+            this.colPlanQuantum.VisibleIndex = 3;
             // 
             // colFirstQuarter
             // 
@@ -101,7 +103,7 @@
             this.colFirstQuarter.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "FirstQuarter", "合计={0:0.##}")});
             this.colFirstQuarter.Visible = true;
-            this.colFirstQuarter.VisibleIndex = 3;
+            this.colFirstQuarter.VisibleIndex = 4;
             // 
             // colSecondQuarter
             // 
@@ -110,7 +112,7 @@
             this.colSecondQuarter.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SecondQuarter", "合计={0:0.##}")});
             this.colSecondQuarter.Visible = true;
-            this.colSecondQuarter.VisibleIndex = 4;
+            this.colSecondQuarter.VisibleIndex = 5;
             // 
             // colThirdQuarter
             // 
@@ -119,7 +121,7 @@
             this.colThirdQuarter.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ThirdQuarter", "合计={0:0.##}")});
             this.colThirdQuarter.Visible = true;
-            this.colThirdQuarter.VisibleIndex = 5;
+            this.colThirdQuarter.VisibleIndex = 6;
             // 
             // colFourthQuarter
             // 
@@ -128,7 +130,7 @@
             this.colFourthQuarter.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "FourthQuarter", "合计={0:0.##}")});
             this.colFourthQuarter.Visible = true;
-            this.colFourthQuarter.VisibleIndex = 6;
+            this.colFourthQuarter.VisibleIndex = 7;
             // 
             // colTotalQuantum
             // 
@@ -137,7 +139,7 @@
             this.colTotalQuantum.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalQuantum", "合计={0:0.##}")});
             this.colTotalQuantum.Visible = true;
-            this.colTotalQuantum.VisibleIndex = 7;
+            this.colTotalQuantum.VisibleIndex = 8;
             // 
             // colRemainQuantum
             // 
@@ -146,13 +148,22 @@
             this.colRemainQuantum.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "RemainQuantum", "合计={0:0.##}")});
             this.colRemainQuantum.Visible = true;
-            this.colRemainQuantum.VisibleIndex = 8;
+            this.colRemainQuantum.VisibleIndex = 9;
+            // 
+            // colYear
+            // 
+            this.colYear.Caption = "年度";
+            this.colYear.FieldName = "Year";
+            this.colYear.Name = "colYear";
+            this.colYear.Visible = true;
+            this.colYear.VisibleIndex = 1;
             // 
             // SettlementQuantumSummaryGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "SettlementQuantumSummaryGrid";
+            this.Load += new System.EventHandler(this.SettlementQuantumSummaryGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();
@@ -171,5 +182,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colFourthQuarter;
         private DevExpress.XtraGrid.Columns.GridColumn colTotalQuantum;
         private DevExpress.XtraGrid.Columns.GridColumn colRemainQuantum;
+        private DevExpress.XtraGrid.Columns.GridColumn colYear;
     }
 }

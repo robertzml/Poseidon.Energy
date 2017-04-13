@@ -18,11 +18,43 @@ namespace Poseidon.Energy.ClientDx
     /// </summary>
     public partial class SettlementAmountSummaryGrid : WinEntityGrid<SettlementAmountSummary>
     {
+        #region Field
+        /// <summary>
+        /// 是否显示年度
+        /// </summary>
+        private bool showYear = false;
+        #endregion //Field
+
         #region Constructor
         public SettlementAmountSummaryGrid()
         {
             InitializeComponent();
         }
         #endregion //Constructor
+
+        #region Event
+        private void SettlementAmountSummaryGrid_Load(object sender, EventArgs e)
+        {
+            this.colYear.Visible = showYear;
+        }
+        #endregion //Event
+
+        #region Property
+        /// <summary>
+        /// 是否显示年度
+        /// </summary>
+        [Description("是否显示年度"), Category("界面"), Browsable(true)]
+        public bool ShowYear
+        {
+            get
+            {
+                return this.showYear;
+            }
+            set
+            {
+                this.showYear = value;
+            }
+        }
+        #endregion //Property
     }
 }

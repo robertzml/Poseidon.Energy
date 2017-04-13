@@ -45,8 +45,8 @@ namespace Poseidon.Energy.ClientDx
 
             this.colUnitPrice.Caption = string.Format("单价(元/{0})", postfix);
             this.colPlanQuantum.Caption = string.Format("计划用量({0})", postfix);
-            this.colSettleQuantum.Caption = string.Format("结算用量(度)", postfix);
-            this.colRemainQuantum.Caption = string.Format("剩余用量{0}", postfix);
+            this.colSettleQuantum.Caption = string.Format("结算用量({0})", postfix);
+            this.colRemainQuantum.Caption = string.Format("剩余用量({0})", postfix);
         }
         #endregion //Method
     }

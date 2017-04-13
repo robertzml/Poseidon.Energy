@@ -409,6 +409,7 @@
             this.electricQSGrid.ShowLineNumber = true;
             this.electricQSGrid.ShowMenu = false;
             this.electricQSGrid.ShowNavigator = false;
+            this.electricQSGrid.ShowYear = false;
             this.electricQSGrid.Size = new System.Drawing.Size(665, 361);
             this.electricQSGrid.TabIndex = 0;
             // 
@@ -435,6 +436,7 @@
             this.elecASGrid.ShowLineNumber = true;
             this.elecASGrid.ShowMenu = false;
             this.elecASGrid.ShowNavigator = false;
+            this.elecASGrid.ShowYear = false;
             this.elecASGrid.Size = new System.Drawing.Size(665, 361);
             this.elecASGrid.TabIndex = 0;
             // 
@@ -461,6 +463,7 @@
             this.waterQSGrid.ShowLineNumber = true;
             this.waterQSGrid.ShowMenu = false;
             this.waterQSGrid.ShowNavigator = false;
+            this.waterQSGrid.ShowYear = false;
             this.waterQSGrid.Size = new System.Drawing.Size(665, 361);
             this.waterQSGrid.TabIndex = 0;
             // 
@@ -487,6 +490,7 @@
             this.watASGrid.ShowLineNumber = true;
             this.watASGrid.ShowMenu = false;
             this.watASGrid.ShowNavigator = false;
+            this.watASGrid.ShowYear = false;
             this.watASGrid.Size = new System.Drawing.Size(665, 361);
             this.watASGrid.TabIndex = 0;
             // 
