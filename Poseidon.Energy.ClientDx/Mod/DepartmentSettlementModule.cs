@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace Poseidon.Energy.ClientDx
 {
+    using DevExpress.XtraCharts;
     using Poseidon.Base.Framework;
     using Poseidon.Common;
     using Poseidon.Core.Utility;
@@ -216,7 +217,8 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="department">部门</param>
         private void DisplayTrend(Department department)
         {
-
+            this.electricTrendMod.SetDepartment(department, EnergyType.Electric);
+            this.waterTrendMod.SetDepartment(department, EnergyType.Water);
         }
         #endregion //Function
 
@@ -281,6 +283,16 @@ namespace Poseidon.Energy.ClientDx
 
             DisplaySettlementInfo(settlement);
             DisplayRecordInfo(settlement, this.currentDepartment);
+        }
+       
+        /// <summary>
+        /// 周期选择
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmdElectricPeriod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
         #endregion //Event
     }

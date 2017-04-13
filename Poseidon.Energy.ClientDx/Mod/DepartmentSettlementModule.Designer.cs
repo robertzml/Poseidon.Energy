@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tabMain = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageRecord = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lbSettlements = new DevExpress.XtraEditors.ListBoxControl();
-            this.bsSettlement = new System.Windows.Forms.BindingSource(this.components);
+            this.bsSettlement = new System.Windows.Forms.BindingSource();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
@@ -118,8 +117,14 @@
             this.tabTrend = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageElectricTrend = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupControl10 = new DevExpress.XtraEditors.GroupControl();
+            this.electricTrendMod = new Poseidon.Energy.ClientDx.EnergyTrendModule();
+            this.groupControl11 = new DevExpress.XtraEditors.GroupControl();
             this.tabPageWaterTrend = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupControl12 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl13 = new DevExpress.XtraEditors.GroupControl();
+            this.waterTrendMod = new Poseidon.Energy.ClientDx.EnergyTrendModule();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
             this.tabPageRecord.SuspendLayout();
@@ -216,7 +221,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabTrend)).BeginInit();
             this.tabTrend.SuspendLayout();
             this.tabPageElectricTrend.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).BeginInit();
+            this.groupControl10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).BeginInit();
             this.tabPageWaterTrend.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl12)).BeginInit();
+            this.groupControl12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl13)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMain
@@ -1221,6 +1234,8 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Controls.Add(this.groupControl10, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.groupControl11, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -1229,6 +1244,33 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(769, 542);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // groupControl10
+            // 
+            this.groupControl10.Controls.Add(this.electricTrendMod);
+            this.groupControl10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl10.Location = new System.Drawing.Point(3, 3);
+            this.groupControl10.Name = "groupControl10";
+            this.groupControl10.Size = new System.Drawing.Size(763, 265);
+            this.groupControl10.TabIndex = 0;
+            this.groupControl10.Text = "结算趋势";
+            // 
+            // electricTrendMod
+            // 
+            this.electricTrendMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.electricTrendMod.Location = new System.Drawing.Point(2, 21);
+            this.electricTrendMod.Name = "electricTrendMod";
+            this.electricTrendMod.Size = new System.Drawing.Size(759, 242);
+            this.electricTrendMod.TabIndex = 0;
+            // 
+            // groupControl11
+            // 
+            this.groupControl11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl11.Location = new System.Drawing.Point(3, 274);
+            this.groupControl11.Name = "groupControl11";
+            this.groupControl11.Size = new System.Drawing.Size(763, 265);
+            this.groupControl11.TabIndex = 1;
+            this.groupControl11.Text = "结算对比";
             // 
             // tabPageWaterTrend
             // 
@@ -1242,6 +1284,8 @@
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.groupControl12, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.groupControl13, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -1250,6 +1294,33 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(769, 542);
             this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // groupControl12
+            // 
+            this.groupControl12.Controls.Add(this.waterTrendMod);
+            this.groupControl12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl12.Location = new System.Drawing.Point(3, 3);
+            this.groupControl12.Name = "groupControl12";
+            this.groupControl12.Size = new System.Drawing.Size(763, 265);
+            this.groupControl12.TabIndex = 0;
+            this.groupControl12.Text = "结算趋势";
+            // 
+            // groupControl13
+            // 
+            this.groupControl13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl13.Location = new System.Drawing.Point(3, 274);
+            this.groupControl13.Name = "groupControl13";
+            this.groupControl13.Size = new System.Drawing.Size(763, 265);
+            this.groupControl13.TabIndex = 1;
+            this.groupControl13.Text = "结算对比";
+            // 
+            // waterTrendMod
+            // 
+            this.waterTrendMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.waterTrendMod.Location = new System.Drawing.Point(2, 21);
+            this.waterTrendMod.Name = "waterTrendMod";
+            this.waterTrendMod.Size = new System.Drawing.Size(759, 242);
+            this.waterTrendMod.TabIndex = 0;
             // 
             // DepartmentSettlementModule
             // 
@@ -1354,7 +1425,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabTrend)).EndInit();
             this.tabTrend.ResumeLayout(false);
             this.tabPageElectricTrend.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).EndInit();
+            this.groupControl10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).EndInit();
             this.tabPageWaterTrend.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl12)).EndInit();
+            this.groupControl12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl13)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1452,5 +1531,11 @@
         private SettlementQuantumSummaryGrid waterQSGrid;
         private DevExpress.XtraEditors.GroupControl groupControl9;
         private SettlementAmountSummaryGrid waterASGrid;
+        private DevExpress.XtraEditors.GroupControl groupControl10;
+        private DevExpress.XtraEditors.GroupControl groupControl11;
+        private EnergyTrendModule electricTrendMod;
+        private DevExpress.XtraEditors.GroupControl groupControl12;
+        private EnergyTrendModule waterTrendMod;
+        private DevExpress.XtraEditors.GroupControl groupControl13;
     }
 }

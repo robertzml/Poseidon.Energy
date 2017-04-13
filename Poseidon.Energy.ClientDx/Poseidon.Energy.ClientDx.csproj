@@ -141,6 +141,18 @@
     <Compile Include="Control\DepartmentSettlementSummaryGrid.Designer.cs">
       <DependentUpon>DepartmentSettlementSummaryGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chart\EnergyTrendChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\EnergyTrendChart.Designer.cs">
+      <DependentUpon>EnergyTrendChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\EnergyTrendModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\EnergyTrendModule.Designer.cs">
+      <DependentUpon>EnergyTrendModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mod\ExpenseAccountModule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -629,6 +641,9 @@
     <EmbeddedResource Include="Chart\EnergyExpenseChart.resx">
       <DependentUpon>EnergyExpenseChart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Chart\EnergyTrendChart.resx">
+      <DependentUpon>EnergyTrendChart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Chart\EnergyYearExpenseChart.resx">
       <DependentUpon>EnergyYearExpenseChart.cs</DependentUpon>
     </EmbeddedResource>
@@ -679,6 +694,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\ElectricMeterGrid.resx">
       <DependentUpon>ElectricMeterGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\EnergyTrendModule.resx">
+      <DependentUpon>EnergyTrendModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\ExpenseAccountInfo.resx">
       <DependentUpon>ExpenseAccountInfo.cs</DependentUpon>
