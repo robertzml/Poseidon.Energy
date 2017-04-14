@@ -219,6 +219,9 @@ namespace Poseidon.Energy.ClientDx
         {
             this.electricTrendMod.SetDepartment(department, EnergyType.Electric);
             this.waterTrendMod.SetDepartment(department, EnergyType.Water);
+
+            this.electricSettleMod.SetDepartment(department, EnergyType.Electric);
+            this.waterSettleMod.SetDepartment(department, EnergyType.Water);
         }
         #endregion //Function
 
@@ -283,16 +286,6 @@ namespace Poseidon.Energy.ClientDx
 
             DisplaySettlementInfo(settlement);
             DisplayRecordInfo(settlement, this.currentDepartment);
-        }
-       
-        /// <summary>
-        /// 周期选择
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void cmdElectricPeriod_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
         #endregion //Event
     }

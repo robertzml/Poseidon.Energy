@@ -111,6 +111,12 @@ namespace Poseidon.Energy.ClientDx
 
             var chartPoints = await task;
 
+            string energyPostfix = "";
+            if (this.energyType == EnergyType.Electric)
+                energyPostfix = "用电量(度)";
+            else if (this.energyType == EnergyType.Water)
+                energyPostfix = "用水量(吨)";
+
             if (period == 0)
             {
                 this.trendChart.SetChartTitle(string.Format("{0}年度用能", currentDepartment.ShortName));
@@ -120,7 +126,7 @@ namespace Poseidon.Energy.ClientDx
                 this.trendChart.SetChartTitle(string.Format("{0}季度用能", currentDepartment.ShortName));
             }
 
-            this.trendChart.SetBar(chartPoints.BarPoint, "用电量(度)");
+            this.trendChart.SetBar(chartPoints.BarPoint, energyPostfix);
 
             if (showAmount)
             {

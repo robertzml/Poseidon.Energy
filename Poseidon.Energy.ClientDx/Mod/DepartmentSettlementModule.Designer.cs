@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabMain = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageRecord = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lbSettlements = new DevExpress.XtraEditors.ListBoxControl();
-            this.bsSettlement = new System.Windows.Forms.BindingSource();
+            this.bsSettlement = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
@@ -120,11 +121,13 @@
             this.groupControl10 = new DevExpress.XtraEditors.GroupControl();
             this.electricTrendMod = new Poseidon.Energy.ClientDx.EnergyTrendModule();
             this.groupControl11 = new DevExpress.XtraEditors.GroupControl();
+            this.electricSettleMod = new Poseidon.Energy.ClientDx.SettlementChartModule();
             this.tabPageWaterTrend = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl12 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl13 = new DevExpress.XtraEditors.GroupControl();
             this.waterTrendMod = new Poseidon.Energy.ClientDx.EnergyTrendModule();
+            this.groupControl13 = new DevExpress.XtraEditors.GroupControl();
+            this.waterSettleMod = new Poseidon.Energy.ClientDx.SettlementChartModule();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
             this.tabPageRecord.SuspendLayout();
@@ -225,11 +228,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).BeginInit();
             this.groupControl10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).BeginInit();
+            this.groupControl11.SuspendLayout();
             this.tabPageWaterTrend.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl12)).BeginInit();
             this.groupControl12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl13)).BeginInit();
+            this.groupControl13.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMain
@@ -1233,15 +1238,15 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.groupControl10, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.groupControl11, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(769, 542);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
@@ -1251,26 +1256,35 @@
             this.groupControl10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl10.Location = new System.Drawing.Point(3, 3);
             this.groupControl10.Name = "groupControl10";
-            this.groupControl10.Size = new System.Drawing.Size(763, 265);
+            this.groupControl10.Size = new System.Drawing.Size(763, 210);
             this.groupControl10.TabIndex = 0;
-            this.groupControl10.Text = "结算趋势";
+            this.groupControl10.Text = "用能趋势";
             // 
             // electricTrendMod
             // 
             this.electricTrendMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.electricTrendMod.Location = new System.Drawing.Point(2, 21);
             this.electricTrendMod.Name = "electricTrendMod";
-            this.electricTrendMod.Size = new System.Drawing.Size(759, 242);
+            this.electricTrendMod.Size = new System.Drawing.Size(759, 187);
             this.electricTrendMod.TabIndex = 0;
             // 
             // groupControl11
             // 
+            this.groupControl11.Controls.Add(this.electricSettleMod);
             this.groupControl11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl11.Location = new System.Drawing.Point(3, 274);
+            this.groupControl11.Location = new System.Drawing.Point(3, 219);
             this.groupControl11.Name = "groupControl11";
-            this.groupControl11.Size = new System.Drawing.Size(763, 265);
+            this.groupControl11.Size = new System.Drawing.Size(763, 210);
             this.groupControl11.TabIndex = 1;
-            this.groupControl11.Text = "结算对比";
+            this.groupControl11.Text = "指标偏离情况";
+            // 
+            // electricSettleMod
+            // 
+            this.electricSettleMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.electricSettleMod.Location = new System.Drawing.Point(2, 21);
+            this.electricSettleMod.Name = "electricSettleMod";
+            this.electricSettleMod.Size = new System.Drawing.Size(759, 187);
+            this.electricSettleMod.TabIndex = 0;
             // 
             // tabPageWaterTrend
             // 
@@ -1283,15 +1297,15 @@
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Controls.Add(this.groupControl12, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupControl13, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(769, 542);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
@@ -1301,26 +1315,35 @@
             this.groupControl12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl12.Location = new System.Drawing.Point(3, 3);
             this.groupControl12.Name = "groupControl12";
-            this.groupControl12.Size = new System.Drawing.Size(763, 265);
+            this.groupControl12.Size = new System.Drawing.Size(763, 210);
             this.groupControl12.TabIndex = 0;
-            this.groupControl12.Text = "结算趋势";
-            // 
-            // groupControl13
-            // 
-            this.groupControl13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl13.Location = new System.Drawing.Point(3, 274);
-            this.groupControl13.Name = "groupControl13";
-            this.groupControl13.Size = new System.Drawing.Size(763, 265);
-            this.groupControl13.TabIndex = 1;
-            this.groupControl13.Text = "结算对比";
+            this.groupControl12.Text = "用能趋势";
             // 
             // waterTrendMod
             // 
             this.waterTrendMod.Dock = System.Windows.Forms.DockStyle.Fill;
             this.waterTrendMod.Location = new System.Drawing.Point(2, 21);
             this.waterTrendMod.Name = "waterTrendMod";
-            this.waterTrendMod.Size = new System.Drawing.Size(759, 242);
+            this.waterTrendMod.Size = new System.Drawing.Size(759, 187);
             this.waterTrendMod.TabIndex = 0;
+            // 
+            // groupControl13
+            // 
+            this.groupControl13.Controls.Add(this.waterSettleMod);
+            this.groupControl13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl13.Location = new System.Drawing.Point(3, 219);
+            this.groupControl13.Name = "groupControl13";
+            this.groupControl13.Size = new System.Drawing.Size(763, 210);
+            this.groupControl13.TabIndex = 1;
+            this.groupControl13.Text = "指标偏离情况";
+            // 
+            // waterSettleMod
+            // 
+            this.waterSettleMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.waterSettleMod.Location = new System.Drawing.Point(2, 21);
+            this.waterSettleMod.Name = "waterSettleMod";
+            this.waterSettleMod.Size = new System.Drawing.Size(759, 187);
+            this.waterSettleMod.TabIndex = 0;
             // 
             // DepartmentSettlementModule
             // 
@@ -1429,11 +1452,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).EndInit();
             this.groupControl10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).EndInit();
+            this.groupControl11.ResumeLayout(false);
             this.tabPageWaterTrend.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl12)).EndInit();
             this.groupControl12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl13)).EndInit();
+            this.groupControl13.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1537,5 +1562,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl12;
         private EnergyTrendModule waterTrendMod;
         private DevExpress.XtraEditors.GroupControl groupControl13;
+        private SettlementChartModule electricSettleMod;
+        private SettlementChartModule waterSettleMod;
     }
 }

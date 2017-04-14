@@ -197,6 +197,18 @@
     <Compile Include="Report\RepSettlement.Designer.cs">
       <DependentUpon>RepSettlement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chart\SettlementChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\SettlementChart.Designer.cs">
+      <DependentUpon>SettlementChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\SettlementChartModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\SettlementChartModule.Designer.cs">
+      <DependentUpon>SettlementChartModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settlement\FrmSettlementRecordAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -647,6 +659,9 @@
     <EmbeddedResource Include="Chart\EnergyYearExpenseChart.resx">
       <DependentUpon>EnergyYearExpenseChart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Chart\SettlementChart.resx">
+      <DependentUpon>SettlementChart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\AllowanceTargetGrid.resx">
       <DependentUpon>AllowanceTargetGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -851,6 +866,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\RepSettlement.resx">
       <DependentUpon>RepSettlement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\SettlementChartModule.resx">
+      <DependentUpon>SettlementChartModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settlement\FrmSettlementAdd.resx">
       <DependentUpon>FrmSettlementAdd.cs</DependentUpon>
