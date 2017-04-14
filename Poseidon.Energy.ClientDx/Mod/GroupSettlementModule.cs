@@ -109,6 +109,9 @@ namespace Poseidon.Energy.ClientDx
             this.txtTotalElectricAmount.Text = string.Format("{0}元", elecAmount.Sum(r => r.TotalAmount));
             this.txtTotalWaterQuantum.Text = string.Format("{0}吨", waterQuantum.Sum(r => r.TotalQuantum));
             this.txtTotalWaterAmount.Text = string.Format("{0}元", waterAmount.Sum(r => r.TotalAmount));
+
+            this.electricSettleChart.SetGroup(year, group, EnergyType.Electric);
+            this.waterSettleChart.SetGroup(year, group, EnergyType.Water);
         }
 
         /// <summary>

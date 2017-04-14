@@ -87,8 +87,10 @@
             // 
             // chartMain
             // 
+            xyDiagram1.AxisX.Visibility = DevExpress.Utils.DefaultBoolean.True;
             xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram1.EnableAxisXScrolling = true;
             secondaryAxisY1.AxisID = 0;
             secondaryAxisY1.Label.TextPattern = "{V:0.00%}";
             secondaryAxisY1.Name = "Secondary AxisY 1";
@@ -126,6 +128,7 @@
             sideBySideBarSeriesView2.Color = System.Drawing.Color.BlueViolet;
             series2.View = sideBySideBarSeriesView2;
             series3.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series3.CrosshairLabelPattern = "{V:0.00%}";
             pointSeriesLabel1.TextPattern = "{V:0.00%}";
             series3.Label = pointSeriesLabel1;
             series3.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;

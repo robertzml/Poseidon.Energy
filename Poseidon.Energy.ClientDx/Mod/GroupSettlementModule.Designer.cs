@@ -99,6 +99,10 @@
             this.electricSRGrid = new Poseidon.Energy.ClientDx.SettlementRecordGrid();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.waterSRGrid = new Poseidon.Energy.ClientDx.SettlementRecordGrid();
+            this.tabPageElecSettle = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
+            this.electricSettleChart = new Poseidon.Energy.ClientDx.SettlementChartModule();
+            this.waterSettleChart = new Poseidon.Energy.ClientDx.SettlementChartModule();
             ((System.ComponentModel.ISupportInitialize)(this.tabSettlement)).BeginInit();
             this.tabSettlement.SuspendLayout();
             this.tabPageSummary.SuspendLayout();
@@ -172,6 +176,8 @@
             this.tabRecord.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
+            this.tabPageElecSettle.SuspendLayout();
+            this.xtraTabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabSettlement
@@ -383,8 +389,10 @@
             this.tabSummary.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageElecQuantum,
             this.tabPageElecAmount,
+            this.tabPageElecSettle,
             this.tabPageWatQuantum,
-            this.tabPageWatAmount});
+            this.tabPageWatAmount,
+            this.xtraTabPage4});
             // 
             // tabPageElecQuantum
             // 
@@ -965,6 +973,36 @@
             this.waterSRGrid.Size = new System.Drawing.Size(661, 258);
             this.waterSRGrid.TabIndex = 0;
             // 
+            // tabPageElecSettle
+            // 
+            this.tabPageElecSettle.Controls.Add(this.electricSettleChart);
+            this.tabPageElecSettle.Name = "tabPageElecSettle";
+            this.tabPageElecSettle.Size = new System.Drawing.Size(665, 361);
+            this.tabPageElecSettle.Text = "用电指标";
+            // 
+            // xtraTabPage4
+            // 
+            this.xtraTabPage4.Controls.Add(this.waterSettleChart);
+            this.xtraTabPage4.Name = "xtraTabPage4";
+            this.xtraTabPage4.Size = new System.Drawing.Size(665, 361);
+            this.xtraTabPage4.Text = "用水指标";
+            // 
+            // electricSettleChart
+            // 
+            this.electricSettleChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.electricSettleChart.Location = new System.Drawing.Point(0, 0);
+            this.electricSettleChart.Name = "electricSettleChart";
+            this.electricSettleChart.Size = new System.Drawing.Size(665, 361);
+            this.electricSettleChart.TabIndex = 6;
+            // 
+            // waterSettleChart
+            // 
+            this.waterSettleChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.waterSettleChart.Location = new System.Drawing.Point(0, 0);
+            this.waterSettleChart.Name = "waterSettleChart";
+            this.waterSettleChart.Size = new System.Drawing.Size(665, 361);
+            this.waterSettleChart.TabIndex = 0;
+            // 
             // GroupSettlementModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -1045,6 +1083,8 @@
             this.tabRecord.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
+            this.tabPageElecSettle.ResumeLayout(false);
+            this.xtraTabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1121,5 +1161,9 @@
         private DevExpress.XtraEditors.SimpleButton btnPrint;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraTab.XtraTabPage tabPageElecSettle;
+        private SettlementChartModule electricSettleChart;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
+        private SettlementChartModule waterSettleChart;
     }
 }
