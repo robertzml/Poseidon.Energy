@@ -209,6 +209,12 @@
     <Compile Include="Mod\SettlementChartModule.Designer.cs">
       <DependentUpon>SettlementChartModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\SettlementCompareGridModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\SettlementCompareGridModule.Designer.cs">
+      <DependentUpon>SettlementCompareGridModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settlement\FrmSettlementRecordAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -751,6 +757,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\TargetRecordGrid.resx">
       <DependentUpon>TargetRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\SettlementCompareGridModule.resx">
+      <DependentUpon>SettlementCompareGridModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\TargetRecordModule.resx">
       <DependentUpon>TargetRecordModule.cs</DependentUpon>

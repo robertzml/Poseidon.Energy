@@ -222,6 +222,9 @@ namespace Poseidon.Energy.ClientDx
 
             this.electricSettleMod.SetDepartment(department, EnergyType.Electric);
             this.waterSettleMod.SetDepartment(department, EnergyType.Water);
+
+            this.electricCompareMod.SetDepartment(department, EnergyType.Electric);
+            this.waterCompareMod.SetDepartment(department, EnergyType.Water);
         }
         #endregion //Function
 

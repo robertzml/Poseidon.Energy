@@ -57,6 +57,15 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
+        /// 设置归属时间标题，默认月份
+        /// </summary>
+        /// <param name="title">标题</param>
+        public void SetBelongTimeTitle(string title)
+        {
+            this.colMonth.Caption = title;
+        }
+
+        /// <summary>
         /// 显示用量
         /// </summary>
         /// <param name="visible">是否显示</param>

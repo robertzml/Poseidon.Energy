@@ -128,7 +128,7 @@
             sideBySideBarSeriesView2.Color = System.Drawing.Color.BlueViolet;
             series2.View = sideBySideBarSeriesView2;
             series3.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series3.CrosshairLabelPattern = "{V:0.00%}";
+            series3.CrosshairLabelPattern = "{S}:{V:0.00%}";
             pointSeriesLabel1.TextPattern = "{V:0.00%}";
             series3.Label = pointSeriesLabel1;
             series3.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
