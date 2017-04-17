@@ -75,6 +75,14 @@ namespace Poseidon.Energy.ClientDx
             this.colQuantumSecond.Visible = visible;
             this.colDiffQuantum.Visible = visible;
             this.colIncQuantum.Visible = visible;
+
+            if (visible)
+            {
+                this.colQuantumFirst.VisibleIndex = 2;
+                this.colQuantumSecond.VisibleIndex = 3;
+                this.colDiffQuantum.VisibleIndex = 4;
+                this.colIncQuantum.VisibleIndex = 5;
+            }
         }
 
         /// <summary>
@@ -87,6 +95,14 @@ namespace Poseidon.Energy.ClientDx
             this.colAmountSecond.Visible = visible;
             this.colDiffAmount.Visible = visible;
             this.colIncAmount.Visible = visible;
+
+            if (visible)
+            {
+                this.colAmountFirst.VisibleIndex = 6;
+                this.colAmountSecond.VisibleIndex = 7;
+                this.colDiffAmount.VisibleIndex = 8;
+                this.colIncAmount.VisibleIndex = 9;
+            }
         }
 
         /// <summary>

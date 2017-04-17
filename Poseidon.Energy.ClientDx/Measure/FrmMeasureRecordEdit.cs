@@ -136,6 +136,8 @@ namespace Poseidon.Energy.ClientDx
             Measure select = this.luRefMeasure.GetSelectedDataRow() as Measure;
             var refRecords = BusinessFactory<MeasureRecordBusiness>.Instance.FindByMeasureId(select.Id).ToList();
 
+            this.txtRefDepartmentCount.Text = refRecords.Count.ToString();
+            this.txtRefTotalQuantum.Text = refRecords.Sum(r => r.Quantum).ToString();
             this.mrGrid.SetReference(refRecords);
         }
 
