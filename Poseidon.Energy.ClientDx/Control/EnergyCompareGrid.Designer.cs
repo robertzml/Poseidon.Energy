@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.colMonth = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colItemName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantumFirst = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAmountFirst = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantumSecond = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,7 +55,7 @@
             // 
             this.dgvEntity.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colInclude,
-            this.colMonth,
+            this.colItemName,
             this.colQuantumFirst,
             this.colQuantumSecond,
             this.colDiffQuantum,
@@ -75,13 +75,14 @@
             this.dgvEntity.OptionsView.ShowGroupPanel = false;
             this.dgvEntity.CustomSummaryCalculate += new DevExpress.Data.CustomSummaryEventHandler(this.dgvEntity_CustomSummaryCalculate);
             // 
-            // colMonth
+            // colItemName
             // 
-            this.colMonth.FieldName = "Month";
-            this.colMonth.Name = "colMonth";
-            this.colMonth.OptionsColumn.AllowEdit = false;
-            this.colMonth.Visible = true;
-            this.colMonth.VisibleIndex = 1;
+            this.colItemName.Caption = "项目";
+            this.colItemName.FieldName = "ItemName";
+            this.colItemName.Name = "colItemName";
+            this.colItemName.OptionsColumn.AllowEdit = false;
+            this.colItemName.Visible = true;
+            this.colItemName.VisibleIndex = 1;
             // 
             // colQuantumFirst
             // 
@@ -206,7 +207,7 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn colMonth;
+        private DevExpress.XtraGrid.Columns.GridColumn colItemName;
         private DevExpress.XtraGrid.Columns.GridColumn colQuantumFirst;
         private DevExpress.XtraGrid.Columns.GridColumn colAmountFirst;
         private DevExpress.XtraGrid.Columns.GridColumn colQuantumSecond;

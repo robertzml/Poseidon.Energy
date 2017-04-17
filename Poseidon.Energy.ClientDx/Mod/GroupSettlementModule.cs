@@ -42,10 +42,13 @@ namespace Poseidon.Energy.ClientDx
 
         #region Function
         /// <summary>
-        /// 初始化控件
+        /// 显示汇总信息
         /// </summary>
-        private void InitControls()
+        /// <param name="group">分组</param>
+        private void DisplaySummary(Group group)
         {
+            this.txtGroupName.Text = group.Name;
+
             var settlements = BusinessFactory<SettlementBusiness>.Instance.FindAll();
 
             this.lbYears.Items.Clear();
@@ -55,8 +58,28 @@ namespace Poseidon.Energy.ClientDx
             {
                 this.lbYears.Items.Add(year.ToString() + "年");
             }
+        }
 
+        /// <summary>
+        /// 显示记录信息
+        /// </summary>
+        /// <param name="group">分组</param>
+        private void DisplayRecords(Group group)
+        {
+            this.txtGroupName2.Text = group.Name;
+
+            var settlements = BusinessFactory<SettlementBusiness>.Instance.FindAll();
             this.bsSettlement.DataSource = settlements;
+        }
+
+        /// <summary>
+        /// 显示对比信息
+        /// </summary>
+        /// <param name="group">分组</param>
+        private void DisplayCompare(Group group)
+        {
+            this.electricCompareMod.SetGroup(group, EnergyType.Electric);
+            this.waterCompareMod.SetGroup(group, EnergyType.Water);
         }
 
         /// <summary>
@@ -66,7 +89,6 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="group">分组</param>
         private async Task LoadSummaryData(int year, Group group)
         {
-            this.txtGroupName.Text = group.Name;
             this.txtYear.Text = year.ToString();
 
             var departments = BusinessFactory<DepartmentBusiness>.Instance.FindInGroup(group.Code, true).ToList();
@@ -119,9 +141,8 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         /// <param name="entity">能源结算</param>
         /// <param name="group">分组</param>
-        private void DisplaySettlmentInfo(Settlement entity, Group group)
+        private async Task LoadSettlmentInfo(Settlement entity, Group group)
         {
-            this.txtGroupName2.Text = group.Name;
             this.txtName.Text = entity.Name;
             this.txtYear2.Text = entity.Year.ToString();
             this.txtBelongTime.Text = entity.BelongTime;
@@ -145,10 +166,20 @@ namespace Poseidon.Energy.ClientDx
 
             var groupItems = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
 
-            var electricRecords = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Electric);
+            var task1 = Task.Run(() =>
+            {
+                var records = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Electric);
+                return records;
+            });
+            var electricRecords = await task1;
             this.electricSRGrid.DataSource = electricRecords.Where(r => groupItems.Select(s => s.OrganizationId).Contains(r.DepartmentId)).ToList();
 
-            var waterRecords = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Water);
+            var task2 = Task.Run(() =>
+            {
+                var records = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Water);
+                return records;
+            });
+            var waterRecords = await task2;
             this.waterSRGrid.DataSource = waterRecords.Where(r => groupItems.Select(s => s.OrganizationId).Contains(r.DepartmentId)).ToList();
         }
 
@@ -195,7 +226,10 @@ namespace Poseidon.Energy.ClientDx
         public void SetGroup(string id)
         {
             this.currentGroup = BusinessFactory<GroupBusiness>.Instance.FindById(id);
-            InitControls();
+
+            DisplaySummary(this.currentGroup);
+            DisplayRecords(this.currentGroup);
+            DisplayCompare(this.currentGroup);
         }
         #endregion //Method
 
@@ -221,7 +255,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void lbSettlements_SelectedIndexChanged(object sender, EventArgs e)
+        private async void lbSettlements_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.lbSettlements.SelectedItem == null)
             {
@@ -229,7 +263,7 @@ namespace Poseidon.Energy.ClientDx
             }
 
             var settlement = this.lbSettlements.SelectedItem as Settlement;
-            DisplaySettlmentInfo(settlement, this.currentGroup);
+            await LoadSettlmentInfo(settlement, this.currentGroup);
         }
 
         /// <summary>

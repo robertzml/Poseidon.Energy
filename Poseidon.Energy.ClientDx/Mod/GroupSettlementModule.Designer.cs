@@ -52,10 +52,14 @@
             this.electricQSGrid = new Poseidon.Energy.ClientDx.SettlementQuantumSummaryGrid();
             this.tabPageElecAmount = new DevExpress.XtraTab.XtraTabPage();
             this.elecASGrid = new Poseidon.Energy.ClientDx.SettlementAmountSummaryGrid();
+            this.tabPageElecSettle = new DevExpress.XtraTab.XtraTabPage();
+            this.electricSettleChart = new Poseidon.Energy.ClientDx.SettlementChartModule();
             this.tabPageWatQuantum = new DevExpress.XtraTab.XtraTabPage();
             this.waterQSGrid = new Poseidon.Energy.ClientDx.SettlementQuantumSummaryGrid();
             this.tabPageWatAmount = new DevExpress.XtraTab.XtraTabPage();
             this.watASGrid = new Poseidon.Energy.ClientDx.SettlementAmountSummaryGrid();
+            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
+            this.waterSettleChart = new Poseidon.Energy.ClientDx.SettlementChartModule();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.lbYears = new DevExpress.XtraEditors.ListBoxControl();
             this.tabPageRecord = new DevExpress.XtraTab.XtraTabPage();
@@ -99,10 +103,12 @@
             this.electricSRGrid = new Poseidon.Energy.ClientDx.SettlementRecordGrid();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.waterSRGrid = new Poseidon.Energy.ClientDx.SettlementRecordGrid();
-            this.tabPageElecSettle = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
-            this.electricSettleChart = new Poseidon.Energy.ClientDx.SettlementChartModule();
-            this.waterSettleChart = new Poseidon.Energy.ClientDx.SettlementChartModule();
+            this.tabPageCompare = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.electricCompareMod = new Poseidon.Energy.ClientDx.SettlementCompareGridModule();
+            this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
+            this.waterCompareMod = new Poseidon.Energy.ClientDx.SettlementCompareGridModule();
             ((System.ComponentModel.ISupportInitialize)(this.tabSettlement)).BeginInit();
             this.tabSettlement.SuspendLayout();
             this.tabPageSummary.SuspendLayout();
@@ -128,8 +134,10 @@
             this.tabSummary.SuspendLayout();
             this.tabPageElecQuantum.SuspendLayout();
             this.tabPageElecAmount.SuspendLayout();
+            this.tabPageElecSettle.SuspendLayout();
             this.tabPageWatQuantum.SuspendLayout();
             this.tabPageWatAmount.SuspendLayout();
+            this.xtraTabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbYears)).BeginInit();
@@ -176,8 +184,11 @@
             this.tabRecord.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
-            this.tabPageElecSettle.SuspendLayout();
-            this.xtraTabPage4.SuspendLayout();
+            this.tabPageCompare.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPage3.SuspendLayout();
+            this.xtraTabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabSettlement
@@ -190,7 +201,8 @@
             this.tabSettlement.TabIndex = 0;
             this.tabSettlement.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabPageSummary,
-            this.tabPageRecord});
+            this.tabPageRecord,
+            this.tabPageCompare});
             // 
             // tabPageSummary
             // 
@@ -448,6 +460,21 @@
             this.elecASGrid.Size = new System.Drawing.Size(665, 361);
             this.elecASGrid.TabIndex = 0;
             // 
+            // tabPageElecSettle
+            // 
+            this.tabPageElecSettle.Controls.Add(this.electricSettleChart);
+            this.tabPageElecSettle.Name = "tabPageElecSettle";
+            this.tabPageElecSettle.Size = new System.Drawing.Size(665, 361);
+            this.tabPageElecSettle.Text = "用电指标";
+            // 
+            // electricSettleChart
+            // 
+            this.electricSettleChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.electricSettleChart.Location = new System.Drawing.Point(0, 0);
+            this.electricSettleChart.Name = "electricSettleChart";
+            this.electricSettleChart.Size = new System.Drawing.Size(665, 361);
+            this.electricSettleChart.TabIndex = 6;
+            // 
             // tabPageWatQuantum
             // 
             this.tabPageWatQuantum.Controls.Add(this.waterQSGrid);
@@ -501,6 +528,21 @@
             this.watASGrid.ShowYear = false;
             this.watASGrid.Size = new System.Drawing.Size(665, 361);
             this.watASGrid.TabIndex = 0;
+            // 
+            // xtraTabPage4
+            // 
+            this.xtraTabPage4.Controls.Add(this.waterSettleChart);
+            this.xtraTabPage4.Name = "xtraTabPage4";
+            this.xtraTabPage4.Size = new System.Drawing.Size(665, 361);
+            this.xtraTabPage4.Text = "用水指标";
+            // 
+            // waterSettleChart
+            // 
+            this.waterSettleChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.waterSettleChart.Location = new System.Drawing.Point(0, 0);
+            this.waterSettleChart.Name = "waterSettleChart";
+            this.waterSettleChart.Size = new System.Drawing.Size(665, 361);
+            this.waterSettleChart.TabIndex = 0;
             // 
             // groupControl2
             // 
@@ -973,35 +1015,54 @@
             this.waterSRGrid.Size = new System.Drawing.Size(661, 258);
             this.waterSRGrid.TabIndex = 0;
             // 
-            // tabPageElecSettle
+            // tabPageCompare
             // 
-            this.tabPageElecSettle.Controls.Add(this.electricSettleChart);
-            this.tabPageElecSettle.Name = "tabPageElecSettle";
-            this.tabPageElecSettle.Size = new System.Drawing.Size(665, 361);
-            this.tabPageElecSettle.Text = "用电指标";
+            this.tabPageCompare.Controls.Add(this.xtraTabControl1);
+            this.tabPageCompare.Name = "tabPageCompare";
+            this.tabPageCompare.Size = new System.Drawing.Size(817, 516);
+            this.tabPageCompare.Text = "能源结算对比";
             // 
-            // xtraTabPage4
+            // xtraTabControl1
             // 
-            this.xtraTabPage4.Controls.Add(this.waterSettleChart);
-            this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(665, 361);
-            this.xtraTabPage4.Text = "用水指标";
+            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage3;
+            this.xtraTabControl1.Size = new System.Drawing.Size(817, 516);
+            this.xtraTabControl1.TabIndex = 3;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage3,
+            this.xtraTabPage5});
             // 
-            // electricSettleChart
+            // xtraTabPage3
             // 
-            this.electricSettleChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.electricSettleChart.Location = new System.Drawing.Point(0, 0);
-            this.electricSettleChart.Name = "electricSettleChart";
-            this.electricSettleChart.Size = new System.Drawing.Size(665, 361);
-            this.electricSettleChart.TabIndex = 6;
+            this.xtraTabPage3.Controls.Add(this.electricCompareMod);
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(811, 487);
+            this.xtraTabPage3.Text = "用电对比";
             // 
-            // waterSettleChart
+            // electricCompareMod
             // 
-            this.waterSettleChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.waterSettleChart.Location = new System.Drawing.Point(0, 0);
-            this.waterSettleChart.Name = "waterSettleChart";
-            this.waterSettleChart.Size = new System.Drawing.Size(665, 361);
-            this.waterSettleChart.TabIndex = 0;
+            this.electricCompareMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.electricCompareMod.Location = new System.Drawing.Point(0, 0);
+            this.electricCompareMod.Name = "electricCompareMod";
+            this.electricCompareMod.Size = new System.Drawing.Size(811, 487);
+            this.electricCompareMod.TabIndex = 0;
+            // 
+            // xtraTabPage5
+            // 
+            this.xtraTabPage5.Controls.Add(this.waterCompareMod);
+            this.xtraTabPage5.Name = "xtraTabPage5";
+            this.xtraTabPage5.Size = new System.Drawing.Size(811, 487);
+            this.xtraTabPage5.Text = "用水对比";
+            // 
+            // waterCompareMod
+            // 
+            this.waterCompareMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.waterCompareMod.Location = new System.Drawing.Point(0, 0);
+            this.waterCompareMod.Name = "waterCompareMod";
+            this.waterCompareMod.Size = new System.Drawing.Size(811, 487);
+            this.waterCompareMod.TabIndex = 0;
             // 
             // GroupSettlementModule
             // 
@@ -1035,8 +1096,10 @@
             this.tabSummary.ResumeLayout(false);
             this.tabPageElecQuantum.ResumeLayout(false);
             this.tabPageElecAmount.ResumeLayout(false);
+            this.tabPageElecSettle.ResumeLayout(false);
             this.tabPageWatQuantum.ResumeLayout(false);
             this.tabPageWatAmount.ResumeLayout(false);
+            this.xtraTabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lbYears)).EndInit();
@@ -1083,8 +1146,11 @@
             this.tabRecord.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
-            this.tabPageElecSettle.ResumeLayout(false);
-            this.xtraTabPage4.ResumeLayout(false);
+            this.tabPageCompare.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPage3.ResumeLayout(false);
+            this.xtraTabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1165,5 +1231,11 @@
         private SettlementChartModule electricSettleChart;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
         private SettlementChartModule waterSettleChart;
+        private DevExpress.XtraTab.XtraTabPage tabPageCompare;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private SettlementCompareGridModule electricCompareMod;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
+        private SettlementCompareGridModule waterCompareMod;
     }
 }

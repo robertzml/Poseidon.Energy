@@ -60,9 +60,9 @@ namespace Poseidon.Energy.ClientDx
         /// 设置归属时间标题，默认月份
         /// </summary>
         /// <param name="title">标题</param>
-        public void SetBelongTimeTitle(string title)
+        public void SetItemNameTitle(string title)
         {
-            this.colMonth.Caption = title;
+            this.colItemName.Caption = title;
         }
 
         /// <summary>

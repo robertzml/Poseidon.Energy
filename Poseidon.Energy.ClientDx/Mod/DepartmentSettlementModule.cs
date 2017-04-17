@@ -222,7 +222,14 @@ namespace Poseidon.Energy.ClientDx
 
             this.electricSettleMod.SetDepartment(department, EnergyType.Electric);
             this.waterSettleMod.SetDepartment(department, EnergyType.Water);
+        }
 
+        /// <summary>
+        /// 显示结算对比
+        /// </summary>
+        /// <param name="department"></param>
+        private void DisplayCompare(Department department)
+        {
             this.electricCompareMod.SetDepartment(department, EnergyType.Electric);
             this.waterCompareMod.SetDepartment(department, EnergyType.Water);
         }
@@ -241,6 +248,7 @@ namespace Poseidon.Energy.ClientDx
             LoadSettlements();
             DisplaySummary(this.currentDepartment);
             DisplayTrend(this.currentDepartment);
+            DisplayCompare(this.currentDepartment);
         }
 
         /// <summary>

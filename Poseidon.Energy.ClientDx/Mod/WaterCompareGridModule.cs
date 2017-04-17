@@ -67,12 +67,13 @@ namespace Poseidon.Energy.ClientDx
             {
                 EnergyCompare ec = new EnergyCompare();
                 ec.Include = true;
-                ec.Month = i.ToString() + "月";
+                ec.ItemName = i.ToString() + "月";
 
                 this.compareData.Add(ec);
             }
 
             this.energyGrid.DataSource = this.compareData;
+            this.energyGrid.SetItemNameTitle("月份");
         }
 
         /// <summary>
@@ -97,7 +98,7 @@ namespace Poseidon.Energy.ClientDx
 
             foreach (var item in waterExpenses)
             {
-                var find = this.compareData.Find(r => r.Month == string.Format("{0}月", item.BelongDate.Month));
+                var find = this.compareData.Find(r => r.ItemName == string.Format("{0}月", item.BelongDate.Month));
 
                 if (index == 1)
                 {
