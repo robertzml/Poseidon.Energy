@@ -35,10 +35,10 @@
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.navFrame = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.groupExpenseMod = new Poseidon.Energy.ClientDx.GroupExpenseModule();
-            this.expenseAccountMod = new Poseidon.Energy.ClientDx.ExpenseAccountModule();
+            this.accountExpenseMod = new Poseidon.Energy.ClientDx.AccountExpenseModule();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsWaterExpense)).BeginInit();
@@ -46,9 +46,9 @@
             this.splitContainerControl1.SuspendLayout();
             this.navFrame.SuspendLayout();
             this.navigationPage1.SuspendLayout();
-            this.navigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            this.navigationPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -103,7 +103,7 @@
             this.navigationPage1,
             this.navigationPage2});
             this.navFrame.SelectedPage = this.navigationPage2;
-            this.navFrame.SelectedPageIndex = 0;
+            this.navFrame.SelectedPageIndex = 1;
             this.navFrame.Size = new System.Drawing.Size(703, 587);
             this.navFrame.TabIndex = 0;
             this.navFrame.Text = "navigationFrame1";
@@ -115,13 +115,6 @@
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.Size = new System.Drawing.Size(703, 587);
             // 
-            // navigationPage2
-            // 
-            this.navigationPage2.Caption = "navigationPage2";
-            this.navigationPage2.Controls.Add(this.expenseAccountMod);
-            this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(703, 587);
-            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.groupExpenseMod);
@@ -132,6 +125,12 @@
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "支出分组";
             // 
+            // navigationPage2
+            // 
+            this.navigationPage2.Controls.Add(this.accountExpenseMod);
+            this.navigationPage2.Name = "navigationPage2";
+            this.navigationPage2.Size = new System.Drawing.Size(703, 587);
+            // 
             // groupExpenseMod
             // 
             this.groupExpenseMod.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -140,13 +139,13 @@
             this.groupExpenseMod.Size = new System.Drawing.Size(699, 564);
             this.groupExpenseMod.TabIndex = 0;
             // 
-            // expenseAccountMod
+            // accountExpenseMod
             // 
-            this.expenseAccountMod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.expenseAccountMod.Location = new System.Drawing.Point(0, 0);
-            this.expenseAccountMod.Name = "expenseAccountMod";
-            this.expenseAccountMod.Size = new System.Drawing.Size(703, 587);
-            this.expenseAccountMod.TabIndex = 0;
+            this.accountExpenseMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.accountExpenseMod.Location = new System.Drawing.Point(0, 0);
+            this.accountExpenseMod.Name = "accountExpenseMod";
+            this.accountExpenseMod.Size = new System.Drawing.Size(703, 587);
+            this.accountExpenseMod.TabIndex = 0;
             // 
             // FrmExpenseOverview
             // 
@@ -163,9 +162,9 @@
             this.splitContainerControl1.ResumeLayout(false);
             this.navFrame.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);
-            this.navigationPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            this.navigationPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -180,6 +179,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private GroupExpenseModule groupExpenseMod;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
-        private ExpenseAccountModule expenseAccountMod;
+        private AccountExpenseModule accountExpenseMod;
     }
 }

@@ -60,7 +60,7 @@ namespace Poseidon.Energy.ClientDx
         {
             this.navFrame.SelectedPageIndex = 1;
             var accountId = this.groupTree.GetCurrentSelectId();
-            this.expenseAccountMod.SetAccount(accountId);
+            this.accountExpenseMod.SetAccount(accountId);
         }
         #endregion //Event
     }

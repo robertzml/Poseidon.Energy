@@ -61,6 +61,8 @@
             this.modWaterCompare = new Poseidon.Energy.ClientDx.WaterCompareModule();
             this.tabPageWaterReceipt = new DevExpress.XtraTab.XtraTabPage();
             this.waterExpenseReceipt = new Poseidon.Energy.ClientDx.WaterExpenseReceipt();
+            this.tabPageWaterYear = new DevExpress.XtraTab.XtraTabPage();
+            this.waterYearChart = new Poseidon.Energy.ClientDx.EnergyYearExpenseChart();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.tabInfo = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageAccount = new DevExpress.XtraTab.XtraTabPage();
@@ -69,8 +71,6 @@
             this.electricMeterGrid = new Poseidon.Energy.ClientDx.ElectricMeterGrid();
             this.tabPageWaterMeter = new DevExpress.XtraTab.XtraTabPage();
             this.waterMeterGrid = new Poseidon.Energy.ClientDx.WaterMeterGrid();
-            this.tabPageWaterYear = new DevExpress.XtraTab.XtraTabPage();
-            this.waterYearChart = new Poseidon.Energy.ClientDx.EnergyYearExpenseChart();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
@@ -101,6 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.tabPageWaterCompareChart.SuspendLayout();
             this.tabPageWaterReceipt.SuspendLayout();
+            this.tabPageWaterYear.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).BeginInit();
@@ -108,7 +109,6 @@
             this.tabPageAccount.SuspendLayout();
             this.tabPageElectricMeter.SuspendLayout();
             this.tabPageWaterMeter.SuspendLayout();
-            this.tabPageWaterYear.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -454,6 +454,23 @@
             this.waterExpenseReceipt.Size = new System.Drawing.Size(775, 333);
             this.waterExpenseReceipt.TabIndex = 0;
             // 
+            // tabPageWaterYear
+            // 
+            this.tabPageWaterYear.Controls.Add(this.waterYearChart);
+            this.tabPageWaterYear.Name = "tabPageWaterYear";
+            this.tabPageWaterYear.PageVisible = false;
+            this.tabPageWaterYear.Size = new System.Drawing.Size(775, 333);
+            this.tabPageWaterYear.Text = "历年用水";
+            // 
+            // waterYearChart
+            // 
+            this.waterYearChart.DataSource = null;
+            this.waterYearChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.waterYearChart.Location = new System.Drawing.Point(0, 0);
+            this.waterYearChart.Name = "waterYearChart";
+            this.waterYearChart.Size = new System.Drawing.Size(775, 333);
+            this.waterYearChart.TabIndex = 0;
+            // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.tabInfo);
@@ -546,23 +563,6 @@
             this.waterMeterGrid.Size = new System.Drawing.Size(775, 142);
             this.waterMeterGrid.TabIndex = 0;
             // 
-            // tabPageWaterYear
-            // 
-            this.tabPageWaterYear.Controls.Add(this.waterYearChart);
-            this.tabPageWaterYear.Name = "tabPageWaterYear";
-            this.tabPageWaterYear.PageVisible = false;
-            this.tabPageWaterYear.Size = new System.Drawing.Size(775, 333);
-            this.tabPageWaterYear.Text = "历年用水";
-            // 
-            // waterYearChart
-            // 
-            this.waterYearChart.DataSource = null;
-            this.waterYearChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.waterYearChart.Location = new System.Drawing.Point(0, 0);
-            this.waterYearChart.Name = "waterYearChart";
-            this.waterYearChart.Size = new System.Drawing.Size(775, 333);
-            this.waterYearChart.TabIndex = 0;
-            // 
             // ExpenseAccountModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -600,6 +600,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.tabPageWaterCompareChart.ResumeLayout(false);
             this.tabPageWaterReceipt.ResumeLayout(false);
+            this.tabPageWaterYear.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabInfo)).EndInit();
@@ -607,7 +608,6 @@
             this.tabPageAccount.ResumeLayout(false);
             this.tabPageElectricMeter.ResumeLayout(false);
             this.tabPageWaterMeter.ResumeLayout(false);
-            this.tabPageWaterYear.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -87,6 +87,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mod\AccountExpenseModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\AccountExpenseModule.Designer.cs">
+      <DependentUpon>AccountExpenseModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\AllowanceTargetGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -688,6 +694,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\SettlementRecordGrid.resx">
       <DependentUpon>SettlementRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\AccountExpenseModule.resx">
+      <DependentUpon>AccountExpenseModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\DepartmentMeasureModule.resx">
       <DependentUpon>DepartmentMeasureModule.cs</DependentUpon>
