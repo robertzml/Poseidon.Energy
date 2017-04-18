@@ -81,7 +81,10 @@ namespace Poseidon.Energy.ClientDx
             }
 
             this.electricRecordGrid.DataSource = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Electric).ToList();
+            this.electricRecordGrid.SetEnergyType(EnergyType.Electric);
+
             this.waterRecordGrid.DataSource = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Water).ToList();
+            this.waterRecordGrid.SetEnergyType(EnergyType.Water);
         }
         #endregion //Function
 

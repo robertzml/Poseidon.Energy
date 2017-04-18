@@ -173,6 +173,7 @@ namespace Poseidon.Energy.ClientDx
             });
             var electricRecords = await task1;
             this.electricSRGrid.DataSource = electricRecords.Where(r => groupItems.Select(s => s.OrganizationId).Contains(r.DepartmentId)).ToList();
+            this.electricSRGrid.SetEnergyType(EnergyType.Electric);
 
             var task2 = Task.Run(() =>
             {
@@ -181,6 +182,7 @@ namespace Poseidon.Energy.ClientDx
             });
             var waterRecords = await task2;
             this.waterSRGrid.DataSource = waterRecords.Where(r => groupItems.Select(s => s.OrganizationId).Contains(r.DepartmentId)).ToList();
+            this.waterSRGrid.SetEnergyType(EnergyType.Water);
         }
 
         /// <summary>

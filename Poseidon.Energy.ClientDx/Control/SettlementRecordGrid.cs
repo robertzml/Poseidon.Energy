@@ -57,17 +57,17 @@ namespace Poseidon.Energy.ClientDx
         {
             if (type == EnergyType.Electric)
             {
-                this.colBeginQuantum.Caption = "期初用电量";
-                this.colRefQuantum.Caption = "参考用电量";
+                this.colBeginQuantum.Caption = "期初用电量(度)";
+                this.colRefQuantum.Caption = "参考用电量(度)";
                 this.colQuantum.Caption = "用电量(度)";
-                this.colEndQuantum.Caption = "期末用电量";
+                this.colEndQuantum.Caption = "期末用电量(度)";
             }
             else if (type == EnergyType.Water)
             {
-                this.colBeginQuantum.Caption = "期初用水量";
+                this.colBeginQuantum.Caption = "期初用水量(吨)";
                 this.colRefQuantum.Caption = "参考用水量";
                 this.colQuantum.Caption = "用水量(吨)";
-                this.colEndQuantum.Caption = "期末用水量";
+                this.colEndQuantum.Caption = "期末用水量(吨)";
             }
         }
 

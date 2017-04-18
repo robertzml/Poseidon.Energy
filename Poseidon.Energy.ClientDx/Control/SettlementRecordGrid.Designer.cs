@@ -125,6 +125,7 @@
             // 
             // colBeginAmount
             // 
+            this.colBeginAmount.Caption = "期初金额(元)";
             this.colBeginAmount.FieldName = "BeginAmount";
             this.colBeginAmount.Name = "colBeginAmount";
             this.colBeginAmount.OptionsColumn.AllowEdit = false;
@@ -142,6 +143,7 @@
             // 
             // colAmount
             // 
+            this.colAmount.Caption = "金额(元)";
             this.colAmount.FieldName = "Amount";
             this.colAmount.Name = "colAmount";
             this.colAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -191,7 +193,7 @@
             // 
             // colEndAmount
             // 
-            this.colEndAmount.Caption = "期末金额";
+            this.colEndAmount.Caption = "期末金额(元)";
             this.colEndAmount.FieldName = "colEndAmount";
             this.colEndAmount.Name = "colEndAmount";
             this.colEndAmount.OptionsColumn.AllowEdit = false;

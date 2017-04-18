@@ -37,7 +37,7 @@ namespace Poseidon.Energy.Core.BL
         {
             List<Settlement> data = new List<Settlement>();
             var all = base.FindAll();
-            int[] years = all.GroupBy(r => r.Year).Select(s => s.Key).OrderByDescending(t => t).ToArray();
+            int[] years = all.GroupBy(r => r.Year).Select(s => s.Key).OrderBy(t => t).ToArray();
 
             for (int i = 0; i < years.Length; i++)
             {
