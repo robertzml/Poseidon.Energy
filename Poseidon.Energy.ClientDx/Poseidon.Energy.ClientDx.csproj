@@ -87,6 +87,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mod\ExpenseYearModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\ExpenseYearModule.Designer.cs">
+      <DependentUpon>ExpenseYearModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mod\AccountExpenseModule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -739,6 +745,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\ExpenseAccountModule.resx">
       <DependentUpon>ExpenseAccountModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\ExpenseYearModule.resx">
+      <DependentUpon>ExpenseYearModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\GroupExpenseModule.resx">
       <DependentUpon>GroupExpenseModule.cs</DependentUpon>

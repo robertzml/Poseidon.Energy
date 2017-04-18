@@ -32,6 +32,7 @@
             this.colQuantum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUnitPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAmount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAdditionData = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -51,7 +52,8 @@
             this.colBelongDate,
             this.colQuantum,
             this.colUnitPrice,
-            this.colAmount});
+            this.colAmount,
+            this.colAdditionData});
             this.dgvEntity.IndicatorWidth = 40;
             this.dgvEntity.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.dgvEntity.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
@@ -99,6 +101,16 @@
             this.colAmount.Visible = true;
             this.colAmount.VisibleIndex = 3;
             // 
+            // colAdditionData
+            // 
+            this.colAdditionData.Caption = "附加数据";
+            this.colAdditionData.FieldName = "AdditionData";
+            this.colAdditionData.Name = "colAdditionData";
+            this.colAdditionData.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "AdditionData", "合计={0:0.##}")});
+            this.colAdditionData.Visible = true;
+            this.colAdditionData.VisibleIndex = 4;
+            // 
             // EnergyYearExpenseGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -118,5 +130,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colQuantum;
         private DevExpress.XtraGrid.Columns.GridColumn colUnitPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colAmount;
+        private DevExpress.XtraGrid.Columns.GridColumn colAdditionData;
     }
 }

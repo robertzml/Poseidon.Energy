@@ -53,10 +53,13 @@ namespace Poseidon.Energy.ClientDx
             this.currentYearElectricChart.Clear();
             this.currentYearWaterChart.Clear();
 
-            //this.modElecCompGrid.Clear();
-            //this.modElectricCompare.Clear();
-            //this.modWaterCompareGrid.Clear();
-            //this.modWaterCompare.Clear();
+            this.electricCompareGridMod.Clear();
+            this.electricCompareChartMod.Clear();
+            this.waterCompareGridMod.Clear();
+            this.waterCompareChartMod.Clear();
+
+            this.electricYearGridMod.Clear();
+            this.waterYearGridMod.Clear();
         }
 
         /// <summary>
@@ -83,6 +86,7 @@ namespace Poseidon.Energy.ClientDx
                         model.BelongDate = exp.BelongDate;
                         model.Quantum = exp.TotalQuantity;
                         model.Amount = exp.TotalAmount;
+                        model.AdditionData = exp.TotalPrize;
 
                         electricData.Add(model);
                     }
@@ -91,6 +95,7 @@ namespace Poseidon.Energy.ClientDx
 
                 var data = await task;
                 this.currentYearElectricGrid.DataSource = data;
+                this.currentYearElectricGrid.ShowAddition("功率因数奖(元)");
 
                 this.currentYearElectricChart.SetChartTitle(string.Format("{0}{1}年电量消耗", account.ShortName, this.nowYear));
                 this.currentYearElectricChart.SetDataSource(data);
@@ -207,6 +212,9 @@ namespace Poseidon.Energy.ClientDx
             this.waterYearChart.SetChartTitle(account.ShortName + "历年用水对比");
             this.waterYearChart.SetSeriesLengedText(0, "用水量(吨)");
             this.waterYearChart.DataSource = result2;
+
+            this.electricYearGridMod.SetAccount(this.currentAccount.Id, EnergyType.Electric);
+            this.waterYearGridMod.SetAccount(this.currentAccount.Id, EnergyType.Water);
         }
         #endregion //Function
 

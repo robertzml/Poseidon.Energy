@@ -24,6 +24,11 @@ namespace Poseidon.Energy.ClientDx
         /// 是否显示单价列
         /// </summary>
         private bool showUnitPrice = true;
+
+        /// <summary>
+        /// 是否显示附加数据
+        /// </summary>
+        private bool showAdditionData = false;
         #endregion //Field
 
         #region Constructor
@@ -52,12 +57,23 @@ namespace Poseidon.Energy.ClientDx
                     break;
             }
         }
+
+        /// <summary>
+        /// 显示附加数据列
+        /// </summary>
+        /// <param name="caption">标题</param>
+        public void ShowAddition(string caption)
+        {
+            this.colAdditionData.Caption = caption;
+            this.colAdditionData.Visible = true;
+        }
         #endregion //Method
 
         #region Event
         private void EnergyYearExpenseGrid_Load(object sender, EventArgs e)
         {
             this.colUnitPrice.Visible = this.showUnitPrice;
+            this.colAdditionData.Visible = this.showAdditionData;
         }
         #endregion //Event
 
@@ -75,6 +91,22 @@ namespace Poseidon.Energy.ClientDx
             set
             {
                 this.showUnitPrice = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否显示附加数据
+        /// </summary>
+        [Description("是否显示附加数据"), Category("界面"), Browsable(true)]
+        public bool ShowAddtionData
+        {
+            get
+            {
+                return this.showAdditionData;
+            }
+            set
+            {
+                this.showAdditionData = value;
             }
         }
         #endregion //Property

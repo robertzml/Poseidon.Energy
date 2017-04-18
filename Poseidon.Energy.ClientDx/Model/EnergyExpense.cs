@@ -37,5 +37,11 @@ namespace Poseidon.Energy.ClientDx.Model
         /// </summary>
         [Display(Name = "金额")]
         public decimal Amount { get; set; }
+
+        /// <summary>
+        /// 附加数据
+        /// </summary>
+        [Display(Name = "附加数据")]
+        public decimal AdditionData { get; set; }
     }
 }
