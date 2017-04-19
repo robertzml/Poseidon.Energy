@@ -17,6 +17,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
     using Poseidon.Energy.ClientDx.Model;
+    using Core.Utility;
 
     /// <summary>
     /// 分组费用支出组件
@@ -44,20 +45,25 @@ namespace Poseidon.Energy.ClientDx
 
         #region Function
         /// <summary>
-        /// 显示基本信息
+        /// 清空显示
         /// </summary>
-        /// <param name="group">分组</param>
-        private void DisplayInfo(Group group)
+        private void ClearDisplay()
         {
-            this.txtGroupName.Text = group.Name;
+            this.currentYearElectricGrid.Clear();
+            this.currentYearWaterGrid.Clear();
+
+            this.electricYearGridMod.Clear();
+            this.waterYearGridMod.Clear();
         }
 
         /// <summary>
-        /// 显示今年支出
+        /// 显示摘要
         /// </summary>
-        /// <param name="group">分组</param>
-        private async void DisplayYearExpense(Group group)
+        /// <param name="group"></param>
+        private async void DisplaySummary(Group group)
         {
+            this.txtGroupName.Text = group.Name;
+
             var items = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
 
             var task1 = Task.Run(() =>
@@ -74,6 +80,7 @@ namespace Poseidon.Energy.ClientDx
                         {
                             energyExpense.Amount += exp.TotalAmount;
                             energyExpense.Quantum += exp.TotalQuantity;
+                            energyExpense.AdditionData += exp.TotalPrize;
                         }
                         else
                         {
@@ -81,6 +88,7 @@ namespace Poseidon.Energy.ClientDx
                             model.BelongDate = exp.BelongDate;
                             model.Quantum = exp.TotalQuantity;
                             model.Amount = exp.TotalAmount;
+                            model.AdditionData = exp.TotalPrize;
 
                             data.Add(model);
                         }
@@ -91,6 +99,8 @@ namespace Poseidon.Energy.ClientDx
             });
 
             var data1 = await task1;
+            this.currentYearElectricGrid.ShowUnitPrice = false;
+            this.currentYearElectricGrid.ShowAddition("功率因数奖(元)");
             this.currentYearElectricGrid.DataSource = data1;
 
             var task2 = Task.Run(() =>
@@ -123,7 +133,18 @@ namespace Poseidon.Energy.ClientDx
             });
 
             var data2 = await task2;
+            this.currentYearWaterGrid.ShowUnitPrice = true;
             this.currentYearWaterGrid.DataSource = data2;
+        }
+
+        /// <summary>
+        /// 显示年度汇总
+        /// </summary>
+        /// <param name="group"></param>
+        private void DisplayYear(Group group)
+        {
+            this.electricYearGridMod.SetGroup(this.currentGroup, EnergyType.Electric);
+            this.waterYearGridMod.SetGroup(this.currentGroup, EnergyType.Water);
         }
         #endregion //Function
 
@@ -137,8 +158,9 @@ namespace Poseidon.Energy.ClientDx
             this.currentGroup = BusinessFactory<GroupBusiness>.Instance.FindById(id);
             this.year = DateTime.Now.Year;
 
-            DisplayInfo(this.currentGroup);
-            DisplayYearExpense(this.currentGroup);
+            ClearDisplay();
+            DisplaySummary(this.currentGroup);
+            DisplayYear(this.currentGroup);
         }
         #endregion //Method
     }

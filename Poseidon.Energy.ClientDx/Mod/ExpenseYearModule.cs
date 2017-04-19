@@ -10,7 +10,8 @@ using System.Windows.Forms;
 namespace Poseidon.Energy.ClientDx
 {
     using Poseidon.Base.Framework;
-    using Poseidon.Common;
+    using Poseidon.Core.BL;
+    using Poseidon.Core.DL;
     using Poseidon.Energy.ClientDx.Model;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
@@ -28,6 +29,11 @@ namespace Poseidon.Energy.ClientDx
         private ExpenseAccount currentAccount;
 
         /// <summary>
+        /// 当前关联分组
+        /// </summary>
+        private Group currentGroup;
+
+        /// <summary>
         /// 能源类型
         /// </summary>
         private EnergyType energyType;
@@ -35,6 +41,11 @@ namespace Poseidon.Energy.ClientDx
         private int startYear = 2011;
 
         private int nowYear;
+
+        /// <summary>
+        /// 显示类型  1:部门  2:分组
+        /// </summary>
+        private int showType;
         #endregion //Field
 
         #region Constructor
@@ -66,7 +77,7 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="account">支出账户</param>
         /// <param name="year">年度</param>
         /// <param name="energyType">能源类型</param>
-        private async void LoadData(ExpenseAccount account, int year, EnergyType energyType)
+        private async void LoadAccountData(ExpenseAccount account, int year, EnergyType energyType)
         {
             switch (energyType)
             {
@@ -78,6 +89,30 @@ namespace Poseidon.Energy.ClientDx
                     break;
                 case EnergyType.Water:
                     var data2 = await LoadWater(account, year);
+                    this.expenseGrid.DataSource = data2;
+                    this.expenseGrid.ShowUnitPrice = true;
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// 载入分组数据
+        /// </summary>
+        /// <param name="group">分组</param>
+        /// <param name="year">年度</param>
+        /// <param name="energyType">能源类型</param>
+        private async void LoadGroupData(Group group, int year, EnergyType energyType)
+        {
+            switch (energyType)
+            {
+                case EnergyType.Electric:
+                    var data1 = await LoadElectric(group, year);
+                    this.expenseGrid.DataSource = data1;
+                    this.expenseGrid.ShowUnitPrice = false;
+                    this.expenseGrid.ShowAddition("功率因数奖(元)");
+                    break;
+                case EnergyType.Water:
+                    var data2 = await LoadWater(group, year);
                     this.expenseGrid.DataSource = data2;
                     this.expenseGrid.ShowUnitPrice = true;
                     break;
@@ -114,6 +149,50 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
+        /// 载入电费支出
+        /// </summary>
+        /// <param name="group"></param>
+        /// <param name="year"></param>
+        private async Task<List<EnergyExpense>> LoadElectric(Group group, int year)
+        {
+            var task = Task.Run(() =>
+            {
+                var items = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
+
+                List<EnergyExpense> data = new List<EnergyExpense>();
+
+                foreach (var item in items)
+                {
+                    var expense = BusinessFactory<ElectricExpenseBusiness>.Instance.FindYearByAccount(item.OrganizationId, year);
+                    foreach (var exp in expense)
+                    {
+                        var energyExpense = data.SingleOrDefault(r => r.BelongDate == exp.BelongDate);
+                        if (energyExpense != null)
+                        {
+                            energyExpense.Amount += exp.TotalAmount;
+                            energyExpense.Quantum += exp.TotalQuantity;
+                            energyExpense.AdditionData += exp.TotalPrize;
+                        }
+                        else
+                        {
+                            var model = new EnergyExpense();
+                            model.BelongDate = exp.BelongDate;
+                            model.Quantum = exp.TotalQuantity;
+                            model.Amount = exp.TotalAmount;
+                            model.AdditionData = exp.TotalPrize;
+
+                            data.Add(model);
+                        }
+                    }
+                }
+
+                return data;
+            });
+
+            return await task;
+        }
+
+        /// <summary>
         /// 载入水费支出
         /// </summary>
         /// <param name="account"></param>
@@ -141,20 +220,78 @@ namespace Poseidon.Energy.ClientDx
 
             return await task;
         }
+
+        /// <summary>
+        /// 载入水费支出
+        /// </summary>
+        /// <param name="group"></param>
+        /// <param name="year"></param>
+        private async Task<List<EnergyExpense>> LoadWater(Group group, int year)
+        {
+            var task = Task.Run(() =>
+            {
+                var items = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
+
+                List<EnergyExpense> waterData = new List<EnergyExpense>();
+                foreach (var item in items)
+                {
+                    var expense = BusinessFactory<WaterExpenseBusiness>.Instance.FindYearByAccount(item.OrganizationId, year);
+                    foreach (var exp in expense)
+                    {
+                        var energyExpense = waterData.SingleOrDefault(r => r.BelongDate == exp.BelongDate);
+                        if (energyExpense != null)
+                        {
+                            energyExpense.Amount += exp.TotalAmount;
+                            energyExpense.Quantum += exp.TotalQuantity;
+                        }
+                        else
+                        {
+                            var model = new EnergyExpense();
+                            model.BelongDate = exp.BelongDate;
+                            model.Quantum = exp.TotalQuantity;
+                            model.Amount = exp.TotalAmount;
+                            model.UnitPrice = exp.TotalAmount / exp.TotalQuantity;
+
+                            waterData.Add(model);
+                        }
+                    }
+                }
+
+                return waterData;
+            });
+
+            return await task;
+        }
         #endregion //Function
 
         #region Method
         /// <summary>
         /// 设置账户
         /// </summary>
-        /// <param name="id">支出账户ID</param>
+        /// <param name="account">支出账户</param>
         /// <param name="energyType">能源类型</param>
-        public void SetAccount(string id, EnergyType energyType)
+        public void SetAccount(ExpenseAccount account, EnergyType energyType)
         {
-            this.currentAccount = BusinessFactory<ExpenseAccountBusiness>.Instance.FindById(id);
+            this.currentAccount = account;
             this.energyType = energyType;
-
+            this.showType = 1;
             this.nowYear = DateTime.Now.Year;
+
+            InitControls();
+        }
+
+        /// <summary>
+        /// 设置分组
+        /// </summary>
+        /// <param name="group">分组</param>
+        /// <param name="energyType">能源类型</param>
+        public void SetGroup(Group group, EnergyType energyType)
+        {
+            this.currentGroup = group;
+            this.energyType = energyType;
+            this.nowYear = DateTime.Now.Year;
+            this.showType = 2;
+
             InitControls();
         }
 
@@ -180,7 +317,10 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             int year = Convert.ToInt32(this.cmbYear.SelectedItem.ToString().Substring(0, 4));
-            LoadData(this.currentAccount, year, this.energyType);
+            if (this.showType == 1)
+                LoadAccountData(this.currentAccount, year, this.energyType);
+            else if (this.showType == 2)
+                LoadGroupData(this.currentGroup, year, this.energyType);
         }
         #endregion //Event
     }
