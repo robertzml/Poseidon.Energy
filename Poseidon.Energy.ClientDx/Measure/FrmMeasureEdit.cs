@@ -14,6 +14,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 编辑能源计量窗体
@@ -43,10 +44,12 @@ namespace Poseidon.Energy.ClientDx
 
         protected override void InitForm()
         {
+            this.cmbEnergyType.Properties.Items.AddEnum(typeof(EnergyType));
+
             this.txtName.Text = this.currentMeasure.Name;
             this.txtBelongTime.Text = this.currentMeasure.BelongTime;
             this.spYear.Value = this.currentMeasure.Year;
-            ControlUtil.BindDictToComboBox(this.cmbEnergyType, typeof(Measure), "EnergyType", this.currentMeasure.EnergyType);
+            this.cmbEnergyType.EditValue = (EnergyType)this.currentMeasure.EnergyType;
             this.dpStartTime.DateTime = this.currentMeasure.StartTime;
             this.dpEndTime.DateTime = this.currentMeasure.EndTime;
             this.chkIncluded.Checked = this.currentMeasure.Included;

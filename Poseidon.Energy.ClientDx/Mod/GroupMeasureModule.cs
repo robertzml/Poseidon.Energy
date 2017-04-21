@@ -16,6 +16,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Core.Utility;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 分组能耗计量组件
@@ -64,7 +65,7 @@ namespace Poseidon.Energy.ClientDx
             this.txtName.Text = measure.Name;
             this.txtBelongTime.Text = measure.BelongTime;
             this.txtYear.Text = measure.Year.ToString();
-            this.txtEnergyType.Text = DictUtility.GetDictValue(measure, "EnergyType", measure.EnergyType);
+            this.txtEnergyType.Text = ((EnergyType)measure.EnergyType).DisplayName();
             this.chkIncluded.Checked = measure.Included;
             this.txtStartTime.Text = measure.StartTime.ToDateString();
             this.txtEndTime.Text = measure.EndTime.ToDateString();

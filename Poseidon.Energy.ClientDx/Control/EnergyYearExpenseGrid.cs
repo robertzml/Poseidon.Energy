@@ -43,15 +43,15 @@ namespace Poseidon.Energy.ClientDx
         /// 设置能源类型
         /// </summary>
         /// <param name="energyType">能源类型</param>
-        public void SetEnergyType(EnergyType energyType)
+        public void SetEnergyType(EnergyExpenseType energyType)
         {
             switch (energyType)
             {
-                case EnergyType.Electric:
+                case EnergyExpenseType.Electric:
                     this.colUnitPrice.Visible = false;
                     this.colQuantum.Caption = "用电量(度)";
                     break;
-                case EnergyType.Water:
+                case EnergyExpenseType.Water:
                     this.colQuantum.Caption = "用水量(吨)";
                     this.colUnitPrice.Caption = "单价(元/吨)";
                     break;

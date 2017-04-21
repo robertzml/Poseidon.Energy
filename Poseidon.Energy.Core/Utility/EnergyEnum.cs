@@ -26,6 +26,36 @@ namespace Poseidon.Energy.Core.Utility
     }
 
     /// <summary>
+    /// 能源支出类型
+    /// </summary>
+    public enum EnergyExpenseType
+    {
+        /// <summary>
+        /// 电
+        /// </summary>
+        [Display(Name = "电")]
+        Electric = 1,
+
+        /// <summary>
+        /// 水
+        /// </summary>
+        [Display(Name = "水")]
+        Water = 2,
+
+        /// <summary>
+        /// 天然气
+        /// </summary>
+        [Display(Name = "天然气")]
+        Gas = 3,
+
+        /// <summary>
+        /// 热水
+        /// </summary>
+        [Display(Name = "热水")]
+        HotWater = 4
+    }
+
+    /// <summary>
     /// 结算类型
     /// </summary>
     public enum SettlementType

@@ -36,7 +36,7 @@ namespace Poseidon.Energy.ClientDx
         /// <summary>
         /// 能源类型
         /// </summary>
-        private EnergyType energyType;
+        private EnergyExpenseType energyType;
 
         private int startYear = 2011;
 
@@ -77,17 +77,17 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="account">支出账户</param>
         /// <param name="year">年度</param>
         /// <param name="energyType">能源类型</param>
-        private async void LoadAccountData(ExpenseAccount account, int year, EnergyType energyType)
+        private async void LoadAccountData(ExpenseAccount account, int year, EnergyExpenseType energyType)
         {
             switch (energyType)
             {
-                case EnergyType.Electric:
+                case EnergyExpenseType.Electric:
                     var data1 = await LoadElectric(account, year);
                     this.expenseGrid.DataSource = data1;
                     this.expenseGrid.ShowUnitPrice = false;
                     this.expenseGrid.ShowAddition("功率因数奖(元)");
                     break;
-                case EnergyType.Water:
+                case EnergyExpenseType.Water:
                     var data2 = await LoadWater(account, year);
                     this.expenseGrid.DataSource = data2;
                     this.expenseGrid.ShowUnitPrice = true;
@@ -101,20 +101,22 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="group">分组</param>
         /// <param name="year">年度</param>
         /// <param name="energyType">能源类型</param>
-        private async void LoadGroupData(Group group, int year, EnergyType energyType)
+        private async void LoadGroupData(Group group, int year, EnergyExpenseType energyType)
         {
             switch (energyType)
             {
-                case EnergyType.Electric:
+                case EnergyExpenseType.Electric:
                     var data1 = await LoadElectric(group, year);
                     this.expenseGrid.DataSource = data1;
                     this.expenseGrid.ShowUnitPrice = false;
                     this.expenseGrid.ShowAddition("功率因数奖(元)");
+                    this.expenseGrid.SetEnergyType(EnergyExpenseType.Electric);
                     break;
-                case EnergyType.Water:
+                case EnergyExpenseType.Water:
                     var data2 = await LoadWater(group, year);
                     this.expenseGrid.DataSource = data2;
                     this.expenseGrid.ShowUnitPrice = true;
+                    this.expenseGrid.SetEnergyType(EnergyExpenseType.Water);
                     break;
             }
         }
@@ -270,7 +272,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         /// <param name="account">支出账户</param>
         /// <param name="energyType">能源类型</param>
-        public void SetAccount(ExpenseAccount account, EnergyType energyType)
+        public void SetAccount(ExpenseAccount account, EnergyExpenseType energyType)
         {
             this.currentAccount = account;
             this.energyType = energyType;
@@ -285,7 +287,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         /// <param name="group">分组</param>
         /// <param name="energyType">能源类型</param>
-        public void SetGroup(Group group, EnergyType energyType)
+        public void SetGroup(Group group, EnergyExpenseType energyType)
         {
             this.currentGroup = group;
             this.energyType = energyType;

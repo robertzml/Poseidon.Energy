@@ -99,6 +99,9 @@
             secondaryAxisY1});
             this.chartMain.Diagram = xyDiagram1;
             this.chartMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartMain.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Center;
+            this.chartMain.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.TopOutside;
+            this.chartMain.Legend.Direction = DevExpress.XtraCharts.LegendDirection.LeftToRight;
             this.chartMain.Location = new System.Drawing.Point(0, 0);
             this.chartMain.Name = "chartMain";
             series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;

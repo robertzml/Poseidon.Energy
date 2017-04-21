@@ -49,7 +49,6 @@ namespace Poseidon.Energy.Core.DL
         /// <summary>
         /// 能源类型
         /// </summary>
-        [Dict("Energy.Type")]
         [Display(Name = "能源类型")]
         public int EnergyType { get; set; }
 

@@ -143,8 +143,8 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="group"></param>
         private void DisplayYear(Group group)
         {
-            this.electricYearGridMod.SetGroup(this.currentGroup, EnergyType.Electric);
-            this.waterYearGridMod.SetGroup(this.currentGroup, EnergyType.Water);
+            this.electricYearGridMod.SetGroup(this.currentGroup, EnergyExpenseType.Electric);
+            this.waterYearGridMod.SetGroup(this.currentGroup, EnergyExpenseType.Water);
         }
         #endregion //Function
 

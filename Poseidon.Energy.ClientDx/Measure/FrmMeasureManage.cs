@@ -16,6 +16,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 能源计量管理窗体
@@ -61,7 +62,7 @@ namespace Poseidon.Energy.ClientDx
             this.txtName.Text = entity.Name;
             this.txtYear.Text = entity.Year.ToString();
             this.txtBelongTime.Text = entity.BelongTime;
-            this.txtEnergyType.Text = DictUtility.GetDictValue(entity, "EnergyType", entity.EnergyType);
+            this.txtEnergyType.Text = ((EnergyType)entity.EnergyType).DisplayName();
             this.chkIncluded.Checked = entity.Included;
             this.txtStartTime.Text = entity.StartTime.ToDateString();
             this.txtEndTime.Text = entity.EndTime.ToDateString();

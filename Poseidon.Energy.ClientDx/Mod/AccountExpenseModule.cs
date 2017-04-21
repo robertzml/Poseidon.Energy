@@ -213,8 +213,8 @@ namespace Poseidon.Energy.ClientDx
             this.waterYearChart.SetSeriesLengedText(0, "用水量(吨)");
             this.waterYearChart.DataSource = result2;
 
-            this.electricYearGridMod.SetAccount(this.currentAccount, EnergyType.Electric);
-            this.waterYearGridMod.SetAccount(this.currentAccount, EnergyType.Water);
+            this.electricYearGridMod.SetAccount(this.currentAccount, EnergyExpenseType.Electric);
+            this.waterYearGridMod.SetAccount(this.currentAccount, EnergyExpenseType.Water);
         }
         #endregion //Function
 

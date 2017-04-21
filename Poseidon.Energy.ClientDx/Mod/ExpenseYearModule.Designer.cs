@@ -30,10 +30,10 @@
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.expenseGrid = new Poseidon.Energy.ClientDx.EnergyYearExpenseGrid();
             this.cmbYear = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.expenseGrid = new Poseidon.Energy.ClientDx.EnergyYearExpenseGrid();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -65,6 +65,26 @@
             this.layoutControl1.Size = new System.Drawing.Size(414, 373);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // expenseGrid
+            // 
+            this.expenseGrid.AllowFilter = false;
+            this.expenseGrid.AllowGroup = false;
+            this.expenseGrid.AllowSort = false;
+            this.expenseGrid.DataSource = null;
+            this.expenseGrid.Editable = false;
+            this.expenseGrid.EnableMasterView = false;
+            this.expenseGrid.Location = new System.Drawing.Point(12, 36);
+            this.expenseGrid.Name = "expenseGrid";
+            this.expenseGrid.ShowAddMenu = false;
+            this.expenseGrid.ShowAddtionData = false;
+            this.expenseGrid.ShowFooter = true;
+            this.expenseGrid.ShowLineNumber = true;
+            this.expenseGrid.ShowMenu = false;
+            this.expenseGrid.ShowNavigator = false;
+            this.expenseGrid.ShowUnitPrice = true;
+            this.expenseGrid.Size = new System.Drawing.Size(390, 325);
+            this.expenseGrid.TabIndex = 5;
             // 
             // cmbYear
             // 
@@ -98,26 +118,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(394, 24);
             this.layoutControlItem1.Text = "年度";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(24, 14);
-            // 
-            // expenseGrid
-            // 
-            this.expenseGrid.AllowFilter = false;
-            this.expenseGrid.AllowGroup = false;
-            this.expenseGrid.AllowSort = false;
-            this.expenseGrid.DataSource = null;
-            this.expenseGrid.Editable = false;
-            this.expenseGrid.EnableMasterView = false;
-            this.expenseGrid.Location = new System.Drawing.Point(12, 36);
-            this.expenseGrid.Name = "expenseGrid";
-            this.expenseGrid.ShowAddMenu = false;
-            this.expenseGrid.ShowAddtionData = false;
-            this.expenseGrid.ShowFooter = true;
-            this.expenseGrid.ShowLineNumber = true;
-            this.expenseGrid.ShowMenu = false;
-            this.expenseGrid.ShowNavigator = false;
-            this.expenseGrid.ShowUnitPrice = true;
-            this.expenseGrid.Size = new System.Drawing.Size(390, 325);
-            this.expenseGrid.TabIndex = 5;
             // 
             // layoutControlItem2
             // 

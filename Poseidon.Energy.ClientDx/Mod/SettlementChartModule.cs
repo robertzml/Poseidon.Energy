@@ -99,7 +99,7 @@ namespace Poseidon.Energy.ClientDx
                             if (item.PlanAmount == 0)
                                 diff = 1;
                             else
-                                diff = Math.Round((item.PlanAmount - item.SettleAmount) / item.PlanAmount, 2);
+                                diff = Math.Round((item.PlanAmount - item.SettleAmount) / item.PlanAmount, 4);
 
                             point3.Values = new double[] { Convert.ToDouble(diff) };
                         }
@@ -109,7 +109,7 @@ namespace Poseidon.Energy.ClientDx
                             if (item.PlanQuantum == 0)
                                 diff = 1;
                             else
-                                diff = Math.Round((item.PlanQuantum - item.SettleQuantum) / item.PlanQuantum, 2);
+                                diff = Math.Round((item.PlanQuantum - item.SettleQuantum) / item.PlanQuantum, 4);
 
                             point3.Values = new double[] { Convert.ToDouble(diff) };
                         }
@@ -204,7 +204,7 @@ namespace Poseidon.Energy.ClientDx
                         if (item.PlanAmount == 0)
                             diff = 1;
                         else
-                            diff = Math.Round((item.PlanAmount - item.SettleAmount) / item.PlanAmount, 2);
+                            diff = Math.Round((item.PlanAmount - item.SettleAmount) / item.PlanAmount, 4);
 
                         point3.Values = new double[] { Convert.ToDouble(diff) };
                     }
@@ -214,7 +214,7 @@ namespace Poseidon.Energy.ClientDx
                         if (item.PlanQuantum == 0)
                             diff = 1;
                         else
-                            diff = Math.Round((item.PlanQuantum - item.SettleQuantum) / item.PlanQuantum, 2);
+                            diff = Math.Round((item.PlanQuantum - item.SettleQuantum) / item.PlanQuantum, 4);
 
                         point3.Values = new double[] { Convert.ToDouble(diff) };
                     }

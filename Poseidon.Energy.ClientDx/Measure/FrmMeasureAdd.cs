@@ -14,6 +14,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 添加能源计量窗体
@@ -30,7 +31,7 @@ namespace Poseidon.Energy.ClientDx
         #region Function
         protected override void InitForm()
         {
-            ControlUtil.BindDictToComboBox(this.cmbEnergyType, typeof(Measure), "EnergyType");
+            this.cmbEnergyType.Properties.Items.AddEnum(typeof(EnergyType));
             this.dpStartTime.DateTime = DateTime.Now.Date;
             this.dpEndTime.DateTime = DateTime.Now.Date;
             base.InitForm();
