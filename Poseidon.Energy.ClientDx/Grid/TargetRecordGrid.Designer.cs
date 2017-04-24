@@ -172,7 +172,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "TargetRecordGrid";
             this.ExportToExcelCustomCell += new System.Action<DevExpress.Export.CustomizeCellEventArgs>(this.TargetRecordGrid_ExportToExcelCustomCell);
-            this.Load += new System.EventHandler(this.TargetRecordGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();

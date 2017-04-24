@@ -219,7 +219,6 @@
             this.Name = "PopulationRecordGrid";
             this.ShowFooter = true;
             this.Size = new System.Drawing.Size(847, 378);
-            this.Load += new System.EventHandler(this.PopulationRecordGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).EndInit();

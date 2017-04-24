@@ -54,6 +54,8 @@ namespace Poseidon.Energy.ClientDx
             this.txtBelongTime.Text = this.currentEntity.BelongTime;
             this.txtRemark.Text = this.currentEntity.Remark;
 
+            this.prGrid.Init();
+
             var data = LoadPopulationRecords();
             this.prGrid.DataSource = data;
 

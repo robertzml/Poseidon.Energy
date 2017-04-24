@@ -53,6 +53,14 @@ namespace Poseidon.Energy.ClientDx
 
         #region Method
         /// <summary>
+        /// 初始化控件
+        /// </summary>
+        public void Init()
+        {
+            this.departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
+        }
+
+        /// <summary>
         /// 设置参考用能数据
         /// </summary>
         /// <param name="records"></param>
@@ -76,9 +84,6 @@ namespace Poseidon.Energy.ClientDx
         /// <param name="e"></param>
         private void MeasureRecordGrid_Load(object sender, EventArgs e)
         {
-            if (!ControlUtil.IsInDesignMode())
-                this.departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
-
             this.colRefQuantum.Visible = this.showRefColumn;
             this.colIncrease.Visible = this.showRefColumn;
         }

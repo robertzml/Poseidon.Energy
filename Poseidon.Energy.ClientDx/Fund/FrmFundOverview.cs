@@ -39,6 +39,7 @@ namespace Poseidon.Energy.ClientDx
         protected override void InitForm()
         {
             LoadFunds();
+            this.frGrid.Init();
 
             base.InitForm();
         }

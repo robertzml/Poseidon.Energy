@@ -53,6 +53,8 @@ namespace Poseidon.Energy.ClientDx
             this.txtYear.Text = this.currentFund.Year.ToString();
             this.txtRemark.Text = this.currentFund.Remark;
 
+            this.frGrid.Init();
+
             var record = LoadFundRecords();
             this.frGrid.DataSource = record;
 

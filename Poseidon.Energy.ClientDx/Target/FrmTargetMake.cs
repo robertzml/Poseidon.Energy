@@ -38,6 +38,7 @@ namespace Poseidon.Energy.ClientDx
         protected override void InitForm()
         {
             LoadTargets();
+            this.trGrid.Init();
 
             base.InitForm();
         }

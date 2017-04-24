@@ -43,6 +43,8 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void LoadMeasures()
         {
+            this.recordGrid.Init();
+
             var measures = BusinessFactory<MeasureBusiness>.Instance.FindAll().OrderByDescending(r => r.StartTime);
             this.bsMeasure.DataSource = measures;
         }

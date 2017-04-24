@@ -87,34 +87,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Control\AllowanceTargetGrid.cs">
+    <Compile Include="Grid\AllowanceTargetGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\AllowanceTargetGrid.Designer.cs">
+    <Compile Include="Grid\AllowanceTargetGrid.Designer.cs">
       <DependentUpon>AllowanceTargetGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\DepartmentGrid.cs">
+    <Compile Include="Grid\DepartmentGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\DepartmentGrid.Designer.cs">
+    <Compile Include="Grid\DepartmentGrid.Designer.cs">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\EnergyCompareGrid.cs">
+    <Compile Include="Grid\EnergyCompareGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\EnergyCompareGrid.Designer.cs">
+    <Compile Include="Grid\EnergyCompareGrid.Designer.cs">
       <DependentUpon>EnergyCompareGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\SettlementRecordGrid.cs">
+    <Compile Include="Grid\SettlementRecordGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\SettlementRecordGrid.Designer.cs">
+    <Compile Include="Grid\SettlementRecordGrid.Designer.cs">
       <DependentUpon>SettlementRecordGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\DepartmentSettlementSummaryGrid.cs">
+    <Compile Include="Grid\DepartmentSettlementSummaryGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\DepartmentSettlementSummaryGrid.Designer.cs">
+    <Compile Include="Grid\DepartmentSettlementSummaryGrid.Designer.cs">
       <DependentUpon>DepartmentSettlementSummaryGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Chart\EnergyTrendChart.cs">
@@ -142,16 +142,16 @@
     <Compile Include="Mod\GroupSettlementModule.Designer.cs">
       <DependentUpon>GroupSettlementModule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\SettlementQuantumSummaryGrid.cs">
+    <Compile Include="Grid\SettlementQuantumSummaryGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\SettlementQuantumSummaryGrid.Designer.cs">
+    <Compile Include="Grid\SettlementQuantumSummaryGrid.Designer.cs">
       <DependentUpon>SettlementQuantumSummaryGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\SettlementAmountSummaryGrid.cs">
+    <Compile Include="Grid\SettlementAmountSummaryGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\SettlementAmountSummaryGrid.Designer.cs">
+    <Compile Include="Grid\SettlementAmountSummaryGrid.Designer.cs">
       <DependentUpon>SettlementAmountSummaryGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\RepSettlement.cs">
@@ -203,10 +203,10 @@
     <Compile Include="Mod\DepartmentTargetModule.Designer.cs">
       <DependentUpon>DepartmentTargetModule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\DepartmentTree.cs">
+    <Compile Include="Grid\DepartmentTree.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\DepartmentTree.Designer.cs">
+    <Compile Include="Grid\DepartmentTree.Designer.cs">
       <DependentUpon>DepartmentTree.cs</DependentUpon>
     </Compile>
     <Compile Include="Mod\DepartmentMeasureModule.cs">
@@ -221,28 +221,28 @@
     <Compile Include="Department\FrmDepartmentEdit.Designer.cs">
       <DependentUpon>FrmDepartmentEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\FundRecordGrid.cs">
+    <Compile Include="Grid\FundRecordGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\FundRecordGrid.Designer.cs">
+    <Compile Include="Grid\FundRecordGrid.Designer.cs">
       <DependentUpon>FundRecordGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\StaffTargetGrid.cs">
+    <Compile Include="Grid\StaffTargetGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\StaffTargetGrid.Designer.cs">
+    <Compile Include="Grid\StaffTargetGrid.Designer.cs">
       <DependentUpon>StaffTargetGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\TargetRecordGrid.cs">
+    <Compile Include="Grid\TargetRecordGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\TargetRecordGrid.Designer.cs">
+    <Compile Include="Grid\TargetRecordGrid.Designer.cs">
       <DependentUpon>TargetRecordGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\PopulationDetailsGrid.cs">
+    <Compile Include="Grid\PopulationDetailsGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\PopulationDetailsGrid.Designer.cs">
+    <Compile Include="Grid\PopulationDetailsGrid.Designer.cs">
       <DependentUpon>PopulationDetailsGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Mod\GroupTargetModule.cs">
@@ -251,10 +251,10 @@
     <Compile Include="Mod\GroupTargetModule.Designer.cs">
       <DependentUpon>GroupTargetModule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\MeasureRecordGrid.cs">
+    <Compile Include="Grid\MeasureRecordGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\MeasureRecordGrid.Designer.cs">
+    <Compile Include="Grid\MeasureRecordGrid.Designer.cs">
       <DependentUpon>MeasureRecordGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Mod\GroupMeasureModule.cs">
@@ -442,10 +442,10 @@
     <Compile Include="Target\FrmTargetAdd.Designer.cs">
       <DependentUpon>FrmTargetAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\PopulationRecordGrid.cs">
+    <Compile Include="Grid\PopulationRecordGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\PopulationRecordGrid.Designer.cs">
+    <Compile Include="Grid\PopulationRecordGrid.Designer.cs">
       <DependentUpon>PopulationRecordGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Population\FrmPopulationAdd.cs">
@@ -482,22 +482,22 @@
     <EmbeddedResource Include="Chart\SettlementChart.resx">
       <DependentUpon>SettlementChart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\AllowanceTargetGrid.resx">
+    <EmbeddedResource Include="Grid\AllowanceTargetGrid.resx">
       <DependentUpon>AllowanceTargetGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\DepartmentSettlementSummaryGrid.resx">
+    <EmbeddedResource Include="Grid\DepartmentSettlementSummaryGrid.resx">
       <DependentUpon>DepartmentSettlementSummaryGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\EnergyCompareGrid.resx">
+    <EmbeddedResource Include="Grid\EnergyCompareGrid.resx">
       <DependentUpon>EnergyCompareGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\SettlementAmountSummaryGrid.resx">
+    <EmbeddedResource Include="Grid\SettlementAmountSummaryGrid.resx">
       <DependentUpon>SettlementAmountSummaryGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\SettlementQuantumSummaryGrid.resx">
+    <EmbeddedResource Include="Grid\SettlementQuantumSummaryGrid.resx">
       <DependentUpon>SettlementQuantumSummaryGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\SettlementRecordGrid.resx">
+    <EmbeddedResource Include="Grid\SettlementRecordGrid.resx">
       <DependentUpon>SettlementRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\DepartmentMeasureModule.resx">
@@ -509,13 +509,13 @@
     <EmbeddedResource Include="Mod\DepartmentTargetModule.resx">
       <DependentUpon>DepartmentTargetModule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\DepartmentTree.resx">
+    <EmbeddedResource Include="Grid\DepartmentTree.resx">
       <DependentUpon>DepartmentTree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\EnergyTrendModule.resx">
       <DependentUpon>EnergyTrendModule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\FundRecordGrid.resx">
+    <EmbeddedResource Include="Grid\FundRecordGrid.resx">
       <DependentUpon>FundRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\GroupMeasureModule.resx">
@@ -527,19 +527,19 @@
     <EmbeddedResource Include="Mod\GroupTargetModule.resx">
       <DependentUpon>GroupTargetModule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\MeasureRecordGrid.resx">
+    <EmbeddedResource Include="Grid\MeasureRecordGrid.resx">
       <DependentUpon>MeasureRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\PopulationDetailsGrid.resx">
+    <EmbeddedResource Include="Grid\PopulationDetailsGrid.resx">
       <DependentUpon>PopulationDetailsGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\PopulationRecordGrid.resx">
+    <EmbeddedResource Include="Grid\PopulationRecordGrid.resx">
       <DependentUpon>PopulationRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\StaffTargetGrid.resx">
+    <EmbeddedResource Include="Grid\StaffTargetGrid.resx">
       <DependentUpon>StaffTargetGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\TargetRecordGrid.resx">
+    <EmbeddedResource Include="Grid\TargetRecordGrid.resx">
       <DependentUpon>TargetRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\SettlementCompareGridModule.resx">
@@ -679,7 +679,7 @@
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.WaterExpense.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.WaterExpenseRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.WaterMeter.datasource" />
-    <EmbeddedResource Include="Control\DepartmentGrid.resx">
+    <EmbeddedResource Include="Grid\DepartmentGrid.resx">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Department\FrmDepartmentEdit.resx">

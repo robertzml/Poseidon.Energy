@@ -33,18 +33,17 @@ namespace Poseidon.Energy.ClientDx
         }
         #endregion //Constructor
 
-        #region Event
+        #region Method
         /// <summary>
-        /// 控件载入
+        /// 初始化控件
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void PopulationRecordGrid_Load(object sender, EventArgs e)
+        public void Init()
         {
-            if (!this.DesignMode)
-                this.departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
+            this.departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
         }
+        #endregion //Method
 
+        #region Event
         /// <summary>
         /// 格式化数据显示
         /// </summary>

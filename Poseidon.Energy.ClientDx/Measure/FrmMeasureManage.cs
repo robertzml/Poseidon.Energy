@@ -41,6 +41,8 @@ namespace Poseidon.Energy.ClientDx
         protected override void InitForm()
         {
             LoadMeasures();
+
+            this.mrGrid.Init();
             base.InitForm();
         }
 

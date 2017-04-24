@@ -44,6 +44,8 @@ namespace Poseidon.Energy.ClientDx
         {
             var targets = BusinessFactory<TargetBusiness>.Instance.FindAll().OrderByDescending(r => r.Year);
             this.bsTarget.DataSource = targets;
+
+            this.recordGrid.Init();
         }
 
         /// <summary>

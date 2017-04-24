@@ -32,7 +32,7 @@ namespace Poseidon.Energy.ClientDx
         protected override void InitForm()
         {
             this.measureTree.SetGroupCode(EnergyConstant.MeasureDepartmentGroupCode);
-
+            
             base.InitForm();
         }
         #endregion //Function

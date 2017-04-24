@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tabMain = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageMeasure = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lbMeasures = new DevExpress.XtraEditors.ListBoxControl();
-            this.bsMeasure = new System.Windows.Forms.BindingSource(this.components);
+            this.bsMeasure = new System.Windows.Forms.BindingSource();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.chkIncluded = new DevExpress.XtraEditors.CheckEdit();

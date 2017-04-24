@@ -56,6 +56,8 @@ namespace Poseidon.Energy.ClientDx
 
             DisplayInfo(this.currentMeasure);
 
+            this.mrGrid.Init();
+
             base.InitForm();
         }
 
