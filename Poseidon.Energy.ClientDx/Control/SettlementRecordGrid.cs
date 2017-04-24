@@ -15,6 +15,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Base.Framework;
     using Poseidon.Common;
     using Poseidon.Winform.Base;
+    using Poseidon.Winform.Core.Utility;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
     using Poseidon.Energy.Core.Utility;

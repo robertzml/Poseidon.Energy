@@ -38,11 +38,6 @@ namespace Poseidon.Energy.Core.Utility
         public static readonly string SettlementDepartmentGroupCode = "SettlementDepartment";
 
         /// <summary>
-        /// 支出账户分组代码
-        /// </summary>
-        public static readonly string ExpenseAccountGroupCode = "ExpenseAccount";
-
-        /// <summary>
         /// 教工人数字典代码
         /// </summary>
         public static readonly string TeacherDictCode = "Energy.Target.TeacherType";
