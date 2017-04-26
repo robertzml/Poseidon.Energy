@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
@@ -45,7 +46,7 @@
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.btnSelectDepartment = new DevExpress.XtraEditors.SimpleButton();
             this.luTarget = new DevExpress.XtraEditors.LookUpEdit();
-            this.bsTarget = new System.Windows.Forms.BindingSource();
+            this.bsTarget = new System.Windows.Forms.BindingSource(this.components);
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();

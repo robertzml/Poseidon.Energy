@@ -219,6 +219,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "SettlementRecordGrid";
             this.Size = new System.Drawing.Size(745, 423);
+            this.ExportToExcelCustomCell += new System.Action<DevExpress.Export.CustomizeCellEventArgs>(this.SettlementRecordGrid_ExportToExcelCustomCell);
             this.Load += new System.EventHandler(this.SettlementRecordGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).EndInit();
