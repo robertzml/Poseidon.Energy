@@ -44,6 +44,8 @@ namespace Poseidon.Energy.ClientDx
         {
             var targets = BusinessFactory<TargetBusiness>.Instance.FindAll().OrderByDescending(r => r.Year);
             this.bsTarget.DataSource = targets;
+
+            this.recordGrid.Init();
         }
 
         /// <summary>
@@ -56,7 +58,7 @@ namespace Poseidon.Energy.ClientDx
             var targetRecords = BusinessFactory<TargetRecordBusiness>.Instance.FindByTarget(target.Id);
             var groupItems = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
 
-            var records = targetRecords.Where(r => groupItems.Select(s => s.OrganizationId).Contains(r.DepartmentId)).ToList();
+            var records = targetRecords.Where(r => groupItems.Select(s => s.EntityId).Contains(r.DepartmentId)).ToList();
 
             this.recordGrid.DataSource = records;
 

@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lbPopulation = new DevExpress.XtraEditors.ListBoxControl();
-            this.bsPopulation = new System.Windows.Forms.BindingSource(this.components);
+            this.bsPopulation = new System.Windows.Forms.BindingSource();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtRemark = new DevExpress.XtraEditors.MemoEdit();
@@ -421,12 +420,14 @@
             this.popDetailsGrid.AllowSort = true;
             this.popDetailsGrid.DataSource = null;
             this.popDetailsGrid.Editable = false;
+            this.popDetailsGrid.EnableMasterView = false;
             this.popDetailsGrid.Location = new System.Drawing.Point(12, 60);
             this.popDetailsGrid.Name = "popDetailsGrid";
             this.popDetailsGrid.ShowAddMenu = false;
             this.popDetailsGrid.ShowFooter = true;
             this.popDetailsGrid.ShowInTotal = false;
             this.popDetailsGrid.ShowLineNumber = true;
+            this.popDetailsGrid.ShowMenu = false;
             this.popDetailsGrid.ShowNavigator = false;
             this.popDetailsGrid.Size = new System.Drawing.Size(605, 202);
             this.popDetailsGrid.TabIndex = 7;
@@ -540,11 +541,13 @@
             this.popRecordGrid.AllowSort = true;
             this.popRecordGrid.DataSource = null;
             this.popRecordGrid.Editable = false;
+            this.popRecordGrid.EnableMasterView = false;
             this.popRecordGrid.Location = new System.Drawing.Point(12, 38);
             this.popRecordGrid.Name = "popRecordGrid";
             this.popRecordGrid.ShowAddMenu = false;
             this.popRecordGrid.ShowFooter = true;
             this.popRecordGrid.ShowLineNumber = true;
+            this.popRecordGrid.ShowMenu = false;
             this.popRecordGrid.ShowNavigator = false;
             this.popRecordGrid.Size = new System.Drawing.Size(605, 224);
             this.popRecordGrid.TabIndex = 5;

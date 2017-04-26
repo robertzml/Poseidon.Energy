@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Poseidon.Energy.ClientDx</RootNamespace>
     <AssemblyName>Poseidon.Energy.ClientDx</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -87,36 +87,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Control\AllowanceTargetGrid.cs">
+    <Compile Include="Grid\AllowanceTargetGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\AllowanceTargetGrid.Designer.cs">
+    <Compile Include="Grid\AllowanceTargetGrid.Designer.cs">
       <DependentUpon>AllowanceTargetGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\DepartmentGrid.cs">
+    <Compile Include="Grid\DepartmentGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\DepartmentGrid.Designer.cs">
+    <Compile Include="Grid\DepartmentGrid.Designer.cs">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chart\EnergyCompareChart.cs">
+    <Compile Include="Grid\EnergyCompareGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Chart\EnergyCompareChart.Designer.cs">
-      <DependentUpon>EnergyCompareChart.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\EnergyCompareGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\EnergyCompareGrid.Designer.cs">
+    <Compile Include="Grid\EnergyCompareGrid.Designer.cs">
       <DependentUpon>EnergyCompareGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\SettlementRecordGrid.cs">
+    <Compile Include="Grid\SettlementRecordGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\SettlementRecordGrid.Designer.cs">
+    <Compile Include="Grid\SettlementRecordGrid.Designer.cs">
       <DependentUpon>SettlementRecordGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grid\DepartmentSettlementSummaryGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Grid\DepartmentSettlementSummaryGrid.Designer.cs">
+      <DependentUpon>DepartmentSettlementSummaryGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\EnergyTrendChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\EnergyTrendChart.Designer.cs">
+      <DependentUpon>EnergyTrendChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\EnergyTrendModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\EnergyTrendModule.Designer.cs">
+      <DependentUpon>EnergyTrendModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SettlementReportModel.cs" />
     <Compile Include="Mod\DepartmentSettlementModule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -129,17 +142,41 @@
     <Compile Include="Mod\GroupSettlementModule.Designer.cs">
       <DependentUpon>GroupSettlementModule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\SettlementQuantumSummaryGrid.cs">
+    <Compile Include="Grid\SettlementQuantumSummaryGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\SettlementQuantumSummaryGrid.Designer.cs">
+    <Compile Include="Grid\SettlementQuantumSummaryGrid.Designer.cs">
       <DependentUpon>SettlementQuantumSummaryGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\SettlementAmountSummaryGrid.cs">
+    <Compile Include="Grid\SettlementAmountSummaryGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\SettlementAmountSummaryGrid.Designer.cs">
+    <Compile Include="Grid\SettlementAmountSummaryGrid.Designer.cs">
       <DependentUpon>SettlementAmountSummaryGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\RepSettlement.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RepSettlement.Designer.cs">
+      <DependentUpon>RepSettlement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chart\SettlementChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Chart\SettlementChart.Designer.cs">
+      <DependentUpon>SettlementChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\SettlementChartModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\SettlementChartModule.Designer.cs">
+      <DependentUpon>SettlementChartModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mod\SettlementCompareGridModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\SettlementCompareGridModule.Designer.cs">
+      <DependentUpon>SettlementCompareGridModule.cs</DependentUpon>
     </Compile>
     <Compile Include="Settlement\FrmSettlementRecordAdd.cs">
       <SubType>Form</SubType>
@@ -159,29 +196,17 @@
     <Compile Include="Settlement\FrmSettlementSetDepartment.Designer.cs">
       <DependentUpon>FrmSettlementSetDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mod\ElectricCompareGridModule.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Mod\ElectricCompareGridModule.Designer.cs">
-      <DependentUpon>ElectricCompareGridModule.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\EnergyCompare.cs" />
-    <Compile Include="Mod\ElectricCompareModule.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Mod\ElectricCompareModule.Designer.cs">
-      <DependentUpon>ElectricCompareModule.cs</DependentUpon>
-    </Compile>
     <Compile Include="Mod\DepartmentTargetModule.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Mod\DepartmentTargetModule.Designer.cs">
       <DependentUpon>DepartmentTargetModule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\DepartmentTree.cs">
+    <Compile Include="Grid\DepartmentTree.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\DepartmentTree.Designer.cs">
+    <Compile Include="Grid\DepartmentTree.Designer.cs">
       <DependentUpon>DepartmentTree.cs</DependentUpon>
     </Compile>
     <Compile Include="Mod\DepartmentMeasureModule.cs">
@@ -196,124 +221,28 @@
     <Compile Include="Department\FrmDepartmentEdit.Designer.cs">
       <DependentUpon>FrmDepartmentEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\FundRecordGrid.cs">
+    <Compile Include="Grid\FundRecordGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\FundRecordGrid.Designer.cs">
+    <Compile Include="Grid\FundRecordGrid.Designer.cs">
       <DependentUpon>FundRecordGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\StaffTargetGrid.cs">
+    <Compile Include="Grid\StaffTargetGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\StaffTargetGrid.Designer.cs">
+    <Compile Include="Grid\StaffTargetGrid.Designer.cs">
       <DependentUpon>StaffTargetGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\TargetRecordGrid.cs">
+    <Compile Include="Grid\TargetRecordGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\TargetRecordGrid.Designer.cs">
+    <Compile Include="Grid\TargetRecordGrid.Designer.cs">
       <DependentUpon>TargetRecordGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\ExpenseAccountTree.cs">
+    <Compile Include="Grid\PopulationDetailsGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\ExpenseAccountTree.Designer.cs">
-      <DependentUpon>ExpenseAccountTree.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mod\ExpenseAccountInfo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Mod\ExpenseAccountInfo.Designer.cs">
-      <DependentUpon>ExpenseAccountInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\ElectricMeterGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\ElectricMeterGrid.Designer.cs">
-      <DependentUpon>ElectricMeterGrid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\ElectricExpenseRecordGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\ElectricExpenseRecordGrid.Designer.cs">
-      <DependentUpon>ElectricExpenseRecordGrid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mod\ElectricExpenseReceipt.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Mod\ElectricExpenseReceipt.Designer.cs">
-      <DependentUpon>ElectricExpenseReceipt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseOverview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseOverview.Designer.cs">
-      <DependentUpon>FrmExpenseOverview.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseAccount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseAccount.Designer.cs">
-      <DependentUpon>FrmExpenseAccount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseAccountAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseAccountAdd.Designer.cs">
-      <DependentUpon>FrmExpenseAccountAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseWaterMeterSet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseWaterMeterSet.Designer.cs">
-      <DependentUpon>FrmExpenseWaterMeterSet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseWaterAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseWaterAdd.Designer.cs">
-      <DependentUpon>FrmExpenseWaterAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseAccountEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseAccountEdit.Designer.cs">
-      <DependentUpon>FrmExpenseAccountEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseWaterEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseWaterEdit.Designer.cs">
-      <DependentUpon>FrmExpenseWaterEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseReceipt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseReceipt.Designer.cs">
-      <DependentUpon>FrmExpenseReceipt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseElectricMeterSet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseElectricMeterSet.Designer.cs">
-      <DependentUpon>FrmExpenseElectricMeterSet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseElectricAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseElectricAdd.Designer.cs">
-      <DependentUpon>FrmExpenseElectricAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseElectricEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Expense\FrmExpenseElectricEdit.Designer.cs">
-      <DependentUpon>FrmExpenseElectricEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\PopulationDetailsGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\PopulationDetailsGrid.Designer.cs">
+    <Compile Include="Grid\PopulationDetailsGrid.Designer.cs">
       <DependentUpon>PopulationDetailsGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Mod\GroupTargetModule.cs">
@@ -322,10 +251,10 @@
     <Compile Include="Mod\GroupTargetModule.Designer.cs">
       <DependentUpon>GroupTargetModule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\MeasureRecordGrid.cs">
+    <Compile Include="Grid\MeasureRecordGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\MeasureRecordGrid.Designer.cs">
+    <Compile Include="Grid\MeasureRecordGrid.Designer.cs">
       <DependentUpon>MeasureRecordGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Mod\GroupMeasureModule.cs">
@@ -513,10 +442,10 @@
     <Compile Include="Target\FrmTargetAdd.Designer.cs">
       <DependentUpon>FrmTargetAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\PopulationRecordGrid.cs">
+    <Compile Include="Grid\PopulationRecordGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\PopulationRecordGrid.Designer.cs">
+    <Compile Include="Grid\PopulationRecordGrid.Designer.cs">
       <DependentUpon>PopulationRecordGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Population\FrmPopulationAdd.cs">
@@ -543,69 +472,32 @@
     <Compile Include="Department\FrmDepartmentOverview.Designer.cs">
       <DependentUpon>FrmDepartmentOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mod\WaterCompareModule.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Mod\WaterCompareModule.Designer.cs">
-      <DependentUpon>WaterCompareModule.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mod\WaterCompareGridModule.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Mod\WaterCompareGridModule.Designer.cs">
-      <DependentUpon>WaterCompareGridModule.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Utility\ReportUtil.cs" />
     <None Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Control\WaterMeterGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\WaterMeterGrid.Designer.cs">
-      <DependentUpon>WaterMeterGrid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\WaterExpenseRecordGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\WaterExpenseRecordGrid.Designer.cs">
-      <DependentUpon>WaterExpenseRecordGrid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Utility\ControlUtil.cs" />
-    <Compile Include="Utility\EventUtil.cs" />
-    <Compile Include="Control\WaterYearExpenseGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\WaterYearExpenseGrid.Designer.cs">
-      <DependentUpon>WaterYearExpenseGrid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Chart\WaterExpenseChart.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Chart\WaterExpenseChart.Designer.cs">
-      <DependentUpon>WaterExpenseChart.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Mod\WaterExpenseReceipt.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Mod\WaterExpenseReceipt.Designer.cs">
-      <DependentUpon>WaterExpenseReceipt.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Chart\EnergyCompareChart.resx">
-      <DependentUpon>EnergyCompareChart.cs</DependentUpon>
+    <EmbeddedResource Include="Chart\EnergyTrendChart.resx">
+      <DependentUpon>EnergyTrendChart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\AllowanceTargetGrid.resx">
+    <EmbeddedResource Include="Chart\SettlementChart.resx">
+      <DependentUpon>SettlementChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\AllowanceTargetGrid.resx">
       <DependentUpon>AllowanceTargetGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\EnergyCompareGrid.resx">
+    <EmbeddedResource Include="Grid\DepartmentSettlementSummaryGrid.resx">
+      <DependentUpon>DepartmentSettlementSummaryGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grid\EnergyCompareGrid.resx">
       <DependentUpon>EnergyCompareGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\SettlementAmountSummaryGrid.resx">
+    <EmbeddedResource Include="Grid\SettlementAmountSummaryGrid.resx">
       <DependentUpon>SettlementAmountSummaryGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\SettlementQuantumSummaryGrid.resx">
+    <EmbeddedResource Include="Grid\SettlementQuantumSummaryGrid.resx">
       <DependentUpon>SettlementQuantumSummaryGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\SettlementRecordGrid.resx">
+    <EmbeddedResource Include="Grid\SettlementRecordGrid.resx">
       <DependentUpon>SettlementRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\DepartmentMeasureModule.resx">
@@ -617,31 +509,13 @@
     <EmbeddedResource Include="Mod\DepartmentTargetModule.resx">
       <DependentUpon>DepartmentTargetModule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\DepartmentTree.resx">
+    <EmbeddedResource Include="Grid\DepartmentTree.resx">
       <DependentUpon>DepartmentTree.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mod\ElectricCompareGridModule.resx">
-      <DependentUpon>ElectricCompareGridModule.cs</DependentUpon>
+    <EmbeddedResource Include="Mod\EnergyTrendModule.resx">
+      <DependentUpon>EnergyTrendModule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mod\ElectricCompareModule.resx">
-      <DependentUpon>ElectricCompareModule.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mod\ElectricExpenseReceipt.resx">
-      <DependentUpon>ElectricExpenseReceipt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\ElectricExpenseRecordGrid.resx">
-      <DependentUpon>ElectricExpenseRecordGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\ElectricMeterGrid.resx">
-      <DependentUpon>ElectricMeterGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mod\ExpenseAccountInfo.resx">
-      <DependentUpon>ExpenseAccountInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\ExpenseAccountTree.resx">
-      <DependentUpon>ExpenseAccountTree.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\FundRecordGrid.resx">
+    <EmbeddedResource Include="Grid\FundRecordGrid.resx">
       <DependentUpon>FundRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\GroupMeasureModule.resx">
@@ -653,74 +527,26 @@
     <EmbeddedResource Include="Mod\GroupTargetModule.resx">
       <DependentUpon>GroupTargetModule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\MeasureRecordGrid.resx">
+    <EmbeddedResource Include="Grid\MeasureRecordGrid.resx">
       <DependentUpon>MeasureRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\PopulationDetailsGrid.resx">
+    <EmbeddedResource Include="Grid\PopulationDetailsGrid.resx">
       <DependentUpon>PopulationDetailsGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\PopulationRecordGrid.resx">
+    <EmbeddedResource Include="Grid\PopulationRecordGrid.resx">
       <DependentUpon>PopulationRecordGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\StaffTargetGrid.resx">
+    <EmbeddedResource Include="Grid\StaffTargetGrid.resx">
       <DependentUpon>StaffTargetGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\TargetRecordGrid.resx">
+    <EmbeddedResource Include="Grid\TargetRecordGrid.resx">
       <DependentUpon>TargetRecordGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\SettlementCompareGridModule.resx">
+      <DependentUpon>SettlementCompareGridModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mod\TargetRecordModule.resx">
       <DependentUpon>TargetRecordModule.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Chart\WaterExpenseChart.resx">
-      <DependentUpon>WaterExpenseChart.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mod\WaterCompareGridModule.resx">
-      <DependentUpon>WaterCompareGridModule.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Mod\WaterExpenseReceipt.resx">
-      <DependentUpon>WaterExpenseReceipt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\WaterExpenseRecordGrid.resx">
-      <DependentUpon>WaterExpenseRecordGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\WaterMeterGrid.resx">
-      <DependentUpon>WaterMeterGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\WaterYearExpenseGrid.resx">
-      <DependentUpon>WaterYearExpenseGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Expense\FrmExpenseAccount.resx">
-      <DependentUpon>FrmExpenseAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Expense\FrmExpenseAccountAdd.resx">
-      <DependentUpon>FrmExpenseAccountAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Expense\FrmExpenseAccountEdit.resx">
-      <DependentUpon>FrmExpenseAccountEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Expense\FrmExpenseElectricAdd.resx">
-      <DependentUpon>FrmExpenseElectricAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Expense\FrmExpenseElectricEdit.resx">
-      <DependentUpon>FrmExpenseElectricEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Expense\FrmExpenseElectricMeterSet.resx">
-      <DependentUpon>FrmExpenseElectricMeterSet.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Expense\FrmExpenseOverview.resx">
-      <DependentUpon>FrmExpenseOverview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Expense\FrmExpenseReceipt.resx">
-      <DependentUpon>FrmExpenseReceipt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Expense\FrmExpenseWaterAdd.resx">
-      <DependentUpon>FrmExpenseWaterAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Expense\FrmExpenseWaterEdit.resx">
-      <DependentUpon>FrmExpenseWaterEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Expense\FrmExpenseWaterMeterSet.resx">
-      <DependentUpon>FrmExpenseWaterMeterSet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fund\FrmFundAdd.resx">
       <DependentUpon>FrmFundAdd.cs</DependentUpon>
@@ -755,9 +581,6 @@
     <EmbeddedResource Include="Measure\FrmMeasureSetDepartment.resx">
       <DependentUpon>FrmMeasureSetDepartment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mod\WaterCompareModule.resx">
-      <DependentUpon>WaterCompareModule.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Population\FrmPopulationEdit.resx">
       <DependentUpon>FrmPopulationEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -771,9 +594,11 @@
       <DependentUpon>FrmPopulationRecordView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\EnergyCompare.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.ClientDx.Model.EnergyExpense.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.MeasureRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Settlement.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.SettlementRecord.datasource" />
+    <None Include="Properties\DataSources\Poseidon.Energy.Core.Utility.DepartmentSettlementSummary.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.Utility.SettlementAmountSummary.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.Utility.SettlementQuantumSummary.datasource" />
     <None Include="Properties\licenses.licx" />
@@ -783,6 +608,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\RepDepartmentTarget.resx">
       <DependentUpon>RepDepartmentTarget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RepSettlement.resx">
+      <DependentUpon>RepSettlement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mod\SettlementChartModule.resx">
+      <DependentUpon>SettlementChartModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settlement\FrmSettlementAdd.resx">
       <DependentUpon>FrmSettlementAdd.cs</DependentUpon>
@@ -848,7 +679,7 @@
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.WaterExpense.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.WaterExpenseRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.WaterMeter.datasource" />
-    <EmbeddedResource Include="Control\DepartmentGrid.resx">
+    <EmbeddedResource Include="Grid\DepartmentGrid.resx">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Department\FrmDepartmentEdit.resx">

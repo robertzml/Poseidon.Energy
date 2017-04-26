@@ -182,6 +182,7 @@
             this.trGrid.ShowAddMenu = false;
             this.trGrid.ShowFooter = false;
             this.trGrid.ShowLineNumber = true;
+            this.trGrid.ShowMenu = false;
             this.trGrid.ShowNavigator = false;
             this.trGrid.Size = new System.Drawing.Size(443, 397);
             this.trGrid.TabIndex = 0;
@@ -425,6 +426,7 @@
             this.stGrid.ShowAddMenu = false;
             this.stGrid.ShowFooter = true;
             this.stGrid.ShowLineNumber = false;
+            this.stGrid.ShowMenu = false;
             this.stGrid.ShowNavigator = false;
             this.stGrid.Size = new System.Drawing.Size(444, 166);
             this.stGrid.TabIndex = 0;
@@ -506,6 +508,7 @@
             this.atGrid.ShowAddMenu = false;
             this.atGrid.ShowFooter = true;
             this.atGrid.ShowLineNumber = false;
+            this.atGrid.ShowMenu = false;
             this.atGrid.ShowNavigator = false;
             this.atGrid.Size = new System.Drawing.Size(444, 166);
             this.atGrid.TabIndex = 4;

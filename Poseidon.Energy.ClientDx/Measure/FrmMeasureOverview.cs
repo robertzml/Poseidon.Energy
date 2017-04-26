@@ -32,7 +32,7 @@ namespace Poseidon.Energy.ClientDx
         protected override void InitForm()
         {
             this.measureTree.SetGroupCode(EnergyConstant.MeasureDepartmentGroupCode);
-
+            
             base.InitForm();
         }
         #endregion //Function
@@ -55,7 +55,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void measureTree_OrganizationSelected(object sender, EventArgs e)
+        private void measureTree_EntitySelected(object sender, EventArgs e)
         {
             this.navFrame.SelectedPageIndex = 1;
             var departmentId = this.measureTree.GetCurrentSelectId();

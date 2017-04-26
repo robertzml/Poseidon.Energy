@@ -15,6 +15,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
     using Poseidon.Winform.Base;
+    using Poseidon.Winform.Core.Utility;
 
     /// <summary>
     /// 部门添加窗体
@@ -33,7 +34,7 @@ namespace Poseidon.Energy.ClientDx
         {
             var departments = BusinessFactory<DepartmentBusiness>.Instance.FindAll().ToList();
             this.bsDepartment.DataSource = departments;
-
+            
             this.tluParentId.Popup += EventUtil.TreeListLookup_Popup;
             base.InitForm();
         }

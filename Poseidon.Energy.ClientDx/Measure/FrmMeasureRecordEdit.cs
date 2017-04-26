@@ -56,6 +56,8 @@ namespace Poseidon.Energy.ClientDx
 
             DisplayInfo(this.currentMeasure);
 
+            this.mrGrid.Init();
+
             base.InitForm();
         }
 
@@ -66,7 +68,7 @@ namespace Poseidon.Energy.ClientDx
         private void DisplayInfo(Measure entity)
         {
             this.txtBelongTime.Text = entity.BelongTime;
-            this.txtEnergyType.Text = DictUtility.GetDictValue(entity, "EnergyType", entity.EnergyType);
+            this.txtEnergyType.Text = ((EnergyType)entity.EnergyType).DisplayName();
             this.txtStartTime.Text = entity.StartTime.ToDateString();
             this.txtEndTime.Text = entity.EndTime.ToDateString();
         }
@@ -136,6 +138,8 @@ namespace Poseidon.Energy.ClientDx
             Measure select = this.luRefMeasure.GetSelectedDataRow() as Measure;
             var refRecords = BusinessFactory<MeasureRecordBusiness>.Instance.FindByMeasureId(select.Id).ToList();
 
+            this.txtRefDepartmentCount.Text = refRecords.Count.ToString();
+            this.txtRefTotalQuantum.Text = refRecords.Sum(r => r.Quantum).ToString();
             this.mrGrid.SetReference(refRecords);
         }
 

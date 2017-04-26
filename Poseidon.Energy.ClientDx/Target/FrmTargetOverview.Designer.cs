@@ -70,7 +70,7 @@
             this.groupTreeTarget.Size = new System.Drawing.Size(177, 495);
             this.groupTreeTarget.TabIndex = 0;
             this.groupTreeTarget.GroupSelected += new System.EventHandler(this.groupTreeTarget_GroupSelected);
-            this.groupTreeTarget.OrganizationSelected += new System.EventHandler(this.groupTreeTarget_OrganizationSelected);
+            this.groupTreeTarget.EntitySelected += new System.EventHandler(this.groupTreeTarget_EntitySelected);
             // 
             // groupControl1
             // 

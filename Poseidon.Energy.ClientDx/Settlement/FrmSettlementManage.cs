@@ -49,7 +49,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void LoadSettlements()
         {
-            var data = BusinessFactory<SettlementBusiness>.Instance.FindAll().OrderByDescending(r => r.Name);
+            var data = BusinessFactory<SettlementBusiness>.Instance.FindAll();
             this.bsSettlement.DataSource = data;
         }
 
@@ -81,7 +81,10 @@ namespace Poseidon.Energy.ClientDx
             }
 
             this.electricRecordGrid.DataSource = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Electric).ToList();
+            this.electricRecordGrid.SetEnergyType(EnergyType.Electric);
+
             this.waterRecordGrid.DataSource = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(entity.Id, EnergyType.Water).ToList();
+            this.waterRecordGrid.SetEnergyType(EnergyType.Water);
         }
         #endregion //Function
 

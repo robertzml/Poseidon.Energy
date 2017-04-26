@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace Poseidon.Energy.ClientDx
 {
+    using DevExpress.XtraCharts;
     using Poseidon.Base.Framework;
     using Poseidon.Common;
     using Poseidon.Core.Utility;
@@ -26,6 +27,10 @@ namespace Poseidon.Energy.ClientDx
         /// 当前关联部门
         /// </summary>
         private Department currentDepartment;
+
+        private int startYear = 2011;
+
+        private int nowYear;
         #endregion //Field
 
         #region Constructor
@@ -41,7 +46,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void LoadSettlements()
         {
-            this.bsSettlement.DataSource = BusinessFactory<SettlementBusiness>.Instance.FindAll().OrderByDescending(r => r.BelongTime);
+            this.bsSettlement.DataSource = BusinessFactory<SettlementBusiness>.Instance.FindAll();
         }
 
         /// <summary>
@@ -70,7 +75,7 @@ namespace Poseidon.Energy.ClientDx
         }
 
         /// <summary>
-        /// 显示部门记录信息
+        /// 显示部门结算记录信息
         /// </summary>
         /// <param name="settlement">能源结算</param>
         /// <param name="department">部门</param>
@@ -104,6 +109,130 @@ namespace Poseidon.Energy.ClientDx
                 this.txtWaterRemark.Text = wrecord.Remark;
             }
         }
+
+        /// <summary>
+        /// 显示结算汇总
+        /// </summary>
+        /// <param name="department">部门</param>
+        private async void DisplaySummary(Department department)
+        {
+            var task1 = Task.Run(() =>
+            {
+                List<DepartmentSettlementSummary> data = new List<DepartmentSettlementSummary>();
+                for (int i = nowYear; i >= startYear; i--)
+                {
+                    var item = BusinessFactory<SettlementBusiness>.Instance.GetDepartmentSummary(i, EnergyType.Electric, department);
+                    if (item != null)
+                        data.Add(item);
+                }
+
+                return data;
+            });
+            var data1 = await task1;
+            this.depElectricSettleGrid.SetEnergyType(EnergyType.Electric);
+            this.depElectricSettleGrid.DataSource = data1;
+
+            var task2 = Task.Run(() =>
+            {
+                List<SettlementQuantumSummary> data = new List<SettlementQuantumSummary>();
+                for (int i = nowYear; i >= startYear; i--)
+                {
+                    var item = BusinessFactory<SettlementBusiness>.Instance.GetDepartmentQuantumSummary(i, EnergyType.Electric, department);
+                    if (item != null)
+                        data.Add(item);
+                }
+
+                return data;
+            });
+            var data2 = await task2;
+            this.electricQSGrid.SetEnergyType(EnergyType.Electric);
+            this.electricQSGrid.DataSource = data2;
+
+            var task3 = Task.Run(() =>
+            {
+                List<SettlementAmountSummary> data = new List<SettlementAmountSummary>();
+                for (int i = nowYear; i >= startYear; i--)
+                {
+                    var item = BusinessFactory<SettlementBusiness>.Instance.GetDepartmentAmountSummary(i, EnergyType.Electric, department);
+                    if (item != null)
+                        data.Add(item);
+                }
+
+                return data;
+            });
+            var data3 = await task3;
+            this.electricASGrid.DataSource = data3;
+
+            var task4 = Task.Run(() =>
+            {
+                List<DepartmentSettlementSummary> data = new List<DepartmentSettlementSummary>();
+                for (int i = nowYear; i >= startYear; i--)
+                {
+                    var item = BusinessFactory<SettlementBusiness>.Instance.GetDepartmentSummary(i, EnergyType.Water, department);
+                    if (item != null)
+                        data.Add(item);
+                }
+
+                return data;
+            });
+            var data4 = await task4;
+            this.depWaterSettleGrid.SetEnergyType(EnergyType.Water);
+            this.depWaterSettleGrid.DataSource = data4;
+
+            var task5 = Task.Run(() =>
+            {
+                List<SettlementQuantumSummary> data = new List<SettlementQuantumSummary>();
+                for (int i = nowYear; i >= startYear; i--)
+                {
+                    var item = BusinessFactory<SettlementBusiness>.Instance.GetDepartmentQuantumSummary(i, EnergyType.Water, department);
+                    if (item != null)
+                        data.Add(item);
+                }
+
+                return data;
+            });
+            var data5 = await task5;
+            this.waterQSGrid.SetEnergyType(EnergyType.Water);
+            this.waterQSGrid.DataSource = data5;
+
+            var task6 = Task.Run(() =>
+            {
+                List<SettlementAmountSummary> data = new List<SettlementAmountSummary>();
+                for (int i = nowYear; i >= startYear; i--)
+                {
+                    var item = BusinessFactory<SettlementBusiness>.Instance.GetDepartmentAmountSummary(i, EnergyType.Water, department);
+                    if (item != null)
+                        data.Add(item);
+                }
+
+                return data;
+            });
+            var data6 = await task6;
+            this.waterASGrid.DataSource = data6;
+        }
+
+        /// <summary>
+        /// 显示结算趋势
+        /// </summary>
+        /// <param name="department">部门</param>
+        private void DisplayTrend(Department department)
+        {
+            this.electricTrendMod.SetDepartment(department, EnergyType.Electric);
+            this.waterTrendMod.SetDepartment(department, EnergyType.Water);
+
+            this.electricSettleMod.SetDepartment(department, EnergyType.Electric);
+            this.waterSettleMod.SetDepartment(department, EnergyType.Water);
+        }
+
+        /// <summary>
+        /// 显示结算对比
+        /// </summary>
+        /// <param name="department"></param>
+        private void DisplayCompare(Department department)
+        {
+            this.electricCompareMod.SetDepartment(department, EnergyType.Electric);
+            this.waterCompareMod.SetDepartment(department, EnergyType.Water);
+        }
         #endregion //Function
 
         #region Method
@@ -114,7 +243,12 @@ namespace Poseidon.Energy.ClientDx
         public void SetDepartment(string id)
         {
             this.currentDepartment = BusinessFactory<DepartmentBusiness>.Instance.FindById(id);
+            this.nowYear = DateTime.Now.Year;
+
             LoadSettlements();
+            DisplaySummary(this.currentDepartment);
+            DisplayTrend(this.currentDepartment);
+            DisplayCompare(this.currentDepartment);
         }
 
         /// <summary>
@@ -160,6 +294,7 @@ namespace Poseidon.Energy.ClientDx
             Clear();
 
             var settlement = this.lbSettlements.SelectedItem as Settlement;
+
             DisplaySettlementInfo(settlement);
             DisplayRecordInfo(settlement, this.currentDepartment);
         }

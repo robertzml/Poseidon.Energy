@@ -22,10 +22,10 @@ namespace Poseidon.Energy.ClientDx
         public bool Include { get; set; }
 
         /// <summary>
-        /// 月份
+        /// 项目名称
         /// </summary>
-        [Display(Name = "月份")]
-        public string Month { get; set; }
+        [Display(Name = "项目名称")]
+        public string ItemName { get; set; }
 
         /// <summary>
         /// 用量1

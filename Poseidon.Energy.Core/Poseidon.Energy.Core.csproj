@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Poseidon.Energy.Core</RootNamespace>
     <AssemblyName>Poseidon.Energy.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -72,66 +72,53 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\DepartmentBusiness.cs" />
-    <Compile Include="BL\ElectricExpenseBusiness.cs" />
     <Compile Include="BL\FundBusiness.cs" />
     <Compile Include="BL\FundRecordBusiness.cs" />
     <Compile Include="BL\MeasureBusiness.cs" />
     <Compile Include="BL\MeasureRecordBusiness.cs" />
     <Compile Include="BL\PopulationBusiness.cs" />
     <Compile Include="BL\PopulationRecordBusiness.cs" />
-    <Compile Include="BL\ExpenseAccountBusiness.cs" />
     <Compile Include="BL\SettlementBusiness.cs" />
     <Compile Include="BL\SettlementRecordBusiness.cs" />
     <Compile Include="BL\TargetBusiness.cs" />
     <Compile Include="BL\TargetRecordBusiness.cs" />
-    <Compile Include="BL\WaterExpenseBusiness.cs" />
     <Compile Include="DAL\Mongo\DepartmentRepository.cs" />
-    <Compile Include="DAL\Mongo\ElectricExpenseRepository.cs" />
     <Compile Include="DAL\Mongo\FundRecordRepository.cs" />
     <Compile Include="DAL\Mongo\FundRepository.cs" />
     <Compile Include="DAL\Mongo\MeasureRecordRepository.cs" />
     <Compile Include="DAL\Mongo\MeasureRepository.cs" />
     <Compile Include="DAL\Mongo\PopulationRecordRepository.cs" />
     <Compile Include="DAL\Mongo\PopulationRepository.cs" />
-    <Compile Include="DAL\Mongo\ExpenseAccountRepository.cs" />
     <Compile Include="DAL\Mongo\SettlementRecordRepository.cs" />
     <Compile Include="DAL\Mongo\SettlementRepository.cs" />
     <Compile Include="DAL\Mongo\TargetRecordRepository.cs" />
     <Compile Include="DAL\Mongo\TargetRepository.cs" />
-    <Compile Include="DAL\Mongo\WaterExpenseRepository.cs" />
     <Compile Include="DL\AllowanceTarget.cs" />
-    <Compile Include="DL\ElectricExpense.cs" />
-    <Compile Include="DL\ElectricMeter.cs" />
     <Compile Include="DL\Measure.cs" />
     <Compile Include="DL\MeasureRecord.cs" />
     <Compile Include="DL\Settlement.cs" />
     <Compile Include="DL\SettlementRecord.cs" />
-    <Compile Include="DL\WaterExpense.cs" />
-    <Compile Include="DL\WaterMeter.cs" />
     <Compile Include="DL\Department.cs" />
     <Compile Include="DL\FundRecord.cs" />
     <Compile Include="DL\Fund.cs" />
     <Compile Include="DL\PopulationRecord.cs" />
     <Compile Include="DL\Population.cs" />
-    <Compile Include="DL\ExpenseAccount.cs" />
     <Compile Include="DL\StaffTarget.cs" />
     <Compile Include="DL\Target.cs" />
     <Compile Include="DL\TargetRecord.cs" />
     <Compile Include="IDAL\IDepartmentRepository.cs" />
-    <Compile Include="IDAL\IElectricExpenseRepository.cs" />
     <Compile Include="IDAL\IFundRecordRepository.cs" />
     <Compile Include="IDAL\IFundRepository.cs" />
     <Compile Include="IDAL\IMeasureRecordRepository.cs" />
     <Compile Include="IDAL\IMeasureRepository.cs" />
     <Compile Include="IDAL\IPopulationRecordRepository.cs" />
     <Compile Include="IDAL\IPopulationRepository.cs" />
-    <Compile Include="IDAL\IExpenseAccountRepository.cs" />
     <Compile Include="IDAL\ISettlementRecordRepository.cs" />
     <Compile Include="IDAL\ISettlementRepository.cs" />
     <Compile Include="IDAL\ITargetRecordRepository.cs" />
     <Compile Include="IDAL\ITargetRepository.cs" />
-    <Compile Include="IDAL\IWaterExpenseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\DepartmentSettlementSummary.cs" />
     <Compile Include="Utility\EnergyConstant.cs" />
     <Compile Include="Utility\EnergyEnum.cs" />
     <Compile Include="Utility\ModelTypeCode.cs" />

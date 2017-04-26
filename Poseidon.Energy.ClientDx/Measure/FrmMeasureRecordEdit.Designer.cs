@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.measureGroup = new Poseidon.Winform.Core.GroupsTree();
@@ -37,7 +36,7 @@
             this.txtRefTotalQuantum = new DevExpress.XtraEditors.TextEdit();
             this.txtRefDepartmentCount = new DevExpress.XtraEditors.TextEdit();
             this.luRefMeasure = new DevExpress.XtraEditors.LookUpEdit();
-            this.bsMeasure = new System.Windows.Forms.BindingSource(this.components);
+            this.bsMeasure = new System.Windows.Forms.BindingSource();
             this.txtTotalQuantum = new DevExpress.XtraEditors.TextEdit();
             this.txtDepartmentCount = new DevExpress.XtraEditors.TextEdit();
             this.txtEndTime = new DevExpress.XtraEditors.TextEdit();

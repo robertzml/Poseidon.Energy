@@ -14,6 +14,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Core.Utility;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 部门能源计量模块
@@ -40,6 +41,8 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void LoadMeasures()
         {
+            this.subRecordGrid.Init();
+
             var measures = BusinessFactory<MeasureBusiness>.Instance.FindAll().OrderByDescending(r => r.BelongTime);
             this.bsMeasure.DataSource = measures;
         }
@@ -53,7 +56,7 @@ namespace Poseidon.Energy.ClientDx
             this.txtName.Text = measure.Name;
             this.txtBelongTime.Text = measure.BelongTime;
             this.txtYear.Text = measure.Year.ToString();
-            this.txtEnergyType.Text = DictUtility.GetDictValue(measure, "EnergyType", measure.EnergyType);
+            this.txtEnergyType.Text = ((EnergyType)measure.EnergyType).DisplayName();
             this.chkIncluded.Checked = measure.Included;
             this.txtStartTime.Text = measure.StartTime.ToDateString();
             this.txtEndTime.Text = measure.EndTime.ToDateString();

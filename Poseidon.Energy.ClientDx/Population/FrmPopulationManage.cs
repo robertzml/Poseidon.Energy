@@ -38,6 +38,7 @@ namespace Poseidon.Energy.ClientDx
         protected override void InitForm()
         {
             LoadPopulations();
+            this.prGrid.Init();
 
             base.InitForm();
         }

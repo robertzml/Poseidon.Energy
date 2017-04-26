@@ -16,6 +16,7 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Core.Utility;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
+    using Poseidon.Energy.Core.Utility;
 
     /// <summary>
     /// 分组能耗计量组件
@@ -42,6 +43,8 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void LoadMeasures()
         {
+            this.recordGrid.Init();
+
             var measures = BusinessFactory<MeasureBusiness>.Instance.FindAll().OrderByDescending(r => r.StartTime);
             this.bsMeasure.DataSource = measures;
         }
@@ -56,7 +59,7 @@ namespace Poseidon.Energy.ClientDx
             var measureRecords = BusinessFactory<MeasureRecordBusiness>.Instance.FindByMeasureId(measure.Id);
             var groupItems = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
 
-            var records = measureRecords.Where(r => groupItems.Select(s => s.OrganizationId).Contains(r.DepartmentId)).ToList();
+            var records = measureRecords.Where(r => groupItems.Select(s => s.EntityId).Contains(r.DepartmentId)).ToList();
             this.recordGrid.DataSource = records;
 
             this.txtGroupName.Text = group.Name;
@@ -64,7 +67,7 @@ namespace Poseidon.Energy.ClientDx
             this.txtName.Text = measure.Name;
             this.txtBelongTime.Text = measure.BelongTime;
             this.txtYear.Text = measure.Year.ToString();
-            this.txtEnergyType.Text = DictUtility.GetDictValue(measure, "EnergyType", measure.EnergyType);
+            this.txtEnergyType.Text = ((EnergyType)measure.EnergyType).DisplayName();
             this.chkIncluded.Checked = measure.Included;
             this.txtStartTime.Text = measure.StartTime.ToDateString();
             this.txtEndTime.Text = measure.EndTime.ToDateString();
