@@ -48,7 +48,7 @@ namespace Poseidon.Energy.Core.BL
         public IEnumerable<TargetRecord> FindByDepartment(string targetId, string departmentId)
         {
             var dal = this.baseDal as ITargetRecordRepository;
-            return dal.FindOne(targetId, departmentId);
+            return dal.FindList(targetId, departmentId);
         }
 
         /// <summary>
@@ -62,6 +62,18 @@ namespace Poseidon.Energy.Core.BL
         {
             var dal = this.baseDal as ITargetRecordRepository;
             return dal.FindOne(targetId, departmentId, type);
+        }
+
+        /// <summary>
+        /// 查找部门历年指标记录
+        /// </summary>
+        /// <param name="departmentId">部门ID</param>
+        /// <param name="type">指标类型</param>
+        /// <returns></returns>
+        public IEnumerable<TargetRecord> FindByDepartment(string departmentId, int type)
+        {
+            var dal = this.baseDal as ITargetRecordRepository;
+            return dal.FindList(departmentId, type);
         }
 
         /// <summary>

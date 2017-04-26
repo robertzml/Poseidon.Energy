@@ -36,14 +36,15 @@ namespace Poseidon.Energy.ClientDx
         /// <summary>
         /// 载入相关指标计划
         /// </summary>
-        private void LoadTargets()
+        /// <param name="department">部门</param>
+        private void LoadTargets(Department department)
         {
             List<Target> data = new List<Target>();
             var targets = BusinessFactory<TargetBusiness>.Instance.FindAll().OrderByDescending(r => r.Year);
 
             foreach (var item in targets)
             {
-                var records = BusinessFactory<TargetRecordBusiness>.Instance.FindByDepartment(item.Id, this.currentDepartment.Id);
+                var records = BusinessFactory<TargetRecordBusiness>.Instance.FindByDepartment(item.Id, department.Id);
                 if (records.Count() > 0)
                     data.Add(item);
             }
@@ -79,6 +80,16 @@ namespace Poseidon.Energy.ClientDx
             if (records.All(r => r.Type != 2))
                 this.tabPageWater.PageVisible = false;
         }
+
+        /// <summary>
+        /// 载入指标趋势
+        /// </summary>
+        /// <param name="department">部门</param>
+        private void LoadTrend(Department department)
+        {
+            this.electricTrendMod.SetDepartment(department, 1);
+            this.waterTrendMod.SetDepartment(department, 2);
+        }
         #endregion //Function
 
         #region Method
@@ -89,7 +100,8 @@ namespace Poseidon.Energy.ClientDx
         public void SetDepartment(string id)
         {
             this.currentDepartment = BusinessFactory<DepartmentBusiness>.Instance.FindById(id);
-            LoadTargets();
+            LoadTargets(currentDepartment);
+            LoadTrend(currentDepartment);
         }
         #endregion //Method
 

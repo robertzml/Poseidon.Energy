@@ -201,7 +201,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// <param name="targetId">指标计划ID</param>
         /// <param name="departmentId">部门ID</param>
         /// <returns></returns>
-        public IEnumerable<TargetRecord> FindOne(string targetId, string departmentId)
+        public IEnumerable<TargetRecord> FindList(string targetId, string departmentId)
         {
             var builder = Builders<BsonDocument>.Filter;
             var filter = builder.Eq("targetId", targetId) & builder.Eq("departmentId", departmentId);
@@ -222,6 +222,20 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             var filter = builder.Eq("targetId", targetId) & builder.Eq("departmentId", departmentId) & builder.Eq("type", type);
 
             return this.FindOne(filter);
+        }
+
+        /// <summary>
+        /// 查找指标记录
+        /// </summary>
+        /// <param name="departmentId">部门ID</param>
+        /// <param name="type">指标类型</param>
+        /// <returns></returns>
+        public IEnumerable<TargetRecord> FindList(string departmentId, int type)
+        {
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("departmentId", departmentId) & builder.Eq("type", type);
+
+            return this.FindList(filter);
         }
 
         /// <summary>

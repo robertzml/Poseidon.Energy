@@ -30,12 +30,12 @@
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.trendChart = new Poseidon.Energy.ClientDx.EnergyTrendChart();
             this.chkShowAmount = new DevExpress.XtraEditors.CheckEdit();
             this.cmbPeriod = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.trendChart = new Poseidon.Energy.ClientDx.EnergyTrendChart();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -70,6 +70,13 @@
             this.layoutControl1.Size = new System.Drawing.Size(631, 393);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // trendChart
+            // 
+            this.trendChart.Location = new System.Drawing.Point(12, 36);
+            this.trendChart.Name = "trendChart";
+            this.trendChart.Size = new System.Drawing.Size(607, 345);
+            this.trendChart.TabIndex = 6;
             // 
             // chkShowAmount
             // 
@@ -128,13 +135,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(125, 24);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
-            // 
-            // trendChart
-            // 
-            this.trendChart.Location = new System.Drawing.Point(12, 36);
-            this.trendChart.Name = "trendChart";
-            this.trendChart.Size = new System.Drawing.Size(607, 345);
-            this.trendChart.TabIndex = 6;
             // 
             // layoutControlItem3
             // 

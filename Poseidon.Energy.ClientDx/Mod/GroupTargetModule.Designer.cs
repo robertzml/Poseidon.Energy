@@ -363,7 +363,7 @@
             this.recordGrid.Location = new System.Drawing.Point(2, 21);
             this.recordGrid.Name = "recordGrid";
             this.recordGrid.ShowAddMenu = false;
-            this.recordGrid.ShowFooter = false;
+            this.recordGrid.ShowFooter = true;
             this.recordGrid.ShowLineNumber = true;
             this.recordGrid.ShowMenu = false;
             this.recordGrid.ShowNavigator = false;

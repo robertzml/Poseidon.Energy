@@ -20,7 +20,7 @@ namespace Poseidon.Energy.Core.IDAL
         /// <param name="targetId">指标计划ID</param>
         /// <param name="departmentId">部门ID</param>
         /// <returns></returns>
-        IEnumerable<TargetRecord> FindOne(string targetId, string departmentId);
+        IEnumerable<TargetRecord> FindList(string targetId, string departmentId);
 
         /// <summary>
         /// 查找指标记录
@@ -30,6 +30,14 @@ namespace Poseidon.Energy.Core.IDAL
         /// <param name="type">指标类型</param>
         /// <returns></returns>
         TargetRecord FindOne(string targetId, string departmentId, int type);
+
+        /// <summary>
+        /// 查找指标记录
+        /// </summary>
+        /// <param name="departmentId">部门ID</param>
+        /// <param name="type">指标类型</param>
+        /// <returns></returns>
+        IEnumerable<TargetRecord> FindList(string departmentId, int type);
 
         /// <summary>
         /// 检查指标记录是否存在

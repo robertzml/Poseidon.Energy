@@ -154,6 +154,12 @@
     <Compile Include="Grid\SettlementAmountSummaryGrid.Designer.cs">
       <DependentUpon>SettlementAmountSummaryGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mod\TargetTrendModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mod\TargetTrendModule.Designer.cs">
+      <DependentUpon>TargetTrendModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\RepSettlement.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -581,6 +587,9 @@
     <EmbeddedResource Include="Measure\FrmMeasureSetDepartment.resx">
       <DependentUpon>FrmMeasureSetDepartment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mod\TargetTrendModule.resx">
+      <DependentUpon>TargetTrendModule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Population\FrmPopulationEdit.resx">
       <DependentUpon>FrmPopulationEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -594,7 +603,6 @@
       <DependentUpon>FrmPopulationRecordView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\EnergyCompare.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Energy.ClientDx.Model.EnergyExpense.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.MeasureRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Settlement.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.SettlementRecord.datasource" />
@@ -663,10 +671,6 @@
     <None Include="app.config" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.AllowanceTarget.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Department.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.ElectricExpense.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.ElectricExpenseRecord.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.ElectricMeter.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.ExpenseAccount.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Fund.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.FundRecord.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Measure.datasource" />
@@ -676,9 +680,6 @@
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.StaffTarget.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.Target.datasource" />
     <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.TargetRecord.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.WaterExpense.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.WaterExpenseRecord.datasource" />
-    <None Include="Properties\DataSources\Poseidon.Energy.Core.DL.WaterMeter.datasource" />
     <EmbeddedResource Include="Grid\DepartmentGrid.resx">
       <DependentUpon>DepartmentGrid.cs</DependentUpon>
     </EmbeddedResource>

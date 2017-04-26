@@ -28,19 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tabMain = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageYear = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lbTargets = new DevExpress.XtraEditors.ListBoxControl();
-            this.bsTarget = new System.Windows.Forms.BindingSource(this.components);
+            this.bsTarget = new System.Windows.Forms.BindingSource();
             this.tabRecords = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageElectric = new DevExpress.XtraTab.XtraTabPage();
             this.recordElectric = new Poseidon.Energy.ClientDx.TargetRecordModule();
             this.tabPageWater = new DevExpress.XtraTab.XtraTabPage();
             this.recordWater = new Poseidon.Energy.ClientDx.TargetRecordModule();
             this.tabPageTrend = new DevExpress.XtraTab.XtraTabPage();
+            this.tabTrend = new DevExpress.XtraTab.XtraTabControl();
+            this.tabPageElectricTrend = new DevExpress.XtraTab.XtraTabPage();
+            this.electricTrendMod = new Poseidon.Energy.ClientDx.TargetTrendModule();
+            this.tabPageWaterTrend = new DevExpress.XtraTab.XtraTabPage();
+            this.waterTrendMod = new Poseidon.Energy.ClientDx.TargetTrendModule();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
             this.tabPageYear.SuspendLayout();
@@ -53,6 +57,11 @@
             this.tabRecords.SuspendLayout();
             this.tabPageElectric.SuspendLayout();
             this.tabPageWater.SuspendLayout();
+            this.tabPageTrend.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabTrend)).BeginInit();
+            this.tabTrend.SuspendLayout();
+            this.tabPageElectricTrend.SuspendLayout();
+            this.tabPageWaterTrend.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMain
@@ -164,9 +173,52 @@
             // 
             // tabPageTrend
             // 
+            this.tabPageTrend.Controls.Add(this.tabTrend);
             this.tabPageTrend.Name = "tabPageTrend";
             this.tabPageTrend.Size = new System.Drawing.Size(742, 548);
             this.tabPageTrend.Text = "指标趋势";
+            // 
+            // tabTrend
+            // 
+            this.tabTrend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabTrend.Location = new System.Drawing.Point(0, 0);
+            this.tabTrend.Name = "tabTrend";
+            this.tabTrend.SelectedTabPage = this.tabPageElectricTrend;
+            this.tabTrend.Size = new System.Drawing.Size(742, 548);
+            this.tabTrend.TabIndex = 0;
+            this.tabTrend.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabPageElectricTrend,
+            this.tabPageWaterTrend});
+            // 
+            // tabPageElectricTrend
+            // 
+            this.tabPageElectricTrend.Controls.Add(this.electricTrendMod);
+            this.tabPageElectricTrend.Name = "tabPageElectricTrend";
+            this.tabPageElectricTrend.Size = new System.Drawing.Size(736, 519);
+            this.tabPageElectricTrend.Text = "用电指标";
+            // 
+            // electricTrendMod
+            // 
+            this.electricTrendMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.electricTrendMod.Location = new System.Drawing.Point(0, 0);
+            this.electricTrendMod.Name = "electricTrendMod";
+            this.electricTrendMod.Size = new System.Drawing.Size(736, 519);
+            this.electricTrendMod.TabIndex = 0;
+            // 
+            // tabPageWaterTrend
+            // 
+            this.tabPageWaterTrend.Controls.Add(this.waterTrendMod);
+            this.tabPageWaterTrend.Name = "tabPageWaterTrend";
+            this.tabPageWaterTrend.Size = new System.Drawing.Size(736, 519);
+            this.tabPageWaterTrend.Text = "用水指标";
+            // 
+            // waterTrendMod
+            // 
+            this.waterTrendMod.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.waterTrendMod.Location = new System.Drawing.Point(0, 0);
+            this.waterTrendMod.Name = "waterTrendMod";
+            this.waterTrendMod.Size = new System.Drawing.Size(736, 519);
+            this.waterTrendMod.TabIndex = 0;
             // 
             // DepartmentTargetModule
             // 
@@ -187,6 +239,11 @@
             this.tabRecords.ResumeLayout(false);
             this.tabPageElectric.ResumeLayout(false);
             this.tabPageWater.ResumeLayout(false);
+            this.tabPageTrend.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabTrend)).EndInit();
+            this.tabTrend.ResumeLayout(false);
+            this.tabPageElectricTrend.ResumeLayout(false);
+            this.tabPageWaterTrend.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -205,5 +262,10 @@
         private TargetRecordModule recordElectric;
         private DevExpress.XtraTab.XtraTabPage tabPageWater;
         private TargetRecordModule recordWater;
+        private DevExpress.XtraTab.XtraTabControl tabTrend;
+        private DevExpress.XtraTab.XtraTabPage tabPageElectricTrend;
+        private DevExpress.XtraTab.XtraTabPage tabPageWaterTrend;
+        private TargetTrendModule electricTrendMod;
+        private TargetTrendModule waterTrendMod;
     }
 }

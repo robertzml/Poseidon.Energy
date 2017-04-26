@@ -138,6 +138,8 @@
             // 
             this.colPlanQuantum.FieldName = "PlanQuantum";
             this.colPlanQuantum.Name = "colPlanQuantum";
+            this.colPlanQuantum.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PlanQuantum", "合计={0:0.##}")});
             this.colPlanQuantum.Visible = true;
             this.colPlanQuantum.VisibleIndex = 5;
             // 
@@ -145,6 +147,8 @@
             // 
             this.colPlanAmount.FieldName = "PlanAmount";
             this.colPlanAmount.Name = "colPlanAmount";
+            this.colPlanAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PlanAmount", "合计={0:0.##}")});
             this.colPlanAmount.Visible = true;
             this.colPlanAmount.VisibleIndex = 6;
             // 
