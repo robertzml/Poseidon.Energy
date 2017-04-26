@@ -77,7 +77,7 @@
             // 
             // settlementTree
             // 
-            this.settlementTree.CascadeOrganization = false;
+            this.settlementTree.CascadeEntity = false;
             this.settlementTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.settlementTree.Location = new System.Drawing.Point(2, 21);
             this.settlementTree.Name = "settlementTree";
@@ -85,7 +85,7 @@
             this.settlementTree.Size = new System.Drawing.Size(175, 519);
             this.settlementTree.TabIndex = 0;
             this.settlementTree.GroupSelected += new System.EventHandler(this.settlementTree_GroupSelected);
-            this.settlementTree.OrganizationSelected += new System.EventHandler(this.settlementTree_OrganizationSelected);
+            this.settlementTree.EntitySelected += new System.EventHandler(this.settlementTree_OrganizationSelected);
             // 
             // navFrame
             // 

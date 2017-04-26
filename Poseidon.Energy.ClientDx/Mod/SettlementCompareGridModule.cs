@@ -154,7 +154,7 @@ namespace Poseidon.Energy.ClientDx
                 var groupItems = BusinessFactory<GroupBusiness>.Instance.FindAllItems(currentGroup.Id);
 
                 var settleRecords = BusinessFactory<SettlementRecordBusiness>.Instance.FindBySettlement(settlement.Id, this.energyType);
-                var records = settleRecords.Where(r => groupItems.Select(s => s.OrganizationId).Contains(r.DepartmentId)).ToList();
+                var records = settleRecords.Where(r => groupItems.Select(s => s.EntityId).Contains(r.DepartmentId)).ToList();
 
                 foreach (var item in records)
                 {

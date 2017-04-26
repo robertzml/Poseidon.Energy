@@ -39,15 +39,6 @@ namespace Poseidon.Energy.ClientDx
 
             base.InitForm();
         }
-
-        /// <summary>
-        /// 载入指标计划
-        /// </summary>
-        private void LoadTargets()
-        {
-            //var data = BusinessFactory<TargetBusiness>.Instance.FindAll().ToList();
-            //this.bsTarget.DataSource = data;
-        }
         #endregion //Function
 
         #region Event
@@ -68,7 +59,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void groupTreeTarget_OrganizationSelected(object sender, EventArgs e)
+        private void groupTreeTarget_EntitySelected(object sender, EventArgs e)
         {
             this.navFrame.SelectedPageIndex = 1;
             var departmentId = this.groupTreeTarget.GetCurrentSelectId();

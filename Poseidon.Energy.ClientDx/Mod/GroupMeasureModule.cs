@@ -59,7 +59,7 @@ namespace Poseidon.Energy.ClientDx
             var measureRecords = BusinessFactory<MeasureRecordBusiness>.Instance.FindByMeasureId(measure.Id);
             var groupItems = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
 
-            var records = measureRecords.Where(r => groupItems.Select(s => s.OrganizationId).Contains(r.DepartmentId)).ToList();
+            var records = measureRecords.Where(r => groupItems.Select(s => s.EntityId).Contains(r.DepartmentId)).ToList();
             this.recordGrid.DataSource = records;
 
             this.txtGroupName.Text = group.Name;

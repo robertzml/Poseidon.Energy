@@ -50,11 +50,11 @@ namespace Poseidon.Energy.Core.BL
             else
                 groupItems.AddRange(group.Items);
 
-            var departments = dal.FindWithIds(groupItems.Select(r => r.OrganizationId).ToList());
+            var departments = dal.FindWithIds(groupItems.Select(r => r.EntityId).ToList());
 
             foreach (var item in groupItems.OrderBy(r => r.Sort))
             {
-                data.Add(departments.Single(r => r.Id == item.OrganizationId));
+                data.Add(departments.Single(r => r.Id == item.EntityId));
             }
 
             return data;

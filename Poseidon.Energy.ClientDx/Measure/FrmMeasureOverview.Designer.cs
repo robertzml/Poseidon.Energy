@@ -63,7 +63,7 @@
             // 
             // measureTree
             // 
-            this.measureTree.CascadeOrganization = true;
+            this.measureTree.CascadeEntity = true;
             this.measureTree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.measureTree.Location = new System.Drawing.Point(2, 21);
             this.measureTree.Name = "measureTree";
@@ -71,7 +71,7 @@
             this.measureTree.Size = new System.Drawing.Size(225, 516);
             this.measureTree.TabIndex = 0;
             this.measureTree.GroupSelected += new System.EventHandler(this.measureTree_GroupSelected);
-            this.measureTree.OrganizationSelected += new System.EventHandler(this.measureTree_OrganizationSelected);
+            this.measureTree.EntitySelected += new System.EventHandler(this.measureTree_EntitySelected);
             // 
             // splitContainerControl1
             // 
