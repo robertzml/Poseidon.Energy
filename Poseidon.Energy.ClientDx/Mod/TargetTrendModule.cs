@@ -105,8 +105,54 @@ namespace Poseidon.Energy.ClientDx
 
         private async void LoadData(Group group, int targetType)
         {
-            var targets = BusinessFactory<TargetBusiness>.Instance.FindAll();            
-            var groupItems = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
+            var task = Task.Run(() =>
+            {
+                var targets = BusinessFactory<TargetBusiness>.Instance.FindAll().OrderBy(r => r.Year);
+                var groupItems = BusinessFactory<GroupBusiness>.Instance.FindAllItems(group.Id);
+
+                List<SeriesPoint> points = new List<SeriesPoint>();
+                List<SeriesPoint> linePoints = new List<SeriesPoint>();
+
+                foreach (var target in targets)
+                {
+                    var targetRecords = BusinessFactory<TargetRecordBusiness>.Instance.FindByTarget(target.Id);
+                    var records = targetRecords.Where(r => groupItems.Select(s => s.EntityId).Contains(r.DepartmentId)).ToList();
+
+                    var point = new SeriesPoint();
+                    point.Argument = target.Year.ToString() + "年";
+                    point.Values = new double[] { Convert.ToDouble(records.Where(r => r.Type == targetType).Sum(r => r.PlanQuantum)) };
+
+                    points.Add(point);
+
+                    var point2 = new SeriesPoint();
+                    point2.Argument = target.Year.ToString() + "年";
+                    point2.Values = new double[] { Convert.ToDouble(records.Where(r => r.Type == targetType).Sum(r => r.PlanAmount)) };
+
+                    linePoints.Add(point2);
+                }
+
+                var data = new
+                {
+                    BarPoint = points,
+                    LinePoint = linePoints
+                };
+                return data;
+            });
+
+            var chartPoints = await task;
+
+            this.trendChart.SetChartTitle($"{group.Name}历年指标情况");
+
+            if (targetType == 1)
+            {
+                this.trendChart.SetBar(chartPoints.BarPoint, "计划用电量(度)");
+                this.trendChart.SetLine(chartPoints.LinePoint, "计划金额(元)");
+            }
+            else if (targetType == 2)
+            {
+                this.trendChart.SetBar(chartPoints.BarPoint, "计划用水量(吨)");
+                this.trendChart.SetLine(chartPoints.LinePoint, "计划金额(元)");
+            }
         }
         #endregion //Function
 
@@ -122,6 +168,19 @@ namespace Poseidon.Energy.ClientDx
             this.targetType = targetType;
 
             LoadData(department, targetType);
+        }
+
+        /// <summary>
+        /// 设置分组
+        /// </summary>
+        /// <param name="group">分组</param>
+        /// <param name="targetType">指标类型</param>
+        public void SetGroup(Group group, int targetType)
+        {
+            this.currentGroup = group;
+            this.targetType = targetType;
+
+            LoadData(group, targetType);
         }
         #endregion //Method
     }

@@ -69,6 +69,16 @@ namespace Poseidon.Energy.ClientDx
             this.txtTotalWaterQuantum.Text = records.Where(r => r.Type == 2).Sum(r => r.PlanQuantum).ToString();
             this.txtTotalWaterAmount.Text = records.Where(r => r.Type == 2).Sum(r => r.PlanAmount).ToString();
         }
+
+        /// <summary>
+        /// 载入趋势
+        /// </summary>
+        /// <param name="group"></param>
+        private void LoadTrend(Group group)
+        {
+            this.electricTrendMod.SetGroup(group, 1);
+            this.waterTrendMod.SetGroup(group, 2);
+        }
         #endregion //Function
 
         #region Method
@@ -80,6 +90,7 @@ namespace Poseidon.Energy.ClientDx
         {
             this.currentGroup = BusinessFactory<GroupBusiness>.Instance.FindById(id);
             LoadTargets();
+            LoadTrend(this.currentGroup);
         }
         #endregion //Method
 
