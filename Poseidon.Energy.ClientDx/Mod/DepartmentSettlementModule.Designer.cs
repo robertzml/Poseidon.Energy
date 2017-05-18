@@ -1036,6 +1036,7 @@
             this.depElectricSettleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.depElectricSettleGrid.Editable = false;
             this.depElectricSettleGrid.EnableMasterView = false;
+            this.depElectricSettleGrid.EnableMultiSelect = true;
             this.depElectricSettleGrid.Location = new System.Drawing.Point(2, 21);
             this.depElectricSettleGrid.Name = "depElectricSettleGrid";
             this.depElectricSettleGrid.ShowAddMenu = false;
@@ -1065,6 +1066,7 @@
             this.electricQSGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.electricQSGrid.Editable = false;
             this.electricQSGrid.EnableMasterView = false;
+            this.electricQSGrid.EnableMultiSelect = true;
             this.electricQSGrid.Location = new System.Drawing.Point(2, 21);
             this.electricQSGrid.Name = "electricQSGrid";
             this.electricQSGrid.ShowAddMenu = false;
@@ -1095,6 +1097,7 @@
             this.electricASGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.electricASGrid.Editable = false;
             this.electricASGrid.EnableMasterView = false;
+            this.electricASGrid.EnableMultiSelect = true;
             this.electricASGrid.Location = new System.Drawing.Point(2, 21);
             this.electricASGrid.Name = "electricASGrid";
             this.electricASGrid.ShowAddMenu = false;
@@ -1150,6 +1153,7 @@
             this.depWaterSettleGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.depWaterSettleGrid.Editable = false;
             this.depWaterSettleGrid.EnableMasterView = false;
+            this.depWaterSettleGrid.EnableMultiSelect = true;
             this.depWaterSettleGrid.Location = new System.Drawing.Point(2, 21);
             this.depWaterSettleGrid.Name = "depWaterSettleGrid";
             this.depWaterSettleGrid.ShowAddMenu = false;
@@ -1179,6 +1183,7 @@
             this.waterQSGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.waterQSGrid.Editable = false;
             this.waterQSGrid.EnableMasterView = false;
+            this.waterQSGrid.EnableMultiSelect = true;
             this.waterQSGrid.Location = new System.Drawing.Point(2, 21);
             this.waterQSGrid.Name = "waterQSGrid";
             this.waterQSGrid.ShowAddMenu = false;
@@ -1209,6 +1214,7 @@
             this.waterASGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.waterASGrid.Editable = false;
             this.waterASGrid.EnableMasterView = false;
+            this.waterASGrid.EnableMultiSelect = true;
             this.waterASGrid.Location = new System.Drawing.Point(2, 21);
             this.waterASGrid.Name = "waterASGrid";
             this.waterASGrid.ShowAddMenu = false;

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tabSettlement = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageSummary = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -66,7 +65,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.lbSettlements = new DevExpress.XtraEditors.ListBoxControl();
-            this.bsSettlement = new System.Windows.Forms.BindingSource(this.components);
+            this.bsSettlement = new System.Windows.Forms.BindingSource();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
@@ -422,6 +421,7 @@
             this.electricQSGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.electricQSGrid.Editable = false;
             this.electricQSGrid.EnableMasterView = false;
+            this.electricQSGrid.EnableMultiSelect = true;
             this.electricQSGrid.Location = new System.Drawing.Point(0, 0);
             this.electricQSGrid.Name = "electricQSGrid";
             this.electricQSGrid.ShowAddMenu = false;
@@ -449,6 +449,7 @@
             this.elecASGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.elecASGrid.Editable = false;
             this.elecASGrid.EnableMasterView = false;
+            this.elecASGrid.EnableMultiSelect = true;
             this.elecASGrid.Location = new System.Drawing.Point(0, 0);
             this.elecASGrid.Name = "elecASGrid";
             this.elecASGrid.ShowAddMenu = false;
@@ -491,6 +492,7 @@
             this.waterQSGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.waterQSGrid.Editable = false;
             this.waterQSGrid.EnableMasterView = false;
+            this.waterQSGrid.EnableMultiSelect = true;
             this.waterQSGrid.Location = new System.Drawing.Point(0, 0);
             this.waterQSGrid.Name = "waterQSGrid";
             this.waterQSGrid.ShowAddMenu = false;
@@ -518,6 +520,7 @@
             this.watASGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.watASGrid.Editable = false;
             this.watASGrid.EnableMasterView = false;
+            this.watASGrid.EnableMultiSelect = true;
             this.watASGrid.Location = new System.Drawing.Point(0, 0);
             this.watASGrid.Name = "watASGrid";
             this.watASGrid.ShowAddMenu = false;
@@ -977,6 +980,7 @@
             this.electricSRGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.electricSRGrid.Editable = false;
             this.electricSRGrid.EnableMasterView = false;
+            this.electricSRGrid.EnableMultiSelect = true;
             this.electricSRGrid.Location = new System.Drawing.Point(0, 0);
             this.electricSRGrid.Name = "electricSRGrid";
             this.electricSRGrid.ShowAddMenu = false;
@@ -1004,6 +1008,7 @@
             this.waterSRGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.waterSRGrid.Editable = false;
             this.waterSRGrid.EnableMasterView = false;
+            this.waterSRGrid.EnableMultiSelect = true;
             this.waterSRGrid.Location = new System.Drawing.Point(0, 0);
             this.waterSRGrid.Name = "waterSRGrid";
             this.waterSRGrid.ShowAddMenu = false;

@@ -28,36 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.luSecond = new DevExpress.XtraEditors.LookUpEdit();
+            this.bsSettlement = new System.Windows.Forms.BindingSource();
+            this.luFirst = new DevExpress.XtraEditors.LookUpEdit();
+            this.compareGrid = new Poseidon.Energy.ClientDx.EnergyCompareGrid();
             this.chkAmount = new DevExpress.XtraEditors.CheckEdit();
             this.chkQuantum = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.luFirst = new DevExpress.XtraEditors.LookUpEdit();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bsSettlement = new System.Windows.Forms.BindingSource(this.components);
-            this.luSecond = new DevExpress.XtraEditors.LookUpEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.compareGrid = new Poseidon.Energy.ClientDx.EnergyCompareGrid();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.luSecond.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSettlement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.luFirst.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkQuantum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luFirst.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsSettlement)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luSecond.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -83,6 +82,69 @@
             this.layoutControl1.Size = new System.Drawing.Size(754, 454);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // luSecond
+            // 
+            this.luSecond.Location = new System.Drawing.Point(342, 12);
+            this.luSecond.Name = "luSecond";
+            this.luSecond.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.luSecond.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 21, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "名称", 54, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.luSecond.Properties.DataSource = this.bsSettlement;
+            this.luSecond.Properties.DisplayMember = "Name";
+            this.luSecond.Properties.NullText = "请选择";
+            this.luSecond.Properties.ShowFooter = false;
+            this.luSecond.Properties.ShowHeader = false;
+            this.luSecond.Properties.ValueMember = "Id";
+            this.luSecond.Size = new System.Drawing.Size(240, 20);
+            this.luSecond.StyleController = this.layoutControl1;
+            this.luSecond.TabIndex = 10;
+            this.luSecond.EditValueChanged += new System.EventHandler(this.luSecond_EditValueChanged);
+            // 
+            // bsSettlement
+            // 
+            this.bsSettlement.DataSource = typeof(Poseidon.Energy.Core.DL.Settlement);
+            // 
+            // luFirst
+            // 
+            this.luFirst.Location = new System.Drawing.Point(46, 12);
+            this.luFirst.Name = "luFirst";
+            this.luFirst.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.luFirst.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 21, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "名称", 54, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.luFirst.Properties.DataSource = this.bsSettlement;
+            this.luFirst.Properties.DisplayMember = "Name";
+            this.luFirst.Properties.NullText = "请选择";
+            this.luFirst.Properties.ShowFooter = false;
+            this.luFirst.Properties.ShowHeader = false;
+            this.luFirst.Properties.ValueMember = "Id";
+            this.luFirst.Size = new System.Drawing.Size(258, 20);
+            this.luFirst.StyleController = this.layoutControl1;
+            this.luFirst.TabIndex = 9;
+            this.luFirst.EditValueChanged += new System.EventHandler(this.luFirst_EditValueChanged);
+            // 
+            // compareGrid
+            // 
+            this.compareGrid.AllowFilter = false;
+            this.compareGrid.AllowGroup = false;
+            this.compareGrid.AllowSort = false;
+            this.compareGrid.DataSource = null;
+            this.compareGrid.Editable = true;
+            this.compareGrid.EnableMasterView = false;
+            this.compareGrid.EnableMultiSelect = true;
+            this.compareGrid.Location = new System.Drawing.Point(12, 36);
+            this.compareGrid.Name = "compareGrid";
+            this.compareGrid.ShowAddMenu = false;
+            this.compareGrid.ShowFooter = true;
+            this.compareGrid.ShowLineNumber = true;
+            this.compareGrid.ShowMenu = false;
+            this.compareGrid.ShowNavigator = false;
+            this.compareGrid.Size = new System.Drawing.Size(730, 406);
+            this.compareGrid.TabIndex = 8;
             // 
             // chkAmount
             // 
@@ -139,25 +201,14 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // luFirst
+            // layoutControlItem5
             // 
-            this.luFirst.Location = new System.Drawing.Point(46, 12);
-            this.luFirst.Name = "luFirst";
-            this.luFirst.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luFirst.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 21, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "名称", 54, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.luFirst.Properties.DataSource = this.bsSettlement;
-            this.luFirst.Properties.DisplayMember = "Name";
-            this.luFirst.Properties.NullText = "请选择";
-            this.luFirst.Properties.ShowFooter = false;
-            this.luFirst.Properties.ShowHeader = false;
-            this.luFirst.Properties.ValueMember = "Id";
-            this.luFirst.Size = new System.Drawing.Size(258, 20);
-            this.luFirst.StyleController = this.layoutControl1;
-            this.luFirst.TabIndex = 9;
-            this.luFirst.EditValueChanged += new System.EventHandler(this.luFirst_EditValueChanged);
+            this.layoutControlItem5.Control = this.compareGrid;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(734, 410);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
@@ -168,30 +219,6 @@
             this.layoutControlItem6.Text = "选择1";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(31, 14);
             // 
-            // bsSettlement
-            // 
-            this.bsSettlement.DataSource = typeof(Poseidon.Energy.Core.DL.Settlement);
-            // 
-            // luSecond
-            // 
-            this.luSecond.Location = new System.Drawing.Point(342, 12);
-            this.luSecond.Name = "luSecond";
-            this.luSecond.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.luSecond.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id", "Id", 21, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "名称", 54, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.luSecond.Properties.DataSource = this.bsSettlement;
-            this.luSecond.Properties.DisplayMember = "Name";
-            this.luSecond.Properties.NullText = "请选择";
-            this.luSecond.Properties.ShowFooter = false;
-            this.luSecond.Properties.ShowHeader = false;
-            this.luSecond.Properties.ValueMember = "Id";
-            this.luSecond.Size = new System.Drawing.Size(240, 20);
-            this.luSecond.StyleController = this.layoutControl1;
-            this.luSecond.TabIndex = 10;
-            this.luSecond.EditValueChanged += new System.EventHandler(this.luSecond_EditValueChanged);
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.luSecond;
@@ -200,33 +227,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(278, 24);
             this.layoutControlItem1.Text = "选择2";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(31, 14);
-            // 
-            // compareGrid
-            // 
-            this.compareGrid.AllowFilter = false;
-            this.compareGrid.AllowGroup = false;
-            this.compareGrid.AllowSort = false;
-            this.compareGrid.DataSource = null;
-            this.compareGrid.Editable = true;
-            this.compareGrid.EnableMasterView = false;
-            this.compareGrid.Location = new System.Drawing.Point(12, 36);
-            this.compareGrid.Name = "compareGrid";
-            this.compareGrid.ShowAddMenu = false;
-            this.compareGrid.ShowFooter = true;
-            this.compareGrid.ShowLineNumber = true;
-            this.compareGrid.ShowMenu = false;
-            this.compareGrid.ShowNavigator = false;
-            this.compareGrid.Size = new System.Drawing.Size(730, 406);
-            this.compareGrid.TabIndex = 8;
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.compareGrid;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(734, 410);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
             // 
             // SettlementCompareGridModule
             // 
@@ -239,17 +239,17 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.luSecond.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSettlement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.luFirst.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkQuantum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luFirst.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsSettlement)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.luSecond.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
 
         }

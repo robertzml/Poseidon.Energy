@@ -421,6 +421,7 @@
             this.popDetailsGrid.DataSource = null;
             this.popDetailsGrid.Editable = false;
             this.popDetailsGrid.EnableMasterView = false;
+            this.popDetailsGrid.EnableMultiSelect = true;
             this.popDetailsGrid.Location = new System.Drawing.Point(12, 60);
             this.popDetailsGrid.Name = "popDetailsGrid";
             this.popDetailsGrid.ShowAddMenu = false;
@@ -542,6 +543,7 @@
             this.popRecordGrid.DataSource = null;
             this.popRecordGrid.Editable = false;
             this.popRecordGrid.EnableMasterView = false;
+            this.popRecordGrid.EnableMultiSelect = true;
             this.popRecordGrid.Location = new System.Drawing.Point(12, 38);
             this.popRecordGrid.Name = "popRecordGrid";
             this.popRecordGrid.ShowAddMenu = false;
