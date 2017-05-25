@@ -58,7 +58,7 @@ namespace Poseidon.Energy.ClientDx
             if (e.Column.FieldName == "DepartmentId")
             {
                 var department = this.departments.Find(r => r.Id == e.Value.ToString());
-                e.DisplayText = department.ShortName;
+                e.DisplayText = department.Name;
             }
         }
 
@@ -107,6 +107,27 @@ namespace Poseidon.Energy.ClientDx
                             {
                                 Name = "人事代理",
                                 Code = "PersonnelAgency",
+                                Number = 0,
+                                InTotal = true
+                            };
+                            record.Details.Add(detail);
+                        }
+
+                        if (e.IsGetData)
+                            e.Value = detail.Number;
+                        if (e.IsSetData)
+                            detail.Number = Convert.ToInt32(e.Value);
+                    }
+                    break;
+                case "colExternal":
+                    {
+                        var detail = record.Details.Find(r => r.Code == "External");
+                        if (detail == null)
+                        {
+                            detail = new PopulationDetail
+                            {
+                                Name = "外聘员工",
+                                Code = "External",
                                 Number = 0,
                                 InTotal = true
                             };

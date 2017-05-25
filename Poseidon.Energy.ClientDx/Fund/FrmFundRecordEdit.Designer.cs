@@ -61,11 +61,11 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(640, 15);
+            this.btnCancel.Location = new System.Drawing.Point(690, 15);
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(531, 15);
+            this.btnConfirm.Location = new System.Drawing.Point(581, 15);
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // plFill
@@ -73,14 +73,14 @@
             this.plFill.Appearance.BackColor = System.Drawing.Color.White;
             this.plFill.Appearance.Options.UseBackColor = true;
             this.plFill.Controls.Add(this.groupControl1);
-            this.plFill.Size = new System.Drawing.Size(734, 502);
+            this.plFill.Size = new System.Drawing.Size(784, 502);
             // 
             // plBottom
             // 
             this.plBottom.Appearance.BackColor = System.Drawing.Color.White;
             this.plBottom.Appearance.Options.UseBackColor = true;
             this.plBottom.Location = new System.Drawing.Point(0, 502);
-            this.plBottom.Size = new System.Drawing.Size(734, 60);
+            this.plBottom.Size = new System.Drawing.Size(784, 60);
             // 
             // groupControl1
             // 
@@ -88,7 +88,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(734, 502);
+            this.groupControl1.Size = new System.Drawing.Size(784, 502);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "经费记录数据";
             // 
@@ -102,7 +102,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(2, 21);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(730, 479);
+            this.layoutControl1.Size = new System.Drawing.Size(780, 479);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -113,7 +113,7 @@
             this.txtRemark.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtRemark.Properties.Appearance.Options.UseBackColor = true;
             this.txtRemark.Properties.ReadOnly = true;
-            this.txtRemark.Size = new System.Drawing.Size(655, 20);
+            this.txtRemark.Size = new System.Drawing.Size(705, 20);
             this.txtRemark.StyleController = this.layoutControl1;
             this.txtRemark.TabIndex = 7;
             // 
@@ -124,23 +124,26 @@
             this.frGrid.AllowSort = true;
             this.frGrid.DataSource = null;
             this.frGrid.Editable = true;
+            this.frGrid.EnableMasterView = false;
+            this.frGrid.EnableMultiSelect = false;
             this.frGrid.Location = new System.Drawing.Point(12, 103);
             this.frGrid.Name = "frGrid";
             this.frGrid.ShowAddMenu = false;
             this.frGrid.ShowFooter = true;
             this.frGrid.ShowLineNumber = true;
+            this.frGrid.ShowMenu = false;
             this.frGrid.ShowNavigator = false;
-            this.frGrid.Size = new System.Drawing.Size(706, 364);
+            this.frGrid.Size = new System.Drawing.Size(756, 364);
             this.frGrid.TabIndex = 6;
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(394, 43);
+            this.txtYear.Location = new System.Drawing.Point(419, 43);
             this.txtYear.Name = "txtYear";
             this.txtYear.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtYear.Properties.Appearance.Options.UseBackColor = true;
             this.txtYear.Properties.ReadOnly = true;
-            this.txtYear.Size = new System.Drawing.Size(312, 20);
+            this.txtYear.Size = new System.Drawing.Size(337, 20);
             this.txtYear.StyleController = this.layoutControl1;
             this.txtYear.TabIndex = 5;
             // 
@@ -151,7 +154,7 @@
             this.txtName.Properties.Appearance.BackColor = System.Drawing.Color.Lavender;
             this.txtName.Properties.Appearance.Options.UseBackColor = true;
             this.txtName.Properties.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(312, 20);
+            this.txtName.Size = new System.Drawing.Size(337, 20);
             this.txtName.StyleController = this.layoutControl1;
             this.txtName.TabIndex = 4;
             // 
@@ -164,7 +167,7 @@
             this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(730, 479);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(780, 479);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlGroup2
@@ -175,7 +178,7 @@
             this.layoutControlItem4});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(710, 91);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(760, 91);
             this.layoutControlGroup2.Text = "基本信息";
             // 
             // layoutControlItem1
@@ -183,16 +186,16 @@
             this.layoutControlItem1.Control = this.txtName;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(343, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(368, 24);
             this.layoutControlItem1.Text = "名称";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(24, 14);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtYear;
-            this.layoutControlItem2.Location = new System.Drawing.Point(343, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(368, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(343, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(368, 24);
             this.layoutControlItem2.Text = "年度";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(24, 14);
             // 
@@ -201,7 +204,7 @@
             this.layoutControlItem4.Control = this.txtRemark;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(686, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(736, 24);
             this.layoutControlItem4.Text = "备注";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(24, 14);
             // 
@@ -210,7 +213,7 @@
             this.layoutControlItem3.Control = this.frGrid;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 91);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(710, 368);
+            this.layoutControlItem3.Size = new System.Drawing.Size(760, 368);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -218,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 562);
+            this.ClientSize = new System.Drawing.Size(784, 562);
             this.Name = "FrmFundRecordEdit";
             this.Text = "编辑经费记录";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();

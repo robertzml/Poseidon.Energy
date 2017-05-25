@@ -41,6 +41,7 @@
             this.colAbroadStudent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSumTeacher = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSumStudent = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colExternal = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgcEntity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntity)).BeginInit();
@@ -62,6 +63,7 @@
             this.colEstablishment,
             this.colPersonnelAgency,
             this.colSumTeacher,
+            this.colExternal,
             this.colUndergraduate,
             this.colMaster,
             this.colProfessionalMaster,
@@ -100,7 +102,7 @@
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 10;
+            this.colRemark.VisibleIndex = 11;
             // 
             // colStatus
             // 
@@ -123,7 +125,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colUndergraduate", "合计={0:0.##}")});
             this.colUndergraduate.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.colUndergraduate.Visible = true;
-            this.colUndergraduate.VisibleIndex = 4;
+            this.colUndergraduate.VisibleIndex = 5;
             // 
             // colEstablishment
             // 
@@ -156,7 +158,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colDoctor", "合计={0:0.##}")});
             this.colDoctor.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.colDoctor.Visible = true;
-            this.colDoctor.VisibleIndex = 7;
+            this.colDoctor.VisibleIndex = 8;
             // 
             // colProfessionalMaster
             // 
@@ -167,7 +169,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colProfessionalMaster", "合计={0:0.##}")});
             this.colProfessionalMaster.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.colProfessionalMaster.Visible = true;
-            this.colProfessionalMaster.VisibleIndex = 6;
+            this.colProfessionalMaster.VisibleIndex = 7;
             // 
             // colMaster
             // 
@@ -178,7 +180,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colMaster", "合计={0:0.##}")});
             this.colMaster.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.colMaster.Visible = true;
-            this.colMaster.VisibleIndex = 5;
+            this.colMaster.VisibleIndex = 6;
             // 
             // colAbroadStudent
             // 
@@ -187,7 +189,7 @@
             this.colAbroadStudent.Name = "colAbroadStudent";
             this.colAbroadStudent.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.colAbroadStudent.Visible = true;
-            this.colAbroadStudent.VisibleIndex = 8;
+            this.colAbroadStudent.VisibleIndex = 9;
             // 
             // colSumTeacher
             // 
@@ -210,7 +212,18 @@
     "roadStudent]";
             this.colSumStudent.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.colSumStudent.Visible = true;
-            this.colSumStudent.VisibleIndex = 9;
+            this.colSumStudent.VisibleIndex = 10;
+            // 
+            // colExternal
+            // 
+            this.colExternal.Caption = "外聘员工";
+            this.colExternal.FieldName = "colExternal";
+            this.colExternal.Name = "colExternal";
+            this.colExternal.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colExternal", "合计={0:0.##}")});
+            this.colExternal.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.colExternal.Visible = true;
+            this.colExternal.VisibleIndex = 4;
             // 
             // PopulationRecordGrid
             // 
@@ -241,5 +254,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colAbroadStudent;
         private DevExpress.XtraGrid.Columns.GridColumn colSumTeacher;
         private DevExpress.XtraGrid.Columns.GridColumn colSumStudent;
+        private DevExpress.XtraGrid.Columns.GridColumn colExternal;
     }
 }
