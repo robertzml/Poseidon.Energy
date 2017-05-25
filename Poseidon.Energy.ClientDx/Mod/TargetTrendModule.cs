@@ -78,6 +78,8 @@ namespace Poseidon.Energy.ClientDx
 
                     linePoints.Add(point2);
                 }
+                points = points.OrderBy(r => r.Argument).ToList();
+                linePoints = points.OrderBy(r => r.Argument).ToList();
 
                 var data = new
                 {
@@ -103,6 +105,11 @@ namespace Poseidon.Energy.ClientDx
             }
         }
 
+        /// <summary>
+        /// 载入分组数据
+        /// </summary>
+        /// <param name="group"></param>
+        /// <param name="targetType"></param>
         private async void LoadData(Group group, int targetType)
         {
             var task = Task.Run(() =>
@@ -130,6 +137,9 @@ namespace Poseidon.Energy.ClientDx
 
                     linePoints.Add(point2);
                 }
+
+                points = points.OrderBy(r => r.Argument).ToList();
+                linePoints = points.OrderBy(r => r.Argument).ToList();
 
                 var data = new
                 {
