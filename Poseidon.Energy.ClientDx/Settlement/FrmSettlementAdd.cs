@@ -32,7 +32,7 @@ namespace Poseidon.Energy.ClientDx
         protected override void InitForm()
         {
             this.cmbType.Properties.Items.AddEnum(typeof(SettlementType));
-            this.bsTarget.DataSource = BusinessFactory<TargetBusiness>.Instance.FindAll();
+            this.bsTarget.DataSource = BusinessFactory<TargetBusiness>.Instance.FindAll().OrderByDescending(r => r.Year).ToList();
 
             base.InitForm();
         }

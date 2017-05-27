@@ -490,6 +490,7 @@
             this.electricRecordGrid.DataSource = null;
             this.electricRecordGrid.Editable = true;
             this.electricRecordGrid.EnableMasterView = false;
+            this.electricRecordGrid.EnableMultiSelect = false;
             this.electricRecordGrid.Location = new System.Drawing.Point(7, 33);
             this.electricRecordGrid.Name = "electricRecordGrid";
             this.electricRecordGrid.ShowAddMenu = false;
@@ -546,7 +547,7 @@
             // 
             this.tabPageWater.Controls.Add(this.layoutControl3);
             this.tabPageWater.Name = "tabPageWater";
-            this.tabPageWater.Size = new System.Drawing.Size(908, 364);
+            this.tabPageWater.Size = new System.Drawing.Size(280, 54);
             this.tabPageWater.Text = "用水结算";
             // 
             // layoutControl3
@@ -558,15 +559,15 @@
             this.layoutControl3.Location = new System.Drawing.Point(0, 0);
             this.layoutControl3.Name = "layoutControl3";
             this.layoutControl3.Root = this.layoutControlGroup4;
-            this.layoutControl3.Size = new System.Drawing.Size(908, 364);
+            this.layoutControl3.Size = new System.Drawing.Size(280, 54);
             this.layoutControl3.TabIndex = 1;
             this.layoutControl3.Text = "layoutControl3";
             // 
             // btnUseRefWaterAmount
             // 
-            this.btnUseRefWaterAmount.Location = new System.Drawing.Point(456, 7);
+            this.btnUseRefWaterAmount.Location = new System.Drawing.Point(142, 7);
             this.btnUseRefWaterAmount.Name = "btnUseRefWaterAmount";
-            this.btnUseRefWaterAmount.Size = new System.Drawing.Size(445, 22);
+            this.btnUseRefWaterAmount.Size = new System.Drawing.Size(131, 22);
             this.btnUseRefWaterAmount.StyleController = this.layoutControl3;
             this.btnUseRefWaterAmount.TabIndex = 5;
             this.btnUseRefWaterAmount.Text = "使用参考金额";
@@ -576,7 +577,7 @@
             // 
             this.btnUseRefWaterQuantum.Location = new System.Drawing.Point(7, 7);
             this.btnUseRefWaterQuantum.Name = "btnUseRefWaterQuantum";
-            this.btnUseRefWaterQuantum.Size = new System.Drawing.Size(445, 22);
+            this.btnUseRefWaterQuantum.Size = new System.Drawing.Size(131, 22);
             this.btnUseRefWaterQuantum.StyleController = this.layoutControl3;
             this.btnUseRefWaterQuantum.TabIndex = 4;
             this.btnUseRefWaterQuantum.Text = "使用参考用量";
@@ -590,6 +591,7 @@
             this.waterRecordGrid.DataSource = null;
             this.waterRecordGrid.Editable = true;
             this.waterRecordGrid.EnableMasterView = false;
+            this.waterRecordGrid.EnableMultiSelect = false;
             this.waterRecordGrid.Location = new System.Drawing.Point(7, 33);
             this.waterRecordGrid.Name = "waterRecordGrid";
             this.waterRecordGrid.ShowAddMenu = false;
@@ -598,7 +600,7 @@
             this.waterRecordGrid.ShowMenu = false;
             this.waterRecordGrid.ShowNavigator = false;
             this.waterRecordGrid.ShowRefColumn = true;
-            this.waterRecordGrid.Size = new System.Drawing.Size(894, 324);
+            this.waterRecordGrid.Size = new System.Drawing.Size(266, 14);
             this.waterRecordGrid.TabIndex = 0;
             // 
             // layoutControlGroup4
@@ -612,7 +614,7 @@
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlGroup4.Size = new System.Drawing.Size(908, 364);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(280, 54);
             this.layoutControlGroup4.TextVisible = false;
             // 
             // layoutControlItem13
@@ -620,7 +622,7 @@
             this.layoutControlItem13.Control = this.waterRecordGrid;
             this.layoutControlItem13.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(898, 328);
+            this.layoutControlItem13.Size = new System.Drawing.Size(270, 18);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
@@ -629,16 +631,16 @@
             this.layoutControlItem14.Control = this.btnUseRefWaterQuantum;
             this.layoutControlItem14.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(449, 26);
+            this.layoutControlItem14.Size = new System.Drawing.Size(135, 26);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
             // layoutControlItem15
             // 
             this.layoutControlItem15.Control = this.btnUseRefWaterAmount;
-            this.layoutControlItem15.Location = new System.Drawing.Point(449, 0);
+            this.layoutControlItem15.Location = new System.Drawing.Point(135, 0);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(449, 26);
+            this.layoutControlItem15.Size = new System.Drawing.Size(135, 26);
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem15.TextVisible = false;
             // 

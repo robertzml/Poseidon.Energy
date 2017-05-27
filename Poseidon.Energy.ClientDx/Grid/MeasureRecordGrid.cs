@@ -102,7 +102,7 @@ namespace Poseidon.Energy.ClientDx
             if (e.Column.FieldName == "DepartmentId")
             {
                 var department = this.departments.Find(r => r.Id == e.Value.ToString());
-                e.DisplayText = department.ShortName;
+                e.DisplayText = department.Name;
             }
         }
 
