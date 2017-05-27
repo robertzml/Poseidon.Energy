@@ -254,7 +254,7 @@
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMain.Location = new System.Drawing.Point(0, 0);
             this.tabMain.Name = "tabMain";
-            this.tabMain.SelectedTabPage = this.tabPageRecord;
+            this.tabMain.SelectedTabPage = this.tabPageSummary;
             this.tabMain.Size = new System.Drawing.Size(781, 650);
             this.tabMain.TabIndex = 0;
             this.tabMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {

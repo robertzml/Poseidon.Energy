@@ -109,13 +109,13 @@
             this.plFill.Appearance.BackColor = System.Drawing.Color.White;
             this.plFill.Appearance.Options.UseBackColor = true;
             this.plFill.Controls.Add(this.tableLayoutPanel1);
-            this.plFill.Size = new System.Drawing.Size(984, 542);
+            this.plFill.Size = new System.Drawing.Size(984, 602);
             // 
             // plBottom
             // 
             this.plBottom.Appearance.BackColor = System.Drawing.Color.White;
             this.plBottom.Appearance.Options.UseBackColor = true;
-            this.plBottom.Location = new System.Drawing.Point(0, 542);
+            this.plBottom.Location = new System.Drawing.Point(0, 602);
             this.plBottom.Size = new System.Drawing.Size(984, 60);
             // 
             // tableLayoutPanel1
@@ -132,7 +132,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 542);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 602);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupControl1
@@ -142,7 +142,7 @@
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
             this.tableLayoutPanel1.SetRowSpan(this.groupControl1, 2);
-            this.groupControl1.Size = new System.Drawing.Size(194, 536);
+            this.groupControl1.Size = new System.Drawing.Size(194, 596);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "能耗部门分组";
             // 
@@ -154,7 +154,7 @@
             this.measureGroup.Name = "measureGroup";
             this.measureGroup.ShowCode = false;
             this.measureGroup.ShowRemark = false;
-            this.measureGroup.Size = new System.Drawing.Size(190, 513);
+            this.measureGroup.Size = new System.Drawing.Size(190, 573);
             this.measureGroup.TabIndex = 0;
             this.measureGroup.GroupSelected += new System.Action<object, System.EventArgs>(this.measureGroup_GroupSelected);
             // 
@@ -428,7 +428,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(203, 203);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(778, 336);
+            this.groupControl3.Size = new System.Drawing.Size(778, 396);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "能耗数据";
             // 
@@ -450,14 +450,14 @@
             this.mrGrid.ShowMenu = false;
             this.mrGrid.ShowNavigator = false;
             this.mrGrid.ShowRefColumn = true;
-            this.mrGrid.Size = new System.Drawing.Size(774, 313);
+            this.mrGrid.Size = new System.Drawing.Size(774, 373);
             this.mrGrid.TabIndex = 0;
             // 
             // FrmMeasureRecordEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 602);
+            this.ClientSize = new System.Drawing.Size(984, 662);
             this.Name = "FrmMeasureRecordEdit";
             this.Text = "录入能耗记录";
             ((System.ComponentModel.ISupportInitialize)(this.plFill)).EndInit();
