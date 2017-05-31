@@ -198,6 +198,36 @@ namespace Poseidon.Energy.ClientDx
             ChildFormManage.ShowDialogForm(typeof(FrmSettlementRecordEdit), new object[] { this.currentSettlement.Id });
             LoadSettlements();
         }
+
+        /// <summary>
+        /// 编辑部门结算
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDepartmentEdit_Click(object sender, EventArgs e)
+        {
+            if (this.lbSettlements.SelectedItem == null || this.currentSettlement == null)
+                return;
+
+            if (tabRecord.SelectedTabPage == tabPageElectric)
+            {
+                var record = electricRecordGrid.GetCurrentSelect();
+                if (record != null)
+                {
+                    ChildFormManage.ShowDialogForm(typeof(FrmSettlementDepartmentEdit), new object[] { record.DepartmentId, this.currentSettlement.Year, EnergyType.Electric });
+                    LoadSettlements();
+                }
+            }
+            else if (tabRecord.SelectedTabPage == tabPageWater)
+            {
+                var record = waterRecordGrid.GetCurrentSelect();
+                if (record != null)
+                {
+                    ChildFormManage.ShowDialogForm(typeof(FrmSettlementDepartmentEdit), new object[] { record.DepartmentId, this.currentSettlement.Year, EnergyType.Water });
+                    LoadSettlements();
+                }
+            }
+        }
         #endregion //Event
     }
 }

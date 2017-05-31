@@ -87,9 +87,12 @@
             // 
             // colSettlementId
             // 
+            this.colSettlementId.Caption = "结算名称";
             this.colSettlementId.FieldName = "SettlementId";
             this.colSettlementId.Name = "colSettlementId";
             this.colSettlementId.OptionsColumn.AllowEdit = false;
+            this.colSettlementId.Visible = true;
+            this.colSettlementId.VisibleIndex = 0;
             // 
             // colDepartmentId
             // 
@@ -98,7 +101,7 @@
             this.colDepartmentId.Name = "colDepartmentId";
             this.colDepartmentId.OptionsColumn.AllowEdit = false;
             this.colDepartmentId.Visible = true;
-            this.colDepartmentId.VisibleIndex = 0;
+            this.colDepartmentId.VisibleIndex = 1;
             // 
             // colEnergyType
             // 
@@ -106,14 +109,14 @@
             this.colEnergyType.Name = "colEnergyType";
             this.colEnergyType.OptionsColumn.AllowEdit = false;
             this.colEnergyType.Visible = true;
-            this.colEnergyType.VisibleIndex = 1;
+            this.colEnergyType.VisibleIndex = 2;
             // 
             // colUnitPrice
             // 
             this.colUnitPrice.FieldName = "UnitPrice";
             this.colUnitPrice.Name = "colUnitPrice";
             this.colUnitPrice.Visible = true;
-            this.colUnitPrice.VisibleIndex = 2;
+            this.colUnitPrice.VisibleIndex = 3;
             // 
             // colBeginQuantum
             // 
@@ -121,7 +124,7 @@
             this.colBeginQuantum.Name = "colBeginQuantum";
             this.colBeginQuantum.OptionsColumn.AllowEdit = false;
             this.colBeginQuantum.Visible = true;
-            this.colBeginQuantum.VisibleIndex = 3;
+            this.colBeginQuantum.VisibleIndex = 4;
             // 
             // colBeginAmount
             // 
@@ -130,7 +133,7 @@
             this.colBeginAmount.Name = "colBeginAmount";
             this.colBeginAmount.OptionsColumn.AllowEdit = false;
             this.colBeginAmount.Visible = true;
-            this.colBeginAmount.VisibleIndex = 4;
+            this.colBeginAmount.VisibleIndex = 5;
             // 
             // colQuantum
             // 
@@ -139,7 +142,7 @@
             this.colQuantum.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantum", "合计={0:0.##}")});
             this.colQuantum.Visible = true;
-            this.colQuantum.VisibleIndex = 6;
+            this.colQuantum.VisibleIndex = 7;
             // 
             // colAmount
             // 
@@ -149,14 +152,14 @@
             this.colAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Amount", "合计={0:0.##}")});
             this.colAmount.Visible = true;
-            this.colAmount.VisibleIndex = 8;
+            this.colAmount.VisibleIndex = 9;
             // 
             // colRemark
             // 
             this.colRemark.FieldName = "Remark";
             this.colRemark.Name = "colRemark";
             this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 11;
+            this.colRemark.VisibleIndex = 12;
             // 
             // colStatus
             // 
@@ -178,7 +181,7 @@
             this.colRefQuantum.OptionsColumn.AllowEdit = false;
             this.colRefQuantum.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colRefQuantum.Visible = true;
-            this.colRefQuantum.VisibleIndex = 5;
+            this.colRefQuantum.VisibleIndex = 6;
             // 
             // colRefAmount
             // 
@@ -189,7 +192,7 @@
             this.colRefAmount.UnboundExpression = "Round([UnitPrice] * [colRefQuantum])";
             this.colRefAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colRefAmount.Visible = true;
-            this.colRefAmount.VisibleIndex = 7;
+            this.colRefAmount.VisibleIndex = 8;
             // 
             // colEndAmount
             // 
@@ -200,7 +203,7 @@
             this.colEndAmount.UnboundExpression = "[BeginAmount] - [Amount]";
             this.colEndAmount.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colEndAmount.Visible = true;
-            this.colEndAmount.VisibleIndex = 10;
+            this.colEndAmount.VisibleIndex = 11;
             // 
             // colEndQuantum
             // 
@@ -211,7 +214,7 @@
             this.colEndQuantum.UnboundExpression = "[BeginQuantum] - [Quantum]";
             this.colEndQuantum.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colEndQuantum.Visible = true;
-            this.colEndQuantum.VisibleIndex = 9;
+            this.colEndQuantum.VisibleIndex = 10;
             // 
             // SettlementRecordGrid
             // 

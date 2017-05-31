@@ -53,7 +53,7 @@ namespace Poseidon.Energy.Core.BL
                 {
                     beginQuantum = 0;
                     beginAmount = 0;
-                }               
+                }
             }
             else
             {
@@ -92,6 +92,28 @@ namespace Poseidon.Energy.Core.BL
         {
             var dal = this.baseDal as ISettlementRecordRepository;
             return dal.FindList(settlementId, (int)energyType);
+        }
+
+        /// <summary>
+        /// 查找部门年度结算记录
+        /// </summary>
+        /// <param name="departmentId">部门ID</param>
+        /// <param name="year">年度</param>
+        /// <param name="energyType">能源类型</param>
+        /// <returns></returns>
+        public IEnumerable<SettlementRecord> FindByDepartment(string departmentId, int year, EnergyType energyType)
+        {
+            SettlementBusiness settleBusiness = new SettlementBusiness();
+            var settles = settleBusiness.FindByYear(year);
+
+            List<SettlementRecord> data = new List<SettlementRecord>();
+            foreach (var settle in settles)
+            {
+                var record = FindByDepartment(settle.Id, departmentId, energyType);
+                data.Add(record);
+            }
+
+            return data;
         }
 
         /// <summary>

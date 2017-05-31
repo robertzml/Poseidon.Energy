@@ -40,6 +40,16 @@ namespace Poseidon.Energy.ClientDx
         /// 是否显示参考用能列
         /// </summary>
         private bool showRefColumn = true;
+
+        /// <summary>
+        /// 是否能编辑期初数据
+        /// </summary>
+        private bool allowBeginEdit = false;
+
+        /// <summary>
+        /// 是否显示结算名称
+        /// </summary>
+        private bool showSettlement = false;
         #endregion //Field
 
         #region Constructor
@@ -125,6 +135,9 @@ namespace Poseidon.Energy.ClientDx
 
             this.colRefQuantum.Visible = this.showRefColumn;
             this.colRefAmount.Visible = this.showRefColumn;
+            this.colBeginAmount.OptionsColumn.AllowEdit = this.allowBeginEdit;
+            this.colBeginQuantum.OptionsColumn.AllowEdit = this.allowBeginEdit;
+            this.colSettlementId.Visible = this.showSettlement;
         }
 
         /// <summary>
@@ -146,6 +159,11 @@ namespace Poseidon.Energy.ClientDx
             if (e.Column.FieldName == "EnergyType")
             {
                 e.DisplayText = ((EnergyType)e.Value).DisplayName();
+            }
+            if (e.Column.FieldName == "SettlementId" && this.showSettlement)
+            {
+                var settlement = BusinessFactory<SettlementBusiness>.Instance.FindById(e.Value.ToString());
+                e.DisplayText = settlement.Name;
             }
         }
 
@@ -193,7 +211,7 @@ namespace Poseidon.Energy.ClientDx
             }
             if (e.ColumnFieldName == "EnergyType")
             {
-                int type;                
+                int type;
                 if (!Int32.TryParse(e.Value.ToString(), out type))
                     return;
 
@@ -217,6 +235,40 @@ namespace Poseidon.Energy.ClientDx
             set
             {
                 this.showRefColumn = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否能编辑期初数据
+        /// </summary>
+        [Category("功能"), Description("是否能编辑期初数据"), Browsable(true)]
+        public bool AllowBeginEdit
+        {
+            get
+            {
+                return allowBeginEdit;
+            }
+
+            set
+            {
+                allowBeginEdit = value;
+            }
+        }
+
+        /// <summary>
+        /// 是否显示结算名称
+        /// </summary>
+        [Category("界面"), Description("是否显示结算名称"), Browsable(true)]
+        public bool ShowSettlement
+        {
+            get
+            {
+                return showSettlement;
+            }
+
+            set
+            {
+                showSettlement = value;
             }
         }
         #endregion //Property

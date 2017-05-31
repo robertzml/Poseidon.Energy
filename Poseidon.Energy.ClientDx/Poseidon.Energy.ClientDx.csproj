@@ -87,6 +87,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Settlement\FrmSettlementDepartmentEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settlement\FrmSettlementDepartmentEdit.Designer.cs">
+      <DependentUpon>FrmSettlementDepartmentEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grid\AllowanceTargetGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -643,6 +649,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settlement\FrmSettlementSetDepartment.resx">
       <DependentUpon>FrmSettlementSetDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settlement\FrmSettlementDepartmentEdit.resx">
+      <DependentUpon>FrmSettlementDepartmentEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Target\FrmTargetEdit.resx">
       <DependentUpon>FrmTargetEdit.cs</DependentUpon>
