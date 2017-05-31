@@ -60,7 +60,7 @@ namespace Poseidon.Energy.ClientDx
         /// </summary>
         private void DisplayInfo()
         {
-            this.bsTarget.DataSource = BusinessFactory<TargetBusiness>.Instance.FindAll().Where(r => r.Id != this.currentRecord.TargetId).ToList();
+            this.bsTarget.DataSource = BusinessFactory<TargetBusiness>.Instance.FindAll().Where(r => r.Id != this.currentRecord.TargetId).OrderByDescending(r => r.Year).ToList();
 
             this.txtDepartmentName.Text = BusinessFactory<DepartmentBusiness>.Instance.FindById(this.currentRecord.DepartmentId).Name;
             ControlUtil.BindDictToComboBox(this.cmbType, typeof(TargetRecord), "Type");
