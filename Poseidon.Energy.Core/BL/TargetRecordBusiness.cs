@@ -97,6 +97,7 @@ namespace Poseidon.Energy.Core.BL
                 st.Name = item.Name;
                 st.Code = item.Code;
                 st.Number = item.Number;
+                st.UnitPrice = 0.6m;
 
                 data.Add(st);
             }
