@@ -51,7 +51,7 @@ namespace Poseidon.Energy.ClientDx
             var groups = BusinessFactory<GroupBusiness>.Instance.FindWithChildrenByCode(EnergyConstant.MeasureDepartmentGroupCode).ToList();
             this.measureGroup.DataSource = groups;
 
-            var refMeasures = BusinessFactory<MeasureBusiness>.Instance.FindByEnergyType(this.currentMeasure.EnergyType).Where(r => r.Id != this.currentMeasure.Id);
+            var refMeasures = BusinessFactory<MeasureBusiness>.Instance.FindByEnergyType(this.currentMeasure.EnergyType).Where(r => r.Id != this.currentMeasure.Id).OrderByDescending(r => r.StartTime);
             this.bsMeasure.DataSource = refMeasures;
 
             DisplayInfo(this.currentMeasure);
