@@ -15,6 +15,8 @@ namespace Poseidon.Energy.ClientDx
     using Poseidon.Winform.Base;
     using Poseidon.Energy.Core.BL;
     using Poseidon.Energy.Core.DL;
+    using Poseidon.Energy.ClientDx.Report;
+    using DevExpress.XtraReports.UI;
 
     /// <summary>
     /// 部门总览窗体
@@ -136,6 +138,20 @@ namespace Poseidon.Energy.ClientDx
                 return;
 
             FilterDepartment(select, this.chkInclude.Checked);
+        }
+
+        /// <summary>
+        /// 打印票据
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            BonusReport report = new BonusReport();
+
+            ReportPrintTool printTool = new ReportPrintTool(report);
+
+            printTool.ShowRibbonPreview();
         }
         #endregion //Event
     }

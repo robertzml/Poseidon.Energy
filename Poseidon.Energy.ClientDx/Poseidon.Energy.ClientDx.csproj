@@ -87,6 +87,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Report\BonusReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\BonusReport.Designer.cs">
+      <DependentUpon>BonusReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settlement\FrmSettlementDepartmentEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -619,6 +625,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\BonusReport.resx">
+      <DependentUpon>BonusReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\RepDepartmentTarget.resx">
       <DependentUpon>RepDepartmentTarget.cs</DependentUpon>

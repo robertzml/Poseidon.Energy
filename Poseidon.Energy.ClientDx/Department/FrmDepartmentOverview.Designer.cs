@@ -49,9 +49,9 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.depGrid = new Poseidon.Energy.ClientDx.DepartmentGrid();
             this.tabView = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageGrid = new DevExpress.XtraTab.XtraTabPage();
+            this.depGrid = new Poseidon.Energy.ClientDx.DepartmentGrid();
             this.tabPageTree = new DevExpress.XtraTab.XtraTabPage();
             this.depTree = new Poseidon.Energy.ClientDx.DepartmentTree();
             this.tableLayoutPanel1.SuspendLayout();
@@ -305,25 +305,6 @@
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "部门记录";
             // 
-            // depGrid
-            // 
-            this.depGrid.AllowFilter = false;
-            this.depGrid.AllowGroup = false;
-            this.depGrid.AllowSort = true;
-            this.depGrid.DataSource = null;
-            this.depGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.depGrid.Editable = false;
-            this.depGrid.EnableMasterView = false;
-            this.depGrid.Location = new System.Drawing.Point(0, 0);
-            this.depGrid.Name = "depGrid";
-            this.depGrid.ShowAddMenu = false;
-            this.depGrid.ShowFooter = false;
-            this.depGrid.ShowLineNumber = true;
-            this.depGrid.ShowMenu = false;
-            this.depGrid.ShowNavigator = false;
-            this.depGrid.Size = new System.Drawing.Size(668, 306);
-            this.depGrid.TabIndex = 0;
-            // 
             // tabView
             // 
             this.tabView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -343,6 +324,26 @@
             this.tabPageGrid.Size = new System.Drawing.Size(668, 306);
             this.tabPageGrid.Text = "列表视图";
             // 
+            // depGrid
+            // 
+            this.depGrid.AllowFilter = false;
+            this.depGrid.AllowGroup = false;
+            this.depGrid.AllowSort = true;
+            this.depGrid.DataSource = null;
+            this.depGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.depGrid.Editable = false;
+            this.depGrid.EnableMasterView = false;
+            this.depGrid.EnableMultiSelect = false;
+            this.depGrid.Location = new System.Drawing.Point(0, 0);
+            this.depGrid.Name = "depGrid";
+            this.depGrid.ShowAddMenu = false;
+            this.depGrid.ShowFooter = false;
+            this.depGrid.ShowLineNumber = true;
+            this.depGrid.ShowMenu = false;
+            this.depGrid.ShowNavigator = false;
+            this.depGrid.Size = new System.Drawing.Size(668, 306);
+            this.depGrid.TabIndex = 0;
+            // 
             // tabPageTree
             // 
             this.tabPageTree.Controls.Add(this.depTree);
@@ -357,6 +358,7 @@
             this.depTree.Editable = false;
             this.depTree.Location = new System.Drawing.Point(0, 0);
             this.depTree.Name = "depTree";
+            this.depTree.ShowLineNumber = true;
             this.depTree.Size = new System.Drawing.Size(668, 306);
             this.depTree.TabIndex = 0;
             // 
