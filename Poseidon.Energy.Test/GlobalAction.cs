@@ -43,6 +43,18 @@ namespace Poseidon.Energy.Test
             }
 
             Cache.Instance.Add("ConnectionString", connection);
+
+            // 设置数据库类型
+            string dalPrefix = AppConfig.GetAppSetting("DALPrefix");
+            Cache.Instance.Add("DALPrefix", dalPrefix);
+
+            // 设置服务访问类型
+            string callerType = AppConfig.GetAppSetting("CallerType");
+            Cache.Instance.Add("CallerType", callerType);
+
+            // 设置远程API地址
+            string apiHost = AppConfig.GetAppSetting("ApiHost");
+            Cache.Instance.Add("ApiHost", apiHost);
         }
 
         /// <summary>

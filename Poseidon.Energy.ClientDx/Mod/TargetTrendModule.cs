@@ -79,7 +79,7 @@ namespace Poseidon.Energy.ClientDx
                     linePoints.Add(point2);
                 }
                 points = points.OrderBy(r => r.Argument).ToList();
-                linePoints = points.OrderBy(r => r.Argument).ToList();
+                linePoints = linePoints.OrderBy(r => r.Argument).ToList();
 
                 var data = new
                 {
