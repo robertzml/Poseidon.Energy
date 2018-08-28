@@ -160,7 +160,7 @@ namespace Poseidon.Energy.Core.BL
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
-        public void Create(TargetRecord entity, LoginUser user)
+        public void Create(TargetRecord entity, ILoginUser user)
         {
             entity.CreateBy = new UpdateStamp
             {
@@ -186,7 +186,7 @@ namespace Poseidon.Energy.Core.BL
         /// <remarks>
         /// 增加新记录，删除未选择部门记录，增加记录为电指标
         /// </remarks>
-        public void CreateMany(string targetId, List<string> departmentIds, LoginUser user)
+        public void CreateMany(string targetId, List<string> departmentIds, ILoginUser user)
         {
             var dal = this.baseDal as ITargetRecordRepository;
 
@@ -236,7 +236,7 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
         /// <returns></returns>
-        public bool Update(TargetRecord entity, LoginUser user)
+        public bool Update(TargetRecord entity, ILoginUser user)
         {
             var dal = this.baseDal as ITargetRecordRepository;
 
@@ -260,7 +260,7 @@ namespace Poseidon.Energy.Core.BL
         /// <remarks>
         /// 删除金额度数为0项
         /// </remarks>
-        public bool UpdateStaffTarget(string id, List<StaffTarget> staffTarget, LoginUser user)
+        public bool UpdateStaffTarget(string id, List<StaffTarget> staffTarget, ILoginUser user)
         {
             var dal = this.baseDal as ITargetRecordRepository;
 
@@ -292,7 +292,7 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="allowanceTarget">补贴指标</param>
         /// <param name="user">操作用户</param>
         /// <returns>删除金额度数为0项</returns>
-        public bool UpdateAllowanceTarget(string id, List<AllowanceTarget> allowanceTarget, LoginUser user)
+        public bool UpdateAllowanceTarget(string id, List<AllowanceTarget> allowanceTarget, ILoginUser user)
         {
             var dal = this.baseDal as ITargetRecordRepository;
 

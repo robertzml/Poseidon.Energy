@@ -55,7 +55,7 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
         /// <returns></returns>
-        public MeasureRecord Create(MeasureRecord entity, LoginUser user)
+        public MeasureRecord Create(MeasureRecord entity, ILoginUser user)
         {
             entity.CreateBy = new UpdateStamp
             {
@@ -79,7 +79,7 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="measureId">能源计量ID</param>
         /// <param name="departmentIds">部门ID列表</param>
         /// <param name="user">操作用户</param>
-        public void CreateMany(string measureId, List<string> departmentIds, LoginUser user)
+        public void CreateMany(string measureId, List<string> departmentIds, ILoginUser user)
         {
             var dal = this.baseDal as IMeasureRecordRepository;
 
@@ -122,7 +122,7 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
         /// <returns></returns>
-        public bool Update(MeasureRecord entity, LoginUser user)
+        public bool Update(MeasureRecord entity, ILoginUser user)
         {
             entity.UpdateBy = new UpdateStamp
             {
@@ -139,7 +139,7 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
         /// <returns></returns>
-        public void Update(List<MeasureRecord> entity, LoginUser user)
+        public void Update(List<MeasureRecord> entity, ILoginUser user)
         {
             foreach (var item in entity)
             {

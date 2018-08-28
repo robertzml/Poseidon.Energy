@@ -56,7 +56,7 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
         /// <returns></returns>
-        public Measure Create(Measure entity, LoginUser user)
+        public Measure Create(Measure entity, ILoginUser user)
         {
             entity.CreateBy = new UpdateStamp
             {
@@ -80,7 +80,7 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
         /// <returns></returns>
-        public bool Update(Measure entity, LoginUser user)
+        public bool Update(Measure entity, ILoginUser user)
         {
             entity.UpdateBy = new UpdateStamp
             {

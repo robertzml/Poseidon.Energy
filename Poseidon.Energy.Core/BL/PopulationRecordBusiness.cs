@@ -115,7 +115,7 @@ namespace Poseidon.Energy.Core.BL
         /// </summary>
         /// <param name="data">人数记录</param>
         /// <param name="user">操作用户</param>
-        public void UpdateRecords(List<PopulationRecord> data, LoginUser user)
+        public void UpdateRecords(List<PopulationRecord> data, ILoginUser user)
         {
             foreach (var item in data)
             {
@@ -163,7 +163,7 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="user">操作人</param>
         /// <returns></returns>
         /// <remarks></remarks>
-        public bool UpdateRecordDetails(string id, List<PopulationDetail> details, LoginUser user)
+        public bool UpdateRecordDetails(string id, List<PopulationDetail> details, ILoginUser user)
         {
             var entity = this.baseDal.FindById(id);
             entity.Details = details;

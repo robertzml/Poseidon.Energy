@@ -55,7 +55,7 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="data">经费记录</param>
         /// <param name="user">操作用户</param>
         /// <returns></returns>
-        public void Update(List<FundRecord> data, LoginUser user)
+        public void Update(List<FundRecord> data, ILoginUser user)
         {
             foreach (var item in data)
             {

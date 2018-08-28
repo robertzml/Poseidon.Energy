@@ -135,7 +135,7 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="settlementId">能源结算ID</param>
         /// <param name="departmentIds">部门ID列表</param>
         /// <param name="user">操作用户</param>
-        public void CreateMany(string settlementId, List<string> departmentIds, LoginUser user)
+        public void CreateMany(string settlementId, List<string> departmentIds, ILoginUser user)
         {
             var dal = this.baseDal as ISettlementRecordRepository;
 
@@ -164,7 +164,7 @@ namespace Poseidon.Energy.Core.BL
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
-        public void Create(SettlementRecord entity, LoginUser user)
+        public void Create(SettlementRecord entity, ILoginUser user)
         {
             var dal = this.baseDal as ISettlementRecordRepository;
 
@@ -205,7 +205,7 @@ namespace Poseidon.Energy.Core.BL
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="user"></param>
-        public void Update(List<SettlementRecord> entity, LoginUser user)
+        public void Update(List<SettlementRecord> entity, ILoginUser user)
         {
             foreach (var item in entity)
             {
