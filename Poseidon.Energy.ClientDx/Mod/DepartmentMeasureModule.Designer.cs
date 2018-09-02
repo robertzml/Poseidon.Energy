@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabMain = new DevExpress.XtraTab.XtraTabControl();
             this.tabPageMeasure = new DevExpress.XtraTab.XtraTabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.lbMeasures = new DevExpress.XtraEditors.ListBoxControl();
-            this.bsMeasure = new System.Windows.Forms.BindingSource();
+            this.bsMeasure = new System.Windows.Forms.BindingSource(this.components);
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.chkIncluded = new DevExpress.XtraEditors.CheckEdit();
@@ -623,9 +624,13 @@
             this.subRecordGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.subRecordGrid.Editable = false;
             this.subRecordGrid.EnableMasterView = false;
+            this.subRecordGrid.EnableMultiSelect = false;
             this.subRecordGrid.Location = new System.Drawing.Point(2, 21);
             this.subRecordGrid.Name = "subRecordGrid";
             this.subRecordGrid.ShowAddMenu = false;
+            this.subRecordGrid.ShowDeleteMenu = false;
+            this.subRecordGrid.ShowEditMenu = false;
+            this.subRecordGrid.ShowFindPanel = false;
             this.subRecordGrid.ShowFooter = true;
             this.subRecordGrid.ShowLineNumber = true;
             this.subRecordGrid.ShowMenu = false;
