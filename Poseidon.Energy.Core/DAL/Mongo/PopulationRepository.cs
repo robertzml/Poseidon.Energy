@@ -114,7 +114,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <returns></returns>
-        public override bool Update(Population entity)
+        public override (bool success, string errorMessage) Update(Population entity)
         {
             return base.Update(entity);
         }

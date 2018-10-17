@@ -136,10 +136,17 @@ namespace Poseidon.Energy.ClientDx
             {
                 try
                 {
-                    BusinessFactory<MeasureBusiness>.Instance.Delete(this.currentMeasure);
-                    LoadMeasures();
+                    var result = BusinessFactory<MeasureBusiness>.Instance.Delete(this.currentMeasure);
 
-                    MessageUtil.ShowInfo("删除成功");
+                    if (result.success)
+                    {
+                        LoadMeasures();
+                        MessageUtil.ShowInfo("删除成功");
+                    }
+                    else
+                    {
+                        MessageUtil.ShowClaim("删除失败: " + result.errorMessage);
+                    }
                 }
                 catch (PoseidonException pe)
                 {

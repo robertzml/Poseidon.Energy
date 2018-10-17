@@ -153,10 +153,17 @@ namespace Poseidon.Energy.ClientDx
                 Settlement entity = BusinessFactory<SettlementBusiness>.Instance.FindById(this.currentSettlement.Id);
                 SetEntity(entity);
 
-                BusinessFactory<SettlementBusiness>.Instance.Update(entity, this.currentUser);
+                var result = BusinessFactory<SettlementBusiness>.Instance.Update(entity, this.currentUser);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result.success)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowClaim("保存失败: " + result.errorMessage);
+                }
             }
             catch (PoseidonException pe)
             {

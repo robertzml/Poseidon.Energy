@@ -145,10 +145,17 @@ namespace Poseidon.Energy.ClientDx
             {
                 try
                 {
-                    BusinessFactory<SettlementBusiness>.Instance.Delete(this.currentSettlement);
-                    LoadSettlements();
+                    var result = BusinessFactory<SettlementBusiness>.Instance.Delete(this.currentSettlement);
 
-                    MessageUtil.ShowInfo("删除成功");
+                    if (result.success)
+                    {
+                        LoadSettlements();
+                        MessageUtil.ShowInfo("删除成功");
+                    }
+                    else
+                    {
+                        MessageUtil.ShowClaim("删除失败: " + result.errorMessage);
+                    }
                 }
                 catch (PoseidonException pe)
                 {

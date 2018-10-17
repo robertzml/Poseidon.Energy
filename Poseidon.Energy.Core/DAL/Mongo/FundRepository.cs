@@ -136,10 +136,10 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <returns></returns>
-        public override bool Update(Fund entity)
+        public override (bool success, string errorMessage) Update(Fund entity)
         {
             if (!CheckDuplicate(entity))
-                throw new PoseidonException("年度已存在");
+                return (false, "年度已存在");
 
             return base.Update(entity);
         }

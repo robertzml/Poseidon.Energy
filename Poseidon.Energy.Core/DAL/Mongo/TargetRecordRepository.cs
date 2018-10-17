@@ -269,7 +269,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <returns></returns>
-        public override bool Update(TargetRecord entity)
+        public override (bool success, string errorMessage) Update(TargetRecord entity)
         {
             return base.Update(entity);
         }
@@ -286,7 +286,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             var builder = Builders<BsonDocument>.Filter;
             var filter = builder.Eq("targetId", targetId) & builder.Eq("type", type) & builder.Nin("departmentId", departmentIds);
 
-            return base.DeleteMany(filter);
+            return base.DeleteMany(filter).success;
         }
         #endregion //Method
     }

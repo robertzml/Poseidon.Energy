@@ -116,10 +116,17 @@ namespace Poseidon.Energy.ClientDx
 
             try
             {
-                BusinessFactory<TargetBusiness>.Instance.Update(entity, this.currentUser);
+                var result = BusinessFactory<TargetBusiness>.Instance.Update(entity, this.currentUser);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result.success)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowClaim("保存失败: " + result.errorMessage);
+                }
             }
             catch (PoseidonException pe)
             {

@@ -103,7 +103,7 @@ namespace Poseidon.Energy.Core.BL
         /// <returns></returns>
         public bool DeleteByFund(string fundId)
         {
-            return this.baseDal.DeleteMany("fundId", fundId);
+            return this.baseDal.DeleteMany("fundId", fundId).success;
         }
         #endregion //Method
     }

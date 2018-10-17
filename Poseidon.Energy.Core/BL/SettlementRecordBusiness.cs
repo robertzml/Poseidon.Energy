@@ -229,7 +229,7 @@ namespace Poseidon.Energy.Core.BL
         /// <returns></returns>
         public bool DeleteBySettlement(string settlementId)
         {
-            return this.baseDal.DeleteMany("settlementId", settlementId);
+            return this.baseDal.DeleteMany("settlementId", settlementId).success;
         }
         #endregion //Method
     }

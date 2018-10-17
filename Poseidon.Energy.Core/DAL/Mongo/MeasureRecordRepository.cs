@@ -122,7 +122,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             var builder = Builders<BsonDocument>.Filter;
             var filter = builder.Eq("measureId", measureId) & builder.Nin("departmentId", departmentIds);
 
-            return base.DeleteMany(filter);
+            return base.DeleteMany(filter).success;
         }
         #endregion //Method
     }

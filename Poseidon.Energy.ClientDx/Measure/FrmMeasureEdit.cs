@@ -127,10 +127,17 @@ namespace Poseidon.Energy.ClientDx
                 var entity = BusinessFactory<MeasureBusiness>.Instance.FindById(this.currentMeasure.Id);
                 SetEntity(entity);
 
-                BusinessFactory<MeasureBusiness>.Instance.Update(entity, this.currentUser);
+                var result = BusinessFactory<MeasureBusiness>.Instance.Update(entity, this.currentUser);
 
-                MessageUtil.ShowInfo("保存成功");
-                this.Close();
+                if (result.success)
+                {
+                    MessageUtil.ShowInfo("保存成功");
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowClaim("保存失败: " + result.errorMessage);
+                }
             }
             catch (PoseidonException pe)
             {

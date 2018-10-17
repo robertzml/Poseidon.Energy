@@ -123,10 +123,17 @@ namespace Poseidon.Energy.ClientDx
             {
                 try
                 {
-                    BusinessFactory<PopulationBusiness>.Instance.Delete(this.currentPopulation);
-                    LoadPopulations();
+                    var result = BusinessFactory<PopulationBusiness>.Instance.Delete(this.currentPopulation);
 
-                    MessageUtil.ShowInfo("删除成功");
+                    if (result.success)
+                    {
+                        LoadPopulations();
+                        MessageUtil.ShowInfo("删除成功");
+                    }
+                    else
+                    {
+                        MessageUtil.ShowClaim("删除失败: " + result.errorMessage);
+                    }
                 }
                 catch (PoseidonException pe)
                 {

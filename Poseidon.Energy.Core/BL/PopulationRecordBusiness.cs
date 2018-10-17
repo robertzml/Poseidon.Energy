@@ -174,7 +174,7 @@ namespace Poseidon.Energy.Core.BL
                 Time = DateTime.Now
             };
 
-            return this.baseDal.Update(entity);
+            return this.baseDal.Update(entity).success;
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace Poseidon.Energy.Core.BL
         /// <returns></returns>
         public bool DeleteByPopulation(string populationId)
         {
-            return this.baseDal.DeleteMany("populationId", populationId);
+            return this.baseDal.DeleteMany("populationId", populationId).success;
         }
         #endregion //Method
     }

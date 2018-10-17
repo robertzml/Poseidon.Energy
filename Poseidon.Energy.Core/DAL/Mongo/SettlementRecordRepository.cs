@@ -146,7 +146,7 @@ namespace Poseidon.Energy.Core.DAL.Mongo
             var builder = Builders<BsonDocument>.Filter;
             var filter = builder.Eq("settlementId", settlementId) & builder.Eq("energyType", energyType) & builder.Nin("departmentId", departmentIds);
 
-            return base.DeleteMany(filter);
+            return base.DeleteMany(filter).success;
         }
         #endregion //Method
     }

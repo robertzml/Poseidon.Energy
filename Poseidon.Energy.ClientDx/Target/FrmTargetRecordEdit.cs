@@ -370,13 +370,13 @@ namespace Poseidon.Energy.ClientDx
             {
                 var result = BusinessFactory<TargetRecordBusiness>.Instance.Update(entity, this.currentUser);
 
-                if (result)
+                if (result.success)
                 {
                     MessageUtil.ShowInfo("保存成功");
                     this.Close();
                 }
                 else
-                    MessageUtil.ShowInfo("保存失败");
+                    MessageUtil.ShowInfo("保存失败: " + result.errorMessage);
             }
             catch (PoseidonException pe)
             {

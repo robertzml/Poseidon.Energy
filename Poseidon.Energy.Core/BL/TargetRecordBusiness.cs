@@ -236,7 +236,7 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
         /// <returns></returns>
-        public bool Update(TargetRecord entity, ILoginUser user)
+        public (bool success, string errorMessage) Update(TargetRecord entity, ILoginUser user)
         {
             var dal = this.baseDal as ITargetRecordRepository;
 
@@ -282,7 +282,7 @@ namespace Poseidon.Energy.Core.BL
                 Time = DateTime.Now
             };
 
-            return dal.Update(targetRecord);
+            return dal.Update(targetRecord).success;
         }
 
         /// <summary>
@@ -312,7 +312,7 @@ namespace Poseidon.Energy.Core.BL
                 Time = DateTime.Now
             };
 
-            return dal.Update(targetRecord);
+            return dal.Update(targetRecord).success;
         }
 
         /// <summary>
@@ -322,7 +322,7 @@ namespace Poseidon.Energy.Core.BL
         /// <returns></returns>
         public bool DeleteByTarget(string targetId)
         {
-            return this.baseDal.DeleteMany("targetId", targetId);
+            return this.baseDal.DeleteMany("targetId", targetId).success;
         }
         #endregion //Method
     }

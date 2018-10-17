@@ -65,7 +65,7 @@ namespace Poseidon.Energy.Core.BL
         /// <param name="entity">实体对象</param>
         /// <param name="user">操作用户</param>
         /// <returns></returns>
-        public bool Update(Target entity, ILoginUser user)
+        public (bool success, string errorMessage) Update(Target entity, ILoginUser user)
         {
             entity.UpdateBy = new UpdateStamp
             {
@@ -81,7 +81,7 @@ namespace Poseidon.Energy.Core.BL
         /// </summary>
         /// <param name="entity">实体对象</param>
         /// <returns></returns>
-        public override bool Delete(Target entity)
+        public override (bool success, string errorMessage) Delete(Target entity)
         {
             // delete the records
             TargetRecordBusiness recordBusiness = new TargetRecordBusiness();
