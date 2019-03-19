@@ -161,7 +161,6 @@
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
             this.layoutControlGroup2.Size = new System.Drawing.Size(190, 475);
@@ -255,7 +254,6 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.emptySpaceItem1});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(674, 111);
             this.layoutControlGroup1.TextVisible = false;
@@ -333,10 +331,13 @@
             this.depGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.depGrid.Editable = false;
             this.depGrid.EnableMasterView = false;
-            this.depGrid.EnableMultiSelect = false;
+            this.depGrid.EnableMultiSelect = true;
             this.depGrid.Location = new System.Drawing.Point(0, 0);
             this.depGrid.Name = "depGrid";
             this.depGrid.ShowAddMenu = false;
+            this.depGrid.ShowDeleteMenu = false;
+            this.depGrid.ShowEditMenu = false;
+            this.depGrid.ShowFindPanel = false;
             this.depGrid.ShowFooter = false;
             this.depGrid.ShowLineNumber = true;
             this.depGrid.ShowMenu = false;
